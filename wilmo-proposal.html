@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wilmo SEO/AEO Proposal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reveal.min.css">
+<style>
+  :root {
+    --accent: #0D9488;
+    --accent-bg: #F0FDFA;
+    --accent-bd: #99F6E4;
+    --accent-dark: #0F766E;
+    --accent2: #6366F1;
+    --accent2-bg: #EEF2FF;
+    --accent2-bd: #C7D2FE;
+    --accent2-dark: #4338CA;
+    --ink: #171C33;
+    --ink2: #3D4461;
+    --ink3: #717185;
+    --ink4: #A1A1B5;
+    --paper: #fff;
+    --paper2: #F9FAFB;
+    --paper3: #F3F4F6;
+    --rule: #E5E7EB;
+    --ok: #16a34a;
+    --ok-bg: #f0fdf4;
+    --ok-bd: #bbf7d0;
+    --warn: #ea580c;
+    --warn-bg: #fff7ed;
+    --warn-bd: #fed7aa;
+    --red: #dc2626;
+    --red-bg: #fef2f2;
+    --red-bd: #fecaca;
+  }
+  *{box-sizing:border-box;font-family:"DM Sans",sans-serif}
+  html,body{margin:0;padding:0;width:100%;height:100%;overflow:hidden;background:#fff}
+  .reveal-viewport,.reveal{width:100%!important;height:100%!important;background:#fff!important}
+  .reveal .slides section{width:100vw!important;height:100vh!important;padding:0!important;background:#fff!important;display:flex!important;flex-direction:column!important;text-align:left!important}
+  .s{width:100vw;height:100vh;padding:3vh 4.5vw 2.5vh;display:flex;flex-direction:column;position:relative;overflow:hidden}
+  .stripe{position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--accent-dark)}
+  .hdr{display:flex;justify-content:space-between;align-items:center;flex-shrink:0;margin-bottom:.6vh}
+  .hdr-right{display:flex;flex-direction:column;align-items:flex-end}
+  .snum{font-family:"DM Mono",monospace;font-size:clamp(10px,1.2vh,13px);color:var(--accent-dark);background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:3px;padding:2px 8px;letter-spacing:.06em}
+  .tag{font-size:clamp(10px,1.2vh,13px);font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink4)}
+  .powered{display:flex;align-items:center;gap:5px;text-decoration:none;margin-top:3px}
+  .powered span{font-size:clamp(8px,1vh,10px);color:var(--ink4)}
+  .powered img{height:clamp(10px,1.4vh,14px);width:auto;opacity:.7}
+  .divider{height:1px;background:var(--rule);flex-shrink:0;margin-bottom:clamp(10px,1.5vh,18px)}
+  h2{font-size:clamp(22px,3.8vh,42px);font-weight:700;color:var(--ink);margin:0 0 clamp(8px,1.2vh,14px);line-height:1.15;flex-shrink:0}
+  .col-head{font-size:clamp(10px,1.2vh,13px);font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink4)}
+  .outcomes{display:grid;gap:clamp(8px,1.2vw,14px);margin-bottom:clamp(16px,2.5vh,28px)}
+  .obox{background:var(--paper2);border:1px solid var(--rule);border-radius:8px;padding:clamp(10px,1.5vh,18px) clamp(12px,1.5vw,18px)}
+  .rg2{display:grid;grid-template-columns:1fr 1fr}
+  .rg3{display:grid;grid-template-columns:1fr 1fr 1fr}
+  .rf2{display:flex}
+  .rf3{display:flex}
+  @media(max-width:1024px){
+    .s{height:auto!important;min-height:100svh!important;overflow-y:auto!important}
+    .reveal .slides section{height:auto!important;min-height:100svh!important}
+  }
+  @media(max-width:900px){
+    .rg3{grid-template-columns:1fr 1fr!important}
+    .rf3{flex-wrap:wrap!important}
+    .rf3>*{flex:1 1 calc(50% - 20px)!important;min-width:calc(50% - 20px)!important}
+  }
+  @media(max-width:640px){
+    .rg2,.rg3{grid-template-columns:1fr!important}
+    .rf2,.rf3{flex-direction:column!important}
+    .mob-scroll{overflow-x:auto!important;-webkit-overflow-scrolling:touch!important}
+    .mob-scroll>*{min-width:480px!important}
+  }
+</style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+  <!-- SLIDE 01: Cover -->
+  <section><div class="s" style="justify-content:center;gap:clamp(16px,2.5vh,32px)">
+  <div class="stripe"></div>
+  <div style="display:flex;align-items:center;gap:12px">
+    <img src="https://www.google.com/s2/favicons?domain=wilmo.ai&sz=128" style="border-radius:12px;width:clamp(36px,5vh,54px);height:clamp(36px,5vh,54px);object-fit:contain">
+    <span class="tag">SEO / AEO Proposal</span>
+  </div>
+  <div>
+    <h2 style="font-size:clamp(28px,5.5vh,62px);margin-bottom:clamp(10px,1.5vh,18px)">How Wilmo Can Own AI Search in Ecommerce Support</h2>
+    <p style="font-size:clamp(16px,2.4vh,26px);color:var(--ink2);line-height:1.5;margin:0;font-weight:400;max-width:75ch">You have the right product. The gap is visibility. Every buyer asking AI about ecommerce support automation gets sent to Gorgias, Yuma, or Intercom. Here is how to change that.</p>
+  </div>
+  <div style="display:flex;align-items:center;gap:clamp(16px,2vw,28px);margin-top:clamp(8px,1.5vh,20px)">
+    <a href="https://www.aipeekaboo.com" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:8px;text-decoration:none">
+      <span style="font-size:clamp(10px,1.3vh,14px);color:var(--ink4)">Powered by</span>
+      <img src="https://www.aipeekaboo.com/images/peekaboo-logo-black.png" style="height:clamp(12px,1.8vh,20px);width:auto;opacity:.6">
+    </a>
+    <span style="color:var(--rule)">|</span>
+    <span style="font-size:clamp(10px,1.3vh,14px);color:var(--ink4)">Prepared for Wilmo &middot; April 2026</span>
+  </div>
+</div></section>
+
+  <!-- SLIDE 02: Why SEO & AEO -->
+  <section><div class="s">
+  <div class="stripe"></div>
+  <div class="hdr">
+    <div style="display:flex;align-items:center;gap:10px">
+      <img src="https://www.google.com/s2/favicons?domain=wilmo.ai&sz=128" style="border-radius:10px;width:clamp(26px,3.5vh,40px);height:clamp(26px,3.5vh,40px);object-fit:contain">
+      <span class="tag">SEO / AEO Proposal</span>
+    </div>
+    <div class="hdr-right">
+      <div class="snum">02 / 12</div>
+      <a href="https://www.aipeekaboo.com" target="_blank" rel="noopener" class="powered"><span>Powered by</span><img src="https://www.aipeekaboo.com/images/peekaboo-logo-black.png" alt="AI Peekaboo"></a>
+    </div>
+  </div>
+  <div class="divider"></div>
+  <h2 style="margin-top:1vh">Why Invest in <span style="color:var(--accent)">SEO &amp; AEO Now</span></h2>
+  <div class="rg2" style="gap:clamp(12px,2vw,24px);flex:1;min-height:0;align-items:start">
+    <div style="display:flex;flex-direction:column;gap:clamp(10px,1.4vh,16px)">
+      <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(12px,1.7vh,20px) clamp(14px,1.7vw,20px)">
+        <div style="font-size:clamp(13px,1.8vh,18px);font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ink4);margin-bottom:clamp(6px,0.9vh,10px)">The old playbook</div>
+        <p style="font-size:clamp(14px,2vh,19px);color:var(--ink2);line-height:1.6;margin:0">Buyers used Google to find software. You ranked, they clicked, they converted. SEO meant keywords and backlinks.</p>
+      </div>
+      <div style="background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:10px;padding:clamp(12px,1.7vh,20px) clamp(14px,1.7vw,20px)">
+        <div style="font-size:clamp(13px,1.8vh,18px);font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent-dark);margin-bottom:clamp(6px,0.9vh,10px)">The new reality</div>
+        <p style="font-size:clamp(14px,2vh,19px);color:var(--ink2);line-height:1.6;margin:0">Buyers now ask AI. ChatGPT, Perplexity, and Google AI Mode answer with brands they trust. If your content does not signal authority, you are not in the answer.</p>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:clamp(10px,1.4vh,16px)">
+      <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(12px,1.7vh,20px) clamp(14px,1.7vw,20px)">
+        <div style="font-size:clamp(22px,4vh,44px);font-weight:700;color:var(--accent);font-family:'DM Mono',monospace;letter-spacing:-.03em;margin-bottom:4px">68%</div>
+        <div style="font-size:clamp(14px,2vh,19px);color:var(--ink2);line-height:1.5">of B2B buyers now use AI tools during vendor research before contacting sales</div>
+      </div>
+      <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(12px,1.7vh,20px) clamp(14px,1.7vw,20px)">
+        <div style="font-size:clamp(22px,4vh,44px);font-weight:700;color:var(--accent);font-family:'DM Mono',monospace;letter-spacing:-.03em;margin-bottom:4px">3x</div>
+        <div style="font-size:clamp(14px,2vh,19px);color:var(--ink2);line-height:1.5">higher close rate from inbound leads who discovered a brand through organic or AI search vs cold outbound</div>
+      </div>
+      <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(12px,1.7vh,20px) clamp(14px,1.7vw,20px)">
+        <div style="font-size:clamp(22px,4vh,44px);font-weight:700;color:var(--accent);font-family:'DM Mono',monospace;letter-spacing:-.03em;margin-bottom:4px">$0</div>
+        <div style="font-size:clamp(14px,2vh,19px);color:var(--ink2);line-height:1.5">cost per click once content ranks. Unlike paid ads, compounding organic traffic does not stop when the budget does</div>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+  <!-- SLIDE 03: Gaps -->
+  <section><div class="s">
+  <div class="stripe"></div>
+  <div class="hdr">
+    <div style="display:flex;align-items:center;gap:10px">
+      <img src="https://www.google.com/s2/favicons?domain=wilmo.ai&sz=128" style="border-radius:10px;width:clamp(26px,3.5vh,40px);height:clamp(26px,3.5vh,40px);object-fit:contain">
+      <span class="tag">SEO / AEO Proposal</span>
+    </div>
+    <div class="hdr-right">
+      <div class="snum">03 / 12</div>
+      <a href="https://www.aipeekaboo.com" target="_blank" rel="noopener" class="powered"><span>Powered by</span><img src="https://www.aipeekaboo.com/images/peekaboo-logo-black.png" alt="AI Peekaboo"></a>
+    </div>
+  </div>
+  <div class="divider"></div>
+  <h2 style="margin-top:1vh">The 4 Gaps Holding Wilmo Back from <span style="color:var(--accent)">Category Visibility</span></h2>
+  <p style="font-size:clamp(15px,2.1vh,21px);color:var(--ink2);line-height:1.5;margin:0 0 clamp(14px,2vh,22px);font-weight:500">wilmo.ai ranks for 5 organic keywords and has 0 AI citations. The product is strong. The visibility is not there yet.</p>
+  <div class="rg2" style="gap:clamp(10px,1.4vw,16px);flex:1;min-height:0">
+    <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(14px,2vh,24px) clamp(16px,2vw,24px);display:flex;flex-direction:column;gap:clamp(8px,1.1vh,14px)">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:4px">
+        <div style="width:clamp(28px,3.5vh,38px);height:clamp(28px,3.5vh,38px);border-radius:8px;background:var(--red-bg);border:1px solid var(--red-bd);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        </div>
+        <div style="font-size:clamp(15px,2.2vh,22px);font-weight:700;color:var(--ink)">Zero Organic Footprint</div>
+      </div>
+      <div style="font-size:clamp(14px,1.9vh,18px);color:var(--ink2);line-height:1.6">wilmo.ai ranks for 5 keywords, all brand-adjacent. Buyers searching for "AI customer support for ecommerce" or "automate Shopify support tickets" land on Gorgias, Tidio, or Yuma content. Wilmo is invisible at every stage of the search journey.</div>
+    </div>
+    <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(14px,2vh,24px) clamp(16px,2vw,24px);display:flex;flex-direction:column;gap:clamp(8px,1.1vh,14px)">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:4px">
+        <div style="width:clamp(28px,3.5vh,38px);height:clamp(28px,3.5vh,38px);border-radius:8px;background:var(--red-bg);border:1px solid var(--red-bd);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px"><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/><circle cx="12" cy="12" r="10"/></svg>
+        </div>
+        <div style="font-size:clamp(15px,2.2vh,22px);font-weight:700;color:var(--ink)">Not Cited by Any AI Model</div>
+      </div>
+      <div style="font-size:clamp(14px,1.9vh,18px);color:var(--ink2);line-height:1.6">ChatGPT, Perplexity, Google AI Mode, and Gemini do not mention Wilmo when buyers ask about ecommerce support automation. The models answer with Gorgias, Intercom, and Zendesk because those brands have built the content signals AI relies on.</div>
+    </div>
+    <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(14px,2vh,24px) clamp(16px,2vw,24px);display:flex;flex-direction:column;gap:clamp(8px,1.1vh,14px)">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:4px">
+        <div style="width:clamp(28px,3.5vh,38px);height:clamp(28px,3.5vh,38px);border-radius:8px;background:var(--warn-bg);border:1px solid var(--warn-bd);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--warn)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <div style="font-size:clamp(15px,2.2vh,22px);font-weight:700;color:var(--ink)">Competitors Own Every Decision Search</div>
+      </div>
+      <div style="font-size:clamp(14px,1.9vh,18px);color:var(--ink2);line-height:1.6">Queries like "gorgias alternative," "best Shopify helpdesk," and "automate ecommerce support" drive buyers directly to funded competitors. None of this traffic has a Wilmo page to land on. These are the highest-intent searches in the category.</div>
+    </div>
+    <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(14px,2vh,24px) clamp(16px,2vw,24px);display:flex;flex-direction:column;gap:clamp(8px,1.1vh,14px)">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:4px">
+        <div style="width:clamp(28px,3.5vh,38px);height:clamp(28px,3.5vh,38px);border-radius:8px;background:var(--warn-bg);border:1px solid var(--warn-bd);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--warn)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        </div>
+        <div style="font-size:clamp(15px,2.2vh,22px);font-weight:700;color:var(--ink)">No Use-Case Landing Pages</div>
+      </div>
+      <div style="font-size:clamp(14px,1.9vh,18px);color:var(--ink2);line-height:1.6">Buyers searching for "automated refund processing," "ecommerce returns automation," or "AI order tracking software" are Wilmo's highest-intent prospects. Today they find competitor pages. Wilmo has no content targeting any of these use cases.</div>
+    </div>
+  </div>
+</div></section>
+
+
+  <!-- SLIDE 04: SEO Today -->
+  <section><div class="s">
+  <div class="stripe"></div>
+  <div class="hdr">
+    <div style="display:flex;align-items:center;gap:10px">
+      <img src="https://www.google.com/s2/favicons?domain=wilmo.ai&sz=128" style="border-radius:10px;width:clamp(26px,3.5vh,40px);height:clamp(26px,3.5vh,40px);object-fit:contain">
+      <span class="tag">SEO / AEO Proposal</span>
+    </div>
+    <div class="hdr-right">
+      <div class="snum">04 / 12</div>
+      <a href="https://www.aipeekaboo.com" target="_blank" rel="noopener" class="powered"><span>Powered by</span><img src="https://www.aipeekaboo.com/images/peekaboo-logo-black.png" alt="AI Peekaboo"></a>
+    </div>
+  </div>
+  <div class="divider"></div>
+  <h2 style="margin-top:1vh">Where Wilmo Stands Today <span style="color:var(--accent)">(SEO)</span></h2>
+  <p style="font-size:clamp(15px,2.1vh,21px);color:var(--ink2);line-height:1.5;margin:0 0 clamp(10px,1.5vh,16px);font-weight:500">Wilmo vs its direct competitors in organic search. Data from Ahrefs.</p>
+  <div style="flex:1;min-height:0;display:flex;flex-direction:column;gap:clamp(8px,1.2vh,14px)">
+    <!-- Table header -->
+    <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:clamp(8px,1.2vw,14px);padding:0 clamp(10px,1.3vw,14px)">
+      <div style="font-size:clamp(10px,1.2vh,12px);font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink4)">Company</div>
+      <div style="font-size:clamp(10px,1.2vh,12px);font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink4);text-align:right">Domain Rating</div>
+      <div style="font-size:clamp(10px,1.2vh,12px);font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink4);text-align:right">Organic Keywords</div>
+      <div style="font-size:clamp(10px,1.2vh,12px);font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink4);text-align:right">Monthly Traffic</div>
+    </div>
+    <!-- Gorgias -->
+    <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:clamp(8px,1.2vw,14px);background:var(--paper2);border:1px solid var(--rule);border-radius:8px;padding:clamp(10px,1.4vh,16px) clamp(10px,1.3vw,14px);align-items:center">
+      <div style="display:flex;align-items:center;gap:10px"><img src="https://www.google.com/s2/favicons?domain=gorgias.com&sz=64" style="width:20px;height:20px;border-radius:4px;flex-shrink:0"><span style="font-size:clamp(14px,2vh,19px);font-weight:600;color:var(--ink)">Gorgias</span></div>
+      <div style="font-family:'DM Mono',monospace;font-size:clamp(14px,2vh,19px);color:var(--ink2);text-align:right">72</div>
+      <div style="font-family:'DM Mono',monospace;font-size:clamp(14px,2vh,19px);color:var(--ink2);text-align:right">38,200</div>
+      <div style="font-family:'DM Mono',monospace;font-size:clamp(14px,2vh,19px);color:var(--ink2);text-align:right">194K</div>
+    </div>
+    <!-- Tidio -->
+    <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:clamp(8px,1.2vw,14px);background:var(--paper2);border:1px solid var(--rule);border-radius:8px;padding:clamp(10px,1.4vh,16px) clamp(10px,1.3vw,14px);align-items:center">
+      <div style="display:flex;align-items:center;gap:10px"><img src="https://www.google.com/s2/favicons?domain=tidio.com&sz=64" style="width:20px;height:20px;border-radius:4px;flex-shrink:0"><span style="font-size:clamp(14px,2vh,19px);font-weight:600;color:var(--ink)">Tidio</span></div>
+      <div style="font-family:'DM Mono',monospace;font-size:clamp(14px,2vh,19px);color:var(--ink2);text-align:right">63</div>
+      <div style="font-family:'DM Mono',monospace;font-size:clamp(14px,2vh,19px);color:var(--ink2);text-align:right">21,800</div>
+      <div style="font-family:'DM Mono',monospace;font-size:clamp(14px,2vh,19px);color:var(--ink2);text-align:right">107K</div>
+    </div>
+    <!-- Yuma AI -->
+    <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:clamp(8px,1.2vw,14px);background:var(--paper2);border:1px solid var(--rule);border-radius:8px;padding:clamp(10px,1.4vh,16px) clamp(10px,1.3vw,14px);align-items:center">
+      <div style="display:flex;align-items:center;gap:10px"><img src="https://www.google.com/s2/favicons?domain=yuma.ai&sz=64" style="width:20px;height:20px;border-radius:4px;flex-shrink:0"><span style="font-size:clamp(14px,2vh,19px);font-weight:600;color:var(--ink)">Yuma AI</span></div>
+      <div style="font-family:'DM Mono',monospace;font-size:clamp(14px,2vh,19px);color:var(--ink2);text-align:right">33</div>
+      <div style="font-family:'DM Mono',monospace;font-size:clamp(14px,2vh,19px);color:var(--ink2);text-align:right">850</div>
+      <div style="font-family:'DM Mono',monospace;font-size:clamp(14px,2vh,19px);color:var(--ink2);text-align:right">4,400</div>
+    </div>
+    <!-- Siena AI -->
+    <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:clamp(8px,1.2vw,14px);background:var(--paper2);border:1px solid var(--rule);border-radius:8px;padding:clamp(10px,1.4vh,16px) clamp(10px,1.3vw,14px);align-items:center">
+      <div style="display:flex;align-items:center;gap:10px"><img src="https://www.google.com/s2/favicons?domain=siena.cx&sz=64" style="width:20px;height:20px;border-radius:4px;flex-shrink:0"><span style="font-size:clamp(14px,2vh,19px);font-weight:600;color:var(--ink)">Siena AI</span></div>
+      <div style="font-family:'DM Mono',monospace;font-size:clamp(14px,2vh,19px);color:var(--ink2);text-align:right">21</div>
+      <div style="font-family:'DM Mono',monospace;font-size:clamp(14px,2vh,19px);color:var(--ink2);text-align:right">180</div>
+      <div style="font-family:'DM Mono',monospace;font-size:clamp(14px,2vh,19px);color:var(--ink2);text-align:right">890</div>
+    </div>
+    <!-- Wilmo (You) -->
+    <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:clamp(8px,1.2vw,14px);background:var(--accent-bg);border:2px solid var(--accent-bd);border-radius:8px;padding:clamp(10px,1.4vh,16px) clamp(10px,1.3vw,14px);align-items:center">
+      <div style="display:flex;align-items:center;gap:10px">
+        <img src="https://www.google.com/s2/favicons?domain=wilmo.ai&sz=64" style="width:20px;height:20px;border-radius:4px;flex-shrink:0">
+        <span style="font-size:clamp(14px,2vh,19px);font-weight:700;color:var(--accent-dark)">Wilmo</span>
+        <span style="font-size:clamp(9px,1.1vh,11px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-dark);background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:3px;padding:1px 6px">You</span>
+      </div>
+      <div style="font-family:'DM Mono',monospace;font-size:clamp(14px,2vh,19px);color:var(--accent-dark);font-weight:700;text-align:right">~3</div>
+      <div style="font-family:'DM Mono',monospace;font-size:clamp(14px,2vh,19px);color:var(--accent-dark);font-weight:700;text-align:right">5</div>
+      <div style="font-family:'DM Mono',monospace;font-size:clamp(14px,2vh,19px);color:var(--accent-dark);font-weight:700;text-align:right">~2</div>
+    </div>
+    <!-- Callout -->
+    <div style="background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:8px;padding:clamp(10px,1.4vh,16px) clamp(14px,1.8vw,20px)">
+      <p style="font-size:clamp(13px,1.8vh,18px);color:var(--ink2);margin:0;line-height:1.55">Starting from a clean slate is an advantage, not a deficit. Yuma AI was at zero 18 months ago and now ranks for 850 keywords. The difference is a deliberate content program. Every keyword Wilmo targets now is ground won outright, with no legacy content to compete against.</p>
+    </div>
+  </div>
+</div></section>
+
+  <!-- SLIDE 05: AI Today -->
+  <section><div class="s">
+  <div class="stripe"></div>
+  <div class="hdr">
+    <div style="display:flex;align-items:center;gap:10px">
+      <img src="https://www.google.com/s2/favicons?domain=wilmo.ai&sz=128" style="border-radius:10px;width:clamp(26px,3.5vh,40px);height:clamp(26px,3.5vh,40px);object-fit:contain">
+      <span class="tag">SEO / AEO Proposal</span>
+    </div>
+    <div class="hdr-right">
+      <div class="snum">05 / 12</div>
+      <a href="https://www.aipeekaboo.com" target="_blank" rel="noopener" class="powered"><span>Powered by</span><img src="https://www.aipeekaboo.com/images/peekaboo-logo-black.png" alt="AI Peekaboo"></a>
+    </div>
+  </div>
+  <div class="divider"></div>
+  <h2 style="margin-top:1vh">Where Wilmo Stands Today <span style="color:var(--accent)">(AI Search)</span></h2>
+
+  <div class="rg2" style="gap:clamp(10px,1.5vw,18px);flex:1;min-height:0">
+    <!-- LEFT: score + prompts -->
+    <div style="display:flex;flex-direction:column;gap:clamp(8px,1.1vh,12px);min-height:0">
+      <!-- Score header -->
+      <div style="display:flex;align-items:center;gap:clamp(14px,2vw,22px);background:var(--red-bg);border:1px solid var(--red-bd);border-radius:10px;padding:clamp(10px,1.4vh,16px) clamp(14px,1.8vw,20px);flex-shrink:0">
+        <div style="text-align:center;flex-shrink:0">
+          <div style="font-family:'DM Mono',monospace;font-size:clamp(36px,6vh,64px);font-weight:500;color:var(--red);letter-spacing:-.04em;line-height:1">0</div>
+          <div style="font-size:clamp(10px,1.2vh,12px);color:var(--red);font-weight:700;letter-spacing:.08em;text-transform:uppercase">AI Score</div>
+        </div>
+        <div style="flex:1">
+          <div style="font-size:clamp(14px,2vh,20px);font-weight:700;color:var(--ink);margin-bottom:4px">Not yet visible in AI</div>
+          <div style="font-size:clamp(12px,1.6vh,16px);color:var(--ink3);line-height:1.5">0 citations across 43 prompts analyzed on ChatGPT, Perplexity, Google AI Mode, and Gemini. Every buying prompt sends prospects to a competitor.</div>
+        </div>
+      </div>
+      <!-- Prompts table -->
+      <div style="flex:1;min-height:0;overflow:hidden;display:flex;flex-direction:column;gap:clamp(3px,0.5vh,5px)">
+        <div style="font-size:clamp(10px,1.2vh,12px);font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink4);margin-bottom:2px">Prompts Wilmo Should Be Winning</div>
+        <!-- prompt rows -->
+        <div style="display:grid;grid-template-columns:1fr auto auto;gap:8px;align-items:center;background:var(--red-bg);border:1px solid var(--red-bd);border-radius:6px;padding:clamp(6px,0.9vh,10px) clamp(10px,1.2vw,14px)">
+          <span style="font-size:clamp(12px,1.65vh,16px);color:var(--ink2)">Best AI customer support for Shopify brands</span>
+          <span style="font-family:'DM Mono',monospace;font-size:clamp(11px,1.45vh,14px);color:var(--red);font-weight:600;white-space:nowrap">0 mentions</span>
+          <span style="font-size:clamp(9px,1.05vh,11px);font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--red);background:var(--red-bg);border:1px solid var(--red-bd);border-radius:3px;padding:1px 6px;white-space:nowrap">Not cited</span>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr auto auto;gap:8px;align-items:center;background:var(--red-bg);border:1px solid var(--red-bd);border-radius:6px;padding:clamp(6px,0.9vh,10px) clamp(10px,1.2vw,14px)">
+          <span style="font-size:clamp(12px,1.65vh,16px);color:var(--ink2)">Best Gorgias alternative with AI automation</span>
+          <span style="font-family:'DM Mono',monospace;font-size:clamp(11px,1.45vh,14px);color:var(--red);font-weight:600;white-space:nowrap">0 mentions</span>
+          <span style="font-size:clamp(9px,1.05vh,11px);font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--red);background:var(--red-bg);border:1px solid var(--red-bd);border-radius:3px;padding:1px 6px;white-space:nowrap">Not cited</span>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr auto auto;gap:8px;align-items:center;background:var(--red-bg);border:1px solid var(--red-bd);border-radius:6px;padding:clamp(6px,0.9vh,10px) clamp(10px,1.2vw,14px)">
+          <span style="font-size:clamp(12px,1.65vh,16px);color:var(--ink2)">How to automate customer support for an online store</span>
+          <span style="font-family:'DM Mono',monospace;font-size:clamp(11px,1.45vh,14px);color:var(--red);font-weight:600;white-space:nowrap">0 mentions</span>
+          <span style="font-size:clamp(9px,1.05vh,11px);font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--red);background:var(--red-bg);border:1px solid var(--red-bd);border-radius:3px;padding:1px 6px;white-space:nowrap">Not cited</span>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr auto auto;gap:8px;align-items:center;background:var(--red-bg);border:1px solid var(--red-bd);border-radius:6px;padding:clamp(6px,0.9vh,10px) clamp(10px,1.2vw,14px)">
+          <span style="font-size:clamp(12px,1.65vh,16px);color:var(--ink2)">AI helpdesk software for ecommerce brands</span>
+          <span style="font-family:'DM Mono',monospace;font-size:clamp(11px,1.45vh,14px);color:var(--red);font-weight:600;white-space:nowrap">0 mentions</span>
+          <span style="font-size:clamp(9px,1.05vh,11px);font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--red);background:var(--red-bg);border:1px solid var(--red-bd);border-radius:3px;padding:1px 6px;white-space:nowrap">Not cited</span>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr auto auto;gap:8px;align-items:center;background:var(--red-bg);border:1px solid var(--red-bd);border-radius:6px;padding:clamp(6px,0.9vh,10px) clamp(10px,1.2vw,14px)">
+          <span style="font-size:clamp(12px,1.65vh,16px);color:var(--ink2)">Ecommerce returns and refund automation software</span>
+          <span style="font-family:'DM Mono',monospace;font-size:clamp(11px,1.45vh,14px);color:var(--red);font-weight:600;white-space:nowrap">0 mentions</span>
+          <span style="font-size:clamp(9px,1.05vh,11px);font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--red);background:var(--red-bg);border:1px solid var(--red-bd);border-radius:3px;padding:1px 6px;white-space:nowrap">Not cited</span>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr auto auto;gap:8px;align-items:center;background:var(--red-bg);border:1px solid var(--red-bd);border-radius:6px;padding:clamp(6px,0.9vh,10px) clamp(10px,1.2vw,14px)">
+          <span style="font-size:clamp(12px,1.65vh,16px);color:var(--ink2)">How to reduce customer support costs for ecommerce</span>
+          <span style="font-family:'DM Mono',monospace;font-size:clamp(11px,1.45vh,14px);color:var(--red);font-weight:600;white-space:nowrap">0 mentions</span>
+          <span style="font-size:clamp(9px,1.05vh,11px);font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--red);background:var(--red-bg);border:1px solid var(--red-bd);border-radius:3px;padding:1px 6px;white-space:nowrap">Not cited</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: cited domains + callout -->
+    <div style="display:flex;flex-direction:column;gap:clamp(8px,1.1vh,12px);min-height:0">
+      <div style="font-size:clamp(10px,1.2vh,12px);font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink4)">Who AI Cites Instead</div>
+      <div style="flex:1;min-height:0;display:flex;flex-direction:column;gap:clamp(4px,0.6vh,7px);overflow:hidden">
+        <!-- domain rows -->
+        <div style="display:flex;align-items:center;gap:10px;background:var(--warn-bg);border:1px solid var(--warn-bd);border-radius:6px;padding:clamp(7px,1vh,11px) clamp(10px,1.2vw,14px)">
+          <img src="https://www.google.com/s2/favicons?domain=gorgias.com&sz=64" style="width:18px;height:18px;border-radius:3px;flex-shrink:0">
+          <span style="font-size:clamp(13px,1.8vh,17px);font-weight:600;color:var(--ink);flex:1">gorgias.com</span>
+          <span style="font-size:clamp(10px,1.2vh,12px);color:var(--warn);font-weight:700">Competitor</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;background:var(--paper2);border:1px solid var(--rule);border-radius:6px;padding:clamp(7px,1vh,11px) clamp(10px,1.2vw,14px)">
+          <img src="https://www.google.com/s2/favicons?domain=intercom.com&sz=64" style="width:18px;height:18px;border-radius:3px;flex-shrink:0">
+          <span style="font-size:clamp(13px,1.8vh,17px);font-weight:600;color:var(--ink);flex:1">intercom.com</span>
+          <span style="font-size:clamp(10px,1.2vh,12px);color:var(--ink4)">Competitor</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;background:var(--paper2);border:1px solid var(--rule);border-radius:6px;padding:clamp(7px,1vh,11px) clamp(10px,1.2vw,14px)">
+          <img src="https://www.google.com/s2/favicons?domain=zendesk.com&sz=64" style="width:18px;height:18px;border-radius:3px;flex-shrink:0">
+          <span style="font-size:clamp(13px,1.8vh,17px);font-weight:600;color:var(--ink);flex:1">zendesk.com</span>
+          <span style="font-size:clamp(10px,1.2vh,12px);color:var(--ink4)">Competitor</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;background:var(--paper2);border:1px solid var(--rule);border-radius:6px;padding:clamp(7px,1vh,11px) clamp(10px,1.2vw,14px)">
+          <img src="https://www.google.com/s2/favicons?domain=tidio.com&sz=64" style="width:18px;height:18px;border-radius:3px;flex-shrink:0">
+          <span style="font-size:clamp(13px,1.8vh,17px);font-weight:600;color:var(--ink);flex:1">tidio.com</span>
+          <span style="font-size:clamp(10px,1.2vh,12px);color:var(--ink4)">Competitor</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;background:var(--paper2);border:1px solid var(--rule);border-radius:6px;padding:clamp(7px,1vh,11px) clamp(10px,1.2vw,14px)">
+          <img src="https://www.google.com/s2/favicons?domain=yuma.ai&sz=64" style="width:18px;height:18px;border-radius:3px;flex-shrink:0">
+          <span style="font-size:clamp(13px,1.8vh,17px);font-weight:600;color:var(--ink);flex:1">yuma.ai</span>
+          <span style="font-size:clamp(10px,1.2vh,12px);color:var(--ink4)">Competitor</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;background:var(--paper2);border:1px solid var(--rule);border-radius:6px;padding:clamp(7px,1vh,11px) clamp(10px,1.2vw,14px)">
+          <img src="https://www.google.com/s2/favicons?domain=reddit.com&sz=64" style="width:18px;height:18px;border-radius:3px;flex-shrink:0">
+          <span style="font-size:clamp(13px,1.8vh,17px);font-weight:600;color:var(--ink);flex:1">reddit.com</span>
+          <span style="font-size:clamp(10px,1.2vh,12px);color:var(--ink4)">Community</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;background:var(--paper2);border:1px solid var(--rule);border-radius:6px;padding:clamp(7px,1vh,11px) clamp(10px,1.2vw,14px)">
+          <img src="https://www.google.com/s2/favicons?domain=g2.com&sz=64" style="width:18px;height:18px;border-radius:3px;flex-shrink:0">
+          <span style="font-size:clamp(13px,1.8vh,17px);font-weight:600;color:var(--ink);flex:1">g2.com</span>
+          <span style="font-size:clamp(10px,1.2vh,12px);color:var(--ink4)">Review site</span>
+        </div>
+      </div>
+      <div style="background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:8px;padding:clamp(10px,1.4vh,16px) clamp(14px,1.8vw,20px);flex-shrink:0">
+        <p style="font-size:clamp(13px,1.8vh,17px);color:var(--ink2);margin:0;line-height:1.55">Wilmo has 0 AI citations today. Every citation earned from this baseline is net new market presence. The brands getting cited now built that position through content, not just product. This is exactly where we start.</p>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+
+  <!-- SLIDE 06: Keyword Opportunity -->
+  <section><div class="s">
+  <div class="stripe"></div>
+  <div class="hdr">
+    <div style="display:flex;align-items:center;gap:10px">
+      <img src="https://www.google.com/s2/favicons?domain=wilmo.ai&sz=128" style="border-radius:10px;width:clamp(26px,3.5vh,40px);height:clamp(26px,3.5vh,40px);object-fit:contain">
+      <span class="tag">SEO / AEO Proposal</span>
+    </div>
+    <div class="hdr-right">
+      <div class="snum">06 / 12</div>
+      <a href="https://www.aipeekaboo.com" target="_blank" rel="noopener" class="powered"><span>Powered by</span><img src="https://www.aipeekaboo.com/images/peekaboo-logo-black.png" alt="AI Peekaboo"></a>
+    </div>
+  </div>
+  <div class="divider"></div>
+  <h2 style="margin-top:1vh">The <span style="color:var(--accent)">Keyword Opportunity</span></h2>
+  <p style="font-size:clamp(16px,2.3vh,23px);color:var(--ink2);line-height:1.5;margin:0 0 clamp(14px,2vh,22px);font-weight:500">Three keyword clusters covering the full buyer journey from awareness to decision. Wilmo has no content targeting any of them today.</p>
+  <div class="rg3" style="gap:clamp(10px,1.4vw,16px);flex:1;min-height:0">
+
+    <!-- Cluster 1 -->
+    <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(12px,1.7vh,20px) clamp(14px,1.7vw,20px);display:flex;flex-direction:column;gap:clamp(8px,1.1vh,12px)">
+      <div style="font-size:clamp(10px,1.2vh,12px);font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink4)">Cluster 1 &middot; Awareness</div>
+      <div style="font-size:clamp(16px,2.3vh,23px);font-weight:700;color:var(--ink)">Ecommerce Support Automation</div>
+      <div style="font-size:clamp(13px,1.7vh,16px);color:var(--ink3);line-height:1.5">Buyers discovering what AI-powered support can do for their store. High volume, top of funnel.</div>
+      <div style="display:flex;flex-direction:column;gap:clamp(5px,0.7vh,8px);flex:1">
+        <div style="background:#fff;border:1px solid var(--rule);border-radius:6px;padding:clamp(7px,1vh,11px) clamp(10px,1.2vw,14px);font-size:clamp(13px,1.8vh,17px);color:var(--ink2)">AI customer support for ecommerce</div>
+        <div style="background:#fff;border:1px solid var(--rule);border-radius:6px;padding:clamp(7px,1vh,11px) clamp(10px,1.2vw,14px);font-size:clamp(13px,1.8vh,17px);color:var(--ink2)">Automate Shopify support tickets</div>
+        <div style="background:#fff;border:1px solid var(--rule);border-radius:6px;padding:clamp(7px,1vh,11px) clamp(10px,1.2vw,14px);font-size:clamp(13px,1.8vh,17px);color:var(--ink2)">Ecommerce helpdesk software</div>
+        <div style="background:#fff;border:1px solid var(--rule);border-radius:6px;padding:clamp(7px,1vh,11px) clamp(10px,1.2vw,14px);font-size:clamp(13px,1.8vh,17px);color:var(--ink2)">AI ticketing system for online store</div>
+      </div>
+    </div>
+
+    <!-- Cluster 2 -->
+    <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(12px,1.7vh,20px) clamp(14px,1.7vw,20px);display:flex;flex-direction:column;gap:clamp(8px,1.1vh,12px)">
+      <div style="font-size:clamp(10px,1.2vh,12px);font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink4)">Cluster 2 &middot; Consideration</div>
+      <div style="font-size:clamp(16px,2.3vh,23px);font-weight:700;color:var(--ink)">Helpdesk Alternatives</div>
+      <div style="font-size:clamp(13px,1.7vh,16px);color:var(--ink3);line-height:1.5">Buyers actively evaluating their options. Highest conversion rate in the category.</div>
+      <div style="display:flex;flex-direction:column;gap:clamp(5px,0.7vh,8px);flex:1">
+        <div style="background:#fff;border:1px solid var(--rule);border-radius:6px;padding:clamp(7px,1vh,11px) clamp(10px,1.2vw,14px);font-size:clamp(13px,1.8vh,17px);color:var(--ink2)">Best Gorgias alternative</div>
+        <div style="background:#fff;border:1px solid var(--rule);border-radius:6px;padding:clamp(7px,1vh,11px) clamp(10px,1.2vw,14px);font-size:clamp(13px,1.8vh,17px);color:var(--ink2)">Zendesk alternative for ecommerce</div>
+        <div style="background:#fff;border:1px solid var(--rule);border-radius:6px;padding:clamp(7px,1vh,11px) clamp(10px,1.2vw,14px);font-size:clamp(13px,1.8vh,17px);color:var(--ink2)">Freshdesk alternative Shopify</div>
+        <div style="background:#fff;border:1px solid var(--rule);border-radius:6px;padding:clamp(7px,1vh,11px) clamp(10px,1.2vw,14px);font-size:clamp(13px,1.8vh,17px);color:var(--ink2)">Tidio vs Gorgias for ecommerce</div>
+      </div>
+    </div>
+
+    <!-- Cluster 3 -->
+    <div style="background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:10px;padding:clamp(12px,1.7vh,20px) clamp(14px,1.7vw,20px);display:flex;flex-direction:column;gap:clamp(8px,1.1vh,12px)">
+      <div style="font-size:clamp(10px,1.2vh,12px);font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-dark)">Cluster 3 &middot; Decision</div>
+      <div style="font-size:clamp(16px,2.3vh,23px);font-weight:700;color:var(--ink)">Use-Case Keywords</div>
+      <div style="font-size:clamp(13px,1.7vh,16px);color:var(--ink3);line-height:1.5">Buyers searching for a specific outcome Wilmo delivers. These are Wilmo&rsquo;s strongest wins: no other tool is built around these actions.</div>
+      <div style="display:flex;flex-direction:column;gap:clamp(5px,0.7vh,8px);flex:1">
+        <div style="background:#fff;border:1px solid var(--accent-bd);border-radius:6px;padding:clamp(7px,1vh,11px) clamp(10px,1.2vw,14px);font-size:clamp(13px,1.8vh,17px);color:var(--ink2)">Automated refund processing software</div>
+        <div style="background:#fff;border:1px solid var(--accent-bd);border-radius:6px;padding:clamp(7px,1vh,11px) clamp(10px,1.2vw,14px);font-size:clamp(13px,1.8vh,17px);color:var(--ink2)">Ecommerce returns automation</div>
+        <div style="background:#fff;border:1px solid var(--accent-bd);border-radius:6px;padding:clamp(7px,1vh,11px) clamp(10px,1.2vw,14px);font-size:clamp(13px,1.8vh,17px);color:var(--ink2)">AI order tracking for Shopify</div>
+        <div style="background:#fff;border:1px solid var(--accent-bd);border-radius:6px;padding:clamp(7px,1vh,11px) clamp(10px,1.2vw,14px);font-size:clamp(13px,1.8vh,17px);color:var(--ink2)">Trustpilot review automation ecommerce</div>
+      </div>
+    </div>
+
+  </div>
+  <div style="flex-shrink:0;margin-top:clamp(10px,1.5vh,16px);background:var(--paper2);border:1px solid var(--rule);border-radius:6px;padding:clamp(8px,1.1vh,12px) clamp(14px,1.8vw,20px)">
+    <p style="font-size:clamp(13px,1.8vh,17px);color:var(--ink3);margin:0;line-height:1.5">Cluster 3 is where Wilmo wins on differentiation: no competitor has built content around automated refund processing or Trustpilot review automation at scale. These are open doors.</p>
+  </div>
+</div></section>
+
+  <!-- SLIDE 07: Capturing Competitor Search Traffic -->
+  <section><div class="s">
+  <div class="stripe"></div>
+  <div class="hdr">
+    <div style="display:flex;align-items:center;gap:10px">
+      <img src="https://www.google.com/s2/favicons?domain=wilmo.ai&sz=128" style="border-radius:10px;width:clamp(26px,3.5vh,40px);height:clamp(26px,3.5vh,40px);object-fit:contain">
+      <span class="tag">SEO / AEO Proposal</span>
+    </div>
+    <div class="hdr-right">
+      <div class="snum">07 / 12</div>
+      <a href="https://www.aipeekaboo.com" target="_blank" rel="noopener" class="powered"><span>Powered by</span><img src="https://www.aipeekaboo.com/images/peekaboo-logo-black.png" alt="AI Peekaboo"></a>
+    </div>
+  </div>
+  <div class="divider"></div>
+  <h2 style="margin-top:1vh">Capturing <span style="color:var(--accent)">Competitor Search Traffic</span></h2>
+  <p style="font-size:clamp(16px,2.3vh,23px);color:var(--ink2);line-height:1.5;margin:0 0 clamp(14px,2vh,22px);font-weight:500">Ecommerce operators actively search for alternatives to tools they already use. We create content that positions Wilmo as the answer every time someone asks AI or Google for a better option.</p>
+  <div class="rf3" style="display:flex;align-items:stretch;gap:clamp(6px,1vw,12px);flex:1;min-height:0">
+    <!-- Competitors column -->
+    <div style="flex:1;background:var(--paper2);border:1px solid var(--rule);border-radius:8px;padding:clamp(10px,1.4vh,18px) clamp(12px,1.4vw,18px)">
+      <div style="font-size:clamp(14px,1.8vh,18px);font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--ink4);padding-bottom:8px;border-bottom:1px solid var(--rule);margin-bottom:clamp(14px,1.8vh,20px)">Wilmo Competitors</div>
+      <div style="display:flex;flex-direction:column;gap:clamp(8px,1.3vh,14px)">
+        <div style="display:flex;align-items:center;gap:12px"><img src="https://www.google.com/s2/favicons?domain=gorgias.com&sz=64" style="width:22px;height:22px;border-radius:4px;flex-shrink:0"><span style="font-size:clamp(15px,2.1vh,19px);font-weight:600;color:var(--ink)">Gorgias</span></div>
+        <div style="display:flex;align-items:center;gap:12px"><img src="https://www.google.com/s2/favicons?domain=zendesk.com&sz=64" style="width:22px;height:22px;border-radius:4px;flex-shrink:0"><span style="font-size:clamp(15px,2.1vh,19px);font-weight:600;color:var(--ink)">Zendesk</span></div>
+        <div style="display:flex;align-items:center;gap:12px"><img src="https://www.google.com/s2/favicons?domain=freshdesk.com&sz=64" style="width:22px;height:22px;border-radius:4px;flex-shrink:0"><span style="font-size:clamp(15px,2.1vh,19px);font-weight:600;color:var(--ink)">Freshdesk</span></div>
+        <div style="display:flex;align-items:center;gap:12px"><img src="https://www.google.com/s2/favicons?domain=tidio.com&sz=64" style="width:22px;height:22px;border-radius:4px;flex-shrink:0"><span style="font-size:clamp(15px,2.1vh,19px);font-weight:600;color:var(--ink)">Tidio</span></div>
+        <div style="display:flex;align-items:center;gap:12px"><img src="https://www.google.com/s2/favicons?domain=yuma.ai&sz=64" style="width:22px;height:22px;border-radius:4px;flex-shrink:0"><span style="font-size:clamp(15px,2.1vh,19px);font-weight:600;color:var(--ink)">Yuma AI</span></div>
+        <div style="display:flex;align-items:center;gap:12px"><img src="https://www.google.com/s2/favicons?domain=siena.cx&sz=64" style="width:22px;height:22px;border-radius:4px;flex-shrink:0"><span style="font-size:clamp(15px,2.1vh,19px);font-weight:600;color:var(--ink)">Siena AI</span></div>
+      </div>
+    </div>
+    <div style="display:flex;align-items:center;justify-content:center;flex-shrink:0;width:clamp(28px,3.5vw,44px)">
+      <span style="font-size:clamp(22px,3.5vh,36px);font-weight:700;color:var(--accent);line-height:1">+</span>
+    </div>
+    <!-- Differentiators column -->
+    <div style="flex:1;background:var(--paper2);border:1px solid var(--rule);border-radius:8px;padding:clamp(10px,1.4vh,18px) clamp(12px,1.4vw,18px)">
+      <div style="font-size:clamp(14px,1.8vh,18px);font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--ink4);padding-bottom:8px;border-bottom:1px solid var(--rule);margin-bottom:clamp(14px,1.8vh,20px)">What Makes Wilmo Unique</div>
+      <div style="display:flex;flex-direction:column;gap:0">
+        <div style="display:flex;align-items:center;gap:10px;padding:clamp(9px,1.3vh,13px) 0;border-bottom:1px solid var(--rule)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:15px;height:15px;flex-shrink:0"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span style="font-size:clamp(14px,2vh,18px);color:var(--ink2);line-height:1.3">True AI agents that take action: processes refunds, cancels orders, generates return labels</span></div>
+        <div style="display:flex;align-items:center;gap:10px;padding:clamp(9px,1.3vh,13px) 0;border-bottom:1px solid var(--rule)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:15px;height:15px;flex-shrink:0"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg><span style="font-size:clamp(14px,2vh,18px);color:var(--ink2);line-height:1.3">Deep Shopify and backend integrations, not just a chat layer on top</span></div>
+        <div style="display:flex;align-items:center;gap:10px;padding:clamp(9px,1.3vh,13px) 0;border-bottom:1px solid var(--rule)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:15px;height:15px;flex-shrink:0"><circle cx="12" cy="12" r="10"/><polyline points="12 8 12 12 14 14"/></svg><span style="font-size:clamp(14px,2vh,18px);color:var(--ink2);line-height:1.3">Sub-30-second responses in 40+ languages, 24/7 without hiring headcount</span></div>
+        <div style="display:flex;align-items:center;gap:10px;padding:clamp(9px,1.3vh,13px) 0;border-bottom:1px solid var(--rule)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:15px;height:15px;flex-shrink:0"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg><span style="font-size:clamp(14px,2vh,18px);color:var(--ink2);line-height:1.3">80% average automation rate, launch in days not months</span></div>
+        <div style="display:flex;align-items:center;gap:10px;padding:clamp(9px,1.3vh,13px) 0;border-bottom:1px solid var(--rule)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:15px;height:15px;flex-shrink:0"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/></svg><span style="font-size:clamp(14px,2vh,18px);color:var(--ink2);line-height:1.3">Trustpilot review automation with sentiment-aware tone matching</span></div>
+        <div style="display:flex;align-items:center;gap:10px;padding:clamp(9px,1.3vh,13px) 0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:15px;height:15px;flex-shrink:0"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg><span style="font-size:clamp(14px,2vh,18px);color:var(--ink2);line-height:1.3">Up to 60% reduction in support costs with proven customer results</span></div>
+      </div>
+    </div>
+    <div style="display:flex;align-items:center;justify-content:center;flex-shrink:0;width:clamp(28px,3.5vw,44px)">
+      <span style="font-size:clamp(22px,3.5vh,36px);font-weight:700;color:var(--accent);line-height:1">=</span>
+    </div>
+    <!-- Content column -->
+    <div style="flex:1;background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:8px;padding:clamp(10px,1.4vh,18px) clamp(12px,1.4vw,18px)">
+      <div style="font-size:clamp(14px,1.8vh,18px);font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-dark);padding-bottom:8px;border-bottom:1px solid var(--accent-bd);margin-bottom:clamp(14px,1.8vh,20px)">Content to Create First</div>
+      <div style="display:flex;flex-direction:column;gap:0">
+        <div style="display:flex;align-items:flex-start;gap:10px;padding:clamp(9px,1.3vh,13px) 0;border-bottom:1px solid var(--accent-bd)"><img src="https://www.google.com/s2/favicons?domain=gorgias.com&sz=64" style="width:16px;height:16px;border-radius:3px;flex-shrink:0;margin-top:2px"><span style="font-size:clamp(14px,2vh,18px);color:var(--ink);font-weight:500;line-height:1.3">Best Gorgias Alternatives for Shopify Brands That Want Real AI Action</span></div>
+        <div style="display:flex;align-items:flex-start;gap:10px;padding:clamp(9px,1.3vh,13px) 0;border-bottom:1px solid var(--accent-bd)"><img src="https://www.google.com/s2/favicons?domain=zendesk.com&sz=64" style="width:16px;height:16px;border-radius:3px;flex-shrink:0;margin-top:2px"><span style="font-size:clamp(14px,2vh,18px);color:var(--ink);font-weight:500;line-height:1.3">Zendesk vs Wilmo: AI Support Built for Ecommerce, Not Enterprise</span></div>
+        <div style="display:flex;align-items:flex-start;gap:10px;padding:clamp(9px,1.3vh,13px) 0;border-bottom:1px solid var(--accent-bd)"><img src="https://www.google.com/s2/favicons?domain=freshdesk.com&sz=64" style="width:16px;height:16px;border-radius:3px;flex-shrink:0;margin-top:2px"><span style="font-size:clamp(14px,2vh,18px);color:var(--ink);font-weight:500;line-height:1.3">Best Freshdesk Alternatives for Growing Ecommerce Brands</span></div>
+        <div style="display:flex;align-items:flex-start;gap:10px;padding:clamp(9px,1.3vh,13px) 0;border-bottom:1px solid var(--accent-bd)"><img src="https://www.google.com/s2/favicons?domain=tidio.com&sz=64" style="width:16px;height:16px;border-radius:3px;flex-shrink:0;margin-top:2px"><span style="font-size:clamp(14px,2vh,18px);color:var(--ink);font-weight:500;line-height:1.3">Tidio vs Wilmo: When Your Store Outgrows Chatbots</span></div>
+        <div style="display:flex;align-items:flex-start;gap:10px;padding:clamp(9px,1.3vh,13px) 0;border-bottom:1px solid var(--accent-bd)"><img src="https://www.google.com/s2/favicons?domain=yuma.ai&sz=64" style="width:16px;height:16px;border-radius:3px;flex-shrink:0;margin-top:2px"><span style="font-size:clamp(14px,2vh,18px);color:var(--ink);font-weight:500;line-height:1.3">Yuma AI vs Wilmo: Which Actually Resolves Tickets Instead of Drafting Them?</span></div>
+        <div style="display:flex;align-items:flex-start;gap:10px;padding:clamp(9px,1.3vh,13px) 0"><img src="https://www.google.com/s2/favicons?domain=siena.cx&sz=64" style="width:16px;height:16px;border-radius:3px;flex-shrink:0;margin-top:2px"><span style="font-size:clamp(14px,2vh,18px);color:var(--ink);font-weight:500;line-height:1.3">Siena AI Alternatives with Deeper Shopify Backend Integrations</span></div>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+
+  <!-- SLIDE 08: Deliverables -->
+  <section><div class="s">
+  <div class="stripe"></div>
+  <div class="hdr">
+    <div style="display:flex;align-items:center;gap:10px">
+      <img src="https://www.google.com/s2/favicons?domain=wilmo.ai&sz=128" style="border-radius:10px;width:clamp(26px,3.5vh,40px);height:clamp(26px,3.5vh,40px);object-fit:contain">
+      <span class="tag">SEO / AEO Proposal</span>
+    </div>
+    <div class="hdr-right">
+      <div class="snum">08 / 12</div>
+      <a href="https://www.aipeekaboo.com" target="_blank" rel="noopener" class="powered"><span>Powered by</span><img src="https://www.aipeekaboo.com/images/peekaboo-logo-black.png" alt="AI Peekaboo"></a>
+    </div>
+  </div>
+  <div class="divider"></div>
+  <h2 style="margin-top:1vh">What We <span style="color:var(--accent)">Deliver Every Month</span></h2>
+  <p style="font-size:clamp(16px,2.3vh,23px);color:var(--ink2);line-height:1.5;margin:0 0 clamp(20px,2.8vh,30px);font-weight:500">A full managed service covering everything Wilmo needs to grow in search and AI, executed and delivered every single month.</p>
+  <div class="rg2" style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(10px,1.4vw,16px);flex:1;min-height:0;align-content:start">
+    <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(13px,1.7vh,19px) clamp(14px,1.7vw,19px);display:flex;align-items:flex-start;gap:14px">
+      <svg style="width:17px;height:17px;flex-shrink:0;margin-top:3px" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><line x1="10" y1="9" x2="8" y2="9"/></svg>
+      <div style="flex:1;min-width:0">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:clamp(3px,0.4vh,5px)">
+          <div style="font-size:clamp(15px,2.1vh,21px);font-weight:700;color:var(--ink)">8 High-Quality Content Pieces</div>
+          <span style="font-size:clamp(9px,1.05vh,11px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-dark);background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:3px;padding:1px 6px;white-space:nowrap;flex-shrink:0">Per month</span>
+        </div>
+        <div style="font-size:clamp(14px,1.85vh,18px);color:var(--ink3);line-height:1.5">Keyword-targeted articles and landing pages built to rank on Google and get cited by AI. Written to answer the exact questions ecommerce operators ask when evaluating support tools.</div>
+      </div>
+    </div>
+    <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(13px,1.7vh,19px) clamp(14px,1.7vw,19px);display:flex;align-items:flex-start;gap:14px">
+      <svg style="width:17px;height:17px;flex-shrink:0;margin-top:3px" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+      <div style="flex:1;min-width:0">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:clamp(3px,0.4vh,5px)">
+          <div style="font-size:clamp(15px,2.1vh,21px);font-weight:700;color:var(--ink)">Schema Markup Implementation</div>
+          <span style="font-size:clamp(9px,1.05vh,11px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-dark);background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:3px;padding:1px 6px;white-space:nowrap;flex-shrink:0">Site-wide</span>
+        </div>
+        <div style="font-size:clamp(14px,1.85vh,18px);color:var(--ink3);line-height:1.5">Product, FAQ, HowTo, and Organization schema across the Wilmo site so AI models can understand and cite it correctly.</div>
+      </div>
+    </div>
+    <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(13px,1.7vh,19px) clamp(14px,1.7vw,19px);display:flex;align-items:flex-start;gap:14px">
+      <svg style="width:17px;height:17px;flex-shrink:0;margin-top:3px" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+      <div style="flex:1;min-width:0">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:clamp(3px,0.4vh,5px)">
+          <div style="font-size:clamp(15px,2.1vh,21px);font-weight:700;color:var(--ink)">Content Updates and Pruning</div>
+          <span style="font-size:clamp(9px,1.05vh,11px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-dark);background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:3px;padding:1px 6px;white-space:nowrap;flex-shrink:0">Ongoing</span>
+        </div>
+        <div style="font-size:clamp(14px,1.85vh,18px);color:var(--ink3);line-height:1.5">Existing pages refreshed with updated keyword targeting. Stale content consolidated or removed as the site grows.</div>
+      </div>
+    </div>
+    <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(13px,1.7vh,19px) clamp(14px,1.7vw,19px);display:flex;align-items:flex-start;gap:14px">
+      <svg style="width:17px;height:17px;flex-shrink:0;margin-top:3px" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/></svg>
+      <div style="flex:1;min-width:0">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:clamp(3px,0.4vh,5px)">
+          <div style="font-size:clamp(15px,2.1vh,21px);font-weight:700;color:var(--ink)">On-Page SEO Optimization</div>
+          <span style="font-size:clamp(9px,1.05vh,11px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-dark);background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:3px;padding:1px 6px;white-space:nowrap;flex-shrink:0">Ongoing</span>
+        </div>
+        <div style="font-size:clamp(14px,1.85vh,18px);color:var(--ink3);line-height:1.5">Meta titles, headings, and internal linking across all pages, with every page treated as an entry point for a high-intent ecommerce operator.</div>
+      </div>
+    </div>
+    <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(13px,1.7vh,19px) clamp(14px,1.7vw,19px);display:flex;align-items:flex-start;gap:14px">
+      <img src="https://www.google.com/s2/favicons?domain=reddit.com&sz=64" style="width:17px;height:17px;border-radius:3px;flex-shrink:0;margin-top:3px">
+      <div style="flex:1;min-width:0">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:clamp(3px,0.4vh,5px)">
+          <div style="font-size:clamp(15px,2.1vh,21px);font-weight:700;color:var(--ink)">Reddit Presence</div>
+          <span style="font-size:clamp(9px,1.05vh,11px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-dark);background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:3px;padding:1px 6px;white-space:nowrap;flex-shrink:0">1 post per week</span>
+        </div>
+        <div style="font-size:clamp(14px,1.85vh,18px);color:var(--ink3);line-height:1.5">Reddit is <strong style="color:var(--ink)">a top cited source</strong> in AI answers for ecommerce support queries. Weekly posts in r/ecommerce, r/shopify, and r/CustomerService build the brand signals AI uses to recommend tools.</div>
+      </div>
+    </div>
+    <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(13px,1.7vh,19px) clamp(14px,1.7vw,19px);display:flex;align-items:flex-start;gap:14px">
+      <svg style="width:17px;height:17px;flex-shrink:0;margin-top:3px" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+      <div style="flex:1;min-width:0">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:clamp(3px,0.4vh,5px)">
+          <div style="font-size:clamp(15px,2.1vh,21px);font-weight:700;color:var(--ink)">Monthly Reporting</div>
+          <span style="font-size:clamp(9px,1.05vh,11px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-dark);background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:3px;padding:1px 6px;white-space:nowrap;flex-shrink:0">Monthly</span>
+        </div>
+        <div style="font-size:clamp(14px,1.85vh,18px);color:var(--ink3);line-height:1.5">Rankings, traffic, and AI citation data delivered monthly. You always know what moved and what comes next.</div>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+  <!-- SLIDE 09: How We Can Help You -->
+  <section><div class="s">
+  <div class="stripe"></div>
+  <div class="hdr">
+    <div style="display:flex;align-items:center;gap:10px">
+      <img src="https://www.google.com/s2/favicons?domain=wilmo.ai&sz=128" style="border-radius:10px;width:clamp(26px,3.5vh,40px);height:clamp(26px,3.5vh,40px);object-fit:contain">
+      <span class="tag">SEO / AEO Proposal</span>
+    </div>
+    <div class="hdr-right">
+      <div class="snum">09 / 12</div>
+      <a href="https://www.aipeekaboo.com" target="_blank" rel="noopener" class="powered"><span>Powered by</span><img src="https://www.aipeekaboo.com/images/peekaboo-logo-black.png" alt="AI Peekaboo"></a>
+    </div>
+  </div>
+  <div class="divider"></div>
+  <h2 style="margin-top:1vh">How We Can <span style="color:var(--accent)">Help You</span></h2>
+  <div class="rg3" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:clamp(8px,1.2vw,16px);margin-bottom:1.2vh;flex-shrink:0">
+    <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:8px;padding:clamp(10px,1.5vh,18px) clamp(12px,1.5vw,18px)">
+      <div style="font-size:clamp(11px,1.5vh,15px);font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink4);margin-bottom:6px">Trusted by</div>
+      <div style="font-size:clamp(16px,2.4vh,24px);font-weight:700;color:var(--ink);margin-bottom:8px">Hundreds of brands worldwide</div>
+      <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap">
+        <img src="https://www.google.com/s2/favicons?domain=forbespt.com&sz=32" style="width:18px;height:18px;border-radius:3px">
+        <img src="https://www.google.com/s2/favicons?domain=clearer.io&sz=32" style="width:18px;height:18px;border-radius:3px">
+        <img src="https://www.google.com/s2/favicons?domain=reviews.io&sz=32" style="width:18px;height:18px;border-radius:3px">
+        <img src="https://www.google.com/s2/favicons?domain=boostcommerce.net&sz=32" style="width:18px;height:18px;border-radius:3px">
+        <img src="https://www.google.com/s2/favicons?domain=intellibright.com&sz=32" style="width:18px;height:18px;border-radius:3px">
+        <span style="font-size:clamp(10px,1.2vh,12px);color:var(--ink4)">+ hundreds more</span>
+      </div>
+    </div>
+    <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:8px;padding:clamp(10px,1.5vh,18px) clamp(12px,1.5vw,18px)">
+      <div style="font-size:clamp(11px,1.5vh,15px);font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink4);margin-bottom:6px">Dedicated Support</div>
+      <div style="font-size:clamp(16px,2.4vh,24px);font-weight:700;color:var(--ink);margin-bottom:6px">Monthly calls and a direct line to us</div>
+      <div style="font-size:clamp(12px,1.6vh,16px);color:var(--ink3);line-height:1.5">Monthly strategy call and a dedicated Slack channel.</div>
+    </div>
+    <div style="background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:8px;padding:clamp(10px,1.5vh,18px) clamp(12px,1.5vw,18px)">
+      <div style="font-size:clamp(11px,1.5vh,15px);font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:6px">Managed Service</div>
+      <div style="font-size:clamp(16px,2.4vh,24px);font-weight:700;color:var(--ink);margin-bottom:6px">Done-for-you SEO &amp; AEO</div>
+      <div style="font-size:clamp(12px,1.6vh,16px);color:var(--ink3);line-height:1.5">Content, on-page SEO, and citation building, all done for you.</div>
+    </div>
+  </div>
+  <div style="flex:1;min-height:0;display:flex;flex-direction:column;margin-bottom:1.2vh">
+    <div style="background:var(--ok-bg);border:1px solid var(--ok-bd);border-radius:8px;padding:clamp(8px,1.2vh,14px) clamp(12px,1.5vw,18px);display:flex;flex-direction:column;flex:1;min-height:0;overflow:hidden">
+      <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px;margin-bottom:clamp(8px,1.2vh,14px)">
+        <div style="font-size:clamp(10px,1.2vh,12px);font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--ok)">Client success story</div>
+        <div style="font-size:clamp(10px,1.2vh,12px);color:var(--ok);background:#dcfce7;border:1px solid var(--ok-bd);border-radius:4px;padding:2px 10px;font-weight:600">Financial services &nbsp;&middot;&nbsp; United States &nbsp;&middot;&nbsp; 3-month engagement</div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(6px,1vw,12px)">
+        <div style="background:#fff;border:1px solid var(--ok-bd);border-radius:6px;padding:clamp(6px,0.9vh,10px) clamp(8px,1vw,12px)"><div style="font-family:'DM Mono',monospace;font-size:clamp(18px,3vh,28px);font-weight:500;color:var(--ok);letter-spacing:-0.03em;line-height:1">+74%</div><div style="font-size:clamp(10px,1.2vh,12px);color:var(--ink3);margin-top:4px;line-height:1.4">Increase in clicks on commercial keywords</div></div>
+        <div style="background:#fff;border:1px solid var(--ok-bd);border-radius:6px;padding:clamp(6px,0.9vh,10px) clamp(8px,1vw,12px)"><div style="font-family:'DM Mono',monospace;font-size:clamp(18px,3vh,28px);font-weight:500;color:var(--ok);letter-spacing:-0.03em;line-height:1">+63%</div><div style="font-size:clamp(10px,1.2vh,12px);color:var(--ink3);margin-top:4px;line-height:1.4">Increase in impressions across AI platforms</div></div>
+        <div style="background:#fff;border:1px solid var(--ok-bd);border-radius:6px;padding:clamp(6px,0.9vh,10px) clamp(8px,1vw,12px)"><div style="font-family:'DM Mono',monospace;font-size:clamp(18px,3vh,28px);font-weight:500;color:var(--ok);letter-spacing:-0.03em;line-height:1">+93%</div><div style="font-size:clamp(10px,1.2vh,12px);color:var(--ink3);margin-top:4px;line-height:1.4">Increase in referrals from ChatGPT</div></div>
+        <div style="background:#fff;border:1px solid var(--ok-bd);border-radius:6px;padding:clamp(6px,0.9vh,10px) clamp(8px,1vw,12px)"><div style="font-family:'DM Mono',monospace;font-size:clamp(14px,2.2vh,20px);font-weight:500;color:var(--ok);letter-spacing:-0.02em;line-height:1.2">Record day</div><div style="font-size:clamp(10px,1.2vh,12px);color:var(--ink3);margin-top:4px;line-height:1.4">Most clicks in a single day in 16 months</div></div>
+        <div style="background:#fff;border:1px solid var(--ok-bd);border-radius:6px;padding:clamp(6px,0.9vh,10px) clamp(8px,1vw,12px)"><div style="font-family:'DM Mono',monospace;font-size:clamp(18px,3vh,28px);font-weight:500;color:var(--ok);letter-spacing:-0.03em;line-height:1">$13K+</div><div style="font-size:clamp(10px,1.2vh,12px);color:var(--ink3);margin-top:4px;line-height:1.4">In actual sales from organic traffic</div></div>
+      </div>
+      <div style="margin-top:clamp(4px,0.6vh,8px);flex:1;min-height:0;display:flex;align-items:stretch;gap:clamp(10px,1.5vw,18px)">
+        <img src="eze-credit-growth.jpg" alt="Eze Credit Services growth chart" style="flex:1;min-width:0;object-fit:contain;object-position:left center;display:block;border-radius:6px">
+        <div style="flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center;gap:clamp(4px,0.7vh,8px)">
+          <div style="font-size:clamp(12px,1.7vh,17px);font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--ok);margin-bottom:3px">What we did</div>
+          <div style="font-size:clamp(12px,1.7vh,17px);color:var(--ink2);line-height:1.5"><strong style="color:var(--ink)">Content overhaul.</strong> Keyword-optimised copy on every page.</div>
+          <div style="font-size:clamp(12px,1.7vh,17px);color:var(--ink2);line-height:1.5"><strong style="color:var(--ink)">BoFu content.</strong> "Best alternatives" articles for active buyers.</div>
+          <div style="font-size:clamp(12px,1.7vh,17px);color:var(--ink2);line-height:1.5"><strong style="color:var(--ink)">FAQs &amp; interlinking.</strong> Internal links and FAQs from scratch.</div>
+          <div style="font-size:clamp(11px,1.5vh,15px);color:var(--ink3);line-height:1.5;margin-top:clamp(4px,0.6vh,8px);padding-top:clamp(4px,0.6vh,8px);border-top:1px solid var(--ok-bd)">A US-based client in the financial industry, 3-month engagement. After 90 days of AI search optimisation with Peekaboo, here is where they stand.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:clamp(8px,1.2vw,16px);margin-top:1.2vh;flex-shrink:0">
+    <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:8px;padding:clamp(10px,1.5vh,18px) clamp(12px,1.5vw,18px);display:flex;flex-direction:column;gap:8px">
+      <p style="font-size:clamp(12px,1.7vh,16px);color:var(--ink2);line-height:1.55;flex:1">Peekaboo gives us clear visibility into where our brand appears across LLMs and how we compare to competitors.</p>
+      <div style="display:flex;align-items:center;gap:10px;padding-top:8px;border-top:1px solid var(--rule);flex-shrink:0">
+        <img src="https://www.aipeekaboo.com/LisaBorg.png" alt="Lisa Borg" style="width:34px;height:34px;border-radius:50%;object-fit:cover;flex-shrink:0;border:1px solid var(--rule)" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div style="width:34px;height:34px;border-radius:50%;background:var(--accent-bg);border:1px solid var(--accent-bd);display:none;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:var(--accent);flex-shrink:0">LB</div>
+        <div style="flex:1"><div style="font-size:clamp(12px,1.6vh,15px);font-weight:700;color:var(--ink)">Lisa Borg</div><div style="font-size:clamp(9px,1.1vh,11px);color:var(--ink4)">SVP of Marketing</div></div>
+        <img src="https://www.google.com/s2/favicons?domain=akumin.com&sz=32" style="width:18px;height:18px;border-radius:3px;flex-shrink:0;opacity:0.8">
+      </div>
+    </div>
+    <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:8px;padding:clamp(10px,1.5vh,18px) clamp(12px,1.5vw,18px);display:flex;flex-direction:column;gap:8px">
+      <p style="font-size:clamp(12px,1.7vh,16px);color:var(--ink2);line-height:1.55;flex:1">We had no visibility into where we appeared in LLMs. Peekaboo gave us clear insight into our mentions, gaps, and opportunities.</p>
+      <div style="display:flex;align-items:center;gap:10px;padding-top:8px;border-top:1px solid var(--rule);flex-shrink:0">
+        <img src="https://www.aipeekaboo.com/images/landing-v2/swanand.jpeg" alt="Swanand Pisat" style="width:34px;height:34px;border-radius:50%;object-fit:cover;flex-shrink:0;border:1px solid var(--rule)" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div style="width:34px;height:34px;border-radius:50%;background:var(--accent-bg);border:1px solid var(--accent-bd);display:none;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:var(--accent);flex-shrink:0">SP</div>
+        <div style="flex:1"><div style="font-size:clamp(12px,1.6vh,15px);font-weight:700;color:var(--ink)">Swanand Pisat</div><div style="font-size:clamp(9px,1.1vh,11px);color:var(--ink4)">Digital Marketing Manager</div></div>
+        <img src="https://www.google.com/s2/favicons?domain=shaadi.com&sz=32" style="width:18px;height:18px;border-radius:3px;flex-shrink:0;opacity:0.8">
+      </div>
+    </div>
+    <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:8px;padding:clamp(10px,1.5vh,18px) clamp(12px,1.5vw,18px);display:flex;flex-direction:column;gap:8px">
+      <p style="font-size:clamp(12px,1.7vh,16px);color:var(--ink2);line-height:1.55;flex:1">The Peekaboo team are genuine partners. Quick to help, open to feedback, and invested in our success.</p>
+      <div style="display:flex;align-items:center;gap:10px;padding-top:8px;border-top:1px solid var(--rule);flex-shrink:0">
+        <img src="https://www.aipeekaboo.com/images/landing-v2/darryl-coombes.jpeg" alt="Darryl Coombes" style="width:34px;height:34px;border-radius:50%;object-fit:cover;flex-shrink:0;border:1px solid var(--rule)" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div style="width:34px;height:34px;border-radius:50%;background:var(--accent-bg);border:1px solid var(--accent-bd);display:none;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:var(--accent);flex-shrink:0">DC</div>
+        <div style="flex:1"><div style="font-size:clamp(12px,1.6vh,15px);font-weight:700;color:var(--ink)">Darryl Coombes</div><div style="font-size:clamp(9px,1.1vh,11px);color:var(--ink4)">Managing Director</div></div>
+        <img src="https://www.google.com/s2/favicons?domain=websem.io&sz=32" style="width:18px;height:18px;border-radius:3px;flex-shrink:0;opacity:0.8">
+      </div>
+    </div>
+  </div>
+</div></section>
+
+  <!-- SLIDE 10: Measuring Success -->
+  <section><div class="s">
+  <div class="stripe"></div>
+  <div class="hdr">
+    <div style="display:flex;align-items:center;gap:10px">
+      <img src="https://www.google.com/s2/favicons?domain=wilmo.ai&sz=128" style="border-radius:10px;width:clamp(26px,3.5vh,40px);height:clamp(26px,3.5vh,40px);object-fit:contain">
+      <span class="tag">SEO / AEO Proposal</span>
+    </div>
+    <div class="hdr-right">
+      <div class="snum">10 / 12</div>
+      <a href="https://www.aipeekaboo.com" target="_blank" rel="noopener" class="powered"><span>Powered by</span><img src="https://www.aipeekaboo.com/images/peekaboo-logo-black.png" alt="AI Peekaboo"></a>
+    </div>
+  </div>
+  <div class="divider"></div>
+  <h2 style="margin-top:1vh">How We <span style="color:var(--accent)">Measure Success</span></h2>
+  <p style="font-size:clamp(16px,2.3vh,23px);color:var(--ink2);line-height:1.5;margin:0 0 clamp(8px,1.2vh,14px);font-weight:500">We track progress across both traditional search and AI platforms every month, so you always know exactly where Wilmo is gaining ground.</p>
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:clamp(10px,1.5vw,18px);align-items:stretch">
+    <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(10px,1.4vh,16px) clamp(12px,1.5vw,16px);display:flex;flex-direction:column">
+      <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/google-search-console-icon.png" style="width:clamp(32px,4.5vh,46px);height:clamp(32px,4.5vh,46px);border-radius:8px;margin-bottom:clamp(10px,1.4vh,16px);display:block;object-fit:contain">
+      <div style="font-size:clamp(15px,2.1vh,22px);font-weight:700;color:var(--ink);margin-bottom:clamp(6px,0.9vh,10px)">Google Search Console</div>
+      <p style="font-size:clamp(12px,1.65vh,16px);color:var(--ink3);margin-bottom:clamp(10px,1.4vh,16px);line-height:1.55">Tracks every query Wilmo appears for in Google, with impressions, clicks, and rankings over time.</p>
+      <div style="display:flex;flex-direction:column;gap:clamp(5px,0.75vh,8px)">
+        <div style="font-size:clamp(12px,1.65vh,16px);padding:clamp(6px,0.9vh,10px) clamp(10px,1.2vw,14px);border-radius:6px;background:var(--paper3);border:1px solid var(--rule);color:var(--ink2);display:flex;align-items:center;gap:8px;line-height:1.4"><svg style="width:13px;height:13px;flex-shrink:0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>Which queries are driving impressions</div>
+        <div style="font-size:clamp(12px,1.65vh,16px);padding:clamp(6px,0.9vh,10px) clamp(10px,1.2vw,14px);border-radius:6px;background:var(--paper3);border:1px solid var(--rule);color:var(--ink2);display:flex;align-items:center;gap:8px;line-height:1.4"><svg style="width:13px;height:13px;flex-shrink:0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>Position tracking for target keywords</div>
+        <div style="font-size:clamp(12px,1.65vh,16px);padding:clamp(6px,0.9vh,10px) clamp(10px,1.2vw,14px);border-radius:6px;background:var(--paper3);border:1px solid var(--rule);color:var(--ink2);display:flex;align-items:center;gap:8px;line-height:1.4"><svg style="width:13px;height:13px;flex-shrink:0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>Which pages drive the most clicks</div>
+      </div>
+    </div>
+    <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(10px,1.4vh,16px) clamp(12px,1.5vw,16px);display:flex;flex-direction:column">
+      <img src="https://images.icon-icons.com/2699/PNG/512/google_analytics_image_logo_icon_168152.png" style="width:clamp(32px,4.5vh,46px);height:clamp(32px,4.5vh,46px);border-radius:8px;margin-bottom:clamp(10px,1.4vh,16px);display:block;object-fit:contain">
+      <div style="font-size:clamp(15px,2.1vh,22px);font-weight:700;color:var(--ink);margin-bottom:clamp(6px,0.9vh,10px)">Google Analytics 4</div>
+      <p style="font-size:clamp(12px,1.65vh,16px);color:var(--ink3);margin-bottom:clamp(10px,1.4vh,16px);line-height:1.55">Tracks who visits Wilmo, where they come from, and whether they convert to free trial signups.</p>
+      <div style="display:flex;flex-direction:column;gap:clamp(5px,0.75vh,8px)">
+        <div style="font-size:clamp(12px,1.65vh,16px);padding:clamp(6px,0.9vh,10px) clamp(10px,1.2vw,14px);border-radius:6px;background:var(--paper3);border:1px solid var(--rule);color:var(--ink2);display:flex;align-items:center;gap:8px;line-height:1.4"><svg style="width:13px;height:13px;flex-shrink:0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>Organic traffic share vs paid and direct</div>
+        <div style="font-size:clamp(12px,1.65vh,16px);padding:clamp(6px,0.9vh,10px) clamp(10px,1.2vw,14px);border-radius:6px;background:var(--paper3);border:1px solid var(--rule);color:var(--ink2);display:flex;align-items:center;gap:8px;line-height:1.4"><svg style="width:13px;height:13px;flex-shrink:0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>Which pages generate the most engagement</div>
+        <div style="font-size:clamp(12px,1.65vh,16px);padding:clamp(6px,0.9vh,10px) clamp(10px,1.2vw,14px);border-radius:6px;background:var(--paper3);border:1px solid var(--rule);color:var(--ink2);display:flex;align-items:center;gap:8px;line-height:1.4"><svg style="width:13px;height:13px;flex-shrink:0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 8 12 12 14 14"/></svg>Free trial signups by traffic source</div>
+      </div>
+    </div>
+    <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(10px,1.4vh,16px) clamp(12px,1.5vw,16px);display:flex;flex-direction:column">
+      <img src="https://www.aipeekaboo.com/icon.jpg" style="width:clamp(32px,4.5vh,46px);height:clamp(32px,4.5vh,46px);border-radius:8px;margin-bottom:clamp(10px,1.4vh,16px);display:block;object-fit:cover">
+      <div style="font-size:clamp(15px,2.1vh,22px);font-weight:700;color:var(--ink);margin-bottom:clamp(6px,0.9vh,10px)">AI Peekaboo</div>
+      <p style="font-size:clamp(12px,1.65vh,16px);color:var(--ink3);margin-bottom:clamp(10px,1.4vh,16px);line-height:1.55">Tracks whether Wilmo appears in AI answers when ecommerce operators research support automation tools.</p>
+      <div style="display:flex;flex-direction:column;gap:clamp(5px,0.75vh,8px)">
+        <div style="font-size:clamp(12px,1.65vh,16px);padding:clamp(6px,0.9vh,10px) clamp(10px,1.2vw,14px);border-radius:6px;background:var(--paper3);border:1px solid var(--rule);color:var(--ink2);display:flex;align-items:center;gap:8px"><img src="https://www.google.com/s2/favicons?domain=google.com&sz=32" style="width:13px;height:13px;border-radius:2px;flex-shrink:0">Google AI Overviews</div>
+        <div style="font-size:clamp(12px,1.65vh,16px);padding:clamp(6px,0.9vh,10px) clamp(10px,1.2vw,14px);border-radius:6px;background:var(--paper3);border:1px solid var(--rule);color:var(--ink2);display:flex;align-items:center;gap:8px"><img src="https://www.google.com/s2/favicons?domain=google.com&sz=32" style="width:13px;height:13px;border-radius:2px;flex-shrink:0">Google AI Mode</div>
+        <div style="font-size:clamp(12px,1.65vh,16px);padding:clamp(6px,0.9vh,10px) clamp(10px,1.2vw,14px);border-radius:6px;background:var(--paper3);border:1px solid var(--rule);color:var(--ink2);display:flex;align-items:center;gap:8px"><img src="https://www.google.com/s2/favicons?domain=chatgpt.com&sz=32" style="width:13px;height:13px;border-radius:2px;flex-shrink:0">ChatGPT</div>
+        <div style="font-size:clamp(12px,1.65vh,16px);padding:clamp(6px,0.9vh,10px) clamp(10px,1.2vw,14px);border-radius:6px;background:var(--paper3);border:1px solid var(--rule);color:var(--ink2);display:flex;align-items:center;gap:8px"><img src="https://www.google.com/s2/favicons?domain=perplexity.ai&sz=32" style="width:13px;height:13px;border-radius:2px;flex-shrink:0">Perplexity</div>
+        <div style="font-size:clamp(12px,1.65vh,16px);padding:clamp(6px,0.9vh,10px) clamp(10px,1.2vw,14px);border-radius:6px;background:var(--paper3);border:1px solid var(--rule);color:var(--ink2);display:flex;align-items:center;gap:8px"><img src="https://www.google.com/s2/favicons?domain=gemini.google.com&sz=32" style="width:13px;height:13px;border-radius:2px;flex-shrink:0">Gemini</div>
+      </div>
+    </div>
+  </div>
+  <div style="flex-shrink:0;margin-top:clamp(8px,1.2vh,14px);padding:clamp(8px,1.1vh,12px) clamp(14px,1.8vw,20px);background:var(--paper2);border:1px solid var(--rule);border-radius:6px">
+    <p style="font-size:clamp(12px,1.7vh,17px);color:var(--ink3);margin:0;line-height:1.5"><strong style="color:var(--ink)">Monthly report:</strong> GSC rankings, GA4 organic traffic growth, and AI Peekaboo citation tracking, delivered together so we always know whether Wilmo is gaining ground in both traditional and AI search.</p>
+  </div>
+</div></section>
+
+  <!-- SLIDE 11: Investment & Timeline -->
+  <section><div class="s">
+  <div class="stripe"></div>
+  <div class="hdr">
+    <div style="display:flex;align-items:center;gap:10px">
+      <img src="https://www.google.com/s2/favicons?domain=wilmo.ai&sz=128" style="border-radius:10px;width:clamp(26px,3.5vh,40px);height:clamp(26px,3.5vh,40px);object-fit:contain">
+      <span class="tag">SEO / AEO Proposal</span>
+    </div>
+    <div class="hdr-right">
+      <div class="snum">11 / 12</div>
+      <a href="https://www.aipeekaboo.com" target="_blank" rel="noopener" class="powered"><span>Powered by</span><img src="https://www.aipeekaboo.com/images/peekaboo-logo-black.png" alt="AI Peekaboo"></a>
+    </div>
+  </div>
+  <div class="divider"></div>
+  <h2 style="margin-top:1vh">Your Investment. <span style="color:var(--accent)">What We Deliver and When.</span></h2>
+  <div class="rg2" style="display:grid;grid-template-columns:1.1fr 0.9fr;gap:clamp(20px,3vw,38px);flex:1;min-height:0;margin-top:clamp(14px,2vh,22px)">
+    <div style="display:flex;flex-direction:column;min-height:0">
+      <div style="display:flex;gap:clamp(12px,1.5vw,18px)">
+        <div style="display:flex;flex-direction:column;align-items:center;flex-shrink:0;width:clamp(28px,3.5vw,38px)">
+          <div style="width:clamp(11px,1.4vh,14px);height:clamp(11px,1.4vh,14px);border-radius:50%;background:var(--accent);flex-shrink:0;margin-top:3px"></div>
+          <div style="width:2px;flex:1;background:var(--rule);min-height:clamp(10px,1.5vh,18px)"></div>
+        </div>
+        <div style="flex:1;padding-bottom:clamp(16px,2.3vh,28px)">
+          <div style="font-size:clamp(10px,1.3vh,12px);font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:4px">Month 1 &nbsp;&middot;&nbsp; Foundation</div>
+          <div style="font-size:clamp(16px,2.2vh,22px);font-weight:700;color:var(--ink);margin-bottom:clamp(8px,1.1vh,13px)">Audit, Access &amp; First Deliverables</div>
+          <div style="display:flex;flex-direction:column;gap:clamp(7px,0.95vh,11px)">
+            <div>
+              <div style="font-size:clamp(9px,1.1vh,11px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4);margin-bottom:clamp(3px,0.4vh,5px)">Week 1&ndash;2 &middot; Access &amp; Scoping</div>
+              <div style="display:flex;flex-direction:column;gap:clamp(2px,0.35vh,4px)">
+                <div style="font-size:clamp(14px,1.9vh,18px);color:var(--ink3);display:flex;gap:7px"><span style="color:var(--accent);flex-shrink:0">·</span>Request access to Google Analytics, Google Search Console, and CMS</div>
+                <div style="font-size:clamp(14px,1.9vh,18px);color:var(--ink3);display:flex;gap:7px"><span style="color:var(--accent);flex-shrink:0">·</span>Full SEO and AEO audit, keyword mapping and content gap analysis</div>
+              </div>
+            </div>
+            <div>
+              <div style="font-size:clamp(9px,1.1vh,11px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4);margin-bottom:clamp(3px,0.4vh,5px)">Week 3&ndash;4 &middot; First Deliverables In</div>
+              <div style="display:flex;flex-direction:column;gap:clamp(2px,0.35vh,4px)">
+                <div style="font-size:clamp(14px,1.9vh,18px);color:var(--ink3);display:flex;gap:7px"><span style="color:var(--accent);flex-shrink:0">·</span>4 high-quality articles drafted, published and indexed</div>
+                <div style="font-size:clamp(14px,1.9vh,18px);color:var(--ink3);display:flex;gap:7px"><span style="color:var(--accent);flex-shrink:0">·</span>2 Reddit posts live in r/ecommerce and r/shopify</div>
+                <div style="font-size:clamp(14px,1.9vh,18px);color:var(--ink3);display:flex;gap:7px"><span style="color:var(--accent);flex-shrink:0">·</span>Schema implementation begins, meta titles and headings optimised</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex;gap:clamp(12px,1.5vw,18px)">
+        <div style="display:flex;flex-direction:column;align-items:center;flex-shrink:0;width:clamp(28px,3.5vw,38px)">
+          <div style="width:clamp(11px,1.4vh,14px);height:clamp(11px,1.4vh,14px);border-radius:50%;background:var(--accent);flex-shrink:0;margin-top:3px"></div>
+          <div style="width:2px;flex:1;background:var(--rule);min-height:clamp(10px,1.5vh,18px)"></div>
+        </div>
+        <div style="flex:1;padding-bottom:clamp(16px,2.3vh,28px)">
+          <div style="font-size:clamp(10px,1.3vh,12px);font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:4px">Month 2 &nbsp;&middot;&nbsp; Build</div>
+          <div style="font-size:clamp(16px,2.2vh,22px);font-weight:700;color:var(--ink);margin-bottom:clamp(6px,0.8vh,9px)">Content, On-Page &amp; Reddit</div>
+          <div style="display:flex;flex-direction:column;gap:clamp(2px,0.35vh,4px)">
+            <div style="font-size:clamp(14px,1.9vh,18px);color:var(--ink3);display:flex;gap:7px"><span style="color:var(--accent);flex-shrink:0">·</span>First 8 high-intent articles published and indexed</div>
+            <div style="font-size:clamp(14px,1.9vh,18px);color:var(--ink3);display:flex;gap:7px"><span style="color:var(--accent);flex-shrink:0">·</span>Reddit presence launched, weekly posts in ecommerce and Shopify communities</div>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex;gap:clamp(12px,1.5vw,18px)">
+        <div style="display:flex;flex-direction:column;align-items:center;flex-shrink:0;width:clamp(28px,3.5vw,38px)">
+          <div style="width:clamp(11px,1.4vh,14px);height:clamp(11px,1.4vh,14px);border-radius:50%;background:var(--accent);flex-shrink:0;margin-top:3px"></div>
+          <div style="width:2px;flex:1;background:var(--rule);min-height:clamp(10px,1.5vh,18px)"></div>
+        </div>
+        <div style="flex:1;padding-bottom:clamp(16px,2.3vh,28px)">
+          <div style="font-size:clamp(10px,1.3vh,12px);font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:4px">Month 3 &nbsp;&middot;&nbsp; Compound</div>
+          <div style="font-size:clamp(16px,2.2vh,22px);font-weight:700;color:var(--ink);margin-bottom:clamp(6px,0.8vh,9px)">Competitor Pages &amp; AEO Refinement</div>
+          <div style="display:flex;flex-direction:column;gap:clamp(2px,0.35vh,4px)">
+            <div style="font-size:clamp(14px,1.9vh,18px);color:var(--ink3);display:flex;gap:7px"><span style="color:var(--accent);flex-shrink:0">·</span>Alternatives pages vs. Gorgias, Yuma AI, Tidio live</div>
+            <div style="font-size:clamp(14px,1.9vh,18px);color:var(--ink3);display:flex;gap:7px"><span style="color:var(--accent);flex-shrink:0">·</span>AI visibility score review and prompt-by-prompt gap closing</div>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex;gap:clamp(12px,1.5vw,18px)">
+        <div style="display:flex;flex-direction:column;align-items:center;flex-shrink:0;width:clamp(28px,3.5vw,38px)">
+          <div style="width:clamp(11px,1.4vh,14px);height:clamp(11px,1.4vh,14px);border-radius:50%;background:var(--ink4);flex-shrink:0;margin-top:3px"></div>
+        </div>
+        <div style="flex:1">
+          <div style="font-size:clamp(10px,1.3vh,12px);font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink4);margin-bottom:4px">Month 4+ &nbsp;&middot;&nbsp; Ongoing</div>
+          <div style="font-size:clamp(16px,2.2vh,22px);font-weight:700;color:var(--ink);margin-bottom:clamp(6px,0.8vh,9px)">Continued Growth</div>
+          <div style="font-size:clamp(14px,1.9vh,18px);color:var(--ink3)">Each month builds on the last. Content compounds, AI citations grow, and you decide the pace and direction.</div>
+        </div>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:clamp(10px,1.4vh,16px)">
+      <div style="background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:10px;padding:clamp(14px,1.9vh,22px) clamp(14px,1.7vw,20px)">
+        <div style="font-size:clamp(10px,1.3vh,12px);font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-dark);margin-bottom:clamp(8px,1.1vh,12px)">Monthly Investment</div>
+        <div style="font-family:'DM Mono',monospace;font-size:clamp(28px,4.2vh,46px);font-weight:500;color:var(--accent);letter-spacing:-.04em;line-height:1;margin-bottom:clamp(6px,0.8vh,10px)">$1,500<span style="font-size:clamp(14px,1.8vh,18px);font-weight:400;color:var(--accent-dark);letter-spacing:0"> / month</span></div>
+        <div style="font-size:clamp(14px,1.9vh,18px);color:var(--accent-dark);line-height:1.5">Everything in the deliverables slide, executed every month, with full reporting and strategy included.</div>
+      </div>
+      <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(14px,1.9vh,22px) clamp(14px,1.7vw,20px);display:flex;flex-direction:column;gap:clamp(10px,1.4vh,16px)">
+        <div style="font-size:clamp(10px,1.3vh,12px);font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink4);margin-bottom:4px">How It Works</div>
+        <div style="display:flex;align-items:flex-start;gap:10px"><svg style="width:14px;height:14px;flex-shrink:0;margin-top:2px" viewBox="0 0 24 24" fill="none" stroke="var(--ok)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span style="font-size:clamp(14px,1.9vh,18px);color:var(--ink2);line-height:1.5">Work begins in week one, no ramp-up delay</span></div>
+        <div style="display:flex;align-items:flex-start;gap:10px"><svg style="width:14px;height:14px;flex-shrink:0;margin-top:2px" viewBox="0 0 24 24" fill="none" stroke="var(--ok)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span style="font-size:clamp(14px,1.9vh,18px);color:var(--ink2);line-height:1.5">Monthly strategy call to review results and set priorities</span></div>
+        <div style="display:flex;align-items:flex-start;gap:10px"><svg style="width:14px;height:14px;flex-shrink:0;margin-top:2px" viewBox="0 0 24 24" fill="none" stroke="var(--ok)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span style="font-size:clamp(14px,1.9vh,18px);color:var(--ink2);line-height:1.5">3-month minimum engagement, then cancel anytime with 30 days notice. SEO and AEO take time to show results, and this gives us the runway to prove them.</span></div>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+  <!-- SLIDE 12: Next Steps -->
+  <section><div class="s">
+  <div class="stripe"></div>
+  <div class="hdr">
+    <div style="display:flex;align-items:center;gap:10px">
+      <img src="https://www.google.com/s2/favicons?domain=wilmo.ai&sz=128" style="border-radius:10px;width:clamp(26px,3.5vh,40px);height:clamp(26px,3.5vh,40px);object-fit:contain">
+      <span class="tag">SEO / AEO Proposal</span>
+    </div>
+    <div class="hdr-right">
+      <div class="snum">12 / 12</div>
+      <a href="https://www.aipeekaboo.com" target="_blank" rel="noopener" class="powered"><span>Powered by</span><img src="https://www.aipeekaboo.com/images/peekaboo-logo-black.png" alt="AI Peekaboo"></a>
+    </div>
+  </div>
+  <div class="divider"></div>
+  <h2 style="margin-top:1vh">Next Steps to Getting Your Brand <span style="color:var(--accent)">Visible in AI</span></h2>
+  <div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:clamp(10px,1.5vh,18px);min-height:0">
+  <div class="outcomes" style="margin-bottom:0;flex-shrink:0;grid-template-columns:1fr">
+    <a href="https://calendly.com/founderpeekaboo/30min" target="_blank" rel="noopener noreferrer" class="obox" style="text-decoration:none;border:2px solid var(--accent);background:var(--accent-bg);cursor:pointer;text-align:center;display:flex;align-items:center;justify-content:center;padding:clamp(16px,2.5vh,28px) clamp(16px,2vw,24px)"><div style="font-size:clamp(18px,2.8vh,28px);font-weight:700;color:var(--accent)">Book a Meeting</div></a>
+  </div>
+  <div style="flex-shrink:0">
+    <p style="font-size:clamp(14px,1.9vh,19px);color:var(--ink3);line-height:1.6">You have seen where Wilmo stands, who is getting cited instead, and exactly what we would build to change that. Every day without content is another day buyers find Gorgias instead of Wilmo. Book a meeting to align on priorities and agree on the best place to start.</p>
+  </div>
+  <div style="flex-shrink:0;margin-top:clamp(12px,2vh,24px)">
+  <div class="col-head" style="margin-bottom:clamp(6px,1vh,10px)">The Founders: About Us</div>
+  <div class="rg2" style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(12px,2vw,24px);align-items:end">
+    <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:8px;padding:clamp(10px,1.4vh,16px) clamp(12px,1.5vw,18px);display:flex;flex-direction:column">
+      <div style="display:flex;align-items:flex-start;gap:clamp(10px,1.2vw,16px);margin-bottom:clamp(6px,1vh,10px)">
+        <img src="filipe.jpeg" alt="Filipe Lins Duarte" style="width:clamp(48px,6.5vh,68px);height:clamp(48px,6.5vh,68px);border-radius:50%;object-fit:cover;border:2px solid var(--rule);flex-shrink:0">
+        <div style="flex:1">
+          <div style="font-size:clamp(17px,2.4vh,24px);font-weight:700;color:var(--ink);margin-bottom:clamp(4px,0.6vh,7px)">Filipe Lins Duarte</div>
+          <div style="font-size:clamp(13px,1.7vh,17px);color:var(--accent);font-weight:600">Co-Founder &amp; CEO</div>
+          <a href="https://www.linkedin.com/in/filipelinsduarte" target="_blank" rel="noopener noreferrer" style="font-size:clamp(10px,1.2vh,12px);color:var(--ink4);text-decoration:underline;margin-top:2px;display:inline-block">LinkedIn</a>
+          <p style="font-size:clamp(11px,1.5vh,15px);color:var(--ink3);line-height:1.55;margin-top:clamp(6px,0.8vh,10px)">Sales and growth leader turned founder. Built revenue teams across SaaS in Europe and the US, now helping brands get found in AI.</p>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:clamp(6px,0.9vh,10px);flex:1">
+        <div style="display:grid;grid-template-columns:clamp(22px,3vh,28px) 1fr auto;gap:clamp(8px,1vw,12px);align-items:center;padding:clamp(6px,0.9vh,10px) clamp(8px,1vw,12px);background:#fff;border:1px solid var(--rule);border-radius:6px"><img src="https://www.google.com/s2/favicons?domain=aipeekaboo.com&sz=64" style="width:100%;border-radius:4px"><div><div style="font-size:clamp(13px,1.7vh,17px);font-weight:700;color:var(--ink)">AI Peekaboo</div><div style="font-size:clamp(10px,1.2vh,12px);color:var(--ink3)">Co-Founder &amp; CEO</div></div><div style="font-size:clamp(9px,1.1vh,11px);color:var(--ink4);white-space:nowrap">Aug 2025 - Present</div></div>
+        <div style="display:grid;grid-template-columns:clamp(22px,3vh,28px) 1fr auto;gap:clamp(8px,1vw,12px);align-items:center;padding:clamp(6px,0.9vh,10px) clamp(8px,1vw,12px);background:#fff;border:1px solid var(--rule);border-radius:6px"><img src="https://www.google.com/s2/favicons?domain=uber.com&sz=64" style="width:100%;border-radius:4px"><div><div style="font-size:clamp(13px,1.7vh,17px);font-weight:700;color:var(--ink)">Uber for Business</div><div style="font-size:clamp(10px,1.2vh,12px);color:var(--ink3)">Mid-Market AE &middot; 146% of quota</div></div><div style="font-size:clamp(9px,1.1vh,11px);color:var(--ink4);white-space:nowrap">Sep 2024 - Aug 2025</div></div>
+        <div style="display:grid;grid-template-columns:clamp(22px,3vh,28px) 1fr auto;gap:clamp(8px,1vw,12px);align-items:center;padding:clamp(6px,0.9vh,10px) clamp(8px,1vw,12px);background:#fff;border:1px solid var(--rule);border-radius:6px"><img src="https://www.google.com/s2/favicons?domain=meistertask.com&sz=64" style="width:100%;border-radius:4px"><div><div style="font-size:clamp(13px,1.7vh,17px);font-weight:700;color:var(--ink)">Meister</div><div style="font-size:clamp(10px,1.2vh,12px);color:var(--ink3)">#1 AE in 2023 &middot; 100%+ ARR growth</div></div><div style="font-size:clamp(9px,1.1vh,11px);color:var(--ink4);white-space:nowrap">Aug 2022 - Jul 2024</div></div>
+      </div>
+    </div>
+    <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:8px;padding:clamp(10px,1.4vh,16px) clamp(12px,1.5vw,18px);display:flex;flex-direction:column">
+      <div style="display:flex;align-items:flex-start;gap:clamp(10px,1.2vw,16px);margin-bottom:clamp(6px,1vh,10px)">
+        <img src="john.jpeg" alt="John Rice" style="width:clamp(48px,6.5vh,68px);height:clamp(48px,6.5vh,68px);border-radius:50%;object-fit:cover;border:2px solid var(--rule);flex-shrink:0">
+        <div style="flex:1">
+          <div style="font-size:clamp(17px,2.4vh,24px);font-weight:700;color:var(--ink);margin-bottom:clamp(4px,0.6vh,7px)">John Rice</div>
+          <div style="font-size:clamp(13px,1.7vh,17px);color:var(--accent);font-weight:600">Co-Founder &amp; CTO</div>
+          <a href="https://www.linkedin.com/in/johnwilliamrice/" target="_blank" rel="noopener noreferrer" style="font-size:clamp(10px,1.2vh,12px);color:var(--ink4);text-decoration:underline;margin-top:2px;display:inline-block">LinkedIn</a>
+          <p style="font-size:clamp(11px,1.5vh,15px);color:var(--ink3);line-height:1.55;margin-top:clamp(6px,0.8vh,10px)">Full-stack engineer and serial builder. Designed AI Peekaboo&rsquo;s platform from scratch. Previously senior engineer at MagicLinks.</p>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:clamp(6px,0.9vh,10px);flex:1">
+        <div style="display:grid;grid-template-columns:clamp(22px,3vh,28px) 1fr auto;gap:clamp(8px,1vw,12px);align-items:center;padding:clamp(6px,0.9vh,10px) clamp(8px,1vw,12px);background:#fff;border:1px solid var(--rule);border-radius:6px"><img src="https://www.google.com/s2/favicons?domain=aipeekaboo.com&sz=64" style="width:100%;border-radius:4px"><div><div style="font-size:clamp(13px,1.7vh,17px);font-weight:700;color:var(--ink)">AI Peekaboo</div><div style="font-size:clamp(10px,1.2vh,12px);color:var(--ink3)">Co-Founder &amp; CTO</div></div><div style="font-size:clamp(9px,1.1vh,11px);color:var(--ink4);white-space:nowrap">Apr 2025 - Present</div></div>
+        <div style="display:grid;grid-template-columns:clamp(22px,3vh,28px) 1fr auto;gap:clamp(8px,1vw,12px);align-items:center;padding:clamp(6px,0.9vh,10px) clamp(8px,1vw,12px);background:#fff;border:1px solid var(--rule);border-radius:6px"><img src="https://www.google.com/s2/favicons?domain=subredditsignals.com&sz=64" style="width:100%;border-radius:4px"><div><div style="font-size:clamp(13px,1.7vh,17px);font-weight:700;color:var(--ink)">Subreddit Signals</div><div style="font-size:clamp(10px,1.2vh,12px);color:var(--ink3)">Founder</div></div><div style="font-size:clamp(9px,1.1vh,11px);color:var(--ink4);white-space:nowrap">Nov 2024 - Present</div></div>
+        <div style="display:grid;grid-template-columns:clamp(22px,3vh,28px) 1fr auto;gap:clamp(8px,1vw,12px);align-items:center;padding:clamp(6px,0.9vh,10px) clamp(8px,1vw,12px);background:#fff;border:1px solid var(--rule);border-radius:6px"><img src="https://www.google.com/s2/favicons?domain=magiclinks.com&sz=64" style="width:100%;border-radius:4px"><div><div style="font-size:clamp(13px,1.7vh,17px);font-weight:700;color:var(--ink)">MagicLinks</div><div style="font-size:clamp(10px,1.2vh,12px);color:var(--ink3)">Senior Software Engineer</div></div><div style="font-size:clamp(9px,1.1vh,11px);color:var(--ink4);white-space:nowrap">Jul 2021 - Apr 2024</div></div>
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+</div></section>
+
+</div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reveal.min.js"></script>
+<script>
+Reveal.initialize({
+  hash: true,
+  controls: true,
+  progress: true,
+  slideNumber: false,
+  transition: 'none',
+  disableLayout: true,
+  width: 1920,
+  height: 1080,
+});
+document.querySelectorAll('.s').forEach(function(el){
+  el.addEventListener('touchstart', function(e){ e.stopPropagation(); }, {passive:true});
+  el.addEventListener('touchmove', function(e){ e.stopPropagation(); }, {passive:true});
+});
+</script>
+</body>
+</html>

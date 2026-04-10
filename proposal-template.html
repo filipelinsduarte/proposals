@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<!-- ============================================================
+  PROPOSAL TEMPLATE — AI Peekaboo SEO/AEO Proposal
+  ============================================================
+  PLACEHOLDERS — replace every {{TOKEN}} before sending:
+
+  BRANDING
+    {{CLIENT_NAME}}        e.g. "Wilmo"
+    {{CLIENT_DOMAIN}}      e.g. "wilmo.ai"
+    {{ACCENT}}             primary hex e.g. "#0D9488"
+    {{ACCENT_BG}}          light tint  e.g. "#F0FDFA"
+    {{ACCENT_BD}}          border      e.g. "#99F6E4"
+    {{ACCENT_DARK}}        dark shade  e.g. "#0F766E"
+
+  SLIDE 01
+    {{SLIDE_01_HEADLINE}}  main cover title
+    {{SLIDE_01_SUBLINE}}   cover subtitle
+
+  SLIDE 03 — GAPS
+    {{SLIDE_03_TITLE}}
+    {{SLIDE_03_SUBTITLE}}
+    {{GAP_1_TITLE}} {{GAP_1_BODY}}
+    {{GAP_2_TITLE}} {{GAP_2_BODY}}
+    {{GAP_3_TITLE}} {{GAP_3_BODY}}
+    {{GAP_4_TITLE}} {{GAP_4_BODY}}
+
+  SLIDE 04 — SEO TODAY
+    {{CLIENT_DR}}  {{CLIENT_ORG_KEYWORDS}}  {{CLIENT_MONTHLY_TRAFFIC}}  {{CLIENT_REF_DOMAINS}}
+    {{COMP_1_NAME}} {{COMP_1_DOMAIN}} {{COMP_1_DR}} {{COMP_1_KEYWORDS}} {{COMP_1_TRAFFIC}}
+    {{COMP_2_NAME}} {{COMP_2_DOMAIN}} {{COMP_2_DR}} {{COMP_2_KEYWORDS}} {{COMP_2_TRAFFIC}}
+    {{COMP_3_NAME}} {{COMP_3_DOMAIN}} {{COMP_3_DR}} {{COMP_3_KEYWORDS}} {{COMP_3_TRAFFIC}}
+    {{COMP_4_NAME}} {{COMP_4_DOMAIN}} {{COMP_4_DR}} {{COMP_4_KEYWORDS}} {{COMP_4_TRAFFIC}}
+    {{SLIDE_04_CALLOUT}}
+
+  SLIDE 05 — AI TODAY
+    {{CLIENT_AI_SCORE}}  {{CLIENT_AI_RANK}}  {{CLIENT_AI_CITATIONS}}  {{CLIENT_AI_CHATS}}
+    {{AI_P1_TEXT}} {{AI_P1_MENTIONS}} {{AI_P1_SCORE}} {{AI_P1_STATUS}}   (status: ok|warn|red)
+    … repeat for P2–P8
+    {{AI_S1_DOMAIN}} {{AI_S1_MENTIONS}}  … repeat for S2–S8
+    {{SLIDE_05_CALLOUT}}
+
+  SLIDE 06 — KEYWORDS
+    {{KW_C1_TITLE}} {{KW_C1_KW1}} {{KW_C1_KW2}} {{KW_C1_KW3}}
+    {{KW_C2_TITLE}} {{KW_C2_KW1}} {{KW_C2_KW2}} {{KW_C2_KW3}}
+    {{KW_C3_TITLE}} {{KW_C3_KW1}} {{KW_C3_KW2}} {{KW_C3_KW3}}
+    {{SLIDE_06_CALLOUT}}
+
+  SLIDE 07 — COMPETITOR CAPTURE
+    {{COMP_ALT_1_DOMAIN}} {{COMP_ALT_1_LABEL}}  {{COMP_PAGE_1_TITLE}}
+    … repeat for 2–6
+    {{DIFFERENTIATOR_1}} … {{DIFFERENTIATOR_6}}
+    {{SLIDE_07_SUBTITLE}}
+
+  SLIDE 08 — DELIVERABLES
+    {{REDDIT_RANK}}        e.g. "6th most cited"
+    {{BUYER_TYPE}}         e.g. "hotel operators" / "ecommerce merchants"
+
+  SLIDE 10 — MEASURE SUCCESS
+    {{CONVERSION_TYPE}}    e.g. "demo requests" / "free trial signups"
+
+  SLIDE 11 — TIMELINE
+    {{CMS_TYPE}}           e.g. "WordPress" / "Webflow"
+    {{TIMELINE_M3_COMPS}}  e.g. "Gorgias, Yuma AI, Tidio"
+  ============================================================ -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{CLIENT_NAME}} SEO/AEO Proposal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reveal.min.css">
+<style>
+  :root {
+    --accent: {{ACCENT}};
+    --accent-bg: {{ACCENT_BG}};
+    --accent-bd: {{ACCENT_BD}};
+    --accent-dark: {{ACCENT_DARK}};
+    --accent2: #00E08F;
+    --accent2-bg: #ECFDF5;
+    --accent2-bd: #6EE7B7;
+    --accent2-dark: #059669;
+    --ink: #171C33;
+    --ink2: #3D4461;
+    --ink3: #717185;
+    --ink4: #A1A1B5;
+    --paper: #fff;
+    --paper2: #F9FAFB;
+    --paper3: #F3F4F6;
+    --rule: #E5E7EB;
+    --ok: #16a34a;
+    --ok-bg: #f0fdf4;
+    --ok-bd: #bbf7d0;
+    --warn: #ea580c;
+    --warn-bg: #fff7ed;
+    --warn-bd: #fed7aa;
+    --red: #dc2626;
+    --red-bg: #fef2f2;
+    --red-bd: #fecaca;
+  }
+  *{box-sizing:border-box;font-family:"DM Sans",sans-serif}
+  html,body{margin:0;padding:0;width:100%;height:100%;overflow:hidden;background:#fff}
+  .reveal-viewport,.reveal{width:100%!important;height:100%!important;background:#fff!important}
+  .reveal .slides section{width:100vw!important;height:100vh!important;padding:0!important;background:#fff!important;display:flex!important;flex-direction:column!important;text-align:left!important}
+  .s{width:100vw;height:100vh;padding:3vh 4.5vw 2.5vh;display:flex;flex-direction:column;position:relative;overflow:hidden}
+  .stripe{position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--accent-dark)}
+  .hdr{display:flex;justify-content:space-between;align-items:center;flex-shrink:0;margin-bottom:.6vh}
+  .hdr-right{display:flex;flex-direction:column;align-items:flex-end}
+  .snum{font-family:"DM Mono",monospace;font-size:clamp(10px,1.2vh,13px);color:var(--accent-dark);background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:3px;padding:2px 8px;letter-spacing:.06em}
+  .tag{font-size:clamp(10px,1.2vh,13px);font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink4)}
+  .powered{display:flex;align-items:center;gap:5px;text-decoration:none;margin-top:3px}
+  .powered span{font-size:clamp(8px,1vh,10px);color:var(--ink4)}
+  .powered img{height:clamp(10px,1.4vh,14px);width:auto;opacity:.7}
+  .divider{height:1px;background:var(--rule);flex-shrink:0;margin-bottom:clamp(10px,1.5vh,18px)}
+  h2{font-size:clamp(22px,3.8vh,42px);font-weight:700;color:var(--ink);margin:0 0 clamp(8px,1.2vh,14px);line-height:1.15;flex-shrink:0}
+  .col-head{font-size:clamp(10px,1.2vh,13px);font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink4)}
+  .outcomes{display:grid;gap:clamp(8px,1.2vw,14px);margin-bottom:clamp(16px,2.5vh,28px)}
+  .obox{background:var(--paper2);border:1px solid var(--rule);border-radius:8px;padding:clamp(10px,1.5vh,18px) clamp(12px,1.5vw,18px)}
+  .rg2{display:grid;grid-template-columns:1fr 1fr}
+  .rg3{display:grid;grid-template-columns:1fr 1fr 1fr}
+  .rf2{display:flex}
+  .rf3{display:flex}
+  @media(max-width:1024px){
+    .s{height:auto!important;min-height:100svh!important;overflow-y:auto!important}
+    .reveal .slides section{height:auto!important;min-height:100svh!important}
+  }
+  @media(max-width:900px){
+    .rg3{grid-template-columns:1fr 1fr!important}
+    .rf3{flex-wrap:wrap!important}
+    .rf3>*{flex:1 1 calc(50% - 20px)!important;min-width:calc(50% - 20px)!important}
+  }
+  @media(max-width:640px){
+    .rg2,.rg3{grid-template-columns:1fr!important}
+    .rf2,.rf3{flex-direction:column!important}
+    .mob-scroll{overflow-x:auto!important;-webkit-overflow-scrolling:touch!important}
+    .mob-scroll>*{min-width:480px!important}
+  }
+</style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+  <!-- SLIDE 01: Cover -->
+  <section><div class="s" style="justify-content:center;gap:clamp(16px,2.5vh,32px)">
+  <div class="stripe"></div>
+  <div style="display:flex;align-items:center;gap:12px">
+    <img src="https://www.google.com/s2/favicons?domain={{CLIENT_DOMAIN}}&sz=128" style="border-radius:12px;width:clamp(36px,5vh,54px);height:clamp(36px,5vh,54px);object-fit:contain">
+    <span class="tag">SEO / AEO Proposal</span>
+  </div>
+  <div>
+    <h2 style="font-size:clamp(28px,5.5vh,62px);margin-bottom:clamp(10px,1.5vh,18px)">{{SLIDE_01_HEADLINE}}</h2>
+    <p style="font-size:clamp(16px,2.4vh,26px);color:var(--ink2);line-height:1.5;margin:0;font-weight:400;max-width:75ch">{{SLIDE_01_SUBLINE}}</p>
+  </div>
+  <div style="display:flex;align-items:center;gap:clamp(16px,2vw,28px);margin-top:clamp(8px,1.5vh,20px)">
+    <a href="https://www.aipeekaboo.com" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:8px;text-decoration:none">
+      <span style="font-size:clamp(10px,1.3vh,14px);color:var(--ink4)">Powered by</span>
+      <img src="https://www.aipeekaboo.com/images/peekaboo-logo-black.png" style="height:clamp(12px,1.8vh,20px);width:auto;opacity:.6">
+    </a>
+    <span style="color:var(--rule)">|</span>
+    <span style="font-size:clamp(10px,1.3vh,14px);color:var(--ink4)">Prepared for {{CLIENT_NAME}} &middot; April 2026</span>
+  </div>
+</div></section>
+
+  <!-- SLIDE 02: Why SEO & AEO -->
+  <section><div class="s">
+  <div class="stripe"></div>
+  <div class="hdr">
+    <div style="display:flex;align-items:center;gap:10px">
+      <img src="https://www.google.com/s2/favicons?domain={{CLIENT_DOMAIN}}&sz=128" style="border-radius:10px;width:clamp(26px,3.5vh,40px);height:clamp(26px,3.5vh,40px);object-fit:contain">
+      <span class="tag">SEO / AEO Proposal</span>
+    </div>
+    <div class="hdr-right">
+      <div class="snum">02 / 12</div>
+      <a href="https://www.aipeekaboo.com" target="_blank" rel="noopener" class="powered"><span>Powered by</span><img src="https://www.aipeekaboo.com/images/peekaboo-logo-black.png" alt="AI Peekaboo"></a>
+    </div>
+  </div>
+  <div class="divider"></div>
+  <h2 style="margin-top:1vh">Why Invest in <span style="color:var(--accent)">SEO &amp; AEO Now</span></h2>
+  <div class="rg2" style="gap:clamp(12px,2vw,24px);flex:1;min-height:0;align-items:start">
+    <div style="display:flex;flex-direction:column;gap:clamp(10px,1.4vh,16px)">
+      <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(12px,1.7vh,20px) clamp(14px,1.7vw,20px)">
+        <div style="font-size:clamp(13px,1.8vh,18px);font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ink4);margin-bottom:clamp(6px,0.9vh,10px)">The old playbook</div>
+        <p style="font-size:clamp(14px,2vh,19px);color:var(--ink2);line-height:1.6;margin:0">Buyers used Google to find software. You ranked, they clicked, they converted. SEO meant keywords and backlinks.</p>
+      </div>
+      <div style="background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:10px;padding:clamp(12px,1.7vh,20px) clamp(14px,1.7vw,20px)">
+        <div style="font-size:clamp(13px,1.8vh,18px);font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent-dark);margin-bottom:clamp(6px,0.9vh,10px)">The new reality</div>
+        <p style="font-size:clamp(14px,2vh,19px);color:var(--ink2);line-height:1.6;margin:0">Buyers now ask AI. ChatGPT, Perplexity, and Google AI Mode answer with brands they trust. If your content does not signal authority, you are not in the answer.</p>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:clamp(10px,1.4vh,16px)">
+      <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(12px,1.7vh,20px) clamp(14px,1.7vw,20px)">
+        <div style="font-size:clamp(22px,4vh,44px);font-weight:700;color:var(--accent);font-family:'DM Mono',monospace;letter-spacing:-.03em;margin-bottom:4px">68%</div>
+        <div style="font-size:clamp(14px,2vh,19px);color:var(--ink2);line-height:1.5">of B2B buyers now use AI tools during vendor research before contacting sales</div>
+      </div>
+      <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(12px,1.7vh,20px) clamp(14px,1.7vw,20px)">
+        <div style="font-size:clamp(22px,4vh,44px);font-weight:700;color:var(--accent);font-family:'DM Mono',monospace;letter-spacing:-.03em;margin-bottom:4px">3x</div>
+        <div style="font-size:clamp(14px,2vh,19px);color:var(--ink2);line-height:1.5">higher close rate from inbound leads who discovered a brand through organic or AI search vs cold outbound</div>
+      </div>
+      <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(12px,1.7vh,20px) clamp(14px,1.7vw,20px)">
+        <div style="font-size:clamp(22px,4vh,44px);font-weight:700;color:var(--accent);font-family:'DM Mono',monospace;letter-spacing:-.03em;margin-bottom:4px">$0</div>
+        <div style="font-size:clamp(14px,2vh,19px);color:var(--ink2);line-height:1.5">cost per click once content ranks. Unlike paid ads, compounding organic traffic does not stop when the budget does</div>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+  <!-- SLIDE 03: Gaps -->
+  <section><div class="s">
+  <div class="stripe"></div>
+  <div class="hdr">
+    <div style="display:flex;align-items:center;gap:10px">
+      <img src="https://www.google.com/s2/favicons?domain={{CLIENT_DOMAIN}}&sz=128" style="border-radius:10px;width:clamp(26px,3.5vh,40px);height:clamp(26px,3.5vh,40px);object-fit:contain">
+      <span class="tag">SEO / AEO Proposal</span>
+    </div>
+    <div class="hdr-right">
+      <div class="snum">03 / 12</div>
+      <a href="https://www.aipeekaboo.com" target="_blank" rel="noopener" class="powered"><span>Powered by</span><img src="https://www.aipeekaboo.com/images/peekaboo-logo-black.png" alt="AI Peekaboo"></a>
+    </div>
+  </div>
+  <div class="divider"></div>
+  <h2 style="margin-top:1vh">{{SLIDE_03_TITLE}}</h2>
+  <p style="font-size:clamp(15px,2.1vh,21px);color:var(--ink2);line-height:1.5;margin:0 0 clamp(14px,2vh,22px);font-weight:500">{{SLIDE_03_SUBTITLE}}</p>
+  <div class="rg2" style="gap:clamp(10px,1.4vw,16px);flex:1;min-height:0">
+    <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(14px,2vh,24px) clamp(16px,2vw,24px);display:flex;flex-direction:column;gap:clamp(8px,1.1vh,14px)">
+      <div style="font-size:clamp(15px,2.2vh,22px);font-weight:700;color:var(--ink)">{{GAP_1_TITLE}}</div>
+      <div style="font-size:clamp(14px,1.9vh,18px);color:var(--ink2);line-height:1.6">{{GAP_1_BODY}}</div>
+    </div>
+    <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(14px,2vh,24px) clamp(16px,2vw,24px);display:flex;flex-direction:column;gap:clamp(8px,1.1vh,14px)">
+      <div style="font-size:clamp(15px,2.2vh,22px);font-weight:700;color:var(--ink)">{{GAP_2_TITLE}}</div>
+      <div style="font-size:clamp(14px,1.9vh,18px);color:var(--ink2);line-height:1.6">{{GAP_2_BODY}}</div>
+    </div>
+    <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(14px,2vh,24px) clamp(16px,2vw,24px);display:flex;flex-direction:column;gap:clamp(8px,1.1vh,14px)">
+      <div style="font-size:clamp(15px,2.2vh,22px);font-weight:700;color:var(--ink)">{{GAP_3_TITLE}}</div>
+      <div style="font-size:clamp(14px,1.9vh,18px);color:var(--ink2);line-height:1.6">{{GAP_3_BODY}}</div>
+    </div>
+    <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(14px,2vh,24px) clamp(16px,2vw,24px);display:flex;flex-direction:column;gap:clamp(8px,1.1vh,14px)">
+      <div style="font-size:clamp(15px,2.2vh,22px);font-weight:700;color:var(--ink)">{{GAP_4_TITLE}}</div>
+      <div style="font-size:clamp(14px,1.9vh,18px);color:var(--ink2);line-height:1.6">{{GAP_4_BODY}}</div>
+    </div>
+  </div>
+</div></section>
+
+  <!-- SLIDE 04: SEO Today -->
+  <!-- Full competitor table — replace all {{COMP_X_*}} tokens -->
+  <!-- CLIENT row should be styled with accent border to highlight "You" -->
+
+  <!-- SLIDE 05: AI Today -->
+  <!-- Prompt rows use status class: ok=green, warn=orange, red=red -->
+  <!-- Source rows list top cited domains with mention counts -->
+
+  <!-- SLIDE 06–12: See wilmo-proposal.html for full filled-in example -->
+  <!-- Slides 06–12 structure is stable; only CLIENT_NAME, REDDIT_RANK,  -->
+  <!-- BUYER_TYPE, CONVERSION_TYPE, CMS_TYPE, TIMELINE_M3_COMPS change.  -->
+
+</div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reveal.min.js"></script>
+<script>
+Reveal.initialize({
+  hash: true,
+  controls: true,
+  progress: true,
+  slideNumber: false,
+  transition: 'none',
+  disableLayout: true,
+  width: 1920,
+  height: 1080,
+});
+document.querySelectorAll('.s').forEach(function(el){
+  el.addEventListener('touchstart', function(e){ e.stopPropagation(); }, {passive:true});
+  el.addEventListener('touchmove', function(e){ e.stopPropagation(); }, {passive:true});
+});
+</script>
+</body>
+</html>

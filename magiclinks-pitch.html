@@ -18,29 +18,22 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reveal.min.css">
 <style>
   :root {
-    --accent: #FF4F12;
-    --accent-bg: #FFEFE2;
-    --accent-bd: #FECBB5;
-    --accent-dark: #D93D0A;
-    --accent2: #7C3AED;
-    --accent2-bg: #F5F3FF;
-    --accent2-bd: #DDD6FE;
-    --accent2-dark: #6D28D9;
-    --ink: #171C33;
-    --ink2: #3D4461;
-    --ink3: #717185;
-    --ink4: #A1A1B5;
-    --paper: #fff;
-    --paper2: #F9FAFB;
-    --paper3: #F3F4F6;
-    --rule: #E5E7EB;
-    --ok: #16a34a;
-    --ok-bg: #f0fdf4;
-    --ok-bd: #bbf7d0;
-    --warn: #ea580c;
-    --warn-bg: #fff7ed;
-    --warn-bd: #fed7aa;
-    --red: #dc2626;
+    --accent:      #7C3AED;
+    --accent-bg:   #F5F3FF;
+    --accent-bd:   #DDD6FE;
+    --accent-dark: #5B21B6;
+    --ink:   #0F0A1E;
+    --ink2:  #3D3460;
+    --ink3:  #716B8A;
+    --ink4:  #A89FC0;
+    --paper:  #fff;
+    --paper2: #F9F8FF;
+    --paper3: #F0EEF8;
+    --rule:   #E5E1F5;
+    --ok:     #16a34a;
+    --ok-bg:  #f0fdf4;
+    --ok-bd:  #bbf7d0;
+    --red:    #dc2626;
     --red-bg: #fef2f2;
     --red-bd: #fecaca;
   }
@@ -59,11 +52,8 @@
   .powered img{height:clamp(10px,1.4vh,14px);width:auto;opacity:.7}
   .divider{height:1px;background:var(--rule);flex-shrink:0;margin-bottom:clamp(10px,1.5vh,18px)}
   h2{font-size:clamp(22px,3.8vh,42px);font-weight:700;color:var(--ink);margin:0 0 clamp(8px,1.2vh,14px);line-height:1.15;flex-shrink:0}
-  .col-head{font-size:clamp(10px,1.2vh,12px);font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink4)}
-  .src{font-size:clamp(9px,1.1vh,11px);color:var(--ink4);margin-top:8px;font-style:italic}
-  @media(max-width:1024px){.s{height:100svh!important;overflow-y:auto!important;-webkit-overflow-scrolling:touch!important}}
-  @media(max-width:768px){[style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr!important}[style*="grid-template-columns:2fr 1fr"]{grid-template-columns:1fr!important}[style*="grid-template-columns:3fr 2fr"]{grid-template-columns:1fr!important}}
-  @media(max-width:640px){[style*="display:grid"]{grid-template-columns:1fr!important}}
+  .src{font-size:clamp(9px,1.1vh,11px);color:var(--ink4);margin-top:6px;font-style:italic}
+  .num{font-family:"DM Mono",monospace;font-weight:700;color:var(--accent);line-height:1}
 </style>
 </head>
 <body>
@@ -71,469 +61,293 @@
 <div class="slides">
 
 <!-- SLIDE 01: Cover -->
-<section><div class="s" style="justify-content:center;gap:clamp(16px,2.5vh,32px)">
+<section><div class="s" style="justify-content:center;gap:clamp(20px,3vh,38px)">
 <div class="stripe"></div>
-<div style="display:flex;align-items:center;gap:12px">
-  <img src="https://www.google.com/s2/favicons?domain=magiclinks.com&sz=128" style="border-radius:12px;width:clamp(36px,5vh,54px);height:clamp(36px,5vh,54px);object-fit:contain">
-  <img src="https://www.aipeekaboo.com/images/peekaboo-logo-black.png" style="height:clamp(18px,2.8vh,32px);width:auto;opacity:.75">
-  <span class="tag" style="margin-left:4px">Partnership Opportunity</span>
+
+<div style="display:flex;align-items:center;gap:14px">
+  <img src="https://www.google.com/s2/favicons?domain=magiclinks.com&sz=128" style="border-radius:14px;width:clamp(40px,5.5vh,60px);height:clamp(40px,5.5vh,60px)">
+  <span style="color:var(--rule);font-size:28px;font-weight:200">×</span>
+  <img src="https://www.aipeekaboo.com/images/peekaboo-logo-black.png" style="height:clamp(20px,3vh,34px);width:auto;opacity:.8">
 </div>
+
 <div>
-  <h2 style="font-size:clamp(28px,5vh,58px);margin-bottom:clamp(16px,2.5vh,30px);font-weight:700">38,000 creators. $12.3B GMV.<br>Do you know which ones are driving<br><span style="color:var(--accent)">your brands' AI citations?</span></h2>
-  <p style="font-size:clamp(16px,2.3vh,24px);color:var(--ink2);line-height:1.6;margin:0;font-weight:400;max-width:80ch">MagicLinks built AI Shelf™ to track brand visibility in AI search. The next unlock is <strong>creator-level attribution</strong> — knowing which of your 38,000 creators are moving the needle in ChatGPT, Perplexity, and Gemini, and for which products.</p>
+  <h2 style="font-size:clamp(30px,5.5vh,64px);margin-bottom:clamp(14px,2vh,24px)">Which of your creators<br>are showing up in ChatGPT<br><span style="color:var(--accent)">right now?</span></h2>
+  <p style="font-size:clamp(16px,2.3vh,24px);color:var(--ink3);line-height:1.6;margin:0;max-width:64ch">We pulled the answer for one hospitality client. Here's what the data looks like — and what it could look like across your 38,000 creators.</p>
 </div>
-<div style="display:flex;align-items:center;gap:clamp(16px,2vw,28px);margin-top:clamp(8px,1.5vh,16px)">
-  <a href="https://www.aipeekaboo.com" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:8px;text-decoration:none">
-    <span style="font-size:clamp(10px,1.2vh,12px);color:var(--ink4)">Powered by</span>
-    <img src="https://www.aipeekaboo.com/images/peekaboo-logo-black.png" style="height:clamp(12px,1.8vh,20px);width:auto;opacity:.6">
-  </a>
-  <span style="color:var(--rule)">|</span>
-  <span style="font-size:clamp(10px,1.2vh,12px);color:var(--ink4)">Prepared for MagicLinks &middot; April 2026</span>
+
+<div style="display:flex;align-items:center;gap:clamp(16px,2vw,28px)">
+  <span style="font-size:clamp(10px,1.2vh,13px);color:var(--ink4)">aipeekaboo.com &middot; April 2026</span>
 </div>
 </div></section>
 
-<!-- SLIDE 02: The Shift -->
+<!-- SLIDE 02: The One Gap -->
 <section><div class="s">
 <div class="stripe"></div>
 <div class="hdr">
   <div style="display:flex;align-items:center;gap:10px">
-    <img src="https://www.google.com/s2/favicons?domain=magiclinks.com&sz=128" style="border-radius:10px;width:clamp(26px,3.5vh,40px);height:clamp(26px,3.5vh,40px);object-fit:contain">
+    <img src="https://www.google.com/s2/favicons?domain=magiclinks.com&sz=128" style="border-radius:8px;width:clamp(24px,3vh,36px);height:clamp(24px,3vh,36px)">
     <span class="tag">MagicLinks × AI Peekaboo</span>
   </div>
   <div class="hdr-right">
-    <div class="snum">02 / 08</div>
-    <a href="https://www.aipeekaboo.com" target="_blank" rel="noopener" class="powered"><span>Powered by</span><img src="https://www.aipeekaboo.com/images/peekaboo-logo-black.png" alt="AI Peekaboo"></a>
+    <div class="snum">02 / 05</div>
+    <a href="https://www.aipeekaboo.com" target="_blank" rel="noopener" class="powered"><span>Powered by</span><img src="https://www.aipeekaboo.com/images/peekaboo-logo-black.png"></a>
   </div>
 </div>
 <div class="divider"></div>
-<h2>AI is the new product discovery layer. <span style="color:var(--accent)">The rules just changed.</span></h2>
-<p style="font-size:clamp(14px,2vh,20px);color:var(--ink2);margin:0 0 clamp(14px,2vh,22px);line-height:1.5">Buyers no longer just Google products. They ask ChatGPT, Perplexity, and Gemini — and trust whatever those models surface.</p>
 
-<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:clamp(10px,1.4vw,16px);flex:1;min-height:0;align-items:start">
+<div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:clamp(20px,3vh,36px)">
 
-  <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(16px,2.2vh,26px) clamp(16px,2vw,22px);display:flex;flex-direction:column;gap:clamp(10px,1.4vh,16px)">
-    <div style="font-size:clamp(32px,5vh,54px);font-weight:700;color:var(--accent);font-family:'DM Mono',monospace;line-height:1">25%</div>
-    <div style="font-size:clamp(14px,2vh,18px);font-weight:600;color:var(--ink);line-height:1.3">of traditional search volume shifting to AI assistants by end of 2026</div>
-    <div class="src">Gartner, 2026</div>
-  </div>
-
-  <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(16px,2.2vh,26px) clamp(16px,2vw,22px);display:flex;flex-direction:column;gap:clamp(10px,1.4vh,16px)">
-    <div style="font-size:clamp(32px,5vh,54px);font-weight:700;color:var(--accent);font-family:'DM Mono',monospace;line-height:1">93%</div>
-    <div style="font-size:clamp(14px,2vh,18px);font-weight:600;color:var(--ink);line-height:1.3">of AI search sessions end without a click — the citation <em>is</em> the impression</div>
-    <div class="src">Superlines AI Search Report, 2026</div>
-  </div>
-
-  <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(16px,2.2vh,26px) clamp(16px,2vw,22px);display:flex;flex-direction:column;gap:clamp(10px,1.4vh,16px)">
-    <div style="font-size:clamp(32px,5vh,54px);font-weight:700;color:var(--accent);font-family:'DM Mono',monospace;line-height:1">6.5×</div>
-    <div style="font-size:clamp(14px,2vh,18px);font-weight:600;color:var(--ink);line-height:1.3">more AI citations come from third-party content than brand-owned pages</div>
-    <div class="src">Princeton GEO Research, 2025</div>
-  </div>
-
-</div>
-
-<div style="background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:10px;padding:clamp(14px,2vh,22px) clamp(18px,2.2vw,26px);margin-top:clamp(14px,2vh,22px);flex-shrink:0">
-  <p style="font-size:clamp(15px,2.1vh,20px);color:var(--ink);margin:0;line-height:1.55;font-weight:500">For influencer platforms: creator content is the <strong style="color:var(--accent-dark)">most powerful third-party citation asset</strong> in existence — but only if you can prove it. YouTube content with proper metadata generates AI citations for <strong style="color:var(--accent-dark)">2+ years</strong> post-publication.</p>
-</div>
-</div></section>
-
-<!-- SLIDE 03: What MagicLinks Built + What's Missing -->
-<section><div class="s">
-<div class="stripe"></div>
-<div class="hdr">
-  <div style="display:flex;align-items:center;gap:10px">
-    <img src="https://www.google.com/s2/favicons?domain=magiclinks.com&sz=128" style="border-radius:10px;width:clamp(26px,3.5vh,40px);height:clamp(26px,3.5vh,40px);object-fit:contain">
-    <span class="tag">MagicLinks × AI Peekaboo</span>
-  </div>
-  <div class="hdr-right">
-    <div class="snum">03 / 08</div>
-    <a href="https://www.aipeekaboo.com" target="_blank" rel="noopener" class="powered"><span>Powered by</span><img src="https://www.aipeekaboo.com/images/peekaboo-logo-black.png" alt="AI Peekaboo"></a>
-  </div>
-</div>
-<div class="divider"></div>
-<h2>AI Shelf™ is a strong start. <span style="color:var(--accent)">One layer is still missing.</span></h2>
-<p style="font-size:clamp(14px,2vh,20px);color:var(--ink2);margin:0 0 clamp(14px,2vh,22px);line-height:1.5">AI Shelf™ tracks brand-level visibility. The question brands will ask next is more specific.</p>
-
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(12px,1.6vw,20px);flex:1;min-height:0;align-items:start">
-
-  <div style="display:flex;flex-direction:column;gap:clamp(10px,1.4vh,14px)">
-    <div style="font-size:clamp(11px,1.3vh,13px);font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ok);margin-bottom:2px">What AI Shelf™ Answers Today</div>
-    <div style="background:var(--ok-bg);border:1px solid var(--ok-bd);border-radius:10px;padding:clamp(14px,2vh,20px) clamp(14px,1.8vw,20px);display:flex;flex-direction:column;gap:clamp(12px,1.6vh,18px)">
-      <div style="display:flex;gap:10px;align-items:flex-start">
-        <svg style="width:16px;height:16px;flex-shrink:0;margin-top:2px;color:var(--ok)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-        <span style="font-size:clamp(14px,1.9vh,19px);color:var(--ink2);line-height:1.45">Is Brand X visible in ChatGPT / Perplexity / Gemini?</span>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,2vw,24px)">
+    <div style="background:var(--ok-bg);border:1px solid var(--ok-bd);border-radius:12px;padding:clamp(18px,2.5vh,30px) clamp(18px,2vw,26px)">
+      <div style="font-size:clamp(11px,1.3vh,13px);font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ok);margin-bottom:clamp(12px,1.6vh,18px)">AI Shelf™ answers today</div>
+      <div style="display:flex;flex-direction:column;gap:clamp(10px,1.4vh,16px)">
+        <div style="font-size:clamp(15px,2.1vh,21px);color:var(--ink2);line-height:1.4">✓ &nbsp;Is Brand X visible in AI?</div>
+        <div style="font-size:clamp(15px,2.1vh,21px);color:var(--ink2);line-height:1.4">✓ &nbsp;Share of voice vs. competitors</div>
+        <div style="font-size:clamp(15px,2.1vh,21px);color:var(--ink2);line-height:1.4">✓ &nbsp;Which queries to target</div>
       </div>
-      <div style="display:flex;gap:10px;align-items:flex-start">
-        <svg style="width:16px;height:16px;flex-shrink:0;margin-top:2px;color:var(--ok)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-        <span style="font-size:clamp(14px,1.9vh,19px);color:var(--ink2);line-height:1.45">What is our share-of-voice vs. competitors in AI answers?</span>
-      </div>
-      <div style="display:flex;gap:10px;align-items:flex-start">
-        <svg style="width:16px;height:16px;flex-shrink:0;margin-top:2px;color:var(--ok)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-        <span style="font-size:clamp(14px,1.9vh,19px);color:var(--ink2);line-height:1.45">Does our creator content have the right AEO metadata?</span>
-      </div>
-      <div style="display:flex;gap:10px;align-items:flex-start">
-        <svg style="width:16px;height:16px;flex-shrink:0;margin-top:2px;color:var(--ok)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-        <span style="font-size:clamp(14px,1.9vh,19px);color:var(--ink2);line-height:1.45">Which query gaps should we target?</span>
+    </div>
+    <div style="background:var(--accent-bg);border:2px solid var(--accent-bd);border-radius:12px;padding:clamp(18px,2.5vh,30px) clamp(18px,2vw,26px)">
+      <div style="font-size:clamp(11px,1.3vh,13px);font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-dark);margin-bottom:clamp(12px,1.6vh,18px)">What brands ask next</div>
+      <div style="display:flex;flex-direction:column;gap:clamp(10px,1.4vh,16px)">
+        <div style="font-size:clamp(15px,2.1vh,21px);color:var(--ink);font-weight:600;line-height:1.4">Which of my <em>creators</em> drove that?</div>
+        <div style="font-size:clamp(15px,2.1vh,21px);color:var(--ink);font-weight:600;line-height:1.4">Which <em>products</em> are being cited?</div>
+        <div style="font-size:clamp(15px,2.1vh,21px);color:var(--ink);font-weight:600;line-height:1.4">Did this campaign <em>actually move</em> AI visibility?</div>
       </div>
     </div>
   </div>
 
-  <div style="display:flex;flex-direction:column;gap:clamp(10px,1.4vh,14px)">
-    <div style="font-size:clamp(11px,1.3vh,13px);font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-dark);margin-bottom:2px">What Brands Will Ask Next</div>
-    <div style="background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:10px;padding:clamp(14px,2vh,20px) clamp(14px,1.8vw,20px);display:flex;flex-direction:column;gap:clamp(12px,1.6vh,18px)">
-      <div style="display:flex;gap:10px;align-items:flex-start">
-        <svg style="width:16px;height:16px;flex-shrink:0;margin-top:2px;color:var(--accent-dark)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-        <span style="font-size:clamp(14px,1.9vh,19px);color:var(--ink2);line-height:1.45"><strong style="color:var(--ink)">Which specific creators</strong> are driving our AI citation share?</span>
-      </div>
-      <div style="display:flex;gap:10px;align-items:flex-start">
-        <svg style="width:16px;height:16px;flex-shrink:0;margin-top:2px;color:var(--accent-dark)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-        <span style="font-size:clamp(14px,1.9vh,19px);color:var(--ink2);line-height:1.45"><strong style="color:var(--ink)">Which products</strong> are being cited — and which aren't?</span>
-      </div>
-      <div style="display:flex;gap:10px;align-items:flex-start">
-        <svg style="width:16px;height:16px;flex-shrink:0;margin-top:2px;color:var(--accent-dark)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-        <span style="font-size:clamp(14px,1.9vh,19px);color:var(--ink2);line-height:1.45"><strong style="color:var(--ink)">Which creator tier</strong> generates the most durable AI visibility?</span>
-      </div>
-      <div style="display:flex;gap:10px;align-items:flex-start">
-        <svg style="width:16px;height:16px;flex-shrink:0;margin-top:2px;color:var(--accent-dark)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-        <span style="font-size:clamp(14px,1.9vh,19px);color:var(--ink2);line-height:1.45">Did our campaign <strong style="color:var(--ink)">actually move AI visibility</strong> for this product?</span>
-      </div>
-    </div>
-    <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:8px;padding:clamp(10px,1.4vh,16px) clamp(12px,1.5vw,16px)">
-      <p style="font-size:clamp(13px,1.7vh,17px);color:var(--ink3);margin:0;line-height:1.5">No platform answers these today — not Discovery Intelligence, not Profound, not Otterly. This is the gap.</p>
-    </div>
+  <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(16px,2.2vh,26px) clamp(20px,2.5vw,30px)">
+    <p style="font-size:clamp(16px,2.3vh,24px);color:var(--ink);margin:0;line-height:1.5">Peekaboo monitors the actual interfaces — ChatGPT, Perplexity, Gemini — and captures which source URLs are cited. Cross that with your creator content library and you close the loop.</p>
   </div>
 
 </div>
 </div></section>
 
-<!-- SLIDE 04: The Attribution Gap -->
+<!-- SLIDE 03: The BHR Data -->
 <section><div class="s">
 <div class="stripe"></div>
 <div class="hdr">
   <div style="display:flex;align-items:center;gap:10px">
-    <img src="https://www.google.com/s2/favicons?domain=magiclinks.com&sz=128" style="border-radius:10px;width:clamp(26px,3.5vh,40px);height:clamp(26px,3.5vh,40px);object-fit:contain">
+    <img src="https://www.google.com/s2/favicons?domain=magiclinks.com&sz=128" style="border-radius:8px;width:clamp(24px,3vh,36px);height:clamp(24px,3vh,36px)">
     <span class="tag">MagicLinks × AI Peekaboo</span>
   </div>
   <div class="hdr-right">
-    <div class="snum">04 / 08</div>
-    <a href="https://www.aipeekaboo.com" target="_blank" rel="noopener" class="powered"><span>Powered by</span><img src="https://www.aipeekaboo.com/images/peekaboo-logo-black.png" alt="AI Peekaboo"></a>
+    <div class="snum">03 / 05</div>
+    <a href="https://www.aipeekaboo.com" target="_blank" rel="noopener" class="powered"><span>Powered by</span><img src="https://www.aipeekaboo.com/images/peekaboo-logo-black.png"></a>
   </div>
 </div>
 <div class="divider"></div>
-<h2>The attribution gap <span style="color:var(--accent)">nobody has closed yet.</span></h2>
-<p style="font-size:clamp(14px,2vh,20px);color:var(--ink2);margin:0 0 clamp(18px,2.5vh,28px);line-height:1.5">Two mature data layers exist. No one has wired them together.</p>
-
-<div style="flex:1;min-height:0;display:flex;flex-direction:column;justify-content:center;gap:clamp(12px,1.8vh,20px)">
-
-  <div style="display:grid;grid-template-columns:1fr 48px 1fr 48px 1fr;gap:0;align-items:center">
-    <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(16px,2.2vh,26px) clamp(14px,1.8vw,20px);text-align:center">
-      <div style="font-size:clamp(28px,4vh,44px);margin-bottom:8px">👤</div>
-      <div style="font-size:clamp(14px,1.9vh,18px);font-weight:700;color:var(--ink);margin-bottom:6px">Creator posts about<br>Product X</div>
-      <div style="font-size:clamp(12px,1.5vh,14px);color:var(--ink4)">YouTube / Instagram /<br>TikTok</div>
-    </div>
-    <div style="text-align:center;color:var(--ink4);font-size:22px">→</div>
-    <div style="background:var(--accent2-bg);border:2px solid var(--accent2-bd);border-radius:10px;padding:clamp(16px,2.2vh,26px) clamp(14px,1.8vw,20px);text-align:center">
-      <div style="font-size:clamp(28px,4vh,44px);margin-bottom:8px">🤖</div>
-      <div style="font-size:clamp(14px,1.9vh,18px);font-weight:700;color:var(--accent2-dark);margin-bottom:6px">AI model cites that<br>content in an answer</div>
-      <div style="font-size:clamp(12px,1.5vh,14px);color:var(--ink4)">ChatGPT / Perplexity /<br>Gemini / AI Overviews</div>
-    </div>
-    <div style="text-align:center;color:var(--ink4);font-size:22px">→</div>
-    <div style="background:var(--ok-bg);border:1px solid var(--ok-bd);border-radius:10px;padding:clamp(16px,2.2vh,26px) clamp(14px,1.8vw,20px);text-align:center">
-      <div style="font-size:clamp(28px,4vh,44px);margin-bottom:8px">🛒</div>
-      <div style="font-size:clamp(14px,1.9vh,18px);font-weight:700;color:var(--ok);margin-bottom:6px">Buyer discovers<br>Product X via AI</div>
-      <div style="font-size:clamp(12px,1.5vh,14px);color:var(--ink4)">Zero-click impression<br>at high purchase intent</div>
-    </div>
-  </div>
-
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(12px,1.6vw,18px);margin-top:clamp(8px,1.2vh,14px)">
-    <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(14px,2vh,20px) clamp(14px,1.8vw,20px)">
-      <div style="font-size:clamp(11px,1.3vh,13px);font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink4);margin-bottom:clamp(8px,1.2vh,12px)">Existing Tools Track</div>
-      <div style="display:flex;flex-direction:column;gap:8px">
-        <div style="display:flex;align-items:center;gap:8px"><img src="https://www.google.com/s2/favicons?domain=magiclinks.com&sz=32" style="width:16px;height:16px;border-radius:2px"><span style="font-size:clamp(13px,1.7vh,17px);color:var(--ink2)">MagicLinks — creator → GMV attribution ✓</span></div>
-        <div style="display:flex;align-items:center;gap:8px"><img src="https://www.google.com/s2/favicons?domain=tryprofound.com&sz=32" style="width:16px;height:16px;border-radius:2px"><span style="font-size:clamp(13px,1.7vh,17px);color:var(--ink2)">Profound / Otterly — brand → AI citations ✓</span></div>
-        <div style="display:flex;align-items:center;gap:8px"><img src="https://www.aipeekaboo.com/images/peekaboo-logo-black.png" style="height:14px;width:auto;opacity:.7"><span style="font-size:clamp(13px,1.7vh,17px);color:var(--ink2)">AI Peekaboo — actual UI monitoring ✓</span></div>
-      </div>
-    </div>
-    <div style="background:var(--red-bg);border:1px solid var(--red-bd);border-radius:10px;padding:clamp(14px,2vh,20px) clamp(14px,1.8vw,20px)">
-      <div style="font-size:clamp(11px,1.3vh,13px);font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--red);margin-bottom:clamp(8px,1.2vh,12px)">Nobody Tracks</div>
-      <div style="font-size:clamp(14px,1.9vh,19px);color:var(--ink);line-height:1.5;font-weight:500">Creator X posted about Product Y → AI engines now cite Product Y in response to Query Z</div>
-      <div style="font-size:clamp(13px,1.7vh,16px);color:var(--ink3);margin-top:10px;line-height:1.4">This closed-loop attribution does not exist as a product anywhere. MagicLinks + AI Peekaboo can build it first.</div>
-    </div>
-  </div>
-
-</div>
-</div></section>
-
-<!-- SLIDE 05: Live Example — BHR Data -->
-<section><div class="s">
-<div class="stripe"></div>
-<div class="hdr">
-  <div style="display:flex;align-items:center;gap:10px">
-    <img src="https://www.google.com/s2/favicons?domain=magiclinks.com&sz=128" style="border-radius:10px;width:clamp(26px,3.5vh,40px);height:clamp(26px,3.5vh,40px);object-fit:contain">
-    <span class="tag">MagicLinks × AI Peekaboo</span>
-  </div>
-  <div class="hdr-right">
-    <div class="snum">05 / 08</div>
-    <a href="https://www.aipeekaboo.com" target="_blank" rel="noopener" class="powered"><span>Powered by</span><img src="https://www.aipeekaboo.com/images/peekaboo-logo-black.png" alt="AI Peekaboo"></a>
-  </div>
-</div>
-<div class="divider"></div>
-<div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:clamp(12px,1.8vh,20px);flex-shrink:0">
-  <h2 style="margin:0">Live example: <span style="color:var(--accent)">who's driving AI citations</span> for a hospitality client</h2>
-  <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:6px;padding:4px 10px;white-space:nowrap;flex-shrink:0">
-    <span style="font-size:clamp(11px,1.3vh,13px);font-weight:600;color:var(--ink4)">Better Hospitality Reviews</span>
+<div style="display:flex;align-items:center;gap:12px;margin-bottom:clamp(12px,1.8vh,20px);flex-shrink:0">
+  <h2 style="margin:0">One hospitality client. <span style="color:var(--accent)">Bali + Melbourne.</span></h2>
+  <div style="margin-left:auto;display:flex;align-items:center;gap:8px;background:var(--paper2);border:1px solid var(--rule);border-radius:6px;padding:4px 12px;flex-shrink:0">
+    <img src="https://www.google.com/s2/favicons?domain=instagram.com&sz=32" style="width:16px;height:16px;border-radius:3px">
+    <span style="font-size:clamp(11px,1.3vh,13px);font-weight:600;color:var(--ink3)">Instagram citations from AI reports</span>
   </div>
 </div>
 
-<div style="display:grid;grid-template-columns:3fr 2fr;gap:clamp(14px,1.8vw,22px);flex:1;min-height:0;align-items:start">
+<div style="display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(14px,1.8vw,22px);flex:1;min-height:0">
 
-  <div style="display:flex;flex-direction:column;gap:clamp(10px,1.4vh,14px)">
-    <div style="font-size:clamp(11px,1.3vh,13px);font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink4)">Top AI-Cited Creators — Bali &amp; Melbourne</div>
-    <div style="display:flex;flex-direction:column;gap:6px">
-      <div style="display:grid;grid-template-columns:2fr 1fr 1fr;gap:8px;padding:0 clamp(10px,1.2vw,14px)">
-        <div style="font-size:clamp(10px,1.15vh,12px);font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink4)">Handle</div>
-        <div style="font-size:clamp(10px,1.15vh,12px);font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink4);text-align:right">Followers</div>
-        <div style="font-size:clamp(10px,1.15vh,12px);font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink4);text-align:right">Tier</div>
-      </div>
-      <div style="display:grid;grid-template-columns:2fr 1fr 1fr;gap:8px;background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:8px;padding:clamp(8px,1.1vh,12px) clamp(10px,1.2vw,14px);align-items:center">
-        <div style="font-size:clamp(13px,1.7vh,17px);font-weight:600;color:var(--ink)">@ladyironchef</div>
-        <div style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.7vh,16px);color:var(--ink2);text-align:right">587K</div>
-        <div style="text-align:right"><span style="font-size:clamp(10px,1.15vh,12px);font-weight:700;background:var(--accent-dark);color:#fff;border-radius:3px;padding:2px 7px">Macro</span></div>
-      </div>
-      <div style="display:grid;grid-template-columns:2fr 1fr 1fr;gap:8px;background:var(--paper2);border:1px solid var(--rule);border-radius:8px;padding:clamp(8px,1.1vh,12px) clamp(10px,1.2vw,14px);align-items:center">
-        <div style="font-size:clamp(13px,1.7vh,17px);font-weight:600;color:var(--ink)">@baligasm</div>
-        <div style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.7vh,16px);color:var(--ink2);text-align:right">557K</div>
-        <div style="text-align:right"><span style="font-size:clamp(10px,1.15vh,12px);font-weight:700;background:var(--accent-dark);color:#fff;border-radius:3px;padding:2px 7px">Macro</span></div>
-      </div>
-      <div style="display:grid;grid-template-columns:2fr 1fr 1fr;gap:8px;background:var(--paper2);border:1px solid var(--rule);border-radius:8px;padding:clamp(8px,1.1vh,12px) clamp(10px,1.2vw,14px);align-items:center">
-        <div style="font-size:clamp(13px,1.7vh,17px);font-weight:600;color:var(--ink)">@broadsheet_melb</div>
-        <div style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.7vh,16px);color:var(--ink2);text-align:right">486K</div>
-        <div style="text-align:right"><span style="font-size:clamp(10px,1.15vh,12px);font-weight:700;background:var(--accent-dark);color:#fff;border-radius:3px;padding:2px 7px">Macro</span></div>
-      </div>
-      <div style="display:grid;grid-template-columns:2fr 1fr 1fr;gap:8px;background:var(--paper2);border:1px solid var(--rule);border-radius:8px;padding:clamp(8px,1.1vh,12px) clamp(10px,1.2vw,14px);align-items:center">
-        <div style="font-size:clamp(13px,1.7vh,17px);font-weight:600;color:var(--ink)">@2hungryguys</div>
-        <div style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.7vh,16px);color:var(--ink2);text-align:right">214K</div>
-        <div style="text-align:right"><span style="font-size:clamp(10px,1.15vh,12px);font-weight:700;background:var(--accent-dark);color:#fff;border-radius:3px;padding:2px 7px">Macro</span></div>
-      </div>
-      <div style="display:grid;grid-template-columns:2fr 1fr 1fr;gap:8px;background:var(--paper2);border:1px solid var(--rule);border-radius:8px;padding:clamp(8px,1.1vh,12px) clamp(10px,1.2vw,14px);align-items:center">
-        <div style="font-size:clamp(13px,1.7vh,17px);font-weight:600;color:var(--ink)">@perth.local</div>
-        <div style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.7vh,16px);color:var(--ink2);text-align:right">166K</div>
-        <div style="text-align:right"><span style="font-size:clamp(10px,1.15vh,12px);font-weight:700;background:var(--accent-dark);color:#fff;border-radius:3px;padding:2px 7px">Macro</span></div>
-      </div>
-      <div style="display:grid;grid-template-columns:2fr 1fr 1fr;gap:8px;background:var(--paper2);border:1px solid var(--rule);border-radius:8px;padding:clamp(8px,1.1vh,12px) clamp(10px,1.2vw,14px);align-items:center">
-        <div style="font-size:clamp(13px,1.7vh,17px);color:var(--ink3)">+ 88 more creators</div>
-        <div style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.7vh,16px);color:var(--ink3);text-align:right">1.6M</div>
-        <div style="text-align:right"><span style="font-size:clamp(10px,1.15vh,12px);font-weight:700;background:var(--paper3);color:var(--ink3);border-radius:3px;padding:2px 7px;border:1px solid var(--rule)">Micro/Nano</span></div>
-      </div>
+  <!-- Creator table -->
+  <div style="display:flex;flex-direction:column;gap:clamp(6px,0.9vh,10px);min-height:0">
+    <div style="display:grid;grid-template-columns:2fr 1fr 1fr;gap:8px;padding:0 clamp(10px,1.2vw,14px)">
+      <div style="font-size:clamp(10px,1.15vh,12px);font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink4)">Creator</div>
+      <div style="font-size:clamp(10px,1.15vh,12px);font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink4);text-align:right">Followers</div>
+      <div style="font-size:clamp(10px,1.15vh,12px);font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink4);text-align:right">Tier</div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:2fr 1fr 1fr;gap:8px;background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:8px;padding:clamp(8px,1.1vh,13px) clamp(10px,1.2vw,14px);align-items:center">
+      <div style="display:flex;align-items:center;gap:8px"><img src="https://www.google.com/s2/favicons?domain=instagram.com&sz=32" style="width:14px;height:14px;border-radius:2px;opacity:.7"><span style="font-size:clamp(13px,1.8vh,18px);font-weight:600;color:var(--ink)">@ladyironchef</span></div>
+      <div style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.8vh,17px);color:var(--accent-dark);font-weight:700;text-align:right">587K</div>
+      <div style="text-align:right"><span style="font-size:clamp(9px,1.1vh,11px);font-weight:700;background:var(--accent-dark);color:#fff;border-radius:3px;padding:2px 7px">Macro</span></div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:2fr 1fr 1fr;gap:8px;background:var(--paper2);border:1px solid var(--rule);border-radius:8px;padding:clamp(8px,1.1vh,13px) clamp(10px,1.2vw,14px);align-items:center">
+      <div style="display:flex;align-items:center;gap:8px"><img src="https://www.google.com/s2/favicons?domain=instagram.com&sz=32" style="width:14px;height:14px;border-radius:2px;opacity:.7"><span style="font-size:clamp(13px,1.8vh,18px);font-weight:600;color:var(--ink)">@baligasm</span></div>
+      <div style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.8vh,17px);color:var(--ink2);text-align:right">557K</div>
+      <div style="text-align:right"><span style="font-size:clamp(9px,1.1vh,11px);font-weight:700;background:var(--accent-dark);color:#fff;border-radius:3px;padding:2px 7px">Macro</span></div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:2fr 1fr 1fr;gap:8px;background:var(--paper2);border:1px solid var(--rule);border-radius:8px;padding:clamp(8px,1.1vh,13px) clamp(10px,1.2vw,14px);align-items:center">
+      <div style="display:flex;align-items:center;gap:8px"><img src="https://www.google.com/s2/favicons?domain=instagram.com&sz=32" style="width:14px;height:14px;border-radius:2px;opacity:.7"><span style="font-size:clamp(13px,1.8vh,18px);font-weight:600;color:var(--ink)">@broadsheet_melb</span></div>
+      <div style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.8vh,17px);color:var(--ink2);text-align:right">486K</div>
+      <div style="text-align:right"><span style="font-size:clamp(9px,1.1vh,11px);font-weight:700;background:var(--accent-dark);color:#fff;border-radius:3px;padding:2px 7px">Macro</span></div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:2fr 1fr 1fr;gap:8px;background:var(--paper2);border:1px solid var(--rule);border-radius:8px;padding:clamp(8px,1.1vh,13px) clamp(10px,1.2vw,14px);align-items:center">
+      <div style="display:flex;align-items:center;gap:8px"><img src="https://www.google.com/s2/favicons?domain=instagram.com&sz=32" style="width:14px;height:14px;border-radius:2px;opacity:.7"><span style="font-size:clamp(13px,1.8vh,18px);font-weight:600;color:var(--ink)">@2hungryguys</span></div>
+      <div style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.8vh,17px);color:var(--ink2);text-align:right">214K</div>
+      <div style="text-align:right"><span style="font-size:clamp(9px,1.1vh,11px);font-weight:700;background:var(--accent-dark);color:#fff;border-radius:3px;padding:2px 7px">Macro</span></div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:2fr 1fr 1fr;gap:8px;background:var(--paper2);border:1px solid var(--rule);border-radius:8px;padding:clamp(8px,1.1vh,13px) clamp(10px,1.2vw,14px);align-items:center">
+      <div style="display:flex;align-items:center;gap:8px"><img src="https://www.google.com/s2/favicons?domain=instagram.com&sz=32" style="width:14px;height:14px;border-radius:2px;opacity:.7"><span style="font-size:clamp(13px,1.8vh,18px);font-weight:600;color:var(--ink)">@perth.local</span></div>
+      <div style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.8vh,17px);color:var(--ink2);text-align:right">166K</div>
+      <div style="text-align:right"><span style="font-size:clamp(9px,1.1vh,11px);font-weight:700;background:var(--accent-dark);color:#fff;border-radius:3px;padding:2px 7px">Macro</span></div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:2fr 1fr 1fr;gap:8px;background:var(--paper2);border:1px solid var(--rule);border-radius:8px;padding:clamp(8px,1.1vh,13px) clamp(10px,1.2vw,14px);align-items:center">
+      <div style="font-size:clamp(13px,1.8vh,17px);color:var(--ink3)">+ 79 more handles</div>
+      <div style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.8vh,17px);color:var(--ink3);text-align:right">1.55M</div>
+      <div style="text-align:right"><span style="font-size:clamp(9px,1.1vh,11px);font-weight:700;background:var(--paper3);color:var(--ink3);border-radius:3px;padding:2px 7px;border:1px solid var(--rule)">Micro/Nano</span></div>
     </div>
     <div class="src">AI Peekaboo citation report + Instagram API · April 2026</div>
   </div>
 
-  <div style="display:flex;flex-direction:column;gap:clamp(10px,1.4vh,14px)">
-    <div style="font-size:clamp(11px,1.3vh,13px);font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink4)">The Numbers</div>
-    <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(14px,2vh,20px) clamp(14px,1.8vw,18px);display:flex;flex-direction:column;gap:clamp(14px,2vh,20px)">
-      <div>
-        <div style="font-size:clamp(28px,4vh,42px);font-weight:700;color:var(--accent);font-family:'DM Mono',monospace;line-height:1">93</div>
-        <div style="font-size:clamp(12px,1.6vh,15px);color:var(--ink3);margin-top:3px">unique Instagram accounts<br>cited by AI for one client</div>
-      </div>
-      <div style="height:1px;background:var(--rule)"></div>
-      <div>
-        <div style="font-size:clamp(28px,4vh,42px);font-weight:700;color:var(--ink);font-family:'DM Mono',monospace;line-height:1">5.6M</div>
-        <div style="font-size:clamp(12px,1.6vh,15px);color:var(--ink3);margin-top:3px">combined follower reach<br>across all cited accounts</div>
-      </div>
-      <div style="height:1px;background:var(--rule)"></div>
-      <div>
-        <div style="font-size:clamp(28px,4vh,42px);font-weight:700;color:var(--accent2);font-family:'DM Mono',monospace;line-height:1">45%</div>
-        <div style="font-size:clamp(12px,1.6vh,15px);color:var(--ink3);margin-top:3px">of cited handles are<br>Micro-tier (10K–100K)</div>
-      </div>
-      <div style="height:1px;background:var(--rule)"></div>
-      <div>
-        <div style="font-size:clamp(28px,4vh,42px);font-weight:700;color:var(--ink);font-family:'DM Mono',monospace;line-height:1">71%</div>
-        <div style="font-size:clamp(12px,1.6vh,15px);color:var(--ink3);margin-top:3px">of total reach from<br>just 14 Macro accounts</div>
-      </div>
-    </div>
-    <div style="background:var(--accent2-bg);border:1px solid var(--accent2-bd);border-radius:8px;padding:clamp(10px,1.4vh,14px) clamp(12px,1.4vw,16px)">
-      <p style="font-size:clamp(12px,1.55vh,15px);color:var(--accent2-dark);margin:0;line-height:1.45;font-weight:500">This is one client. MagicLinks has 5,000+ brands and 38,000 creators.</p>
-    </div>
-  </div>
+  <!-- Stats -->
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(10px,1.4vh,14px);align-content:start">
 
+    <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(14px,2vh,22px) clamp(12px,1.5vw,18px)">
+      <div class="num" style="font-size:clamp(34px,5.5vh,60px)">93</div>
+      <div style="font-size:clamp(12px,1.55vh,15px);color:var(--ink3);margin-top:4px">Instagram accounts<br>cited by AI</div>
+    </div>
+
+    <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(14px,2vh,22px) clamp(12px,1.5vw,18px)">
+      <div class="num" style="font-size:clamp(34px,5.5vh,60px)">5.6M</div>
+      <div style="font-size:clamp(12px,1.55vh,15px);color:var(--ink3);margin-top:4px">combined follower<br>reach</div>
+    </div>
+
+    <div style="background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:10px;padding:clamp(14px,2vh,22px) clamp(12px,1.5vw,18px)">
+      <div class="num" style="font-size:clamp(34px,5.5vh,60px)">45%</div>
+      <div style="font-size:clamp(12px,1.55vh,15px);color:var(--ink3);margin-top:4px">of cited handles<br>are Micro-tier</div>
+    </div>
+
+    <div style="background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:10px;padding:clamp(14px,2vh,22px) clamp(12px,1.5vw,18px)">
+      <div class="num" style="font-size:clamp(34px,5.5vh,60px)">71%</div>
+      <div style="font-size:clamp(12px,1.55vh,15px);color:var(--ink3);margin-top:4px">of reach from<br>14 Macro accounts</div>
+    </div>
+
+    <!-- Platform breakdown -->
+    <div style="grid-column:1/-1;background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(12px,1.6vh,18px) clamp(12px,1.5vw,18px)">
+      <div style="font-size:clamp(10px,1.2vh,12px);font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink4);margin-bottom:clamp(8px,1.1vh,12px)">Cited account types</div>
+      <div style="display:flex;flex-direction:column;gap:clamp(6px,0.9vh,10px)">
+        <div style="display:flex;align-items:center;gap:10px;justify-content:space-between">
+          <div style="display:flex;align-items:center;gap:8px"><img src="https://www.google.com/s2/favicons?domain=instagram.com&sz=32" style="width:15px;height:15px;border-radius:2px"><span style="font-size:clamp(12px,1.6vh,16px);color:var(--ink2)">Creator / Influencer</span></div>
+          <span style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.6vh,15px);font-weight:700;color:var(--accent)">35 &nbsp;·&nbsp; 2.1M</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;justify-content:space-between">
+          <div style="display:flex;align-items:center;gap:8px"><img src="https://www.google.com/s2/favicons?domain=instagram.com&sz=32" style="width:15px;height:15px;border-radius:2px"><span style="font-size:clamp(12px,1.6vh,16px);color:var(--ink2)">Restaurant / Venue</span></div>
+          <span style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.6vh,15px);color:var(--ink3)">43 &nbsp;·&nbsp; 1.1M</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;justify-content:space-between">
+          <div style="display:flex;align-items:center;gap:8px"><img src="https://www.google.com/s2/favicons?domain=instagram.com&sz=32" style="width:15px;height:15px;border-radius:2px"><span style="font-size:clamp(12px,1.6vh,16px);color:var(--ink2)">Media / Guide</span></div>
+          <span style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.6vh,15px);color:var(--ink3)">12 &nbsp;·&nbsp; 1.9M</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
 </div>
 </div></section>
 
-<!-- SLIDE 06: What AI Peekaboo Adds -->
+<!-- SLIDE 04: What this looks like at scale -->
 <section><div class="s">
 <div class="stripe"></div>
 <div class="hdr">
   <div style="display:flex;align-items:center;gap:10px">
-    <img src="https://www.google.com/s2/favicons?domain=magiclinks.com&sz=128" style="border-radius:10px;width:clamp(26px,3.5vh,40px);height:clamp(26px,3.5vh,40px);object-fit:contain">
+    <img src="https://www.google.com/s2/favicons?domain=magiclinks.com&sz=128" style="border-radius:8px;width:clamp(24px,3vh,36px);height:clamp(24px,3vh,36px)">
     <span class="tag">MagicLinks × AI Peekaboo</span>
   </div>
   <div class="hdr-right">
-    <div class="snum">06 / 08</div>
-    <a href="https://www.aipeekaboo.com" target="_blank" rel="noopener" class="powered"><span>Powered by</span><img src="https://www.aipeekaboo.com/images/peekaboo-logo-black.png" alt="AI Peekaboo"></a>
+    <div class="snum">04 / 05</div>
+    <a href="https://www.aipeekaboo.com" target="_blank" rel="noopener" class="powered"><span>Powered by</span><img src="https://www.aipeekaboo.com/images/peekaboo-logo-black.png"></a>
   </div>
 </div>
 <div class="divider"></div>
-<h2>What AI Peekaboo adds to <span style="color:var(--accent)">Discovery Intelligence</span></h2>
-<p style="font-size:clamp(14px,2vh,20px);color:var(--ink2);margin:0 0 clamp(14px,2vh,22px);line-height:1.5">We monitor actual ChatGPT and Perplexity interfaces — not API approximations. That distinction matters.</p>
+<h2>At MagicLinks scale. <span style="color:var(--accent)">38,000 creators.</span></h2>
+<p style="font-size:clamp(14px,2vh,20px);color:var(--ink3);margin:0 0 clamp(16px,2.2vh,24px);line-height:1.5">Same data layer, applied to every brand in your network — across every AI platform.</p>
 
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(12px,1.6vw,20px);flex:1;min-height:0;align-items:start">
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:clamp(12px,1.6vw,20px);flex:1;min-height:0;align-items:start">
 
-  <div style="display:flex;flex-direction:column;gap:clamp(10px,1.4vh,14px)">
-    <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:10px;overflow:hidden">
-      <div style="padding:clamp(12px,1.6vh,18px) clamp(14px,1.8vw,18px);border-bottom:1px solid var(--rule)">
-        <div style="font-size:clamp(11px,1.3vh,13px);font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink4);margin-bottom:6px">Most AEO Tools</div>
-        <div style="font-size:clamp(15px,2.1vh,20px);font-weight:700;color:var(--ink)">API-based monitoring</div>
-      </div>
-      <div style="padding:clamp(12px,1.6vh,18px) clamp(14px,1.8vw,18px);display:flex;flex-direction:column;gap:clamp(10px,1.4vh,14px)">
-        <div style="display:flex;gap:8px;align-items:flex-start">
-          <svg style="width:14px;height:14px;flex-shrink:0;margin-top:3px;color:var(--ink4)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-          <span style="font-size:clamp(13px,1.7vh,17px);color:var(--ink3);line-height:1.4">Queries sent to LLM API — not the same as real user experience</span>
-        </div>
-        <div style="display:flex;gap:8px;align-items:flex-start">
-          <svg style="width:14px;height:14px;flex-shrink:0;margin-top:3px;color:var(--ink4)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-          <span style="font-size:clamp(13px,1.7vh,17px);color:var(--ink3);line-height:1.4">No browsing mode, no web citations, no source links</span>
-        </div>
-        <div style="display:flex;gap:8px;align-items:flex-start">
-          <svg style="width:14px;height:14px;flex-shrink:0;margin-top:3px;color:var(--ink4)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-          <span style="font-size:clamp(13px,1.7vh,17px);color:var(--ink3);line-height:1.4">Brand-level only — no source attribution to creator content</span>
-        </div>
-      </div>
+  <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:12px;padding:clamp(18px,2.5vh,30px) clamp(16px,2vw,22px);display:flex;flex-direction:column;gap:clamp(10px,1.4vh,16px)">
+    <div style="display:flex;gap:8px;align-items:center;margin-bottom:4px">
+      <img src="https://www.google.com/s2/favicons?domain=chatgpt.com&sz=64" style="width:clamp(20px,2.6vh,28px);height:clamp(20px,2.6vh,28px);border-radius:4px">
+      <img src="https://www.google.com/s2/favicons?domain=perplexity.ai&sz=64" style="width:clamp(20px,2.6vh,28px);height:clamp(20px,2.6vh,28px);border-radius:4px">
+      <img src="https://www.google.com/s2/favicons?domain=gemini.google.com&sz=64" style="width:clamp(20px,2.6vh,28px);height:clamp(20px,2.6vh,28px);border-radius:4px">
     </div>
+    <div style="font-size:clamp(15px,2.1vh,20px);font-weight:700;color:var(--ink);line-height:1.3">Per-brand AI citation dashboard</div>
+    <div style="font-size:clamp(13px,1.7vh,16px);color:var(--ink3);line-height:1.5">Which queries mention your brand. Which don't. What sources are being cited. Updated continuously.</div>
   </div>
 
-  <div style="display:flex;flex-direction:column;gap:clamp(10px,1.4vh,14px)">
-    <div style="background:var(--ok-bg);border:1px solid var(--ok-bd);border-radius:10px;overflow:hidden">
-      <div style="padding:clamp(12px,1.6vh,18px) clamp(14px,1.8vw,18px);border-bottom:1px solid var(--ok-bd)">
-        <div style="font-size:clamp(11px,1.3vh,13px);font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ok);margin-bottom:6px">AI Peekaboo</div>
-        <div style="font-size:clamp(15px,2.1vh,20px);font-weight:700;color:var(--ink)">Actual UI monitoring</div>
-      </div>
-      <div style="padding:clamp(12px,1.6vh,18px) clamp(14px,1.8vw,18px);display:flex;flex-direction:column;gap:clamp(10px,1.4vh,14px)">
-        <div style="display:flex;gap:8px;align-items:flex-start">
-          <svg style="width:14px;height:14px;flex-shrink:0;margin-top:3px;color:var(--ok)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-          <span style="font-size:clamp(13px,1.7vh,17px);color:var(--ink2);line-height:1.4">Monitors real ChatGPT + Perplexity interfaces — what users actually see</span>
-        </div>
-        <div style="display:flex;gap:8px;align-items:flex-start">
-          <svg style="width:14px;height:14px;flex-shrink:0;margin-top:3px;color:var(--ok)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-          <span style="font-size:clamp(13px,1.7vh,17px);color:var(--ink2);line-height:1.4">Captures source URLs — links back to specific creator content</span>
-        </div>
-        <div style="display:flex;gap:8px;align-items:flex-start">
-          <svg style="width:14px;height:14px;flex-shrink:0;margin-top:3px;color:var(--ok)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-          <span style="font-size:clamp(13px,1.7vh,17px);color:var(--ink2);line-height:1.4">API feed: by brand, by product, by query — white-label ready</span>
-        </div>
-        <div style="display:flex;gap:8px;align-items:flex-start">
-          <svg style="width:14px;height:14px;flex-shrink:0;margin-top:3px;color:var(--ok)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-          <span style="font-size:clamp(13px,1.7vh,17px);color:var(--ink2);line-height:1.4">Map citation sources back to specific creator handles → close the loop</span>
-        </div>
-      </div>
+  <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:12px;padding:clamp(18px,2.5vh,30px) clamp(16px,2vw,22px);display:flex;flex-direction:column;gap:clamp(10px,1.4vh,16px)">
+    <div style="display:flex;gap:8px;align-items:center;margin-bottom:4px">
+      <img src="https://www.google.com/s2/favicons?domain=instagram.com&sz=64" style="width:clamp(20px,2.6vh,28px);height:clamp(20px,2.6vh,28px);border-radius:4px">
+      <img src="https://www.google.com/s2/favicons?domain=youtube.com&sz=64" style="width:clamp(20px,2.6vh,28px);height:clamp(20px,2.6vh,28px);border-radius:4px">
+      <img src="https://www.google.com/s2/favicons?domain=tiktok.com&sz=64" style="width:clamp(20px,2.6vh,28px);height:clamp(20px,2.6vh,28px);border-radius:4px">
     </div>
+    <div style="font-size:clamp(15px,2.1vh,20px);font-weight:700;color:var(--ink);line-height:1.3">Creator-level attribution</div>
+    <div style="font-size:clamp(13px,1.7vh,16px);color:var(--ink3);line-height:1.5">Match citation source URLs back to your creator content library. Know exactly who moved the needle.</div>
+  </div>
+
+  <div style="background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:12px;padding:clamp(18px,2.5vh,30px) clamp(16px,2vw,22px);display:flex;flex-direction:column;gap:clamp(10px,1.4vh,16px)">
+    <div style="font-size:clamp(28px,4vh,44px);line-height:1;margin-bottom:4px">📡</div>
+    <div style="font-size:clamp(15px,2.1vh,20px);font-weight:700;color:var(--ink);line-height:1.3">Clean REST API</div>
+    <div style="font-size:clamp(13px,1.7vh,16px);color:var(--ink3);line-height:1.5">Feeds directly into Discovery Intelligence. By brand, by product, by creator. White-label ready. No joint infrastructure build.</div>
   </div>
 
 </div>
 
-<div style="background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:10px;padding:clamp(12px,1.8vh,20px) clamp(16px,2vw,24px);margin-top:clamp(12px,1.8vh,18px);flex-shrink:0">
-  <p style="font-size:clamp(14px,1.9vh,19px);color:var(--ink);margin:0;line-height:1.5;font-weight:500">Integration path: AI Peekaboo API feeds citation data into Discovery Intelligence. MagicLinks cross-references against creator content library. <strong style="color:var(--accent-dark)">Result: the world's first creator → AI citation attribution layer.</strong></p>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:clamp(12px,1.6vw,20px);margin-top:clamp(12px,1.8vh,20px);flex-shrink:0">
+  <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:8px;padding:clamp(10px,1.4vh,16px) clamp(14px,1.8vw,18px);display:flex;flex-direction:column;align-items:center;text-align:center;gap:4px">
+    <div class="num" style="font-size:clamp(26px,3.8vh,40px)">5,000+</div>
+    <div style="font-size:clamp(11px,1.4vh,14px);color:var(--ink4)">brands in your network</div>
+  </div>
+  <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:8px;padding:clamp(10px,1.4vh,16px) clamp(14px,1.8vw,18px);display:flex;flex-direction:column;align-items:center;text-align:center;gap:4px">
+    <div class="num" style="font-size:clamp(26px,3.8vh,40px)">38,000+</div>
+    <div style="font-size:clamp(11px,1.4vh,14px);color:var(--ink4)">vetted creators</div>
+  </div>
+  <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:8px;padding:clamp(10px,1.4vh,16px) clamp(14px,1.8vw,18px);display:flex;flex-direction:column;align-items:center;text-align:center;gap:4px">
+    <div class="num" style="font-size:clamp(26px,3.8vh,40px)">$12.3B</div>
+    <div style="font-size:clamp(11px,1.4vh,14px);color:var(--ink4)">GMV tracked — now with AI attribution</div>
+  </div>
 </div>
+
 </div></section>
 
-<!-- SLIDE 07: Why Now -->
-<section><div class="s">
-<div class="stripe"></div>
-<div class="hdr">
-  <div style="display:flex;align-items:center;gap:10px">
-    <img src="https://www.google.com/s2/favicons?domain=magiclinks.com&sz=128" style="border-radius:10px;width:clamp(26px,3.5vh,40px);height:clamp(26px,3.5vh,40px);object-fit:contain">
-    <span class="tag">MagicLinks × AI Peekaboo</span>
-  </div>
-  <div class="hdr-right">
-    <div class="snum">07 / 08</div>
-    <a href="https://www.aipeekaboo.com" target="_blank" rel="noopener" class="powered"><span>Powered by</span><img src="https://www.aipeekaboo.com/images/peekaboo-logo-black.png" alt="AI Peekaboo"></a>
-  </div>
-</div>
-<div class="divider"></div>
-<h2>Why this window is <span style="color:var(--accent)">open right now.</span></h2>
-<p style="font-size:clamp(14px,2vh,20px);color:var(--ink2);margin:0 0 clamp(14px,2vh,22px);line-height:1.5">AI Shelf™ launched March 2026. The category is being defined as we speak.</p>
-
-<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:clamp(10px,1.4vw,16px);flex:1;min-height:0;align-items:start">
-
-  <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(16px,2.2vh,26px) clamp(14px,1.8vw,20px);display:flex;flex-direction:column;gap:clamp(10px,1.4vh,14px);height:100%">
-    <div style="font-size:clamp(30px,4.5vh,48px)">⏱</div>
-    <div style="font-size:clamp(15px,2.1vh,20px);font-weight:700;color:var(--ink);line-height:1.3">First mover advantage</div>
-    <div style="font-size:clamp(13px,1.7vh,17px);color:var(--ink3);line-height:1.5">Every influencer platform will eventually need creator-level AI attribution. MagicLinks + Peekaboo can own the standard before anyone else ships it.</div>
-  </div>
-
-  <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(16px,2.2vh,26px) clamp(14px,1.8vw,20px);display:flex;flex-direction:column;gap:clamp(10px,1.4vh,14px);height:100%">
-    <div style="font-size:clamp(30px,4.5vh,48px)">📊</div>
-    <div style="font-size:clamp(15px,2.1vh,20px);font-weight:700;color:var(--ink);line-height:1.3">A new performance metric</div>
-    <div style="font-size:clamp(13px,1.7vh,17px);color:var(--ink3);line-height:1.5">Brands currently measure creator ROI in clicks and GMV. "AI citation share" becomes the third metric — and only MagicLinks can offer all three in one dashboard.</div>
-  </div>
-
-  <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(16px,2.2vh,26px) clamp(14px,1.8vw,20px);display:flex;flex-direction:column;gap:clamp(10px,1.4vh,14px);height:100%">
-    <div style="font-size:clamp(30px,4.5vh,48px)">🔗</div>
-    <div style="font-size:clamp(15px,2.1vh,20px);font-weight:700;color:var(--ink);line-height:1.3">Low integration effort</div>
-    <div style="font-size:clamp(13px,1.7vh,17px);color:var(--ink3);line-height:1.5">AI Peekaboo exposes a clean REST API. Discovery Intelligence pulls the feed. No joint infrastructure build — a data partnership, not a merger.</div>
-  </div>
-
-</div>
-
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(12px,1.6vw,18px);margin-top:clamp(12px,1.8vh,18px);flex-shrink:0">
-  <div style="background:var(--accent2-bg);border:1px solid var(--accent2-bd);border-radius:8px;padding:clamp(10px,1.4vh,16px) clamp(14px,1.8vw,18px)">
-    <p style="font-size:clamp(13px,1.7vh,17px);color:var(--accent2-dark);margin:0;line-height:1.4;font-weight:500">MagicLinks already has AI Shelf™. Adding Peekaboo's citation layer enhances an existing product — not a new bet.</p>
-  </div>
-  <div style="background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:8px;padding:clamp(10px,1.4vh,16px) clamp(14px,1.8vw,18px)">
-    <p style="font-size:clamp(13px,1.7vh,17px);color:var(--accent-dark);margin:0;line-height:1.4;font-weight:500">The $52,060 vs. $1,261 stat you already have? AI citation share is the why behind that gap.</p>
-  </div>
-</div>
-</div></section>
-
-<!-- SLIDE 08: Next Steps -->
-<section><div class="s" style="justify-content:center;gap:clamp(20px,3vh,36px)">
+<!-- SLIDE 05: Let's talk -->
+<section><div class="s" style="justify-content:center;gap:clamp(24px,3.5vh,44px)">
 <div class="stripe"></div>
 <div class="hdr" style="position:absolute;top:3vh;left:4.5vw;right:4.5vw;margin-bottom:0">
   <div style="display:flex;align-items:center;gap:10px">
-    <img src="https://www.google.com/s2/favicons?domain=magiclinks.com&sz=128" style="border-radius:10px;width:clamp(26px,3.5vh,40px);height:clamp(26px,3.5vh,40px);object-fit:contain">
+    <img src="https://www.google.com/s2/favicons?domain=magiclinks.com&sz=128" style="border-radius:8px;width:clamp(24px,3vh,36px);height:clamp(24px,3vh,36px)">
     <span class="tag">MagicLinks × AI Peekaboo</span>
   </div>
   <div class="hdr-right">
-    <div class="snum">08 / 08</div>
-    <a href="https://www.aipeekaboo.com" target="_blank" rel="noopener" class="powered"><span>Powered by</span><img src="https://www.aipeekaboo.com/images/peekaboo-logo-black.png" alt="AI Peekaboo"></a>
+    <div class="snum">05 / 05</div>
+    <a href="https://www.aipeekaboo.com" target="_blank" rel="noopener" class="powered"><span>Powered by</span><img src="https://www.aipeekaboo.com/images/peekaboo-logo-black.png"></a>
   </div>
 </div>
 
-<div style="max-width:72ch">
-  <h2 style="font-size:clamp(26px,4.5vh,52px);margin-bottom:clamp(16px,2.5vh,28px)">One question to start.</h2>
-  <p style="font-size:clamp(20px,3.2vh,34px);color:var(--ink2);line-height:1.5;margin:0 0 clamp(24px,3.5vh,40px);font-weight:400"><em>&ldquo;When a brand on your platform asks which of their creator activations are showing up in ChatGPT — what do you tell them right now?&rdquo;</em></p>
+<div style="max-width:68ch">
+  <h2 style="font-size:clamp(28px,5vh,58px);margin-bottom:clamp(20px,3vh,36px);line-height:1.2">One pilot.<br><span style="color:var(--accent)">Two weeks.</span></h2>
 
-  <div style="display:flex;flex-direction:column;gap:clamp(12px,1.6vh,18px)">
+  <div style="display:flex;flex-direction:column;gap:clamp(14px,2vh,22px)">
     <div style="display:flex;gap:16px;align-items:flex-start">
-      <div style="width:clamp(28px,3.5vh,36px);height:clamp(28px,3.5vh,36px);border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-weight:700;font-size:clamp(13px,1.7vh,17px)">1</div>
-      <div style="padding-top:2px">
-        <div style="font-size:clamp(15px,2.1vh,20px);font-weight:600;color:var(--ink);margin-bottom:3px">API pilot — one brand, one vertical</div>
-        <div style="font-size:clamp(13px,1.7vh,16px);color:var(--ink3)">We run citation monitoring for a live MagicLinks brand. You see the creator attribution data in raw form. 2 weeks.</div>
+      <div style="width:clamp(28px,3.5vh,38px);height:clamp(28px,3.5vh,38px);border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-weight:700;font-size:clamp(13px,1.8vh,18px)">1</div>
+      <div style="padding-top:3px">
+        <div style="font-size:clamp(16px,2.3vh,24px);font-weight:600;color:var(--ink);margin-bottom:4px">Pick one brand from your network</div>
+        <div style="font-size:clamp(13px,1.7vh,17px);color:var(--ink3)">We run citation monitoring across ChatGPT, Perplexity, and Gemini for 2 weeks.</div>
       </div>
     </div>
     <div style="display:flex;gap:16px;align-items:flex-start">
-      <div style="width:clamp(28px,3.5vh,36px);height:clamp(28px,3.5vh,36px);border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-weight:700;font-size:clamp(13px,1.7vh,17px)">2</div>
-      <div style="padding-top:2px">
-        <div style="font-size:clamp(15px,2.1vh,20px);font-weight:600;color:var(--ink);margin-bottom:3px">Map data to Discovery Intelligence</div>
-        <div style="font-size:clamp(13px,1.7vh,16px);color:var(--ink3)">Align the citation feed schema to what AI Shelf™ already surfaces. Define the integration spec.</div>
+      <div style="width:clamp(28px,3.5vh,38px);height:clamp(28px,3.5vh,38px);border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-weight:700;font-size:clamp(13px,1.8vh,18px)">2</div>
+      <div style="padding-top:3px">
+        <div style="font-size:clamp(16px,2.3vh,24px);font-weight:600;color:var(--ink);margin-bottom:4px">We map citations to their creator content</div>
+        <div style="font-size:clamp(13px,1.7vh,17px);color:var(--ink3)">Show you exactly which creator posts are being surfaced — and which aren't.</div>
       </div>
     </div>
     <div style="display:flex;gap:16px;align-items:flex-start">
-      <div style="width:clamp(28px,3.5vh,36px);height:clamp(28px,3.5vh,36px);border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-weight:700;font-size:clamp(13px,1.7vh,17px)">3</div>
-      <div style="padding-top:2px">
-        <div style="font-size:clamp(15px,2.1vh,20px);font-weight:600;color:var(--ink);margin-bottom:3px">Commercial model</div>
-        <div style="font-size:clamp(13px,1.7vh,16px);color:var(--ink3)">Data licensing, rev-share on AI Shelf™ upsell, or white-label. Whatever fits your go-to-market.</div>
+      <div style="width:clamp(28px,3.5vh,38px);height:clamp(28px,3.5vh,38px);border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-weight:700;font-size:clamp(13px,1.8vh,18px)">3</div>
+      <div style="padding-top:3px">
+        <div style="font-size:clamp(16px,2.3vh,24px);font-weight:600;color:var(--ink);margin-bottom:4px">You decide what to build</div>
+        <div style="font-size:clamp(13px,1.7vh,17px);color:var(--ink3)">Data license, API integration into Discovery Intelligence, rev-share — whatever fits.</div>
       </div>
     </div>
   </div>
 </div>
 
-<div style="display:flex;align-items:center;gap:clamp(16px,2vw,28px);margin-top:clamp(8px,1.5vh,16px)">
-  <a href="https://www.aipeekaboo.com" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:8px;text-decoration:none">
-    <span style="font-size:clamp(10px,1.2vh,12px);color:var(--ink4)">Powered by</span>
-    <img src="https://www.aipeekaboo.com/images/peekaboo-logo-black.png" style="height:clamp(12px,1.8vh,20px);width:auto;opacity:.6">
-  </a>
-  <span style="color:var(--rule)">|</span>
-  <span style="font-size:clamp(10px,1.2vh,12px);color:var(--ink4)">aipeekaboo.com</span>
+<div style="display:flex;align-items:center;gap:14px;margin-top:clamp(8px,1.2vh,14px)">
+  <img src="https://www.aipeekaboo.com/images/peekaboo-logo-black.png" style="height:clamp(14px,2vh,22px);width:auto;opacity:.5">
+  <span style="font-size:clamp(11px,1.3vh,14px);color:var(--ink4)">aipeekaboo.com</span>
 </div>
 </div></section>
 

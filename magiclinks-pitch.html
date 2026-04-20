@@ -115,29 +115,81 @@
 </div>
 <div class="divider"></div>
 
-<div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:clamp(20px,3vh,36px)">
+<div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:clamp(14px,2vh,24px)">
 
+  <!-- Signal pipeline -->
+  <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:14px;padding:clamp(16px,2.2vh,26px) clamp(20px,2.5vw,30px);display:flex;align-items:center;justify-content:space-between;gap:10px;flex-shrink:0">
+    <div style="display:flex;flex-direction:column;align-items:center;gap:clamp(6px,.8vh,10px)">
+      <div style="display:flex;gap:8px">
+        <img src="https://www.google.com/s2/favicons?domain=instagram.com&sz=64" style="width:clamp(22px,3vh,32px);height:clamp(22px,3vh,32px);border-radius:6px">
+        <img src="https://www.google.com/s2/favicons?domain=youtube.com&sz=64" style="width:clamp(22px,3vh,32px);height:clamp(22px,3vh,32px);border-radius:6px">
+        <img src="https://www.google.com/s2/favicons?domain=tiktok.com&sz=64" style="width:clamp(22px,3vh,32px);height:clamp(22px,3vh,32px);border-radius:6px">
+        <img src="https://www.google.com/s2/favicons?domain=reddit.com&sz=64" style="width:clamp(22px,3vh,32px);height:clamp(22px,3vh,32px);border-radius:6px">
+      </div>
+      <div style="font-size:clamp(10px,1.2vh,12px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4)">Creator content</div>
+    </div>
+    <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px">
+      <div style="height:2px;width:100%;background:linear-gradient(90deg,var(--rule),var(--accent-bd),var(--rule));border-radius:2px"></div>
+      <div style="font-size:clamp(9px,1.1vh,11px);color:var(--ink4);letter-spacing:.06em;text-transform:uppercase">cited by AI</div>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:clamp(6px,.8vh,10px)">
+      <div style="display:flex;gap:8px">
+        <img src="https://www.google.com/s2/favicons?domain=chatgpt.com&sz=64" style="width:clamp(22px,3vh,32px);height:clamp(22px,3vh,32px);border-radius:6px">
+        <img src="https://www.google.com/s2/favicons?domain=perplexity.ai&sz=64" style="width:clamp(22px,3vh,32px);height:clamp(22px,3vh,32px);border-radius:6px">
+        <img src="https://www.google.com/s2/favicons?domain=gemini.google.com&sz=64" style="width:clamp(22px,3vh,32px);height:clamp(22px,3vh,32px);border-radius:6px">
+      </div>
+      <div style="font-size:clamp(10px,1.2vh,12px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4)">AI answers</div>
+    </div>
+    <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px">
+      <div style="height:2px;width:100%;background:linear-gradient(90deg,var(--rule),var(--accent-bd),var(--rule));border-radius:2px"></div>
+      <div style="font-size:clamp(9px,1.1vh,11px);color:var(--ink4);letter-spacing:.06em;text-transform:uppercase">source URLs</div>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:4px">
+      <div class="num" style="font-size:clamp(28px,4.2vh,48px)">153</div>
+      <div style="font-size:clamp(10px,1.2vh,12px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4)">citation URLs<br>tracked</div>
+    </div>
+  </div>
+
+  <!-- Two comparison panels -->
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,2vw,24px)">
-    <div style="background:var(--ok-bg);border:1px solid var(--ok-bd);border-radius:12px;padding:clamp(18px,2.5vh,30px) clamp(18px,2vw,26px)">
-      <div style="font-size:clamp(11px,1.3vh,13px);font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ok);margin-bottom:clamp(12px,1.6vh,18px)">AI Shelf™ answers today</div>
-      <div style="display:flex;flex-direction:column;gap:clamp(10px,1.4vh,16px)">
-        <div style="font-size:clamp(15px,2.1vh,21px);color:var(--ink2);line-height:1.4">✓ &nbsp;Is Brand X visible in AI?</div>
-        <div style="font-size:clamp(15px,2.1vh,21px);color:var(--ink2);line-height:1.4">✓ &nbsp;Share of voice vs. competitors</div>
-        <div style="font-size:clamp(15px,2.1vh,21px);color:var(--ink2);line-height:1.4">✓ &nbsp;Which queries to target</div>
+    <div style="background:var(--ok-bg);border:1px solid var(--ok-bd);border-radius:12px;padding:clamp(16px,2.2vh,26px) clamp(18px,2vw,24px)">
+      <div style="font-size:clamp(11px,1.3vh,13px);font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ok);margin-bottom:clamp(10px,1.4vh,16px)">AI Shelf™ answers today</div>
+      <div style="display:flex;flex-direction:column;gap:clamp(8px,1.1vh,14px)">
+        <div style="display:flex;align-items:center;gap:10px">
+          <div style="width:6px;height:6px;border-radius:50%;background:var(--ok);flex-shrink:0"></div>
+          <div style="font-size:clamp(14px,1.9vh,20px);color:var(--ink2);line-height:1.4">Is Brand X visible in AI?</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px">
+          <div style="width:6px;height:6px;border-radius:50%;background:var(--ok);flex-shrink:0"></div>
+          <div style="font-size:clamp(14px,1.9vh,20px);color:var(--ink2);line-height:1.4">Share of voice vs. competitors</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px">
+          <div style="width:6px;height:6px;border-radius:50%;background:var(--ok);flex-shrink:0"></div>
+          <div style="font-size:clamp(14px,1.9vh,20px);color:var(--ink2);line-height:1.4">Which queries to target</div>
+        </div>
       </div>
     </div>
-    <div style="background:var(--accent-bg);border:2px solid var(--accent-bd);border-radius:12px;padding:clamp(18px,2.5vh,30px) clamp(18px,2vw,26px)">
-      <div style="font-size:clamp(11px,1.3vh,13px);font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-dark);margin-bottom:clamp(12px,1.6vh,18px)">What brands ask next</div>
-      <div style="display:flex;flex-direction:column;gap:clamp(10px,1.4vh,16px)">
-        <div style="font-size:clamp(15px,2.1vh,21px);color:var(--ink);font-weight:600;line-height:1.4">Which of my <em>creators</em> drove that?</div>
-        <div style="font-size:clamp(15px,2.1vh,21px);color:var(--ink);font-weight:600;line-height:1.4">Which <em>products</em> are being cited?</div>
-        <div style="font-size:clamp(15px,2.1vh,21px);color:var(--ink);font-weight:600;line-height:1.4">Did this campaign <em>actually move</em> AI visibility?</div>
+    <div style="background:var(--accent-bg);border:2px solid var(--accent-bd);border-radius:12px;padding:clamp(16px,2.2vh,26px) clamp(18px,2vw,24px)">
+      <div style="font-size:clamp(11px,1.3vh,13px);font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-dark);margin-bottom:clamp(10px,1.4vh,16px)">What brands ask next</div>
+      <div style="display:flex;flex-direction:column;gap:clamp(8px,1.1vh,14px)">
+        <div style="display:flex;align-items:center;gap:10px">
+          <div style="width:6px;height:6px;border-radius:50%;background:var(--accent);flex-shrink:0"></div>
+          <div style="font-size:clamp(14px,1.9vh,20px);color:var(--ink);font-weight:600;line-height:1.4">Which <em>creators</em> drove that?</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px">
+          <div style="width:6px;height:6px;border-radius:50%;background:var(--accent);flex-shrink:0"></div>
+          <div style="font-size:clamp(14px,1.9vh,20px);color:var(--ink);font-weight:600;line-height:1.4">Which <em>products</em> are being cited?</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px">
+          <div style="width:6px;height:6px;border-radius:50%;background:var(--accent);flex-shrink:0"></div>
+          <div style="font-size:clamp(14px,1.9vh,20px);color:var(--ink);font-weight:600;line-height:1.4">Did this campaign <em>actually move</em> AI?</div>
+        </div>
       </div>
     </div>
   </div>
 
-  <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(16px,2.2vh,26px) clamp(20px,2.5vw,30px)">
-    <p style="font-size:clamp(16px,2.3vh,24px);color:var(--ink);margin:0;line-height:1.5">Peekaboo monitors ChatGPT, Perplexity, and Gemini — capturing every cited source URL. Cross that with your creator content library and you close the loop.</p>
+  <div style="background:var(--ink);border-radius:12px;padding:clamp(14px,2vh,22px) clamp(20px,2.5vw,30px)">
+    <p style="font-size:clamp(15px,2.1vh,22px);color:#E2E0F0;margin:0;line-height:1.55">Peekaboo monitors ChatGPT, Perplexity, and Gemini — capturing every cited source URL. Cross that with your creator content library and <strong style="color:#DDD6FE">you close the loop.</strong></p>
   </div>
 
 </div>
@@ -158,9 +210,13 @@
 </div>
 <div class="divider"></div>
 
-<div style="display:flex;align-items:baseline;gap:16px;margin-bottom:clamp(10px,1.4vh,16px);flex-shrink:0">
-  <h2 style="margin:0">Here's the actual data.</h2>
-  <span style="font-size:clamp(13px,1.7vh,17px);color:var(--ink3)">One hospitality client · Bali + Melbourne · April 2026</span>
+<div style="margin-bottom:clamp(10px,1.4vh,16px);flex-shrink:0">
+  <h2 style="margin:0 0 4px">Here's the actual data.</h2>
+  <div style="display:flex;align-items:center;gap:10px">
+    <span style="font-size:clamp(12px,1.6vh,16px);font-weight:600;color:var(--accent)">Better Hospitality Reviews</span>
+    <span style="color:var(--rule)">·</span>
+    <span style="font-size:clamp(12px,1.6vh,16px);color:var(--ink3)">Bali + Melbourne · April 2026</span>
+  </div>
 </div>
 
 <div style="flex:1;min-height:0;overflow:hidden;display:flex;flex-direction:column;gap:clamp(10px,1.4vh,14px)">
@@ -226,8 +282,63 @@
           <td style="text-align:right" class="mono">41</td>
           <td style="text-align:right" class="mono">3</td>
         </tr>
+        <tr>
+          <td><div style="display:flex;align-items:center;gap:7px"><img src="https://www.google.com/s2/favicons?domain=youtube.com&sz=32" style="width:14px;height:14px;border-radius:2px;opacity:.8"><span class="mono">Bali Food Lovers</span></div></td>
+          <td><img src="https://www.google.com/s2/favicons?domain=youtube.com&sz=32" style="width:14px;height:14px;border-radius:2px;vertical-align:middle"></td>
+          <td style="text-align:right" class="mono">142K</td>
+          <td><span class="badge badge-macro">Macro</span></td>
+          <td style="text-align:center" class="check">✓</td>
+          <td style="text-align:center" class="dash">—</td>
+          <td style="text-align:center" class="check">✓</td>
+          <td style="text-align:right" class="mono">38</td>
+          <td style="text-align:right" class="mono">6</td>
+        </tr>
+        <tr>
+          <td><div style="display:flex;align-items:center;gap:7px"><img src="https://www.google.com/s2/favicons?domain=instagram.com&sz=32" style="width:14px;height:14px;border-radius:2px;opacity:.8"><span class="mono">@melbourneeats_</span></div></td>
+          <td><img src="https://www.google.com/s2/favicons?domain=instagram.com&sz=32" style="width:14px;height:14px;border-radius:2px;vertical-align:middle"></td>
+          <td style="text-align:right" class="mono">67K</td>
+          <td><span class="badge" style="background:#6D28D9;color:#fff">Mid</span></td>
+          <td style="text-align:center" class="dash">—</td>
+          <td style="text-align:center" class="check">✓</td>
+          <td style="text-align:center" class="check">✓</td>
+          <td style="text-align:right" class="mono">29</td>
+          <td style="text-align:right" class="mono">2</td>
+        </tr>
+        <tr>
+          <td><div style="display:flex;align-items:center;gap:7px"><img src="https://www.google.com/s2/favicons?domain=tiktok.com&sz=32" style="width:14px;height:14px;border-radius:2px;opacity:.8"><span class="mono">@thebaliexperience</span></div></td>
+          <td><img src="https://www.google.com/s2/favicons?domain=tiktok.com&sz=32" style="width:14px;height:14px;border-radius:2px;vertical-align:middle"></td>
+          <td style="text-align:right" class="mono">34K</td>
+          <td><span class="badge badge-micro">Micro</span></td>
+          <td style="text-align:center" class="check">✓</td>
+          <td style="text-align:center" class="dash">—</td>
+          <td style="text-align:center" class="dash">—</td>
+          <td style="text-align:right" class="mono">17</td>
+          <td style="text-align:right" class="mono">2</td>
+        </tr>
+        <tr>
+          <td><div style="display:flex;align-items:center;gap:7px"><img src="https://www.google.com/s2/favicons?domain=instagram.com&sz=32" style="width:14px;height:14px;border-radius:2px;opacity:.8"><span class="mono">@melbourneguide</span></div></td>
+          <td><img src="https://www.google.com/s2/favicons?domain=instagram.com&sz=32" style="width:14px;height:14px;border-radius:2px;vertical-align:middle"></td>
+          <td style="text-align:right" class="mono">18K</td>
+          <td><span class="badge badge-micro">Micro</span></td>
+          <td style="text-align:center" class="dash">—</td>
+          <td style="text-align:center" class="check">✓</td>
+          <td style="text-align:center" class="dash">—</td>
+          <td style="text-align:right" class="mono">11</td>
+          <td style="text-align:right" class="mono">1</td>
+        </tr>
+        <tr>
+          <td><div style="display:flex;align-items:center;gap:7px"><img src="https://www.google.com/s2/favicons?domain=instagram.com&sz=32" style="width:14px;height:14px;border-radius:2px;opacity:.8"><span class="mono">@balivibes_</span></div></td>
+          <td><img src="https://www.google.com/s2/favicons?domain=instagram.com&sz=32" style="width:14px;height:14px;border-radius:2px;vertical-align:middle"></td>
+          <td style="text-align:right" class="mono">6.8K</td>
+          <td><span class="badge badge-micro" style="background:var(--paper3);color:var(--ink3);border:1px solid var(--rule)">Nano</span></td>
+          <td style="text-align:center" class="dash">—</td>
+          <td style="text-align:center" class="check">✓</td>
+          <td style="text-align:center" class="dash">—</td>
+          <td style="text-align:right" class="mono">6</td>
+          <td style="text-align:right" class="mono">1</td>
+        </tr>
         <tr style="background:var(--paper2)">
-          <td colspan="3" style="color:var(--ink4);font-style:italic">+ 79 more handles tracked</td>
+          <td colspan="3" style="color:var(--ink4);font-style:italic">+ 74 more handles tracked</td>
           <td><span class="badge badge-micro">Micro/Nano</span></td>
           <td colspan="3" style="text-align:center;color:var(--ink4)">mixed</td>
           <td style="text-align:right;color:var(--ink4)" class="mono">avg 28</td>
@@ -276,73 +387,63 @@
 </div>
 <div class="divider"></div>
 
-<h2 style="margin-bottom:clamp(4px,.6vh,8px)">We track citations<br><span style="color:var(--accent)">across every platform.</span></h2>
-<p style="font-size:clamp(13px,1.8vh,18px);color:var(--ink3);margin:0 0 clamp(14px,2vh,22px);line-height:1.5">These 5 platforms appeared in the BHR report. Same pipeline scales to your whole creator network.</p>
+<h2 style="margin-bottom:2px">We track citations<br><span style="color:var(--accent)">across every platform.</span></h2>
+<p style="font-size:clamp(13px,1.7vh,17px);color:var(--ink3);margin:0 0 clamp(10px,1.5vh,16px);line-height:1.4">These 5 platforms appeared in the BHR report. Same pipeline scales to your whole creator network.</p>
 
-<div style="display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(10px,1.3vw,18px);flex:1;align-items:stretch">
+<div style="display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(8px,1vw,14px);flex:1;align-items:stretch">
 
   <!-- Instagram -->
-  <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:14px;padding:clamp(18px,2.5vh,30px) clamp(14px,1.6vw,20px);display:flex;flex-direction:column;gap:clamp(10px,1.4vh,16px)">
-    <img src="https://www.google.com/s2/favicons?domain=instagram.com&sz=128" style="width:clamp(36px,5vh,56px);height:clamp(36px,5vh,56px);border-radius:12px">
-    <div>
-      <div style="font-size:clamp(14px,2vh,20px);font-weight:700;color:var(--ink);margin-bottom:6px">Instagram</div>
-      <div style="font-size:clamp(11px,1.4vh,14px);color:var(--ink3);line-height:1.5">Creator profiles, reels, and posts cited by AI answers</div>
-    </div>
-    <div style="margin-top:auto;background:var(--accent-bg);border-radius:8px;padding:clamp(8px,1.1vh,12px)">
-      <div class="mono" style="font-size:clamp(18px,2.8vh,30px);color:var(--accent)">93</div>
-      <div style="font-size:clamp(10px,1.2vh,12px);color:var(--ink3)">cited handles</div>
+  <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:12px;padding:clamp(14px,1.8vh,22px) clamp(12px,1.3vw,16px);display:flex;flex-direction:column;gap:clamp(4px,.6vh,8px)">
+    <img src="https://www.google.com/s2/favicons?domain=instagram.com&sz=128" style="width:clamp(32px,4.2vh,48px);height:clamp(32px,4.2vh,48px);border-radius:10px;flex-shrink:0">
+    <div style="font-size:clamp(13px,1.8vh,19px);font-weight:700;color:var(--ink);margin-top:2px">Instagram</div>
+    <div style="font-size:clamp(10px,1.25vh,13px);color:var(--ink3);line-height:1.45;flex:1">Creator profiles, reels, and posts cited by AI answers</div>
+    <div style="background:var(--accent-bg);border-radius:7px;padding:clamp(6px,.9vh,10px) clamp(8px,1vw,12px);margin-top:auto">
+      <div class="mono" style="font-size:clamp(20px,3vh,34px);color:var(--accent)">93</div>
+      <div style="font-size:clamp(9px,1.1vh,11px);color:var(--ink3)">cited handles</div>
     </div>
   </div>
 
   <!-- YouTube -->
-  <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:14px;padding:clamp(18px,2.5vh,30px) clamp(14px,1.6vw,20px);display:flex;flex-direction:column;gap:clamp(10px,1.4vh,16px)">
-    <img src="https://www.google.com/s2/favicons?domain=youtube.com&sz=128" style="width:clamp(36px,5vh,56px);height:clamp(36px,5vh,56px);border-radius:12px">
-    <div>
-      <div style="font-size:clamp(14px,2vh,20px);font-weight:700;color:var(--ink);margin-bottom:6px">YouTube</div>
-      <div style="font-size:clamp(11px,1.4vh,14px);color:var(--ink3);line-height:1.5">Video reviews and travel content cited by Gemini and Perplexity</div>
-    </div>
-    <div style="margin-top:auto;background:var(--paper2);border:1px solid var(--rule);border-radius:8px;padding:clamp(8px,1.1vh,12px)">
-      <div class="mono" style="font-size:clamp(18px,2.8vh,30px);color:var(--ink2)">24</div>
-      <div style="font-size:clamp(10px,1.2vh,12px);color:var(--ink3)">cited videos</div>
+  <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:12px;padding:clamp(14px,1.8vh,22px) clamp(12px,1.3vw,16px);display:flex;flex-direction:column;gap:clamp(4px,.6vh,8px)">
+    <img src="https://www.google.com/s2/favicons?domain=youtube.com&sz=128" style="width:clamp(32px,4.2vh,48px);height:clamp(32px,4.2vh,48px);border-radius:10px;flex-shrink:0">
+    <div style="font-size:clamp(13px,1.8vh,19px);font-weight:700;color:var(--ink);margin-top:2px">YouTube</div>
+    <div style="font-size:clamp(10px,1.25vh,13px);color:var(--ink3);line-height:1.45;flex:1">Video reviews and travel content cited by Gemini and Perplexity</div>
+    <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:7px;padding:clamp(6px,.9vh,10px) clamp(8px,1vw,12px);margin-top:auto">
+      <div class="mono" style="font-size:clamp(20px,3vh,34px);color:var(--ink2)">24</div>
+      <div style="font-size:clamp(9px,1.1vh,11px);color:var(--ink3)">cited videos</div>
     </div>
   </div>
 
   <!-- Reddit -->
-  <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:14px;padding:clamp(18px,2.5vh,30px) clamp(14px,1.6vw,20px);display:flex;flex-direction:column;gap:clamp(10px,1.4vh,16px)">
-    <img src="https://www.google.com/s2/favicons?domain=reddit.com&sz=128" style="width:clamp(36px,5vh,56px);height:clamp(36px,5vh,56px);border-radius:12px">
-    <div>
-      <div style="font-size:clamp(14px,2vh,20px);font-weight:700;color:var(--ink);margin-bottom:6px">Reddit</div>
-      <div style="font-size:clamp(11px,1.4vh,14px);color:var(--ink3);line-height:1.5">Community threads and recommendations cited in ChatGPT responses</div>
-    </div>
-    <div style="margin-top:auto;background:var(--paper2);border:1px solid var(--rule);border-radius:8px;padding:clamp(8px,1.1vh,12px)">
-      <div class="mono" style="font-size:clamp(18px,2.8vh,30px);color:var(--ink2)">17</div>
-      <div style="font-size:clamp(10px,1.2vh,12px);color:var(--ink3)">cited threads</div>
+  <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:12px;padding:clamp(14px,1.8vh,22px) clamp(12px,1.3vw,16px);display:flex;flex-direction:column;gap:clamp(4px,.6vh,8px)">
+    <img src="https://www.google.com/s2/favicons?domain=reddit.com&sz=128" style="width:clamp(32px,4.2vh,48px);height:clamp(32px,4.2vh,48px);border-radius:10px;flex-shrink:0">
+    <div style="font-size:clamp(13px,1.8vh,19px);font-weight:700;color:var(--ink);margin-top:2px">Reddit</div>
+    <div style="font-size:clamp(10px,1.25vh,13px);color:var(--ink3);line-height:1.45;flex:1">Community threads and recommendations cited in ChatGPT responses</div>
+    <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:7px;padding:clamp(6px,.9vh,10px) clamp(8px,1vw,12px);margin-top:auto">
+      <div class="mono" style="font-size:clamp(20px,3vh,34px);color:var(--ink2)">17</div>
+      <div style="font-size:clamp(9px,1.1vh,11px);color:var(--ink3)">cited threads</div>
     </div>
   </div>
 
   <!-- TikTok -->
-  <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:14px;padding:clamp(18px,2.5vh,30px) clamp(14px,1.6vw,20px);display:flex;flex-direction:column;gap:clamp(10px,1.4vh,16px)">
-    <img src="https://www.google.com/s2/favicons?domain=tiktok.com&sz=128" style="width:clamp(36px,5vh,56px);height:clamp(36px,5vh,56px);border-radius:12px">
-    <div>
-      <div style="font-size:clamp(14px,2vh,20px);font-weight:700;color:var(--ink);margin-bottom:6px">TikTok</div>
-      <div style="font-size:clamp(11px,1.4vh,14px);color:var(--ink3);line-height:1.5">Short-form content increasingly cited in Perplexity AI answers</div>
-    </div>
-    <div style="margin-top:auto;background:var(--paper2);border:1px solid var(--rule);border-radius:8px;padding:clamp(8px,1.1vh,12px)">
-      <div class="mono" style="font-size:clamp(18px,2.8vh,30px);color:var(--ink2)">11</div>
-      <div style="font-size:clamp(10px,1.2vh,12px);color:var(--ink3)">cited clips</div>
+  <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:12px;padding:clamp(14px,1.8vh,22px) clamp(12px,1.3vw,16px);display:flex;flex-direction:column;gap:clamp(4px,.6vh,8px)">
+    <img src="https://www.google.com/s2/favicons?domain=tiktok.com&sz=128" style="width:clamp(32px,4.2vh,48px);height:clamp(32px,4.2vh,48px);border-radius:10px;flex-shrink:0">
+    <div style="font-size:clamp(13px,1.8vh,19px);font-weight:700;color:var(--ink);margin-top:2px">TikTok</div>
+    <div style="font-size:clamp(10px,1.25vh,13px);color:var(--ink3);line-height:1.45;flex:1">Short-form content increasingly cited in Perplexity AI answers</div>
+    <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:7px;padding:clamp(6px,.9vh,10px) clamp(8px,1vw,12px);margin-top:auto">
+      <div class="mono" style="font-size:clamp(20px,3vh,34px);color:var(--ink2)">11</div>
+      <div style="font-size:clamp(9px,1.1vh,11px);color:var(--ink3)">cited clips</div>
     </div>
   </div>
 
   <!-- Facebook -->
-  <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:14px;padding:clamp(18px,2.5vh,30px) clamp(14px,1.6vw,20px);display:flex;flex-direction:column;gap:clamp(10px,1.4vh,16px)">
-    <img src="https://www.google.com/s2/favicons?domain=facebook.com&sz=128" style="width:clamp(36px,5vh,56px);height:clamp(36px,5vh,56px);border-radius:12px">
-    <div>
-      <div style="font-size:clamp(14px,2vh,20px);font-weight:700;color:var(--ink);margin-bottom:6px">Facebook</div>
-      <div style="font-size:clamp(11px,1.4vh,14px);color:var(--ink3);line-height:1.5">Group posts and pages surfaced in AI responses via web search</div>
-    </div>
-    <div style="margin-top:auto;background:var(--paper2);border:1px solid var(--rule);border-radius:8px;padding:clamp(8px,1.1vh,12px)">
-      <div class="mono" style="font-size:clamp(18px,2.8vh,30px);color:var(--ink2)">8</div>
-      <div style="font-size:clamp(10px,1.2vh,12px);color:var(--ink3)">cited pages</div>
+  <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:12px;padding:clamp(14px,1.8vh,22px) clamp(12px,1.3vw,16px);display:flex;flex-direction:column;gap:clamp(4px,.6vh,8px)">
+    <img src="https://www.google.com/s2/favicons?domain=facebook.com&sz=128" style="width:clamp(32px,4.2vh,48px);height:clamp(32px,4.2vh,48px);border-radius:10px;flex-shrink:0">
+    <div style="font-size:clamp(13px,1.8vh,19px);font-weight:700;color:var(--ink);margin-top:2px">Facebook</div>
+    <div style="font-size:clamp(10px,1.25vh,13px);color:var(--ink3);line-height:1.45;flex:1">Group posts and pages surfaced in AI responses via web search</div>
+    <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:7px;padding:clamp(6px,.9vh,10px) clamp(8px,1vw,12px);margin-top:auto">
+      <div class="mono" style="font-size:clamp(20px,3vh,34px);color:var(--ink2)">8</div>
+      <div style="font-size:clamp(9px,1.1vh,11px);color:var(--ink3)">cited pages</div>
     </div>
   </div>
 

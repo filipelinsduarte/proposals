@@ -1,0 +1,2106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ozari Health: SEO / AEO Proposal</title>
+
+<!-- GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YV8FCLN403"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-YV8FCLN403');</script>
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+
+<!-- Reveal.js -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reveal.min.css">
+
+<style>
+:root {
+  --accent: #396A58; --accent-bg: #E6EEEB; --accent-bd: #C0D4CE; --accent-dark: #2A5244;
+  --ink: #1A2C26; --ink2: #2D4A3E; --ink3: #677E76; --ink4: #9BAEA8;
+  --paper: #F8F5F1; --paper2: #EDE9E2; --paper3: #E0DDD6; --rule: #D4C9BE;
+  --ok: #16a34a; --ok-bg: #f0fdf4; --ok-bd: #bbf7d0;
+  --warn: #ea580c; --warn-bg: #fff7ed; --warn-bd: #fed7aa;
+  --red: #dc2626; --red-bg: #fef2f2; --red-bd: #fecaca;
+}
+
+*{box-sizing:border-box;font-family:"DM Sans",sans-serif}
+html,body{margin:0;padding:0;width:100%;height:100%;overflow:hidden;background:#F8F5F1}
+.reveal-viewport,.reveal{width:100%!important;height:100%!important;background:#F8F5F1!important}
+.reveal .slides section{width:100vw!important;height:100vh!important;padding:0!important;background:#F8F5F1!important;display:flex!important;flex-direction:column!important;text-align:left!important}
+.s{width:100vw;height:100vh;padding:3vh 4.5vw 2.5vh;display:flex;flex-direction:column;position:relative;overflow:hidden}
+.stripe{position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--accent-dark)}
+.hdr{display:flex;justify-content:space-between;align-items:center;flex-shrink:0;margin-bottom:.6vh}
+.hdr-right{display:flex;flex-direction:column;align-items:flex-end}
+.snum{font-family:"DM Mono",monospace;font-size:clamp(11px,1.35vh,14px);color:var(--accent-dark);background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:3px;padding:2px 8px;letter-spacing:.06em}
+.tag{font-size:clamp(11px,1.35vh,14px);font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink4)}
+.powered{display:flex;align-items:center;gap:5px;text-decoration:none;margin-top:3px}
+.powered span{font-size:clamp(11px,1.4vh,14px);color:var(--ink4)}
+.powered img{height:clamp(12px,1.5vh,16px);width:auto;opacity:.7}
+.divider{height:1px;background:var(--rule);flex-shrink:0;margin-bottom:clamp(10px,1.5vh,18px)}
+h2{font-size:clamp(24px,4vh,46px);font-weight:400;font-family:"DM Serif Display",serif;color:var(--ink);margin:0 0 clamp(6px,0.9vh,10px);line-height:1.15;flex-shrink:0}
+.col-head{font-size:clamp(11px,1.35vh,14px);font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink4)}
+.outcomes{display:grid;gap:clamp(8px,1.2vw,14px);margin-bottom:clamp(16px,2.5vh,28px)}
+.obox{background:var(--paper2);border:1px solid var(--rule);border-radius:8px;padding:clamp(10px,1.5vh,18px) clamp(12px,1.5vw,18px)}
+.rg2{display:grid;grid-template-columns:1fr 1fr}
+.rg3{display:grid;grid-template-columns:1fr 1fr 1fr}
+.rf2{display:flex}
+.rf3{display:flex}
+@media(max-width:1024px){.s{height:100svh!important;overflow-y:auto!important;-webkit-overflow-scrolling:touch!important}}
+@media(max-width:900px){.rg3{grid-template-columns:1fr 1fr!important}.rf3{flex-wrap:wrap!important}.rf3>*{flex:1 1 calc(50% - 20px)!important;min-width:calc(50% - 20px)!important}}
+@media(max-width:768px){[style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr!important}}
+@media(max-width:640px){.rg2,.rg3{grid-template-columns:1fr!important}.rf2,.rf3{flex-direction:column!important}}
+.src{font-size:clamp(11px,1.4vh,14px);color:var(--ink4);margin-top:8px;font-style:italic}
+
+/* Cover-specific */
+.cover-wrap{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  flex:1;
+  gap:clamp(14px,2.2vh,28px);
+  text-align:center;
+  padding:0 clamp(20px,6vw,120px);
+}
+.cover-favicon{
+  width:54px;
+  height:54px;
+  border-radius:12px;
+  object-fit:contain;
+  display:block;
+}
+.cover-tag{
+  font-size:clamp(14px,1.75vh,18px);
+  font-weight:700;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--ink4);
+}
+.cover-h2{
+  font-family:"DM Serif Display",serif;
+  font-weight:400;
+  font-size:clamp(30px,5.2vh,62px);
+  color:var(--ink);
+  line-height:1.18;
+  margin:0;
+  max-width:820px;
+}
+.cover-subtitle{
+  font-size:clamp(16px,2.1vh,24px);
+  font-weight:400;
+  color:var(--ink2);
+  line-height:1.55;
+  max-width:680px;
+  margin:0;
+}
+.cover-footer{
+  display:flex;
+  align-items:center;
+  gap:clamp(10px,1.4vw,18px);
+  flex-wrap:wrap;
+  justify-content:center;
+}
+.cover-footer-sep{
+  width:1px;
+  height:16px;
+  background:var(--rule);
+  flex-shrink:0;
+}
+.cover-footer-label{
+  font-size:clamp(12px,1.4vh,15px);
+  color:var(--ink4);
+  font-weight:400;
+}
+.cover-peekaboo{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  text-decoration:none;
+}
+.cover-peekaboo-label{
+  font-size:clamp(12px,1.4vh,15px);
+  color:var(--ink4);
+}
+.cover-peekaboo-logo{
+  height:clamp(14px,1.8vh,20px);
+  width:auto;
+  opacity:.6;
+}
+
+/* ── Structural fixes ── */
+/* body-wrap used by slides 16-18: flex:1 fills remaining space, no extra padding (.s already pads) */
+.body-wrap{flex:1;display:flex;flex-direction:column;gap:clamp(10px,1.4vh,18px);overflow:hidden;min-height:0;}
+</style>
+</head>
+<body>
+<div class="reveal">
+  <div class="slides">
+
+    <!-- SLIDE 01: Cover -->
+    <section>
+      <div class="s" style="justify-content:center;">
+        <div class="cover-wrap">
+          <img
+            class="cover-favicon"
+            src="https://www.google.com/s2/favicons?domain=ozarihealth.com&sz=128"
+            alt="Ozari Health"
+          >
+          <p class="cover-tag">SEO / AEO Proposal</p>
+          <h2 class="cover-h2">How Ozari Health Can Own GLP-1 AI Search Before Ro Does.</h2>
+          <p class="cover-subtitle">You're in a $50B market. The patients asking AI which GLP-1 provider to trust aren't finding Ozari. Here is how to change that.</p>
+          <div class="cover-footer">
+            <a class="cover-peekaboo" href="https://www.aipeekaboo.com" target="_blank" rel="noopener">
+              <span class="cover-peekaboo-label">Powered by</span>
+              <img
+                class="cover-peekaboo-logo"
+                src="https://www.aipeekaboo.com/images/peekaboo-logo-black.png"
+                alt="AI Peekaboo"
+              >
+            </a>
+            <div class="cover-footer-sep"></div>
+            <span class="cover-footer-label">Prepared for Ozari Health · May 2026</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<!-- SLIDE 02: The Hook -->
+<section><div class="s">
+<div class="stripe"></div>
+<div class="hdr">
+  <div style="display:flex;align-items:center;gap:10px">
+    <img src="https://www.google.com/s2/favicons?domain=ozarihealth.com&sz=128" style="border-radius:10px;width:clamp(26px,3.5vh,40px);height:clamp(26px,3.5vh,40px);object-fit:contain">
+    <span class="tag">SEO / AEO Proposal</span>
+  </div>
+  <div class="hdr-right">
+    <div class="snum">02 / 17</div>
+    <a href="https://www.aipeekaboo.com" target="_blank" rel="noopener" class="powered"><span>Powered by</span><img src="https://www.aipeekaboo.com/images/peekaboo-logo-black.png" alt="AI Peekaboo"></a>
+  </div>
+</div>
+<div class="divider"></div>
+
+  <div style="flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;">
+
+    <!-- Google + ChatGPT prompt -->
+    <div style="display:flex;align-items:center;justify-content:center;gap:clamp(8px,1.2vw,14px);margin-bottom:clamp(8px,1.5vh,16px);">
+      <img src="https://www.google.com/s2/favicons?domain=google.com&sz=64" style="width:clamp(20px,2.8vh,32px);height:clamp(20px,2.8vh,32px);border-radius:6px;object-fit:contain;">
+      <img src="https://www.google.com/s2/favicons?domain=chatgpt.com&sz=64" style="width:clamp(20px,2.8vh,32px);height:clamp(20px,2.8vh,32px);border-radius:6px;object-fit:contain;">
+      <span style="font-size:clamp(15px,2vh,21px);color:#677E76;font-weight:500;letter-spacing:0.01em;">Go on Google or ChatGPT and ask...</span>
+    </div>
+
+    <!-- Search query boxes -->
+    <div style="display:flex;flex-direction:column;gap:clamp(6px,0.9vh,11px);width:100%;max-width:680px;margin-bottom:clamp(20px,3.5vh,40px);">
+
+      <div style="display:flex;align-items:center;gap:clamp(10px,1.4vw,16px);background:#EDE9E2;border:1.5px solid #D4C9BE;border-radius:10px;padding:clamp(10px,1.6vh,16px) clamp(14px,2vw,22px);">
+        <svg width="16" height="16" viewBox="0 0 20 20" fill="none" style="flex-shrink:0;opacity:0.5;">
+          <circle cx="8.5" cy="8.5" r="5.75" stroke="#1A2C26" stroke-width="1.8"/>
+          <path d="M13 13L17 17" stroke="#1A2C26" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(16px,2.2vh,24px);color:#2D4A3E;">cheapest compounded semaglutide online</span>
+      </div>
+
+      <div style="display:flex;align-items:center;gap:clamp(10px,1.4vw,16px);background:#EDE9E2;border:1.5px solid #D4C9BE;border-radius:10px;padding:clamp(10px,1.6vh,16px) clamp(14px,2vw,22px);">
+        <svg width="16" height="16" viewBox="0 0 20 20" fill="none" style="flex-shrink:0;opacity:0.5;">
+          <circle cx="8.5" cy="8.5" r="5.75" stroke="#1A2C26" stroke-width="1.8"/>
+          <path d="M13 13L17 17" stroke="#1A2C26" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(16px,2.2vh,24px);color:#2D4A3E;">best GLP-1 telehealth provider no insurance</span>
+      </div>
+
+      <div style="display:flex;align-items:center;gap:clamp(10px,1.4vw,16px);background:#EDE9E2;border:1.5px solid #D4C9BE;border-radius:10px;padding:clamp(10px,1.6vh,16px) clamp(14px,2vw,22px);">
+        <svg width="16" height="16" viewBox="0 0 20 20" fill="none" style="flex-shrink:0;opacity:0.5;">
+          <circle cx="8.5" cy="8.5" r="5.75" stroke="#1A2C26" stroke-width="1.8"/>
+          <path d="M13 13L17 17" stroke="#1A2C26" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(16px,2.2vh,24px);color:#2D4A3E;">compounded tirzepatide $99 month</span>
+      </div>
+
+      <div style="display:flex;align-items:center;gap:clamp(10px,1.4vw,16px);background:#EDE9E2;border:1.5px solid #D4C9BE;border-radius:10px;padding:clamp(10px,1.6vh,16px) clamp(14px,2vw,22px);">
+        <svg width="16" height="16" viewBox="0 0 20 20" fill="none" style="flex-shrink:0;opacity:0.5;">
+          <circle cx="8.5" cy="8.5" r="5.75" stroke="#1A2C26" stroke-width="1.8"/>
+          <path d="M13 13L17 17" stroke="#1A2C26" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(16px,2.2vh,24px);color:#2D4A3E;">is [telehealth brand] GLP-1 legit</span>
+      </div>
+
+    </div>
+
+    <!-- Ozari verdict -->
+    <div style="display:flex;flex-direction:column;align-items:center;gap:clamp(4px,0.8vh,10px);">
+      <div style="display:flex;align-items:center;justify-content:center;gap:clamp(8px,1vw,12px);">
+        <img src="https://www.google.com/s2/favicons?domain=ozarihealth.com&sz=64" style="width:clamp(18px,2.5vh,28px);height:clamp(18px,2.5vh,28px);border-radius:5px;object-fit:contain;">
+        <span style="font-size:clamp(16px,2.2vh,24px);font-weight:600;color:#1A2C26;">Is Ozari showing up?</span>
+      </div>
+      <span style="font-size:clamp(32px,6vh,64px);font-weight:800;color:#dc2626;letter-spacing:-0.02em;line-height:1;">Barely.</span>
+      <span style="font-size:clamp(15px,2vh,21px);color:#677E76;font-weight:400;margin-top:clamp(2px,0.4vh,6px);">Let us find out why...</span>
+    </div>
+
+  </div>
+</div></section>
+
+<!-- SLIDE 03: Three Root Problems -->
+<section><div class="s">
+<div class="stripe"></div>
+<div class="hdr">
+  <div style="display:flex;align-items:center;gap:10px">
+    <img src="https://www.google.com/s2/favicons?domain=ozarihealth.com&sz=128" style="border-radius:10px;width:clamp(26px,3.5vh,40px);height:clamp(26px,3.5vh,40px);object-fit:contain">
+    <span class="tag">SEO / AEO Proposal</span>
+  </div>
+  <div class="hdr-right">
+    <div class="snum">03 / 17</div>
+    <a href="https://www.aipeekaboo.com" target="_blank" rel="noopener" class="powered"><span>Powered by</span><img src="https://www.aipeekaboo.com/images/peekaboo-logo-black.png" alt="AI Peekaboo"></a>
+  </div>
+</div>
+<div class="divider"></div>
+
+  <div style="flex:1;display:flex;flex-direction:column;justify-content:center;">
+
+    <div style="margin-bottom:clamp(6px,1.2vh,16px);">
+      <h2 style="font-family:'DM Serif Display',serif;font-weight:400;font-size:clamp(23px,3.8vh,44px);color:#1A2C26;margin:0 0 clamp(4px,0.8vh,10px) 0;line-height:1.15;">Three Root Problems Holding Ozari Back</h2>
+      <p style="font-size:clamp(16px,2.1vh,24px);color:#677E76;margin:0;line-height:1.5;max-width:700px;">Three fixable issues preventing high-intent patients from finding Ozari in Google and AI.</p>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(10px,1.8vw,22px);flex:1;align-items:stretch;">
+
+      <!-- Card 1 -->
+      <div style="background:#fff;border:1.5px solid #D4C9BE;border-radius:14px;padding:clamp(10px,1.5vh,18px) clamp(12px,1.6vw,18px);display:flex;flex-direction:column;gap:clamp(6px,0.9vh,11px);">
+        <div style="display:flex;flex-direction:column;gap:4px;">
+          <span style="font-family:'DM Mono',monospace;font-size:clamp(11px,1.45vh,14px);font-weight:600;color:#2A5244;text-transform:uppercase;letter-spacing:0.09em;">Problem 01</span>
+          <h3 style="font-size:clamp(15px,2.1vh,21px);font-weight:700;color:#1A2C26;margin:0;line-height:1.25;">Near-Zero SEO Presence</h3>
+        </div>
+        <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:clamp(6px,0.9vh,11px);">
+          <li style="display:flex;align-items:flex-start;gap:clamp(8px,1vw,12px);">
+            <svg style="flex-shrink:0;margin-top:3px;" width="14" height="14" viewBox="0 0 14 14" fill="none">
+              <circle cx="7" cy="7" r="6.25" stroke="#C0D4CE" stroke-width="1.5"/>
+              <circle cx="7" cy="7" r="2.5" fill="#396A58"/>
+            </svg>
+            <span style="font-size:clamp(13px,1.75vh,17px);color:#2D4A3E;line-height:1.55;">Fewer than 50 pages indexed by Google. Competitors like Ro Health and Hims have 300 to 600.</span>
+          </li>
+          <li style="display:flex;align-items:flex-start;gap:clamp(8px,1vw,12px);">
+            <svg style="flex-shrink:0;margin-top:3px;" width="14" height="14" viewBox="0 0 14 14" fill="none">
+              <circle cx="7" cy="7" r="6.25" stroke="#C0D4CE" stroke-width="1.5"/>
+              <circle cx="7" cy="7" r="2.5" fill="#396A58"/>
+            </svg>
+            <span style="font-size:clamp(13px,1.75vh,17px);color:#2D4A3E;line-height:1.55;">Blog content exists but lacks images and comparison tables, the exact elements AI models scan when deciding what to cite.</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Card 2 -->
+      <div style="background:#fff;border:1.5px solid #D4C9BE;border-radius:14px;padding:clamp(10px,1.5vh,18px) clamp(12px,1.6vw,18px);display:flex;flex-direction:column;gap:clamp(6px,0.9vh,11px);">
+        <div style="display:flex;flex-direction:column;gap:4px;">
+          <span style="font-family:'DM Mono',monospace;font-size:clamp(11px,1.45vh,14px);font-weight:600;color:#2A5244;text-transform:uppercase;letter-spacing:0.09em;">Problem 02</span>
+          <h3 style="font-size:clamp(15px,2.1vh,21px);font-weight:700;color:#1A2C26;margin:0;line-height:1.25;">Negative Reddit Reviews</h3>
+        </div>
+        <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:clamp(6px,0.9vh,11px);">
+          <li style="display:flex;align-items:flex-start;gap:clamp(8px,1vw,12px);">
+            <svg style="flex-shrink:0;margin-top:3px;" width="14" height="14" viewBox="0 0 14 14" fill="none">
+              <circle cx="7" cy="7" r="6.25" stroke="#C0D4CE" stroke-width="1.5"/>
+              <circle cx="7" cy="7" r="2.5" fill="#396A58"/>
+            </svg>
+            <span style="font-size:clamp(13px,1.75vh,17px);color:#2D4A3E;line-height:1.55;">Two posts in r/glp1 have damaged trust: one titled "Ozari Health Pricing bc They Hide It" (24 upvotes), one mixed review raising pharmacy concerns.</span>
+          </li>
+          <li style="display:flex;align-items:flex-start;gap:clamp(8px,1vw,12px);">
+            <svg style="flex-shrink:0;margin-top:3px;" width="14" height="14" viewBox="0 0 14 14" fill="none">
+              <circle cx="7" cy="7" r="6.25" stroke="#C0D4CE" stroke-width="1.5"/>
+              <circle cx="7" cy="7" r="2.5" fill="#396A58"/>
+            </svg>
+            <span style="font-size:clamp(13px,1.75vh,17px);color:#2D4A3E;line-height:1.55;">Reddit is where GLP-1 patients make decisions. Right now Ozari's signal there is negative.</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Card 3 -->
+      <div style="background:#fff;border:1.5px solid #D4C9BE;border-radius:14px;padding:clamp(10px,1.5vh,18px) clamp(12px,1.6vw,18px);display:flex;flex-direction:column;gap:clamp(6px,0.9vh,11px);">
+        <div style="display:flex;flex-direction:column;gap:4px;">
+          <span style="font-family:'DM Mono',monospace;font-size:clamp(11px,1.45vh,14px);font-weight:600;color:#2A5244;text-transform:uppercase;letter-spacing:0.09em;">Problem 03</span>
+          <h3 style="font-size:clamp(15px,2.1vh,21px);font-weight:700;color:#1A2C26;margin:0;line-height:1.25;">Zero Domain Authority</h3>
+        </div>
+        <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:clamp(6px,0.9vh,11px);">
+          <li style="display:flex;align-items:flex-start;gap:clamp(8px,1vw,12px);">
+            <svg style="flex-shrink:0;margin-top:3px;" width="14" height="14" viewBox="0 0 14 14" fill="none">
+              <circle cx="7" cy="7" r="6.25" stroke="#C0D4CE" stroke-width="1.5"/>
+              <circle cx="7" cy="7" r="2.5" fill="#396A58"/>
+            </svg>
+            <span style="font-size:clamp(13px,1.75vh,17px);color:#2D4A3E;line-height:1.55;">Domain Rating: 0. Fewer than 100 backlinks. Competitors have DR 50–70+ with thousands of referring domains.</span>
+          </li>
+          <li style="display:flex;align-items:flex-start;gap:clamp(8px,1vw,12px);">
+            <svg style="flex-shrink:0;margin-top:3px;" width="14" height="14" viewBox="0 0 14 14" fill="none">
+              <circle cx="7" cy="7" r="6.25" stroke="#C0D4CE" stroke-width="1.5"/>
+              <circle cx="7" cy="7" r="2.5" fill="#396A58"/>
+            </svg>
+            <span style="font-size:clamp(13px,1.75vh,17px);color:#2D4A3E;line-height:1.55;">Without authority, even well-written content will not rank and AI models will not cite Ozari.</span>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</div></section>
+
+<!-- SLIDE 04: Problem 1: Near-Zero SEO Presence -->
+<section><div class="s">
+<div class="stripe"></div>
+<div class="hdr">
+  <div style="display:flex;align-items:center;gap:10px">
+    <img src="https://www.google.com/s2/favicons?domain=ozarihealth.com&sz=128" style="border-radius:10px;width:clamp(26px,3.5vh,40px);height:clamp(26px,3.5vh,40px);object-fit:contain">
+    <span class="tag">SEO / AEO Proposal</span>
+  </div>
+  <div class="hdr-right">
+    <div class="snum">04 / 17</div>
+    <a href="https://www.aipeekaboo.com" target="_blank" rel="noopener" class="powered"><span>Powered by</span><img src="https://www.aipeekaboo.com/images/peekaboo-logo-black.png" alt="AI Peekaboo"></a>
+  </div>
+</div>
+<div class="divider"></div>
+
+  <div style="flex:1;display:flex;flex-direction:column;overflow:hidden;min-height:0;">
+    <div style="margin-bottom:clamp(4px,1vh,12px);flex-shrink:0;">
+      <h2 style="font-family:'DM Serif Display',Georgia,serif;font-weight:400;font-size:clamp(23px,3.6vh,44px);color:#1A2C26;margin:0 0 4px 0;line-height:1.15;">Problem 1: <span style="color:#396A58;">Near-Zero SEO Presence</span></h2>
+      <p style="font-size:clamp(13px,1.75vh,18px);color:#677E76;margin:0;line-height:1.4;">Fewer than 50 pages indexed. Blog content started but missing the elements that get cited.</p>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(12px,2vw,28px);flex:1;min-height:0;align-items:start;">
+
+      <!-- Left: Issue cards -->
+      <div style="display:flex;flex-direction:column;gap:clamp(6px,1vh,10px);">
+        <div style="background:#fff;border:1px solid #E0DDD6;border-radius:10px;padding:clamp(8px,1.2vh,14px) clamp(10px,1.5vw,16px);display:flex;align-items:flex-start;gap:10px;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;margin-top:1px;"><circle cx="12" cy="12" r="10" stroke="#dc2626" stroke-width="1.8"/><path d="M12 7v5.5" stroke="#dc2626" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="16.5" r="1" fill="#dc2626"/></svg>
+          <p style="margin:0;font-size:clamp(12px,1.6vh,16px);color:#2D4A3E;line-height:1.5;">Fewer than 50 pages indexed by Google versus 300–600 for every major competitor.</p>
+        </div>
+        <div style="background:#fff;border:1px solid #E0DDD6;border-radius:10px;padding:clamp(8px,1.2vh,14px) clamp(10px,1.5vw,16px);display:flex;align-items:flex-start;gap:10px;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;margin-top:1px;"><circle cx="12" cy="12" r="10" stroke="#dc2626" stroke-width="1.8"/><path d="M12 7v5.5" stroke="#dc2626" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="16.5" r="1" fill="#dc2626"/></svg>
+          <p style="margin:0;font-size:clamp(12px,1.6vh,16px);color:#2D4A3E;line-height:1.5;">Blog content exists but has no images or comparison tables. LLMs heavily favor content with tables and visual structure when choosing what to cite.</p>
+        </div>
+        <div style="background:#fff;border:1px solid #E0DDD6;border-radius:10px;padding:clamp(8px,1.2vh,14px) clamp(10px,1.5vw,16px);display:flex;align-items:flex-start;gap:10px;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;margin-top:1px;"><circle cx="12" cy="12" r="10" stroke="#dc2626" stroke-width="1.8"/><path d="M12 7v5.5" stroke="#dc2626" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="16.5" r="1" fill="#dc2626"/></svg>
+          <p style="margin:0;font-size:clamp(12px,1.6vh,16px);color:#2D4A3E;line-height:1.5;">No E-E-A-T signals: no author bios, no medical credentials shown on articles.</p>
+        </div>
+        <div style="background:#fff;border:1px solid #E0DDD6;border-radius:10px;padding:clamp(8px,1.2vh,14px) clamp(10px,1.5vw,16px);display:flex;align-items:flex-start;gap:10px;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;margin-top:1px;"><circle cx="12" cy="12" r="10" stroke="#dc2626" stroke-width="1.8"/><path d="M12 7v5.5" stroke="#dc2626" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="16.5" r="1" fill="#dc2626"/></svg>
+          <p style="margin:0;font-size:clamp(12px,1.6vh,16px);color:#2D4A3E;line-height:1.5;">Content lacks structured data (FAQPage schema), so AI models skip it entirely.</p>
+        </div>
+      </div>
+
+      <!-- Right: Stat + insight -->
+      <div style="display:flex;flex-direction:column;gap:clamp(10px,1.5vh,16px);">
+        <!-- Stat box -->
+        <div style="background:#E6EEEB;border:1px solid #C0D4CE;border-radius:12px;padding:clamp(10px,1.5vh,16px) clamp(12px,1.6vw,18px);">
+          <p style="margin:0 0 clamp(6px,0.9vh,10px) 0;font-size:clamp(11px,1.45vh,14px);font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#396A58;">Indexed Pages</p>
+          <!-- Competitor stat -->
+          <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:clamp(2px,.5vh,5px);">
+            <span style="font-family:'DM Mono',monospace;font-size:clamp(30px,5vh,58px);font-weight:600;color:#396A58;line-height:1;">300–600</span>
+          </div>
+          <p style="margin:0 0 clamp(10px,1.5vh,16px) 0;font-size:clamp(12px,1.6vh,16px);color:#2A5244;line-height:1.4;">indexed pages across Ro Health, Calibrate, and Hims &amp; Hers</p>
+          <!-- Ozari stat -->
+          <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:clamp(2px,.5vh,5px);">
+            <span style="font-family:'DM Mono',monospace;font-size:clamp(30px,5vh,58px);font-weight:600;color:#dc2626;line-height:1;">&lt;50</span>
+          </div>
+          <p style="margin:0;font-size:clamp(12px,1.6vh,16px);color:#9BAEA8;line-height:1.4;">estimated indexed pages for Ozari Health</p>
+        </div>
+
+        <!-- Insight box -->
+        <div style="background:#fff;border:1.5px solid #C0D4CE;border-radius:12px;padding:clamp(8px,1.4vh,14px) clamp(10px,1.5vw,16px);">
+          <p style="margin:0 0 clamp(4px,0.8vh,8px) 0;font-size:clamp(11px,1.45vh,14px);font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#396A58;">What AI Models Prefer</p>
+          <p style="margin:0;font-size:clamp(12px,1.6vh,16px);color:#2D4A3E;line-height:1.5;">Content with tables, comparison charts, and images gets cited 3× more often than plain text. Every article Ozari publishes without these elements is a missed citation opportunity.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<!-- SLIDE 05: Problem 2: Negative Reddit Reviews -->
+<section><div class="s">
+<div class="stripe"></div>
+<div class="hdr">
+  <div style="display:flex;align-items:center;gap:10px">
+    <img src="https://www.google.com/s2/favicons?domain=ozarihealth.com&sz=128" style="border-radius:10px;width:clamp(26px,3.5vh,40px);height:clamp(26px,3.5vh,40px);object-fit:contain">
+    <span class="tag">SEO / AEO Proposal</span>
+  </div>
+  <div class="hdr-right">
+    <div class="snum">05 / 17</div>
+    <a href="https://www.aipeekaboo.com" target="_blank" rel="noopener" class="powered"><span>Powered by</span><img src="https://www.aipeekaboo.com/images/peekaboo-logo-black.png" alt="AI Peekaboo"></a>
+  </div>
+</div>
+<div class="divider"></div>
+
+  <div style="flex:1;display:flex;flex-direction:column;overflow:hidden;min-height:0;">
+    <div style="margin-bottom:clamp(4px,1vh,12px);flex-shrink:0;">
+      <h2 style="font-family:'DM Serif Display',Georgia,serif;font-weight:400;font-size:clamp(23px,3.6vh,44px);color:#1A2C26;margin:0 0 4px 0;line-height:1.15;">Problem 2: <span style="color:#dc2626;">Negative Reddit Presence</span></h2>
+      <p style="font-size:clamp(13px,1.75vh,18px);color:#677E76;margin:0;line-height:1.4;">GLP-1 patients choose providers based on Reddit. Right now Ozari's signal there is damaging.</p>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(12px,2vw,28px);flex:1;min-height:0;align-items:start;">
+
+      <!-- Left: Reddit post cards -->
+      <div style="display:flex;flex-direction:column;gap:clamp(8px,1.3vh,14px);">
+
+        <!-- Post 1: Negative -->
+        <div style="background:#fef2f2;border:1.5px solid #fecaca;border-radius:12px;padding:clamp(8px,1.3vh,14px) clamp(10px,1.5vw,16px);display:flex;flex-direction:column;gap:clamp(6px,0.9vh,10px);">
+          <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
+            <span style="font-size:clamp(11px,1.4vh,13px);font-weight:700;color:#fff;background:#ff4500;border-radius:4px;padding:2px 8px;letter-spacing:.04em;">r/glp1</span>
+            <span style="font-size:clamp(11px,1.4vh,13px);font-weight:700;color:#dc2626;background:#fef2f2;border:1px solid #fecaca;border-radius:20px;padding:2px 9px;letter-spacing:.04em;">Negative</span>
+          </div>
+          <p style="margin:0;font-size:clamp(13px,1.7vh,17px);font-weight:600;color:#1A2C26;line-height:1.3;">"Ozari Health Pricing bc They Hide It"</p>
+          <p style="margin:0;font-family:'DM Mono',monospace;font-size:clamp(10px,1.35vh,12px);color:#9BAEA8;line-height:1.3;">reddit.com/r/glp1/comments/1sc5pus/...</p>
+          <div style="display:flex;align-items:center;gap:clamp(8px,1.2vw,14px);">
+            <span style="font-size:clamp(11px,1.4vh,13px);color:#677E76;">24 upvotes</span>
+            <span style="color:#D4C9BE;">·</span>
+            <span style="font-size:clamp(11px,1.4vh,13px);color:#677E76;">5 comments</span>
+          </div>
+          <div style="background:#EDE9E2;border-radius:8px;padding:clamp(6px,1vh,10px) clamp(8px,1.2vw,12px);">
+            <p style="margin:0;font-size:clamp(11px,1.5vh,14px);color:#2D4A3E;line-height:1.55;">User posted a full pricing breakdown because no pricing was findable online. Top comment: "Too expensive. Do not pay membership fees." This is the first post many patients find when researching Ozari.</p>
+          </div>
+        </div>
+
+        <!-- Post 2: Mixed -->
+        <div style="background:#fff7ed;border:1.5px solid #fed7aa;border-radius:12px;padding:clamp(8px,1.3vh,14px) clamp(10px,1.5vw,16px);display:flex;flex-direction:column;gap:clamp(6px,0.9vh,10px);">
+          <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
+            <span style="font-size:clamp(11px,1.4vh,13px);font-weight:700;color:#fff;background:#ff4500;border-radius:4px;padding:2px 8px;letter-spacing:.04em;">r/glp1</span>
+            <span style="font-size:clamp(11px,1.4vh,13px);font-weight:700;color:#ea580c;background:#fff7ed;border:1px solid #fed7aa;border-radius:20px;padding:2px 9px;letter-spacing:.04em;">Mixed</span>
+          </div>
+          <p style="margin:0;font-size:clamp(13px,1.7vh,17px);font-weight:600;color:#1A2C26;line-height:1.3;">"Kinda surprised by Ozari so far"</p>
+          <p style="margin:0;font-family:'DM Mono',monospace;font-size:clamp(10px,1.35vh,12px);color:#9BAEA8;line-height:1.3;">reddit.com/r/glp1/comments/1spnb83/...</p>
+          <div style="display:flex;align-items:center;gap:clamp(8px,1.2vw,14px);">
+            <span style="font-size:clamp(11px,1.4vh,13px);color:#677E76;">0 score</span>
+            <span style="color:#D4C9BE;">·</span>
+            <span style="font-size:clamp(11px,1.4vh,13px);color:#677E76;">13 comments</span>
+          </div>
+          <div style="background:#EDE9E2;border-radius:8px;padding:clamp(6px,1vh,10px) clamp(8px,1.2vw,12px);">
+            <p style="margin:0;font-size:clamp(11px,1.5vh,14px);color:#2D4A3E;line-height:1.55;">User started positively but comments turned critical: "They use Jungle Jim's Pharmacy? Definitely not a good choice." Pricing complaint linked in thread.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right: Why this matters + action strip -->
+      <div style="display:flex;flex-direction:column;gap:clamp(8px,1.3vh,14px);">
+
+        <div style="display:flex;flex-direction:column;gap:clamp(6px,1vh,10px);">
+          <!-- Card 1 -->
+          <div style="background:#fff;border:1px solid #E0DDD6;border-radius:10px;padding:clamp(8px,1.2vh,14px) clamp(10px,1.5vw,16px);">
+            <p style="margin:0 0 clamp(3px,0.5vh,6px) 0;font-size:clamp(12px,1.6vh,16px);font-weight:700;color:#1A2C26;line-height:1.3;">Where patients decide</p>
+            <p style="margin:0;font-size:clamp(12px,1.6vh,15px);color:#677E76;line-height:1.5;">Reddit is the #1 forum where GLP-1 patients compare providers. 38 posts scored across 13 subreddits in our audit; Ozari appeared in 2, both negative.</p>
+          </div>
+          <!-- Card 2 -->
+          <div style="background:#fff;border:1px solid #E0DDD6;border-radius:10px;padding:clamp(8px,1.2vh,14px) clamp(10px,1.5vw,16px);">
+            <p style="margin:0 0 clamp(3px,0.5vh,6px) 0;font-size:clamp(12px,1.6vh,16px);font-weight:700;color:#1A2C26;line-height:1.3;">No competitor owns it</p>
+            <p style="margin:0;font-size:clamp(12px,1.6vh,15px);color:#677E76;line-height:1.5;">Calibrate, Noom Med, Hims all get mixed sentiment. Nobody has built genuine trust there yet. First mover wins.</p>
+          </div>
+          <!-- Card 3 -->
+          <div style="background:#fff;border:1px solid #E0DDD6;border-radius:10px;padding:clamp(8px,1.2vh,14px) clamp(10px,1.5vw,16px);">
+            <p style="margin:0 0 clamp(3px,0.5vh,6px) 0;font-size:clamp(12px,1.6vh,16px);font-weight:700;color:#1A2C26;line-height:1.3;">AI models read Reddit</p>
+            <p style="margin:0;font-size:clamp(12px,1.6vh,15px);color:#677E76;line-height:1.5;">ChatGPT, Perplexity, and Gemini pull Reddit threads into their answers. A negative Reddit footprint = negative AI citations.</p>
+          </div>
+        </div>
+
+        <!-- Action strip -->
+        <div style="background:#E6EEEB;border:1.5px solid #C0D4CE;border-radius:10px;padding:clamp(8px,1.3vh,14px) clamp(10px,1.5vw,16px);margin-top:auto;">
+          <p style="margin:0;font-size:clamp(12px,1.6vh,16px);color:#2A5244;line-height:1.55;font-style:italic;">Whoever builds a genuine, helpful presence in r/glp1 and r/Semaglutide first owns GLP-1 patient trust at scale.</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<!-- SLIDE 06: Problem 3: Zero Domain Authority -->
+<section><div class="s">
+<div class="stripe"></div>
+<div class="hdr">
+  <div style="display:flex;align-items:center;gap:10px">
+    <img src="https://www.google.com/s2/favicons?domain=ozarihealth.com&sz=128" style="border-radius:10px;width:clamp(26px,3.5vh,40px);height:clamp(26px,3.5vh,40px);object-fit:contain">
+    <span class="tag">SEO / AEO Proposal</span>
+  </div>
+  <div class="hdr-right">
+    <div class="snum">06 / 17</div>
+    <a href="https://www.aipeekaboo.com" target="_blank" rel="noopener" class="powered"><span>Powered by</span><img src="https://www.aipeekaboo.com/images/peekaboo-logo-black.png" alt="AI Peekaboo"></a>
+  </div>
+</div>
+<div class="divider"></div>
+
+  <div style="flex:1;display:flex;flex-direction:column;overflow:hidden;min-height:0;">
+    <div style="margin-bottom:clamp(4px,1vh,12px);flex-shrink:0;">
+      <h2 style="font-family:'DM Serif Display',Georgia,serif;font-weight:400;font-size:clamp(23px,3.6vh,44px);color:#1A2C26;margin:0 0 4px 0;line-height:1.15;">Problem 3: <span style="color:#dc2626;">Zero Domain Authority</span></h2>
+      <p style="font-size:clamp(13px,1.75vh,18px);color:#677E76;margin:0;line-height:1.4;">DR 0. Fewer than 100 backlinks. Without authority, no content ranks and no AI model cites.</p>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(12px,2vw,28px);flex:1;min-height:0;align-items:start;">
+
+      <!-- Left: Comparison table -->
+      <div style="display:flex;flex-direction:column;gap:clamp(6px,1vh,10px);">
+        <div style="border:1px solid #D4C9BE;border-radius:12px;overflow:hidden;">
+          <!-- Table header -->
+          <div style="display:grid;grid-template-columns:1.6fr 1fr 1.4fr;background:#EDE9E2;border-bottom:1px solid #D4C9BE;">
+            <div style="padding:clamp(5px,0.75vh,9px) clamp(10px,1.5vw,14px);font-size:clamp(11px,1.4vh,14px);font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:#677E76;">Brand</div>
+            <div style="padding:clamp(5px,0.75vh,9px) clamp(10px,1.5vw,14px);font-size:clamp(11px,1.4vh,14px);font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:#677E76;">Domain Rating</div>
+            <div style="padding:clamp(5px,0.75vh,9px) clamp(10px,1.5vw,14px);font-size:clamp(11px,1.4vh,14px);font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:#677E76;">Referring Domains</div>
+          </div>
+          <!-- Ro Health -->
+          <div style="display:grid;grid-template-columns:1.6fr 1fr 1.4fr;border-bottom:1px solid #E0DDD6;background:#fff;">
+            <div style="padding:clamp(5px,0.8vh,9px) clamp(10px,1.5vw,14px);font-size:clamp(12px,1.6vh,16px);font-weight:600;color:#1A2C26;display:flex;align-items:center;gap:7px;">
+              <img src="https://www.google.com/s2/favicons?domain=ro.co&sz=32" style="width:15px;height:15px;border-radius:3px;object-fit:contain;" onerror="this.style.display='none'">
+              Ro Health
+            </div>
+            <div style="padding:clamp(5px,0.8vh,9px) clamp(10px,1.5vw,14px);font-size:clamp(12px,1.6vh,16px);font-weight:600;color:#2D4A3E;">72</div>
+            <div style="padding:clamp(5px,0.8vh,9px) clamp(10px,1.5vw,14px);font-size:clamp(12px,1.6vh,16px);color:#677E76;">4,200+</div>
+          </div>
+          <!-- Hims & Hers -->
+          <div style="display:grid;grid-template-columns:1.6fr 1fr 1.4fr;border-bottom:1px solid #E0DDD6;background:#fff;">
+            <div style="padding:clamp(5px,0.8vh,9px) clamp(10px,1.5vw,14px);font-size:clamp(12px,1.6vh,16px);font-weight:600;color:#1A2C26;display:flex;align-items:center;gap:7px;">
+              <img src="https://www.google.com/s2/favicons?domain=forhims.com&sz=32" style="width:15px;height:15px;border-radius:3px;object-fit:contain;" onerror="this.style.display='none'">
+              Hims &amp; Hers
+            </div>
+            <div style="padding:clamp(5px,0.8vh,9px) clamp(10px,1.5vw,14px);font-size:clamp(12px,1.6vh,16px);font-weight:600;color:#2D4A3E;">68</div>
+            <div style="padding:clamp(5px,0.8vh,9px) clamp(10px,1.5vw,14px);font-size:clamp(12px,1.6vh,16px);color:#677E76;">3,800+</div>
+          </div>
+          <!-- Calibrate -->
+          <div style="display:grid;grid-template-columns:1.6fr 1fr 1.4fr;border-bottom:1px solid #E0DDD6;background:#fff;">
+            <div style="padding:clamp(5px,0.8vh,9px) clamp(10px,1.5vw,14px);font-size:clamp(12px,1.6vh,16px);font-weight:600;color:#1A2C26;display:flex;align-items:center;gap:7px;">
+              <img src="https://www.google.com/s2/favicons?domain=joincalibrate.com&sz=32" style="width:15px;height:15px;border-radius:3px;object-fit:contain;" onerror="this.style.display='none'">
+              Calibrate
+            </div>
+            <div style="padding:clamp(5px,0.8vh,9px) clamp(10px,1.5vw,14px);font-size:clamp(12px,1.6vh,16px);font-weight:600;color:#2D4A3E;">54</div>
+            <div style="padding:clamp(5px,0.8vh,9px) clamp(10px,1.5vw,14px);font-size:clamp(12px,1.6vh,16px);color:#677E76;">1,100+</div>
+          </div>
+          <!-- Noom Med -->
+          <div style="display:grid;grid-template-columns:1.6fr 1fr 1.4fr;border-bottom:1px solid #E0DDD6;background:#fff;">
+            <div style="padding:clamp(5px,0.8vh,9px) clamp(10px,1.5vw,14px);font-size:clamp(12px,1.6vh,16px);font-weight:600;color:#1A2C26;display:flex;align-items:center;gap:7px;">
+              <img src="https://www.google.com/s2/favicons?domain=noom.com&sz=32" style="width:15px;height:15px;border-radius:3px;object-fit:contain;" onerror="this.style.display='none'">
+              Noom Med
+            </div>
+            <div style="padding:clamp(5px,0.8vh,9px) clamp(10px,1.5vw,14px);font-size:clamp(12px,1.6vh,16px);font-weight:600;color:#2D4A3E;">61</div>
+            <div style="padding:clamp(5px,0.8vh,9px) clamp(10px,1.5vw,14px);font-size:clamp(12px,1.6vh,16px);color:#677E76;">2,900+</div>
+          </div>
+          <!-- Ozari Health — highlighted red -->
+          <div style="display:grid;grid-template-columns:1.6fr 1fr 1.4fr;background:#fef2f2;border:2px solid #fecaca;border-radius:0 0 11px 11px;">
+            <div style="padding:clamp(5px,0.8vh,9px) clamp(10px,1.5vw,14px);font-size:clamp(12px,1.6vh,16px);font-weight:700;color:#1A2C26;display:flex;align-items:center;gap:7px;">
+              <img src="https://www.google.com/s2/favicons?domain=ozarihealth.com&sz=32" style="width:15px;height:15px;border-radius:3px;object-fit:contain;" onerror="this.style.display='none'">
+              Ozari Health
+            </div>
+            <div style="padding:clamp(5px,0.8vh,9px) clamp(10px,1.5vw,14px);font-size:clamp(12px,1.6vh,16px);font-weight:700;color:#dc2626;">0</div>
+            <div style="padding:clamp(5px,0.8vh,9px) clamp(10px,1.5vw,14px);font-size:clamp(12px,1.6vh,16px);font-weight:700;color:#dc2626;">&lt;100</div>
+          </div>
+        </div>
+
+        <!-- Data source badge -->
+        <div style="display:flex;align-items:center;gap:5px;background:#EDE9E2;border:1px solid #D4C9BE;border-radius:4px;padding:2px 7px;width:fit-content;">
+          <img src="https://www.google.com/s2/favicons?domain=ahrefs.com&sz=32" style="width:13px;height:13px;">
+          <span style="font-size:clamp(11px,1.45vh,14px);font-weight:600;color:#9BAEA8">Data: Ahrefs (est.)</span>
+        </div>
+      </div>
+
+      <!-- Right: Two explanation boxes -->
+      <div style="display:flex;flex-direction:column;gap:clamp(10px,1.5vh,16px);">
+
+        <!-- Why DR Matters -->
+        <div style="background:#E6EEEB;border:1.5px solid #C0D4CE;border-radius:12px;padding:clamp(10px,1.5vh,16px) clamp(12px,1.6vw,18px);">
+          <p style="margin:0 0 clamp(4px,0.8vh,8px) 0;font-size:clamp(11px,1.45vh,14px);font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#396A58;">Why DR Matters</p>
+          <p style="margin:0;font-size:clamp(12px,1.6vh,16px);color:#2A5244;line-height:1.55;">Domain Rating is Google's proxy for trust. A DR 0 site ranks for almost nothing, no matter how good the content is. AI models use citation counts and backlink authority to decide what sources to trust. Ozari currently has neither.</p>
+        </div>
+
+        <!-- The Benchmark Gap -->
+        <div style="background:#fff;border:1.5px solid #C0D4CE;border-radius:12px;padding:clamp(10px,1.5vh,16px) clamp(12px,1.6vw,18px);">
+          <p style="margin:0 0 clamp(6px,1vh,12px) 0;font-size:clamp(11px,1.45vh,14px);font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#396A58;">The Benchmark Gap</p>
+          <!-- Avg competitor DR -->
+          <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:clamp(2px,0.4vh,4px);">
+            <span style="font-family:'DM Mono',monospace;font-size:clamp(30px,4.8vh,54px);font-weight:600;color:#dc2626;line-height:1;">63</span>
+          </div>
+          <p style="margin:0 0 clamp(8px,1.2vh,14px) 0;font-size:clamp(12px,1.6vh,16px);color:#677E76;line-height:1.3;">average competitor Domain Rating</p>
+          <div style="height:1px;background:#E0DDD6;margin-bottom:clamp(8px,1.2vh,14px);"></div>
+          <!-- Ozari DR -->
+          <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:clamp(2px,0.4vh,4px);">
+            <span style="font-family:'DM Mono',monospace;font-size:clamp(30px,4.8vh,54px);font-weight:600;color:#dc2626;line-height:1;">0</span>
+          </div>
+          <p style="margin:0;font-size:clamp(12px,1.6vh,16px);color:#677E76;line-height:1.3;">Ozari's current Domain Rating</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<!-- SLIDE 07: Competitive Gap Table -->
+<section><div class="s">
+<div class="stripe"></div>
+<div class="hdr">
+  <div style="display:flex;align-items:center;gap:10px">
+    <img src="https://www.google.com/s2/favicons?domain=ozarihealth.com&sz=128" style="border-radius:10px;width:clamp(26px,3.5vh,40px);height:clamp(26px,3.5vh,40px);object-fit:contain">
+    <span class="tag">SEO / AEO Proposal</span>
+  </div>
+  <div class="hdr-right">
+    <div class="snum">07 / 17</div>
+    <a href="https://www.aipeekaboo.com" target="_blank" rel="noopener" class="powered"><span>Powered by</span><img src="https://www.aipeekaboo.com/images/peekaboo-logo-black.png" alt="AI Peekaboo"></a>
+  </div>
+</div>
+<div class="divider"></div>
+
+<div style="flex:1;min-height:0;display:flex;flex-direction:column;">
+    <h2 style="font-family:'DM Serif Display',serif;font-weight:400;font-size:clamp(23px,3.8vh,46px);color:#1A2C26;margin:0 0 clamp(3px,0.6vh,8px);">Where Ozari Stands vs Competitors</h2>
+    <p style="font-size:clamp(13px,1.85vh,20px);color:#677E76;margin:0 0 clamp(12px,2vh,24px);line-height:1.5;">Six dimensions across the six most-mentioned competitors in GLP-1 Reddit conversations.</p>
+
+    <!-- Table wrapper -->
+    <div style="border:1px solid #D4C9BE;border-radius:10px;overflow:hidden;">
+
+      <!-- Header row -->
+      <div style="display:grid;grid-template-columns:2fr 0.7fr 0.8fr 1.1fr 1fr 1.1fr 1.3fr;background:#EDE9E2;padding:clamp(4px,0.7vh,8px) clamp(10px,1.2vw,16px);gap:clamp(6px,0.8vw,12px);align-items:center;">
+        <div style="font-size:clamp(11px,1.45vh,14px);font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#9BAEA8;">Company</div>
+        <div style="font-size:clamp(11px,1.45vh,14px);font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#9BAEA8;">SSR</div>
+        <div style="font-size:clamp(11px,1.45vh,14px);font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#9BAEA8;">Schema</div>
+        <div style="font-size:clamp(11px,1.45vh,14px);font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#9BAEA8;">Content Vol.</div>
+        <div style="font-size:clamp(11px,1.45vh,14px);font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#9BAEA8;">AI Citations</div>
+        <div style="font-size:clamp(11px,1.45vh,14px);font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#9BAEA8;">Reddit</div>
+        <div style="font-size:clamp(11px,1.45vh,14px);font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#9BAEA8;">Pricing</div>
+      </div>
+
+      <!-- Ro Health -->
+      <div style="display:grid;grid-template-columns:2fr 0.7fr 0.8fr 1.1fr 1fr 1.1fr 1.3fr;padding:clamp(5px,0.8vh,10px) clamp(10px,1.2vw,16px);gap:clamp(6px,0.8vw,12px);align-items:center;border-top:1px solid #D4C9BE;background:#F8F5F1;">
+        <div style="display:flex;align-items:center;gap:8px;">
+          <img src="https://www.google.com/s2/favicons?domain=ro.co&sz=32" style="width:18px;height:18px;border-radius:4px;object-fit:contain;flex-shrink:0;">
+          <span style="font-size:clamp(13px,1.75vh,17px);font-weight:600;color:#1A2C26;">Ro Health</span>
+        </div>
+        <div style="font-size:clamp(12px,1.65vh,16px);color:#16a34a;font-weight:600;">Yes</div>
+        <div style="font-size:clamp(12px,1.65vh,16px);color:#16a34a;font-weight:600;">Full</div>
+        <div style="font-size:clamp(12px,1.65vh,16px);color:#2D4A3E;">480+ pages</div>
+        <div style="font-size:clamp(12px,1.65vh,16px);color:#2D4A3E;">High</div>
+        <div style="font-size:clamp(12px,1.65vh,16px);color:#2D4A3E;">Active</div>
+        <div style="font-size:clamp(12px,1.65vh,16px);color:#2D4A3E;">Moderate</div>
+      </div>
+
+      <!-- Calibrate -->
+      <div style="display:grid;grid-template-columns:2fr 0.7fr 0.8fr 1.1fr 1fr 1.1fr 1.3fr;padding:clamp(5px,0.8vh,10px) clamp(10px,1.2vw,16px);gap:clamp(6px,0.8vw,12px);align-items:center;border-top:1px solid #D4C9BE;background:#F8F5F1;">
+        <div style="display:flex;align-items:center;gap:8px;">
+          <img src="https://www.google.com/s2/favicons?domain=joincalibrate.com&sz=32" style="width:18px;height:18px;border-radius:4px;object-fit:contain;flex-shrink:0;">
+          <span style="font-size:clamp(13px,1.75vh,17px);font-weight:600;color:#1A2C26;">Calibrate</span>
+        </div>
+        <div style="font-size:clamp(12px,1.65vh,16px);color:#16a34a;font-weight:600;">Yes</div>
+        <div style="font-size:clamp(12px,1.65vh,16px);color:#677E76;font-weight:600;">Partial</div>
+        <div style="font-size:clamp(12px,1.65vh,16px);color:#2D4A3E;">320+ pages</div>
+        <div style="font-size:clamp(12px,1.65vh,16px);color:#2D4A3E;">Medium</div>
+        <div style="font-size:clamp(12px,1.65vh,16px);color:#2D4A3E;">Active</div>
+        <div style="font-size:clamp(12px,1.65vh,16px);color:#2D4A3E;">Low</div>
+      </div>
+
+      <!-- Hims & Hers -->
+      <div style="display:grid;grid-template-columns:2fr 0.7fr 0.8fr 1.1fr 1fr 1.1fr 1.3fr;padding:clamp(5px,0.8vh,10px) clamp(10px,1.2vw,16px);gap:clamp(6px,0.8vw,12px);align-items:center;border-top:1px solid #D4C9BE;background:#F8F5F1;">
+        <div style="display:flex;align-items:center;gap:8px;">
+          <img src="https://www.google.com/s2/favicons?domain=forhims.com&sz=32" style="width:18px;height:18px;border-radius:4px;object-fit:contain;flex-shrink:0;">
+          <span style="font-size:clamp(13px,1.75vh,17px);font-weight:600;color:#1A2C26;">Hims &amp; Hers</span>
+        </div>
+        <div style="font-size:clamp(12px,1.65vh,16px);color:#16a34a;font-weight:600;">Yes</div>
+        <div style="font-size:clamp(12px,1.65vh,16px);color:#16a34a;font-weight:600;">Full</div>
+        <div style="font-size:clamp(12px,1.65vh,16px);color:#2D4A3E;">600+ pages</div>
+        <div style="font-size:clamp(12px,1.65vh,16px);color:#2D4A3E;">High</div>
+        <div style="font-size:clamp(12px,1.65vh,16px);color:#2D4A3E;">Active</div>
+        <div style="font-size:clamp(12px,1.65vh,16px);color:#2D4A3E;">Low</div>
+      </div>
+
+      <!-- Noom Med -->
+      <div style="display:grid;grid-template-columns:2fr 0.7fr 0.8fr 1.1fr 1fr 1.1fr 1.3fr;padding:clamp(5px,0.8vh,10px) clamp(10px,1.2vw,16px);gap:clamp(6px,0.8vw,12px);align-items:center;border-top:1px solid #D4C9BE;background:#F8F5F1;">
+        <div style="display:flex;align-items:center;gap:8px;">
+          <img src="https://www.google.com/s2/favicons?domain=noom.com&sz=32" style="width:18px;height:18px;border-radius:4px;object-fit:contain;flex-shrink:0;">
+          <span style="font-size:clamp(13px,1.75vh,17px);font-weight:600;color:#1A2C26;">Noom Med</span>
+        </div>
+        <div style="font-size:clamp(12px,1.65vh,16px);color:#16a34a;font-weight:600;">Yes</div>
+        <div style="font-size:clamp(12px,1.65vh,16px);color:#677E76;font-weight:600;">Partial</div>
+        <div style="font-size:clamp(12px,1.65vh,16px);color:#2D4A3E;">280+ pages</div>
+        <div style="font-size:clamp(12px,1.65vh,16px);color:#2D4A3E;">Medium</div>
+        <div style="font-size:clamp(12px,1.65vh,16px);color:#2D4A3E;">Moderate</div>
+        <div style="font-size:clamp(12px,1.65vh,16px);color:#2D4A3E;">Low</div>
+      </div>
+
+      <!-- Found Health -->
+      <div style="display:grid;grid-template-columns:2fr 0.7fr 0.8fr 1.1fr 1fr 1.1fr 1.3fr;padding:clamp(5px,0.8vh,10px) clamp(10px,1.2vw,16px);gap:clamp(6px,0.8vw,12px);align-items:center;border-top:1px solid #D4C9BE;background:#F8F5F1;">
+        <div style="display:flex;align-items:center;gap:8px;">
+          <img src="https://www.google.com/s2/favicons?domain=joinfound.com&sz=32" style="width:18px;height:18px;border-radius:4px;object-fit:contain;flex-shrink:0;">
+          <span style="font-size:clamp(13px,1.75vh,17px);font-weight:600;color:#1A2C26;">Found Health</span>
+        </div>
+        <div style="font-size:clamp(12px,1.65vh,16px);color:#16a34a;font-weight:600;">Yes</div>
+        <div style="font-size:clamp(12px,1.65vh,16px);color:#677E76;font-weight:600;">Partial</div>
+        <div style="font-size:clamp(12px,1.65vh,16px);color:#2D4A3E;">200+ pages</div>
+        <div style="font-size:clamp(12px,1.65vh,16px);color:#2D4A3E;">Low</div>
+        <div style="font-size:clamp(12px,1.65vh,16px);color:#2D4A3E;">Low</div>
+        <div style="font-size:clamp(12px,1.65vh,16px);color:#2D4A3E;">Low</div>
+      </div>
+
+      <!-- Mochi Health -->
+      <div style="display:grid;grid-template-columns:2fr 0.7fr 0.8fr 1.1fr 1fr 1.1fr 1.3fr;padding:clamp(5px,0.8vh,10px) clamp(10px,1.2vw,16px);gap:clamp(6px,0.8vw,12px);align-items:center;border-top:1px solid #D4C9BE;background:#F8F5F1;">
+        <div style="display:flex;align-items:center;gap:8px;">
+          <img src="https://www.google.com/s2/favicons?domain=joinmochi.com&sz=32" style="width:18px;height:18px;border-radius:4px;object-fit:contain;flex-shrink:0;">
+          <span style="font-size:clamp(13px,1.75vh,17px);font-weight:600;color:#1A2C26;">Mochi Health</span>
+        </div>
+        <div style="font-size:clamp(12px,1.65vh,16px);color:#16a34a;font-weight:600;">Yes</div>
+        <div style="font-size:clamp(12px,1.65vh,16px);color:#677E76;font-weight:600;">Partial</div>
+        <div style="font-size:clamp(12px,1.65vh,16px);color:#2D4A3E;">150+ pages</div>
+        <div style="font-size:clamp(12px,1.65vh,16px);color:#2D4A3E;">Low</div>
+        <div style="font-size:clamp(12px,1.65vh,16px);color:#2D4A3E;">Low</div>
+        <div style="font-size:clamp(12px,1.65vh,16px);color:#16a34a;font-weight:600;">High</div>
+      </div>
+
+      <!-- Ozari Health — highlighted row -->
+      <div style="display:grid;grid-template-columns:2fr 0.7fr 0.8fr 1.1fr 1fr 1.1fr 1.3fr;padding:clamp(8px,1.15vh,15px) clamp(10px,1.2vw,16px);gap:clamp(6px,0.8vw,12px);align-items:center;border-top:2px solid #C0D4CE;border-bottom:2px solid #C0D4CE;background:#E6EEEB;">
+        <div style="display:flex;align-items:center;gap:8px;">
+          <img src="https://www.google.com/s2/favicons?domain=ozarihealth.com&sz=32" style="width:18px;height:18px;border-radius:4px;object-fit:contain;flex-shrink:0;">
+          <span style="font-size:clamp(13px,1.75vh,17px);font-weight:700;color:#2A5244;">Ozari Health</span>
+        </div>
+        <div style="font-size:clamp(12px,1.65vh,16px);color:#dc2626;font-weight:700;">No</div>
+        <div style="font-size:clamp(12px,1.65vh,16px);color:#dc2626;font-weight:700;">None</div>
+        <div style="font-size:clamp(12px,1.65vh,16px);color:#2A5244;font-weight:600;">~40 pages</div>
+        <div style="font-size:clamp(12px,1.65vh,16px);color:#2A5244;font-weight:600;">Low</div>
+        <div style="font-size:clamp(12px,1.65vh,16px);color:#2A5244;font-weight:600;">Minimal</div>
+        <div style="font-size:clamp(12px,1.65vh,16px);color:#2A5244;font-weight:600;">Low</div>
+      </div>
+
+    </div>
+
+    <!-- Insight strip -->
+    <div style="margin-top:clamp(10px,1.6vh,18px);background:#E6EEEB;border:1px solid #C0D4CE;border-radius:8px;padding:clamp(9px,1.3vh,15px) clamp(14px,1.8vw,22px);display:flex;align-items:center;gap:10px;">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="flex-shrink:0;"><circle cx="8" cy="8" r="7.5" fill="#E6EEEB" stroke="#396A58"/><path d="M8 5v3.5M8 10.5v.5" stroke="#396A58" stroke-width="1.6" stroke-linecap="round"/></svg>
+      <p style="font-size:clamp(13px,1.75vh,18px);color:#2A5244;margin:0;line-height:1.5;"><strong>Ozari is the only provider in this set with no SSR and no schema.</strong> Both are fixable in Month 1.</p>
+    </div>
+
+</div>
+</div></section>
+
+<!-- SLIDE 08: Ozari's AI Visibility Today -->
+<section><div class="s">
+<div class="stripe"></div>
+<div class="hdr">
+  <div style="display:flex;align-items:center;gap:10px">
+    <img src="https://www.google.com/s2/favicons?domain=ozarihealth.com&sz=128" style="border-radius:10px;width:clamp(26px,3.5vh,40px);height:clamp(26px,3.5vh,40px);object-fit:contain">
+    <span class="tag">SEO / AEO Proposal</span>
+  </div>
+  <div class="hdr-right">
+    <div class="snum">08 / 17</div>
+    <a href="https://www.aipeekaboo.com" target="_blank" rel="noopener" class="powered"><span>Powered by</span><img src="https://www.aipeekaboo.com/images/peekaboo-logo-black.png" alt="AI Peekaboo"></a>
+  </div>
+</div>
+<div class="divider"></div>
+
+<div style="flex:1;display:flex;flex-direction:column;gap:clamp(8px,1.2vh,16px);overflow:hidden;min-height:0">
+
+    <!-- SLIDE TITLE + SOURCE BADGE -->
+    <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;flex-shrink:0">
+      <h2 style="margin:0;font-family:'DM Serif Display',serif;font-weight:400;font-size:clamp(25px,3.4vh,44px);color:var(--ink,#1A2C26);line-height:1.2">
+        Ozari's AI Visibility Today
+        <span style="display:block;font-size:clamp(12px,1.5vh,18px);color:var(--accent,#396A58);font-family:'DM Sans',sans-serif;font-weight:500;margin-top:2px">Real Data from AI Peekaboo</span>
+      </h2>
+      <div style="display:flex;align-items:center;gap:6px;background:var(--paper2,#EDE9E2);border:1px solid var(--rule,#D4C9BE);border-radius:20px;padding:4px 10px;white-space:nowrap;flex-shrink:0">
+        <img src="https://www.aipeekaboo.com/icon.jpg" style="width:18px;height:18px;border-radius:4px;object-fit:cover">
+        <span style="font-size:clamp(11px,1.4vh,15px);color:var(--ink3,#677E76);font-weight:500">Data: AI Peekaboo &middot; May 11, 2026</span>
+      </div>
+    </div>
+
+    <!-- SCORE STRIP -->
+    <div style="display:flex;align-items:center;gap:clamp(10px,1.5vw,20px);background:var(--paper2,#EDE9E2);border:1px solid var(--rule,#D4C9BE);border-radius:12px;padding:clamp(8px,1.2vh,14px) clamp(12px,1.8vw,24px);flex-shrink:0">
+      <!-- Big score -->
+      <div style="display:flex;align-items:baseline;gap:4px;flex-shrink:0">
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(42px,6.5vh,78px);font-weight:700;color:var(--ink,#1A2C26);line-height:1">25</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(18px,2.5vh,32px);color:var(--ink4,#9BAEA8);font-weight:400;line-height:1">&thinsp;/ 100</span>
+      </div>
+      <!-- Label -->
+      <div style="flex-shrink:0">
+        <div style="font-size:clamp(12px,1.6vh,17px);font-weight:600;color:var(--ink2,#2D4A3E);line-height:1.3">Overall AI Visibility Score</div>
+        <div style="font-size:clamp(11px,1.4vh,15px);color:var(--ink3,#677E76);margin-top:2px">Across 5 AI models, all major query types</div>
+      </div>
+      <!-- Divider -->
+      <div style="width:1px;height:clamp(28px,4vh,48px);background:var(--rule,#D4C9BE);flex-shrink:0;margin:0 4px"></div>
+      <!-- Stat pills -->
+      <div style="display:flex;gap:clamp(6px,0.8vw,12px);flex-wrap:wrap;align-items:center">
+        <div style="display:flex;align-items:center;gap:6px;background:white;border:1px solid var(--accent-bd,#C0D4CE);border-radius:20px;padding:5px 12px">
+          <span style="font-size:clamp(11px,1.4vh,15px);font-weight:700;color:var(--accent-dark,#2A5244)">95</span>
+          <span style="font-size:clamp(11px,1.4vh,15px);color:var(--ink3,#677E76)">chats analyzed</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:6px;background:white;border:1px solid var(--accent-bd,#C0D4CE);border-radius:20px;padding:5px 12px">
+          <span style="font-size:clamp(11px,1.4vh,15px);font-weight:700;color:var(--accent-dark,#2A5244)">25</span>
+          <span style="font-size:clamp(11px,1.4vh,15px);color:var(--ink3,#677E76)">total citations</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:6px;background:white;border:1px solid var(--accent-bd,#C0D4CE);border-radius:20px;padding:5px 12px">
+          <span style="font-size:clamp(11px,1.4vh,15px);font-weight:700;color:var(--accent-dark,#2A5244)">3 of 5</span>
+          <span style="font-size:clamp(11px,1.4vh,15px);color:var(--ink3,#677E76)">models cite ozarihealth.com</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- TWO-COLUMN MAIN -->
+    <div style="flex:1;display:grid;grid-template-columns:1fr 1fr;gap:clamp(8px,1.2vw,16px);min-height:0;overflow:hidden">
+
+      <!-- LEFT: Branded Prompts -->
+      <div style="display:flex;flex-direction:column;gap:0;background:white;border:1px solid var(--rule,#D4C9BE);border-radius:12px;overflow:hidden">
+        <div style="padding:clamp(7px,1vh,12px) clamp(10px,1.4vw,16px);border-bottom:1px solid var(--rule,#D4C9BE);display:flex;align-items:center;justify-content:space-between;flex-shrink:0">
+          <span style="font-size:clamp(12px,1.6vh,17px);font-weight:700;color:var(--ink,#1A2C26)">Branded Prompts: Ozari Wins These</span>
+          <span style="font-size:clamp(12px,1.6vh,16px);font-weight:600;color:var(--accent,#396A58);background:var(--accent-bg,#E6EEEB);border:1px solid var(--accent-bd,#C0D4CE);border-radius:10px;padding:2px 8px;letter-spacing:0.03em">BRANDED</span>
+        </div>
+        <div style="flex:1;display:flex;flex-direction:column;padding:clamp(5px,0.8vh,10px) clamp(8px,1vw,12px);gap:clamp(4px,0.6vh,8px);overflow:hidden">
+
+          <!-- Row 1 -->
+          <div style="display:flex;align-items:center;gap:8px;padding:clamp(5px,0.7vh,8px) clamp(8px,1vw,10px);background:var(--paper,#F8F5F1);border:1px solid var(--paper3,#E0DDD6);border-radius:8px">
+            <svg style="width:clamp(11px,1.4vh,15px);height:clamp(11px,1.4vh,15px);flex-shrink:0;opacity:0.35" viewBox="0 0 20 20" fill="none"><circle cx="8.5" cy="8.5" r="5.5" stroke="#396A58" stroke-width="1.8"/><path d="M13 13l3.5 3.5" stroke="#396A58" stroke-width="1.8" stroke-linecap="round"/></svg>
+            <span style="flex:1;font-size:clamp(11px,1.45vh,16px);color:var(--ink2,#2D4A3E);line-height:1.3">Ozari Health pricing: what is included</span>
+            <span style="flex-shrink:0;font-size:clamp(11px,1.4vh,15px);font-weight:700;color:white;background:#16a34a;border-radius:20px;padding:2px 8px;min-width:28px;text-align:center">100</span>
+          </div>
+
+          <!-- Row 2 -->
+          <div style="display:flex;align-items:center;gap:8px;padding:clamp(5px,0.7vh,8px) clamp(8px,1vw,10px);background:var(--paper,#F8F5F1);border:1px solid var(--paper3,#E0DDD6);border-radius:8px">
+            <svg style="width:clamp(11px,1.4vh,15px);height:clamp(11px,1.4vh,15px);flex-shrink:0;opacity:0.35" viewBox="0 0 20 20" fill="none"><circle cx="8.5" cy="8.5" r="5.5" stroke="#396A58" stroke-width="1.8"/><path d="M13 13l3.5 3.5" stroke="#396A58" stroke-width="1.8" stroke-linecap="round"/></svg>
+            <span style="flex:1;font-size:clamp(11px,1.45vh,16px);color:var(--ink2,#2D4A3E);line-height:1.3">Is Ozari Health legitimate</span>
+            <span style="flex-shrink:0;font-size:clamp(11px,1.4vh,15px);font-weight:700;color:white;background:#16a34a;border-radius:20px;padding:2px 8px;min-width:28px;text-align:center">100</span>
+          </div>
+
+          <!-- Row 3 -->
+          <div style="display:flex;align-items:center;gap:8px;padding:clamp(5px,0.7vh,8px) clamp(8px,1vw,10px);background:var(--paper,#F8F5F1);border:1px solid var(--paper3,#E0DDD6);border-radius:8px">
+            <svg style="width:clamp(11px,1.4vh,15px);height:clamp(11px,1.4vh,15px);flex-shrink:0;opacity:0.35" viewBox="0 0 20 20" fill="none"><circle cx="8.5" cy="8.5" r="5.5" stroke="#396A58" stroke-width="1.8"/><path d="M13 13l3.5 3.5" stroke="#396A58" stroke-width="1.8" stroke-linecap="round"/></svg>
+            <span style="flex:1;font-size:clamp(11px,1.45vh,16px);color:var(--ink2,#2D4A3E);line-height:1.3">Ozari Health review</span>
+            <span style="flex-shrink:0;font-size:clamp(11px,1.4vh,15px);font-weight:700;color:white;background:#16a34a;border-radius:20px;padding:2px 8px;min-width:28px;text-align:center">97</span>
+          </div>
+
+          <!-- Row 4 -->
+          <div style="display:flex;align-items:center;gap:8px;padding:clamp(5px,0.7vh,8px) clamp(8px,1vw,10px);background:var(--paper,#F8F5F1);border:1px solid var(--paper3,#E0DDD6);border-radius:8px">
+            <svg style="width:clamp(11px,1.4vh,15px);height:clamp(11px,1.4vh,15px);flex-shrink:0;opacity:0.35" viewBox="0 0 20 20" fill="none"><circle cx="8.5" cy="8.5" r="5.5" stroke="#396A58" stroke-width="1.8"/><path d="M13 13l3.5 3.5" stroke="#396A58" stroke-width="1.8" stroke-linecap="round"/></svg>
+            <span style="flex:1;font-size:clamp(11px,1.45vh,16px);color:var(--ink2,#2D4A3E);line-height:1.3">Ozari Health vs Found Health</span>
+            <span style="flex-shrink:0;font-size:clamp(11px,1.4vh,15px);font-weight:700;color:white;background:#65a30d;border-radius:20px;padding:2px 8px;min-width:28px;text-align:center">90</span>
+          </div>
+
+          <!-- Row 5 -->
+          <div style="display:flex;align-items:center;gap:8px;padding:clamp(5px,0.7vh,8px) clamp(8px,1vw,10px);background:var(--paper,#F8F5F1);border:1px solid var(--paper3,#E0DDD6);border-radius:8px">
+            <svg style="width:clamp(11px,1.4vh,15px);height:clamp(11px,1.4vh,15px);flex-shrink:0;opacity:0.35" viewBox="0 0 20 20" fill="none"><circle cx="8.5" cy="8.5" r="5.5" stroke="#396A58" stroke-width="1.8"/><path d="M13 13l3.5 3.5" stroke="#396A58" stroke-width="1.8" stroke-linecap="round"/></svg>
+            <span style="flex:1;font-size:clamp(11px,1.45vh,16px);color:var(--ink2,#2D4A3E);line-height:1.3">Ozari Health vs Hims weight loss</span>
+            <span style="flex-shrink:0;font-size:clamp(11px,1.4vh,15px);font-weight:700;color:white;background:#65a30d;border-radius:20px;padding:2px 8px;min-width:28px;text-align:center">86</span>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- RIGHT COLUMN: top half gap + bottom half sources -->
+      <div style="display:flex;flex-direction:column;gap:clamp(6px,0.9vh,10px);overflow:hidden">
+
+        <!-- TOP RIGHT: Non-branded gap -->
+        <div style="display:flex;flex-direction:column;background:white;border:1px solid var(--rule,#D4C9BE);border-radius:12px;overflow:hidden;flex:1">
+          <div style="padding:clamp(6px,0.9vh,11px) clamp(10px,1.4vw,16px);border-bottom:1px solid var(--rule,#D4C9BE);flex-shrink:0">
+            <div style="font-size:clamp(12px,1.6vh,17px);font-weight:700;color:var(--ink,#1A2C26)">The Gap: Non-Branded Discovery Queries</div>
+            <div style="font-size:clamp(12px,1.6vh,16px);color:var(--ink3,#677E76);margin-top:2px">Where new patients come from. Ozari does not appear.</div>
+          </div>
+          <div style="flex:1;display:flex;flex-direction:column;padding:clamp(5px,0.7vh,9px) clamp(8px,1vw,12px);gap:clamp(4px,0.5vh,7px)">
+
+            <div style="display:flex;align-items:center;gap:8px;padding:clamp(5px,0.7vh,8px) clamp(8px,1vw,10px);background:var(--red-bg,#fef2f2);border:1px solid var(--red-bd,#fecaca);border-radius:8px">
+              <span style="flex:1;font-size:clamp(11px,1.4vh,15px);color:#991b1b;line-height:1.3">best affordable GLP-1 telehealth 2026</span>
+              <span style="flex-shrink:0;font-size:clamp(12px,1.6vh,16px);font-weight:600;color:white;background:var(--red,#dc2626);border-radius:20px;padding:2px 8px;white-space:nowrap">Not cited</span>
+            </div>
+
+            <div style="display:flex;align-items:center;gap:8px;padding:clamp(5px,0.7vh,8px) clamp(8px,1vw,10px);background:var(--red-bg,#fef2f2);border:1px solid var(--red-bd,#fecaca);border-radius:8px">
+              <span style="flex:1;font-size:clamp(11px,1.4vh,15px);color:#991b1b;line-height:1.3">cheapest compounded semaglutide online</span>
+              <span style="flex-shrink:0;font-size:clamp(12px,1.6vh,16px);font-weight:600;color:white;background:var(--red,#dc2626);border-radius:20px;padding:2px 8px;white-space:nowrap">Not cited</span>
+            </div>
+
+            <div style="display:flex;align-items:center;gap:8px;padding:clamp(5px,0.7vh,8px) clamp(8px,1vw,10px);background:var(--red-bg,#fef2f2);border:1px solid var(--red-bd,#fecaca);border-radius:8px">
+              <span style="flex:1;font-size:clamp(11px,1.4vh,15px);color:#991b1b;line-height:1.3">best online GLP-1 provider without insurance</span>
+              <span style="flex-shrink:0;font-size:clamp(12px,1.6vh,16px);font-weight:600;color:white;background:var(--red,#dc2626);border-radius:20px;padding:2px 8px;white-space:nowrap">Not cited</span>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- BOTTOM RIGHT: Sources cited instead -->
+        <div style="display:flex;flex-direction:column;background:white;border:1px solid var(--rule,#D4C9BE);border-radius:12px;overflow:hidden;flex:1.4">
+          <div style="padding:clamp(6px,0.8vh,10px) clamp(10px,1.4vw,16px);border-bottom:1px solid var(--rule,#D4C9BE);flex-shrink:0">
+            <span style="font-size:clamp(12px,1.6vh,17px);font-weight:700;color:var(--ink,#1A2C26)">Sources AI Cites Instead of Ozari</span>
+          </div>
+          <div style="flex:1;display:flex;flex-direction:column;padding:clamp(4px,0.6vh,8px) clamp(8px,1vw,12px);gap:clamp(2px,0.35vh,5px);overflow:hidden">
+
+            <!-- goodrx — highlighted warn -->
+            <div style="display:flex;align-items:center;gap:7px;padding:clamp(4px,0.55vh,7px) clamp(7px,0.9vw,10px);background:var(--warn-bg,#fff7ed);border:1px solid var(--warn-bd,#fed7aa);border-radius:7px">
+              <img src="https://www.google.com/s2/favicons?domain=goodrx.com&sz=32" style="width:clamp(12px,1.5vh,16px);height:clamp(12px,1.5vh,16px);border-radius:3px;flex-shrink:0">
+              <span style="flex:1;font-size:clamp(11px,1.4vh,15px);color:#92400e;font-weight:600">goodrx.com</span>
+              <span style="font-size:clamp(12px,1.6vh,16px);color:#92400e;background:#fde68a;border:1px solid #fbbf24;border-radius:20px;padding:2px 7px;font-weight:700">82</span>
+            </div>
+
+            <!-- reddit -->
+            <div style="display:flex;align-items:center;gap:7px;padding:clamp(4px,0.55vh,7px) clamp(7px,0.9vw,10px);background:var(--paper,#F8F5F1);border:1px solid var(--paper3,#E0DDD6);border-radius:7px">
+              <img src="https://www.google.com/s2/favicons?domain=reddit.com&sz=32" style="width:clamp(12px,1.5vh,16px);height:clamp(12px,1.5vh,16px);border-radius:3px;flex-shrink:0">
+              <span style="flex:1;font-size:clamp(11px,1.4vh,15px);color:var(--ink2,#2D4A3E)">reddit.com</span>
+              <span style="font-size:clamp(12px,1.6vh,16px);color:var(--ink3,#677E76);background:var(--paper2,#EDE9E2);border:1px solid var(--rule,#D4C9BE);border-radius:20px;padding:2px 7px;font-weight:600">60</span>
+            </div>
+
+            <!-- forbes -->
+            <div style="display:flex;align-items:center;gap:7px;padding:clamp(4px,0.55vh,7px) clamp(7px,0.9vw,10px);background:var(--paper,#F8F5F1);border:1px solid var(--paper3,#E0DDD6);border-radius:7px">
+              <img src="https://www.google.com/s2/favicons?domain=forbes.com&sz=32" style="width:clamp(12px,1.5vh,16px);height:clamp(12px,1.5vh,16px);border-radius:3px;flex-shrink:0">
+              <span style="flex:1;font-size:clamp(11px,1.4vh,15px);color:var(--ink2,#2D4A3E)">forbes.com</span>
+              <span style="font-size:clamp(12px,1.6vh,16px);color:var(--ink3,#677E76);background:var(--paper2,#EDE9E2);border:1px solid var(--rule,#D4C9BE);border-radius:20px;padding:2px 7px;font-weight:600">40</span>
+            </div>
+
+            <!-- youtube -->
+            <div style="display:flex;align-items:center;gap:7px;padding:clamp(4px,0.55vh,7px) clamp(7px,0.9vw,10px);background:var(--paper,#F8F5F1);border:1px solid var(--paper3,#E0DDD6);border-radius:7px">
+              <img src="https://www.google.com/s2/favicons?domain=youtube.com&sz=32" style="width:clamp(12px,1.5vh,16px);height:clamp(12px,1.5vh,16px);border-radius:3px;flex-shrink:0">
+              <span style="flex:1;font-size:clamp(11px,1.4vh,15px);color:var(--ink2,#2D4A3E)">youtube.com</span>
+              <span style="font-size:clamp(12px,1.6vh,16px);color:var(--ink3,#677E76);background:var(--paper2,#EDE9E2);border:1px solid var(--rule,#D4C9BE);border-radius:20px;padding:2px 7px;font-weight:600">33</span>
+            </div>
+
+            <!-- healthline -->
+            <div style="display:flex;align-items:center;gap:7px;padding:clamp(4px,0.55vh,7px) clamp(7px,0.9vw,10px);background:var(--paper,#F8F5F1);border:1px solid var(--paper3,#E0DDD6);border-radius:7px">
+              <img src="https://www.google.com/s2/favicons?domain=healthline.com&sz=32" style="width:clamp(12px,1.5vh,16px);height:clamp(12px,1.5vh,16px);border-radius:3px;flex-shrink:0">
+              <span style="flex:1;font-size:clamp(11px,1.4vh,15px);color:var(--ink2,#2D4A3E)">healthline.com</span>
+              <span style="font-size:clamp(12px,1.6vh,16px);color:var(--ink3,#677E76);background:var(--paper2,#EDE9E2);border:1px solid var(--rule,#D4C9BE);border-radius:20px;padding:2px 7px;font-weight:600">26</span>
+            </div>
+
+            <!-- sesamecare -->
+            <div style="display:flex;align-items:center;gap:7px;padding:clamp(4px,0.55vh,7px) clamp(7px,0.9vw,10px);background:var(--paper,#F8F5F1);border:1px solid var(--paper3,#E0DDD6);border-radius:7px">
+              <img src="https://www.google.com/s2/favicons?domain=sesamecare.com&sz=32" style="width:clamp(12px,1.5vh,16px);height:clamp(12px,1.5vh,16px);border-radius:3px;flex-shrink:0">
+              <span style="flex:1;font-size:clamp(11px,1.4vh,15px);color:var(--ink2,#2D4A3E)">sesamecare.com</span>
+              <span style="font-size:clamp(12px,1.6vh,16px);color:var(--ink3,#677E76);background:var(--paper2,#EDE9E2);border:1px solid var(--rule,#D4C9BE);border-radius:20px;padding:2px 7px;font-weight:600">26</span>
+            </div>
+
+            <!-- ozarihealth — highlighted red -->
+            <div style="display:flex;align-items:center;gap:7px;padding:clamp(4px,0.55vh,7px) clamp(7px,0.9vw,10px);background:var(--red-bg,#fef2f2);border:1px solid var(--red-bd,#fecaca);border-radius:7px">
+              <img src="https://www.google.com/s2/favicons?domain=ozarihealth.com&sz=32" style="width:clamp(12px,1.5vh,16px);height:clamp(12px,1.5vh,16px);border-radius:3px;flex-shrink:0">
+              <span style="flex:1;font-size:clamp(11px,1.4vh,15px);color:#991b1b;font-weight:600">ozarihealth.com</span>
+              <span style="font-size:clamp(12px,1.6vh,16px);color:#991b1b;background:var(--red-bg,#fef2f2);border:1px solid var(--red-bd,#fecaca);border-radius:20px;padding:2px 7px;font-weight:600;white-space:nowrap">22, 3 models only</span>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- KEY INSIGHT STRIP -->
+    <div style="flex-shrink:0;background:var(--ink,#1A2C26);border-radius:10px;padding:clamp(7px,1vh,12px) clamp(12px,1.6vw,20px);display:flex;align-items:center;gap:10px">
+      <svg style="width:clamp(13px,1.6vh,18px);height:clamp(13px,1.6vh,18px);flex-shrink:0;opacity:0.6" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="#F8F5F1" stroke-width="1.6"/><path d="M10 9v5" stroke="#F8F5F1" stroke-width="1.6" stroke-linecap="round"/><circle cx="10" cy="7" r="0.8" fill="#F8F5F1"/></svg>
+      <p style="margin:0;font-size:clamp(11px,1.45vh,16px);color:rgba(248,245,241,0.88);line-height:1.5">
+        Ozari scores 95+ on branded queries, because those are people who already know Ozari. The non-branded discovery queries, where new patients come from, Ozari simply does not appear. That is the gap we close.
+      </p>
+    </div>
+
+    <!-- 5 AI MODELS FOOTER -->
+    <div style="flex-shrink:0;display:flex;align-items:center;gap:clamp(6px,0.8vw,12px)">
+      <span style="font-size:clamp(12px,1.6vh,16px);color:var(--ink4,#9BAEA8);white-space:nowrap">5 AI models tracked:</span>
+      <div style="display:flex;align-items:center;gap:clamp(6px,0.8vw,10px)">
+        <div style="display:flex;align-items:center;gap:5px">
+          <img src="https://www.google.com/s2/favicons?domain=chatgpt.com&sz=32" style="width:clamp(13px,1.6vh,18px);height:clamp(13px,1.6vh,18px);border-radius:4px">
+          <span style="font-size:clamp(12px,1.6vh,16px);color:var(--ink3,#677E76)">ChatGPT</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:5px">
+          <img src="https://www.google.com/s2/favicons?domain=gemini.google.com&sz=32" style="width:clamp(13px,1.6vh,18px);height:clamp(13px,1.6vh,18px);border-radius:4px">
+          <span style="font-size:clamp(12px,1.6vh,16px);color:var(--ink3,#677E76)">Gemini</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:5px">
+          <img src="https://www.google.com/s2/favicons?domain=perplexity.ai&sz=32" style="width:clamp(13px,1.6vh,18px);height:clamp(13px,1.6vh,18px);border-radius:4px">
+          <span style="font-size:clamp(12px,1.6vh,16px);color:var(--ink3,#677E76)">Perplexity</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:5px">
+          <img src="https://www.google.com/s2/favicons?domain=google.com&sz=32" style="width:clamp(13px,1.6vh,18px);height:clamp(13px,1.6vh,18px);border-radius:4px">
+          <span style="font-size:clamp(12px,1.6vh,16px);color:var(--ink3,#677E76)">Google AIO</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:5px">
+          <img src="https://www.google.com/s2/favicons?domain=google.com&sz=32" style="width:clamp(13px,1.6vh,18px);height:clamp(13px,1.6vh,18px);border-radius:4px">
+          <span style="font-size:clamp(12px,1.6vh,16px);color:var(--ink3,#677E76)">Google AI Mode</span>
+        </div>
+      </div>
+    </div>
+
+</div>
+</div></section>
+
+<!-- SLIDE 09: What If... -->
+<section><div class="s">
+<div class="stripe"></div>
+<div class="hdr">
+  <div style="display:flex;align-items:center;gap:10px">
+    <img src="https://www.google.com/s2/favicons?domain=ozarihealth.com&sz=128" style="border-radius:10px;width:clamp(26px,3.5vh,40px);height:clamp(26px,3.5vh,40px);object-fit:contain">
+    <span class="tag">SEO / AEO Proposal</span>
+  </div>
+  <div class="hdr-right">
+    <div class="snum">09 / 17</div>
+    <a href="https://www.aipeekaboo.com" target="_blank" rel="noopener" class="powered"><span>Powered by</span><img src="https://www.aipeekaboo.com/images/peekaboo-logo-black.png" alt="AI Peekaboo"></a>
+  </div>
+</div>
+<div class="divider"></div>
+
+<div style="flex:1;min-height:0;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;">
+    <p style="font-family:'DM Serif Display',serif;font-weight:400;font-size:clamp(32px,5vw,60px);color:var(--ink2,#2D4A3E);line-height:1.35;max-width:820px;margin:0 0 clamp(28px,4vh,48px)">
+      "What if every time someone asked AI for the most affordable GLP-1 telehealth option, Ozari was the first name cited?"
+    </p>
+    <div style="width:clamp(48px,10vw,120px);height:1px;background:var(--rule,#D4C9BE);margin:0 auto clamp(24px,3.5vh,44px)"></div>
+    <p style="font-size:clamp(16px,1.9vw,23px);color:var(--ink3,#677E76);letter-spacing:0.01em;max-width:560px;margin:0;line-height:1.6">
+      The problems are clear. The fixes are straightforward. Here is the plan.
+    </p>
+</div>
+</div></section>
+
+<!-- SLIDE 10: The Three-Part Fix -->
+<section><div class="s">
+<div class="stripe"></div>
+<div class="hdr">
+  <div style="display:flex;align-items:center;gap:10px">
+    <img src="https://www.google.com/s2/favicons?domain=ozarihealth.com&sz=128" style="border-radius:10px;width:clamp(26px,3.5vh,40px);height:clamp(26px,3.5vh,40px);object-fit:contain">
+    <span class="tag">SEO / AEO Proposal</span>
+  </div>
+  <div class="hdr-right">
+    <div class="snum">10 / 17</div>
+    <a href="https://www.aipeekaboo.com" target="_blank" rel="noopener" class="powered"><span>Powered by</span><img src="https://www.aipeekaboo.com/images/peekaboo-logo-black.png" alt="AI Peekaboo"></a>
+  </div>
+</div>
+<div class="divider"></div>
+
+<div style="flex:1;display:flex;flex-direction:column;gap:clamp(10px,1.4vh,16px);overflow:hidden;min-height:0">
+
+    <!-- Heading block -->
+    <div>
+      <h2 style="font-family:'DM Serif Display',serif;font-weight:400;font-size:clamp(22px,3vw,38px);color:var(--ink,#1A2C26);margin:0 0 6px">The Three-Part Fix</h2>
+      <p style="font-size:clamp(14px,1.6vw,19px);color:var(--ink3,#677E76);margin:0;line-height:1.5">Three coordinated workstreams, starting in Month 1, compounding every month after.</p>
+    </div>
+
+    <!-- Three cards -->
+    <div style="display:flex;gap:clamp(10px,1.5vw,18px);flex:1;min-height:0">
+
+      <!-- Card 1: AI & SEO Content -->
+      <div style="flex:1;background:var(--ok-bg,#f0fdf4);border:1.5px solid var(--ok-bd,#bbf7d0);border-radius:10px;padding:clamp(10px,1.4vh,16px) clamp(12px,1.6vw,18px);display:flex;flex-direction:column;gap:clamp(6px,0.9vh,11px)">
+        <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px">
+          <span style="font-size:clamp(11px,1.1vw,13px);font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--ok,#16a34a)">Fix 01</span>
+          <span style="font-size:clamp(12px,1.25vw,15px);font-weight:600;color:var(--ok,#16a34a);background:var(--ok-bg,#f0fdf4);border:1px solid var(--ok-bd,#bbf7d0);border-radius:20px;padding:2px 10px;white-space:nowrap">Month 1</span>
+        </div>
+        <div style="font-size:clamp(17px,2vw,25px);font-weight:700;color:var(--ink,#1A2C26);line-height:1.2">AI &amp; SEO Content</div>
+        <p style="font-size:clamp(13px,1.3vw,17px);color:var(--ink2,#2D4A3E);line-height:1.6;margin:0;flex:1">
+          We write blog articles properly structured for Google and AI engines. Every article includes comparison tables, images, and FAQ sections: the exact format LLMs cite. Starting with the topics patients search for most: compounded semaglutide cost, GLP-1 without insurance, Ozari vs competitors.
+        </p>
+        <div style="border-top:1px solid var(--ok-bd,#bbf7d0);padding-top:clamp(8px,1vh,12px)">
+          <span style="font-size:clamp(10px,1vw,13px);font-weight:600;color:var(--ok,#16a34a)">4 articles/month, fully formatted for AI citation</span>
+        </div>
+      </div>
+
+      <!-- Card 2: Reddit Reputation -->
+      <div style="flex:1;background:var(--ok-bg,#f0fdf4);border:1.5px solid var(--ok-bd,#bbf7d0);border-radius:10px;padding:clamp(10px,1.4vh,16px) clamp(12px,1.6vw,18px);display:flex;flex-direction:column;gap:clamp(6px,0.9vh,11px)">
+        <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px">
+          <span style="font-size:clamp(11px,1.1vw,13px);font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--ok,#16a34a)">Fix 02</span>
+          <span style="font-size:clamp(12px,1.25vw,15px);font-weight:600;color:var(--ok,#16a34a);background:var(--ok-bg,#f0fdf4);border:1px solid var(--ok-bd,#bbf7d0);border-radius:20px;padding:2px 10px;white-space:nowrap">Month 2</span>
+        </div>
+        <div style="font-size:clamp(17px,2vw,25px);font-weight:700;color:var(--ink,#1A2C26);line-height:1.2">Reddit Reputation</div>
+        <p style="font-size:clamp(13px,1.3vw,17px);color:var(--ink2,#2D4A3E);line-height:1.6;margin:0;flex:1">
+          We build a genuine, helpful presence in r/glp1, r/Semaglutide, and adjacent subreddits. Responding to high-fit threads where patients are actively comparing providers. Starting with 10 to 12 targeted comments per month.
+        </p>
+        <div style="border-top:1px solid var(--ok-bd,#bbf7d0);padding-top:clamp(8px,1vh,12px)">
+          <span style="font-size:clamp(10px,1vw,13px);font-weight:600;color:var(--ok,#16a34a)">10–12 comments/month in high-intent GLP-1 threads</span>
+        </div>
+      </div>
+
+      <!-- Card 3: Backlink Building -->
+      <div style="flex:1;background:var(--ok-bg,#f0fdf4);border:1.5px solid var(--ok-bd,#bbf7d0);border-radius:10px;padding:clamp(10px,1.4vh,16px) clamp(12px,1.6vw,18px);display:flex;flex-direction:column;gap:clamp(6px,0.9vh,11px)">
+        <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px">
+          <span style="font-size:clamp(11px,1.1vw,13px);font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--ok,#16a34a)">Fix 03</span>
+          <span style="font-size:clamp(12px,1.25vw,15px);font-weight:600;color:var(--ok,#16a34a);background:var(--ok-bg,#f0fdf4);border:1px solid var(--ok-bd,#bbf7d0);border-radius:20px;padding:2px 10px;white-space:nowrap">Month 3</span>
+        </div>
+        <div style="font-size:clamp(17px,2vw,25px);font-weight:700;color:var(--ink,#1A2C26);line-height:1.2">Backlink Building</div>
+        <p style="font-size:clamp(13px,1.3vw,17px);color:var(--ink2,#2D4A3E);line-height:1.6;margin:0;flex:1">
+          Targeted outreach to get Ozari referenced on GoodRx, Healthline, Sesamecare, and relevant GLP-1 blogs. Goal: raise Domain Rating from 0 to 20+ within 6 months, making every piece of content more likely to rank and be cited.
+        </p>
+        <div style="border-top:1px solid var(--ok-bd,#bbf7d0);padding-top:clamp(8px,1vh,12px)">
+          <span style="font-size:clamp(10px,1vw,13px);font-weight:600;color:var(--ok,#16a34a)">DR 0 → 20+ target within 6 months</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Insight strip -->
+    <div style="background:var(--accent-bg,#E6EEEB);border:1.5px solid var(--accent-bd,#C0D4CE);border-radius:8px;padding:clamp(10px,1.4vh,16px) clamp(14px,1.8vw,22px)">
+      <p style="font-size:clamp(13px,1.3vw,17px);color:var(--ink2,#2D4A3E);margin:0;line-height:1.6;text-align:center">
+        Together these three fixes move Ozari from invisible to trusted, showing up in Google, AI engines, and the Reddit communities where patients decide.
+      </p>
+    </div>
+
+</div>
+</div></section>
+
+<!-- SLIDE 11: Content Strategy -->
+<section><div class="s">
+<div class="stripe"></div>
+<div class="hdr">
+  <div style="display:flex;align-items:center;gap:10px">
+    <img src="https://www.google.com/s2/favicons?domain=ozarihealth.com&sz=128" style="border-radius:10px;width:clamp(26px,3.5vh,40px);height:clamp(26px,3.5vh,40px);object-fit:contain">
+    <span class="tag">SEO / AEO Proposal</span>
+  </div>
+  <div class="hdr-right">
+    <div class="snum">11 / 17</div>
+    <a href="https://www.aipeekaboo.com" target="_blank" rel="noopener" class="powered"><span>Powered by</span><img src="https://www.aipeekaboo.com/images/peekaboo-logo-black.png" alt="AI Peekaboo"></a>
+  </div>
+</div>
+<div class="divider"></div>
+
+<div style="flex:1;overflow:hidden;display:flex;flex-direction:column;min-height:0">
+    <h2 style="font-family:'DM Serif Display',serif;font-weight:400;color:var(--ink);margin:0 0 4px;font-size:clamp(20px,3.2vh,34px);line-height:1.15">Proposed Content Strategy</h2>
+    <p style="color:var(--ink3);font-size:clamp(13px,1.75vh,18px);margin:0 0 clamp(12px,2vh,20px);max-width:72ch;line-height:1.5">We map Ozari's treatments to what patients actually search for, then create content that gets Ozari found at the moment of decision.</p>
+
+    <!-- Three panels -->
+    <div style="display:flex;gap:clamp(6px,1.2vw,14px);align-items:stretch;margin-bottom:clamp(8px,1.2vh,14px)">
+
+      <!-- Panel 1 -->
+      <div style="flex:1;background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(10px,1.6vh,18px) clamp(10px,1.4vw,16px)">
+        <div style="font-size:clamp(12px,1.6vh,16px);font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--accent-dark);margin-bottom:clamp(8px,1.2vh,12px)">Topics Ozari Must Own</div>
+        <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:clamp(5px,0.85vh,9px)">
+          <li style="display:flex;align-items:center;gap:7px;font-size:clamp(12px,1.65vh,17px);color:var(--ink2)">
+            <img src="https://www.google.com/s2/favicons?domain=goodrx.com&sz=32" style="width:14px;height:14px;border-radius:3px;flex-shrink:0">
+            Compounded semaglutide cost
+          </li>
+          <li style="display:flex;align-items:center;gap:7px;font-size:clamp(12px,1.65vh,17px);color:var(--ink2)">
+            <img src="https://www.google.com/s2/favicons?domain=joinmochi.com&sz=32" style="width:14px;height:14px;border-radius:3px;flex-shrink:0">
+            Tirzepatide $99/month online
+          </li>
+          <li style="display:flex;align-items:center;gap:7px;font-size:clamp(12px,1.65vh,17px);color:var(--ink2)">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" style="flex-shrink:0"><rect width="16" height="16" rx="3" fill="#E6EEEB"/><path d="M8 3v10M3 8h10" stroke="#396A58" stroke-width="2" stroke-linecap="round"/></svg>
+            GLP-1 without insurance
+          </li>
+          <li style="display:flex;align-items:center;gap:7px;font-size:clamp(12px,1.65vh,17px);color:var(--ink2)">
+            <img src="https://www.google.com/s2/favicons?domain=ro.co&sz=32" style="width:14px;height:14px;border-radius:3px;flex-shrink:0">
+            Ozari vs Ro Health
+          </li>
+          <li style="display:flex;align-items:center;gap:7px;font-size:clamp(12px,1.65vh,17px);color:var(--ink2)">
+            <img src="https://www.google.com/s2/favicons?domain=joincalibrate.com&sz=32" style="width:14px;height:14px;border-radius:3px;flex-shrink:0">
+            Ozari vs Calibrate
+          </li>
+          <li style="display:flex;align-items:center;gap:7px;font-size:clamp(12px,1.65vh,17px);color:var(--ink2)">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" style="flex-shrink:0"><rect width="16" height="16" rx="3" fill="#E6EEEB"/><circle cx="8" cy="8" r="4" stroke="#396A58" stroke-width="1.8"/></svg>
+            PCOS and GLP-1 medication
+          </li>
+          <li style="display:flex;align-items:center;gap:7px;font-size:clamp(12px,1.65vh,17px);color:var(--ink2)">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" style="flex-shrink:0"><rect width="16" height="16" rx="3" fill="#E6EEEB"/><path d="M3 8l3 3 7-6" stroke="#396A58" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Telehealth weight loss affordable
+          </li>
+        </ul>
+      </div>
+
+      <!-- Plus -->
+      <div style="display:flex;align-items:center;flex-shrink:0;color:var(--ink4);font-size:clamp(16px,2.4vh,26px);font-weight:300">+</div>
+
+      <!-- Panel 2 -->
+      <div style="flex:1;background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(10px,1.6vh,18px) clamp(10px,1.4vw,16px)">
+        <div style="font-size:clamp(12px,1.6vh,16px);font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--accent-dark);margin-bottom:clamp(8px,1.2vh,12px)">Patient Pain Points We Address</div>
+        <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:clamp(5px,0.85vh,9px)">
+          <li style="display:flex;align-items:flex-start;gap:7px;font-size:clamp(12px,1.65vh,17px);color:var(--ink2)">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" style="flex-shrink:0;margin-top:1px"><rect width="16" height="16" rx="3" fill="#fff7ed"/><path d="M8 5v4M8 11v.5" stroke="#ea580c" stroke-width="1.8" stroke-linecap="round"/></svg>
+            Hidden pricing (top Reddit complaint)
+          </li>
+          <li style="display:flex;align-items:flex-start;gap:7px;font-size:clamp(12px,1.65vh,17px);color:var(--ink2)">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" style="flex-shrink:0;margin-top:1px"><rect width="16" height="16" rx="3" fill="#E6EEEB"/><path d="M4 5h8M4 8h6M4 11h4" stroke="#396A58" stroke-width="1.6" stroke-linecap="round"/></svg>
+            Pharmacy confusion: compounding vs brand name
+          </li>
+          <li style="display:flex;align-items:flex-start;gap:7px;font-size:clamp(12px,1.65vh,17px);color:var(--ink2)">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" style="flex-shrink:0;margin-top:1px"><rect width="16" height="16" rx="3" fill="#E6EEEB"/><circle cx="8" cy="8" r="4.5" stroke="#396A58" stroke-width="1.6"/><path d="M8 6v2.5l1.5 1" stroke="#396A58" stroke-width="1.4" stroke-linecap="round"/></svg>
+            Side effects and dosing questions
+          </li>
+          <li style="display:flex;align-items:flex-start;gap:7px;font-size:clamp(12px,1.65vh,17px);color:var(--ink2)">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" style="flex-shrink:0;margin-top:1px"><rect width="16" height="16" rx="3" fill="#fff7ed"/><path d="M8 5v4M8 11v.5" stroke="#ea580c" stroke-width="1.8" stroke-linecap="round"/></svg>
+            "Is this legit?" skepticism about new providers
+          </li>
+          <li style="display:flex;align-items:flex-start;gap:7px;font-size:clamp(12px,1.65vh,17px);color:var(--ink2)">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" style="flex-shrink:0;margin-top:1px"><rect width="16" height="16" rx="3" fill="#E6EEEB"/><path d="M4 8h8M10 5l3 3-3 3" stroke="#396A58" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Insurance does not cover it: now what?
+          </li>
+          <li style="display:flex;align-items:flex-start;gap:7px;font-size:clamp(12px,1.65vh,17px);color:var(--ink2)">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" style="flex-shrink:0;margin-top:1px"><rect width="16" height="16" rx="3" fill="#E6EEEB"/><path d="M4 12l2-4 2 3 2-5 2 6" stroke="#396A58" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            How long until I see results?
+          </li>
+        </ul>
+      </div>
+
+      <!-- Equals -->
+      <div style="display:flex;align-items:center;flex-shrink:0;color:var(--ink4);font-size:clamp(16px,2.4vh,26px);font-weight:300">=</div>
+
+      <!-- Panel 3 (accent) -->
+      <div style="flex:1;background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:10px;padding:clamp(10px,1.6vh,18px) clamp(10px,1.4vw,16px)">
+        <div style="font-size:clamp(12px,1.6vh,16px);font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--accent-dark);margin-bottom:clamp(8px,1.2vh,12px)">Content Types to Create</div>
+        <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:clamp(5px,0.85vh,9px)">
+          <li style="display:flex;align-items:flex-start;gap:7px;font-size:clamp(12px,1.65vh,17px);color:var(--ink2)">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" style="flex-shrink:0;margin-top:1px"><rect width="16" height="16" rx="3" fill="rgba(57,106,88,0.15)"/><path d="M3 8l3 3 7-6" stroke="#396A58" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Comparison pages: Ozari vs Ro, Calibrate, Hims
+          </li>
+          <li style="display:flex;align-items:flex-start;gap:7px;font-size:clamp(12px,1.65vh,17px);color:var(--ink2)">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" style="flex-shrink:0;margin-top:1px"><rect width="16" height="16" rx="3" fill="rgba(57,106,88,0.15)"/><path d="M3 8l3 3 7-6" stroke="#396A58" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Transparent pricing pages (direct Reddit response)
+          </li>
+          <li style="display:flex;align-items:flex-start;gap:7px;font-size:clamp(12px,1.65vh,17px);color:var(--ink2)">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" style="flex-shrink:0;margin-top:1px"><rect width="16" height="16" rx="3" fill="rgba(57,106,88,0.15)"/><path d="M3 8l3 3 7-6" stroke="#396A58" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            FAQ hubs with FAQPage schema markup
+          </li>
+          <li style="display:flex;align-items:flex-start;gap:7px;font-size:clamp(12px,1.65vh,17px);color:var(--ink2)">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" style="flex-shrink:0;margin-top:1px"><rect width="16" height="16" rx="3" fill="rgba(57,106,88,0.15)"/><path d="M3 8l3 3 7-6" stroke="#396A58" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Provider credential pages with Physician schema
+          </li>
+          <li style="display:flex;align-items:flex-start;gap:7px;font-size:clamp(12px,1.65vh,17px);color:var(--ink2)">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" style="flex-shrink:0;margin-top:1px"><rect width="16" height="16" rx="3" fill="rgba(57,106,88,0.15)"/><path d="M3 8l3 3 7-6" stroke="#396A58" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            GLP-1 guide series: semaglutide, tirzepatide, PCOS
+          </li>
+          <li style="display:flex;align-items:flex-start;gap:7px;font-size:clamp(12px,1.65vh,17px);color:var(--ink2)">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" style="flex-shrink:0;margin-top:1px"><rect width="16" height="16" rx="3" fill="rgba(57,106,88,0.15)"/><path d="M3 8l3 3 7-6" stroke="#396A58" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            "Is compounded GLP-1 safe?" trust-building articles
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Explanatory labels -->
+    <div style="display:flex;gap:clamp(6px,1.2vw,14px)">
+      <!-- Spacer to account for + sign -->
+      <div style="flex:1">
+        <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:6px;padding:clamp(5px,0.8vh,9px) clamp(8px,1vw,12px);font-size:clamp(9px,1.15vh,11.5px);color:var(--ink3);line-height:1.4;text-align:center">
+          What patients already search for, captured from Reddit and AI query data
+        </div>
+      </div>
+      <div style="width:clamp(16px,2.4vh,26px);flex-shrink:0"></div>
+      <div style="flex:1">
+        <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:6px;padding:clamp(5px,0.8vh,9px) clamp(8px,1vw,12px);font-size:clamp(9px,1.15vh,11.5px);color:var(--ink3);line-height:1.4;text-align:center">
+          The exact objections patients voice on r/glp1 and r/Semaglutide
+        </div>
+      </div>
+      <div style="width:clamp(16px,2.4vh,26px);flex-shrink:0"></div>
+      <div style="flex:1">
+        <div style="background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:6px;padding:clamp(5px,0.8vh,9px) clamp(8px,1vw,12px);font-size:clamp(9px,1.15vh,11.5px);color:var(--accent-dark);line-height:1.4;text-align:center">
+          Content that appears when a patient is choosing their GLP-1 provider
+        </div>
+      </div>
+    </div>
+</div>
+</div></section>
+
+<!-- SLIDE 12: Competitor Capture -->
+<section><div class="s">
+<div class="stripe"></div>
+<div class="hdr">
+  <div style="display:flex;align-items:center;gap:10px">
+    <img src="https://www.google.com/s2/favicons?domain=ozarihealth.com&sz=128" style="border-radius:10px;width:clamp(26px,3.5vh,40px);height:clamp(26px,3.5vh,40px);object-fit:contain">
+    <span class="tag">SEO / AEO Proposal</span>
+  </div>
+  <div class="hdr-right">
+    <div class="snum">12 / 17</div>
+    <a href="https://www.aipeekaboo.com" target="_blank" rel="noopener" class="powered"><span>Powered by</span><img src="https://www.aipeekaboo.com/images/peekaboo-logo-black.png" alt="AI Peekaboo"></a>
+  </div>
+</div>
+<div class="divider"></div>
+
+<div style="flex:1;overflow:hidden;display:flex;flex-direction:column;min-height:0">
+    <h2 style="font-family:'DM Serif Display',serif;font-weight:400;color:var(--ink);margin:0 0 4px;font-size:clamp(20px,3.2vh,34px);line-height:1.15">Capturing Competitor Search Traffic</h2>
+    <p style="color:var(--ink3);font-size:clamp(13px,1.75vh,18px);margin:0 0 clamp(12px,2vh,20px);max-width:72ch;line-height:1.5">Six competitors with known weaknesses. Real Reddit data showing where patients are dissatisfied.</p>
+
+    <!-- Three panels -->
+    <div style="display:flex;gap:clamp(8px,1.4vw,16px);align-items:stretch">
+
+      <!-- Panel 1: Competitor Vulnerabilities -->
+      <div style="flex:1.2;background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(10px,1.6vh,18px) clamp(10px,1.4vw,16px)">
+        <div style="font-size:clamp(12px,1.6vh,16px);font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--accent-dark);margin-bottom:clamp(8px,1.2vh,12px)">Competitor Vulnerabilities</div>
+        <div style="display:flex;flex-direction:column;gap:clamp(5px,0.8vh,8px)">
+
+          <div style="display:flex;align-items:flex-start;gap:8px;padding:clamp(5px,0.7vh,7px);background:var(--paper);border:1px solid var(--rule);border-radius:7px">
+            <img src="https://www.google.com/s2/favicons?domain=joincalibrate.com&sz=32" style="width:14px;height:14px;border-radius:3px;flex-shrink:0;margin-top:1px">
+            <div style="min-width:0">
+              <div style="font-size:clamp(12px,1.55vh,16px);font-weight:600;color:var(--ink)">Calibrate</div>
+              <div style="font-size:clamp(11px,1.4vh,14px);color:var(--ink3);line-height:1.35">16 Reddit mentions, Mixed: insurance-dependent model frustrating users</div>
+            </div>
+          </div>
+
+          <div style="display:flex;align-items:flex-start;gap:8px;padding:clamp(5px,0.7vh,7px);background:var(--paper);border:1px solid var(--rule);border-radius:7px">
+            <img src="https://www.google.com/s2/favicons?domain=noom.com&sz=32" style="width:14px;height:14px;border-radius:3px;flex-shrink:0;margin-top:1px">
+            <div style="min-width:0">
+              <div style="font-size:clamp(12px,1.55vh,16px);font-weight:600;color:var(--ink)">Noom Med</div>
+              <div style="font-size:clamp(11px,1.4vh,14px);color:var(--ink3);line-height:1.35">15 Reddit mentions, Mixed: mostly neutral to negative experiences</div>
+            </div>
+          </div>
+
+          <div style="display:flex;align-items:flex-start;gap:8px;padding:clamp(5px,0.7vh,7px);background:var(--paper);border:1px solid var(--rule);border-radius:7px">
+            <img src="https://www.google.com/s2/favicons?domain=forhims.com&sz=32" style="width:14px;height:14px;border-radius:3px;flex-shrink:0;margin-top:1px">
+            <div style="min-width:0">
+              <div style="font-size:clamp(12px,1.55vh,16px);font-weight:600;color:var(--ink)">Hims &amp; Hers</div>
+              <div style="font-size:clamp(11px,1.4vh,14px);color:var(--ink3);line-height:1.35">14 Reddit mentions, Neutral: price-shopping audience, pricing opacity</div>
+            </div>
+          </div>
+
+          <div style="display:flex;align-items:flex-start;gap:8px;padding:clamp(5px,0.7vh,7px);background:var(--paper);border:1px solid var(--rule);border-radius:7px">
+            <img src="https://www.google.com/s2/favicons?domain=ro.co&sz=32" style="width:14px;height:14px;border-radius:3px;flex-shrink:0;margin-top:1px">
+            <div style="min-width:0">
+              <div style="font-size:clamp(12px,1.55vh,16px);font-weight:600;color:var(--ink)">Ro Health</div>
+              <div style="font-size:clamp(11px,1.4vh,14px);color:var(--ink3);line-height:1.35">13 Reddit mentions, Neutral: hidden fees complaints, dominant SEO but vulnerable on trust</div>
+            </div>
+          </div>
+
+          <div style="display:flex;align-items:flex-start;gap:8px;padding:clamp(5px,0.7vh,7px);background:var(--paper);border:1px solid var(--rule);border-radius:7px">
+            <img src="https://www.google.com/s2/favicons?domain=weightwatchers.com&sz=32" style="width:14px;height:14px;border-radius:3px;flex-shrink:0;margin-top:1px">
+            <div style="min-width:0">
+              <div style="font-size:clamp(12px,1.55vh,16px);font-weight:600;color:var(--ink)">WeightWatchers Clinic</div>
+              <div style="font-size:clamp(11px,1.4vh,14px);color:var(--ink3);line-height:1.35">13 Reddit mentions: old brand skepticism in GLP-1 community</div>
+            </div>
+          </div>
+
+          <div style="display:flex;align-items:flex-start;gap:8px;padding:clamp(5px,0.7vh,7px);background:var(--paper);border:1px solid var(--warn-bd);border-radius:7px">
+            <img src="https://www.google.com/s2/favicons?domain=joinfound.com&sz=32" style="width:14px;height:14px;border-radius:3px;flex-shrink:0;margin-top:1px">
+            <div style="min-width:0">
+              <div style="font-size:clamp(12px,1.55vh,16px);font-weight:600;color:var(--ink)">Found Health</div>
+              <div style="font-size:clamp(11px,1.4vh,14px);color:var(--ink3);line-height:1.35">11 Reddit mentions: scam complaints and poor reputation signals</div>
+            </div>
+          </div>
+
+          <div style="display:flex;align-items:flex-start;gap:8px;padding:clamp(5px,0.7vh,7px);background:var(--paper);border:1px solid var(--rule);border-radius:7px">
+            <img src="https://www.google.com/s2/favicons?domain=joinmochi.com&sz=32" style="width:14px;height:14px;border-radius:3px;flex-shrink:0;margin-top:1px">
+            <div style="min-width:0">
+              <div style="font-size:clamp(12px,1.55vh,16px);font-weight:600;color:var(--ink)">Mochi Health</div>
+              <div style="font-size:clamp(11px,1.4vh,14px);color:var(--ink3);line-height:1.35">3 Reddit mentions, Positive: high-touch but expensive</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Panel 2: Switching queries -->
+      <div style="flex:1;background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(10px,1.6vh,18px) clamp(10px,1.4vw,16px)">
+        <div style="font-size:clamp(12px,1.6vh,16px);font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--accent-dark);margin-bottom:clamp(8px,1.2vh,12px)">What Patients Search When Switching</div>
+        <div style="display:flex;flex-direction:column;gap:clamp(5px,0.8vh,8px)">
+
+          <div style="background:var(--paper3);border-radius:6px;padding:clamp(6px,0.85vh,9px) clamp(8px,1vw,12px);font-size:clamp(12px,1.6vh,16px);color:var(--ink2);font-style:italic;border-left:3px solid var(--accent-bd)">
+            "Calibrate alternative cheaper"
+          </div>
+          <div style="background:var(--paper3);border-radius:6px;padding:clamp(6px,0.85vh,9px) clamp(8px,1vw,12px);font-size:clamp(12px,1.6vh,16px);color:var(--ink2);font-style:italic;border-left:3px solid var(--accent-bd)">
+            "Noom Med bad experience"
+          </div>
+          <div style="background:var(--paper3);border-radius:6px;padding:clamp(6px,0.85vh,9px) clamp(8px,1vw,12px);font-size:clamp(12px,1.6vh,16px);color:var(--ink2);font-style:italic;border-left:3px solid var(--accent-bd)">
+            "Hims vs cheaper GLP-1 option"
+          </div>
+          <div style="background:var(--paper3);border-radius:6px;padding:clamp(6px,0.85vh,9px) clamp(8px,1vw,12px);font-size:clamp(12px,1.6vh,16px);color:var(--ink2);font-style:italic;border-left:3px solid var(--accent-bd)">
+            "Ro Health pricing complaints"
+          </div>
+          <div style="background:var(--paper3);border-radius:6px;padding:clamp(6px,0.85vh,9px) clamp(8px,1vw,12px);font-size:clamp(12px,1.6vh,16px);color:var(--ink2);font-style:italic;border-left:3px solid var(--accent-bd)">
+            "WeightWatchers GLP-1 worth it"
+          </div>
+          <div style="background:var(--warn-bg);border-radius:6px;padding:clamp(6px,0.85vh,9px) clamp(8px,1vw,12px);font-size:clamp(12px,1.6vh,16px);color:var(--ink2);font-style:italic;border-left:3px solid var(--warn-bd)">
+            "Found Health reviews scam"
+          </div>
+          <div style="background:var(--paper3);border-radius:6px;padding:clamp(6px,0.85vh,9px) clamp(8px,1vw,12px);font-size:clamp(12px,1.6vh,16px);color:var(--ink2);font-style:italic;border-left:3px solid var(--accent-bd)">
+            "Mochi Health alternative affordable"
+          </div>
+
+          <div style="margin-top:clamp(4px,0.6vh,8px);padding:clamp(6px,0.8vh,9px);background:var(--paper);border:1px solid var(--rule);border-radius:6px;font-size:clamp(11px,1.4vh,14px);color:var(--ink3);text-align:center;line-height:1.4">
+            Each query signals a patient ready to leave a competitor. Ozari needs to be the answer they land on.
+          </div>
+        </div>
+      </div>
+
+      <!-- Panel 3: Ozari's Answer -->
+      <div style="flex:1.1;background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:10px;padding:clamp(10px,1.6vh,18px) clamp(10px,1.4vw,16px)">
+        <div style="font-size:clamp(12px,1.6vh,16px);font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--accent-dark);margin-bottom:clamp(8px,1.2vh,12px)">Ozari's Answer</div>
+        <div style="display:flex;flex-direction:column;gap:clamp(6px,0.9vh,10px)">
+
+          <div style="background:white;border:1px solid var(--accent-bd);border-radius:8px;padding:clamp(7px,1vh,11px) clamp(8px,1.1vw,13px)">
+            <div style="display:flex;align-items:center;gap:6px;margin-bottom:3px">
+              <svg width="13" height="13" viewBox="0 0 16 16" fill="none"><rect width="16" height="16" rx="3" fill="rgba(57,106,88,0.15)"/><path d="M3 8l3 3 7-6" stroke="#396A58" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span style="font-size:clamp(11px,1.4vh,14px);font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--accent)">Comparison</span>
+            </div>
+            <div style="font-size:clamp(12px,1.6vh,16px);color:var(--ink2);line-height:1.4">Ozari vs Calibrate: Which GLP-1 Program is Right for You?</div>
+          </div>
+
+          <div style="background:white;border:1px solid var(--accent-bd);border-radius:8px;padding:clamp(7px,1vh,11px) clamp(8px,1.1vw,13px)">
+            <div style="display:flex;align-items:center;gap:6px;margin-bottom:3px">
+              <svg width="13" height="13" viewBox="0 0 16 16" fill="none"><rect width="16" height="16" rx="3" fill="rgba(57,106,88,0.15)"/><path d="M3 8l3 3 7-6" stroke="#396A58" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span style="font-size:clamp(11px,1.4vh,14px);font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--accent)">Comparison</span>
+            </div>
+            <div style="font-size:clamp(12px,1.6vh,16px);color:var(--ink2);line-height:1.4">Ozari vs Ro Health: Pricing, Pharmacy, and Provider Comparison</div>
+          </div>
+
+          <div style="background:white;border:1px solid var(--accent-bd);border-radius:8px;padding:clamp(7px,1vh,11px) clamp(8px,1.1vw,13px)">
+            <div style="display:flex;align-items:center;gap:6px;margin-bottom:3px">
+              <svg width="13" height="13" viewBox="0 0 16 16" fill="none"><rect width="16" height="16" rx="3" fill="rgba(57,106,88,0.15)"/><path d="M3 8l3 3 7-6" stroke="#396A58" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span style="font-size:clamp(11px,1.4vh,14px);font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--accent)">Comparison</span>
+            </div>
+            <div style="font-size:clamp(12px,1.6vh,16px);color:var(--ink2);line-height:1.4">Ozari vs Hims Weight Loss: Full 2026 Review</div>
+          </div>
+
+          <div style="background:white;border:1px solid var(--accent-bd);border-radius:8px;padding:clamp(7px,1vh,11px) clamp(8px,1.1vw,13px)">
+            <div style="display:flex;align-items:center;gap:6px;margin-bottom:3px">
+              <svg width="13" height="13" viewBox="0 0 16 16" fill="none"><rect width="16" height="16" rx="3" fill="rgba(57,106,88,0.15)"/><path d="M3 8l3 3 7-6" stroke="#396A58" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span style="font-size:clamp(11px,1.4vh,14px);font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--accent)">Alternative</span>
+            </div>
+            <div style="font-size:clamp(12px,1.6vh,16px);color:var(--ink2);line-height:1.4">Best Calibrate Alternatives for Affordable GLP-1</div>
+          </div>
+
+          <div style="background:white;border:1px solid var(--warn-bd);border-radius:8px;padding:clamp(7px,1vh,11px) clamp(8px,1.1vw,13px)">
+            <div style="display:flex;align-items:center;gap:6px;margin-bottom:3px">
+              <svg width="13" height="13" viewBox="0 0 16 16" fill="none"><rect width="16" height="16" rx="3" fill="#fff7ed"/><path d="M8 5v4M8 11v.5" stroke="#ea580c" stroke-width="1.8" stroke-linecap="round"/></svg>
+              <span style="font-size:clamp(11px,1.4vh,14px);font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--warn)">Trust-building</span>
+            </div>
+            <div style="font-size:clamp(12px,1.6vh,16px);color:var(--ink2);line-height:1.4">Is Found Health Legit? (And What to Use Instead)</div>
+          </div>
+
+          <div style="margin-top:auto;padding:clamp(6px,0.8vh,9px);background:rgba(57,106,88,0.08);border-radius:6px;font-size:clamp(11px,1.4vh,14px);color:var(--accent-dark);text-align:center;line-height:1.4;font-weight:500">
+            5 pages targeting patients at peak switching intent
+          </div>
+        </div>
+      </div>
+
+    </div>
+</div>
+</div></section>
+<!-- SLIDE 13: What Reddit Says About Ozari -->
+<section><div class="s">
+<div class="stripe"></div>
+<div class="hdr">
+  <div style="display:flex;align-items:center;gap:10px">
+    <img src="https://www.google.com/s2/favicons?domain=ozarihealth.com&sz=128" style="border-radius:10px;width:clamp(26px,3.5vh,40px);height:clamp(26px,3.5vh,40px);object-fit:contain">
+    <span class="tag">SEO / AEO Proposal</span>
+  </div>
+  <div class="hdr-right">
+    <div class="snum">13 / 17</div>
+    <a href="https://www.aipeekaboo.com" target="_blank" rel="noopener" class="powered"><span>Powered by</span><img src="https://www.aipeekaboo.com/images/peekaboo-logo-black.png" alt="AI Peekaboo"></a>
+  </div>
+</div>
+<div class="divider"></div>
+<div style="flex:1;min-height:0;display:flex;flex-direction:column">
+
+  <!-- Title row -->
+  <div style="padding:clamp(8px,1.2vh,16px) 0 clamp(4px,0.6vh,8px);flex-shrink:0;">
+    <div style="display:flex;align-items:center;gap:clamp(8px,1vw,14px);flex-wrap:wrap;">
+      <h2 style="font-family:'DM Serif Display',serif;font-weight:400;font-size:clamp(25px,3.4vh,44px);color:var(--ink,#1A2C26);margin:0;line-height:1.2;">
+        What Reddit Says About Ozari <span style="color:var(--accent,#396A58);">and its Competitors</span>
+      </h2>
+      <div style="display:flex;align-items:center;gap:6px;background:var(--paper2,#EDE9E2);border:1px solid var(--rule,#D4C9BE);border-radius:20px;padding:3px 10px;flex-shrink:0;">
+        <img src="https://www.google.com/s2/favicons?domain=reddit.com&sz=32" style="width:clamp(12px,1.4vh,16px);height:clamp(12px,1.4vh,16px);">
+        <span style="font-size:clamp(13px,1.6vh,17px);color:var(--ink3,#677E76);font-weight:500;">38 posts scored across 13 GLP-1 subreddits &middot; May 2026</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Two-column body -->
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(12px,1.6vw,24px);padding:0 0 clamp(8px,1.2vh,16px);flex:1;min-height:0;overflow:hidden;">
+
+    <!-- LEFT: Ozari's Reddit Presence -->
+    <div style="display:flex;flex-direction:column;gap:clamp(6px,0.8vh,12px);overflow:hidden;">
+      <div style="font-size:clamp(10px,1.1vh,13px);font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ink2,#2D4A3E);">Ozari's Reddit Presence</div>
+
+      <!-- Post Card 1 — Negative -->
+      <div style="background:var(--red-bg,#fef2f2);border:1px solid var(--red-bd,#fecaca);border-radius:10px;padding:clamp(8px,1vh,14px);display:flex;flex-direction:column;gap:clamp(5px,0.7vh,9px);flex-shrink:0;">
+        <div style="display:flex;align-items:center;gap:7px;flex-wrap:wrap;">
+          <span style="font-size:clamp(13px,1.6vh,17px);font-weight:700;background:#ff4500;color:#fff;border-radius:12px;padding:2px 8px;">r/glp1</span>
+          <span style="font-size:clamp(13px,1.5vh,17px);font-weight:700;color:var(--ink,#1A2C26);line-height:1.3;flex:1;">Ozari Health Pricing bc They Hide It</span>
+        </div>
+        <a href="https://www.reddit.com/r/glp1/comments/1sc5pus/ozari_health_pricing_bc_they_hide_it" target="_blank" rel="noopener" style="font-size:clamp(14px,1.75vh,18px);color:var(--ink4,#9BAEA8);text-decoration:none;word-break:break-all;line-height:1.3;">reddit.com/r/glp1/comments/1sc5pus/...</a>
+        <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
+          <span style="font-size:clamp(13px,1.6vh,17px);color:var(--ink3,#677E76);">24 upvotes</span>
+          <span style="color:var(--rule,#D4C9BE);font-size:10px;">|</span>
+          <span style="font-size:clamp(13px,1.6vh,17px);color:var(--ink3,#677E76);">5 comments</span>
+          <span style="color:var(--rule,#D4C9BE);font-size:10px;">|</span>
+          <span style="font-size:clamp(13px,1.6vh,17px);font-weight:700;background:var(--red,#dc2626);color:#fff;border-radius:10px;padding:2px 8px;">Negative</span>
+        </div>
+        <div style="background:var(--paper2,#EDE9E2);border-radius:7px;padding:clamp(6px,0.8vh,10px);font-size:clamp(13px,1.6vh,17px);color:var(--ink2,#2D4A3E);line-height:1.5;">
+          User posted a pricing breakdown because it was impossible to find on Reddit or their website. Top comment: <em>"Too expensive. Do not pay membership fees."</em> Pricing transparency is the single biggest trust gap.
+        </div>
+      </div>
+
+      <!-- Post Card 2 — Mixed -->
+      <div style="background:var(--warn-bg,#fff7ed);border:1px solid var(--warn-bd,#fed7aa);border-radius:10px;padding:clamp(8px,1vh,14px);display:flex;flex-direction:column;gap:clamp(5px,0.7vh,9px);flex-shrink:0;">
+        <div style="display:flex;align-items:center;gap:7px;flex-wrap:wrap;">
+          <span style="font-size:clamp(13px,1.6vh,17px);font-weight:700;background:#ff4500;color:#fff;border-radius:12px;padding:2px 8px;">r/glp1</span>
+          <span style="font-size:clamp(13px,1.5vh,17px);font-weight:700;color:var(--ink,#1A2C26);line-height:1.3;flex:1;">Kinda surprised by Ozari so far</span>
+        </div>
+        <a href="https://www.reddit.com/r/glp1/comments/1spnb83/kinda_surprised_by_ozari_so_far" target="_blank" rel="noopener" style="font-size:clamp(14px,1.75vh,18px);color:var(--ink4,#9BAEA8);text-decoration:none;word-break:break-all;line-height:1.3;">reddit.com/r/glp1/comments/1spnb83/...</a>
+        <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
+          <span style="font-size:clamp(13px,1.6vh,17px);color:var(--ink3,#677E76);">0 score</span>
+          <span style="color:var(--rule,#D4C9BE);font-size:10px;">|</span>
+          <span style="font-size:clamp(13px,1.6vh,17px);color:var(--ink3,#677E76);">13 comments</span>
+          <span style="color:var(--rule,#D4C9BE);font-size:10px;">|</span>
+          <span style="font-size:clamp(13px,1.6vh,17px);font-weight:700;background:var(--warn,#ea580c);color:#fff;border-radius:10px;padding:2px 8px;">Mixed</span>
+        </div>
+        <div style="background:var(--paper2,#EDE9E2);border-radius:7px;padding:clamp(6px,0.8vh,10px);font-size:clamp(13px,1.6vh,17px);color:var(--ink2,#2D4A3E);line-height:1.5;">
+          User sharing a positive experience (no nausea, good customer service). But comment thread turns negative: <em>"They use Jungle Jim's Pharmacy? Definitely not a good choice."</em> Pricing complaint linked in comments.
+        </div>
+      </div>
+
+      <!-- Action insight strip -->
+      <div style="background:var(--accent-bg,#E6EEEB);border:1px solid var(--accent-bd,#C0D4CE);border-radius:9px;padding:clamp(7px,0.9vh,12px) clamp(10px,1.2vw,16px);flex-shrink:0;">
+        <span style="font-size:clamp(9px,1vh,12px);color:var(--accent-dark,#2A5244);font-weight:600;line-height:1.5;">Neither competitor owns Reddit either. Whoever builds a genuine, helpful presence in r/glp1 and r/Semaglutide first wins patient trust at scale.</span>
+      </div>
+    </div>
+
+    <!-- RIGHT: Competitor Mentions -->
+    <div style="display:flex;flex-direction:column;gap:clamp(6px,0.8vh,10px);overflow:hidden;align-items:flex-start;">
+      <div style="font-size:clamp(10px,1.1vh,13px);font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ink2,#2D4A3E);">Competitor Mentions in GLP-1 Conversations</div>
+
+      <!-- Bar list -->
+      <div style="display:flex;flex-direction:column;gap:clamp(4px,0.55vh,8px);width:100%;">
+
+        <!-- Calibrate — 16 -->
+        <div style="display:flex;align-items:center;gap:8px;">
+          <img src="https://www.google.com/s2/favicons?domain=joincalibrate.com&sz=32" style="width:clamp(14px,1.6vh,18px);height:clamp(14px,1.6vh,18px);border-radius:3px;flex-shrink:0;">
+          <span style="font-size:clamp(13px,1.6vh,17px);color:var(--ink,#1A2C26);width:clamp(80px,10vw,130px);flex-shrink:0;font-weight:500;">Calibrate</span>
+          <div style="flex:1;height:clamp(6px,0.8vh,10px);background:var(--paper3,#E0DDD6);border-radius:4px;overflow:hidden;">
+            <div style="width:100%;height:100%;background:var(--accent,#396A58);border-radius:4px;"></div>
+          </div>
+          <span style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.6vh,17px);color:var(--ink2,#2D4A3E);font-weight:700;width:clamp(20px,2vw,28px);text-align:right;flex-shrink:0;">16</span>
+          <span style="font-size:clamp(14px,1.75vh,18px);font-weight:600;background:#f0fdf4;color:#16a34a;border:1px solid #bbf7d0;border-radius:8px;padding:1px 6px;flex-shrink:0;">Mixed</span>
+        </div>
+
+        <!-- Noom Med — 15 -->
+        <div style="display:flex;align-items:center;gap:8px;">
+          <img src="https://www.google.com/s2/favicons?domain=noom.com&sz=32" style="width:clamp(14px,1.6vh,18px);height:clamp(14px,1.6vh,18px);border-radius:3px;flex-shrink:0;">
+          <span style="font-size:clamp(13px,1.6vh,17px);color:var(--ink,#1A2C26);width:clamp(80px,10vw,130px);flex-shrink:0;font-weight:500;">Noom Med</span>
+          <div style="flex:1;height:clamp(6px,0.8vh,10px);background:var(--paper3,#E0DDD6);border-radius:4px;overflow:hidden;">
+            <div style="width:93.75%;height:100%;background:var(--accent,#396A58);border-radius:4px;opacity:.85;"></div>
+          </div>
+          <span style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.6vh,17px);color:var(--ink2,#2D4A3E);font-weight:700;width:clamp(20px,2vw,28px);text-align:right;flex-shrink:0;">15</span>
+          <span style="font-size:clamp(14px,1.75vh,18px);font-weight:600;background:var(--paper2,#EDE9E2);color:var(--ink3,#677E76);border:1px solid var(--rule,#D4C9BE);border-radius:8px;padding:1px 6px;flex-shrink:0;">Neutral</span>
+        </div>
+
+        <!-- Hims & Hers — 14 -->
+        <div style="display:flex;align-items:center;gap:8px;">
+          <img src="https://www.google.com/s2/favicons?domain=forhims.com&sz=32" style="width:clamp(14px,1.6vh,18px);height:clamp(14px,1.6vh,18px);border-radius:3px;flex-shrink:0;">
+          <span style="font-size:clamp(13px,1.6vh,17px);color:var(--ink,#1A2C26);width:clamp(80px,10vw,130px);flex-shrink:0;font-weight:500;">Hims &amp; Hers</span>
+          <div style="flex:1;height:clamp(6px,0.8vh,10px);background:var(--paper3,#E0DDD6);border-radius:4px;overflow:hidden;">
+            <div style="width:87.5%;height:100%;background:var(--accent,#396A58);border-radius:4px;opacity:.8;"></div>
+          </div>
+          <span style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.6vh,17px);color:var(--ink2,#2D4A3E);font-weight:700;width:clamp(20px,2vw,28px);text-align:right;flex-shrink:0;">14</span>
+          <span style="font-size:clamp(14px,1.75vh,18px);font-weight:600;background:var(--paper2,#EDE9E2);color:var(--ink3,#677E76);border:1px solid var(--rule,#D4C9BE);border-radius:8px;padding:1px 6px;flex-shrink:0;">Neutral</span>
+        </div>
+
+        <!-- Ro Health — 13 -->
+        <div style="display:flex;align-items:center;gap:8px;">
+          <img src="https://www.google.com/s2/favicons?domain=ro.co&sz=32" style="width:clamp(14px,1.6vh,18px);height:clamp(14px,1.6vh,18px);border-radius:3px;flex-shrink:0;">
+          <span style="font-size:clamp(13px,1.6vh,17px);color:var(--ink,#1A2C26);width:clamp(80px,10vw,130px);flex-shrink:0;font-weight:500;">Ro Health</span>
+          <div style="flex:1;height:clamp(6px,0.8vh,10px);background:var(--paper3,#E0DDD6);border-radius:4px;overflow:hidden;">
+            <div style="width:81.25%;height:100%;background:var(--accent,#396A58);border-radius:4px;opacity:.72;"></div>
+          </div>
+          <span style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.6vh,17px);color:var(--ink2,#2D4A3E);font-weight:700;width:clamp(20px,2vw,28px);text-align:right;flex-shrink:0;">13</span>
+          <span style="font-size:clamp(14px,1.75vh,18px);font-weight:600;background:var(--paper2,#EDE9E2);color:var(--ink3,#677E76);border:1px solid var(--rule,#D4C9BE);border-radius:8px;padding:1px 6px;flex-shrink:0;">Neutral</span>
+        </div>
+
+        <!-- WeightWatchers Clinic — 13 -->
+        <div style="display:flex;align-items:center;gap:8px;">
+          <img src="https://www.google.com/s2/favicons?domain=weightwatchers.com&sz=32" style="width:clamp(14px,1.6vh,18px);height:clamp(14px,1.6vh,18px);border-radius:3px;flex-shrink:0;">
+          <span style="font-size:clamp(13px,1.6vh,17px);color:var(--ink,#1A2C26);width:clamp(80px,10vw,130px);flex-shrink:0;font-weight:500;">WeightWatchers</span>
+          <div style="flex:1;height:clamp(6px,0.8vh,10px);background:var(--paper3,#E0DDD6);border-radius:4px;overflow:hidden;">
+            <div style="width:81.25%;height:100%;background:var(--accent,#396A58);border-radius:4px;opacity:.72;"></div>
+          </div>
+          <span style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.6vh,17px);color:var(--ink2,#2D4A3E);font-weight:700;width:clamp(20px,2vw,28px);text-align:right;flex-shrink:0;">13</span>
+          <span style="font-size:clamp(14px,1.75vh,18px);font-weight:600;background:var(--paper2,#EDE9E2);color:var(--ink3,#677E76);border:1px solid var(--rule,#D4C9BE);border-radius:8px;padding:1px 6px;flex-shrink:0;">Neutral</span>
+        </div>
+
+        <!-- Found Health — 11 -->
+        <div style="display:flex;align-items:center;gap:8px;">
+          <img src="https://www.google.com/s2/favicons?domain=joinfound.com&sz=32" style="width:clamp(14px,1.6vh,18px);height:clamp(14px,1.6vh,18px);border-radius:3px;flex-shrink:0;">
+          <span style="font-size:clamp(13px,1.6vh,17px);color:var(--ink,#1A2C26);width:clamp(80px,10vw,130px);flex-shrink:0;font-weight:500;">Found Health</span>
+          <div style="flex:1;height:clamp(6px,0.8vh,10px);background:var(--paper3,#E0DDD6);border-radius:4px;overflow:hidden;">
+            <div style="width:68.75%;height:100%;background:var(--accent,#396A58);border-radius:4px;opacity:.65;"></div>
+          </div>
+          <span style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.6vh,17px);color:var(--ink2,#2D4A3E);font-weight:700;width:clamp(20px,2vw,28px);text-align:right;flex-shrink:0;">11</span>
+          <span style="font-size:clamp(14px,1.75vh,18px);font-weight:600;background:var(--paper2,#EDE9E2);color:var(--ink3,#677E76);border:1px solid var(--rule,#D4C9BE);border-radius:8px;padding:1px 6px;flex-shrink:0;">Neutral</span>
+        </div>
+
+        <!-- Mochi Health — 3 -->
+        <div style="display:flex;align-items:center;gap:8px;">
+          <img src="https://www.google.com/s2/favicons?domain=joinmochi.com&sz=32" style="width:clamp(14px,1.6vh,18px);height:clamp(14px,1.6vh,18px);border-radius:3px;flex-shrink:0;">
+          <span style="font-size:clamp(13px,1.6vh,17px);color:var(--ink,#1A2C26);width:clamp(80px,10vw,130px);flex-shrink:0;font-weight:500;">Mochi Health</span>
+          <div style="flex:1;height:clamp(6px,0.8vh,10px);background:var(--paper3,#E0DDD6);border-radius:4px;overflow:hidden;">
+            <div style="width:18.75%;height:100%;background:var(--ok,#16a34a);border-radius:4px;opacity:.9;"></div>
+          </div>
+          <span style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.6vh,17px);color:var(--ink2,#2D4A3E);font-weight:700;width:clamp(20px,2vw,28px);text-align:right;flex-shrink:0;">3</span>
+          <span style="font-size:clamp(14px,1.75vh,18px);font-weight:600;background:var(--ok-bg,#f0fdf4);color:var(--ok,#16a34a);border:1px solid var(--ok-bd,#bbf7d0);border-radius:8px;padding:1px 6px;flex-shrink:0;">Positive</span>
+        </div>
+
+      </div>
+
+      <!-- Competitor insight -->
+      <div style="font-size:clamp(13px,1.6vh,17px);color:var(--ink3,#677E76);font-style:italic;line-height:1.4;flex-shrink:0;">No competitor dominates. All get mixed sentiment. The GLP-1 Reddit conversation is wide open.</div>
+
+      <!-- Subreddits monitored -->
+      <div style="flex-shrink:0;">
+        <div style="font-size:clamp(14px,1.75vh,18px);font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--ink4,#9BAEA8);margin-bottom:5px;">Key subreddits monitored</div>
+        <div style="display:flex;flex-wrap:wrap;gap:4px;">
+          <span style="font-size:clamp(12px,1.4vh,15px);background:var(--paper2,#EDE9E2);border:1px solid var(--rule,#D4C9BE);border-radius:10px;padding:2px 7px;color:var(--ink2,#2D4A3E);font-weight:500;">r/glp1</span>
+          <span style="font-size:clamp(12px,1.4vh,15px);background:var(--paper2,#EDE9E2);border:1px solid var(--rule,#D4C9BE);border-radius:10px;padding:2px 7px;color:var(--ink2,#2D4A3E);font-weight:500;">r/Semaglutide</span>
+          <span style="font-size:clamp(12px,1.4vh,15px);background:var(--paper2,#EDE9E2);border:1px solid var(--rule,#D4C9BE);border-radius:10px;padding:2px 7px;color:var(--ink2,#2D4A3E);font-weight:500;">r/CompoundedSemaglutide</span>
+          <span style="font-size:clamp(12px,1.4vh,15px);background:var(--paper2,#EDE9E2);border:1px solid var(--rule,#D4C9BE);border-radius:10px;padding:2px 7px;color:var(--ink2,#2D4A3E);font-weight:500;">r/PCOS</span>
+          <span style="font-size:clamp(12px,1.4vh,15px);background:var(--paper2,#EDE9E2);border:1px solid var(--rule,#D4C9BE);border-radius:10px;padding:2px 7px;color:var(--ink2,#2D4A3E);font-weight:500;">r/loseit</span>
+          <span style="font-size:clamp(12px,1.4vh,15px);background:var(--paper2,#EDE9E2);border:1px solid var(--rule,#D4C9BE);border-radius:10px;padding:2px 7px;color:var(--ink2,#2D4A3E);font-weight:500;">r/WegovyWeightLoss</span>
+          <span style="font-size:clamp(12px,1.4vh,15px);background:var(--paper2,#EDE9E2);border:1px solid var(--rule,#D4C9BE);border-radius:10px;padding:2px 7px;color:var(--ink2,#2D4A3E);font-weight:500;">r/antidietglp1</span>
+          <span style="font-size:clamp(12px,1.4vh,15px);background:var(--paper2,#EDE9E2);border:1px solid var(--rule,#D4C9BE);border-radius:10px;padding:2px 7px;color:var(--ink2,#2D4A3E);font-weight:500;">r/Noom</span>
+          <span style="font-size:clamp(12px,1.4vh,15px);background:var(--paper2,#EDE9E2);border:1px solid var(--rule,#D4C9BE);border-radius:10px;padding:2px 7px;color:var(--ink2,#2D4A3E);font-weight:500;">r/RoBody</span>
+          <span style="font-size:clamp(12px,1.4vh,15px);background:var(--paper2,#EDE9E2);border:1px solid var(--rule,#D4C9BE);border-radius:10px;padding:2px 7px;color:var(--ink2,#2D4A3E);font-weight:500;">r/calibrateweightloss</span>
+          <span style="font-size:clamp(12px,1.4vh,15px);background:var(--paper2,#EDE9E2);border:1px solid var(--rule,#D4C9BE);border-radius:10px;padding:2px 7px;color:var(--ink2,#2D4A3E);font-weight:500;">r/midihealth</span>
+          <span style="font-size:clamp(12px,1.4vh,15px);background:var(--paper2,#EDE9E2);border:1px solid var(--rule,#D4C9BE);border-radius:10px;padding:2px 7px;color:var(--ink2,#2D4A3E);font-weight:500;">r/IVIMHEALTH</span>
+          <span style="font-size:clamp(12px,1.4vh,15px);background:var(--paper2,#EDE9E2);border:1px solid var(--rule,#D4C9BE);border-radius:10px;padding:2px 7px;color:var(--ink2,#2D4A3E);font-weight:500;">r/FamilyMedicine</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div></div></section>
+
+<!-- SLIDE 14: What We Deliver Every Month -->
+<section><div class="s">
+<div class="stripe"></div>
+<div class="hdr">
+  <div style="display:flex;align-items:center;gap:10px">
+    <img src="https://www.google.com/s2/favicons?domain=ozarihealth.com&sz=128" style="border-radius:10px;width:clamp(26px,3.5vh,40px);height:clamp(26px,3.5vh,40px);object-fit:contain">
+    <span class="tag">SEO / AEO Proposal</span>
+  </div>
+  <div class="hdr-right">
+    <div class="snum">14 / 17</div>
+    <a href="https://www.aipeekaboo.com" target="_blank" rel="noopener" class="powered"><span>Powered by</span><img src="https://www.aipeekaboo.com/images/peekaboo-logo-black.png" alt="AI Peekaboo"></a>
+  </div>
+</div>
+<div class="divider"></div>
+<div style="flex:1;min-height:0;display:flex;flex-direction:column">
+
+    <h2 style="font-family:'DM Serif Display',Georgia,serif;font-weight:400;color:#1A2C26;font-size:clamp(22px,3.6vh,44px);margin:0 0 clamp(2px,0.5vh,6px)">What We Deliver Every Month</h2>
+    <p style="color:#677E76;font-size:clamp(13px,1.8vh,19px);margin:0 0 clamp(10px,1.8vh,22px)">Six workstreams running in parallel, with measurable outputs each month.</p>
+
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(2,1fr);gap:clamp(8px,1.2vh,16px);flex:1;min-height:0">
+
+      <!-- Card 1 -->
+      <div style="background:#EDE9E2;border:1px solid #D4C9BE;border-radius:10px;padding:clamp(10px,1.6vh,20px);display:flex;flex-direction:column;gap:clamp(6px,0.9vh,12px)">
+        <svg width="clamp(18px,2.4vh,28px)" height="clamp(18px,2.4vh,28px)" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="3" width="20" height="16" rx="2" stroke="#396A58" stroke-width="1.8" fill="none"/>
+          <path d="M7 8l-3 4 3 4" stroke="#396A58" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M17 8l3 4-3 4" stroke="#396A58" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M14 6l-4 12" stroke="#396A58" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+        <div style="font-weight:700;color:#1A2C26;font-size:clamp(12px,1.75vh,18px);line-height:1.25">Technical SEO Audit + Fixes</div>
+        <div style="color:#677E76;font-size:clamp(11px,1.55vh,16px);line-height:1.45">SSR migration support, Core Web Vitals optimization, indexation audit, sitemap repair. Every treatment and pricing page indexable.</div>
+      </div>
+
+      <!-- Card 2 -->
+      <div style="background:#EDE9E2;border:1px solid #D4C9BE;border-radius:10px;padding:clamp(10px,1.6vh,20px);display:flex;flex-direction:column;gap:clamp(6px,0.9vh,12px)">
+        <svg width="clamp(18px,2.4vh,28px)" height="clamp(18px,2.4vh,28px)" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="#396A58" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <polyline points="14 2 14 8 20 8" stroke="#396A58" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          <line x1="7" y1="13" x2="17" y2="13" stroke="#396A58" stroke-width="1.8" stroke-linecap="round"/>
+          <line x1="7" y1="17" x2="13" y2="17" stroke="#396A58" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+        <div style="font-weight:700;color:#1A2C26;font-size:clamp(12px,1.75vh,18px);line-height:1.25">12 Content Pieces per Month</div>
+        <div style="color:#677E76;font-size:clamp(11px,1.55vh,16px);line-height:1.45">Comparison pages, FAQ hubs, GLP-1 guides, pricing transparency articles. Written for patients in decision mode.</div>
+      </div>
+
+      <!-- Card 3 -->
+      <div style="background:#EDE9E2;border:1px solid #D4C9BE;border-radius:10px;padding:clamp(10px,1.6vh,20px);display:flex;flex-direction:column;gap:clamp(6px,0.9vh,12px)">
+        <svg width="clamp(18px,2.4vh,28px)" height="clamp(18px,2.4vh,28px)" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <polyline points="16 18 22 12 16 6" stroke="#396A58" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          <polyline points="8 6 2 12 8 18" stroke="#396A58" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div style="font-weight:700;color:#1A2C26;font-size:clamp(12px,1.75vh,18px);line-height:1.25">Schema Implementation</div>
+        <div style="color:#677E76;font-size:clamp(11px,1.55vh,16px);line-height:1.45">Full schema stack: FAQPage, MedicalWebPage, Product, Physician, Organization. AI models cite structured pages at 3x the rate.</div>
+      </div>
+
+      <!-- Card 4 -->
+      <div style="background:#EDE9E2;border:1px solid #D4C9BE;border-radius:10px;padding:clamp(10px,1.6vh,20px);display:flex;flex-direction:column;gap:clamp(6px,0.9vh,12px)">
+        <img src="https://www.aipeekaboo.com/icon.jpg" style="width:18px;height:18px;border-radius:4px;object-fit:contain;flex-shrink:0" alt="AI Peekaboo">
+        <div style="font-weight:700;color:#1A2C26;font-size:clamp(12px,1.75vh,18px);line-height:1.25">AI Peekaboo Monitoring</div>
+        <div style="color:#677E76;font-size:clamp(11px,1.55vh,16px);line-height:1.45">Monthly AI visibility score across ChatGPT, Gemini, Perplexity, Google AIO, and Google AI Mode. Track progress from 25 toward 60+.</div>
+      </div>
+
+      <!-- Card 5 -->
+      <div style="background:#EDE9E2;border:1px solid #D4C9BE;border-radius:10px;padding:clamp(10px,1.6vh,20px);display:flex;flex-direction:column;gap:clamp(6px,0.9vh,12px)">
+        <svg width="clamp(18px,2.4vh,28px)" height="clamp(18px,2.4vh,28px)" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" stroke="#396A58" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" stroke="#396A58" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div style="font-weight:700;color:#1A2C26;font-size:clamp(12px,1.75vh,18px);line-height:1.25">Backlink Outreach</div>
+        <div style="color:#677E76;font-size:clamp(11px,1.55vh,16px);line-height:1.45">Targeted outreach to GoodRx (82 AI citations), Healthline (26), and Sesamecare (26): the exact sources AI already trusts for GLP-1.</div>
+      </div>
+
+      <!-- Card 6 -->
+      <div style="background:#EDE9E2;border:1px solid #D4C9BE;border-radius:10px;padding:clamp(10px,1.6vh,20px);display:flex;flex-direction:column;gap:clamp(6px,0.9vh,12px)">
+        <img src="https://www.google.com/s2/favicons?domain=reddit.com&sz=64" style="width:clamp(18px,2.4vh,28px);height:clamp(18px,2.4vh,28px);object-fit:contain;flex-shrink:0" alt="Reddit">
+        <div style="font-weight:700;color:#1A2C26;font-size:clamp(12px,1.75vh,18px);line-height:1.25">Reddit Strategy</div>
+        <div style="color:#677E76;font-size:clamp(11px,1.55vh,16px);line-height:1.45">Monthly subreddit monitoring across 13 GLP-1 communities. Comment-level intelligence reports. Identifying threads where Ozari should engage.</div>
+      </div>
+
+    </div>
+</div>
+</div></section>
+
+<!-- SLIDE 16: How We Measure Success -->
+<section><div class="s">
+<div class="stripe"></div>
+<div class="hdr">
+  <div style="display:flex;align-items:center;gap:10px">
+    <img src="https://www.google.com/s2/favicons?domain=ozarihealth.com&sz=128" style="border-radius:10px;width:clamp(26px,3.5vh,40px);height:clamp(26px,3.5vh,40px);object-fit:contain">
+    <span class="tag">SEO / AEO Proposal</span>
+  </div>
+  <div class="hdr-right">
+    <div class="snum">15 / 17</div>
+    <a href="https://www.aipeekaboo.com" target="_blank" rel="noopener" class="powered"><span>Powered by</span><img src="https://www.aipeekaboo.com/images/peekaboo-logo-black.png" alt="AI Peekaboo"></a>
+  </div>
+</div>
+<div class="divider"></div>
+
+  <div class="body-wrap">
+    <h2 style="font-family:'DM Serif Display',serif;font-weight:400;color:var(--ink);font-size:clamp(25px,3.6vh,48px);margin:0 0 clamp(4px,0.6vh,8px)">How We Measure Success</h2>
+    <p style="color:var(--ink3);font-size:clamp(12px,1.6vh,18px);margin:0 0 clamp(16px,2.4vh,28px)">Progress tracked across search and AI every month.</p>
+
+    <div class="rg4" style="flex:1;min-height:0;display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(10px,1.4vh,18px);align-items:start">
+
+      <!-- Col 1: AI Peekaboo -->
+      <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:12px;padding:clamp(14px,2vh,24px);display:flex;flex-direction:column;gap:clamp(10px,1.4vh,16px)">
+        <div style="display:flex;align-items:center;gap:10px">
+          <img src="https://www.aipeekaboo.com/icon.jpg" style="width:46px;height:46px;border-radius:8px;object-fit:contain;flex-shrink:0">
+          <div>
+            <div style="font-size:clamp(14px,1.8vh,20px);font-weight:600;color:var(--ink)">AI Peekaboo</div>
+            <div style="font-size:clamp(12px,1.5vh,16px);color:var(--ink3);line-height:1.4">Tracks Ozari's appearance across 5 AI platforms.</div>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:clamp(6px,0.8vh,10px)">
+          <div style="background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:8px;padding:clamp(7px,1vh,12px) clamp(12px,1.6vh,17px);font-size:clamp(12px,1.5vh,16px);color:var(--ink2);line-height:1.45">Visibility score: 25 today, target 60+ in 90 days</div>
+          <div style="background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:8px;padding:clamp(7px,1vh,12px) clamp(12px,1.6vh,17px);font-size:clamp(12px,1.5vh,16px);color:var(--ink2);line-height:1.45">Citation count growth across non-branded prompts</div>
+          <div style="background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:8px;padding:clamp(7px,1vh,12px) clamp(12px,1.6vh,17px);font-size:clamp(12px,1.5vh,16px);color:var(--ink2);line-height:1.45">Model coverage: 3 of 5 models today, target all 5</div>
+        </div>
+      </div>
+
+      <!-- Col 2: Google Search Console -->
+      <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:12px;padding:clamp(14px,2vh,24px);display:flex;flex-direction:column;gap:clamp(10px,1.4vh,16px)">
+        <div style="display:flex;align-items:center;gap:10px">
+          <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/google-search-console-icon.png" style="width:46px;height:46px;border-radius:8px;object-fit:contain;flex-shrink:0;background:#fff;padding:3px">
+          <div>
+            <div style="font-size:clamp(14px,1.8vh,20px);font-weight:600;color:var(--ink)">Google Search Console</div>
+            <div style="font-size:clamp(12px,1.5vh,16px);color:var(--ink3);line-height:1.4">Tracks every query Ozari appears for.</div>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:clamp(6px,0.8vh,10px)">
+          <div style="background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:8px;padding:clamp(7px,1vh,12px) clamp(12px,1.6vh,17px);font-size:clamp(12px,1.5vh,16px);color:var(--ink2);line-height:1.45">Indexed pages: from ~40 to 300+ in 90 days</div>
+          <div style="background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:8px;padding:clamp(7px,1vh,12px) clamp(12px,1.6vh,17px);font-size:clamp(12px,1.5vh,16px);color:var(--ink2);line-height:1.45">Impressions for GLP-1 queries</div>
+          <div style="background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:8px;padding:clamp(7px,1vh,12px) clamp(12px,1.6vh,17px);font-size:clamp(12px,1.5vh,16px);color:var(--ink2);line-height:1.45">Click-through rate on treatment and comparison pages</div>
+        </div>
+      </div>
+
+      <!-- Col 3: Google Analytics -->
+      <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:12px;padding:clamp(14px,2vh,24px);display:flex;flex-direction:column;gap:clamp(10px,1.4vh,16px)">
+        <div style="display:flex;align-items:center;gap:10px">
+          <img src="https://www.google.com/s2/favicons?domain=analytics.google.com&sz=128" style="width:46px;height:46px;border-radius:8px;object-fit:contain;flex-shrink:0;background:#fff;padding:3px">
+          <div>
+            <div style="font-size:clamp(14px,1.8vh,20px);font-weight:600;color:var(--ink)">Google Analytics</div>
+            <div style="font-size:clamp(12px,1.5vh,16px);color:var(--ink3);line-height:1.4">Tracks real visitors and where they come from.</div>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:clamp(6px,0.8vh,10px)">
+          <div style="background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:8px;padding:clamp(7px,1vh,12px) clamp(12px,1.6vh,17px);font-size:clamp(12px,1.5vh,16px);color:var(--ink2);line-height:1.45">Traffic from LLMs: ChatGPT, Perplexity, and Gemini referrals</div>
+          <div style="background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:8px;padding:clamp(7px,1vh,12px) clamp(12px,1.6vh,17px);font-size:clamp(12px,1.5vh,16px);color:var(--ink2);line-height:1.45">Total visitors and session growth month over month</div>
+          <div style="background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:8px;padding:clamp(7px,1vh,12px) clamp(12px,1.6vh,17px);font-size:clamp(12px,1.5vh,16px);color:var(--ink2);line-height:1.45">Reddit referral traffic from targeted comment activity</div>
+        </div>
+      </div>
+
+      <!-- Col 4: Ahrefs -->
+      <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:12px;padding:clamp(14px,2vh,24px);display:flex;flex-direction:column;gap:clamp(10px,1.4vh,16px)">
+        <div style="display:flex;align-items:center;gap:10px">
+          <img src="https://www.google.com/s2/favicons?domain=ahrefs.com&sz=64" style="width:46px;height:46px;border-radius:8px;object-fit:contain;flex-shrink:0">
+          <div>
+            <div style="font-size:clamp(14px,1.8vh,20px);font-weight:600;color:var(--ink)">Ahrefs</div>
+            <div style="font-size:clamp(12px,1.5vh,16px);color:var(--ink3);line-height:1.4">Tracks domain authority and ranking velocity.</div>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:clamp(6px,0.8vh,10px)">
+          <div style="background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:8px;padding:clamp(7px,1vh,12px) clamp(12px,1.6vh,17px);font-size:clamp(12px,1.5vh,16px);color:var(--ink2);line-height:1.45">Domain Rating growth month over month</div>
+          <div style="background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:8px;padding:clamp(7px,1vh,12px) clamp(12px,1.6vh,17px);font-size:clamp(12px,1.5vh,16px);color:var(--ink2);line-height:1.45">Backlink acquisition from GoodRx, Healthline, Sesamecare</div>
+          <div style="background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:8px;padding:clamp(7px,1vh,12px) clamp(12px,1.6vh,17px);font-size:clamp(12px,1.5vh,16px);color:var(--ink2);line-height:1.45">Keyword ranking positions for 40+ target queries</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Footer strip -->
+    <div style="margin-top:clamp(12px,1.8vh,20px);background:var(--paper2);border:1px solid var(--rule);border-radius:8px;padding:clamp(10px,1.4vh,16px) clamp(14px,2vh,22px);font-size:clamp(12px,1.6vh,17px);color:var(--ink3);text-align:center;line-height:1.5">
+      Monthly report: AI visibility score, GSC rankings, and GA4 traffic delivered together with strategy review.
+    </div>
+  </div>
+</div></section>
+
+<!-- SLIDE 17: Your Investment -->
+<section><div class="s">
+<div class="stripe"></div>
+<div class="hdr">
+  <div style="display:flex;align-items:center;gap:10px">
+    <img src="https://www.google.com/s2/favicons?domain=ozarihealth.com&sz=128" style="border-radius:10px;width:clamp(26px,3.5vh,40px);height:clamp(26px,3.5vh,40px);object-fit:contain">
+    <span class="tag">SEO / AEO Proposal</span>
+  </div>
+  <div class="hdr-right">
+    <div class="snum">16 / 17</div>
+    <a href="https://www.aipeekaboo.com" target="_blank" rel="noopener" class="powered"><span>Powered by</span><img src="https://www.aipeekaboo.com/images/peekaboo-logo-black.png" alt="AI Peekaboo"></a>
+  </div>
+</div>
+<div class="divider"></div>
+
+  <div class="body-wrap">
+    <h2 style="font-family:'DM Serif Display',serif;font-weight:400;color:var(--ink);font-size:clamp(25px,3.6vh,48px);margin:0 0 clamp(12px,1.8vh,20px)">Your Investment. What We Deliver and When.</h2>
+
+    <div style="display:grid;grid-template-columns:1.1fr 0.9fr;gap:clamp(18px,2.5vh,32px);flex:1;min-height:0;align-items:start">
+
+      <!-- LEFT: Timeline -->
+      <div style="display:flex;flex-direction:column;gap:0">
+
+        <!-- Phase 1 -->
+        <div style="display:flex;gap:clamp(10px,1.4vh,16px);align-items:stretch">
+          <div style="display:flex;flex-direction:column;align-items:center;flex-shrink:0">
+            <div style="width:clamp(10px,1.4vh,16px);height:clamp(10px,1.4vh,16px);border-radius:50%;background:var(--accent);border:2px solid var(--accent-dark);margin-top:4px;flex-shrink:0"></div>
+            <div style="width:2px;background:var(--accent-bd);flex:1;margin-top:2px"></div>
+          </div>
+          <div style="padding-bottom:clamp(8px,1.2vh,14px)">
+            <div style="display:inline-block;background:var(--accent);color:#fff;font-size:clamp(11px,1.4vh,15px);font-weight:600;letter-spacing:0.04em;border-radius:4px;padding:2px 8px;margin-bottom:4px">Month 1 · Foundation</div>
+            <div style="font-size:clamp(13px,1.7vh,18px);font-weight:600;color:var(--ink);margin-bottom:clamp(4px,0.6vh,8px)">Audit, SSR Blueprint, Schema Rollout</div>
+            <div style="font-size:clamp(9px,1.2vh,13px);color:var(--ink3);line-height:1.5">
+              <span style="font-weight:600;color:var(--ink2)">Week 1 to 2:</span> Access and scoping: GA4, GSC, CMS access. Full technical audit. Keyword cluster map. SSR migration blueprint delivered.<br>
+              <span style="font-weight:600;color:var(--ink2)">Week 3 to 4:</span> Schema implementation begins. Meta titles and headings optimized. First 4 articles drafted, published, and indexed.
+            </div>
+          </div>
+        </div>
+
+        <!-- Phase 2 -->
+        <div style="display:flex;gap:clamp(10px,1.4vh,16px);align-items:stretch">
+          <div style="display:flex;flex-direction:column;align-items:center;flex-shrink:0">
+            <div style="width:clamp(10px,1.4vh,16px);height:clamp(10px,1.4vh,16px);border-radius:50%;background:var(--accent);border:2px solid var(--accent-dark);margin-top:4px;flex-shrink:0"></div>
+            <div style="width:2px;background:var(--accent-bd);flex:1;margin-top:2px"></div>
+          </div>
+          <div style="padding-bottom:clamp(8px,1.2vh,14px)">
+            <div style="display:inline-block;background:var(--accent);color:#fff;font-size:clamp(11px,1.4vh,15px);font-weight:600;letter-spacing:0.04em;border-radius:4px;padding:2px 8px;margin-bottom:4px">Month 2 · Build</div>
+            <div style="font-size:clamp(13px,1.7vh,18px);font-weight:600;color:var(--ink);margin-bottom:clamp(4px,0.6vh,8px)">Content Engine + Reddit Launch</div>
+            <div style="font-size:clamp(9px,1.2vh,13px);color:var(--ink3);line-height:1.6;display:flex;flex-direction:column;gap:3px">
+              <div>First 8 high-intent articles published and indexed</div>
+              <div>3 comparison pages live (Ozari vs Ro, Ozari vs Calibrate, Ozari vs Hims)</div>
+              <div>Reddit presence launched in r/glp1 and r/Semaglutide</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Phase 3 -->
+        <div style="display:flex;gap:clamp(10px,1.4vh,16px);align-items:stretch">
+          <div style="display:flex;flex-direction:column;align-items:center;flex-shrink:0">
+            <div style="width:clamp(10px,1.4vh,16px);height:clamp(10px,1.4vh,16px);border-radius:50%;background:var(--accent);border:2px solid var(--accent-dark);margin-top:4px;flex-shrink:0"></div>
+            <div style="width:2px;background:var(--accent-bd);flex:1;margin-top:2px"></div>
+          </div>
+          <div style="padding-bottom:clamp(8px,1.2vh,14px)">
+            <div style="display:inline-block;background:var(--accent);color:#fff;font-size:clamp(11px,1.4vh,15px);font-weight:600;letter-spacing:0.04em;border-radius:4px;padding:2px 8px;margin-bottom:4px">Month 3 · Authority</div>
+            <div style="font-size:clamp(13px,1.7vh,18px);font-weight:600;color:var(--ink);margin-bottom:clamp(4px,0.6vh,8px)">Backlinks, AI Optimization, PCOS Cluster</div>
+            <div style="font-size:clamp(9px,1.2vh,13px);color:var(--ink3);line-height:1.6;display:flex;flex-direction:column;gap:3px">
+              <div>Backlink outreach to GoodRx, Healthline, Sesamecare begins</div>
+              <div>AI visibility score review: prompt-by-prompt gap closing</div>
+              <div>PCOS + tirzepatide content cluster complete</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Phase 4 -->
+        <div style="display:flex;gap:clamp(10px,1.4vh,16px);align-items:stretch">
+          <div style="display:flex;flex-direction:column;align-items:center;flex-shrink:0">
+            <div style="width:clamp(10px,1.4vh,16px);height:clamp(10px,1.4vh,16px);border-radius:50%;background:var(--accent-bd);border:2px solid var(--accent);margin-top:4px;flex-shrink:0"></div>
+          </div>
+          <div>
+            <div style="display:inline-block;background:var(--accent-bg);color:var(--accent-dark);border:1px solid var(--accent-bd);font-size:clamp(11px,1.4vh,15px);font-weight:600;letter-spacing:0.04em;border-radius:4px;padding:2px 8px;margin-bottom:4px">Month 4+ · Ongoing</div>
+            <div style="font-size:clamp(13px,1.7vh,18px);font-weight:600;color:var(--ink);margin-bottom:clamp(4px,0.6vh,8px)">Continued Growth</div>
+            <div style="font-size:clamp(9px,1.2vh,13px);color:var(--ink3);line-height:1.5">Each month builds on the last. Content compounds, AI citations grow, and you decide the pace.</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- RIGHT: Package cards -->
+      <div style="display:flex;flex-direction:column;gap:clamp(12px,1.6vh,18px)">
+
+        <!-- Card 1: Full AI Search Optimization -->
+        <div style="background:var(--accent-bg);border:1.5px solid var(--accent-bd);border-radius:12px;padding:clamp(14px,2vh,24px)">
+          <div style="margin-bottom:clamp(8px,1.1vh,14px)">
+            <span style="background:var(--accent);color:#fff;font-size:clamp(10px,1.25vh,13px);font-weight:600;border-radius:20px;padding:2px 10px">Complete Solution</span>
+          </div>
+          <div style="font-size:clamp(16px,2.2vh,24px);font-weight:700;color:var(--ink);margin-bottom:3px">Full AI Search Optimization</div>
+          <div style="font-size:clamp(13px,1.7vh,18px);color:var(--accent-dark);font-weight:500;margin-bottom:clamp(10px,1.4vh,16px)">SEO + AEO + Reddit</div>
+          <div style="height:1px;background:var(--accent-bd);margin-bottom:clamp(10px,1.4vh,16px)"></div>
+          <div style="display:flex;flex-direction:column;gap:clamp(7px,1vh,12px);margin-bottom:clamp(10px,1.4vh,16px)">
+            <div style="display:flex;align-items:flex-start;gap:10px">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="flex-shrink:0;margin-top:1px"><circle cx="8" cy="8" r="8" fill="#f0fdf4"/><path d="M4.5 8.5l2.5 2.5 4.5-5" stroke="#16a34a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span style="font-size:clamp(12px,1.6vh,17px);color:var(--ink2);line-height:1.5">AI-optimized blog content with tables and images</span>
+            </div>
+            <div style="display:flex;align-items:flex-start;gap:10px">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="flex-shrink:0;margin-top:1px"><circle cx="8" cy="8" r="8" fill="#f0fdf4"/><path d="M4.5 8.5l2.5 2.5 4.5-5" stroke="#16a34a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span style="font-size:clamp(12px,1.6vh,17px);color:var(--ink2);line-height:1.5">Reddit reputation building in GLP-1 communities</span>
+            </div>
+            <div style="display:flex;align-items:flex-start;gap:10px">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="flex-shrink:0;margin-top:1px"><circle cx="8" cy="8" r="8" fill="#f0fdf4"/><path d="M4.5 8.5l2.5 2.5 4.5-5" stroke="#16a34a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span style="font-size:clamp(12px,1.6vh,17px);color:var(--ink2);line-height:1.5">Backlink outreach to raise domain authority from zero</span>
+            </div>
+          </div>
+          <div style="font-size:clamp(10px,1.3vh,14px);color:var(--ink4);font-style:italic;line-height:1.4">Includes AI Peekaboo subscription for visibility tracking</div>
+        </div>
+
+        <!-- Card 2: Reddit Only -->
+        <div style="background:var(--paper2);border:1.5px solid var(--rule);border-radius:12px;padding:clamp(14px,2vh,24px)">
+          <div style="margin-bottom:clamp(8px,1.1vh,14px)">
+            <span style="background:var(--paper2);color:var(--ink3);font-size:clamp(10px,1.25vh,13px);font-weight:600;border-radius:20px;padding:2px 10px;border:1px solid var(--rule)">Entry Point</span>
+          </div>
+          <div style="font-size:clamp(16px,2.2vh,24px);font-weight:700;color:var(--ink);margin-bottom:3px">Reddit Only</div>
+          <div style="font-size:clamp(13px,1.7vh,18px);color:var(--ink3);font-weight:400;margin-bottom:clamp(10px,1.4vh,16px)">Build trust where patients decide</div>
+          <div style="height:1px;background:var(--rule);margin-bottom:clamp(10px,1.4vh,16px)"></div>
+          <div style="display:flex;flex-direction:column;gap:clamp(7px,1vh,12px);margin-bottom:clamp(10px,1.4vh,16px)">
+            <div style="display:flex;align-items:flex-start;gap:10px">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="flex-shrink:0;margin-top:1px"><circle cx="8" cy="8" r="8" fill="#f0fdf4"/><path d="M4.5 8.5l2.5 2.5 4.5-5" stroke="#16a34a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span style="font-size:clamp(12px,1.6vh,17px);color:var(--ink2);line-height:1.5">10–12 targeted Reddit comments per month to start</span>
+            </div>
+            <div style="display:flex;align-items:flex-start;gap:10px">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="flex-shrink:0;margin-top:1px"><circle cx="8" cy="8" r="8" fill="#f0fdf4"/><path d="M4.5 8.5l2.5 2.5 4.5-5" stroke="#16a34a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span style="font-size:clamp(12px,1.6vh,17px);color:var(--ink2);line-height:1.5">Focus on r/glp1, r/Semaglutide, and competitor subreddits</span>
+            </div>
+            <div style="display:flex;align-items:flex-start;gap:10px">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="flex-shrink:0;margin-top:1px"><circle cx="8" cy="8" r="8" fill="#f0fdf4"/><path d="M4.5 8.5l2.5 2.5 4.5-5" stroke="#16a34a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span style="font-size:clamp(12px,1.6vh,17px);color:var(--ink2);line-height:1.5">Monthly report on thread performance and sentiment shifts</span>
+            </div>
+          </div>
+          <div style="font-size:clamp(10px,1.3vh,14px);color:var(--ink4);font-style:italic;line-height:1.4">Scale up anytime, transitions to Full AI Search Optimization seamlessly</div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div></section>
+
+<!-- SLIDE 18: Ready to Own GLP-1 Search -->
+<section><div class="s">
+<div class="stripe"></div>
+<div class="hdr">
+  <div style="display:flex;align-items:center;gap:10px">
+    <img src="https://www.google.com/s2/favicons?domain=ozarihealth.com&sz=128" style="border-radius:10px;width:clamp(26px,3.5vh,40px);height:clamp(26px,3.5vh,40px);object-fit:contain">
+    <span class="tag">SEO / AEO Proposal</span>
+  </div>
+  <div class="hdr-right">
+    <div class="snum">17 / 17</div>
+    <a href="https://www.aipeekaboo.com" target="_blank" rel="noopener" class="powered"><span>Powered by</span><img src="https://www.aipeekaboo.com/images/peekaboo-logo-black.png" alt="AI Peekaboo"></a>
+  </div>
+</div>
+<div class="divider"></div>
+
+  <div class="body-wrap">
+    <h2 style="font-family:'DM Serif Display',serif;font-weight:400;color:var(--ink);font-size:clamp(20px,3vh,38px);margin:0 0 clamp(10px,1.5vh,18px)">Ready to Own GLP-1 Search Before Ro Locks It In?</h2>
+
+    <!-- CTA Button -->
+    <a href="https://calendly.com/founderpeekaboo/30min" target="_blank" rel="noopener" style="display:block;width:100%;background:var(--accent-bg);border:2px solid var(--accent-bd);border-radius:8px;padding:clamp(14px,2vh,22px);text-align:center;text-decoration:none;margin-bottom:clamp(8px,1.1vh,14px)">
+      <span style="font-size:clamp(14px,1.9vh,22px);font-weight:700;color:var(--accent-dark);letter-spacing:0.01em">Book a 30-Minute Strategy Call</span>
+    </a>
+
+    <p style="font-size:clamp(11px,1.4vh,15px);color:var(--ink3);text-align:center;margin:0 0 clamp(14px,2vh,22px)">Every day without content is another day patients find Ro Health or Calibrate instead of Ozari.</p>
+
+    <!-- Team section -->
+    <div style="font-size:clamp(11px,1.4vh,15px);font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink3);margin-bottom:clamp(8px,1.2vh,14px)">The Team</div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:clamp(10px,1.4vh,18px)">
+
+      <!-- Card 1: Filipe -->
+      <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:12px;padding:clamp(14px,1.9vh,22px);display:flex;flex-direction:column;gap:clamp(10px,1.3vh,16px)">
+        <div style="display:flex;align-items:center;gap:clamp(12px,1.6vh,17px)">
+          <img src="filipe.jpeg" style="width:50px;height:50px;border-radius:50%;object-fit:cover;border:2px solid var(--rule);flex-shrink:0">
+          <div>
+            <div style="font-size:clamp(14px,1.8vh,20px);font-weight:700;color:var(--ink)">Filipe Lins Duarte</div>
+            <div style="font-size:clamp(12px,1.5vh,16px);color:var(--accent);font-weight:500">Co-Founder &amp; CEO</div>
+            <a href="https://www.linkedin.com/in/filipelinsduarte" target="_blank" rel="noopener" style="font-size:clamp(11px,1.4vh,15px);color:var(--ink4);text-decoration:none">linkedin.com/in/filipelinsduarte</a>
+          </div>
+        </div>
+        <div style="font-size:clamp(12px,1.5vh,16px);color:var(--ink3);line-height:1.5">Sales leader turned founder. Built revenue teams across SaaS in Europe and the US.</div>
+        <div style="display:flex;flex-direction:column;gap:clamp(5px,0.7vh,8px)">
+          <div style="display:flex;align-items:center;gap:8px">
+            <img src="https://www.google.com/s2/favicons?domain=aipeekaboo.com&sz=32" style="width:16px;height:16px;border-radius:3px;flex-shrink:0">
+            <span style="font-size:clamp(11px,1.4vh,15px);font-weight:600;color:var(--ink2)">AI Peekaboo</span>
+            <span style="font-size:clamp(9px,1.05vh,11px);color:var(--ink3)">Co-Founder &amp; CEO</span>
+            <span style="font-size:clamp(12px,1.6vh,16px);color:var(--ink4);margin-left:auto">Aug 2025 - Present</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px">
+            <img src="https://www.google.com/s2/favicons?domain=uber.com&sz=32" style="width:16px;height:16px;border-radius:3px;flex-shrink:0">
+            <span style="font-size:clamp(11px,1.4vh,15px);font-weight:600;color:var(--ink2)">Uber for Business</span>
+            <span style="font-size:clamp(9px,1.05vh,11px);color:var(--ink3)">Mid-Market AE · 146% of quota</span>
+            <span style="font-size:clamp(12px,1.6vh,16px);color:var(--ink4);margin-left:auto">Sep 2024 - Aug 2025</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px">
+            <img src="https://www.google.com/s2/favicons?domain=meistertask.com&sz=32" style="width:16px;height:16px;border-radius:3px;flex-shrink:0">
+            <span style="font-size:clamp(11px,1.4vh,15px);font-weight:600;color:var(--ink2)">Meister</span>
+            <span style="font-size:clamp(9px,1.05vh,11px);color:var(--ink3)">#1 AE in 2023 · 100%+ ARR growth</span>
+            <span style="font-size:clamp(12px,1.6vh,16px);color:var(--ink4);margin-left:auto">Aug 2022 - Jul 2024</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2: John -->
+      <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:12px;padding:clamp(14px,1.9vh,22px);display:flex;flex-direction:column;gap:clamp(10px,1.3vh,16px)">
+        <div style="display:flex;align-items:center;gap:clamp(12px,1.6vh,17px)">
+          <img src="john.jpeg" style="width:50px;height:50px;border-radius:50%;object-fit:cover;border:2px solid var(--rule);flex-shrink:0">
+          <div>
+            <div style="font-size:clamp(14px,1.8vh,20px);font-weight:700;color:var(--ink)">John Rice</div>
+            <div style="font-size:clamp(12px,1.5vh,16px);color:var(--accent);font-weight:500">Co-Founder &amp; CTO</div>
+            <a href="https://www.linkedin.com/in/johnwilliamrice/" target="_blank" rel="noopener" style="font-size:clamp(11px,1.4vh,15px);color:var(--ink4);text-decoration:none">linkedin.com/in/johnwilliamrice</a>
+          </div>
+        </div>
+        <div style="font-size:clamp(12px,1.5vh,16px);color:var(--ink3);line-height:1.5">Full-stack engineer and serial builder. Designed AI Peekaboo's platform from scratch.</div>
+        <div style="display:flex;flex-direction:column;gap:clamp(5px,0.7vh,8px)">
+          <div style="display:flex;align-items:center;gap:8px">
+            <img src="https://www.google.com/s2/favicons?domain=aipeekaboo.com&sz=32" style="width:16px;height:16px;border-radius:3px;flex-shrink:0">
+            <span style="font-size:clamp(11px,1.4vh,15px);font-weight:600;color:var(--ink2)">AI Peekaboo</span>
+            <span style="font-size:clamp(9px,1.05vh,11px);color:var(--ink3)">Co-Founder &amp; CTO</span>
+            <span style="font-size:clamp(12px,1.6vh,16px);color:var(--ink4);margin-left:auto">Apr 2025 - Present</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px">
+            <img src="https://www.google.com/s2/favicons?domain=subredditsignals.com&sz=32" style="width:16px;height:16px;border-radius:3px;flex-shrink:0">
+            <span style="font-size:clamp(11px,1.4vh,15px);font-weight:600;color:var(--ink2)">Subreddit Signals</span>
+            <span style="font-size:clamp(9px,1.05vh,11px);color:var(--ink3)">Founder</span>
+            <span style="font-size:clamp(12px,1.6vh,16px);color:var(--ink4);margin-left:auto">Nov 2024 - Present</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px">
+            <img src="https://www.google.com/s2/favicons?domain=magiclinks.com&sz=32" style="width:16px;height:16px;border-radius:3px;flex-shrink:0">
+            <span style="font-size:clamp(11px,1.4vh,15px);font-weight:600;color:var(--ink2)">MagicLinks</span>
+            <span style="font-size:clamp(9px,1.05vh,11px);color:var(--ink3)">Senior Software Engineer</span>
+            <span style="font-size:clamp(12px,1.6vh,16px);color:var(--ink4);margin-left:auto">Jul 2021 - Apr 2024</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3: Danny -->
+      <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:12px;padding:clamp(14px,1.9vh,22px);display:flex;flex-direction:column;gap:clamp(10px,1.3vh,16px)">
+        <div style="display:flex;align-items:center;gap:clamp(12px,1.6vh,17px)">
+          <img src="danny-kirk.jpeg" style="width:50px;height:50px;border-radius:50%;object-fit:cover;border:2px solid var(--rule);flex-shrink:0">
+          <div>
+            <div style="font-size:clamp(14px,1.8vh,20px);font-weight:700;color:var(--ink)">Danny Kirk</div>
+            <div style="font-size:clamp(12px,1.5vh,16px);color:var(--accent);font-weight:500">COO &amp; Advisory</div>
+            <a href="https://www.linkedin.com/in/danielpkirk/" target="_blank" rel="noopener" style="font-size:clamp(11px,1.4vh,15px);color:var(--ink4);text-decoration:none">linkedin.com/in/danielpkirk</a>
+          </div>
+        </div>
+        <div style="font-size:clamp(12px,1.5vh,16px);color:var(--ink3);line-height:1.5">Reddit growth expert. Helping 500+ brands get recommended by AI through organic Reddit marketing.</div>
+        <div style="display:flex;flex-direction:column;gap:clamp(5px,0.7vh,8px)">
+          <div style="display:flex;align-items:center;gap:8px">
+            <img src="https://www.google.com/s2/favicons?domain=reddit.com&sz=32" style="width:16px;height:16px;border-radius:3px;flex-shrink:0">
+            <span style="font-size:clamp(11px,1.4vh,15px);font-weight:600;color:var(--ink2)">ReddiReach</span>
+            <span style="font-size:clamp(9px,1.05vh,11px);color:var(--ink3)">Founder</span>
+            <span style="font-size:clamp(12px,1.6vh,16px);color:var(--ink4);margin-left:auto">Dec 2017 - Present</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px">
+            <img src="https://www.google.com/s2/favicons?domain=goaheadventures.com&sz=32" style="width:16px;height:16px;border-radius:3px;flex-shrink:0">
+            <span style="font-size:clamp(11px,1.4vh,15px);font-weight:600;color:var(--ink2)">GoAhead Ventures</span>
+            <span style="font-size:clamp(9px,1.05vh,11px);color:var(--ink3)">Venture Scout</span>
+            <span style="font-size:clamp(12px,1.6vh,16px);color:var(--ink4);margin-left:auto">Oct 2024 - Present</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px">
+            <img src="https://www.google.com/s2/favicons?domain=energentmedia.com&sz=32" style="width:16px;height:16px;border-radius:3px;flex-shrink:0">
+            <span style="font-size:clamp(11px,1.4vh,15px);font-weight:600;color:var(--ink2)">Energent Media</span>
+            <span style="font-size:clamp(9px,1.05vh,11px);color:var(--ink3)">COO · 6 to 7 figures in months</span>
+            <span style="font-size:clamp(12px,1.6vh,16px);color:var(--ink4);margin-left:auto">Jun 2018 - Feb 2021</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div></section>
+
+</div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reveal.min.js"></script>
+<script>
+Reveal.initialize({
+  hash: true,
+  controls: true,
+  progress: true,
+  slideNumber: false,
+  transition: 'none',
+  disableLayout: true,
+  width: 1920,
+  height: 1080,
+});
+document.querySelectorAll('.s').forEach(function(el){
+  el.addEventListener('touchstart', function(e){ e.stopPropagation(); }, {passive:true});
+  el.addEventListener('touchmove', function(e){ e.stopPropagation(); }, {passive:true});
+});
+</script>
+</body>
+</html>

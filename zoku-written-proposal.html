@@ -13,10 +13,10 @@
 
 <style>
   :root {
-    --accent:      #3858e9;
-    --accent-dark: #183461;
-    --accent-bg:   #eef1fd;
-    --accent-bd:   #c5cef8;
+    --accent:      #4ba1d9;
+    --accent-dark: #2d7fb5;
+    --accent-bg:   #eef6fc;
+    --accent-bd:   #b8d8ef;
     --ink:         #1e1e1e;
     --ink2:        #333333;
     --ink3:        #747474;
@@ -359,14 +359,18 @@
     text-transform: uppercase;
     color: var(--ink4);
   }
-  .deliverables-row.highlight {
-    background: var(--accent-bg);
+  .deliverables-cell ul {
+    padding-left: 16px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    list-style: disc;
   }
-  .deliverables-row.highlight .deliverables-cell.label {
-    color: var(--accent-dark);
-  }
-  .deliverables-row.highlight .deliverables-cell {
-    color: var(--accent-dark);
+  .deliverables-cell ul li {
+    font-size: 14px;
+    color: var(--ink2);
+    line-height: 1.5;
   }
 
   /* ROI callout */
@@ -717,9 +721,9 @@
   <!-- The opportunity -->
   <section>
     <div class="section-label">The Opportunity</div>
-    <h2>Zoku has the best product. Nobody can find it.</h2>
+    <h2>Zoku has a great product. Nobody can find it.</h2>
     <p>You are the only native NetSuite POS solution in the market. Lightspeed, Shopify, and Toast all rely on connectors that break. NetSuite users know this and they are actively looking for something better. The problem is that when they search, Zoku does not come up.</p>
-    <p>Your current AI visibility score is <strong>15/100</strong>. Across 30 non-branded discovery prompts in ChatGPT, Gemini, and Perplexity, Zoku appears in almost none of them. On Google, you are sitting on page 2 for your most valuable queries. Your domain rating is around 15 versus competitors at 50 to 91.</p>
+    <p>You show up for branded queries, as expected. But for the non-branded queries your buyers actually use, you are invisible. Across 30 discovery prompts in ChatGPT, Gemini, and Perplexity, Zoku appears in almost none of them. On Google, you are sitting on page 2 for your most valuable queries. Your domain rating is around 15 versus competitors at 50 to 91.</p>
     <p>None of this is hard to fix. It just requires consistent, focused work over 90 days.</p>
   </section>
 
@@ -790,17 +794,6 @@
           </div>
         </div>
 
-        <!-- AI Peekaboo -->
-        <div class="package-item">
-          <div class="package-item-icon">
-            <img src="https://www.google.com/s2/favicons?domain=aipeekaboo.com&sz=32" alt="AI Peekaboo">
-          </div>
-          <div class="package-item-body">
-            <h3>AI Peekaboo monitoring: included</h3>
-            <p>Your AI visibility score tracked monthly across ChatGPT, Gemini, Perplexity, Google AI Overviews, and Google AI Mode. You see exactly which prompts Zoku appears in, which competitors are getting cited instead, and how the score moves over time. Starting point: 15/100. Target: 60 or above in 90 days.</p>
-          </div>
-        </div>
-
       </div>
       <div class="package-footer">
         <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7.5" fill="var(--accent-bg)" stroke="var(--accent)"/><path d="M8 5v3.5M8 10.5v.5" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round"/></svg>
@@ -851,27 +844,50 @@
         <div class="deliverables-cell">Deliverables</div>
       </div>
       <div class="deliverables-row">
-        <div class="deliverables-cell label">Month 1<br>Foundation</div>
+        <div class="deliverables-cell label">Month 1</div>
         <div class="deliverables-cell">
-          WordPress indexing audit and cleanup · Schema rollout across top 10 pages · 3 articles written and published (Zoku vs Lightspeed, native NetSuite POS guide, Shopify connector problems) · 10 Reddit comments live in r/Netsuite and r/ERP · AI Peekaboo baseline report
-        </div>
-      </div>
-      <div class="deliverables-row highlight">
-        <div class="deliverables-cell label">Month 2<br>Build</div>
-        <div class="deliverables-cell">
-          6 articles written and published · 3 comparison pages live and indexed (Zoku vs Lightspeed, Zoku vs Shopify POS, Zoku vs NetSuite Commerce) · 10 Reddit comments including competitor alternative threads · First backlink outreach batch sent to 20 ecosystem targets · Month 1 AI visibility report
-        </div>
-      </div>
-      <div class="deliverables-row">
-        <div class="deliverables-cell label">Month 3<br>Authority</div>
-        <div class="deliverables-cell">
-          6 articles written and published · Vertical content cluster complete (furniture retail, F&amp;B, multi-location) · 5 backlinks secured from NetSuite ecosystem sites · 10 Reddit comments · AI visibility gap review: prompt-by-prompt analysis of what is closing · Month 2 report with DR growth tracking
+          <ul>
+            <li>WordPress indexing audit and cleanup</li>
+            <li>Schema rollout across top 10 pages</li>
+            <li>3 articles written and published (Zoku vs Lightspeed, native NetSuite POS guide, Shopify connector problems)</li>
+            <li>10 Reddit comments live in r/Netsuite and r/ERP</li>
+            <li>AI Peekaboo baseline report</li>
+          </ul>
         </div>
       </div>
       <div class="deliverables-row">
-        <div class="deliverables-cell label">Month 4+<br>Ongoing</div>
+        <div class="deliverables-cell label">Month 2</div>
         <div class="deliverables-cell">
-          Same monthly cadence. Content compounds, AI citations grow, domain authority builds. You decide whether to scale up or keep steady pace based on results from Months 1 to 3.
+          <ul>
+            <li>6 articles written and published</li>
+            <li>3 comparison pages live and indexed (Zoku vs Lightspeed, Zoku vs Shopify POS, Zoku vs NetSuite Commerce)</li>
+            <li>10 Reddit comments including competitor alternative threads</li>
+            <li>First backlink outreach batch sent to 20 ecosystem targets</li>
+            <li>Month 1 AI visibility report</li>
+          </ul>
+        </div>
+      </div>
+      <div class="deliverables-row">
+        <div class="deliverables-cell label">Month 3</div>
+        <div class="deliverables-cell">
+          <ul>
+            <li>6 articles written and published</li>
+            <li>Vertical content cluster complete (furniture retail, F&amp;B, multi-location)</li>
+            <li>5 backlinks secured from NetSuite ecosystem sites</li>
+            <li>10 Reddit comments</li>
+            <li>AI visibility gap review: prompt-by-prompt analysis of what is closing</li>
+            <li>Month 2 report with DR growth tracking</li>
+          </ul>
+        </div>
+      </div>
+      <div class="deliverables-row">
+        <div class="deliverables-cell label">Month 4</div>
+        <div class="deliverables-cell">
+          <ul>
+            <li>Same monthly cadence continues</li>
+            <li>Content compounds, AI citations grow, domain authority builds</li>
+            <li>You decide whether to scale up or hold steady based on results from Months 1 to 3</li>
+          </ul>
         </div>
       </div>
     </div>

@@ -9,22 +9,23 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-YV8FCLN403"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-YV8FCLN403');</script>
 
-<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 
 <style>
   :root {
-    --accent:      #396A58;
-    --accent-dark: #2A5244;
-    --accent-bg:   #E8F0EC;
-    --accent-bd:   #C0D4CE;
-    --ink:         #1A2C26;
-    --ink2:        #2D4A3E;
-    --ink3:        #677E76;
-    --ink4:        #9BAEA8;
-    --paper:       #F8F5F1;
-    --paper2:      #EDE9E2;
-    --rule:        #D4C9BE;
-    --ok:          #16a34a;
+    --accent:      #3858e9;
+    --accent-dark: #183461;
+    --accent-bg:   #eef1fd;
+    --accent-bd:   #c5cef8;
+    --ink:         #1e1e1e;
+    --ink2:        #333333;
+    --ink3:        #747474;
+    --ink4:        #aaa9a9;
+    --paper:       #ffffff;
+    --paper2:      #f6f6f6;
+    --paper3:      #f0f0f0;
+    --rule:        #e0dede;
+    --ok:          #4ab866;
     --ok-bg:       #f0fdf4;
     --ok-bd:       #bbf7d0;
     --warn:        #ea580c;
@@ -38,7 +39,7 @@
   html { background: var(--paper); }
 
   body {
-    font-family: "DM Sans", sans-serif;
+    font-family: "Lato", sans-serif;
     font-size: 16px;
     line-height: 1.65;
     color: var(--ink);
@@ -46,12 +47,12 @@
     -webkit-font-smoothing: antialiased;
   }
 
-  /* ── Top bar ── */
+  /* Top bar */
   .topbar {
     position: sticky;
     top: 0;
     z-index: 100;
-    background: rgba(248,245,241,0.92);
+    background: rgba(255,255,255,0.95);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     border-bottom: 1px solid var(--rule);
@@ -74,7 +75,7 @@
   }
   .topbar-left span {
     font-size: 14px;
-    font-weight: 600;
+    font-weight: 700;
     color: var(--ink2);
   }
   .topbar-right {
@@ -93,14 +94,14 @@
     opacity: 0.6;
   }
 
-  /* ── Page wrapper ── */
+  /* Page wrapper */
   .page {
     max-width: 760px;
     margin: 0 auto;
     padding: 64px 24px 120px;
   }
 
-  /* ── Cover block ── */
+  /* Cover block */
   .cover {
     padding-bottom: 52px;
     border-bottom: 1px solid var(--rule);
@@ -127,13 +128,13 @@
   .cover-meta .sep { color: var(--rule); }
 
   .cover h1 {
-    font-family: "DM Serif Display", serif;
-    font-weight: 400;
-    font-size: clamp(28px, 4vw, 40px);
-    line-height: 1.2;
+    font-family: "Lato", sans-serif;
+    font-weight: 900;
+    font-size: clamp(26px, 4vw, 38px);
+    line-height: 1.15;
     color: var(--ink);
     margin-bottom: 16px;
-    letter-spacing: -0.01em;
+    letter-spacing: -0.02em;
   }
   .cover-sub {
     font-size: 17px;
@@ -142,7 +143,7 @@
     max-width: 620px;
   }
 
-  /* ── Section ── */
+  /* Section */
   section {
     margin-bottom: 52px;
   }
@@ -161,9 +162,9 @@
   }
 
   h2 {
-    font-family: "DM Serif Display", serif;
-    font-weight: 400;
-    font-size: clamp(22px, 3vw, 28px);
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    font-size: clamp(20px, 3vw, 26px);
     color: var(--ink);
     line-height: 1.25;
     margin-bottom: 16px;
@@ -185,14 +186,14 @@
   }
   p:last-child { margin-bottom: 0; }
 
-  /* ── Divider ── */
+  /* Divider */
   hr {
     border: none;
     border-top: 1px solid var(--rule);
     margin: 0;
   }
 
-  /* ── Package card ── */
+  /* Package card */
   .package-card {
     background: #fff;
     border: 1.5px solid var(--accent-bd);
@@ -252,6 +253,12 @@
     height: 16px;
     color: var(--accent);
   }
+  .package-item-icon img {
+    width: 18px;
+    height: 18px;
+    border-radius: 3px;
+    object-fit: contain;
+  }
   .package-item-body h3 {
     margin-bottom: 3px;
   }
@@ -264,7 +271,7 @@
   .package-footer {
     border-top: 1px solid var(--rule);
     padding: 14px 28px;
-    background: var(--paper);
+    background: var(--paper2);
     display: flex;
     align-items: center;
     gap: 6px;
@@ -274,7 +281,7 @@
     color: var(--ink4);
   }
 
-  /* ── How it works (steps) ── */
+  /* Steps */
   .steps {
     display: flex;
     flex-direction: column;
@@ -316,7 +323,7 @@
     line-height: 1.55;
   }
 
-  /* ── Deliverables table ── */
+  /* Deliverables table */
   .deliverables {
     margin-top: 24px;
     border: 1px solid var(--rule);
@@ -340,7 +347,7 @@
   }
   .deliverables-cell.label {
     border-right: 1px solid var(--rule);
-    font-weight: 600;
+    font-weight: 700;
     color: var(--ink);
     font-size: 13px;
   }
@@ -362,7 +369,7 @@
     color: var(--accent-dark);
   }
 
-  /* ── ROI callout ── */
+  /* ROI callout */
   .roi-callout {
     background: var(--ink);
     border-radius: 12px;
@@ -408,7 +415,46 @@
     color: #fff;
   }
 
-  /* ── Quality guarantee ── */
+  /* Monitoring grid */
+  .monitoring-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 20px;
+  }
+  .monitoring-item {
+    background: #fff;
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .monitoring-item-top {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .monitoring-item-top img {
+    width: 22px;
+    height: 22px;
+    border-radius: 5px;
+    object-fit: contain;
+    flex-shrink: 0;
+  }
+  .monitoring-item-top h3 {
+    font-size: 14px;
+    margin: 0;
+  }
+  .monitoring-item p {
+    font-size: 13px;
+    color: var(--ink3);
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  /* Quality guarantee */
   .guarantee-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -452,7 +498,7 @@
     line-height: 1.5;
   }
 
-  /* ── Not included ── */
+  /* Not included */
   .not-included {
     background: var(--paper2);
     border: 1px solid var(--rule);
@@ -477,7 +523,7 @@
     opacity: 0.4;
   }
 
-  /* ── CTA ── */
+  /* CTA */
   .cta-block {
     background: var(--accent-bg);
     border: 1.5px solid var(--accent-bd);
@@ -489,11 +535,17 @@
   .cta-block h2 {
     margin-bottom: 10px;
   }
-  .cta-block p {
+  .cta-block > p {
     font-size: 15px;
     color: var(--ink3);
     max-width: 480px;
     margin: 0 auto 24px;
+  }
+  .cta-buttons {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
   }
   .cta-email {
     display: inline-flex;
@@ -502,7 +554,7 @@
     background: var(--accent);
     color: #fff;
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 700;
     font-size: 15px;
     padding: 12px 24px;
     border-radius: 8px;
@@ -515,6 +567,28 @@
     width: 16px;
     height: 16px;
   }
+  .cta-calendar {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #fff;
+    color: var(--accent);
+    border: 1.5px solid var(--accent-bd);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 15px;
+    padding: 12px 24px;
+    border-radius: 8px;
+    transition: border-color 0.15s, background 0.15s;
+  }
+  .cta-calendar:hover {
+    background: var(--accent-bg);
+    border-color: var(--accent);
+  }
+  .cta-calendar svg {
+    width: 16px;
+    height: 16px;
+  }
   .cta-note {
     font-size: 13px;
     color: var(--ink4);
@@ -522,7 +596,7 @@
     margin-bottom: 0;
   }
 
-  /* ── Team ── */
+  /* Team */
   .team-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -560,7 +634,7 @@
   .team-card-role {
     font-size: 12px;
     color: var(--accent);
-    font-weight: 500;
+    font-weight: 700;
   }
   .team-card p {
     font-size: 13px;
@@ -569,7 +643,7 @@
     line-height: 1.5;
   }
 
-  /* ── Footer ── */
+  /* Footer */
   .footer {
     margin-top: 72px;
     padding-top: 28px;
@@ -599,11 +673,14 @@
   @media (max-width: 600px) {
     .page { padding: 40px 16px 80px; }
     .guarantee-grid { grid-template-columns: 1fr; }
+    .monitoring-grid { grid-template-columns: 1fr; }
     .team-grid { grid-template-columns: 1fr; }
     .roi-callout { flex-direction: column; gap: 16px; }
     .roi-divider { width: 100%; height: 1px; }
     .package-header { flex-direction: column; gap: 6px; }
     .deliverables-row { grid-template-columns: 110px 1fr; }
+    .cta-buttons { flex-direction: column; align-items: center; }
+    .cta-block { padding: 28px 20px; }
   }
 </style>
 </head>
@@ -669,20 +746,18 @@
             </svg>
           </div>
           <div class="package-item-body">
-            <h3>Content strategy and editing — 4 to 6 topic briefs per month</h3>
-            <p>We research and deliver fully structured topic briefs: target keyword, buyer intent angle, outline, and comparison table specs. Your team writes the first draft. We edit for SEO structure, add FAQ schema markup, and prepare for publishing. This keeps costs down while making sure every article is built to rank and get cited by AI.</p>
+            <h3>Content strategy and writing: 4 to 6 articles per month</h3>
+            <p>We handle the full production. Every article starts with structured research: target keyword, buyer intent angle, a full outline, and comparison table specs. We write the draft, edit for SEO structure, add FAQ schema markup, and prepare for publishing. Built to rank on Google and get cited by AI.</p>
           </div>
         </div>
 
         <!-- Reddit -->
         <div class="package-item">
           <div class="package-item-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-            </svg>
+            <img src="https://www.google.com/s2/favicons?domain=reddit.com&sz=32" alt="Reddit">
           </div>
           <div class="package-item-body">
-            <h3>Reddit presence — 10 targeted comments per month</h3>
+            <h3>Reddit presence: 10 targeted comments per month</h3>
             <p>Our team places genuine, helpful comments in r/Netsuite, r/ERP, and competitor threads where NetSuite users are actively comparing POS options. This is the highest-leverage channel for your market: it is where buyers decide, and it is a direct feed into what ChatGPT and Perplexity cite. There is a thread titled "Anyone using Zoku POS?" that still has no response from Zoku. That changes in Month 1.</p>
           </div>
         </div>
@@ -696,7 +771,7 @@
             </svg>
           </div>
           <div class="package-item-body">
-            <h3>Backlink outreach — NetSuite ecosystem sites only</h3>
+            <h3>Backlink outreach: NetSuite ecosystem sites only</h3>
             <p>Targeted outreach to get Zoku referenced on NetSuite partner blogs, ERP review sites, and retail tech publications. We target domain rating 50 or above with 500 or more monthly visits, and restrict to sites relevant to your ecosystem. No link farms, no directories, no shortcuts. Goal: raise your domain rating from 15 to 30 or above within 6 months.</p>
           </div>
         </div>
@@ -710,7 +785,7 @@
             </svg>
           </div>
           <div class="package-item-body">
-            <h3>Technical SEO — schema, indexing, and meta</h3>
+            <h3>Technical SEO: schema, indexing, and meta</h3>
             <p>We fix the WordPress indexing bloat that is diluting your crawl budget, implement FAQPage and SoftwareApplication schema across key pages, and clean up meta titles and descriptions. Schema alone increases AI citation rates by roughly 3x compared to unstructured pages.</p>
           </div>
         </div>
@@ -718,17 +793,17 @@
         <!-- AI Peekaboo -->
         <div class="package-item">
           <div class="package-item-icon">
-            <img src="https://www.aipeekaboo.com/icon.jpg" style="width:16px;height:16px;border-radius:3px;object-fit:cover;" alt="AI Peekaboo">
+            <img src="https://www.google.com/s2/favicons?domain=aipeekaboo.com&sz=32" alt="AI Peekaboo">
           </div>
           <div class="package-item-body">
-            <h3>AI Peekaboo monitoring — included</h3>
+            <h3>AI Peekaboo monitoring: included</h3>
             <p>Your AI visibility score tracked monthly across ChatGPT, Gemini, Perplexity, Google AI Overviews, and Google AI Mode. You see exactly which prompts Zoku appears in, which competitors are getting cited instead, and how the score moves over time. Starting point: 15/100. Target: 60 or above in 90 days.</p>
           </div>
         </div>
 
       </div>
       <div class="package-footer">
-        <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7.5" fill="#E8F0EC" stroke="#396A58"/><path d="M8 5v3.5M8 10.5v.5" stroke="#396A58" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7.5" fill="var(--accent-bg)" stroke="var(--accent)"/><path d="M8 5v3.5M8 10.5v.5" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round"/></svg>
         <span>LinkedIn marketing stays in your hands. Communication is via email, not Upwork.</span>
       </div>
     </div>
@@ -737,8 +812,8 @@
   <!-- How content works -->
   <section>
     <div class="section-label">How Content Works</div>
-    <h2>The hybrid model — your expertise, our structure</h2>
-    <p>You know NetSuite better than any agency ever will. The model below uses that knowledge without putting all the writing workload on you.</p>
+    <h2>The hybrid model: your expertise, our structure</h2>
+    <p>You know NetSuite better than any agency ever will. The model below uses that knowledge as the foundation for every piece we produce.</p>
 
     <div class="steps">
       <div class="step">
@@ -752,21 +827,14 @@
         <span class="step-num">02</span>
         <div class="step-body">
           <h3>We deliver a structured topic brief</h3>
-          <p>Each brief includes the target keyword, the buyer intent angle, a full outline, and a spec for any comparison tables or data points to include. Your team has everything they need to write without guessing.</p>
+          <p>Each brief includes the target keyword, the buyer intent angle, a full outline, and a spec for any comparison tables or data points to include. Everything is planned before a word is written.</p>
         </div>
       </div>
       <div class="step">
         <span class="step-num">03</span>
         <div class="step-body">
-          <h3>Your team writes the first draft</h3>
-          <p>You or your team write the content. No word count pressure, no filler, just the knowledge you already have structured into the outline we provided.</p>
-        </div>
-      </div>
-      <div class="step">
-        <span class="step-num">04</span>
-        <div class="step-body">
-          <h3>We edit, structure, and optimise for AI and Google</h3>
-          <p>We add comparison tables, FAQ sections with schema markup, internal links, and meta data. We rewrite for scannability and SEO without changing your voice. Ready to publish.</p>
+          <h3>We write, optimise, and publish</h3>
+          <p>We write the full draft, add comparison tables, FAQ sections with schema markup, internal links, and metadata. Optimised for Google rankings and AI citations. Ready to publish without any work on your end.</p>
         </div>
       </div>
     </div>
@@ -785,19 +853,19 @@
       <div class="deliverables-row">
         <div class="deliverables-cell label">Month 1<br>Foundation</div>
         <div class="deliverables-cell">
-          WordPress indexing audit and cleanup · Schema rollout across top 10 pages · 3 topic briefs delivered (Zoku vs Lightspeed, native NetSuite POS guide, Shopify connector problems) · 10 Reddit comments live in r/Netsuite and r/ERP · AI Peekaboo baseline report
+          WordPress indexing audit and cleanup · Schema rollout across top 10 pages · 3 articles written and published (Zoku vs Lightspeed, native NetSuite POS guide, Shopify connector problems) · 10 Reddit comments live in r/Netsuite and r/ERP · AI Peekaboo baseline report
         </div>
       </div>
       <div class="deliverables-row highlight">
         <div class="deliverables-cell label">Month 2<br>Build</div>
         <div class="deliverables-cell">
-          6 topic briefs delivered · 3 comparison pages published and indexed (Zoku vs Lightspeed, Zoku vs Shopify POS, Zoku vs NetSuite Commerce) · 10 Reddit comments including competitor alternative threads · First backlink outreach batch sent to 20 ecosystem targets · Month 1 AI visibility report
+          6 articles written and published · 3 comparison pages live and indexed (Zoku vs Lightspeed, Zoku vs Shopify POS, Zoku vs NetSuite Commerce) · 10 Reddit comments including competitor alternative threads · First backlink outreach batch sent to 20 ecosystem targets · Month 1 AI visibility report
         </div>
       </div>
       <div class="deliverables-row">
         <div class="deliverables-cell label">Month 3<br>Authority</div>
         <div class="deliverables-cell">
-          6 topic briefs delivered · Vertical content cluster complete (furniture retail, F&amp;B, multi-location) · 5 backlinks secured from NetSuite ecosystem sites · 10 Reddit comments · AI visibility gap review — prompt-by-prompt analysis of what is closing · Month 2 report with DR growth tracking
+          6 articles written and published · Vertical content cluster complete (furniture retail, F&amp;B, multi-location) · 5 backlinks secured from NetSuite ecosystem sites · 10 Reddit comments · AI visibility gap review: prompt-by-prompt analysis of what is closing · Month 2 report with DR growth tracking
         </div>
       </div>
       <div class="deliverables-row">
@@ -822,6 +890,44 @@
       <div class="roi-divider"></div>
       <div class="roi-body">
         <p>At your average deal size of <strong>$15,000 to $20,000</strong>, a single closed inbound deal covers 6 months of this retainer. The goal of Months 1 to 3 is to build the infrastructure that generates those deals consistently, not as one-offs. NetSuite users are already searching for what Zoku offers. Right now they are just not finding you.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- How we monitor success -->
+  <section>
+    <div class="section-label">Reporting</div>
+    <h2>How we monitor success</h2>
+    <p>Every month you get a clear report covering four data sources. No vanity metrics. Numbers that connect directly to pipeline.</p>
+
+    <div class="monitoring-grid">
+      <div class="monitoring-item">
+        <div class="monitoring-item-top">
+          <img src="https://www.google.com/s2/favicons?domain=aipeekaboo.com&sz=32" alt="AI Peekaboo">
+          <h3>AI Peekaboo</h3>
+        </div>
+        <p>Monthly AI visibility score across ChatGPT, Gemini, Perplexity, Google AI Overviews, and Google AI Mode. Tracks which prompts Zoku appears in and which go to competitors.</p>
+      </div>
+      <div class="monitoring-item">
+        <div class="monitoring-item-top">
+          <img src="https://www.google.com/s2/favicons?domain=search.google.com&sz=32" alt="Google Search Console">
+          <h3>Google Search Console</h3>
+        </div>
+        <p>Keyword rankings, impressions, click-through rates, and indexing health. Shows exactly which pages are gaining ground and which queries are starting to convert.</p>
+      </div>
+      <div class="monitoring-item">
+        <div class="monitoring-item-top">
+          <img src="https://www.google.com/s2/favicons?domain=analytics.google.com&sz=32" alt="Google Analytics">
+          <h3>Google Analytics</h3>
+        </div>
+        <p>Organic traffic volume, top landing pages, and conversion paths from search. Month-over-month growth tied to specific content we produce.</p>
+      </div>
+      <div class="monitoring-item">
+        <div class="monitoring-item-top">
+          <img src="https://www.google.com/s2/favicons?domain=ahrefs.com&sz=32" alt="Ahrefs">
+          <h3>Ahrefs</h3>
+        </div>
+        <p>Domain rating trajectory, new referring domains, and competitor gap analysis. Tracks the authority buildup that drives sustainable long-term rankings.</p>
       </div>
     </div>
   </section>
@@ -880,11 +986,11 @@
     <div class="not-included">
       <div class="not-included-item">
         <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><line x1="4" y1="4" x2="12" y2="12"/><line x1="12" y1="4" x2="4" y2="12"/></svg>
-        LinkedIn content and personal profile management — this stays with your team
+        LinkedIn content and personal profile management: this stays with your team
       </div>
       <div class="not-included-item">
         <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><line x1="4" y1="4" x2="12" y2="12"/><line x1="12" y1="4" x2="4" y2="12"/></svg>
-        Paid advertising or PPC — this is purely organic
+        Paid advertising or PPC: this is purely organic
       </div>
       <div class="not-included-item">
         <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><line x1="4" y1="4" x2="12" y2="12"/><line x1="12" y1="4" x2="4" y2="12"/></svg>
@@ -892,7 +998,7 @@
       </div>
       <div class="not-included-item">
         <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><line x1="4" y1="4" x2="12" y2="12"/><line x1="12" y1="4" x2="4" y2="12"/></svg>
-        Communication via Upwork — we work over email
+        Communication via Upwork: we work over email
       </div>
     </div>
   </section>
@@ -901,12 +1007,18 @@
   <section>
     <div class="cta-block">
       <h2>Ready to move forward?</h2>
-      <p>Reply with a time that works for you on Monday and we will lock it in. No form, no scheduling link.</p>
-      <a class="cta-email" href="mailto:founderpeekaboo@gmail.com?subject=Zoku%20%E2%80%94%20Proposal%20%2F%20Monday%20Call&body=Hi%20Filipe%2C%0A%0AMonday%20works%20for%20me%20at%20">
-        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M4 4h12c1.1 0 2 .9 2 2v8c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        Reply to confirm Monday
-      </a>
-      <p class="cta-note">founderpeekaboo@gmail.com</p>
+      <p>Reply directly or pick a time below. We can speak Monday or any slot that works for you.</p>
+      <div class="cta-buttons">
+        <a class="cta-email" href="mailto:filipe@aipeekaboo.com?subject=Zoku%20Proposal%20%2F%20Monday%20Call&body=Hi%20Filipe%2C%0A%0AMonday%20works%20for%20me%20at%20">
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M4 4h12c1.1 0 2 .9 2 2v8c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          Reply to confirm
+        </a>
+        <a class="cta-calendar" href="https://calendly.com/filipe-aipeekaboo/30min" target="_blank" rel="noopener">
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><rect x="3" y="4" width="14" height="13" rx="2"/><line x1="3" y1="8" x2="17" y2="8"/><line x1="8" y1="2" x2="8" y2="5"/><line x1="12" y1="2" x2="12" y2="5"/></svg>
+          Book a meeting
+        </a>
+      </div>
+      <p class="cta-note">filipe@aipeekaboo.com</p>
     </div>
   </section>
 

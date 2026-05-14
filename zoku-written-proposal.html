@@ -458,6 +458,45 @@
     line-height: 1.5;
   }
 
+  /* Bi-weekly meetings callout */
+  .meetings-callout {
+    margin-top: 12px;
+    background: var(--accent-bg);
+    border: 1px solid var(--accent-bd);
+    border-radius: 10px;
+    padding: 18px 20px;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+  .meetings-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .meetings-icon svg {
+    width: 16px;
+    height: 16px;
+    color: #fff;
+  }
+  .meetings-callout h3 {
+    font-size: 14px;
+    margin-bottom: 4px;
+    color: var(--accent-dark);
+  }
+  .meetings-callout p {
+    font-size: 14px;
+    color: var(--ink3);
+    margin: 0;
+    line-height: 1.5;
+  }
+
   /* Quality guarantee */
   .guarantee-grid {
     display: grid;
@@ -750,7 +789,7 @@
             </svg>
           </div>
           <div class="package-item-body">
-            <h3>Content strategy and writing: 4 to 6 articles per month</h3>
+            <h3>Content strategy and writing: 4 to 8 articles per month</h3>
             <p>We handle the full production. Every article starts with structured research: target keyword, buyer intent angle, a full outline, and comparison table specs. We write the draft, edit for SEO structure, add FAQ schema markup, and prepare for publishing. Built to rank on Google and get cited by AI.</p>
           </div>
         </div>
@@ -776,7 +815,7 @@
           </div>
           <div class="package-item-body">
             <h3>Backlink outreach: NetSuite ecosystem sites only</h3>
-            <p>Targeted outreach to get Zoku referenced on NetSuite partner blogs, ERP review sites, and retail tech publications. We target domain rating 50 or above with 500 or more monthly visits, and restrict to sites relevant to your ecosystem. No link farms, no directories, no shortcuts. Goal: raise your domain rating from 15 to 30 or above within 6 months.</p>
+            <p>Targeted outreach to get Zoku referenced on ERP partner blogs, retail technology publications, and POS industry review sites. We target domain rating 50 or above with 500 or more monthly visits, and restrict to sites relevant to your industry. No link farms, no directories, no shortcuts. Goal: raise your domain rating from 15 to 30 or above within 6 months.</p>
           </div>
         </div>
 
@@ -847,11 +886,14 @@
         <div class="deliverables-cell label">Month 1</div>
         <div class="deliverables-cell">
           <ul>
+            <li>Access to key marketing tech stack: Google Search Console and Google Analytics</li>
+            <li>ICP and user research based on meeting transcripts</li>
+            <li>Backlink research and opportunity mapping</li>
             <li>WordPress indexing audit and cleanup</li>
-            <li>Schema rollout across top 10 pages</li>
-            <li>3 articles written and published (Zoku vs Lightspeed, native NetSuite POS guide, Shopify connector problems)</li>
+            <li>Schema rollout across the website</li>
+            <li>4 articles written and published (Zoku vs Lightspeed, native NetSuite POS guide, Shopify connector problems, NetSuite POS buyer guide)</li>
             <li>10 Reddit comments live in r/Netsuite and r/ERP</li>
-            <li>AI Peekaboo baseline report</li>
+            <li>AI monitoring baseline report</li>
           </ul>
         </div>
       </div>
@@ -862,7 +904,7 @@
             <li>6 articles written and published</li>
             <li>3 comparison pages live and indexed (Zoku vs Lightspeed, Zoku vs Shopify POS, Zoku vs NetSuite Commerce)</li>
             <li>10 Reddit comments including competitor alternative threads</li>
-            <li>First backlink outreach batch sent to 20 ecosystem targets</li>
+            <li>First backlink outreach batch sent to 20 ERP and retail tech targets</li>
             <li>Month 1 AI visibility report</li>
           </ul>
         </div>
@@ -873,7 +915,7 @@
           <ul>
             <li>6 articles written and published</li>
             <li>Vertical content cluster complete (furniture retail, F&amp;B, multi-location)</li>
-            <li>5 backlinks secured from NetSuite ecosystem sites</li>
+            <li>5 backlinks secured from ERP and retail tech publications</li>
             <li>10 Reddit comments</li>
             <li>AI visibility gap review: prompt-by-prompt analysis of what is closing</li>
             <li>Month 2 report with DR growth tracking</li>
@@ -946,6 +988,21 @@
         <p>Domain rating trajectory, new referring domains, and competitor gap analysis. Tracks the authority buildup that drives sustainable long-term rankings.</p>
       </div>
     </div>
+
+    <div class="meetings-callout">
+      <div class="meetings-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="4" width="18" height="18" rx="2"/>
+          <line x1="16" y1="2" x2="16" y2="6"/>
+          <line x1="8" y1="2" x2="8" y2="6"/>
+          <line x1="3" y1="10" x2="21" y2="10"/>
+        </svg>
+      </div>
+      <div>
+        <h3>Bi-weekly check-ins with your team</h3>
+        <p>Fortnightly calls to walk through progress, review what is working, align on the next two weeks, and make sure everything is moving in the right direction. No surprises, no silence between reports.</p>
+      </div>
+    </div>
   </section>
 
   <!-- Quality guarantee -->
@@ -978,8 +1035,8 @@
           <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="8"/><path d="M6.5 10.5l2.5 2.5 4.5-5"/></svg>
         </div>
         <div>
-          <h3>NetSuite or retail ecosystem only</h3>
-          <p>Every link must come from a site relevant to ERP, POS, retail tech, or NetSuite. No generic directories.</p>
+          <h3>ERP, POS, and retail technology only</h3>
+          <p>Every link must come from a site relevant to your industry. No generic directories, no off-topic placements.</p>
         </div>
       </div>
       <div class="guarantee-item">

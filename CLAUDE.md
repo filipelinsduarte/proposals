@@ -115,7 +115,7 @@ Return the live URL: `https://filipelinsduarte.github.io/proposals/[filename].ht
 
 ---
 
-## Fixed 15-Slide Order
+## Fixed 16-Slide Order
 
 This order never changes between clients:
 
@@ -135,7 +135,8 @@ This order never changes between clients:
 | 12 | Three-Part Fix | Generated targets from data (articles/mo, DR goal) |
 | 13 | Deliverables | Boilerplate (7 standard deliverables) |
 | 14 | How We Measure Progress | Boilerplate (GSC, GA4, AI Peekaboo) |
-| 15 | The Engagement | Left: client-specific timeline. Right: boilerplate terms |
+| 15 | Your Investment | Left: 4-phase client timeline. Right: pricing cards |
+| 16 | CTA / Team | Headline, Calendly CTA, urgency line, 3 team cards |
 
 ---
 
@@ -152,7 +153,7 @@ This order never changes between clients:
 - No `align-items:stretch` on grid containers
 - Slide 01 (cover): no `.shdr` — manual layout with client favicon, tag, headline, "Powered by" row
 - Every other slide: starts with `<div class="shdr" data-n="XX"></div>`
-- **"Ready to Start" / CTA box in slide 15:** always `flex-shrink:0` — never `flex:1`
+- **"Book a 30-Minute Strategy Call" CTA button in slide 16:** always `flex-shrink:0` — never `flex:1`
 - **Calendly "Book a 30-min call" link text:** always `color:#2563eb;text-decoration:underline` — visually blue and underlined so it reads as a hyperlink
 
 ### Data Source Badges (slides 06, 07, 08, 09)
@@ -195,23 +196,56 @@ if(src){
 
 ## Standard Boilerplate Content
 
+### Slide 12 — Three-Part Fix (hard rules)
+- **No specific AI visibility score targets** — never write "score will go from X to Y". Use directional language: "AI visibility score improvement month-over-month, tracked via AI Peekaboo"
+- Article and Reddit numbers must match what is promised in slides 13 and 15 (12 articles/month, 20 Reddit comments/month)
+
 ### Slide 13 — Deliverables (always these 7, in this order)
 1. 12 High-Quality Content Pieces — Per month
 2. Content Refresh Programme — Ongoing
 3. Schema Markup Implementation — Site-wide
 4. On-Page SEO Optimisation — Ongoing
 5. Link Building — Ongoing
-6. Reddit Presence — 4 posts/month
+6. Reddit Presence — 20 comments/month
 7. Monthly Reporting — Monthly
 
 ### Slide 14 — Measurement Tools (always these 3 cards)
 GSC | GA4 | AI Peekaboo
 
-### Slide 15 right column — Engagement Terms (fixed)
-- Work begins in week one, no ramp-up delay
-- Monthly progress meeting to review work done and results
-- 3-month minimum, then cancel anytime with 30 days notice
-- Dedicated Slack channel for direct communication
+### Slide 15 — Your Investment (structure)
+
+Two-column grid (`grid-template-columns:1.1fr 0.9fr`):
+
+**Left column — 4-phase timeline** (client-specific bullet points per phase):
+- Month 1 · Foundation: audit + competitive benchmark + 12 articles + schema + Reddit strategy
+- Month 2 · Build: 12 articles + 20 Reddit comments/month + first link outreach
+- Month 3 · Compound: 12 articles + 20 Reddit comments/month + comparison pages + link building
+- Month 4+ · Ongoing: content compounds, citations grow, DR climbs
+
+Each monthly phase label must explicitly state the article count (12) and Reddit comment count (20) so deliverables are consistent with slide 13.
+
+**Right column — 2 pricing cards:**
+
+Card 1 — Full AI Search Optimization (accent-bg background, "Complete Solution" pill):
+- Price: $3,000/month
+- Bullets: 12 AI-optimised content pieces/month, 20 Reddit comments/month, backlink outreach
+- Footer: "Includes AI Peekaboo subscription for visibility tracking"
+
+Card 2 — Reddit Only (paper2 background, "Entry Point" pill):
+- Price: $1,500/month
+- Bullets: 20 targeted Reddit comments/month, community focus, monthly report
+- Footer: "Scale up to Full AI Search Optimization anytime."
+
+**Below both cards — commitment note (black body text, outside cards):**
+"3-month minimum commitment. After month 3, renews month-to-month with 30 days cancellation notice."
+
+### Slide 16 — CTA / Team (structure)
+
+- `h2`: "Ready to Own [Vertical] AI Search Before Competitors Do?" — adapt headline to client vertical
+- Calendly CTA button (full-width, accent-bg): "Book a 30-Minute Strategy Call" linking to `https://calendly.com/filipe-aipeekaboo/30min`
+- Urgency paragraph (centred, ink3): name 1–2 specific competitors the client risks losing to
+- "The Team" label (uppercase, ink3)
+- 3-column grid of team cards: Filipe Lins Duarte, John Rice, Danny Kirk — always all three, same bios and LinkedIn links as ICEBABE slide 16
 
 ---
 

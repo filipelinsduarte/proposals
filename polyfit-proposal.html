@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Polyfit — SEO / AEO Proposal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reveal.min.css">
+<!-- GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YV8FCLN403"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-YV8FCLN403');</script>
+<style>
+:root{
+  --accent:#17428E;
+  --accent-bg:#E8ECF4;
+  --accent-bd:#BECADF;
+  --accent-dark:#133674;
+  --ink:#111827;
+  --ink2:#374151;
+  --ink3:#6b7280;
+  --ink4:#9ca3af;
+  --paper:#ffffff;
+  --paper2:#f9fafb;
+  --paper3:#f3f4f6;
+  --rule:#e5e7eb;
+  --red:#dc2626;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body,html{font-family:'DM Sans',sans-serif;background:#fff;color:var(--ink)}
+.reveal,.reveal .slides{width:100%!important;height:100%!important}
+.reveal .slides section{width:100%!important;height:100%!important;top:0!important;left:0!important}
+.s{
+  width:100%;height:100%;
+  display:flex;flex-direction:column;
+  padding:clamp(20px,2.8vh,36px) clamp(28px,3.2vw,52px);
+  background:var(--paper);
+  overflow:hidden;
+}
+.stripe{height:5px;background:var(--accent);border-radius:3px;margin-bottom:clamp(12px,1.6vh,20px);flex-shrink:0}
+.hdr{display:flex;align-items:center;justify-content:space-between;flex-shrink:0;margin-bottom:clamp(8px,1.1vh,14px)}
+.hdr-favicon{width:clamp(26px,3.5vh,40px);height:clamp(26px,3.5vh,40px);border-radius:8px;object-fit:contain;flex-shrink:0}
+.tag{font-size:clamp(10px,1.3vh,13px);font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink3)}
+.hdr-right{display:flex;align-items:center;gap:clamp(14px,2vw,24px)}
+.snum{font-size:clamp(11px,1.4vh,14px);color:var(--ink4);font-weight:500;font-variant-numeric:tabular-nums}
+.powered{display:flex;align-items:center;gap:6px;text-decoration:none}
+.powered span{font-size:clamp(9px,1.1vh,12px);color:var(--ink4)}
+.powered img{height:clamp(16px,2.1vh,26px);width:auto;opacity:.85}
+.divider{height:1px;background:var(--rule);margin-bottom:clamp(10px,1.4vh,18px);flex-shrink:0}
+h2{font-size:clamp(22px,3.2vh,42px);font-weight:700;color:var(--ink);line-height:1.15;margin-bottom:clamp(12px,1.8vh,22px);flex-shrink:0}
+.bullet-row{display:flex;gap:8px;align-items:flex-start;font-size:clamp(13px,1.8vh,19px);color:var(--ink2);line-height:1.45}
+.badge{display:inline-flex;align-items:center;gap:6px;background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:20px;padding:2px 12px;font-size:clamp(11px,1.4vh,14px);font-weight:600;color:var(--accent-dark)}
+.card{background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(13px,1.7vh,19px) clamp(14px,1.7vw,19px);display:flex;align-items:flex-start;gap:14px;flex-shrink:0}
+table{width:100%;border-collapse:collapse;flex-shrink:0}
+th{font-size:clamp(10px,1.25vh,12px);font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--ink4);padding:clamp(6px,0.9vh,10px) clamp(10px,1.2vw,14px);text-align:left;border-bottom:1px solid var(--rule);white-space:nowrap}
+td{font-size:clamp(12px,1.6vh,17px);color:var(--ink2);padding:clamp(7px,0.95vh,11px) clamp(10px,1.2vw,14px);border-bottom:1px solid var(--rule)}
+tr:last-child td{border-bottom:none}
+.tr-client td{background:var(--accent-bg)}
+.tr-client td.num{font-family:monospace;font-weight:700;color:var(--red)}
+.data-src{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--rule);border-radius:5px;padding:3px 9px;background:var(--paper2);flex-shrink:0}
+.data-src span{font-size:clamp(10px,1.25vh,12px);color:var(--ink3);font-weight:500}
+.data-src img{height:clamp(13px,1.6vh,16px);width:auto;border-radius:2px;opacity:.85}
+.col3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:clamp(14px,2vw,24px);flex:1;min-height:0}
+.col-card{background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(14px,2vh,22px);display:flex;flex-direction:column;gap:clamp(10px,1.4vh,16px);min-height:0}
+.col-num{display:inline-flex;align-items:center;justify-content:center;width:clamp(24px,3.2vh,36px);height:clamp(24px,3.2vh,36px);border-radius:50%;background:var(--accent);color:#fff;font-size:clamp(12px,1.6vh,18px);font-weight:700;flex-shrink:0}
+.sentiment-pos{display:inline-block;background:#dcfce7;color:#16a34a;font-size:clamp(9px,1.1vh,12px);font-weight:600;border-radius:20px;padding:2px 8px}
+.sentiment-neg{display:inline-block;background:#fee2e2;color:#dc2626;font-size:clamp(9px,1.1vh,12px);font-weight:600;border-radius:20px;padding:2px 8px}
+.sentiment-neu{display:inline-block;background:var(--paper3);color:var(--ink3);font-size:clamp(9px,1.1vh,12px);font-weight:600;border-radius:20px;padding:2px 8px}
+</style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- SLIDE 01: Cover -->
+<section><div class="s" style="justify-content:space-between">
+<div style="display:flex;align-items:center;gap:10px">
+  <img src="https://www.google.com/s2/favicons?domain=getpolyfit.com&sz=128" style="border-radius:8px;width:clamp(28px,3.8vh,44px);height:clamp(28px,3.8vh,44px);object-fit:contain;flex-shrink:0">
+  <span class="tag">SEO / AEO Proposal</span>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;justify-content:center;padding:clamp(20px,4vh,50px) 0">
+  <div style="font-size:clamp(11px,1.5vh,15px);font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:clamp(10px,1.5vh,18px)">Prepared for</div>
+  <h2 style="font-size:clamp(36px,6vh,80px);margin-bottom:clamp(8px,1.2vh,16px)">Polyfit</h2>
+  <div style="font-size:clamp(16px,2.4vh,28px);color:var(--ink3);font-weight:400;margin-bottom:clamp(18px,2.8vh,36px)">getpolyfit.com</div>
+  <div style="height:3px;width:clamp(48px,7vw,80px);background:var(--accent);border-radius:2px;margin-bottom:clamp(18px,2.8vh,36px)"></div>
+  <div style="font-size:clamp(14px,2vh,22px);color:var(--ink2);font-weight:500">AI-Powered Growth for Fitness Equipment</div>
+  <div style="font-size:clamp(13px,1.7vh,18px);color:var(--ink4);margin-top:clamp(6px,0.9vh,10px)">May 2026</div>
+</div>
+<div style="display:flex;align-items:center;justify-content:space-between">
+  <a class="powered" href="https://www.aipeekaboo.com" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:8px;text-decoration:none">
+    <span style="font-size:clamp(11px,1.4vh,15px);color:var(--ink4)">Powered by</span>
+    <img src="https://www.aipeekaboo.com/images/peekaboo-logo-black.png" style="height:clamp(18px,2.4vh,30px);width:auto;opacity:.75">
+  </a>
+  <div style="font-size:clamp(11px,1.4vh,14px);color:var(--ink4)">filipe@aipeekaboo.com</div>
+</div>
+</div></section>
+
+<!-- SLIDE 02: The Hook -->
+<section><div class="s">
+<div class="shdr" data-n="02"></div>
+<h2>Buyers are asking AI. <span style="color:var(--accent)">Polyfit is not the answer they get.</span></h2>
+<div style="display:flex;flex-direction:column;gap:clamp(10px,1.5vh,18px);margin-bottom:clamp(20px,3vh,36px);width:100%;max-width:80ch">
+  <div class="card">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    <span style="font-size:clamp(14px,2vh,22px);color:var(--ink2);font-weight:500">"Best sandbag for home gym 2026"</span>
+  </div>
+  <div class="card">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    <span style="font-size:clamp(14px,2vh,22px);color:var(--ink2);font-weight:500">"GORUCK vs alternatives — which sandbag is actually worth it?"</span>
+  </div>
+  <div class="card">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    <span style="font-size:clamp(14px,2vh,22px);color:var(--ink2);font-weight:500">"Best adjustable weight vest for CrossFit under $200"</span>
+  </div>
+</div>
+<div style="background:var(--accent-bg);border:1.5px solid var(--accent-bd);border-radius:12px;padding:clamp(14px,2vh,24px) clamp(18px,2.5vw,30px);max-width:80ch;flex-shrink:0">
+  <div style="font-size:clamp(13px,1.8vh,20px);color:var(--accent-dark);font-weight:600;line-height:1.5">These queries run millions of times a month. ChatGPT, Gemini, and Perplexity all answer them. Polyfit is not in any of those answers today.</div>
+</div>
+</div></section>
+
+<!-- SLIDE 03: Three Root Problems -->
+<section><div class="s">
+<div class="shdr" data-n="03"></div>
+<h2>Three reasons Polyfit is <span style="color:var(--accent)">invisible to buyers.</span></h2>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:clamp(14px,2vw,24px);flex:1;min-height:0;align-items:start">
+
+  <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:12px;padding:clamp(16px,2.2vh,28px);display:flex;flex-direction:column;gap:clamp(10px,1.4vh,18px);flex-shrink:0">
+    <div style="display:flex;align-items:center;gap:10px">
+      <div style="width:clamp(28px,3.8vh,44px);height:clamp(28px,3.8vh,44px);border-radius:10px;background:var(--accent-bg);border:1.5px solid var(--accent-bd);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+      </div>
+      <div style="font-size:clamp(10px,1.3vh,13px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink3)">01 / Content</div>
+    </div>
+    <div style="font-size:clamp(17px,2.4vh,28px);font-weight:700;color:var(--ink);line-height:1.2">Blog dead since 2024</div>
+    <div style="font-size:clamp(12px,1.6vh,18px);color:var(--ink3);line-height:1.5">0 posts in 2026. No comparison pages against GORUCK or Rogue. AI cites Garage Gym Reviews and Reddit — not Polyfit.</div>
+    <div style="margin-top:auto;padding-top:clamp(10px,1.4vh,16px);border-top:1px solid var(--rule)">
+      <span style="font-family:monospace;font-size:clamp(20px,3vh,38px);font-weight:700;color:var(--red)">0</span>
+      <span style="font-size:clamp(11px,1.4vh,15px);color:var(--ink3);font-weight:500;margin-left:6px">posts in 2026</span>
+    </div>
+  </div>
+
+  <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:12px;padding:clamp(16px,2.2vh,28px);display:flex;flex-direction:column;gap:clamp(10px,1.4vh,18px);flex-shrink:0">
+    <div style="display:flex;align-items:center;gap:10px">
+      <div style="width:clamp(28px,3.8vh,44px);height:clamp(28px,3.8vh,44px);border-radius:10px;background:var(--accent-bg);border:1.5px solid var(--accent-bd);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+      </div>
+      <div style="font-size:clamp(10px,1.3vh,13px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink3)">02 / Authority</div>
+    </div>
+    <div style="font-size:clamp(17px,2.4vh,28px);font-weight:700;color:var(--ink);line-height:1.2">DR gap vs every competitor</div>
+    <div style="font-size:clamp(12px,1.6vh,18px);color:var(--ink3);line-height:1.5">Polyfit DR ~30 vs GORUCK (62) and Rogue (77). Without authority, no amount of content gets ranked or cited.</div>
+    <div style="margin-top:auto;padding-top:clamp(10px,1.4vh,16px);border-top:1px solid var(--rule)">
+      <span style="font-family:monospace;font-size:clamp(20px,3vh,38px);font-weight:700;color:var(--red)">47</span>
+      <span style="font-size:clamp(11px,1.4vh,15px);color:var(--ink3);font-weight:500;margin-left:6px">DR points behind Rogue</span>
+    </div>
+  </div>
+
+  <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:12px;padding:clamp(16px,2.2vh,28px);display:flex;flex-direction:column;gap:clamp(10px,1.4vh,18px);flex-shrink:0">
+    <div style="display:flex;align-items:center;gap:10px">
+      <div style="width:clamp(28px,3.8vh,44px);height:clamp(28px,3.8vh,44px);border-radius:10px;background:var(--accent-bg);border:1.5px solid var(--accent-bd);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
+      </div>
+      <div style="font-size:clamp(10px,1.3vh,13px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink3)">03 / AI Visibility</div>
+    </div>
+    <div style="font-size:clamp(17px,2.4vh,28px);font-weight:700;color:var(--ink);line-height:1.2">Cited only on branded queries</div>
+    <div style="font-size:clamp(12px,1.6vh,18px);color:var(--ink3);line-height:1.5">AI score: 17/100 — and only when someone searches "Polyfit [review]". For commercial queries, every AI model ignores Polyfit.</div>
+    <div style="margin-top:auto;padding-top:clamp(10px,1.4vh,16px);border-top:1px solid var(--rule)">
+      <span style="font-family:monospace;font-size:clamp(20px,3vh,38px);font-weight:700;color:var(--red)">17/100</span>
+      <span style="font-size:clamp(11px,1.4vh,15px);color:var(--ink3);font-weight:500;margin-left:6px">AI visibility score</span>
+    </div>
+  </div>
+
+</div>
+</div></section>
+
+<!-- SLIDE 04: Content Freshness (01/03) -->
+<section><div class="s">
+<div class="shdr" data-n="04"></div>
+<h2>Problem 01/03 — <span style="color:var(--accent)">Content Freshness.</span></h2>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,3vw,40px);flex:1;min-height:0;align-items:start">
+  <div style="display:flex;flex-direction:column;gap:clamp(10px,1.4vh,18px)">
+    <div style="font-size:clamp(11px,1.4vh,14px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4)">What AI is citing instead of Polyfit</div>
+    <div style="display:flex;flex-direction:column;gap:clamp(6px,0.9vh,11px)">
+      <div class="bullet-row"><span style="color:var(--red);flex-shrink:0">&#9679;</span><span>garagegymreviews.com — cited 79 times across AI models</span></div>
+      <div class="bullet-row"><span style="color:var(--red);flex-shrink:0">&#9679;</span><span>garagegymlab.com — cited 66 times, all non-branded queries</span></div>
+      <div class="bullet-row"><span style="color:var(--red);flex-shrink:0">&#9679;</span><span>freedomstrength.us — cited 45 times on sandbag + vest queries</span></div>
+      <div class="bullet-row"><span style="color:var(--red);flex-shrink:0">&#9679;</span><span>reddit.com — 125 citations, no Polyfit presence in threads</span></div>
+    </div>
+    <div style="height:1px;background:var(--rule)"></div>
+    <div style="font-size:clamp(11px,1.4vh,14px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4)">Missing content on getpolyfit.com</div>
+    <div style="display:flex;flex-direction:column;gap:clamp(6px,0.9vh,11px)">
+      <div class="bullet-row"><span style="color:var(--red);flex-shrink:0">&#9679;</span><span>0 posts in 2026 to date</span></div>
+      <div class="bullet-row"><span style="color:var(--red);flex-shrink:0">&#9679;</span><span>No comparison pages (Polyfit vs GORUCK, vs Rogue Fitness)</span></div>
+      <div class="bullet-row"><span style="color:var(--red);flex-shrink:0">&#9679;</span><span>No buyer guides ("best sandbag", "best weight vest under $200")</span></div>
+      <div class="bullet-row"><span style="color:var(--red);flex-shrink:0">&#9679;</span><span>No educational content on sandbag vs kettlebell for beginners</span></div>
+      <div class="bullet-row"><span style="color:var(--red);flex-shrink:0">&#9679;</span><span>~200 pages indexed — competitors have 4,000–45,000</span></div>
+    </div>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:clamp(10px,1.4vh,16px)">
+    <div style="font-size:clamp(11px,1.4vh,14px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4)">Content output by year</div>
+    <div style="display:flex;flex-direction:column;gap:clamp(6px,0.85vh,10px)">
+      <div style="display:flex;align-items:center;gap:clamp(10px,1.4vw,16px)">
+        <div style="font-size:clamp(12px,1.5vh,16px);color:var(--ink3);font-weight:600;width:36px;flex-shrink:0">2023</div>
+        <div style="flex:1;height:clamp(18px,2.5vh,30px);background:var(--accent);border-radius:4px;min-width:4px"></div>
+        <div style="font-size:clamp(12px,1.5vh,16px);font-family:monospace;font-weight:700;color:var(--ink);flex-shrink:0">15 posts</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:clamp(10px,1.4vw,16px)">
+        <div style="font-size:clamp(12px,1.5vh,16px);color:var(--ink3);font-weight:600;width:36px;flex-shrink:0">2024</div>
+        <div style="flex:1;height:clamp(18px,2.5vh,30px);background:var(--accent-bd);border-radius:4px;max-width:13%;min-width:4px"></div>
+        <div style="font-size:clamp(12px,1.5vh,16px);font-family:monospace;font-weight:700;color:var(--red);flex-shrink:0">2 posts</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:clamp(10px,1.4vw,16px)">
+        <div style="font-size:clamp(12px,1.5vh,16px);color:var(--ink3);font-weight:600;width:36px;flex-shrink:0">2025</div>
+        <div style="flex:1;height:clamp(18px,2.5vh,30px);background:var(--accent-bd);border-radius:4px;max-width:26%;min-width:4px"></div>
+        <div style="font-size:clamp(12px,1.5vh,16px);font-family:monospace;font-weight:700;color:var(--red);flex-shrink:0">4 posts</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:clamp(10px,1.4vw,16px)">
+        <div style="font-size:clamp(12px,1.5vh,16px);color:var(--ink3);font-weight:600;width:36px;flex-shrink:0">2026</div>
+        <div style="flex:1;height:clamp(18px,2.5vh,30px);background:var(--rule);border-radius:4px;max-width:4px;min-width:4px"></div>
+        <div style="font-size:clamp(12px,1.5vh,16px);font-family:monospace;font-weight:700;color:var(--red);flex-shrink:0">0 posts</div>
+      </div>
+    </div>
+    <div style="height:1px;background:var(--rule);margin-top:clamp(4px,0.6vh,8px)"></div>
+    <div style="background:var(--accent-bg);border:1.5px solid var(--accent-bd);border-radius:10px;padding:clamp(12px,1.7vh,20px)">
+      <div style="font-size:clamp(12px,1.6vh,17px);color:var(--accent-dark);font-weight:600;line-height:1.5">Garage Gym Reviews published 80+ articles in 2025 alone. That is why AI recommends them for every sandbag and weight vest query — and ignores Polyfit.</div>
+    </div>
+  </div>
+</div>
+</div></section>
+
+<!-- SLIDE 05: Authority Gap (02/03) -->
+<section><div class="s">
+<div class="shdr" data-n="05"></div>
+<h2>Problem 02/03 — <span style="color:var(--accent)">Authority Gap.</span></h2>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,3vw,40px);flex:1;min-height:0;align-items:start">
+  <div style="display:flex;flex-direction:column;gap:clamp(12px,1.7vh,22px)">
+    <div style="font-size:clamp(12px,1.6vh,18px);color:var(--ink3);line-height:1.6">Domain Rating (DR) is the single metric that determines whether Google — and AI models — trust a site enough to rank and cite it. Polyfit's DR of ~30 means it loses every competitive keyword to brands with 20–47 more DR points.</div>
+    <div style="display:flex;flex-direction:column;gap:clamp(8px,1.1vh,14px)">
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:clamp(10px,1.4vh,16px) clamp(14px,1.8vw,20px);background:var(--paper2);border:1px solid var(--rule);border-radius:8px">
+        <span style="font-size:clamp(13px,1.8vh,20px);font-weight:600;color:var(--ink)">Rogue Fitness</span>
+        <span style="font-family:monospace;font-size:clamp(16px,2.2vh,26px);font-weight:700;color:var(--ink2)">DR 77</span>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:clamp(10px,1.4vh,16px) clamp(14px,1.8vw,20px);background:var(--paper2);border:1px solid var(--rule);border-radius:8px">
+        <span style="font-size:clamp(13px,1.8vh,20px);font-weight:600;color:var(--ink)">GORUCK</span>
+        <span style="font-family:monospace;font-size:clamp(16px,2.2vh,26px);font-weight:700;color:var(--ink2)">DR 62</span>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:clamp(10px,1.4vh,16px) clamp(14px,1.8vw,20px);background:var(--paper2);border:1px solid var(--rule);border-radius:8px">
+        <span style="font-size:clamp(13px,1.8vh,20px);font-weight:600;color:var(--ink)">REP Fitness</span>
+        <span style="font-family:monospace;font-size:clamp(16px,2.2vh,26px);font-weight:700;color:var(--ink2)">DR 57</span>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:clamp(10px,1.4vh,16px) clamp(14px,1.8vw,20px);background:var(--paper2);border:1px solid var(--rule);border-radius:8px">
+        <span style="font-size:clamp(13px,1.8vh,20px);font-weight:600;color:var(--ink)">Bells of Steel</span>
+        <span style="font-family:monospace;font-size:clamp(16px,2.2vh,26px);font-weight:700;color:var(--ink2)">DR 52</span>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:clamp(10px,1.4vh,16px) clamp(14px,1.8vw,20px);background:var(--accent-bg);border:1.5px solid var(--accent-bd);border-radius:8px">
+        <span style="font-size:clamp(13px,1.8vh,20px);font-weight:700;color:var(--accent-dark)">Polyfit</span>
+        <span style="font-family:monospace;font-size:clamp(16px,2.2vh,26px);font-weight:700;color:var(--red)">DR ~30</span>
+      </div>
+    </div>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:clamp(12px,1.7vh,22px)">
+    <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:12px;padding:clamp(14px,2vh,24px)">
+      <div style="font-size:clamp(11px,1.4vh,14px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4);margin-bottom:clamp(8px,1.1vh,14px)">Why the gap matters</div>
+      <div style="display:flex;flex-direction:column;gap:clamp(8px,1.1vh,14px)">
+        <div class="bullet-row"><span style="color:var(--accent);flex-shrink:0">·</span><span>Google ranks DR 77 over DR 30 on every shared keyword — Polyfit loses before the content fight starts</span></div>
+        <div class="bullet-row"><span style="color:var(--accent);flex-shrink:0">·</span><span>AI models weight domain authority in citation decisions — low DR sites get skipped even with good content</span></div>
+        <div class="bullet-row"><span style="color:var(--accent);flex-shrink:0">·</span><span>Backlinks from BarBend, Morning Chalk Up, and Garage Gym Reviews would move DR 30 to 45+ within 6 months</span></div>
+      </div>
+    </div>
+    <div style="background:var(--accent-bg);border:1.5px solid var(--accent-bd);border-radius:12px;padding:clamp(14px,2vh,24px)">
+      <div style="font-size:clamp(20px,3.2vh,40px);font-weight:800;color:var(--accent);font-family:monospace;line-height:1">47</div>
+      <div style="font-size:clamp(12px,1.6vh,18px);color:var(--accent-dark);font-weight:600;margin-top:4px">DR points behind Rogue Fitness</div>
+      <div style="font-size:clamp(11px,1.4vh,15px);color:var(--ink3);margin-top:6px;line-height:1.5">Closing this gap with targeted editorial outreach is the foundation of the entire strategy.</div>
+    </div>
+  </div>
+</div>
+</div></section>
+
+<!-- SLIDE 06: No Organic Content Presence (03/03) -->
+<section><div class="s">
+<div class="shdr" data-n="06" data-source="ahrefs"></div>
+<h2>Problem 03/03 — <span style="color:var(--accent)">No Organic Content Presence.</span></h2>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,3vw,40px);flex:1;min-height:0;align-items:start">
+  <div style="display:flex;flex-direction:column;gap:clamp(10px,1.4vh,18px)">
+    <div style="font-size:clamp(11px,1.4vh,14px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4)">Polyfit content audit</div>
+    <div style="display:flex;flex-direction:column;gap:clamp(6px,0.9vh,11px)">
+      <div class="bullet-row"><span style="color:var(--red);flex-shrink:0">&#9679;</span><span>0 new posts in 2026 to date</span></div>
+      <div class="bullet-row"><span style="color:var(--red);flex-shrink:0">&#9679;</span><span>Blog output down 87% since 2023 peak (15 posts)</span></div>
+      <div class="bullet-row"><span style="color:var(--red);flex-shrink:0">&#9679;</span><span>No buyer comparison guides (vs GORUCK, vs Rogue Fitness)</span></div>
+      <div class="bullet-row"><span style="color:var(--red);flex-shrink:0">&#9679;</span><span>No pillar content on sandbag training, weight vest programming, or functional fitness</span></div>
+      <div class="bullet-row"><span style="color:var(--red);flex-shrink:0">&#9679;</span><span>No "best sandbag" or "best weight vest" category content</span></div>
+      <div class="bullet-row"><span style="color:var(--red);flex-shrink:0">&#9679;</span><span>~200 pages indexed (competitors: 4K–45K)</span></div>
+    </div>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:clamp(8px,1.1vh,14px)">
+    <div style="font-size:clamp(11px,1.4vh,14px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4)">Competitor content output</div>
+    <div style="flex-shrink:0">
+    <table>
+      <thead><tr>
+        <th>Company</th>
+        <th>2024 posts</th>
+        <th>2025 posts</th>
+        <th>Indexed</th>
+      </tr></thead>
+      <tbody>
+        <tr><td>Rogue Fitness</td><td>80+</td><td>20+</td><td>~45K</td></tr>
+        <tr><td>GORUCK</td><td>60+</td><td>15+</td><td>~8K</td></tr>
+        <tr><td>REP Fitness</td><td>40+</td><td>10+</td><td>~12K</td></tr>
+        <tr><td>Bells of Steel</td><td>48+</td><td>12+</td><td>~4K</td></tr>
+        <tr class="tr-client"><td><strong>Polyfit</strong></td><td class="num">2</td><td class="num">4</td><td class="num">~200</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+</div>
+</div></section>
+
+<!-- SLIDE 07: AI Visibility -->
+<section><div class="s">
+<div class="shdr" data-n="07" data-source="peekaboo"></div>
+<h2>Polyfit's AI visibility: <span style="color:var(--accent)">17/100 — and only on branded searches.</span></h2>
+<div style="display:grid;grid-template-columns:1.1fr 0.9fr;gap:clamp(20px,3vw,40px);flex:1;min-height:0;align-items:start">
+  <div style="display:flex;flex-direction:column;gap:clamp(10px,1.4vh,18px)">
+    <div style="display:flex;gap:clamp(14px,2vw,24px);align-items:flex-start;flex-shrink:0">
+      <div style="text-align:center;flex-shrink:0">
+        <div style="font-family:monospace;font-size:clamp(40px,6.5vh,72px);font-weight:700;color:var(--red);line-height:1">17<span style="font-size:clamp(20px,3vh,36px);color:var(--ink4)">/100</span></div>
+        <div style="font-size:clamp(10px,1.3vh,14px);color:var(--ink3);margin-top:4px">AI visibility score</div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:clamp(6px,0.9vh,11px);flex:1">
+        <div class="bullet-row"><span style="color:var(--red);flex-shrink:0">&#9679;</span><span>134 AI chats analyzed across ChatGPT, Gemini, Perplexity, Google AI Overview, Google AI Mode</span></div>
+        <div class="bullet-row"><span style="color:var(--red);flex-shrink:0">&#9679;</span><span>Score is 17/100 — but only when someone types "Polyfit [review]"</span></div>
+        <div class="bullet-row" style="display:flex;gap:8px;align-items:flex-start">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-right:2px;margin-top:2px"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
+          <span>Only Visible for Branded Queries</span>
+        </div>
+        <div class="bullet-row"><span style="color:var(--red);flex-shrink:0">&#9679;</span><span>Commercial queries ("best sandbag", "sandbag vs kettlebell", "GORUCK alternative") return 0 citations for Polyfit</span></div>
+      </div>
+    </div>
+    <div style="height:1px;background:var(--rule);flex-shrink:0"></div>
+    <div style="font-size:clamp(11px,1.4vh,14px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4)">Domains AI cites instead of Polyfit</div>
+    <div style="flex-shrink:0">
+    <table>
+      <thead><tr><th>Domain</th><th>AI Citations</th><th>Models</th></tr></thead>
+      <tbody>
+        <tr><td>reddit.com</td><td style="font-family:monospace;font-weight:700">125</td><td>All 5</td></tr>
+        <tr><td>youtube.com</td><td style="font-family:monospace;font-weight:700">88</td><td>All 5</td></tr>
+        <tr><td>garagegymreviews.com</td><td style="font-family:monospace;font-weight:700">79</td><td>4 of 5</td></tr>
+        <tr><td>garagegymlab.com</td><td style="font-family:monospace;font-weight:700">66</td><td>All 5</td></tr>
+        <tr><td>freedomstrength.us</td><td style="font-family:monospace;font-weight:700">45</td><td>All 5</td></tr>
+        <tr class="tr-client"><td><strong>getpolyfit.com</strong></td><td class="num">60</td><td>All 5 (branded only)</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:clamp(10px,1.4vh,16px)">
+    <div style="font-size:clamp(11px,1.4vh,14px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4)">Prompts where Polyfit appears</div>
+    <div style="display:flex;flex-direction:column;gap:clamp(7px,1vh,12px)">
+      <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:8px;padding:clamp(8px,1.1vh,14px) clamp(12px,1.5vw,16px);flex-shrink:0">
+        <div style="font-size:clamp(12px,1.5vh,17px);color:var(--ink2);margin-bottom:4px">"Polyfit fitness equipment review"</div>
+        <div style="display:flex;align-items:center;gap:8px">
+          <span class="badge" style="font-size:clamp(9px,1.1vh,12px)">Avg score 100/100</span>
+          <span style="font-size:clamp(10px,1.2vh,13px);color:var(--ink4)">All 5 models</span>
+        </div>
+      </div>
+      <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:8px;padding:clamp(8px,1.1vh,14px) clamp(12px,1.5vw,16px);flex-shrink:0">
+        <div style="font-size:clamp(12px,1.5vh,17px);color:var(--ink2);margin-bottom:4px">"Polyfit vs other sandbag brands"</div>
+        <div style="display:flex;align-items:center;gap:8px">
+          <span class="badge" style="font-size:clamp(9px,1.1vh,12px)">Avg score 100/100</span>
+          <span style="font-size:clamp(10px,1.2vh,13px);color:var(--ink4)">4 of 5 models</span>
+        </div>
+      </div>
+      <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:8px;padding:clamp(8px,1.1vh,14px) clamp(12px,1.5vw,16px);flex-shrink:0">
+        <div style="font-size:clamp(12px,1.5vh,17px);color:var(--ink2);margin-bottom:4px">"Is Polyfit weight vest worth it"</div>
+        <div style="display:flex;align-items:center;gap:8px">
+          <span class="badge" style="font-size:clamp(9px,1.1vh,12px)">Avg score 100/100</span>
+          <span style="font-size:clamp(10px,1.2vh,13px);color:var(--ink4)">4 of 5 models</span>
+        </div>
+      </div>
+    </div>
+    <div style="padding-top:clamp(6px,0.8vh,10px);border-top:1px solid var(--rule);flex-shrink:0">
+      <span style="font-size:clamp(11px,1.4vh,14px);color:var(--ink3);font-weight:500">Target: AI visibility score improvement month-over-month on commercial queries, tracked via AI Peekaboo</span>
+    </div>
+  </div>
+</div>
+</div></section>
+
+<!-- SLIDE 08: Competitive Gap -->
+<section><div class="s">
+<div class="shdr" data-n="08" data-source="ahrefs"></div>
+<h2>The competitive gap <span style="color:var(--accent)">at a glance.</span></h2>
+<div style="flex-shrink:0">
+<table>
+  <thead><tr>
+    <th>Company</th>
+    <th>Domain Rating</th>
+    <th>Organic Keywords</th>
+    <th>Monthly Traffic</th>
+    <th>Pages Indexed</th>
+    <th>Blog 2025 / 2026</th>
+  </tr></thead>
+  <tbody>
+    <tr><td>Rogue Fitness</td><td>77</td><td>~380K</td><td>~2.1M</td><td>~45K</td><td>20+ / 5+</td></tr>
+    <tr><td>GORUCK</td><td>62</td><td>~120K</td><td>~480K</td><td>~8K</td><td>15+ / 3+</td></tr>
+    <tr><td>REP Fitness</td><td>57</td><td>~95K</td><td>~340K</td><td>~12K</td><td>10+ / 2+</td></tr>
+    <tr><td>Bells of Steel</td><td>52</td><td>~45K</td><td>~85K</td><td>~4K</td><td>12+ / 3+</td></tr>
+    <tr class="tr-client"><td><strong>Polyfit</strong></td><td class="num">~30</td><td class="num">~2K</td><td class="num">~8K</td><td class="num">~200</td><td class="num">4 / 0</td></tr>
+  </tbody>
+</table>
+</div>
+<div style="margin-top:clamp(10px,1.5vh,18px);font-size:clamp(10px,1.25vh,13px);color:var(--ink4)">DR and traffic figures are estimates (Ahrefs, est.). Blog counts from site crawl May 2026.</div>
+</div></section>
+
+<!-- SLIDE 09: Reddit Opportunity -->
+<section><div class="s">
+<div class="shdr" data-n="09" data-source="reddit"></div>
+<h2>Reddit is where buyers decide. <span style="color:var(--accent)">Polyfit is not in the conversation.</span></h2>
+
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:clamp(10px,1.4vw,18px);margin-bottom:clamp(10px,1.4vh,18px);flex-shrink:0">
+  <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(10px,1.4vh,16px);text-align:center;flex-shrink:0">
+    <div style="font-family:monospace;font-size:clamp(18px,2.8vh,34px);font-weight:700;color:var(--ink)">4.7M</div>
+    <div style="font-size:clamp(10px,1.3vh,14px);color:var(--ink3);font-weight:500">r/bodyweightfitness members</div>
+  </div>
+  <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(10px,1.4vh,16px);text-align:center;flex-shrink:0">
+    <div style="font-family:monospace;font-size:clamp(18px,2.8vh,34px);font-weight:700;color:var(--ink)">1.8M</div>
+    <div style="font-size:clamp(10px,1.3vh,14px);color:var(--ink3);font-weight:500">r/crossfit members</div>
+  </div>
+  <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(10px,1.4vh,16px);text-align:center;flex-shrink:0">
+    <div style="font-family:monospace;font-size:clamp(18px,2.8vh,34px);font-weight:700;color:var(--ink)">1.2M</div>
+    <div style="font-size:clamp(10px,1.3vh,14px);color:var(--ink3);font-weight:500">r/homegym members</div>
+  </div>
+</div>
+
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,2.2vw,28px);flex:1;min-height:0;align-items:start">
+  <div style="display:flex;flex-direction:column;gap:clamp(8px,1.1vh,14px)">
+    <div style="font-size:clamp(11px,1.4vh,14px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4)">Active subreddits for fitness equipment buyers</div>
+    <div style="flex-shrink:0">
+    <table>
+      <thead><tr>
+        <th>Subreddit</th>
+        <th>Members</th>
+        <th>Posts/week</th>
+        <th>Focus</th>
+      </tr></thead>
+      <tbody>
+        <tr><td>r/bodyweightfitness</td><td>4.7M</td><td>~120</td><td>Sandbags, vests, home equipment</td></tr>
+        <tr><td>r/homegym</td><td>1.2M</td><td>~200</td><td>Equipment buying decisions</td></tr>
+        <tr><td>r/crossfit</td><td>1.8M</td><td>~150</td><td>Weight vests, functional fitness</td></tr>
+        <tr><td>r/Rucking</td><td>51K</td><td>~45</td><td>Weight vests, GORUCK alternatives</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:clamp(8px,1.1vh,14px)">
+    <div style="font-size:clamp(11px,1.4vh,14px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4)">Brand mentions across all fitness subreddits</div>
+    <div style="flex-shrink:0">
+    <table>
+      <thead><tr>
+        <th>Brand</th>
+        <th>Mentions</th>
+        <th>Sentiment</th>
+      </tr></thead>
+      <tbody>
+        <tr><td>GORUCK</td><td style="font-family:monospace;font-weight:700">245+</td><td><span class="sentiment-neg">Negative (QC, price)</span></td></tr>
+        <tr><td>Rogue Fitness</td><td style="font-family:monospace;font-weight:700">227</td><td><span class="sentiment-pos">Positive</span></td></tr>
+        <tr><td>Bells of Steel</td><td style="font-family:monospace;font-weight:700">10</td><td><span class="sentiment-pos">Positive</span></td></tr>
+        <tr><td>REP Fitness</td><td style="font-family:monospace;font-weight:700">4</td><td><span class="sentiment-neu">Neutral</span></td></tr>
+        <tr class="tr-client"><td><strong>Polyfit</strong></td><td class="num">~0</td><td><span class="sentiment-neg">Not present</span></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div style="background:var(--accent-bg);border:1.5px solid var(--accent-bd);border-radius:8px;padding:clamp(10px,1.4vh,16px);flex-shrink:0">
+      <div style="font-size:clamp(11px,1.4vh,15px);color:var(--accent-dark);font-weight:600;line-height:1.5">reddit.com is the #1 AI-cited source in Polyfit's Peekaboo data (125 citations). Reddit presence = direct AI citation signal.</div>
+    </div>
+  </div>
+</div>
+</div></section>
+
+<!-- SLIDE 10: Transition -->
+<section><div class="s" style="justify-content:center;align-items:center;text-align:center">
+<div style="max-width:72ch">
+  <div style="font-size:clamp(11px,1.5vh,15px);font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:clamp(16px,2.4vh,30px)">The Plan</div>
+  <h2 style="font-size:clamp(28px,4.5vh,60px);margin-bottom:clamp(14px,2vh,26px);line-height:1.15">Here is how we fix it.</h2>
+  <div style="font-size:clamp(15px,2.2vh,26px);color:var(--ink3);line-height:1.6">Content that ranks. Authority that compounds. Reddit presence that feeds AI. Three levers, one compounding outcome.</div>
+</div>
+</div></section>
+
+<!-- SLIDE 11: Content Strategy -->
+<section><div class="s">
+<div class="shdr" data-n="11"></div>
+<h2>Content that captures <span style="color:var(--accent)">every stage of the buying journey.</span></h2>
+<div class="col3">
+  <div class="col-card">
+    <div style="display:flex;align-items:center;gap:10px;flex-shrink:0">
+      <span class="col-num">01</span>
+      <span style="font-size:clamp(13px,1.8vh,20px);font-weight:700;color:var(--ink)">Competitor Comparison Pages</span>
+    </div>
+    <div style="height:1px;background:var(--rule);flex-shrink:0"></div>
+    <div style="display:flex;flex-direction:column;gap:clamp(7px,1vh,12px)">
+      <div class="bullet-row"><span style="color:var(--accent);flex-shrink:0">·</span><span>"Polyfit vs GORUCK Sandbag: Which is worth it in 2026?"</span></div>
+      <div class="bullet-row"><span style="color:var(--accent);flex-shrink:0">·</span><span>"Polyfit vs Rogue Fitness Sandbag 2.0: Honest Comparison"</span></div>
+      <div class="bullet-row"><span style="color:var(--accent);flex-shrink:0">·</span><span>"Polyfit Weight Vest vs 5.11 Plate Carrier: Which fits your training?"</span></div>
+      <div class="bullet-row"><span style="color:var(--accent);flex-shrink:0">·</span><span>"Polyfit vs Bells of Steel: Best adjustable kettlebell for home gyms"</span></div>
+    </div>
+  </div>
+  <div class="col-card">
+    <div style="display:flex;align-items:center;gap:10px;flex-shrink:0">
+      <span class="col-num">02</span>
+      <span style="font-size:clamp(13px,1.8vh,20px);font-weight:700;color:var(--ink)">Buyer Decision Guides</span>
+    </div>
+    <div style="height:1px;background:var(--rule);flex-shrink:0"></div>
+    <div style="display:flex;flex-direction:column;gap:clamp(7px,1vh,12px)">
+      <div class="bullet-row"><span style="color:var(--accent);flex-shrink:0">·</span><span>"Best Sandbag for Home Gym 2026 (We Tested 7)"</span></div>
+      <div class="bullet-row"><span style="color:var(--accent);flex-shrink:0">·</span><span>"Best Weight Vest for CrossFit Under $200"</span></div>
+      <div class="bullet-row"><span style="color:var(--accent);flex-shrink:0">·</span><span>"Best Adjustable Kettlebell Sets for Beginners"</span></div>
+      <div class="bullet-row"><span style="color:var(--accent);flex-shrink:0">·</span><span>"Sandbag vs Kettlebell: Which Should You Buy First?"</span></div>
+    </div>
+  </div>
+  <div class="col-card">
+    <div style="display:flex;align-items:center;gap:10px;flex-shrink:0">
+      <span class="col-num">03</span>
+      <span style="font-size:clamp(13px,1.8vh,20px);font-weight:700;color:var(--ink)">Topic Clusters</span>
+    </div>
+    <div style="height:1px;background:var(--rule);flex-shrink:0"></div>
+    <div style="display:flex;flex-direction:column;gap:clamp(7px,1vh,12px)">
+      <div class="bullet-row"><span style="color:var(--accent);flex-shrink:0">·</span><span><strong>Sandbag Training:</strong> beginner programming, exercise library, sandbag vs barbell</span></div>
+      <div class="bullet-row"><span style="color:var(--accent);flex-shrink:0">·</span><span><strong>Weight Vest Workouts:</strong> CrossFit Murph prep, rucking training, everyday carries</span></div>
+      <div class="bullet-row"><span style="color:var(--accent);flex-shrink:0">·</span><span><strong>Functional Fitness Equipment:</strong> home gym setup guides, garage gym essentials for beginners</span></div>
+    </div>
+  </div>
+</div>
+</div></section>
+
+<!-- SLIDE 12: Three-Part Fix -->
+<section><div class="s">
+<div class="shdr" data-n="12"></div>
+<h2>The three-part fix. <span style="color:var(--accent)">Real targets, real timelines.</span></h2>
+<div class="col3">
+  <div class="col-card">
+    <div style="display:flex;align-items:center;gap:10px;flex-shrink:0">
+      <span class="col-num">01</span>
+      <span style="font-size:clamp(13px,1.8vh,20px);font-weight:700;color:var(--ink)">Content</span>
+    </div>
+    <div style="height:1px;background:var(--rule);flex-shrink:0"></div>
+    <div style="display:flex;flex-direction:column;gap:clamp(7px,1vh,12px)">
+      <div class="bullet-row"><span style="color:var(--accent);flex-shrink:0">·</span><span>12 AI-optimised articles per month</span></div>
+      <div class="bullet-row"><span style="color:var(--accent);flex-shrink:0">·</span><span>Comparison pages vs GORUCK, Rogue, and Bells of Steel</span></div>
+      <div class="bullet-row"><span style="color:var(--accent);flex-shrink:0">·</span><span>Buyer guides: best sandbag, best weight vest, sandbag vs kettlebell</span></div>
+      <div class="bullet-row"><span style="color:var(--accent);flex-shrink:0">·</span><span>Schema markup on all new and existing pages</span></div>
+    </div>
+    <div style="margin-top:auto;padding-top:clamp(8px,1.1vh,14px);border-top:1px solid var(--rule);flex-shrink:0">
+      <span style="font-family:monospace;font-size:clamp(18px,2.8vh,32px);font-weight:700;color:var(--accent)">12 articles/month</span>
+    </div>
+  </div>
+  <div class="col-card">
+    <div style="display:flex;align-items:center;gap:10px;flex-shrink:0">
+      <span class="col-num">02</span>
+      <span style="font-size:clamp(13px,1.8vh,20px);font-weight:700;color:var(--ink)">Authority</span>
+    </div>
+    <div style="height:1px;background:var(--rule);flex-shrink:0"></div>
+    <div style="display:flex;flex-direction:column;gap:clamp(7px,1vh,12px)">
+      <div class="bullet-row"><span style="color:var(--accent);flex-shrink:0">·</span><span>Outreach to Garage Gym Reviews, BarBend, Morning Chalk Up</span></div>
+      <div class="bullet-row"><span style="color:var(--accent);flex-shrink:0">·</span><span>Guest content on fitness equipment roundup sites</span></div>
+      <div class="bullet-row"><span style="color:var(--accent);flex-shrink:0">·</span><span>Digital PR targeting product launch coverage and buyer guides</span></div>
+      <div class="bullet-row"><span style="color:var(--accent);flex-shrink:0">·</span><span>GORUCK QC backlash threads are active — "Polyfit as alternative" positioning</span></div>
+    </div>
+    <div style="margin-top:auto;padding-top:clamp(8px,1.1vh,14px);border-top:1px solid var(--rule);flex-shrink:0">
+      <span style="font-family:monospace;font-size:clamp(18px,2.8vh,32px);font-weight:700;color:var(--accent)">DR 30 &rarr; 45+</span>
+    </div>
+  </div>
+  <div class="col-card">
+    <div style="display:flex;align-items:center;gap:10px;flex-shrink:0">
+      <span class="col-num">03</span>
+      <span style="font-size:clamp(13px,1.8vh,20px);font-weight:700;color:var(--ink)">AEO</span>
+    </div>
+    <div style="height:1px;background:var(--rule);flex-shrink:0"></div>
+    <div style="display:flex;flex-direction:column;gap:clamp(7px,1vh,12px)">
+      <div class="bullet-row"><span style="color:var(--accent);flex-shrink:0">·</span><span>20 targeted Reddit comments/month in r/bodyweightfitness, r/homegym, r/Rucking</span></div>
+      <div class="bullet-row"><span style="color:var(--accent);flex-shrink:0">·</span><span>GORUCK dissatisfaction threads are the highest-value entry points</span></div>
+      <div class="bullet-row"><span style="color:var(--accent);flex-shrink:0">·</span><span>Schema markup and structured Q&amp;A for AI readability</span></div>
+      <div class="bullet-row"><span style="color:var(--accent);flex-shrink:0">·</span><span>AI Peekaboo tracking across all 5 models, commercial queries only</span></div>
+    </div>
+    <div style="margin-top:auto;padding-top:clamp(8px,1.1vh,14px);border-top:1px solid var(--rule);flex-shrink:0">
+      <span style="font-size:clamp(11px,1.4vh,14px);color:var(--ink3);font-weight:500">Target: AI visibility score improvement month-over-month, tracked via AI Peekaboo</span>
+    </div>
+  </div>
+</div>
+</div></section>
+
+<!-- SLIDE 13: Deliverables -->
+<section><div class="s">
+<div class="shdr" data-n="13"></div>
+<h2>What you get. <span style="color:var(--accent)">Every month.</span></h2>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(12px,1.8vw,22px);flex:1;min-height:0;align-items:start">
+  <div style="display:flex;flex-direction:column;gap:clamp(8px,1.1vh,14px)">
+    <div class="card" style="gap:16px">
+      <div style="width:clamp(32px,4.2vh,48px);height:clamp(32px,4.2vh,48px);border-radius:10px;background:var(--accent-bg);border:1.5px solid var(--accent-bd);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+      </div>
+      <div>
+        <div style="font-size:clamp(13px,1.8vh,20px);font-weight:700;color:var(--ink)">12 High-Quality Content Pieces</div>
+        <div style="font-size:clamp(11px,1.4vh,15px);color:var(--ink3)">Per month — comparison pages, buyer guides, topic cluster articles</div>
+      </div>
+    </div>
+    <div class="card" style="gap:16px">
+      <div style="width:clamp(32px,4.2vh,48px);height:clamp(32px,4.2vh,48px);border-radius:10px;background:var(--accent-bg);border:1.5px solid var(--accent-bd);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+      </div>
+      <div>
+        <div style="font-size:clamp(13px,1.8vh,20px);font-weight:700;color:var(--ink)">Content Refresh Programme</div>
+        <div style="font-size:clamp(11px,1.4vh,15px);color:var(--ink3)">Ongoing — updating 2023 posts with current data and AI-optimised structure</div>
+      </div>
+    </div>
+    <div class="card" style="gap:16px">
+      <div style="width:clamp(32px,4.2vh,48px);height:clamp(32px,4.2vh,48px);border-radius:10px;background:var(--accent-bg);border:1.5px solid var(--accent-bd);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+      </div>
+      <div>
+        <div style="font-size:clamp(13px,1.8vh,20px);font-weight:700;color:var(--ink)">Schema Markup Implementation</div>
+        <div style="font-size:clamp(11px,1.4vh,15px);color:var(--ink3)">Site-wide — Product, FAQ, HowTo, and LocalBusiness schema for AI readability</div>
+      </div>
+    </div>
+    <div class="card" style="gap:16px">
+      <div style="width:clamp(32px,4.2vh,48px);height:clamp(32px,4.2vh,48px);border-radius:10px;background:var(--accent-bg);border:1.5px solid var(--accent-bd);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </div>
+      <div>
+        <div style="font-size:clamp(13px,1.8vh,20px);font-weight:700;color:var(--ink)">On-Page SEO Optimisation</div>
+        <div style="font-size:clamp(11px,1.4vh,15px);color:var(--ink3)">Ongoing — titles, headings, internal links, structured data</div>
+      </div>
+    </div>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:clamp(8px,1.1vh,14px)">
+    <div class="card" style="gap:16px">
+      <div style="width:clamp(32px,4.2vh,48px);height:clamp(32px,4.2vh,48px);border-radius:10px;background:var(--accent-bg);border:1.5px solid var(--accent-bd);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+      </div>
+      <div>
+        <div style="font-size:clamp(13px,1.8vh,20px);font-weight:700;color:var(--ink)">Link Building</div>
+        <div style="font-size:clamp(11px,1.4vh,15px);color:var(--ink3)">Ongoing — outreach to BarBend, Garage Gym Reviews, Morning Chalk Up</div>
+      </div>
+    </div>
+    <div class="card" style="gap:16px">
+      <div style="width:clamp(32px,4.2vh,48px);height:clamp(32px,4.2vh,48px);border-radius:10px;background:var(--accent-bg);border:1.5px solid var(--accent-bd);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+        <img src="https://www.google.com/s2/favicons?domain=reddit.com&sz=32" style="width:18px;height:18px;border-radius:3px;opacity:.8">
+      </div>
+      <div>
+        <div style="font-size:clamp(13px,1.8vh,20px);font-weight:700;color:var(--ink)">Reddit Presence</div>
+        <div style="font-size:clamp(11px,1.4vh,15px);color:var(--ink3)">20 comments/month in r/bodyweightfitness, r/homegym, r/Rucking</div>
+      </div>
+    </div>
+    <div class="card" style="gap:16px">
+      <div style="width:clamp(32px,4.2vh,48px);height:clamp(32px,4.2vh,48px);border-radius:10px;background:var(--accent-bg);border:1.5px solid var(--accent-bd);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+      </div>
+      <div>
+        <div style="font-size:clamp(13px,1.8vh,20px);font-weight:700;color:var(--ink)">Monthly Reporting</div>
+        <div style="font-size:clamp(11px,1.4vh,15px);color:var(--ink3)">Monthly — AI visibility score, DR movement, traffic, Reddit reach</div>
+      </div>
+    </div>
+  </div>
+</div>
+</div></section>
+
+<!-- SLIDE 14: How We Measure Progress -->
+<section><div class="s">
+<div class="shdr" data-n="14"></div>
+<h2>How we measure <span style="color:var(--accent)">what is actually working.</span></h2>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:clamp(14px,2vw,24px);flex:1;min-height:0;align-items:start">
+  <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:12px;padding:clamp(16px,2.2vh,28px);display:flex;flex-direction:column;gap:clamp(12px,1.7vh,20px);flex-shrink:0">
+    <img src="https://www.google.com/s2/favicons?domain=aipeekaboo.com&sz=64" style="width:clamp(32px,4.5vh,52px);height:clamp(32px,4.5vh,52px);border-radius:10px;object-fit:contain">
+    <div>
+      <div style="font-size:clamp(15px,2.2vh,24px);font-weight:700;color:var(--ink);margin-bottom:6px">AI Peekaboo</div>
+      <div style="font-size:clamp(12px,1.6vh,17px);color:var(--ink3);line-height:1.5">Tracks Polyfit's AI visibility score across all 5 models (ChatGPT, Gemini, Perplexity, Google AI Overview, Google AI Mode). Citation growth per prompt, per model, per week.</div>
+    </div>
+  </div>
+  <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:12px;padding:clamp(16px,2.2vh,28px);display:flex;flex-direction:column;gap:clamp(12px,1.7vh,20px);flex-shrink:0">
+    <img src="https://www.google.com/s2/favicons?domain=search.google.com&sz=64" style="width:clamp(32px,4.5vh,52px);height:clamp(32px,4.5vh,52px);border-radius:10px;object-fit:contain">
+    <div>
+      <div style="font-size:clamp(15px,2.2vh,24px);font-weight:700;color:var(--ink);margin-bottom:6px">Google Search Console</div>
+      <div style="font-size:clamp(12px,1.6vh,17px);color:var(--ink3);line-height:1.5">Measures organic click growth, keyword ranking movement, and impressions for every new article and comparison page we publish.</div>
+    </div>
+  </div>
+  <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:12px;padding:clamp(16px,2.2vh,28px);display:flex;flex-direction:column;gap:clamp(12px,1.7vh,20px);flex-shrink:0">
+    <img src="https://www.google.com/s2/favicons?domain=analytics.google.com&sz=64" style="width:clamp(32px,4.5vh,52px);height:clamp(32px,4.5vh,52px);border-radius:10px;object-fit:contain">
+    <div>
+      <div style="font-size:clamp(15px,2.2vh,24px);font-weight:700;color:var(--ink);margin-bottom:6px">Google Analytics 4</div>
+      <div style="font-size:clamp(12px,1.6vh,17px);color:var(--ink3);line-height:1.5">Tracks organic sessions, conversion rate from content pages, and revenue attribution so you can see exactly what the content investment is returning.</div>
+    </div>
+  </div>
+</div>
+</div></section>
+
+<!-- SLIDE 15: Your Investment -->
+<section><div class="s">
+<div class="shdr" data-n="15"></div>
+<h2>Your Investment. <span style="color:var(--accent)">What We Deliver and When.</span></h2>
+<div style="display:grid;grid-template-columns:1.1fr 0.9fr;gap:clamp(18px,2.5vh,32px);flex:1;min-height:0;margin-top:clamp(12px,1.8vh,20px);align-items:start">
+
+  <div style="display:flex;flex-direction:column;gap:0">
+
+    <div style="display:flex;gap:clamp(12px,1.5vw,18px)">
+      <div style="display:flex;flex-direction:column;align-items:center;flex-shrink:0;width:clamp(28px,3.5vw,38px)">
+        <div style="width:clamp(11px,1.4vh,14px);height:clamp(11px,1.4vh,14px);border-radius:50%;background:var(--accent);flex-shrink:0;margin-top:3px"></div>
+        <div style="width:2px;flex:1;background:var(--rule);min-height:clamp(10px,1.5vh,18px)"></div>
+      </div>
+      <div style="flex:1;padding-bottom:clamp(14px,2vh,24px)">
+        <div style="display:inline-block;background:var(--accent);color:#fff;font-size:clamp(11px,1.4vh,15px);font-weight:600;letter-spacing:0.04em;border-radius:4px;padding:2px 8px;margin-bottom:4px">Month 1 &middot; Foundation</div>
+        <div style="font-size:clamp(14px,1.9vh,20px);font-weight:700;color:var(--ink);margin-bottom:clamp(6px,0.9vh,10px)">Audit, Strategy and First Deliverables</div>
+        <div style="font-size:clamp(12px,1.5vh,16px);color:var(--ink3);line-height:1.5;display:flex;flex-direction:column;gap:3px">
+          <div>Full SEO and AEO audit of getpolyfit.com</div>
+          <div>Competitive benchmark: reverse engineer GORUCK, Rogue, and Bells of Steel for key commercial queries</div>
+          <div>12 articles drafted, published and indexed</div>
+          <div>Schema implementation begins, meta titles optimised</div>
+          <div>Reddit strategy agreed, first comments drafted</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:flex;gap:clamp(12px,1.5vw,18px)">
+      <div style="display:flex;flex-direction:column;align-items:center;flex-shrink:0;width:clamp(28px,3.5vw,38px)">
+        <div style="width:clamp(11px,1.4vh,14px);height:clamp(11px,1.4vh,14px);border-radius:50%;background:var(--accent);flex-shrink:0;margin-top:3px"></div>
+        <div style="width:2px;flex:1;background:var(--rule);min-height:clamp(10px,1.5vh,18px)"></div>
+      </div>
+      <div style="flex:1;padding-bottom:clamp(14px,2vh,24px)">
+        <div style="display:inline-block;background:var(--accent);color:#fff;font-size:clamp(11px,1.4vh,15px);font-weight:600;letter-spacing:0.04em;border-radius:4px;padding:2px 8px;margin-bottom:4px">Month 2 &middot; Build</div>
+        <div style="font-size:clamp(14px,1.9vh,20px);font-weight:700;color:var(--ink);margin-bottom:clamp(6px,0.9vh,10px)">Content, Reddit and Link Building</div>
+        <div style="font-size:clamp(12px,1.5vh,16px);color:var(--ink3);line-height:1.5;display:flex;flex-direction:column;gap:3px">
+          <div>12 new high-intent articles published</div>
+          <div>Reddit presence: 20 comments/month in r/bodyweightfitness, r/homegym, and r/Rucking</div>
+          <div>First link building outreach to BarBend, Garage Gym Reviews, and Morning Chalk Up</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:flex;gap:clamp(12px,1.5vw,18px)">
+      <div style="display:flex;flex-direction:column;align-items:center;flex-shrink:0;width:clamp(28px,3.5vw,38px)">
+        <div style="width:clamp(11px,1.4vh,14px);height:clamp(11px,1.4vh,14px);border-radius:50%;background:var(--accent);flex-shrink:0;margin-top:3px"></div>
+        <div style="width:2px;flex:1;background:var(--rule);min-height:clamp(10px,1.5vh,18px)"></div>
+      </div>
+      <div style="flex:1;padding-bottom:clamp(14px,2vh,24px)">
+        <div style="display:inline-block;background:var(--accent);color:#fff;font-size:clamp(11px,1.4vh,15px);font-weight:600;letter-spacing:0.04em;border-radius:4px;padding:2px 8px;margin-bottom:4px">Month 3 &middot; Compound</div>
+        <div style="font-size:clamp(14px,1.9vh,20px);font-weight:700;color:var(--ink);margin-bottom:clamp(6px,0.9vh,10px)">Comparison Pages and Authority Push</div>
+        <div style="font-size:clamp(12px,1.5vh,16px);color:var(--ink3);line-height:1.5;display:flex;flex-direction:column;gap:3px">
+          <div>12 articles published, comparison pages vs GORUCK and Rogue Fitness live</div>
+          <div>20 Reddit comments/month, scaling presence across subreddits</div>
+          <div>First editorial links live, DR movement begins</div>
+          <div>AI visibility score review: non-branded citations tracked across all 5 models</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:flex;gap:clamp(12px,1.5vw,18px)">
+      <div style="display:flex;flex-direction:column;align-items:center;flex-shrink:0;width:clamp(28px,3.5vw,38px)">
+        <div style="width:clamp(11px,1.4vh,14px);height:clamp(11px,1.4vh,14px);border-radius:50%;background:var(--ink4);flex-shrink:0;margin-top:3px"></div>
+      </div>
+      <div style="flex:1">
+        <div style="display:inline-block;background:var(--accent-bg);color:var(--accent-dark);border:1px solid var(--accent-bd);font-size:clamp(11px,1.4vh,15px);font-weight:600;letter-spacing:0.04em;border-radius:4px;padding:2px 8px;margin-bottom:4px">Month 4+ &middot; Ongoing</div>
+        <div style="font-size:clamp(14px,1.9vh,20px);font-weight:700;color:var(--ink);margin-bottom:clamp(6px,0.9vh,10px)">Continued Growth</div>
+        <div style="font-size:clamp(12px,1.5vh,16px);color:var(--ink3);line-height:1.5">Each month builds on the last. Content compounds, AI citations grow, DR climbs.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div style="display:flex;flex-direction:column;gap:clamp(12px,1.6vh,18px)">
+
+    <div style="background:var(--accent-bg);border:1.5px solid var(--accent-bd);border-radius:12px;padding:clamp(14px,2vh,24px);flex-shrink:0">
+      <div style="margin-bottom:clamp(8px,1.1vh,14px)">
+        <span style="background:var(--accent);color:#fff;font-size:clamp(10px,1.25vh,13px);font-weight:600;border-radius:20px;padding:2px 10px">Complete Solution</span>
+      </div>
+      <div style="font-size:clamp(16px,2.2vh,24px);font-weight:700;color:var(--ink);margin-bottom:2px">Full AI Search Optimization</div>
+      <div style="font-size:clamp(13px,1.7vh,18px);color:var(--accent-dark);font-weight:500;margin-bottom:6px">SEO + AEO + Reddit</div>
+      <div style="font-size:clamp(22px,3.2vh,40px);font-weight:800;color:var(--accent);margin-bottom:clamp(10px,1.4vh,16px)">$3,000<span style="font-size:clamp(13px,1.7vh,17px);font-weight:500;color:var(--ink3)">/month</span></div>
+      <div style="height:1px;background:var(--accent-bd);margin-bottom:clamp(10px,1.4vh,16px)"></div>
+      <div style="display:flex;flex-direction:column;gap:clamp(7px,1vh,12px);margin-bottom:clamp(10px,1.4vh,14px)">
+        <div style="display:flex;align-items:flex-start;gap:10px">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="flex-shrink:0;margin-top:2px"><circle cx="8" cy="8" r="8" fill="#f0fdf4"/><path d="M4.5 8.5l2.5 2.5 4.5-5" stroke="#16a34a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span style="font-size:clamp(12px,1.6vh,17px);color:var(--ink2);line-height:1.5">12 AI-optimised content pieces per month</span>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:10px">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="flex-shrink:0;margin-top:2px"><circle cx="8" cy="8" r="8" fill="#f0fdf4"/><path d="M4.5 8.5l2.5 2.5 4.5-5" stroke="#16a34a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span style="font-size:clamp(12px,1.6vh,17px);color:var(--ink2);line-height:1.5">Reddit presence: 20 comments/month in fitness communities</span>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:10px">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="flex-shrink:0;margin-top:2px"><circle cx="8" cy="8" r="8" fill="#f0fdf4"/><path d="M4.5 8.5l2.5 2.5 4.5-5" stroke="#16a34a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span style="font-size:clamp(12px,1.6vh,17px);color:var(--ink2);line-height:1.5">Backlink outreach to raise domain authority</span>
+        </div>
+      </div>
+      <div style="font-size:clamp(10px,1.3vh,14px);color:var(--ink4);font-style:italic;line-height:1.4">Includes AI Peekaboo subscription for visibility tracking</div>
+    </div>
+
+    <div style="background:var(--paper2);border:1.5px solid var(--rule);border-radius:12px;padding:clamp(14px,2vh,24px);flex-shrink:0">
+      <div style="margin-bottom:clamp(8px,1.1vh,14px)">
+        <span style="background:var(--paper2);color:var(--ink3);font-size:clamp(10px,1.25vh,13px);font-weight:600;border-radius:20px;padding:2px 10px;border:1px solid var(--rule)">Entry Point</span>
+      </div>
+      <div style="font-size:clamp(16px,2.2vh,24px);font-weight:700;color:var(--ink);margin-bottom:2px">Reddit Only</div>
+      <div style="font-size:clamp(13px,1.7vh,18px);color:var(--ink3);font-weight:400;margin-bottom:6px">Build trust where buyers decide</div>
+      <div style="font-size:clamp(22px,3.2vh,40px);font-weight:800;color:var(--ink);margin-bottom:clamp(10px,1.4vh,16px)">$1,500<span style="font-size:clamp(13px,1.7vh,17px);font-weight:500;color:var(--ink3)">/month</span></div>
+      <div style="height:1px;background:var(--rule);margin-bottom:clamp(10px,1.4vh,16px)"></div>
+      <div style="display:flex;flex-direction:column;gap:clamp(7px,1vh,12px);margin-bottom:clamp(10px,1.4vh,14px)">
+        <div style="display:flex;align-items:flex-start;gap:10px">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="flex-shrink:0;margin-top:2px"><circle cx="8" cy="8" r="8" fill="#f0fdf4"/><path d="M4.5 8.5l2.5 2.5 4.5-5" stroke="#16a34a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span style="font-size:clamp(12px,1.6vh,17px);color:var(--ink2);line-height:1.5">20 targeted Reddit comments/month in fitness communities</span>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:10px">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="flex-shrink:0;margin-top:2px"><circle cx="8" cy="8" r="8" fill="#f0fdf4"/><path d="M4.5 8.5l2.5 2.5 4.5-5" stroke="#16a34a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span style="font-size:clamp(12px,1.6vh,17px);color:var(--ink2);line-height:1.5">Focus on r/bodyweightfitness, r/homegym, and GORUCK dissatisfaction threads</span>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:10px">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="flex-shrink:0;margin-top:2px"><circle cx="8" cy="8" r="8" fill="#f0fdf4"/><path d="M4.5 8.5l2.5 2.5 4.5-5" stroke="#16a34a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span style="font-size:clamp(12px,1.6vh,17px);color:var(--ink2);line-height:1.5">Monthly report on thread performance and sentiment</span>
+        </div>
+      </div>
+      <div style="font-size:clamp(10px,1.3vh,14px);color:var(--ink4);font-style:italic;line-height:1.4">Scale up to Full AI Search Optimization anytime.</div>
+    </div>
+
+    <div style="font-size:clamp(11px,1.4vh,14px);color:var(--ink);line-height:1.5;flex-shrink:0">3-month minimum commitment. After month 3, renews month-to-month with 30 days cancellation notice.</div>
+
+  </div>
+
+</div>
+</div></section>
+
+<!-- SLIDE 16: CTA / Team -->
+<section><div class="s">
+<div class="shdr" data-n="16"></div>
+<h2>Ready to Own Fitness Equipment AI Search <span style="color:var(--accent)">Before GORUCK and Rogue Lock It In?</span></h2>
+
+<a href="https://calendly.com/filipe-aipeekaboo/30min" target="_blank" rel="noopener" style="display:block;width:100%;background:var(--accent-bg);border:2px solid var(--accent-bd);border-radius:8px;padding:clamp(14px,2vh,22px);text-align:center;text-decoration:none;margin:clamp(12px,1.8vh,20px) 0 clamp(8px,1.1vh,14px)">
+  <span style="font-size:clamp(14px,1.9vh,22px);font-weight:700;color:var(--accent-dark);letter-spacing:0.01em">Book a 30-Minute Strategy Call</span>
+</a>
+
+<p style="font-size:clamp(11px,1.4vh,15px);color:var(--ink3);text-align:center;margin:0 0 clamp(14px,2vh,22px)">Every day without content is another day buyers find GORUCK or Rogue Fitness instead of Polyfit.</p>
+
+<div style="font-size:clamp(11px,1.4vh,15px);font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink3);margin-bottom:clamp(8px,1.2vh,14px)">The Team</div>
+
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:clamp(10px,1.4vh,18px)">
+
+  <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:12px;padding:clamp(14px,1.9vh,22px);display:flex;flex-direction:column;gap:clamp(10px,1.3vh,16px);flex-shrink:0">
+    <div style="display:flex;align-items:center;gap:clamp(12px,1.6vh,17px)">
+      <img src="filipe.jpeg" style="width:50px;height:50px;border-radius:50%;object-fit:cover;border:2px solid var(--rule);flex-shrink:0">
+      <div>
+        <div style="font-size:clamp(14px,1.8vh,20px);font-weight:700;color:var(--ink)">Filipe Lins Duarte</div>
+        <div style="font-size:clamp(12px,1.5vh,16px);color:var(--accent);font-weight:500">Co-Founder &amp; CEO</div>
+        <a href="https://www.linkedin.com/in/filipelinsduarte" target="_blank" rel="noopener" style="font-size:clamp(11px,1.4vh,15px);color:var(--ink4);text-decoration:none">linkedin.com/in/filipelinsduarte</a>
+      </div>
+    </div>
+    <div style="font-size:clamp(12px,1.5vh,16px);color:var(--ink3);line-height:1.5">Sales leader turned founder. Built revenue teams across SaaS in Europe and the US.</div>
+    <div style="display:flex;flex-direction:column;gap:clamp(5px,0.7vh,8px)">
+      <div style="display:flex;align-items:center;gap:8px">
+        <img src="https://www.google.com/s2/favicons?domain=aipeekaboo.com&sz=32" style="width:16px;height:16px;border-radius:3px;flex-shrink:0">
+        <span style="font-size:clamp(11px,1.4vh,15px);font-weight:600;color:var(--ink2)">AI Peekaboo</span>
+        <span style="font-size:clamp(9px,1.05vh,11px);color:var(--ink3)">Co-Founder &amp; CEO</span>
+        <span style="font-size:clamp(12px,1.6vh,16px);color:var(--ink4);margin-left:auto">Aug 2025 - Present</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <img src="https://www.google.com/s2/favicons?domain=uber.com&sz=32" style="width:16px;height:16px;border-radius:3px;flex-shrink:0">
+        <span style="font-size:clamp(11px,1.4vh,15px);font-weight:600;color:var(--ink2)">Uber for Business</span>
+        <span style="font-size:clamp(9px,1.05vh,11px);color:var(--ink3)">Mid-Market AE · 146% of quota</span>
+        <span style="font-size:clamp(12px,1.6vh,16px);color:var(--ink4);margin-left:auto">Sep 2024 - Aug 2025</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <img src="https://www.google.com/s2/favicons?domain=meistertask.com&sz=32" style="width:16px;height:16px;border-radius:3px;flex-shrink:0">
+        <span style="font-size:clamp(11px,1.4vh,15px);font-weight:600;color:var(--ink2)">Meister</span>
+        <span style="font-size:clamp(9px,1.05vh,11px);color:var(--ink3)">#1 AE in 2023 · 100%+ ARR growth</span>
+        <span style="font-size:clamp(12px,1.6vh,16px);color:var(--ink4);margin-left:auto">Aug 2022 - Jul 2024</span>
+      </div>
+    </div>
+  </div>
+
+  <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:12px;padding:clamp(14px,1.9vh,22px);display:flex;flex-direction:column;gap:clamp(10px,1.3vh,16px);flex-shrink:0">
+    <div style="display:flex;align-items:center;gap:clamp(12px,1.6vh,17px)">
+      <img src="john.jpeg" style="width:50px;height:50px;border-radius:50%;object-fit:cover;border:2px solid var(--rule);flex-shrink:0">
+      <div>
+        <div style="font-size:clamp(14px,1.8vh,20px);font-weight:700;color:var(--ink)">John Rice</div>
+        <div style="font-size:clamp(12px,1.5vh,16px);color:var(--accent);font-weight:500">Co-Founder &amp; CTO</div>
+        <a href="https://www.linkedin.com/in/johnwilliamrice/" target="_blank" rel="noopener" style="font-size:clamp(11px,1.4vh,15px);color:var(--ink4);text-decoration:none">linkedin.com/in/johnwilliamrice</a>
+      </div>
+    </div>
+    <div style="font-size:clamp(12px,1.5vh,16px);color:var(--ink3);line-height:1.5">Full-stack engineer and serial builder. Designed AI Peekaboo's platform from scratch.</div>
+    <div style="display:flex;flex-direction:column;gap:clamp(5px,0.7vh,8px)">
+      <div style="display:flex;align-items:center;gap:8px">
+        <img src="https://www.google.com/s2/favicons?domain=aipeekaboo.com&sz=32" style="width:16px;height:16px;border-radius:3px;flex-shrink:0">
+        <span style="font-size:clamp(11px,1.4vh,15px);font-weight:600;color:var(--ink2)">AI Peekaboo</span>
+        <span style="font-size:clamp(9px,1.05vh,11px);color:var(--ink3)">Co-Founder &amp; CTO</span>
+        <span style="font-size:clamp(12px,1.6vh,16px);color:var(--ink4);margin-left:auto">Apr 2025 - Present</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <img src="https://www.google.com/s2/favicons?domain=subredditsignals.com&sz=32" style="width:16px;height:16px;border-radius:3px;flex-shrink:0">
+        <span style="font-size:clamp(11px,1.4vh,15px);font-weight:600;color:var(--ink2)">Subreddit Signals</span>
+        <span style="font-size:clamp(9px,1.05vh,11px);color:var(--ink3)">Founder</span>
+        <span style="font-size:clamp(12px,1.6vh,16px);color:var(--ink4);margin-left:auto">Nov 2024 - Present</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <img src="https://www.google.com/s2/favicons?domain=magiclinks.com&sz=32" style="width:16px;height:16px;border-radius:3px;flex-shrink:0">
+        <span style="font-size:clamp(11px,1.4vh,15px);font-weight:600;color:var(--ink2)">MagicLinks</span>
+        <span style="font-size:clamp(9px,1.05vh,11px);color:var(--ink3)">Senior Software Engineer</span>
+        <span style="font-size:clamp(12px,1.6vh,16px);color:var(--ink4);margin-left:auto">Jul 2021 - Apr 2024</span>
+      </div>
+    </div>
+  </div>
+
+  <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:12px;padding:clamp(14px,1.9vh,22px);display:flex;flex-direction:column;gap:clamp(10px,1.3vh,16px);flex-shrink:0">
+    <div style="display:flex;align-items:center;gap:clamp(12px,1.6vh,17px)">
+      <img src="danny-kirk.jpeg" style="width:50px;height:50px;border-radius:50%;object-fit:cover;border:2px solid var(--rule);flex-shrink:0">
+      <div>
+        <div style="font-size:clamp(14px,1.8vh,20px);font-weight:700;color:var(--ink)">Danny Kirk</div>
+        <div style="font-size:clamp(12px,1.5vh,16px);color:var(--accent);font-weight:500">COO &amp; Advisory</div>
+        <a href="https://www.linkedin.com/in/danielpkirk/" target="_blank" rel="noopener" style="font-size:clamp(11px,1.4vh,15px);color:var(--ink4);text-decoration:none">linkedin.com/in/danielpkirk</a>
+      </div>
+    </div>
+    <div style="font-size:clamp(12px,1.5vh,16px);color:var(--ink3);line-height:1.5">Reddit growth expert. Helping 500+ brands get recommended by AI through organic Reddit marketing.</div>
+    <div style="display:flex;flex-direction:column;gap:clamp(5px,0.7vh,8px)">
+      <div style="display:flex;align-items:center;gap:8px">
+        <img src="https://www.google.com/s2/favicons?domain=reddit.com&sz=32" style="width:16px;height:16px;border-radius:3px;flex-shrink:0">
+        <span style="font-size:clamp(11px,1.4vh,15px);font-weight:600;color:var(--ink2)">ReddiReach</span>
+        <span style="font-size:clamp(9px,1.05vh,11px);color:var(--ink3)">Founder</span>
+        <span style="font-size:clamp(12px,1.6vh,16px);color:var(--ink4);margin-left:auto">Dec 2017 - Present</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <img src="https://www.google.com/s2/favicons?domain=goaheadventures.com&sz=32" style="width:16px;height:16px;border-radius:3px;flex-shrink:0">
+        <span style="font-size:clamp(11px,1.4vh,15px);font-weight:600;color:var(--ink2)">GoAhead Ventures</span>
+        <span style="font-size:clamp(9px,1.05vh,11px);color:var(--ink3)">Venture Scout</span>
+        <span style="font-size:clamp(12px,1.6vh,16px);color:var(--ink4);margin-left:auto">Oct 2024 - Present</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <img src="https://www.google.com/s2/favicons?domain=energentmedia.com&sz=32" style="width:16px;height:16px;border-radius:3px;flex-shrink:0">
+        <span style="font-size:clamp(11px,1.4vh,15px);font-weight:600;color:var(--ink2)">Energent Media</span>
+        <span style="font-size:clamp(9px,1.05vh,11px);color:var(--ink3)">COO · 6 to 7 figures in months</span>
+        <span style="font-size:clamp(12px,1.6vh,16px);color:var(--ink4);margin-left:auto">Jun 2018 - Feb 2021</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div></section>
+
+</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reveal.min.js"></script>
+<script>
+var T=16,D='getpolyfit.com',P='SEO / AEO Proposal';
+Reveal.initialize({hash:true,transition:'none',disableLayout:true,width:1920,height:1080,margin:0,minScale:0.1,maxScale:3});
+document.querySelectorAll('.shdr').forEach(function(el){
+  var n=el.getAttribute('data-n');
+  var src=el.getAttribute('data-source');
+  var srcHtml='';
+  if(src){
+    var srcMap={
+      'ahrefs':['https://www.google.com/s2/favicons?domain=ahrefs.com&sz=32','data from Ahrefs'],
+      'peekaboo':['https://www.aipeekaboo.com/icon.jpg','data from Peekaboo'],
+      'reddit':['https://www.google.com/s2/favicons?domain=reddit.com&sz=32','data from Reddit']
+    };
+    if(srcMap[src]) srcHtml='<div class="data-src"><img src="'+srcMap[src][0]+'"><span>'+srcMap[src][1]+'</span></div>';
+  }
+  var FAV='<img src="https://www.google.com/s2/favicons?domain=getpolyfit.com&sz=128" class="hdr-favicon">';
+  el.innerHTML='<div class="stripe"></div><div class="hdr"><div style="display:flex;align-items:center;gap:10px">'+FAV+'<span class="tag">'+P+'</span></div><div class="hdr-right"><span class="snum">'+n+' / '+T+'</span><a class="powered" href="https://www.aipeekaboo.com" target="_blank" rel="noopener"><span>Powered by</span><img src="https://www.aipeekaboo.com/images/peekaboo-logo-black.png"></a></div></div><div class="divider"></div>'+(srcHtml?'<div style="display:flex;justify-content:flex-end;margin-bottom:clamp(5px,0.7vh,9px)">'+srcHtml+'</div>':'');
+});
+// tracking
+document.querySelectorAll('.reveal').forEach(function(r){r.addEventListener('touchstart',function(e){e.stopPropagation();},{passive:true});});
+</script>
+</body>
+</html>

@@ -1,0 +1,1307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ViscoSoft SEO / AEO Proposal</title>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YV8FCLN403"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-YV8FCLN403');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reveal.min.css">
+<style>
+  :root {
+    --accent:      #003262;
+    --accent-bg:   #E5EEF6;
+    --accent-bd:   #B0C8DF;
+    --accent-dark: #002550;
+    --ink:         #0a2540;
+    --ink2:        #1e3a5f;
+    --ink3:        #617899;
+    --ink4:        #9EB3CC;
+    --paper:       #fff;
+    --paper2:      #F7FAFD;
+    --paper3:      #EEF4FA;
+    --rule:        #D9E7F5;
+    --ok:          #16a34a;
+    --ok-bg:       #f0fdf4;
+    --ok-bd:       #bbf7d0;
+    --warn:        #ea580c;
+    --warn-bg:     #fff7ed;
+    --warn-bd:     #fed7aa;
+    --red:         #dc2626;
+    --red-bg:      #fef2f2;
+    --red-bd:      #fecaca;
+  }
+  *{box-sizing:border-box;font-family:'Work Sans',sans-serif}
+  html,body{margin:0;padding:0;width:100%;height:100%;overflow:hidden;background:#fff}
+  .reveal-viewport,.reveal{width:100%!important;height:100%!important;background:#fff!important}
+  .reveal .slides section{width:100vw!important;height:100vh!important;padding:0!important;background:#fff!important;display:flex!important;flex-direction:column!important;text-align:left!important}
+  .s{width:100vw;height:100vh;padding:3vh 4.5vw 2.5vh;display:flex;flex-direction:column;position:relative;overflow:hidden}
+  .stripe{position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--accent-dark)}
+  .hdr{display:flex;justify-content:space-between;align-items:center;flex-shrink:0;margin-bottom:.6vh}
+  .hdr-right{display:flex;flex-direction:column;align-items:flex-end}
+  .snum{font-family:'DM Mono',monospace;font-size:clamp(10px,1.2vh,12px);font-weight:700;color:var(--accent-dark);background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:3px;padding:2px 8px;letter-spacing:.06em}
+  .tag{font-size:clamp(10px,1.2vh,12px);font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink4)}
+  .powered{display:flex;align-items:center;gap:5px;text-decoration:none;margin-top:3px}
+  .powered span{font-size:clamp(8px,1vh,10px);color:var(--ink4)}
+  .powered img{height:clamp(10px,1.4vh,14px);width:auto;opacity:.7}
+  .divider{height:1px;background:var(--rule);flex-shrink:0;margin-bottom:clamp(10px,1.5vh,18px)}
+  h2{font-size:clamp(22px,3.8vh,42px);font-weight:700;color:var(--ink);margin:0 0 clamp(14px,2vh,22px);line-height:1.15;flex-shrink:0}
+  .rg2{display:grid;grid-template-columns:1fr 1fr}
+  .rg3{display:grid;grid-template-columns:1fr 1fr 1fr}
+  .rf3{display:flex}
+  .hdr-favicon{border-radius:10px;width:clamp(26px,3.5vh,40px);height:clamp(26px,3.5vh,40px);object-fit:contain}
+  .card{background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(13px,1.7vh,19px) clamp(14px,1.7vw,19px);display:flex;align-items:flex-start;gap:14px;flex-shrink:0}
+  .badge{font-size:clamp(9px,1.05vh,11px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-dark);background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:3px;padding:1px 6px;white-space:nowrap;flex-shrink:0}
+  .ok-badge{font-size:clamp(11px,1.3vh,13px);font-weight:700;color:var(--ok);background:var(--ok-bg);border:1px solid var(--ok-bd);border-radius:3px;padding:1px 5px;text-align:center;margin:auto}
+  .bullet-row{font-size:clamp(14px,1.9vh,18px);color:var(--ink3);display:flex;gap:7px}
+  .favicon-sm{width:12px;height:12px;border-radius:2px;opacity:0.6}
+  .data-src{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--rule);border-radius:5px;padding:3px 9px;background:var(--paper2);flex-shrink:0}
+  .data-src span{font-size:clamp(10px,1.25vh,12px);color:var(--ink3);font-weight:500}
+  .data-src img{height:clamp(13px,1.6vh,16px);width:auto;border-radius:2px;opacity:.85}
+  @media(max-width:1024px){.s{height:100svh!important;overflow-y:auto!important;-webkit-overflow-scrolling:touch!important}}
+  @media(max-width:900px){.rg3{grid-template-columns:1fr 1fr!important}.rf3{flex-wrap:wrap!important}.rf3>*{flex:1 1 calc(50% - 20px)!important;min-width:calc(50% - 20px)!important}}
+  @media(max-width:768px){[style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr!important}}
+  @media(max-width:640px){.rg2,.rg3{grid-template-columns:1fr!important}.rf3{flex-direction:column!important}}
+</style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- SLIDE 01: Cover -->
+<section><div class="s" style="justify-content:center;gap:clamp(16px,2.5vh,32px)">
+<div class="stripe"></div>
+<div style="display:flex;align-items:center;gap:12px">
+  <img src="https://www.google.com/s2/favicons?domain=viscosoft.com&sz=64" style="border-radius:10px;width:clamp(36px,5vh,54px);height:clamp(36px,5vh,54px);flex-shrink:0;object-fit:contain">
+  <span class="tag">SEO / AEO Proposal</span>
+</div>
+<div>
+  <h2 style="font-size:clamp(28px,5.5vh,62px);margin-bottom:clamp(20px,3vh,36px);font-weight:700">How ViscoSoft Can Own Memory Foam Topper Recommendations Before Tempur-Pedic Does</h2>
+  <p style="font-size:clamp(17px,2.5vh,26px);color:var(--ink2);line-height:1.6;margin:0;font-weight:400">You have the products and the reviews. The gap is digital visibility.<br>Every buyer asking AI for the best mattress topper gets pointed to Tempur-Pedic or Purple. Here is how to change that.</p>
+</div>
+<div style="display:flex;align-items:center;gap:clamp(16px,2vw,28px);margin-top:clamp(8px,1.5vh,20px)">
+  <a href="https://www.aipeekaboo.com" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:8px;text-decoration:none">
+    <span style="font-size:clamp(10px,1.2vh,12px);color:var(--ink4)">Powered by</span>
+    <img src="https://www.aipeekaboo.com/images/peekaboo-logo-black.png" style="height:clamp(12px,1.8vh,20px);width:auto;opacity:.6">
+  </a>
+  <span style="color:var(--rule)">|</span>
+  <span style="font-size:clamp(10px,1.2vh,12px);color:var(--ink4)">Prepared for ViscoSoft &middot; May 2026</span>
+</div>
+</div></section>
+
+<!-- SLIDE 02: The Hook -->
+<section><div class="s">
+<div class="shdr" data-n="02"></div>
+<div style="flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;min-height:0">
+  <div style="display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:clamp(54px,8vh,84px)">
+    <img src="https://www.google.com/s2/favicons?domain=google.com&sz=64" style="width:clamp(28px,3.8vh,40px);height:clamp(28px,3.8vh,40px);border-radius:4px;flex-shrink:0">
+    <img src="https://www.google.com/s2/favicons?domain=chatgpt.com&sz=64" style="width:clamp(28px,3.8vh,40px);height:clamp(28px,3.8vh,40px);border-radius:4px;flex-shrink:0">
+    <p style="font-size:clamp(26px,4vh,42px);font-weight:700;letter-spacing:.04em;color:var(--ink);margin:0">Go on Google or ChatGPT and ask&hellip;</p>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:clamp(12px,1.8vh,20px);margin-bottom:clamp(64px,9vh,96px);width:100%;max-width:80ch">
+    <div style="display:flex;align-items:center;gap:14px;background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(16px,2.2vh,26px) clamp(20px,2.5vw,30px);text-align:left">
+      <svg style="width:18px;height:18px;flex-shrink:0;color:var(--ink4)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <span style="font-size:clamp(16px,2.3vh,24px);color:var(--ink);font-weight:500">What is the best mattress topper for back pain?</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:14px;background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(16px,2.2vh,26px) clamp(20px,2.5vw,30px);text-align:left">
+      <svg style="width:18px;height:18px;flex-shrink:0;color:var(--ink4)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <span style="font-size:clamp(16px,2.3vh,24px);color:var(--ink);font-weight:500">Best memory foam topper to soften a too-firm mattress?</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:14px;background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(16px,2.2vh,26px) clamp(20px,2.5vw,30px);text-align:left">
+      <svg style="width:18px;height:18px;flex-shrink:0;color:var(--ink4)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <span style="font-size:clamp(16px,2.3vh,24px);color:var(--ink);font-weight:500">Is Tempur-Pedic worth the price, or should I just get a great topper?</span>
+    </div>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:clamp(8px,1.2vh,14px);align-items:center">
+    <div style="display:flex;align-items:center;gap:12px">
+      <img src="https://www.google.com/s2/favicons?domain=viscosoft.com&sz=64" style="width:clamp(22px,3vh,32px);height:clamp(22px,3vh,32px);border-radius:6px;flex-shrink:0;object-fit:contain">
+      <p style="font-size:clamp(22px,3.5vh,38px);font-weight:700;color:var(--ink);margin:0">Is viscosoft.com showing up?</p>
+    </div>
+    <p style="font-size:clamp(26px,4.2vh,46px);font-weight:700;color:var(--red);margin:0">No.</p>
+    <p style="font-size:clamp(16px,2.3vh,24px);color:var(--ink3);margin:0;font-weight:400">Let&rsquo;s understand why&hellip;</p>
+  </div>
+</div>
+</div></section>
+
+<!-- SLIDE 03: Three Root Problems -->
+<section><div class="s">
+<div class="shdr" data-n="03"></div>
+<h2 style="margin:0 0 clamp(14px,2vh,22px)">Three Root Problems <span style="color:var(--red)">Holding ViscoSoft Back</span></h2>
+<div style="font-size:clamp(15px,2.1vh,21px);color:var(--ink2);font-weight:500;margin-bottom:clamp(14px,2vh,24px);flex-shrink:0">Every missed AI response, every invisible search result, and every lead that goes to a competitor traces back to one of these three.</div>
+<div style="display:flex;gap:clamp(14px,2vw,24px);flex-shrink:0">
+
+  <div style="flex:1;min-width:0;min-height:0;display:flex;flex-direction:column;background:var(--paper2);border:1.5px solid var(--rule);border-radius:12px;padding:clamp(12px,1.6vh,22px) clamp(16px,1.8vw,24px);overflow:hidden">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:clamp(7px,0.9vh,12px);flex-shrink:0">
+      <span style="font-family:'DM Mono',monospace;font-size:clamp(11px,1.4vh,14px);font-weight:700;color:var(--red);background:var(--red-bg);border:1px solid var(--red-bd);border-radius:4px;padding:2px 8px">01</span>
+      <span style="font-size:clamp(10px,1.25vh,13px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4)">Content</span>
+    </div>
+    <div style="font-size:clamp(18px,2.6vh,28px);font-weight:700;color:var(--ink);line-height:1.2;margin-bottom:clamp(12px,1.6vh,20px);flex-shrink:0">No Tempur-Pedic Comparison Content</div>
+    <div style="font-size:clamp(14px,1.95vh,20px);color:var(--ink2);line-height:1.5;flex-shrink:0;display:flex;flex-direction:column;gap:7px">
+      <div style="display:flex;gap:8px;align-items:flex-start"><span style="color:var(--red);flex-shrink:0">&#9679;</span><span>Tempur-Pedic is mentioned 45 times on Reddit as the price benchmark every buyer compares against</span></div>
+      <div style="display:flex;gap:8px;align-items:flex-start"><span style="color:var(--red);flex-shrink:0">&#9679;</span><span>Tempur-Pedic alternatives scores 67/100 without a dedicated ViscoSoft comparison page</span></div>
+      <div style="display:flex;gap:8px;align-items:flex-start"><span style="color:var(--red);flex-shrink:0">&#9679;</span><span>Zero vs Tempur-Pedic or alternatives pages exist on viscosoft.com</span></div>
+    </div>
+    <div style="flex:1;min-height:clamp(14px,1.8vh,22px)"></div>
+    <div style="padding-top:clamp(6px,0.8vh,10px);border-top:1px solid var(--rule);flex-shrink:0">
+      <span style="font-family:'DM Mono',monospace;font-size:clamp(22px,3.2vh,36px);font-weight:700;color:var(--red)">45 Reddit mentions</span>
+      <span style="font-size:clamp(11px,1.4vh,14px);color:var(--ink3);font-weight:500;margin-left:6px">0 comparison pages<br><span style="font-size:clamp(10px,1.2vh,12px)">every comparison goes to competitors</span></span>
+    </div>
+  </div>
+
+  <div style="flex:1;min-width:0;min-height:0;display:flex;flex-direction:column;background:var(--paper2);border:1.5px solid var(--rule);border-radius:12px;padding:clamp(12px,1.6vh,22px) clamp(16px,1.8vw,24px);overflow:hidden">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:clamp(7px,0.9vh,12px);flex-shrink:0">
+      <span style="font-family:'DM Mono',monospace;font-size:clamp(11px,1.4vh,14px);font-weight:700;color:var(--red);background:var(--red-bg);border:1px solid var(--red-bd);border-radius:4px;padding:2px 8px">02</span>
+      <span style="font-size:clamp(10px,1.25vh,13px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4)">AI Visibility</span>
+    </div>
+    <div style="font-size:clamp(18px,2.6vh,28px);font-weight:700;color:var(--ink);line-height:1.2;margin-bottom:clamp(12px,1.6vh,20px);flex-shrink:0">Invisible on Eco and Budget Queries</div>
+    <div style="font-size:clamp(14px,1.95vh,20px);color:var(--ink2);line-height:1.5;flex-shrink:0;display:flex;flex-direction:column;gap:7px">
+      <div style="display:flex;gap:8px;align-items:flex-start"><span style="color:var(--red);flex-shrink:0">&#9679;</span><span>eco-friendly topper queries score 0/100 despite ViscoSoft&rsquo;s ocean-recycled plastic manufacturing USP</span></div>
+      <div style="display:flex;gap:8px;align-items:flex-start"><span style="color:var(--red);flex-shrink:0">&#9679;</span><span>Under $100 budget queries score 10/100: the most active topper buying debate on Reddit</span></div>
+      <div style="display:flex;gap:8px;align-items:flex-start"><span style="color:var(--red);flex-shrink:0">&#9679;</span><span>Couples and motion-isolation queries score 0/100, another ViscoSoft product strength untapped</span></div>
+    </div>
+    <div style="flex:1;min-height:clamp(14px,1.8vh,22px)"></div>
+    <div style="padding-top:clamp(6px,0.8vh,10px);border-top:1px solid var(--rule);flex-shrink:0">
+      <span style="font-family:'DM Mono',monospace;font-size:clamp(22px,3.2vh,36px);font-weight:700;color:var(--red)">0/100 eco</span>
+      <span style="font-size:clamp(11px,1.4vh,14px);color:var(--ink3);font-weight:500;margin-left:6px">10/100 budget<br><span style="font-size:clamp(10px,1.2vh,12px)">two high-volume buying debates, zero presence</span></span>
+    </div>
+  </div>
+
+  <div style="flex:1;min-width:0;min-height:0;display:flex;flex-direction:column;background:var(--paper2);border:1.5px solid var(--rule);border-radius:12px;padding:clamp(12px,1.6vh,22px) clamp(16px,1.8vw,24px);overflow:hidden">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:clamp(7px,0.9vh,12px);flex-shrink:0">
+      <span style="font-family:'DM Mono',monospace;font-size:clamp(11px,1.4vh,14px);font-weight:700;color:var(--red);background:var(--red-bg);border:1px solid var(--red-bd);border-radius:4px;padding:2px 8px">03</span>
+      <span style="font-size:clamp(10px,1.25vh,13px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4)">Authority</span>
+    </div>
+    <div style="font-size:clamp(18px,2.6vh,28px);font-weight:700;color:var(--ink);line-height:1.2;margin-bottom:clamp(12px,1.6vh,20px);flex-shrink:0">Editorial Authority Is Owned by Review Sites</div>
+    <div style="font-size:clamp(14px,1.95vh,20px);color:var(--ink2);line-height:1.5;flex-shrink:0;display:flex;flex-direction:column;gap:7px">
+      <div style="display:flex;gap:8px;align-items:flex-start"><span style="color:var(--red);flex-shrink:0">&#9679;</span><span>sleepfoundation.org receives 131 AI citations and mattressclarity.com 71 for mattress topper queries</span></div>
+      <div style="display:flex;gap:8px;align-items:flex-start"><span style="color:var(--red);flex-shrink:0">&#9679;</span><span>ViscoSoft gets 112 AI citations but nearly all are branded: new buyers never see it</span></div>
+      <div style="display:flex;gap:8px;align-items:flex-start"><span style="color:var(--red);flex-shrink:0">&#9679;</span><span>Every best topper recommendation list AI reads is written by a third-party review site, not ViscoSoft</span></div>
+    </div>
+    <div style="flex:1;min-height:clamp(14px,1.8vh,22px)"></div>
+    <div style="padding-top:clamp(6px,0.8vh,10px);border-top:1px solid var(--rule);flex-shrink:0">
+      <span style="font-family:'DM Mono',monospace;font-size:clamp(22px,3.2vh,36px);font-weight:700;color:var(--red)">131 citations</span>
+      <span style="font-size:clamp(11px,1.4vh,14px);color:var(--ink3);font-weight:500;margin-left:6px">sleepfoundation dominates<br><span style="font-size:clamp(10px,1.2vh,12px)">review sites own every recommendation list</span></span>
+    </div>
+  </div>
+
+</div>
+</div></section>
+
+<!-- SLIDE 04: No Tempur-Pedic Comparison Content (01/03) -->
+<section><div class="s">
+<div class="shdr" data-n="04"></div>
+<div style="display:flex;align-items:center;gap:10px;margin-bottom:clamp(14px,2vh,22px);flex-shrink:0">
+  <span style="font-family:'DM Mono',monospace;font-size:clamp(10px,1.2vh,12px);font-weight:700;color:var(--red);background:var(--red-bg);border:1px solid var(--red-bd);border-radius:4px;padding:2px 8px">01 / 03</span>
+  <h2 style="margin:0">No Tempur-Pedic Comparison Content</h2>
+</div>
+<div style="font-size:clamp(15px,2.1vh,21px);color:var(--ink2);font-weight:500;margin-bottom:clamp(16px,2.5vh,28px);flex-shrink:0">Tempur-Pedic is cited 45 times on Reddit as the price anchor. Buyers who look at Tempur-Pedic and balk are the highest-converting segment for ViscoSoft. Without a dedicated comparison page, every one of those buyers goes elsewhere.</div>
+
+<div style="flex:1;min-height:0;display:flex;gap:clamp(12px,1.6vw,20px);overflow:hidden">
+
+  <div style="flex:1.1;min-width:0;min-height:0;display:flex;flex-direction:column;gap:clamp(6px,0.8vh,10px);overflow:hidden">
+    <div style="font-size:clamp(12px,1.5vh,15px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4);flex-shrink:0">Why Comparison Content Wins AI Citations</div>
+    <div style="flex:1;min-height:0;display:flex;flex-direction:column;gap:clamp(9px,1.2vh,14px);overflow:hidden">
+      <div style="display:flex;gap:10px;align-items:flex-start;background:var(--paper2);border:1px solid var(--rule);border-radius:6px;padding:clamp(7px,1vh,12px) clamp(10px,1.2vw,14px);flex-shrink:0">
+        <span style="color:var(--red);font-size:13px;flex-shrink:0;margin-top:1px">&#9679;</span>
+        <span style="font-size:clamp(14px,1.95vh,20px);color:var(--ink2);line-height:1.45">LLMs cite the most authoritative source on a topic. A ViscoSoft vs Tempur-Pedic page is the definitive resource for the exact query that 45 Reddit posts represent</span>
+      </div>
+      <div style="display:flex;gap:10px;align-items:flex-start;background:var(--paper2);border:1px solid var(--rule);border-radius:6px;padding:clamp(7px,1vh,12px) clamp(10px,1.2vw,14px);flex-shrink:0">
+        <span style="color:var(--red);font-size:13px;flex-shrink:0;margin-top:1px">&#9679;</span>
+        <span style="font-size:clamp(14px,1.95vh,20px);color:var(--ink2);line-height:1.45">Buyers who look at Tempur-Pedic and balk at the price are the highest-converting segment: comparison content captures them at the exact decision moment</span>
+      </div>
+      <div style="display:flex;gap:10px;align-items:flex-start;background:var(--paper2);border:1px solid var(--rule);border-radius:6px;padding:clamp(7px,1vh,12px) clamp(10px,1.2vw,14px);flex-shrink:0">
+        <span style="color:var(--red);font-size:13px;flex-shrink:0;margin-top:1px">&#9679;</span>
+        <span style="font-size:clamp(14px,1.95vh,20px);color:var(--ink2);line-height:1.45">Internal links across comparison, review, and alternatives pages signal topical expertise that isolated product pages never achieve</span>
+      </div>
+      <div style="background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:8px;padding:clamp(10px,1.4vh,16px) clamp(12px,1.4vw,16px);flex-shrink:0">
+        <p style="font-size:clamp(14px,1.95vh,20px);color:var(--ink);margin:0;line-height:1.5;font-weight:600">Tempur-Pedic is the price anchor in 45 Reddit posts. ViscoSoft has no dedicated page to capture a single one of those comparisons.</p>
+      </div>
+    </div>
+  </div>
+
+  <div style="flex:1;min-width:0;min-height:0;display:flex;flex-direction:column;gap:clamp(6px,0.8vh,10px);overflow:hidden">
+    <div style="font-size:clamp(12px,1.5vh,15px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4);flex-shrink:0">Tempur-Pedic Comparison Cluster: What Exists vs. What Is Missing</div>
+    <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:8px;overflow:hidden;flex-shrink:0">
+      <div style="display:grid;grid-template-columns:1fr auto;padding:clamp(7px,0.9vh,10px) clamp(10px,1.2vw,14px);border-bottom:1px solid var(--rule);background:var(--paper3)">
+        <span style="font-size:clamp(12px,1.5vh,15px);font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--ink4)">Page</span>
+        <span style="font-size:clamp(12px,1.5vh,15px);font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--ink4)">Status</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr auto;padding:clamp(7px,0.9vh,10px) clamp(10px,1.2vw,14px);border-bottom:1px solid var(--rule);align-items:center;gap:10px">
+        <span style="font-size:clamp(14px,1.95vh,20px);color:var(--ink2);line-height:1.4">Generic product pages</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(11px,1.3vh,13px);font-weight:700;color:var(--ok);background:var(--ok-bg);border:1px solid var(--ok-bd);border-radius:3px;padding:1px 7px;flex-shrink:0">Live</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr auto;padding:clamp(7px,0.9vh,10px) clamp(10px,1.2vw,14px);border-bottom:1px solid var(--rule);align-items:center;gap:10px;background:var(--red-bg)">
+        <span style="font-size:clamp(14px,1.95vh,20px);color:var(--ink);line-height:1.4;font-weight:500">ViscoSoft vs Tempur-Pedic comparison</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(11px,1.3vh,13px);font-weight:700;color:var(--red);background:var(--red-bg);border:1px solid var(--red-bd);border-radius:3px;padding:1px 7px;flex-shrink:0">Missing</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr auto;padding:clamp(7px,0.9vh,10px) clamp(10px,1.2vw,14px);border-bottom:1px solid var(--rule);align-items:center;gap:10px;background:var(--red-bg)">
+        <span style="font-size:clamp(14px,1.95vh,20px);color:var(--ink);line-height:1.4;font-weight:500">Best Tempur-Pedic Alternatives 2026 hub</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(11px,1.3vh,13px);font-weight:700;color:var(--red);background:var(--red-bg);border:1px solid var(--red-bd);border-radius:3px;padding:1px 7px;flex-shrink:0">Missing</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr auto;padding:clamp(7px,0.9vh,10px) clamp(10px,1.2vw,14px);border-bottom:1px solid var(--rule);align-items:center;gap:10px;background:var(--red-bg)">
+        <span style="font-size:clamp(14px,1.95vh,20px);color:var(--ink);line-height:1.4;font-weight:500">Is Tempur-Pedic Worth It? decision guide</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(11px,1.3vh,13px);font-weight:700;color:var(--red);background:var(--red-bg);border:1px solid var(--red-bd);border-radius:3px;padding:1px 7px;flex-shrink:0">Missing</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr auto;padding:clamp(7px,0.9vh,10px) clamp(10px,1.2vw,14px);align-items:center;gap:10px;background:var(--red-bg)">
+        <span style="font-size:clamp(14px,1.95vh,20px);color:var(--ink);line-height:1.4;font-weight:500">Internal links connecting cluster pages</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(11px,1.3vh,13px);font-weight:700;color:var(--red);background:var(--red-bg);border:1px solid var(--red-bd);border-radius:3px;padding:1px 7px;flex-shrink:0">Missing</span>
+      </div>
+    </div>
+    <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:6px;padding:clamp(8px,1.1vh,13px) clamp(10px,1.2vw,14px);flex-shrink:0">
+      <p style="font-size:clamp(13px,1.75vh,17px);color:var(--ink2);margin:0;line-height:1.5">Each missing page is a buying-intent query that goes to Purple, Saatva, or Helix. All four gaps can be filled in month one.</p>
+    </div>
+  </div>
+
+</div>
+</div></section>
+
+<!-- SLIDE 05: Eco + Budget Problem (02/03) -->
+<section><div class="s">
+<div class="shdr" data-n="05"></div>
+<div style="display:flex;align-items:center;gap:10px;margin-bottom:clamp(14px,2vh,22px);flex-shrink:0">
+  <span style="font-family:'DM Mono',monospace;font-size:clamp(10px,1.2vh,12px);font-weight:700;color:var(--red);background:var(--red-bg);border:1px solid var(--red-bd);border-radius:4px;padding:2px 8px">02 / 03</span>
+  <h2 style="margin:0">Invisible on Eco and Budget Queries</h2>
+</div>
+<div style="font-size:clamp(15px,2.1vh,21px);color:var(--ink2);font-weight:500;margin-bottom:clamp(16px,2.5vh,28px);flex-shrink:0">ViscoSoft scores 94/100 for gel toppers but 0/100 for eco-friendly. The product USPs exist. The content does not. Budget and eco are the two highest-volume buying debates on Reddit, and ViscoSoft is absent from both.</div>
+
+<div style="flex:1;min-height:0;display:flex;gap:clamp(12px,1.6vw,20px);overflow:hidden">
+
+  <div style="flex:1;min-width:0;min-height:0;display:flex;flex-direction:column;gap:clamp(6px,0.8vh,10px);overflow:hidden">
+    <div style="font-size:clamp(12px,1.5vh,15px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4);flex-shrink:0">AI Peekaboo Score by Query Type</div>
+    <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:8px;overflow:hidden;flex-shrink:0">
+      <div style="display:grid;grid-template-columns:1fr auto auto;padding:clamp(7px,0.9vh,10px) clamp(10px,1.2vw,14px);border-bottom:1px solid var(--rule);background:var(--paper3);gap:10px">
+        <span style="font-size:clamp(12px,1.5vh,15px);font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--ink4)">Query</span>
+        <span style="font-size:clamp(12px,1.5vh,15px);font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--ink4);text-align:center">Score</span>
+        <span style="font-size:clamp(12px,1.5vh,15px);font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--ink4)">Status</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr auto auto;padding:clamp(7px,0.9vh,10px) clamp(10px,1.2vw,14px);border-bottom:1px solid var(--rule);align-items:center;gap:10px">
+        <span style="font-size:clamp(14px,1.95vh,20px);color:var(--ink2)">gel toppers</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(14px,1.9vh,19px);font-weight:700;color:var(--ok);text-align:center">94/100</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(11px,1.3vh,13px);font-weight:700;color:var(--ok);background:var(--ok-bg);border:1px solid var(--ok-bd);border-radius:3px;padding:1px 7px;flex-shrink:0">Strong</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr auto auto;padding:clamp(7px,0.9vh,10px) clamp(10px,1.2vw,14px);border-bottom:1px solid var(--rule);align-items:center;gap:10px">
+        <span style="font-size:clamp(14px,1.95vh,20px);color:var(--ink2)">heavy sleepers</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(14px,1.9vh,19px);font-weight:700;color:var(--ok);text-align:center">90/100</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(11px,1.3vh,13px);font-weight:700;color:var(--ok);background:var(--ok-bg);border:1px solid var(--ok-bd);border-radius:3px;padding:1px 7px;flex-shrink:0">Strong</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr auto auto;padding:clamp(7px,0.9vh,10px) clamp(10px,1.2vw,14px);border-bottom:1px solid var(--rule);align-items:center;gap:10px">
+        <span style="font-size:clamp(14px,1.95vh,20px);color:var(--ink2)">Tempur-Pedic alternatives</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(14px,1.9vh,19px);font-weight:700;color:var(--warn);text-align:center">67/100</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(11px,1.3vh,13px);font-weight:700;color:var(--warn);background:var(--warn-bg);border:1px solid var(--warn-bd);border-radius:3px;padding:1px 7px;flex-shrink:0">Partial</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr auto auto;padding:clamp(7px,0.9vh,10px) clamp(10px,1.2vw,14px);border-bottom:1px solid var(--rule);align-items:center;gap:10px;background:var(--red-bg)">
+        <span style="font-size:clamp(14px,1.95vh,20px);color:var(--ink)">under $100 budget</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(14px,1.9vh,19px);font-weight:700;color:var(--red);text-align:center">10/100</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(11px,1.3vh,13px);font-weight:700;color:var(--red);background:var(--red-bg);border:1px solid var(--red-bd);border-radius:3px;padding:1px 7px;flex-shrink:0">Weak</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr auto auto;padding:clamp(7px,0.9vh,10px) clamp(10px,1.2vw,14px);border-bottom:1px solid var(--rule);align-items:center;gap:10px;background:var(--red-bg)">
+        <span style="font-size:clamp(14px,1.95vh,20px);color:var(--ink)">eco-friendly</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(14px,1.9vh,19px);font-weight:700;color:var(--red);text-align:center">0/100</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(11px,1.3vh,13px);font-weight:700;color:var(--red);background:var(--red-bg);border:1px solid var(--red-bd);border-radius:3px;padding:1px 7px;flex-shrink:0">Missing</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr auto auto;padding:clamp(7px,0.9vh,10px) clamp(10px,1.2vw,14px);border-bottom:1px solid var(--rule);align-items:center;gap:10px;background:var(--red-bg)">
+        <span style="font-size:clamp(14px,1.95vh,20px);color:var(--ink)">couples / motion isolation</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(14px,1.9vh,19px);font-weight:700;color:var(--red);text-align:center">0/100</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(11px,1.3vh,13px);font-weight:700;color:var(--red);background:var(--red-bg);border:1px solid var(--red-bd);border-radius:3px;padding:1px 7px;flex-shrink:0">Missing</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr auto auto;padding:clamp(7px,0.9vh,10px) clamp(10px,1.2vw,14px);align-items:center;gap:10px;background:var(--red-bg)">
+        <span style="font-size:clamp(14px,1.95vh,20px);color:var(--ink)">mattress pads</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(14px,1.9vh,19px);font-weight:700;color:var(--red);text-align:center">0/100</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(11px,1.3vh,13px);font-weight:700;color:var(--red);background:var(--red-bg);border:1px solid var(--red-bd);border-radius:3px;padding:1px 7px;flex-shrink:0">Missing</span>
+      </div>
+    </div>
+  </div>
+
+  <div style="flex:1;min-width:0;min-height:0;display:flex;flex-direction:column;gap:clamp(6px,0.8vh,10px);overflow:hidden">
+    <div style="font-size:clamp(12px,1.5vh,15px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4);flex-shrink:0">The Budget and Eco Angles Are Live Buying Debates</div>
+    <div style="flex:1;min-height:0;display:flex;flex-direction:column;gap:clamp(9px,1.2vh,14px);overflow:hidden">
+      <div style="display:flex;gap:10px;align-items:flex-start;background:var(--paper2);border:1px solid var(--rule);border-radius:6px;padding:clamp(7px,1vh,12px) clamp(10px,1.2vw,14px);flex-shrink:0">
+        <span style="color:var(--red);font-size:13px;flex-shrink:0;margin-top:1px">&#9679;</span>
+        <span style="font-size:clamp(14px,1.95vh,20px);color:var(--ink2);line-height:1.45">Cheap mattress plus great topper is a recurring Reddit thread type: 8 posts in the audit are exactly this conversation, where ViscoSoft could own the recommended answer</span>
+      </div>
+      <div style="display:flex;gap:10px;align-items:flex-start;background:var(--paper2);border:1px solid var(--rule);border-radius:6px;padding:clamp(7px,1vh,12px) clamp(10px,1.2vw,14px);flex-shrink:0">
+        <span style="color:var(--red);font-size:13px;flex-shrink:0;margin-top:1px">&#9679;</span>
+        <span style="font-size:clamp(14px,1.95vh,20px);color:var(--ink2);line-height:1.45">ViscoSoft uses ocean-recycled plastic in manufacturing: a real product differentiator that zero content currently leverages for SEO or AI citation</span>
+      </div>
+      <div style="display:flex;gap:10px;align-items:flex-start;background:var(--paper2);border:1px solid var(--rule);border-radius:6px;padding:clamp(7px,1vh,12px) clamp(10px,1.2vw,14px);flex-shrink:0">
+        <span style="color:var(--red);font-size:13px;flex-shrink:0;margin-top:1px">&#9679;</span>
+        <span style="font-size:clamp(14px,1.95vh,20px);color:var(--ink2);line-height:1.45">Budget buyers are the most price-sensitive and most active on Reddit: the best audience for ViscoSoft&rsquo;s value positioning against Tempur-Pedic</span>
+      </div>
+      <div style="background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:8px;padding:clamp(10px,1.4vh,16px) clamp(12px,1.4vw,16px);flex-shrink:0">
+        <p style="font-size:clamp(14px,1.95vh,20px);color:var(--ink);margin:0;line-height:1.5;font-weight:600">ViscoSoft scores 94/100 for gel toppers but 0/100 for eco-friendly. The product USPs exist. The content does not.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div></section>
+
+<!-- SLIDE 06: Editorial Authority Problem (03/03) -->
+<section><div class="s">
+<div class="shdr" data-n="06"></div>
+<div style="display:flex;align-items:center;gap:10px;margin-bottom:clamp(14px,2vh,22px);flex-shrink:0">
+  <span style="font-family:'DM Mono',monospace;font-size:clamp(10px,1.2vh,12px);font-weight:700;color:var(--red);background:var(--red-bg);border:1px solid var(--red-bd);border-radius:4px;padding:2px 8px">03 / 03</span>
+  <h2 style="margin:0">Editorial Authority Is Owned by Third-Party Review Sites</h2>
+</div>
+<div style="font-size:clamp(15px,2.1vh,21px);color:var(--ink2);font-weight:500;margin-bottom:clamp(16px,2.5vh,28px);flex-shrink:0">When buyers ask AI for mattress topper recommendations, review sites dominate every response. ViscoSoft&rsquo;s 112 branded citations mean buyers who already know the brand find it. Buyers who do not know it never will.</div>
+
+<div style="flex:1;min-height:0;display:flex;gap:clamp(12px,1.6vw,20px);overflow:hidden">
+
+  <div style="flex:1.1;min-width:0;min-height:0;display:flex;flex-direction:column;gap:clamp(6px,0.8vh,10px);overflow:hidden">
+    <div style="font-size:clamp(12px,1.5vh,15px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4);flex-shrink:0">Top AI-Cited Domains for Mattress Topper Queries</div>
+    <div style="flex:1;min-height:0;display:flex;flex-direction:column;gap:clamp(5px,0.7vh,8px);overflow:hidden">
+      <div style="display:grid;grid-template-columns:1fr auto auto;align-items:center;gap:8px;background:var(--paper2);border:1px solid var(--rule);border-radius:6px;padding:clamp(6px,0.9vh,10px) clamp(10px,1.2vw,14px);flex-shrink:0">
+        <div style="display:flex;align-items:center;gap:8px"><img src="https://www.google.com/s2/favicons?domain=sleepfoundation.org&sz=32" style="width:14px;height:14px;border-radius:2px;flex-shrink:0"><span style="font-size:clamp(13px,1.75vh,17px);color:var(--ink2)">sleepfoundation.org</span></div>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.75vh,17px);font-weight:700;color:var(--ink)">131</span>
+        <span style="font-size:clamp(10px,1.2vh,12px);color:var(--ink4)">mentions</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr auto auto;align-items:center;gap:8px;background:var(--paper2);border:1px solid var(--rule);border-radius:6px;padding:clamp(6px,0.9vh,10px) clamp(10px,1.2vw,14px);flex-shrink:0">
+        <div style="display:flex;align-items:center;gap:8px"><img src="https://www.google.com/s2/favicons?domain=reddit.com&sz=32" style="width:14px;height:14px;border-radius:2px;flex-shrink:0"><span style="font-size:clamp(13px,1.75vh,17px);color:var(--ink2)">reddit.com</span></div>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.75vh,17px);font-weight:700;color:var(--ink)">79</span>
+        <span style="font-size:clamp(10px,1.2vh,12px);color:var(--ink4)">mentions</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr auto auto;align-items:center;gap:8px;background:var(--paper2);border:1px solid var(--rule);border-radius:6px;padding:clamp(6px,0.9vh,10px) clamp(10px,1.2vw,14px);flex-shrink:0">
+        <div style="display:flex;align-items:center;gap:8px"><img src="https://www.google.com/s2/favicons?domain=mattressclarity.com&sz=32" style="width:14px;height:14px;border-radius:2px;flex-shrink:0"><span style="font-size:clamp(13px,1.75vh,17px);color:var(--ink2)">mattressclarity.com</span></div>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.75vh,17px);font-weight:700;color:var(--ink)">71</span>
+        <span style="font-size:clamp(10px,1.2vh,12px);color:var(--ink4)">mentions</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr auto auto;align-items:center;gap:8px;background:var(--paper2);border:1px solid var(--rule);border-radius:6px;padding:clamp(6px,0.9vh,10px) clamp(10px,1.2vw,14px);flex-shrink:0">
+        <div style="display:flex;align-items:center;gap:8px"><img src="https://www.google.com/s2/favicons?domain=youtube.com&sz=32" style="width:14px;height:14px;border-radius:2px;flex-shrink:0"><span style="font-size:clamp(13px,1.75vh,17px);color:var(--ink2)">youtube.com</span></div>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.75vh,17px);font-weight:700;color:var(--ink)">66</span>
+        <span style="font-size:clamp(10px,1.2vh,12px);color:var(--ink4)">mentions</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr auto auto;align-items:center;gap:8px;background:var(--paper2);border:1px solid var(--rule);border-radius:6px;padding:clamp(6px,0.9vh,10px) clamp(10px,1.2vw,14px);flex-shrink:0">
+        <div style="display:flex;align-items:center;gap:8px"><img src="https://www.google.com/s2/favicons?domain=mattressnerd.com&sz=32" style="width:14px;height:14px;border-radius:2px;flex-shrink:0"><span style="font-size:clamp(13px,1.75vh,17px);color:var(--ink2)">mattressnerd.com</span></div>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.75vh,17px);font-weight:700;color:var(--ink)">54</span>
+        <span style="font-size:clamp(10px,1.2vh,12px);color:var(--ink4)">mentions</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr auto auto;align-items:center;gap:8px;background:var(--paper2);border:1px solid var(--rule);border-radius:6px;padding:clamp(6px,0.9vh,10px) clamp(10px,1.2vw,14px);flex-shrink:0">
+        <div style="display:flex;align-items:center;gap:8px"><img src="https://www.google.com/s2/favicons?domain=tomsguide.com&sz=32" style="width:14px;height:14px;border-radius:2px;flex-shrink:0"><span style="font-size:clamp(13px,1.75vh,17px);color:var(--ink2)">tomsguide.com</span></div>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.75vh,17px);font-weight:700;color:var(--ink)">46</span>
+        <span style="font-size:clamp(10px,1.2vh,12px);color:var(--ink4)">mentions</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr auto auto;align-items:center;gap:8px;background:var(--paper2);border:1px solid var(--rule);border-radius:6px;padding:clamp(6px,0.9vh,10px) clamp(10px,1.2vw,14px);flex-shrink:0">
+        <div style="display:flex;align-items:center;gap:8px"><img src="https://www.google.com/s2/favicons?domain=forbes.com&sz=32" style="width:14px;height:14px;border-radius:2px;flex-shrink:0"><span style="font-size:clamp(13px,1.75vh,17px);color:var(--ink2)">forbes.com</span></div>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.75vh,17px);font-weight:700;color:var(--ink)">44</span>
+        <span style="font-size:clamp(10px,1.2vh,12px);color:var(--ink4)">mentions</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr auto auto;align-items:center;gap:8px;background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:6px;padding:clamp(6px,0.9vh,10px) clamp(10px,1.2vw,14px);flex-shrink:0">
+        <div style="display:flex;align-items:center;gap:8px"><img src="https://www.google.com/s2/favicons?domain=viscosoft.com&sz=32" style="width:14px;height:14px;border-radius:2px;flex-shrink:0"><span style="font-size:clamp(13px,1.75vh,17px);color:var(--accent-dark);font-weight:600">viscosoft.com (branded only)</span></div>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.75vh,17px);font-weight:700;color:var(--accent-dark)">112</span>
+        <span style="font-size:clamp(10px,1.2vh,12px);color:var(--accent-dark)">mentions</span>
+      </div>
+    </div>
+    <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:6px;padding:clamp(7px,1vh,12px) clamp(10px,1.2vw,14px);flex-shrink:0">
+      <p style="font-size:clamp(12px,1.55vh,15px);color:var(--ink2);margin:0;line-height:1.5">sleepfoundation.org is the #1 AI-cited source (131 citations). ViscoSoft&rsquo;s own 112 citations are all branded. The strategy: create content that gets cited on non-branded queries.</p>
+    </div>
+  </div>
+
+  <div style="flex:1;min-width:0;min-height:0;display:flex;flex-direction:column;gap:clamp(6px,0.8vh,10px);overflow:hidden">
+    <div style="font-size:clamp(12px,1.5vh,15px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4);flex-shrink:0">Brand Mentions Across 90 Audited Reddit Posts</div>
+    <div style="border:1px solid var(--rule);border-radius:10px;overflow:hidden;flex-shrink:0">
+      <div style="display:grid;grid-template-columns:1fr auto auto;background:var(--paper3);padding:clamp(7px,1vh,11px) clamp(10px,1.3vw,16px);gap:8px">
+        <div style="font-size:clamp(10px,1.2vh,12px);font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--ink4)">Brand</div>
+        <div style="font-size:clamp(10px,1.2vh,12px);font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--ink4);text-align:center">Mentions</div>
+        <div style="font-size:clamp(10px,1.2vh,12px);font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--ink4)">Sentiment</div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr auto auto;border-top:1px solid var(--rule);padding:clamp(8px,1.1vh,13px) clamp(10px,1.3vw,16px);gap:8px;align-items:center">
+        <div style="display:flex;align-items:center;gap:8px"><img src="https://www.google.com/s2/favicons?domain=tempurpedic.com&sz=32" style="width:14px;height:14px;border-radius:2px;flex-shrink:0"><span style="font-size:clamp(13px,1.75vh,17px);color:var(--ink)">Tempur-Pedic</span></div>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.75vh,17px);font-weight:700;color:var(--ink);text-align:center">45</span>
+        <span style="font-size:clamp(12px,1.55vh,16px);color:var(--warn);font-weight:500">Mixed</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr auto auto;border-top:1px solid var(--rule);padding:clamp(8px,1.1vh,13px) clamp(10px,1.3vw,16px);gap:8px;align-items:center">
+        <div style="display:flex;align-items:center;gap:8px"><img src="https://www.google.com/s2/favicons?domain=purple.com&sz=32" style="width:14px;height:14px;border-radius:2px;flex-shrink:0"><span style="font-size:clamp(13px,1.75vh,17px);color:var(--ink)">Purple</span></div>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.75vh,17px);font-weight:700;color:var(--ink);text-align:center">33</span>
+        <span style="font-size:clamp(12px,1.55vh,16px);color:var(--ok);font-weight:500">Positive</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr auto auto;border-top:1px solid var(--rule);padding:clamp(8px,1.1vh,13px) clamp(10px,1.3vw,16px);gap:8px;align-items:center">
+        <div style="display:flex;align-items:center;gap:8px"><img src="https://www.google.com/s2/favicons?domain=brooklynbedding.com&sz=32" style="width:14px;height:14px;border-radius:2px;flex-shrink:0"><span style="font-size:clamp(13px,1.75vh,17px);color:var(--ink)">Brooklyn Bedding</span></div>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.75vh,17px);font-weight:700;color:var(--ink);text-align:center">23</span>
+        <span style="font-size:clamp(12px,1.55vh,16px);color:var(--warn);font-weight:500">Mixed</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr auto auto;border-top:1px solid var(--rule);padding:clamp(8px,1.1vh,13px) clamp(10px,1.3vw,16px);gap:8px;align-items:center">
+        <div style="display:flex;align-items:center;gap:8px"><img src="https://www.google.com/s2/favicons?domain=saatva.com&sz=32" style="width:14px;height:14px;border-radius:2px;flex-shrink:0"><span style="font-size:clamp(13px,1.75vh,17px);color:var(--ink)">Saatva</span></div>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.75vh,17px);font-weight:700;color:var(--ink);text-align:center">21</span>
+        <span style="font-size:clamp(12px,1.55vh,16px);color:var(--ok);font-weight:500">Positive</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr auto auto;border-top:1px solid var(--rule);padding:clamp(8px,1.1vh,13px) clamp(10px,1.3vw,16px);gap:8px;align-items:center">
+        <div style="display:flex;align-items:center;gap:8px"><img src="https://www.google.com/s2/favicons?domain=helixsleep.com&sz=32" style="width:14px;height:14px;border-radius:2px;flex-shrink:0"><span style="font-size:clamp(13px,1.75vh,17px);color:var(--ink)">Helix</span></div>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.75vh,17px);font-weight:700;color:var(--ink);text-align:center">20</span>
+        <span style="font-size:clamp(12px,1.55vh,16px);color:var(--warn);font-weight:500">Mixed</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr auto auto;border-top:1px solid var(--rule);padding:clamp(8px,1.1vh,13px) clamp(10px,1.3vw,16px);gap:8px;align-items:center;background:var(--accent-bg)">
+        <div style="display:flex;align-items:center;gap:8px"><img src="https://www.google.com/s2/favicons?domain=viscosoft.com&sz=32" style="width:14px;height:14px;border-radius:2px;flex-shrink:0"><span style="font-size:clamp(13px,1.75vh,17px);font-weight:700;color:var(--accent-dark)">ViscoSoft</span></div>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.75vh,17px);font-weight:700;color:var(--accent-dark);text-align:center">29</span>
+        <span style="font-size:clamp(12px,1.55vh,16px);color:var(--ink4);font-style:italic">Rarely recommended</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div></section>
+
+<!-- SLIDE 07: AI Visibility -->
+<section><div class="s">
+<div class="shdr" data-n="07" data-source="peekaboo"></div>
+<div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:clamp(12px,1.7vh,20px);flex-shrink:0">
+  <h2 style="margin:0">viscosoft.com <span style="color:var(--red)">Scores Well on Branded Queries, Invisible on Everything Else</span></h2>
+</div>
+<p style="font-size:clamp(15px,2.1vh,21px);color:var(--ink2);line-height:1.5;margin:0 0 clamp(12px,1.7vh,20px);font-weight:500;flex-shrink:0">126 buyer conversations analyzed across 5 AI models. ViscoSoft scores 50/100 overall: cited when buyers already know the brand, invisible when buyers use AI to discover what to buy.</p>
+<div style="display:grid;grid-template-columns:auto 1fr;gap:clamp(18px,2.5vw,32px);flex:1;min-height:0;align-items:start">
+  <div style="display:flex;flex-direction:column;gap:clamp(10px,1.4vh,16px);flex-shrink:0;width:clamp(190px,16vw,240px)">
+    <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:12px;padding:clamp(16px,2.2vh,26px) clamp(18px,2vw,24px);text-align:center">
+      <div style="font-family:'DM Mono',monospace;font-size:clamp(52px,7.5vh,80px);font-weight:700;color:var(--warn);line-height:1">50</div>
+      <div style="font-size:clamp(10px,1.3vh,13px);font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink4);margin-top:4px">out of 100</div>
+    </div>
+    <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(10px,1.4vh,16px) clamp(12px,1.5vw,16px)">
+      <div style="font-size:clamp(10px,1.2vh,12px);font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink4);margin-bottom:8px">Queries Tested</div>
+      <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:4px">
+        <span style="font-size:clamp(12px,1.6vh,16px);color:var(--ink2)">Branded score</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(14px,1.9vh,19px);font-weight:700;color:var(--ok)">98/100</span>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:4px">
+        <span style="font-size:clamp(12px,1.6vh,16px);color:var(--ink2)">Commercial score</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(14px,1.9vh,19px);font-weight:700;color:var(--warn)">45/100</span>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px">
+        <span style="font-size:clamp(12px,1.6vh,16px);color:var(--ink2)">Informational score</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(14px,1.9vh,19px);font-weight:700;color:var(--red)">7/100</span>
+      </div>
+      <div style="height:1px;background:var(--rule);margin-bottom:8px"></div>
+      <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:4px">
+        <span style="font-size:clamp(12px,1.6vh,16px);color:var(--ink2)">Total chats</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(14px,1.9vh,19px);font-weight:700;color:var(--ink)">126</span>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:4px">
+        <span style="font-size:clamp(12px,1.6vh,16px);color:var(--ink2)">Cited</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(14px,1.9vh,19px);font-weight:700;color:var(--warn)">61</span>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:baseline">
+        <span style="font-size:clamp(12px,1.6vh,16px);color:var(--ink2)">Not cited</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(14px,1.9vh,19px);font-weight:700;color:var(--red)">65</span>
+      </div>
+    </div>
+    <div style="background:var(--warn-bg);border:1px solid var(--warn-bd);border-radius:10px;padding:clamp(10px,1.4vh,16px) clamp(12px,1.5vw,16px)">
+      <div style="font-size:clamp(11px,1.45vh,14px);color:var(--warn);font-weight:600;line-height:1.4">ViscoSoft scores 98/100 on branded queries. On commercial buyer queries, the score drops to 45/100. On informational queries new buyers use to learn about toppers: 7/100.</div>
+    </div>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:clamp(8px,1.1vh,14px);min-height:0">
+    <div style="font-size:clamp(12px,1.5vh,15px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4);flex-shrink:0">Top Sources AI Cites for Mattress Topper and Sleep Comfort Queries</div>
+    <div style="display:flex;flex-direction:column;gap:clamp(5px,0.7vh,8px);flex:1;overflow:hidden">
+      <div style="display:grid;grid-template-columns:1fr auto auto;align-items:center;gap:8px;background:var(--paper2);border:1px solid var(--rule);border-radius:6px;padding:clamp(6px,0.9vh,10px) clamp(10px,1.2vw,14px);flex-shrink:0">
+        <div style="display:flex;align-items:center;gap:8px"><img src="https://www.google.com/s2/favicons?domain=sleepfoundation.org&sz=32" style="width:14px;height:14px;border-radius:2px;flex-shrink:0"><span style="font-size:clamp(13px,1.75vh,17px);color:var(--ink2)">sleepfoundation.org</span></div>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.75vh,17px);font-weight:700;color:var(--ink)">131</span>
+        <span style="font-size:clamp(10px,1.2vh,12px);color:var(--ink4)">mentions</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr auto auto;align-items:center;gap:8px;background:var(--paper2);border:1px solid var(--rule);border-radius:6px;padding:clamp(6px,0.9vh,10px) clamp(10px,1.2vw,14px);flex-shrink:0">
+        <div style="display:flex;align-items:center;gap:8px"><img src="https://www.google.com/s2/favicons?domain=reddit.com&sz=32" style="width:14px;height:14px;border-radius:2px;flex-shrink:0"><span style="font-size:clamp(13px,1.75vh,17px);color:var(--ink2)">reddit.com</span></div>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.75vh,17px);font-weight:700;color:var(--ink)">79</span>
+        <span style="font-size:clamp(10px,1.2vh,12px);color:var(--ink4)">mentions</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr auto auto;align-items:center;gap:8px;background:var(--paper2);border:1px solid var(--rule);border-radius:6px;padding:clamp(6px,0.9vh,10px) clamp(10px,1.2vw,14px);flex-shrink:0">
+        <div style="display:flex;align-items:center;gap:8px"><img src="https://www.google.com/s2/favicons?domain=mattressclarity.com&sz=32" style="width:14px;height:14px;border-radius:2px;flex-shrink:0"><span style="font-size:clamp(13px,1.75vh,17px);color:var(--ink2)">mattressclarity.com</span></div>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.75vh,17px);font-weight:700;color:var(--ink)">71</span>
+        <span style="font-size:clamp(10px,1.2vh,12px);color:var(--ink4)">mentions</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr auto auto;align-items:center;gap:8px;background:var(--paper2);border:1px solid var(--rule);border-radius:6px;padding:clamp(6px,0.9vh,10px) clamp(10px,1.2vw,14px);flex-shrink:0">
+        <div style="display:flex;align-items:center;gap:8px"><img src="https://www.google.com/s2/favicons?domain=youtube.com&sz=32" style="width:14px;height:14px;border-radius:2px;flex-shrink:0"><span style="font-size:clamp(13px,1.75vh,17px);color:var(--ink2)">youtube.com</span></div>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.75vh,17px);font-weight:700;color:var(--ink)">66</span>
+        <span style="font-size:clamp(10px,1.2vh,12px);color:var(--ink4)">mentions</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr auto auto;align-items:center;gap:8px;background:var(--paper2);border:1px solid var(--rule);border-radius:6px;padding:clamp(6px,0.9vh,10px) clamp(10px,1.2vw,14px);flex-shrink:0">
+        <div style="display:flex;align-items:center;gap:8px"><img src="https://www.google.com/s2/favicons?domain=mattressnerd.com&sz=32" style="width:14px;height:14px;border-radius:2px;flex-shrink:0"><span style="font-size:clamp(13px,1.75vh,17px);color:var(--ink2)">mattressnerd.com</span></div>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.75vh,17px);font-weight:700;color:var(--ink)">54</span>
+        <span style="font-size:clamp(10px,1.2vh,12px);color:var(--ink4)">mentions</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr auto auto;align-items:center;gap:8px;background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:6px;padding:clamp(6px,0.9vh,10px) clamp(10px,1.2vw,14px);flex-shrink:0">
+        <div style="display:flex;align-items:center;gap:8px"><img src="https://www.google.com/s2/favicons?domain=viscosoft.com&sz=32" style="width:14px;height:14px;border-radius:2px;flex-shrink:0"><span style="font-size:clamp(13px,1.75vh,17px);color:var(--accent-dark);font-weight:600">viscosoft.com (branded only)</span></div>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.75vh,17px);font-weight:700;color:var(--accent-dark)">112</span>
+        <span style="font-size:clamp(10px,1.2vh,12px);color:var(--accent-dark)">mentions</span>
+      </div>
+    </div>
+    <div style="background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:8px;padding:clamp(8px,1.1vh,13px) clamp(12px,1.5vw,18px);flex-shrink:0">
+      <span style="font-size:clamp(12px,1.6vh,16px);color:var(--ink2);line-height:1.4">sleepfoundation.org is the <strong style="color:var(--ink)">#1 AI-cited source in this category (131 citations)</strong>. reddit.com ranks 2nd (79 citations). ViscoSoft&rsquo;s own domain is present only on branded queries. Reddit presence is the fastest path to non-branded citation growth.</span>
+    </div>
+  </div>
+</div>
+</div></section>
+
+<!-- SLIDE 08: Competitive Gap -->
+<section><div class="s">
+<div class="shdr" data-n="08" data-source="ahrefs"></div>
+<div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:clamp(14px,2vh,22px);flex-shrink:0">
+  <h2 style="margin:0">The Competitive Gap <span style="color:var(--red)">Is Already Wide</span></h2>
+</div>
+<p style="font-size:clamp(15px,2.1vh,21px);color:var(--ink2);font-weight:500;margin:0 0 clamp(14px,2vh,22px);flex-shrink:0">On every signal AI uses to decide which topper brands to recommend: domain authority, organic traffic, indexed pages, and content volume, ViscoSoft trails every major competitor.</p>
+<div style="border:1px solid var(--rule);border-radius:12px;overflow:hidden;flex-shrink:0">
+  <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr 1fr 1fr;background:var(--paper3)">
+    <div style="padding:clamp(8px,1.1vh,12px) clamp(10px,1.3vw,16px);font-size:clamp(10px,1.2vh,12px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4)">Company</div>
+    <div style="padding:clamp(8px,1.1vh,12px) clamp(10px,1.3vw,16px);font-size:clamp(10px,1.2vh,12px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4);text-align:center">Domain Rating</div>
+    <div style="padding:clamp(8px,1.1vh,12px) clamp(10px,1.3vw,16px);font-size:clamp(10px,1.2vh,12px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4);text-align:center">Org Keywords</div>
+    <div style="padding:clamp(8px,1.1vh,12px) clamp(10px,1.3vw,16px);font-size:clamp(10px,1.2vh,12px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4);text-align:center">Monthly Traffic</div>
+    <div style="padding:clamp(8px,1.1vh,12px) clamp(10px,1.3vw,16px);font-size:clamp(10px,1.2vh,12px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4);text-align:center">Indexed Pages</div>
+    <div style="padding:clamp(8px,1.1vh,12px) clamp(10px,1.3vw,16px);font-size:clamp(10px,1.2vh,12px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4);text-align:center">Blog 2025/26</div>
+  </div>
+  <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr 1fr 1fr;border-top:1px solid var(--rule)">
+    <div style="padding:clamp(9px,1.2vh,14px) clamp(10px,1.3vw,16px);display:flex;align-items:center;gap:8px"><img src="https://www.google.com/s2/favicons?domain=tempurpedic.com&sz=32" style="width:16px;height:16px;border-radius:2px;flex-shrink:0"><span style="font-size:clamp(14px,1.9vh,19px);font-weight:600;color:var(--ink)">Tempur-Pedic</span></div>
+    <div style="padding:clamp(9px,1.2vh,14px) clamp(10px,1.3vw,16px);text-align:center;font-family:'DM Mono',monospace;font-size:clamp(14px,1.9vh,19px);font-weight:700;color:var(--ink)">82</div>
+    <div style="padding:clamp(9px,1.2vh,14px) clamp(10px,1.3vw,16px);text-align:center;font-size:clamp(14px,1.9vh,19px);color:var(--ink)">95K</div>
+    <div style="padding:clamp(9px,1.2vh,14px) clamp(10px,1.3vw,16px);text-align:center;font-size:clamp(14px,1.9vh,19px);color:var(--ink)">650K</div>
+    <div style="padding:clamp(9px,1.2vh,14px) clamp(10px,1.3vw,16px);text-align:center;font-size:clamp(14px,1.9vh,19px);color:var(--ink)">~18K</div>
+    <div style="padding:clamp(9px,1.2vh,14px) clamp(10px,1.3vw,16px);text-align:center;font-size:clamp(14px,1.9vh,19px);color:var(--ink)">45 / 12</div>
+  </div>
+  <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr 1fr 1fr;border-top:1px solid var(--rule)">
+    <div style="padding:clamp(9px,1.2vh,14px) clamp(10px,1.3vw,16px);display:flex;align-items:center;gap:8px"><img src="https://www.google.com/s2/favicons?domain=purple.com&sz=32" style="width:16px;height:16px;border-radius:2px;flex-shrink:0"><span style="font-size:clamp(14px,1.9vh,19px);font-weight:600;color:var(--ink)">Purple</span></div>
+    <div style="padding:clamp(9px,1.2vh,14px) clamp(10px,1.3vw,16px);text-align:center;font-family:'DM Mono',monospace;font-size:clamp(14px,1.9vh,19px);font-weight:700;color:var(--ink)">72</div>
+    <div style="padding:clamp(9px,1.2vh,14px) clamp(10px,1.3vw,16px);text-align:center;font-size:clamp(14px,1.9vh,19px);color:var(--ink)">70K</div>
+    <div style="padding:clamp(9px,1.2vh,14px) clamp(10px,1.3vw,16px);text-align:center;font-size:clamp(14px,1.9vh,19px);color:var(--ink)">280K</div>
+    <div style="padding:clamp(9px,1.2vh,14px) clamp(10px,1.3vw,16px);text-align:center;font-size:clamp(14px,1.9vh,19px);color:var(--ink)">~10K</div>
+    <div style="padding:clamp(9px,1.2vh,14px) clamp(10px,1.3vw,16px);text-align:center;font-size:clamp(14px,1.9vh,19px);color:var(--ink)">40 / 10</div>
+  </div>
+  <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr 1fr 1fr;border-top:1px solid var(--rule)">
+    <div style="padding:clamp(9px,1.2vh,14px) clamp(10px,1.3vw,16px);display:flex;align-items:center;gap:8px"><img src="https://www.google.com/s2/favicons?domain=saatva.com&sz=32" style="width:16px;height:16px;border-radius:2px;flex-shrink:0"><span style="font-size:clamp(14px,1.9vh,19px);font-weight:600;color:var(--ink)">Saatva</span></div>
+    <div style="padding:clamp(9px,1.2vh,14px) clamp(10px,1.3vw,16px);text-align:center;font-family:'DM Mono',monospace;font-size:clamp(14px,1.9vh,19px);font-weight:700;color:var(--ink)">70</div>
+    <div style="padding:clamp(9px,1.2vh,14px) clamp(10px,1.3vw,16px);text-align:center;font-size:clamp(14px,1.9vh,19px);color:var(--ink)">65K</div>
+    <div style="padding:clamp(9px,1.2vh,14px) clamp(10px,1.3vw,16px);text-align:center;font-size:clamp(14px,1.9vh,19px);color:var(--ink)">230K</div>
+    <div style="padding:clamp(9px,1.2vh,14px) clamp(10px,1.3vw,16px);text-align:center;font-size:clamp(14px,1.9vh,19px);color:var(--ink)">~8K</div>
+    <div style="padding:clamp(9px,1.2vh,14px) clamp(10px,1.3vw,16px);text-align:center;font-size:clamp(14px,1.9vh,19px);color:var(--ink)">35 / 8</div>
+  </div>
+  <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr 1fr 1fr;border-top:1px solid var(--rule)">
+    <div style="padding:clamp(9px,1.2vh,14px) clamp(10px,1.3vw,16px);display:flex;align-items:center;gap:8px"><img src="https://www.google.com/s2/favicons?domain=helixsleep.com&sz=32" style="width:16px;height:16px;border-radius:2px;flex-shrink:0"><span style="font-size:clamp(14px,1.9vh,19px);font-weight:600;color:var(--ink)">Helix</span></div>
+    <div style="padding:clamp(9px,1.2vh,14px) clamp(10px,1.3vw,16px);text-align:center;font-family:'DM Mono',monospace;font-size:clamp(14px,1.9vh,19px);font-weight:700;color:var(--ink)">68</div>
+    <div style="padding:clamp(9px,1.2vh,14px) clamp(10px,1.3vw,16px);text-align:center;font-size:clamp(14px,1.9vh,19px);color:var(--ink)">55K</div>
+    <div style="padding:clamp(9px,1.2vh,14px) clamp(10px,1.3vw,16px);text-align:center;font-size:clamp(14px,1.9vh,19px);color:var(--ink)">180K</div>
+    <div style="padding:clamp(9px,1.2vh,14px) clamp(10px,1.3vw,16px);text-align:center;font-size:clamp(14px,1.9vh,19px);color:var(--ink)">~6K</div>
+    <div style="padding:clamp(9px,1.2vh,14px) clamp(10px,1.3vw,16px);text-align:center;font-size:clamp(14px,1.9vh,19px);color:var(--ink)">30 / 8</div>
+  </div>
+  <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr 1fr 1fr;border-top:1px solid var(--rule)">
+    <div style="padding:clamp(9px,1.2vh,14px) clamp(10px,1.3vw,16px);display:flex;align-items:center;gap:8px"><img src="https://www.google.com/s2/favicons?domain=brooklynbedding.com&sz=32" style="width:16px;height:16px;border-radius:2px;flex-shrink:0"><span style="font-size:clamp(14px,1.9vh,19px);font-weight:600;color:var(--ink)">Brooklyn Bedding</span></div>
+    <div style="padding:clamp(9px,1.2vh,14px) clamp(10px,1.3vw,16px);text-align:center;font-family:'DM Mono',monospace;font-size:clamp(14px,1.9vh,19px);font-weight:700;color:var(--ink)">60</div>
+    <div style="padding:clamp(9px,1.2vh,14px) clamp(10px,1.3vw,16px);text-align:center;font-size:clamp(14px,1.9vh,19px);color:var(--ink)">28K</div>
+    <div style="padding:clamp(9px,1.2vh,14px) clamp(10px,1.3vw,16px);text-align:center;font-size:clamp(14px,1.9vh,19px);color:var(--ink)">90K</div>
+    <div style="padding:clamp(9px,1.2vh,14px) clamp(10px,1.3vw,16px);text-align:center;font-size:clamp(14px,1.9vh,19px);color:var(--ink)">~4K</div>
+    <div style="padding:clamp(9px,1.2vh,14px) clamp(10px,1.3vw,16px);text-align:center;font-size:clamp(14px,1.9vh,19px);color:var(--ink)">25 / 6</div>
+  </div>
+  <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr 1fr 1fr;border-top:1px solid var(--rule);background:var(--accent-bg)">
+    <div style="padding:clamp(9px,1.2vh,14px) clamp(10px,1.3vw,16px);display:flex;align-items:center;gap:8px"><img src="https://www.google.com/s2/favicons?domain=viscosoft.com&sz=32" style="width:16px;height:16px;border-radius:2px;flex-shrink:0"><span style="font-size:clamp(14px,1.9vh,19px);font-weight:700;color:var(--red)">ViscoSoft</span></div>
+    <div style="padding:clamp(9px,1.2vh,14px) clamp(10px,1.3vw,16px);text-align:center;font-family:'DM Mono',monospace;font-size:clamp(14px,1.9vh,19px);font-weight:700;color:var(--red)">48</div>
+    <div style="padding:clamp(9px,1.2vh,14px) clamp(10px,1.3vw,16px);text-align:center;font-family:'DM Mono',monospace;font-size:clamp(14px,1.9vh,19px);font-weight:700;color:var(--red)">18K</div>
+    <div style="padding:clamp(9px,1.2vh,14px) clamp(10px,1.3vw,16px);text-align:center;font-family:'DM Mono',monospace;font-size:clamp(14px,1.9vh,19px);font-weight:700;color:var(--red)">55K</div>
+    <div style="padding:clamp(9px,1.2vh,14px) clamp(10px,1.3vw,16px);text-align:center;font-family:'DM Mono',monospace;font-size:clamp(14px,1.9vh,19px);font-weight:700;color:var(--red)">~2K</div>
+    <div style="padding:clamp(9px,1.2vh,14px) clamp(10px,1.3vw,16px);text-align:center;font-family:'DM Mono',monospace;font-size:clamp(14px,1.9vh,19px);font-weight:700;color:var(--red)">15 / 4</div>
+  </div>
+</div>
+<div style="margin-top:clamp(8px,1.1vh,14px);font-size:clamp(11px,1.3vh,13px);color:var(--ink4);flex-shrink:0">Data: Ahrefs (est.) &nbsp;&middot;&nbsp; ViscoSoft&rsquo;s DR 48 is below every major competitor. Content volume and authority gaps compound: fewer indexed pages means fewer AI citations available on non-branded queries.</div>
+</div></section>
+<!-- SLIDE 09 -->
+<section><div class="s">
+<div class="shdr" data-n="09" data-source="reddit"></div>
+<div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:clamp(14px,2vh,22px);flex-shrink:0">
+  <h2 style="margin:0">Reddit Opportunity: <span style="color:var(--red)">Where Buyers Decide and AI Trains</span></h2>
+</div>
+<p style="font-size:clamp(15px,2.1vh,21px);color:var(--ink2);font-weight:500;margin:0 0 clamp(12px,1.7vh,20px);flex-shrink:0">reddit.com accounts for 79 AI citations in mattress topper queries. Buyers post topper comparisons daily in communities where ViscoSoft is absent from recommendation lists.</p>
+<div style="display:flex;gap:clamp(12px,1.8vw,20px);margin-bottom:clamp(10px,1.5vh,18px);flex-shrink:0">
+  <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:8px;padding:clamp(10px,1.4vh,16px);text-align:center;flex-shrink:0;flex-basis:0;flex-grow:1">
+    <img src="https://www.google.com/s2/favicons?domain=reddit.com&sz=32" style="width:18px;height:18px;border-radius:3px;display:block;margin:0 auto clamp(4px,0.6vh,8px)">
+    <div style="font-family:'DM Mono',monospace;font-size:clamp(18px,2.8vh,32px);font-weight:700;color:var(--accent)">951K</div>
+    <div style="font-size:clamp(10px,1.3vh,13px);font-weight:700;color:var(--ink4)">r/Mattress</div>
+    <div style="font-size:clamp(9px,1.1vh,11px);color:var(--ink4)">members</div>
+  </div>
+  <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:8px;padding:clamp(10px,1.4vh,16px);text-align:center;flex-shrink:0;flex-basis:0;flex-grow:1">
+    <img src="https://www.google.com/s2/favicons?domain=reddit.com&sz=32" style="width:18px;height:18px;border-radius:3px;display:block;margin:0 auto clamp(4px,0.6vh,8px)">
+    <div style="font-family:'DM Mono',monospace;font-size:clamp(18px,2.8vh,32px);font-weight:700;color:var(--accent)">3.4M</div>
+    <div style="font-size:clamp(10px,1.3vh,13px);font-weight:700;color:var(--ink4)">r/Frugal</div>
+    <div style="font-size:clamp(9px,1.1vh,11px);color:var(--ink4)">members</div>
+  </div>
+  <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:8px;padding:clamp(10px,1.4vh,16px);text-align:center;flex-shrink:0;flex-basis:0;flex-grow:1">
+    <img src="https://www.google.com/s2/favicons?domain=reddit.com&sz=32" style="width:18px;height:18px;border-radius:3px;display:block;margin:0 auto clamp(4px,0.6vh,8px)">
+    <div style="font-family:'DM Mono',monospace;font-size:clamp(18px,2.8vh,32px);font-weight:700;color:var(--accent)">~24M</div>
+    <div style="font-size:clamp(10px,1.3vh,13px);font-weight:700;color:var(--ink4)">r/LifeProTips</div>
+    <div style="font-size:clamp(9px,1.1vh,11px);color:var(--ink4)">members</div>
+  </div>
+  <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:8px;padding:clamp(10px,1.4vh,16px);text-align:center;flex-shrink:0;flex-basis:0;flex-grow:1">
+    <img src="https://www.google.com/s2/favicons?domain=reddit.com&sz=32" style="width:18px;height:18px;border-radius:3px;display:block;margin:0 auto clamp(4px,0.6vh,8px)">
+    <div style="font-family:'DM Mono',monospace;font-size:clamp(18px,2.8vh,32px);font-weight:700;color:var(--accent)">~50K</div>
+    <div style="font-size:clamp(10px,1.3vh,13px);font-weight:700;color:var(--ink4)">r/Bedding</div>
+    <div style="font-size:clamp(9px,1.1vh,11px);color:var(--ink4)">members</div>
+  </div>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,2.2vw,28px);flex:1;min-height:0">
+  <div style="display:flex;flex-direction:column;gap:clamp(6px,0.9vh,10px)">
+    <div style="font-size:clamp(11px,1.4vh,14px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4);flex-shrink:0">Active Subreddits for Sleep and Topper Buyers</div>
+    <div style="border:1px solid var(--rule);border-radius:10px;overflow:hidden;flex-shrink:0">
+      <div style="display:grid;grid-template-columns:1fr auto auto;background:var(--paper3);padding:clamp(7px,1vh,11px) clamp(10px,1.3vw,16px);gap:8px">
+        <div style="font-size:clamp(10px,1.2vh,12px);font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--ink4)">Subreddit</div>
+        <div style="font-size:clamp(10px,1.2vh,12px);font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--ink4);text-align:right">Posts in Audit</div>
+        <div style="font-size:clamp(10px,1.2vh,12px);font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--ink4);text-align:right">Members</div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr auto auto;border-top:1px solid var(--rule);padding:clamp(8px,1.1vh,13px) clamp(10px,1.3vw,16px);gap:8px;align-items:center">
+        <span style="font-size:clamp(13px,1.75vh,17px);font-weight:600;color:var(--accent)">r/Mattress</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.75vh,17px);font-weight:700;color:var(--ink);text-align:right">46</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.75vh,17px);font-weight:700;color:var(--ink);text-align:right">951K</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr auto auto;border-top:1px solid var(--rule);padding:clamp(8px,1.1vh,13px) clamp(10px,1.3vw,16px);gap:8px;align-items:center">
+        <span style="font-size:clamp(13px,1.75vh,17px);font-weight:600;color:var(--accent)">r/Frugal</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.75vh,17px);font-weight:700;color:var(--ink);text-align:right">9</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.75vh,17px);font-weight:700;color:var(--ink);text-align:right">3.4M</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr auto auto;border-top:1px solid var(--rule);padding:clamp(8px,1.1vh,13px) clamp(10px,1.3vw,16px);gap:8px;align-items:center">
+        <span style="font-size:clamp(13px,1.75vh,17px);font-weight:600;color:var(--accent)">r/LifeProTips</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.75vh,17px);font-weight:700;color:var(--ink);text-align:right">3</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.75vh,17px);font-weight:700;color:var(--ink);text-align:right">~24M</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr auto auto;border-top:1px solid var(--rule);padding:clamp(8px,1.1vh,13px) clamp(10px,1.3vw,16px);gap:8px;align-items:center">
+        <span style="font-size:clamp(13px,1.75vh,17px);font-weight:600;color:var(--accent)">r/Bedding</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.75vh,17px);font-weight:700;color:var(--ink);text-align:right">3</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.75vh,17px);font-weight:700;color:var(--ink);text-align:right">~50K</span>
+      </div>
+    </div>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:clamp(6px,0.9vh,10px)">
+    <div style="font-size:clamp(11px,1.4vh,14px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4);flex-shrink:0">Brand Mentions Across 90 Audited Posts</div>
+    <div style="border:1px solid var(--rule);border-radius:10px;overflow:hidden;flex-shrink:0">
+      <div style="display:grid;grid-template-columns:1fr auto auto;background:var(--paper3);padding:clamp(7px,1vh,11px) clamp(10px,1.3vw,16px);gap:8px">
+        <div style="font-size:clamp(10px,1.2vh,12px);font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--ink4)">Brand</div>
+        <div style="font-size:clamp(10px,1.2vh,12px);font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--ink4);text-align:center">Mentions</div>
+        <div style="font-size:clamp(10px,1.2vh,12px);font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--ink4)">Sentiment</div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr auto auto;border-top:1px solid var(--rule);padding:clamp(8px,1.1vh,13px) clamp(10px,1.3vw,16px);gap:8px;align-items:center">
+        <div style="display:flex;align-items:center;gap:8px"><img src="https://www.google.com/s2/favicons?domain=tempurpedic.com&sz=32" style="width:14px;height:14px;border-radius:2px;flex-shrink:0"><span style="font-size:clamp(13px,1.75vh,17px);color:var(--ink)">Tempur-Pedic</span></div>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.75vh,17px);font-weight:700;color:var(--ink);text-align:center">45</span>
+        <span style="font-size:clamp(12px,1.55vh,16px);color:var(--warn);font-weight:500">Mixed</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr auto auto;border-top:1px solid var(--rule);padding:clamp(8px,1.1vh,13px) clamp(10px,1.3vw,16px);gap:8px;align-items:center">
+        <div style="display:flex;align-items:center;gap:8px"><img src="https://www.google.com/s2/favicons?domain=purple.com&sz=32" style="width:14px;height:14px;border-radius:2px;flex-shrink:0"><span style="font-size:clamp(13px,1.75vh,17px);color:var(--ink)">Purple</span></div>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.75vh,17px);font-weight:700;color:var(--ink);text-align:center">33</span>
+        <span style="font-size:clamp(12px,1.55vh,16px);color:var(--ok);font-weight:500">Positive</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr auto auto;border-top:1px solid var(--rule);padding:clamp(8px,1.1vh,13px) clamp(10px,1.3vw,16px);gap:8px;align-items:center">
+        <div style="display:flex;align-items:center;gap:8px"><img src="https://www.google.com/s2/favicons?domain=brooklynbedding.com&sz=32" style="width:14px;height:14px;border-radius:2px;flex-shrink:0"><span style="font-size:clamp(13px,1.75vh,17px);color:var(--ink)">Brooklyn Bedding</span></div>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.75vh,17px);font-weight:700;color:var(--ink);text-align:center">23</span>
+        <span style="font-size:clamp(12px,1.55vh,16px);color:var(--warn);font-weight:500">Mixed</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr auto auto;border-top:1px solid var(--rule);padding:clamp(8px,1.1vh,13px) clamp(10px,1.3vw,16px);gap:8px;align-items:center">
+        <div style="display:flex;align-items:center;gap:8px"><img src="https://www.google.com/s2/favicons?domain=saatva.com&sz=32" style="width:14px;height:14px;border-radius:2px;flex-shrink:0"><span style="font-size:clamp(13px,1.75vh,17px);color:var(--ink)">Saatva</span></div>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.75vh,17px);font-weight:700;color:var(--ink);text-align:center">21</span>
+        <span style="font-size:clamp(12px,1.55vh,16px);color:var(--ok);font-weight:500">Positive</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr auto auto;border-top:1px solid var(--rule);padding:clamp(8px,1.1vh,13px) clamp(10px,1.3vw,16px);gap:8px;align-items:center">
+        <div style="display:flex;align-items:center;gap:8px"><img src="https://www.google.com/s2/favicons?domain=helixsleep.com&sz=32" style="width:14px;height:14px;border-radius:2px;flex-shrink:0"><span style="font-size:clamp(13px,1.75vh,17px);color:var(--ink)">Helix</span></div>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.75vh,17px);font-weight:700;color:var(--ink);text-align:center">20</span>
+        <span style="font-size:clamp(12px,1.55vh,16px);color:var(--warn);font-weight:500">Mixed</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr auto auto;border-top:1px solid var(--rule);padding:clamp(8px,1.1vh,13px) clamp(10px,1.3vw,16px);gap:8px;align-items:center;background:var(--accent-bg)">
+        <div style="display:flex;align-items:center;gap:8px"><img src="https://www.google.com/s2/favicons?domain=viscosoft.com&sz=32" style="width:14px;height:14px;border-radius:2px;flex-shrink:0"><span style="font-size:clamp(13px,1.75vh,17px);font-weight:700;color:var(--red)">ViscoSoft</span></div>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.75vh,17px);font-weight:700;color:var(--red);text-align:center">29</span>
+        <span style="font-size:clamp(12px,1.55vh,16px);color:var(--red);font-style:italic">Rarely recommended</span>
+      </div>
+    </div>
+    <div style="background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:8px;padding:clamp(8px,1.1vh,13px) clamp(12px,1.5vw,18px);flex-shrink:0">
+      <span style="font-size:clamp(12px,1.6vh,16px);color:var(--ink2);line-height:1.4">reddit.com is cited <strong style="color:var(--ink)">79 times by AI in this category</strong>. 72 of 90 audited posts (80%) are high-fit opportunities. ViscoSoft is mentioned in threads but absent from recommendation lists.</span>
+    </div>
+  </div>
+</div>
+</div></section>
+
+
+<!-- SLIDE 10 -->
+<section><div class="s">
+<div class="shdr" data-n="10"></div>
+<div style="flex:1;min-height:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:clamp(24px,4vh,48px);text-align:center;overflow:hidden">
+  <div style="display:flex;align-items:center;gap:clamp(10px,1.5vw,20px)">
+    <div style="display:flex;align-items:center;gap:8px;background:var(--red-bg);border:1px solid var(--red-bd);border-radius:32px;padding:clamp(8px,1.2vh,14px) clamp(14px,2vw,22px);flex-shrink:0">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+      <span style="font-size:clamp(13px,1.8vh,18px);font-weight:600;color:var(--red)">No comparison content</span>
+    </div>
+    <div style="font-size:clamp(20px,3vh,38px);font-weight:700;color:var(--ink3)">+</div>
+    <div style="display:flex;align-items:center;gap:8px;background:var(--red-bg);border:1px solid var(--red-bd);border-radius:32px;padding:clamp(8px,1.2vh,14px) clamp(14px,2vw,22px);flex-shrink:0">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+      <span style="font-size:clamp(13px,1.8vh,18px);font-weight:600;color:var(--red)">Eco/budget gaps</span>
+    </div>
+    <div style="font-size:clamp(20px,3vh,38px);font-weight:700;color:var(--ink3)">+</div>
+    <div style="display:flex;align-items:center;gap:8px;background:var(--red-bg);border:1px solid var(--red-bd);border-radius:32px;padding:clamp(8px,1.2vh,14px) clamp(14px,2vw,22px);flex-shrink:0">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
+      <span style="font-size:clamp(13px,1.8vh,18px);font-weight:600;color:var(--red)">AI invisible</span>
+    </div>
+  </div>
+  <div style="display:flex;flex-direction:column;align-items:center;gap:clamp(10px,1.5vh,18px)">
+    <div style="display:flex;align-items:center;justify-content:center;gap:clamp(10px,1.5vw,18px)">
+      <img src="https://www.google.com/s2/favicons?domain=viscosoft.com&sz=64" style="width:clamp(32px,4.5vh,52px);height:clamp(32px,4.5vh,52px);border-radius:8px;flex-shrink:0;object-fit:contain">
+      <div style="font-size:clamp(30px,5.5vh,64px);font-weight:800;color:var(--ink);letter-spacing:-0.02em;line-height:1.1">Every problem has a fix.</div>
+    </div>
+    <div style="font-size:clamp(16px,2.2vh,24px);color:var(--ink3);font-weight:400">Here is how we can help...</div>
+  </div>
+</div>
+</div></section>
+
+
+<!-- SLIDE 11 -->
+<section><div class="s">
+<div class="shdr" data-n="11"></div>
+<h2 style="margin:0 0 clamp(12px,1.7vh,20px)">Content Strategy: <span style="color:var(--accent)">Three Moves That Close Every Gap</span></h2>
+<p style="font-size:clamp(15px,2.1vh,21px);color:var(--ink2);font-weight:500;margin:0 0 clamp(14px,2vh,22px);flex-shrink:0">Each move maps directly to a gap identified in the audit. Together they build the comparison cluster and category authority AI needs to cite ViscoSoft on commercial queries.</p>
+<div style="flex:1;min-height:0;display:flex;gap:clamp(14px,2vw,24px);overflow:hidden">
+
+  <div style="background:var(--paper2);border:1.5px solid var(--rule);border-radius:12px;padding:clamp(14px,1.9vh,24px) clamp(16px,1.8vw,22px);display:flex;flex-direction:column;gap:clamp(10px,1.4vh,16px);flex:1;min-width:0">
+    <div style="display:flex;align-items:center;gap:8px;flex-shrink:0">
+      <span style="font-family:'DM Mono',monospace;font-size:clamp(11px,1.4vh,14px);background:var(--accent-bg);border:1px solid var(--accent-bd);color:var(--accent);padding:2px 8px;border-radius:4px;font-weight:600;flex-shrink:0">01</span>
+      <span style="font-size:clamp(11px,1.4vh,14px);color:var(--ink4);text-transform:uppercase;letter-spacing:.07em;font-weight:600">Comparison Cluster</span>
+    </div>
+    <div style="font-size:clamp(17px,2.4vh,26px);font-weight:700;color:var(--ink)">Build the Tempur-Pedic Comparison Cluster</div>
+    <div style="display:flex;flex-direction:column;gap:clamp(6px,0.9vh,10px)">
+      <div style="display:flex;align-items:flex-start;gap:8px;font-size:clamp(13px,1.7vh,17px);color:var(--ink2);line-height:1.45;padding:clamp(3px,0.4vh,5px) 0">
+        <span style="color:var(--ok);font-weight:700;flex-shrink:0;margin-top:1px">&#x2713;</span>
+        <span>Generic product pages and customer reviews already live</span>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:8px;font-size:clamp(13px,1.7vh,17px);color:var(--ink2);line-height:1.45;padding:clamp(3px,0.4vh,5px) 0">
+        <span style="color:var(--accent);font-weight:700;flex-shrink:0;margin-top:1px">&middot;</span>
+        <span>Add: ViscoSoft vs Tempur-Pedic, the definitive head-to-head comparison</span>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:8px;font-size:clamp(13px,1.7vh,17px);color:var(--ink2);line-height:1.45;padding:clamp(3px,0.4vh,5px) 0">
+        <span style="color:var(--accent);font-weight:700;flex-shrink:0;margin-top:1px">&middot;</span>
+        <span>Add: Best Tempur-Pedic Alternatives 2026, with ViscoSoft as the featured recommendation</span>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:8px;font-size:clamp(13px,1.7vh,17px);color:var(--ink2);line-height:1.45;padding:clamp(3px,0.4vh,5px) 0">
+        <span style="color:var(--accent);font-weight:700;flex-shrink:0;margin-top:1px">&middot;</span>
+        <span>Add: Is Tempur-Pedic Worth It? decision guide for buyers who balk at the price</span>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:8px;font-size:clamp(13px,1.7vh,17px);color:var(--ink2);line-height:1.45;padding:clamp(3px,0.4vh,5px) 0">
+        <span style="color:var(--accent);font-weight:700;flex-shrink:0;margin-top:1px">&middot;</span>
+        <span>Internal links across all three pages to form a cluster AI recognizes as the expert source</span>
+      </div>
+    </div>
+  </div>
+
+  <div style="background:var(--paper2);border:1.5px solid var(--rule);border-radius:12px;padding:clamp(14px,1.9vh,24px) clamp(16px,1.8vw,22px);display:flex;flex-direction:column;gap:clamp(10px,1.4vh,16px);flex:1;min-width:0">
+    <div style="display:flex;align-items:center;gap:8px;flex-shrink:0">
+      <span style="font-family:'DM Mono',monospace;font-size:clamp(11px,1.4vh,14px);background:var(--accent-bg);border:1px solid var(--accent-bd);color:var(--accent);padding:2px 8px;border-radius:4px;font-weight:600;flex-shrink:0">02</span>
+      <span style="font-size:clamp(11px,1.4vh,14px);color:var(--ink4);text-transform:uppercase;letter-spacing:.07em;font-weight:600">New Content</span>
+    </div>
+    <div style="font-size:clamp(17px,2.4vh,26px);font-weight:700;color:var(--ink)">Capture Eco and Budget Buyers</div>
+    <div style="display:flex;flex-direction:column;gap:clamp(6px,0.9vh,10px)">
+      <div style="display:flex;align-items:flex-start;gap:8px;font-size:clamp(13px,1.7vh,17px);color:var(--ink2);line-height:1.45;padding:clamp(3px,0.4vh,5px) 0">
+        <span style="color:var(--accent);font-weight:700;flex-shrink:0;margin-top:1px">&middot;</span>
+        <span>Best Eco-Friendly Mattress Toppers 2026: lead with ViscoSoft's ocean-recycled plastic manufacturing USP</span>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:8px;font-size:clamp(13px,1.7vh,17px);color:var(--ink2);line-height:1.45;padding:clamp(3px,0.4vh,5px) 0">
+        <span style="color:var(--accent);font-weight:700;flex-shrink:0;margin-top:1px">&middot;</span>
+        <span>Best Mattress Toppers Under $100: the Budget Buyer's Guide</span>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:8px;font-size:clamp(13px,1.7vh,17px);color:var(--ink2);line-height:1.45;padding:clamp(3px,0.4vh,5px) 0">
+        <span style="color:var(--accent);font-weight:700;flex-shrink:0;margin-top:1px">&middot;</span>
+        <span>Best Mattress Topper for Couples: Motion Isolation Ranked</span>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:8px;font-size:clamp(13px,1.7vh,17px);color:var(--ink2);line-height:1.45;padding:clamp(3px,0.4vh,5px) 0">
+        <span style="color:var(--accent);font-weight:700;flex-shrink:0;margin-top:1px">&middot;</span>
+        <span>Cheap Mattress Plus Great Topper: Why a Topper Beats Buying a New Mattress</span>
+      </div>
+    </div>
+  </div>
+
+  <div style="background:var(--paper2);border:1.5px solid var(--rule);border-radius:12px;padding:clamp(14px,1.9vh,24px) clamp(16px,1.8vw,22px);display:flex;flex-direction:column;gap:clamp(10px,1.4vh,16px);flex:1;min-width:0">
+    <div style="display:flex;align-items:center;gap:8px;flex-shrink:0">
+      <span style="font-family:'DM Mono',monospace;font-size:clamp(11px,1.4vh,14px);background:var(--accent-bg);border:1px solid var(--accent-bd);color:var(--accent);padding:2px 8px;border-radius:4px;font-weight:600;flex-shrink:0">03</span>
+      <span style="font-size:clamp(11px,1.4vh,14px);color:var(--ink4);text-transform:uppercase;letter-spacing:.07em;font-weight:600">AEO</span>
+    </div>
+    <div style="font-size:clamp(17px,2.4vh,26px);font-weight:700;color:var(--ink)">Own the Conversation in r/Mattress</div>
+    <div style="display:flex;flex-direction:column;gap:clamp(6px,0.9vh,10px)">
+      <div style="display:flex;align-items:flex-start;gap:8px;font-size:clamp(13px,1.7vh,17px);color:var(--ink2);line-height:1.45;padding:clamp(3px,0.4vh,5px) 0">
+        <span style="color:var(--accent);font-weight:700;flex-shrink:0;margin-top:1px">&middot;</span>
+        <span>4 targeted Reddit posts/month in r/Mattress on high-fit threads (72 identified in audit)</span>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:8px;font-size:clamp(13px,1.7vh,17px);color:var(--ink2);line-height:1.45;padding:clamp(3px,0.4vh,5px) 0">
+        <span style="color:var(--accent);font-weight:700;flex-shrink:0;margin-top:1px">&middot;</span>
+        <span>Outreach to mattress review blogs for editorial backlinks (DR 40+)</span>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:8px;font-size:clamp(13px,1.7vh,17px);color:var(--ink2);line-height:1.45;padding:clamp(3px,0.4vh,5px) 0">
+        <span style="color:var(--accent);font-weight:700;flex-shrink:0;margin-top:1px">&middot;</span>
+        <span>Build ViscoSoft-owned best topper resource to compete with sleepfoundation on non-branded queries</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div></section>
+
+
+<!-- SLIDE 12 -->
+<section><div class="s">
+<div class="shdr" data-n="12"></div>
+<h2 style="margin:0 0 clamp(12px,1.7vh,20px)">The Three-Part Fix: <span style="color:var(--accent)">Content, Authority and AI Presence</span></h2>
+<p style="font-size:clamp(15px,2.1vh,21px);color:var(--ink2);font-weight:500;margin:0 0 clamp(14px,2vh,22px);flex-shrink:0">Each of the three root problems has a direct solution. Together they compound: more content builds authority, more authority drives AI citations, more citations bring buyers.</p>
+<div style="flex:1;min-height:0;display:flex;gap:clamp(14px,2vw,24px);overflow:hidden">
+
+  <div style="flex:1;min-width:0;display:flex;flex-direction:column;background:var(--paper2);border:1.5px solid var(--rule);border-radius:12px;padding:clamp(14px,1.9vh,24px) clamp(16px,1.8vw,22px)">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:clamp(10px,1.4vh,16px);flex-shrink:0">
+      <div style="width:36px;height:36px;background:var(--accent-bg);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+      </div>
+      <span style="font-size:clamp(13px,1.7vh,17px);text-transform:uppercase;letter-spacing:.08em;color:var(--accent);font-weight:700">Content</span>
+    </div>
+    <div style="font-size:clamp(17px,2.3vh,24px);font-weight:700;color:var(--ink);line-height:1.2;margin-bottom:clamp(10px,1.4vh,16px);flex-shrink:0">Comparison Cluster + Eco Content</div>
+    <div style="display:flex;flex-direction:column;gap:clamp(8px,1.1vh,13px);flex:1">
+      <div style="display:flex;align-items:flex-start;gap:8px;font-size:clamp(14px,1.95vh,20px);color:var(--ink2);line-height:1.5">
+        <span style="color:var(--accent);font-weight:700;flex-shrink:0;margin-top:1px">&middot;</span>
+        <span>Build Tempur-Pedic comparison page, alternatives hub, and Is Tempur-Pedic Worth It? guide</span>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:8px;font-size:clamp(14px,1.95vh,20px);color:var(--ink2);line-height:1.5">
+        <span style="color:var(--accent);font-weight:700;flex-shrink:0;margin-top:1px">&middot;</span>
+        <span>Publish eco-friendly, budget, and couples topper guides leveraging ViscoSoft's product USPs</span>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:8px;font-size:clamp(14px,1.95vh,20px);color:var(--ink2);line-height:1.5">
+        <span style="color:var(--accent);font-weight:700;flex-shrink:0;margin-top:1px">&middot;</span>
+        <span>Internal link all pages to form a cluster AI recognizes as the definitive authority on this topic</span>
+      </div>
+    </div>
+    <div style="border-top:1px solid var(--rule);padding-top:clamp(10px,1.4vh,16px);flex-shrink:0;margin-top:clamp(12px,1.8vh,22px)">
+      <span style="font-family:'DM Mono',monospace;font-size:clamp(18px,2.8vh,32px);font-weight:800;color:var(--accent)">8 priority pages</span>
+      <div style="font-size:clamp(12px,1.5vh,15px);color:var(--ink3);margin-top:3px">comparison cluster, eco and budget content: all in months one and two</div>
+    </div>
+  </div>
+
+  <div style="flex:1;min-width:0;display:flex;flex-direction:column;background:var(--paper2);border:1.5px solid var(--rule);border-radius:12px;padding:clamp(14px,1.9vh,24px) clamp(16px,1.8vw,22px)">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:clamp(10px,1.4vh,16px);flex-shrink:0">
+      <div style="width:36px;height:36px;background:var(--accent-bg);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+      </div>
+      <span style="font-size:clamp(13px,1.7vh,17px);text-transform:uppercase;letter-spacing:.08em;color:var(--accent);font-weight:700">Authority</span>
+    </div>
+    <div style="font-size:clamp(17px,2.3vh,24px);font-weight:700;color:var(--ink);line-height:1.2;margin-bottom:clamp(10px,1.4vh,16px);flex-shrink:0">Targeted Link Building</div>
+    <div style="display:flex;flex-direction:column;gap:clamp(8px,1.1vh,13px);flex:1">
+      <div style="display:flex;align-items:flex-start;gap:8px;font-size:clamp(14px,1.95vh,20px);color:var(--ink2);line-height:1.5">
+        <span style="color:var(--accent);font-weight:700;flex-shrink:0;margin-top:1px">&middot;</span>
+        <span>Editorial backlinks from mattress review sites, sleep publications, and bedding blogs (DR 40+, dofollow)</span>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:8px;font-size:clamp(14px,1.95vh,20px);color:var(--ink2);line-height:1.5">
+        <span style="color:var(--accent);font-weight:700;flex-shrink:0;margin-top:1px">&middot;</span>
+        <span>Outreach to YouTube sleep creators already cited 66 times by AI in this category</span>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:8px;font-size:clamp(14px,1.95vh,20px);color:var(--ink2);line-height:1.5">
+        <span style="color:var(--accent);font-weight:700;flex-shrink:0;margin-top:1px">&middot;</span>
+        <span>Anchor text toward comparison and product benefit keywords to capture non-branded queries</span>
+      </div>
+    </div>
+    <div style="border-top:1px solid var(--rule);padding-top:clamp(10px,1.4vh,16px);flex-shrink:0;margin-top:clamp(12px,1.8vh,22px)">
+      <span style="font-family:'DM Mono',monospace;font-size:clamp(18px,2.8vh,32px);font-weight:800;color:var(--accent)">DR 48 <span style="color:var(--ok)">&#x2192; 55+</span></span>
+      <div style="font-size:clamp(12px,1.5vh,15px);color:var(--ink3);margin-top:3px">in 6 months, ahead of Brooklyn Bedding in citation authority</div>
+    </div>
+  </div>
+
+  <div style="flex:1;min-width:0;display:flex;flex-direction:column;background:var(--paper2);border:1.5px solid var(--rule);border-radius:12px;padding:clamp(14px,1.9vh,24px) clamp(16px,1.8vw,22px)">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:clamp(10px,1.4vh,16px);flex-shrink:0">
+      <div style="width:36px;height:36px;background:var(--accent-bg);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+      </div>
+      <span style="font-size:clamp(13px,1.7vh,17px);text-transform:uppercase;letter-spacing:.08em;color:var(--accent);font-weight:700">AEO</span>
+    </div>
+    <div style="font-size:clamp(17px,2.3vh,24px);font-weight:700;color:var(--ink);line-height:1.2;margin-bottom:clamp(10px,1.4vh,16px);flex-shrink:0">AEO and Reddit Presence</div>
+    <div style="display:flex;flex-direction:column;gap:clamp(8px,1.1vh,13px);flex:1">
+      <div style="display:flex;align-items:flex-start;gap:8px;font-size:clamp(14px,1.95vh,20px);color:var(--ink2);line-height:1.5">
+        <span style="color:var(--accent);font-weight:700;flex-shrink:0;margin-top:1px">&middot;</span>
+        <span>Structured data (Product, FAQ, Review, Organization schema) so AI models parse and cite viscosoft.com</span>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:8px;font-size:clamp(14px,1.95vh,20px);color:var(--ink2);line-height:1.5">
+        <span style="color:var(--accent);font-weight:700;flex-shrink:0;margin-top:1px">&middot;</span>
+        <span>Reddit presence in r/Mattress, r/Frugal, r/Bedding: 4 targeted posts/month</span>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:8px;font-size:clamp(14px,1.95vh,20px);color:var(--ink2);line-height:1.5">
+        <span style="color:var(--accent);font-weight:700;flex-shrink:0;margin-top:1px">&middot;</span>
+        <span>AI Peekaboo monitoring to track eco and budget query citation growth across all 5 LLMs</span>
+      </div>
+    </div>
+    <div style="border-top:1px solid var(--rule);padding-top:clamp(10px,1.4vh,16px);flex-shrink:0;margin-top:clamp(12px,1.8vh,22px)">
+      <div style="font-size:clamp(13px,1.7vh,17px);color:var(--ink3);line-height:1.5">Target: eco and budget queries from 0/100 to 40+ in 6 months</div>
+    </div>
+  </div>
+
+</div>
+</div></section>
+
+
+<!-- SLIDE 13 -->
+<section><div class="s">
+<div class="shdr" data-n="13"></div>
+<h2 style="margin:0 0 clamp(12px,1.7vh,20px)">What We Deliver Every Month</h2>
+<p style="font-size:clamp(15px,2.1vh,21px);color:var(--ink2);font-weight:500;margin:0 0 clamp(14px,2vh,22px);flex-shrink:0">A full managed service covering everything ViscoSoft needs to grow in search and AI.</p>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(10px,1.4vw,16px);flex:1;min-height:0;align-content:start">
+
+  <div class="card">
+    <svg style="width:17px;height:17px;flex-shrink:0;margin-top:3px" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+    <div style="flex:1;min-width:0">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:clamp(3px,0.4vh,5px)">
+        <div style="font-size:clamp(15px,2.1vh,21px);font-weight:700;color:var(--ink)">12 High-Quality Content Pieces</div>
+        <span class="badge">Per month</span>
+      </div>
+      <div style="font-size:clamp(14px,1.85vh,18px);color:var(--ink3);line-height:1.5">12 keyword-targeted articles per month built to rank and get cited by AI. Each targets comparison queries, eco and budget segments, and sleep comfort guides.</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <svg style="width:17px;height:17px;flex-shrink:0;margin-top:3px" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+    <div style="flex:1;min-width:0">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:clamp(3px,0.4vh,5px)">
+        <div style="font-size:clamp(15px,2.1vh,21px);font-weight:700;color:var(--ink)">Content Refresh Programme</div>
+        <span class="badge">Ongoing</span>
+      </div>
+      <div style="font-size:clamp(14px,1.85vh,18px);color:var(--ink3);line-height:1.5">Existing pages updated with 2026 data and LLM-optimised structure. Fastest path to new AI citations from the current site.</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <svg style="width:17px;height:17px;flex-shrink:0;margin-top:3px" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+    <div style="flex:1;min-width:0">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:clamp(3px,0.4vh,5px)">
+        <div style="font-size:clamp(15px,2.1vh,21px);font-weight:700;color:var(--ink)">Schema Markup Implementation</div>
+        <span class="badge">Site-wide</span>
+      </div>
+      <div style="font-size:clamp(14px,1.85vh,18px);color:var(--ink3);line-height:1.5">Product, FAQ, Review, and Organization schema so AI models understand and confidently cite viscosoft.com.</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <svg style="width:17px;height:17px;flex-shrink:0;margin-top:3px" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+    <div style="flex:1;min-width:0">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:clamp(3px,0.4vh,5px)">
+        <div style="font-size:clamp(15px,2.1vh,21px);font-weight:700;color:var(--ink)">On-Page SEO Optimisation</div>
+        <span class="badge">Ongoing</span>
+      </div>
+      <div style="font-size:clamp(14px,1.85vh,18px);color:var(--ink3);line-height:1.5">Meta titles, headings, and internal linking across all pages treated as entry points for buyers researching mattress toppers.</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <svg style="width:17px;height:17px;flex-shrink:0;margin-top:3px" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+    <div style="flex:1;min-width:0">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:clamp(3px,0.4vh,5px)">
+        <div style="font-size:clamp(15px,2.1vh,21px);font-weight:700;color:var(--ink)">Link Building</div>
+        <span class="badge">Ongoing</span>
+      </div>
+      <div style="font-size:clamp(14px,1.85vh,18px);color:var(--ink3);line-height:1.5">Dofollow editorial links from mattress review sites, sleep publications, and YouTube sleep creators already cited by LLMs. DR 40+ minimum.</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://www.google.com/s2/favicons?domain=reddit.com&sz=32" style="width:17px;height:17px;flex-shrink:0;margin-top:3px;border-radius:4px">
+    <div style="flex:1;min-width:0">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:clamp(3px,0.4vh,5px)">
+        <div style="font-size:clamp(15px,2.1vh,21px);font-weight:700;color:var(--ink)">Reddit Presence</div>
+        <span class="badge">4 posts/month</span>
+      </div>
+      <div style="font-size:clamp(14px,1.85vh,18px);color:var(--ink3);line-height:1.5">reddit.com is the #2 AI-cited source (79 citations) in this category. 4 targeted posts/month in r/Mattress, r/Frugal, and r/Bedding.</div>
+    </div>
+  </div>
+
+  <div class="card" style="grid-column:span 2">
+    <svg style="width:17px;height:17px;flex-shrink:0;margin-top:3px" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+    <div style="flex:1;min-width:0">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:clamp(3px,0.4vh,5px)">
+        <div style="font-size:clamp(15px,2.1vh,21px);font-weight:700;color:var(--ink)">Monthly Reporting</div>
+        <span class="badge">Monthly</span>
+      </div>
+      <div style="font-size:clamp(14px,1.85vh,18px);color:var(--ink3);line-height:1.5">AI citation count, organic traffic, DR progress, and non-branded query ranking movement delivered every month via AI Peekaboo, GSC, and GA4.</div>
+    </div>
+  </div>
+
+</div>
+</div></section>
+
+
+<!-- SLIDE 14 -->
+<section><div class="s">
+<div class="shdr" data-n="14"></div>
+<h2 style="margin:0 0 clamp(12px,1.7vh,20px)">How We Measure Progress</h2>
+<p style="font-size:clamp(15px,2.1vh,21px);color:var(--ink2);font-weight:500;margin:0 0 clamp(14px,2vh,22px);flex-shrink:0">We track progress across both traditional search and AI platforms every month, so ViscoSoft always knows exactly where it is gaining ground.</p>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:clamp(14px,2vw,24px);flex:1;min-height:0">
+
+  <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(16px,2.2vh,28px) clamp(16px,1.8vw,22px);display:flex;flex-direction:column">
+    <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/google-search-console-icon.png" style="width:clamp(32px,4.5vh,46px);height:clamp(32px,4.5vh,46px);border-radius:8px;margin-bottom:clamp(10px,1.4vh,16px);display:block">
+    <div style="font-size:clamp(17px,2.3vh,24px);font-weight:700;color:var(--ink);margin-bottom:clamp(8px,1.1vh,14px)">Google Search Console</div>
+    <p style="font-size:clamp(13px,1.75vh,17px);color:var(--ink3);line-height:1.5;margin:0 0 clamp(12px,1.7vh,20px)">Tracks clicks and impressions for every query viscosoft.com appears for. Confirms content drives visits and surfaces in AI Overviews.</p>
+    <div style="display:flex;flex-direction:column;gap:clamp(6px,0.9vh,10px)">
+      <div style="background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:6px;padding:clamp(6px,0.8vh,10px) clamp(10px,1.2vw,14px);font-size:clamp(13px,1.7vh,17px);color:var(--ink2);display:flex;align-items:flex-start;gap:6px">
+        <span style="color:var(--accent);font-weight:700;flex-shrink:0">&middot;</span>Clicks and impressions month over month
+      </div>
+      <div style="background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:6px;padding:clamp(6px,0.8vh,10px) clamp(10px,1.2vw,14px);font-size:clamp(13px,1.7vh,17px);color:var(--ink2);display:flex;align-items:flex-start;gap:6px">
+        <span style="color:var(--accent);font-weight:700;flex-shrink:0">&middot;</span>Non-branded mattress topper queries gaining impressions
+      </div>
+    </div>
+  </div>
+
+  <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(16px,2.2vh,28px) clamp(16px,1.8vw,22px);display:flex;flex-direction:column">
+    <img src="https://images.icon-icons.com/2699/PNG/512/google_analytics_image_logo_icon_168152.png" style="width:clamp(32px,4.5vh,46px);height:clamp(32px,4.5vh,46px);border-radius:8px;margin-bottom:clamp(10px,1.4vh,16px);display:block">
+    <div style="font-size:clamp(17px,2.3vh,24px);font-weight:700;color:var(--ink);margin-bottom:clamp(8px,1.1vh,14px)">Google Analytics 4</div>
+    <p style="font-size:clamp(13px,1.75vh,17px);color:var(--ink3);line-height:1.5;margin:0 0 clamp(12px,1.7vh,20px)">Tracks traffic by source so ViscoSoft can see organic growth, LLM referrals, and Reddit building momentum as a measurable direct channel.</p>
+    <div style="display:flex;flex-direction:column;gap:clamp(6px,0.9vh,10px)">
+      <div style="background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:6px;padding:clamp(6px,0.8vh,10px) clamp(10px,1.2vw,14px);font-size:clamp(13px,1.7vh,17px);color:var(--ink2);display:flex;align-items:flex-start;gap:6px">
+        <span style="color:var(--accent);font-weight:700;flex-shrink:0">&middot;</span>Organic vs paid vs direct traffic split
+      </div>
+      <div style="background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:6px;padding:clamp(6px,0.8vh,10px) clamp(10px,1.2vw,14px);font-size:clamp(13px,1.7vh,17px);color:var(--ink2);display:flex;align-items:flex-start;gap:6px">
+        <span style="color:var(--accent);font-weight:700;flex-shrink:0">&middot;</span>Referral traffic from ChatGPT, Perplexity, Gemini
+      </div>
+      <div style="background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:6px;padding:clamp(6px,0.8vh,10px) clamp(10px,1.2vw,14px);font-size:clamp(13px,1.7vh,17px);color:var(--ink2);display:flex;align-items:center;gap:6px">
+        <img src="https://www.google.com/s2/favicons?domain=reddit.com&sz=16" style="width:13px;height:13px;border-radius:2px;flex-shrink:0">Reddit as a direct traffic source
+      </div>
+    </div>
+  </div>
+
+  <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(16px,2.2vh,28px) clamp(16px,1.8vw,22px);display:flex;flex-direction:column">
+    <img src="https://www.aipeekaboo.com/icon.jpg" style="width:clamp(32px,4.5vh,46px);height:clamp(32px,4.5vh,46px);border-radius:8px;margin-bottom:clamp(10px,1.4vh,16px);display:block">
+    <div style="font-size:clamp(17px,2.3vh,24px);font-weight:700;color:var(--ink);margin-bottom:clamp(8px,1.1vh,14px)">AI Peekaboo</div>
+    <p style="font-size:clamp(13px,1.75vh,17px);color:var(--ink3);line-height:1.5;margin:0 0 clamp(12px,1.7vh,20px)">Baseline 50/100 overall, 45/100 commercial, 7/100 informational. We track whether eco and budget query content converts into AI recommendations.</p>
+    <div style="display:flex;flex-direction:column;gap:clamp(6px,0.9vh,10px)">
+      <div style="background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:6px;padding:clamp(6px,0.8vh,10px) clamp(10px,1.2vw,14px);font-size:clamp(13px,1.7vh,17px);color:var(--ink2);display:flex;align-items:center;gap:6px">
+        <img src="https://www.google.com/s2/favicons?domain=google.com&sz=16" style="width:13px;height:13px;border-radius:2px;flex-shrink:0">Google AI Overviews
+      </div>
+      <div style="background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:6px;padding:clamp(6px,0.8vh,10px) clamp(10px,1.2vw,14px);font-size:clamp(13px,1.7vh,17px);color:var(--ink2);display:flex;align-items:center;gap:6px">
+        <img src="https://www.google.com/s2/favicons?domain=chatgpt.com&sz=16" style="width:13px;height:13px;border-radius:2px;flex-shrink:0">ChatGPT
+      </div>
+      <div style="background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:6px;padding:clamp(6px,0.8vh,10px) clamp(10px,1.2vw,14px);font-size:clamp(13px,1.7vh,17px);color:var(--ink2);display:flex;align-items:center;gap:6px">
+        <img src="https://www.google.com/s2/favicons?domain=perplexity.ai&sz=16" style="width:13px;height:13px;border-radius:2px;flex-shrink:0">Perplexity
+      </div>
+      <div style="background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:6px;padding:clamp(6px,0.8vh,10px) clamp(10px,1.2vw,14px);font-size:clamp(13px,1.7vh,17px);color:var(--ink2);display:flex;align-items:center;gap:6px">
+        <img src="https://www.google.com/s2/favicons?domain=gemini.google.com&sz=16" style="width:13px;height:13px;border-radius:2px;flex-shrink:0">Gemini
+      </div>
+    </div>
+  </div>
+
+</div>
+</div></section>
+
+
+<!-- SLIDE 15 -->
+<section><div class="s">
+<div class="shdr" data-n="15"></div>
+<h2 style="margin:0 0 clamp(12px,1.7vh,20px)">Your Investment. What We Deliver and When.</h2>
+<div style="flex:1;min-height:0;overflow:hidden;display:grid;grid-template-columns:1.1fr 0.9fr;gap:clamp(16px,2vw,28px);align-items:start">
+
+  <div style="display:flex;flex-direction:column;gap:0">
+    <div style="display:flex;gap:clamp(10px,1.2vw,16px);align-items:flex-start">
+      <div style="display:flex;flex-direction:column;align-items:center;flex-shrink:0">
+        <div style="width:14px;height:14px;border-radius:50%;background:var(--accent);flex-shrink:0;margin-top:3px"></div>
+        <div style="width:2px;flex-grow:1;background:var(--rule);min-height:clamp(40px,6vh,70px)"></div>
+      </div>
+      <div style="padding-bottom:clamp(10px,1.4vh,18px)">
+        <div style="display:inline-block;background:var(--accent);color:#fff;font-size:clamp(11px,1.4vh,15px);font-weight:600;border-radius:4px;padding:2px 8px;margin-bottom:4px">Month 1 &middot; Foundation</div>
+        <div style="font-size:clamp(13px,1.7vh,17px);color:var(--ink3);margin-bottom:6px">Audit, strategy and first deliverables</div>
+        <ul style="margin:0;padding-left:14px;display:flex;flex-direction:column;gap:3px">
+          <li style="font-size:clamp(12px,1.55vh,16px);color:var(--ink3);line-height:1.4">Full SEO and AEO audit of viscosoft.com + competitive benchmark</li>
+          <li style="font-size:clamp(12px,1.55vh,16px);color:var(--ink3);line-height:1.4">Tempur-Pedic comparison page drafted and published</li>
+          <li style="font-size:clamp(12px,1.55vh,16px);color:var(--ink3);line-height:1.4">Schema implementation begins, meta titles optimised</li>
+          <li style="font-size:clamp(12px,1.55vh,16px);color:var(--ink3);line-height:1.4">Reddit strategy agreed, first posts drafted</li>
+        </ul>
+      </div>
+    </div>
+    <div style="display:flex;gap:clamp(10px,1.2vw,16px);align-items:flex-start">
+      <div style="display:flex;flex-direction:column;align-items:center;flex-shrink:0">
+        <div style="width:14px;height:14px;border-radius:50%;background:var(--accent);flex-shrink:0;margin-top:3px"></div>
+        <div style="width:2px;flex-grow:1;background:var(--rule);min-height:clamp(40px,6vh,70px)"></div>
+      </div>
+      <div style="padding-bottom:clamp(10px,1.4vh,18px)">
+        <div style="display:inline-block;background:var(--paper2);border:1px solid var(--rule);color:var(--ink3);font-size:clamp(11px,1.4vh,15px);font-weight:600;border-radius:4px;padding:2px 8px;margin-bottom:4px">Month 2 &middot; Build</div>
+        <div style="font-size:clamp(13px,1.7vh,17px);color:var(--ink3);margin-bottom:6px">Content, Reddit and link building</div>
+        <ul style="margin:0;padding-left:14px;display:flex;flex-direction:column;gap:3px">
+          <li style="font-size:clamp(12px,1.55vh,16px);color:var(--ink3);line-height:1.4">Eco-friendly, budget, and couples topper articles published</li>
+          <li style="font-size:clamp(12px,1.55vh,16px);color:var(--ink3);line-height:1.4">Reddit presence begins: 4 posts/month in r/Mattress and r/Frugal</li>
+          <li style="font-size:clamp(12px,1.55vh,16px);color:var(--ink3);line-height:1.4">First link building outreach to mattress review sites and sleep publications</li>
+        </ul>
+      </div>
+    </div>
+    <div style="display:flex;gap:clamp(10px,1.2vw,16px);align-items:flex-start">
+      <div style="display:flex;flex-direction:column;align-items:center;flex-shrink:0">
+        <div style="width:14px;height:14px;border-radius:50%;background:var(--accent);flex-shrink:0;margin-top:3px"></div>
+        <div style="width:2px;flex-grow:1;background:var(--rule);min-height:clamp(40px,6vh,70px)"></div>
+      </div>
+      <div style="padding-bottom:clamp(10px,1.4vh,18px)">
+        <div style="display:inline-block;background:var(--paper2);border:1px solid var(--rule);color:var(--ink3);font-size:clamp(11px,1.4vh,15px);font-weight:600;border-radius:4px;padding:2px 8px;margin-bottom:4px">Month 3 &middot; Compound</div>
+        <div style="font-size:clamp(13px,1.7vh,17px);color:var(--ink3);margin-bottom:6px">Comparison cluster complete and authority push</div>
+        <ul style="margin:0;padding-left:14px;display:flex;flex-direction:column;gap:3px">
+          <li style="font-size:clamp(12px,1.55vh,16px);color:var(--ink3);line-height:1.4">Full Tempur-Pedic comparison cluster live</li>
+          <li style="font-size:clamp(12px,1.55vh,16px);color:var(--ink3);line-height:1.4">12 articles published, Is Tempur-Pedic Worth It? and alternatives hub indexed</li>
+          <li style="font-size:clamp(12px,1.55vh,16px);color:var(--ink3);line-height:1.4">First editorial links live, DR movement begins</li>
+        </ul>
+      </div>
+    </div>
+    <div style="display:flex;gap:clamp(10px,1.2vw,16px);align-items:flex-start">
+      <div style="display:flex;flex-direction:column;align-items:center;flex-shrink:0">
+        <div style="width:14px;height:14px;border-radius:50%;background:var(--ink4);flex-shrink:0;margin-top:3px"></div>
+      </div>
+      <div>
+        <div style="display:inline-block;background:var(--accent-bg);border:1px solid var(--accent-bd);color:var(--accent);font-size:clamp(11px,1.4vh,15px);font-weight:600;border-radius:4px;padding:2px 8px;margin-bottom:4px">Month 4+ &middot; Ongoing</div>
+        <div style="font-size:clamp(13px,1.7vh,17px);color:var(--ink3)">Continued growth</div>
+        <p style="font-size:clamp(12px,1.55vh,16px);color:var(--ink4);margin-top:4px;font-style:italic">Each month builds on the last. Content compounds, AI citations grow, DR climbs.</p>
+      </div>
+    </div>
+  </div>
+
+  <div style="display:flex;flex-direction:column;gap:clamp(10px,1.4vh,18px)">
+    <div style="background:var(--accent-bg);border:1.5px solid var(--accent-bd);border-radius:12px;padding:clamp(14px,2vh,24px)">
+      <span style="background:var(--accent);color:#fff;font-size:clamp(10px,1.25vh,13px);font-weight:600;border-radius:20px;padding:2px 10px">Complete Solution</span>
+      <div style="font-size:clamp(16px,2.2vh,24px);font-weight:700;color:var(--ink);margin:clamp(8px,1.1vh,14px) 0 2px">Full AI Search Optimization</div>
+      <div style="font-size:clamp(11px,1.4vh,14px);color:var(--ink3);margin-bottom:clamp(8px,1.1vh,14px)">SEO + AEO + Reddit</div>
+      <div style="font-size:clamp(22px,3.2vh,40px);font-weight:800;color:var(--accent);margin-bottom:clamp(8px,1.1vh,14px)">$3,000<span style="font-size:clamp(13px,1.7vh,17px);font-weight:500;color:var(--ink3)">/month</span></div>
+      <div style="display:flex;flex-direction:column;gap:5px;margin-bottom:clamp(8px,1.1vh,14px)">
+        <div style="display:flex;align-items:flex-start;gap:7px;font-size:clamp(13px,1.7vh,17px);color:var(--ink2)"><span style="color:#22c55e;font-weight:700;flex-shrink:0">&#x2713;</span>12 AI-optimised content pieces per month</div>
+        <div style="display:flex;align-items:flex-start;gap:7px;font-size:clamp(13px,1.7vh,17px);color:var(--ink2)"><span style="color:#22c55e;font-weight:700;flex-shrink:0">&#x2713;</span>Reddit presence: 4 posts/month in sleep communities</div>
+        <div style="display:flex;align-items:flex-start;gap:7px;font-size:clamp(13px,1.7vh,17px);color:var(--ink2)"><span style="color:#22c55e;font-weight:700;flex-shrink:0">&#x2713;</span>Backlink outreach to raise domain authority</div>
+      </div>
+      <div style="font-size:clamp(11px,1.35vh,14px);color:var(--ink4);font-style:italic;border-top:1px solid var(--accent-bd);padding-top:8px">Includes AI Peekaboo subscription for visibility tracking</div>
+    </div>
+    <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:12px;padding:clamp(14px,2vh,24px)">
+      <span style="background:var(--paper3);color:var(--ink4);font-size:clamp(10px,1.25vh,13px);font-weight:600;border-radius:20px;padding:2px 10px;border:1px solid var(--rule)">Entry Point</span>
+      <div style="font-size:clamp(16px,2.2vh,24px);font-weight:700;color:var(--ink);margin:clamp(8px,1.1vh,14px) 0 2px">Reddit Only</div>
+      <div style="font-size:clamp(11px,1.4vh,14px);color:var(--ink3);margin-bottom:clamp(8px,1.1vh,14px)">Build trust where buyers decide</div>
+      <div style="font-size:clamp(22px,3.2vh,40px);font-weight:800;color:var(--ink);margin-bottom:clamp(8px,1.1vh,14px)">$1,500<span style="font-size:clamp(13px,1.7vh,17px);font-weight:500;color:var(--ink3)">/month</span></div>
+      <div style="display:flex;flex-direction:column;gap:5px;margin-bottom:clamp(8px,1.1vh,14px)">
+        <div style="display:flex;align-items:flex-start;gap:7px;font-size:clamp(13px,1.7vh,17px);color:var(--ink2)"><span style="color:#22c55e;font-weight:700;flex-shrink:0">&#x2713;</span>4 targeted Reddit posts/month in r/Mattress, r/Frugal, r/Bedding</div>
+        <div style="display:flex;align-items:flex-start;gap:7px;font-size:clamp(13px,1.7vh,17px);color:var(--ink2)"><span style="color:#22c55e;font-weight:700;flex-shrink:0">&#x2713;</span>Focus on high-fit threads where buyers decide (72 identified in audit)</div>
+        <div style="display:flex;align-items:flex-start;gap:7px;font-size:clamp(13px,1.7vh,17px);color:var(--ink2)"><span style="color:#22c55e;font-weight:700;flex-shrink:0">&#x2713;</span>Monthly report on thread performance and sentiment</div>
+      </div>
+      <div style="font-size:clamp(11px,1.35vh,14px);color:var(--ink4);font-style:italic;border-top:1px solid var(--rule);padding-top:8px">Scale up to Full AI Search Optimization anytime.</div>
+    </div>
+    <p style="font-size:clamp(12px,1.5vh,15px);color:var(--ink4);text-align:center;margin:0">3-month minimum commitment. After month 3, renews month-to-month with 30 days cancellation notice.</p>
+  </div>
+
+</div>
+</div></section>
+
+
+<!-- SLIDE 16 -->
+<section><div class="s">
+<div class="shdr" data-n="16"></div>
+<h2 style="margin:0 0 clamp(10px,1.5vh,18px);text-align:center">Ready to Own Mattress Topper Recommendations Before Review Sites Do?</h2>
+<a href="https://calendly.com/filipe-aipeekaboo/30min" target="_blank" rel="noopener" style="display:block;width:100%;background:var(--accent-bg);border:2px solid var(--accent-bd);border-radius:8px;padding:clamp(14px,2vh,22px);text-align:center;text-decoration:none;margin:clamp(12px,1.8vh,20px) 0 clamp(8px,1.1vh,14px);flex-shrink:0">
+  <span style="font-size:clamp(14px,1.9vh,22px);font-weight:700;color:var(--accent-dark);letter-spacing:0.01em">Book a 30-Minute Strategy Call</span>
+</a>
+<p style="text-align:center;font-size:clamp(13px,1.7vh,17px);color:var(--ink3);margin:0 auto clamp(12px,1.8vh,22px);flex-shrink:0">Every day without a Tempur-Pedic comparison page is another day buyers choose Saatva or Purple instead of ViscoSoft.</p>
+<div style="text-align:center;margin-bottom:clamp(8px,1.1vh,14px);flex-shrink:0">
+  <span style="font-size:clamp(11px,1.4vh,14px);font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--ink4)">The Team</span>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:clamp(12px,1.6vw,20px);align-items:start;flex-shrink:0">
+
+  <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:12px;padding:clamp(14px,1.9vh,22px);display:flex;flex-direction:column;gap:clamp(10px,1.3vh,16px);flex-shrink:0">
+    <div style="display:flex;align-items:center;gap:clamp(12px,1.6vh,17px)">
+      <img src="filipe.jpeg" style="width:50px;height:50px;border-radius:50%;object-fit:cover;border:2px solid var(--rule);flex-shrink:0">
+      <div>
+        <div style="font-size:clamp(14px,1.8vh,20px);font-weight:700;color:var(--ink)">Filipe Lins Duarte</div>
+        <div style="font-size:clamp(12px,1.5vh,16px);color:var(--accent);font-weight:500">Co-Founder &amp; CEO</div>
+        <a href="https://www.linkedin.com/in/filipelinsduarte" target="_blank" rel="noopener" style="font-size:clamp(11px,1.4vh,15px);color:var(--ink4);text-decoration:none">linkedin.com/in/filipelinsduarte</a>
+      </div>
+    </div>
+    <div style="font-size:clamp(12px,1.5vh,16px);color:var(--ink3);line-height:1.5">Sales leader turned founder. Built revenue teams across SaaS in Europe and the US.</div>
+    <div style="display:flex;flex-direction:column;gap:clamp(5px,0.7vh,8px)">
+      <div style="display:flex;align-items:center;gap:8px">
+        <img src="https://www.google.com/s2/favicons?domain=aipeekaboo.com&sz=32" style="width:16px;height:16px;border-radius:3px;flex-shrink:0">
+        <span style="font-size:clamp(11px,1.4vh,15px);font-weight:600;color:var(--ink2)">AI Peekaboo</span>
+        <span style="font-size:clamp(10px,1.2vh,13px);color:var(--ink3)">Co-Founder &amp; CEO</span>
+        <span style="font-size:clamp(10px,1.2vh,13px);color:var(--ink4);margin-left:auto">Aug 2025</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <img src="https://www.google.com/s2/favicons?domain=uber.com&sz=32" style="width:16px;height:16px;border-radius:3px;flex-shrink:0">
+        <span style="font-size:clamp(11px,1.4vh,15px);font-weight:600;color:var(--ink2)">Uber for Business</span>
+        <span style="font-size:clamp(10px,1.2vh,13px);color:var(--ink3)">Mid-Market AE &middot; 146%</span>
+        <span style="font-size:clamp(10px,1.2vh,13px);color:var(--ink4);margin-left:auto">2024</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <img src="https://www.google.com/s2/favicons?domain=meistertask.com&sz=32" style="width:16px;height:16px;border-radius:3px;flex-shrink:0">
+        <span style="font-size:clamp(11px,1.4vh,15px);font-weight:600;color:var(--ink2)">Meister</span>
+        <span style="font-size:clamp(10px,1.2vh,13px);color:var(--ink3)">#1 AE 2023 &middot; 100%+ ARR</span>
+        <span style="font-size:clamp(10px,1.2vh,13px);color:var(--ink4);margin-left:auto">2022</span>
+      </div>
+    </div>
+  </div>
+
+  <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:12px;padding:clamp(14px,1.9vh,22px);display:flex;flex-direction:column;gap:clamp(10px,1.3vh,16px);flex-shrink:0">
+    <div style="display:flex;align-items:center;gap:clamp(12px,1.6vh,17px)">
+      <img src="john.jpeg" style="width:50px;height:50px;border-radius:50%;object-fit:cover;border:2px solid var(--rule);flex-shrink:0">
+      <div>
+        <div style="font-size:clamp(14px,1.8vh,20px);font-weight:700;color:var(--ink)">John Rice</div>
+        <div style="font-size:clamp(12px,1.5vh,16px);color:var(--accent);font-weight:500">Co-Founder &amp; CTO</div>
+        <a href="https://www.linkedin.com/in/johnwilliamrice/" target="_blank" rel="noopener" style="font-size:clamp(11px,1.4vh,15px);color:var(--ink4);text-decoration:none">linkedin.com/in/johnwilliamrice</a>
+      </div>
+    </div>
+    <div style="font-size:clamp(12px,1.5vh,16px);color:var(--ink3);line-height:1.5">Full-stack engineer and serial builder. Designed AI Peekaboo's platform from scratch.</div>
+    <div style="display:flex;flex-direction:column;gap:clamp(5px,0.7vh,8px)">
+      <div style="display:flex;align-items:center;gap:8px">
+        <img src="https://www.google.com/s2/favicons?domain=aipeekaboo.com&sz=32" style="width:16px;height:16px;border-radius:3px;flex-shrink:0">
+        <span style="font-size:clamp(11px,1.4vh,15px);font-weight:600;color:var(--ink2)">AI Peekaboo</span>
+        <span style="font-size:clamp(10px,1.2vh,13px);color:var(--ink3)">Co-Founder &amp; CTO</span>
+        <span style="font-size:clamp(10px,1.2vh,13px);color:var(--ink4);margin-left:auto">Apr 2025</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <img src="https://www.google.com/s2/favicons?domain=subredditsignals.com&sz=32" style="width:16px;height:16px;border-radius:3px;flex-shrink:0">
+        <span style="font-size:clamp(11px,1.4vh,15px);font-weight:600;color:var(--ink2)">Subreddit Signals</span>
+        <span style="font-size:clamp(10px,1.2vh,13px);color:var(--ink3)">Founder</span>
+        <span style="font-size:clamp(10px,1.2vh,13px);color:var(--ink4);margin-left:auto">Nov 2024</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <img src="https://www.google.com/s2/favicons?domain=magiclinks.com&sz=32" style="width:16px;height:16px;border-radius:3px;flex-shrink:0">
+        <span style="font-size:clamp(11px,1.4vh,15px);font-weight:600;color:var(--ink2)">MagicLinks</span>
+        <span style="font-size:clamp(10px,1.2vh,13px);color:var(--ink3)">Senior Software Engineer</span>
+        <span style="font-size:clamp(10px,1.2vh,13px);color:var(--ink4);margin-left:auto">2021</span>
+      </div>
+    </div>
+  </div>
+
+  <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:12px;padding:clamp(14px,1.9vh,22px);display:flex;flex-direction:column;gap:clamp(10px,1.3vh,16px);flex-shrink:0">
+    <div style="display:flex;align-items:center;gap:clamp(12px,1.6vh,17px)">
+      <img src="danny-kirk.jpeg" style="width:50px;height:50px;border-radius:50%;object-fit:cover;border:2px solid var(--rule);flex-shrink:0">
+      <div>
+        <div style="font-size:clamp(14px,1.8vh,20px);font-weight:700;color:var(--ink)">Danny Kirk</div>
+        <div style="font-size:clamp(12px,1.5vh,16px);color:var(--accent);font-weight:500">COO &amp; Advisory</div>
+        <a href="https://www.linkedin.com/in/danielpkirk/" target="_blank" rel="noopener" style="font-size:clamp(11px,1.4vh,15px);color:var(--ink4);text-decoration:none">linkedin.com/in/danielpkirk</a>
+      </div>
+    </div>
+    <div style="font-size:clamp(12px,1.5vh,16px);color:var(--ink3);line-height:1.5">Reddit growth expert. Helping 500+ brands get recommended by AI through organic Reddit marketing.</div>
+    <div style="display:flex;flex-direction:column;gap:clamp(5px,0.7vh,8px)">
+      <div style="display:flex;align-items:center;gap:8px">
+        <img src="https://www.google.com/s2/favicons?domain=reddit.com&sz=32" style="width:16px;height:16px;border-radius:3px;flex-shrink:0">
+        <span style="font-size:clamp(11px,1.4vh,15px);font-weight:600;color:var(--ink2)">ReddiReach</span>
+        <span style="font-size:clamp(10px,1.2vh,13px);color:var(--ink3)">Founder</span>
+        <span style="font-size:clamp(10px,1.2vh,13px);color:var(--ink4);margin-left:auto">Dec 2017</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <img src="https://www.google.com/s2/favicons?domain=goaheadventures.com&sz=32" style="width:16px;height:16px;border-radius:3px;flex-shrink:0">
+        <span style="font-size:clamp(11px,1.4vh,15px);font-weight:600;color:var(--ink2)">GoAhead Ventures</span>
+        <span style="font-size:clamp(10px,1.2vh,13px);color:var(--ink3)">Venture Scout</span>
+        <span style="font-size:clamp(10px,1.2vh,13px);color:var(--ink4);margin-left:auto">Oct 2024</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <img src="https://www.google.com/s2/favicons?domain=energentmedia.com&sz=32" style="width:16px;height:16px;border-radius:3px;flex-shrink:0">
+        <span style="font-size:clamp(11px,1.4vh,15px);font-weight:600;color:var(--ink2)">Energent Media</span>
+        <span style="font-size:clamp(10px,1.2vh,13px);color:var(--ink3)">COO &middot; 6 to 7 figures</span>
+        <span style="font-size:clamp(10px,1.2vh,13px);color:var(--ink4);margin-left:auto">2018</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div></section>
+
+      </div>
+    </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reveal.min.js"></script>
+<script>
+var T=16,D='viscosoft.com',P='SEO / AEO Proposal';
+Reveal.initialize({hash:true,transition:'none',disableLayout:true,width:1920,height:1080,margin:0,minScale:0.1,maxScale:3});
+document.querySelectorAll('.shdr').forEach(function(el){
+  var n=el.getAttribute('data-n');
+  var src=el.getAttribute('data-source');
+  var srcHtml='';
+  if(src){
+    var srcMap={
+      'ahrefs':['https://www.google.com/s2/favicons?domain=ahrefs.com&sz=32','data from Ahrefs'],
+      'peekaboo':['https://www.aipeekaboo.com/icon.jpg','data from Peekaboo'],
+      'reddit':['https://www.google.com/s2/favicons?domain=reddit.com&sz=32','data from Reddit']
+    };
+    if(srcMap[src]) srcHtml='<div class="data-src"><img src="'+srcMap[src][0]+'"><span>'+srcMap[src][1]+'</span></div>';
+  }
+  var LEAD='<img src="https://www.google.com/s2/favicons?domain=viscosoft.com&sz=64" class="hdr-favicon">';
+  el.innerHTML='<div class="stripe"></div><div class="hdr"><div style="display:flex;align-items:center;gap:10px">'+LEAD+'<span class="tag">'+P+'</span></div><div class="hdr-right"><span class="snum">'+n+' / '+T+'</span><a class="powered" href="https://www.aipeekaboo.com" target="_blank" rel="noopener"><span>Powered by</span><img src="https://www.aipeekaboo.com/images/peekaboo-logo-black.png"></a></div></div><div class="divider"></div>'+(srcHtml?'<div style="display:flex;justify-content:flex-end;margin-bottom:clamp(5px,0.7vh,9px)">'+srcHtml+'</div>':'');
+});
+</script>
+</body>
+</html>

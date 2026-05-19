@@ -144,6 +144,7 @@ This order never changes between clients:
 - Font: use the font extracted from the client site; fall back to `DM Sans` — never Helvetica, never Arial as the primary
 - `--ink`, `--ink2`, `--ink3`, `--ink4`, `--paper`, `--paper2`, `--paper3`, `--rule` — always use the standard values from vsystems (these do not change per client, only the accent family changes)
 - `flex-shrink:0` on all card rows — never `flex:1`
+- **`flex-shrink:0` on every table-wrapping div** — never `flex:1;min-height:0` on a table container. The table border must end at the last data row, not stretch to fill remaining space.
 - `.shdr` JS injection for every slide header — never repeat header HTML inline
 - Client row in every table: always last, always `background:var(--accent-bg)`, always red monospace numbers
 - All `font-size` values use `clamp(min, preferred-vh, max)` — no fixed px sizes on text
@@ -151,6 +152,44 @@ This order never changes between clients:
 - No `align-items:stretch` on grid containers
 - Slide 01 (cover): no `.shdr` — manual layout with client favicon, tag, headline, "Powered by" row
 - Every other slide: starts with `<div class="shdr" data-n="XX"></div>`
+- **"Ready to Start" / CTA box in slide 15:** always `flex-shrink:0` — never `flex:1`
+- **Calendly "Book a 30-min call" link text:** always `color:#2563eb;text-decoration:underline` — visually blue and underlined so it reads as a hyperlink
+
+### Data Source Badges (slides 06, 07, 08, 09)
+
+Slides that pull from a specific data source show a labeled badge **below the divider line**, right-aligned. Add `data-source` to the `.shdr` div:
+
+```html
+<div class="shdr" data-n="06" data-source="ahrefs"></div>   <!-- Content / Competitive Gap -->
+<div class="shdr" data-n="07" data-source="peekaboo"></div>  <!-- AI Visibility -->
+<div class="shdr" data-n="08" data-source="ahrefs"></div>    <!-- Ahrefs Table -->
+<div class="shdr" data-n="09" data-source="reddit"></div>    <!-- Reddit Opportunity -->
+```
+
+The JS injection reads `data-source` and appends a badge after the divider. Required CSS:
+
+```css
+.data-src{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--rule);border-radius:5px;padding:3px 9px;background:var(--paper2);flex-shrink:0}
+.data-src span{font-size:clamp(10px,1.25vh,12px);color:var(--ink3);font-weight:500}
+.data-src img{height:clamp(13px,1.6vh,16px);width:auto;border-radius:2px;opacity:.85}
+```
+
+JS snippet (add `data-source` handling to the `.shdr` forEach):
+
+```js
+var src=el.getAttribute('data-source');
+var srcHtml='';
+if(src){
+  var srcMap={
+    'ahrefs':['https://www.google.com/s2/favicons?domain=ahrefs.com&sz=32','data from Ahrefs'],
+    'peekaboo':['https://www.aipeekaboo.com/icon.jpg','data from Peekaboo'],
+    'reddit':['https://www.google.com/s2/favicons?domain=reddit.com&sz=32','data from Reddit']
+  };
+  if(srcMap[src]) srcHtml='<div class="data-src"><img src="'+srcMap[src][0]+'"><span>'+srcMap[src][1]+'</span></div>';
+}
+// append srcHtml after the divider:
+// el.innerHTML = '...<div class="divider"></div>'+(srcHtml?'<div style="display:flex;justify-content:flex-end;margin-bottom:clamp(5px,0.7vh,9px)">'+srcHtml+'</div>':'');
+```
 
 ---
 

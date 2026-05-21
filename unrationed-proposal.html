@@ -1,0 +1,1212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unrationed SEO / AEO Proposal</title>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YV8FCLN403"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-YV8FCLN403');
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=DM+Mono:wght@400;500&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reveal.min.css">
+<style>
+  :root {
+    --accent:      #E2AD60;
+    --accent-bg:   #FDF7EC;
+    --accent-bd:   #F0D5A0;
+    --accent-dark: #B8872A;
+    --ink:         #0a2540;
+    --ink2:        #1e3a5f;
+    --ink3:        #617899;
+    --ink4:        #9EB3CC;
+    --paper:       #fff;
+    --paper2:      #F8F7F4;
+    --paper3:      #EFEDE7;
+    --rule:        #E4E0D6;
+    --ok:          #16a34a;
+    --ok-bg:       #f0fdf4;
+    --ok-bd:       #bbf7d0;
+    --warn:        #ea580c;
+    --warn-bg:     #fff7ed;
+    --warn-bd:     #fed7aa;
+    --red:         #dc2626;
+    --red-bg:      #fef2f2;
+    --red-bd:      #fecaca;
+  }
+  *{box-sizing:border-box;font-family:'Poppins',sans-serif}
+  body { font-family:'Poppins',sans-serif }
+  html,body{margin:0;padding:0;width:100%;height:100%;overflow:hidden;background:#fff}
+  .reveal-viewport,.reveal{width:100%!important;height:100%!important;background:#fff!important}
+  .reveal .slides section{width:100vw!important;height:100vh!important;padding:0!important;background:#fff!important;display:flex!important;flex-direction:column!important;text-align:left!important}
+  .s{width:100vw;height:100vh;padding:3vh 4.5vw 2.5vh;display:flex;flex-direction:column;position:relative;overflow:hidden}
+  .stripe{position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--accent-dark)}
+  .hdr{display:flex;justify-content:space-between;align-items:center;flex-shrink:0;margin-bottom:.6vh}
+  .hdr-right{display:flex;flex-direction:column;align-items:flex-end}
+  .snum{font-family:'DM Mono',monospace;font-size:clamp(10px,1.2vh,12px);font-weight:500;color:var(--accent-dark);background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:3px;padding:2px 8px;letter-spacing:.06em}
+  .tag{font-size:clamp(10px,1.2vh,12px);font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink4)}
+  .powered{display:flex;align-items:center;gap:5px;text-decoration:none;margin-top:3px}
+  .powered span{font-size:clamp(8px,1vh,10px);color:var(--ink4)}
+  .powered img{height:clamp(10px,1.4vh,14px);width:auto;opacity:.7}
+  .divider{height:1px;background:var(--rule);flex-shrink:0;margin-bottom:clamp(10px,1.5vh,18px)}
+  h1,h2{font-family:'Cormorant Garamond',serif}
+  h2{font-size:clamp(24px,4.2vh,46px);font-weight:700;color:var(--ink);margin:0 0 clamp(14px,2vh,22px);line-height:1.15;flex-shrink:0}
+  .rg2{display:grid;grid-template-columns:1fr 1fr}
+  .rg3{display:grid;grid-template-columns:1fr 1fr 1fr}
+  .rf3{display:flex}
+  .hdr-favicon{border-radius:10px;width:clamp(26px,3.5vh,40px);height:clamp(26px,3.5vh,40px);object-fit:contain}
+  .card{background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(13px,1.7vh,19px) clamp(14px,1.7vw,19px);display:flex;align-items:flex-start;gap:14px;flex-shrink:0}
+  .badge{font-size:clamp(9px,1.05vh,11px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-dark);background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:3px;padding:1px 6px;white-space:nowrap;flex-shrink:0}
+  .ok-badge{font-size:clamp(11px,1.3vh,13px);font-weight:700;color:var(--ok);background:var(--ok-bg);border:1px solid var(--ok-bd);border-radius:3px;padding:1px 5px;text-align:center;margin:auto}
+  .bullet-row{font-size:clamp(14px,1.9vh,18px);color:var(--ink3);display:flex;gap:7px}
+  .favicon-sm{width:12px;height:12px;border-radius:2px;opacity:0.6}
+  .data-src{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--rule);border-radius:5px;padding:3px 9px;background:var(--paper2);flex-shrink:0}
+  .data-src span{font-size:clamp(10px,1.25vh,12px);color:var(--ink3);font-weight:500}
+  .data-src img{height:clamp(13px,1.6vh,16px);width:auto;border-radius:2px;opacity:.85}
+  @media(max-width:1024px){.s{height:100svh!important;overflow-y:auto!important;-webkit-overflow-scrolling:touch!important}}
+  @media(max-width:900px){.rg3{grid-template-columns:1fr 1fr!important}.rf3{flex-wrap:wrap!important}.rf3>*{flex:1 1 calc(50% - 20px)!important;min-width:calc(50% - 20px)!important}}
+  @media(max-width:768px){[style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr!important}}
+  @media(max-width:640px){.rg2,.rg3{grid-template-columns:1fr!important}.rf3{flex-direction:column!important}.card{flex-direction:column}}
+</style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- SLIDE 01: Cover -->
+<section><div class="s" style="justify-content:center;gap:clamp(16px,2.5vh,32px)">
+<div class="stripe"></div>
+<div style="display:flex;align-items:center;gap:12px;flex-shrink:0">
+  <img src="https://www.google.com/s2/favicons?domain=unrationed.com&sz=128" style="border-radius:10px;width:clamp(36px,5vh,54px);height:clamp(36px,5vh,54px);flex-shrink:0;object-fit:contain">
+  <span class="tag" style="font-family:'DM Mono',monospace;font-weight:500;letter-spacing:.16em;color:var(--accent-dark);background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:4px;padding:5px 11px;text-transform:uppercase">SEO / AEO Proposal</span>
+</div>
+<h1 style="font-family:'Cormorant Garamond',serif;font-size:clamp(34px,6vh,68px);font-weight:700;color:var(--ink);margin:0;line-height:1.1;max-width:24ch;flex-shrink:0">How Unrationed Can Own Men's Personal Development AI Search Before GoBundance Does.</h1>
+<p style="font-size:clamp(16px,2.2vh,22px);color:var(--ink3);margin:0;max-width:68ch;line-height:1.5;flex-shrink:0">Zero AI citations across 32 commercial prompts. 60 competitor mentions in Reddit's most active men's communities. One window to lead the conversation before the space consolidates.</p>
+<div style="display:flex;align-items:center;gap:clamp(12px,1.6vw,20px);margin-top:clamp(10px,2vh,20px);flex-shrink:0">
+  <div style="display:flex;align-items:center;gap:8px">
+    <span style="font-size:clamp(10px,1.15vh,12px);font-weight:600;color:var(--ink4);letter-spacing:.12em;text-transform:uppercase">Powered by</span>
+    <img src="https://www.google.com/s2/favicons?domain=aipeekaboo.com&sz=64" alt="AI Peekaboo" style="width:18px;height:18px;border-radius:4px">
+    <span style="font-size:clamp(12px,1.4vh,15px);font-weight:600;color:var(--ink2)">aipeekaboo.com</span>
+  </div>
+  <div style="width:1px;height:18px;background:var(--rule)"></div>
+  <span style="font-size:clamp(11px,1.3vh,13px);color:var(--ink3);font-family:'DM Mono',monospace">Prepared for Unrationed &middot; May 2026</span>
+</div>
+</div></section>
+
+<!-- SLIDE 02: The Hook -->
+<section><div class="s">
+<div class="shdr" data-n="02"></div>
+<div style="flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;min-height:0">
+  <div style="display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:clamp(40px,6vh,72px)">
+    <img src="https://www.google.com/s2/favicons?domain=google.com&sz=64" style="width:clamp(28px,3.8vh,40px);height:clamp(28px,3.8vh,40px);border-radius:4px;flex-shrink:0">
+    <img src="https://www.google.com/s2/favicons?domain=chatgpt.com&sz=64" style="width:clamp(28px,3.8vh,40px);height:clamp(28px,3.8vh,40px);border-radius:4px;flex-shrink:0">
+    <p style="font-size:clamp(24px,3.8vh,40px);font-weight:700;letter-spacing:.02em;color:var(--ink);margin:0">Go on Google or ChatGPT and ask&hellip;</p>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:clamp(10px,1.6vh,18px);margin-bottom:clamp(44px,7vh,80px);width:100%;max-width:82ch">
+    <div style="display:flex;align-items:center;gap:14px;background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:10px;padding:clamp(14px,2vh,24px) clamp(18px,2.4vw,28px);text-align:left">
+      <svg style="width:18px;height:18px;flex-shrink:0;color:var(--ink4)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <span style="font-size:clamp(16px,2.2vh,23px);color:var(--ink);font-weight:500">best accountability programs for entrepreneurial men</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:14px;background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:10px;padding:clamp(14px,2vh,24px) clamp(18px,2.4vw,28px);text-align:left">
+      <svg style="width:18px;height:18px;flex-shrink:0;color:var(--ink4)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <span style="font-size:clamp(16px,2.2vh,23px);color:var(--ink);font-weight:500">men's rites of passage programs in the US</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:14px;background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:10px;padding:clamp(14px,2vh,24px) clamp(18px,2.4vw,28px);text-align:left">
+      <svg style="width:18px;height:18px;flex-shrink:0;color:var(--ink4)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <span style="font-size:clamp(16px,2.2vh,23px);color:var(--ink);font-weight:500">men's community for driven professionals</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:14px;background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:10px;padding:clamp(14px,2vh,24px) clamp(18px,2.4vw,28px);text-align:left">
+      <svg style="width:18px;height:18px;flex-shrink:0;color:var(--ink4)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <span style="font-size:clamp(16px,2.2vh,23px);color:var(--ink);font-weight:500">men's retreat programs combining adventure and personal growth</span>
+    </div>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:clamp(8px,1.2vh,14px);align-items:center">
+    <div style="display:flex;align-items:center;gap:12px">
+      <img src="https://www.google.com/s2/favicons?domain=unrationed.com&sz=64" style="width:clamp(22px,3vh,32px);height:clamp(22px,3vh,32px);border-radius:6px;flex-shrink:0;object-fit:contain">
+      <p style="font-size:clamp(22px,3.4vh,36px);font-weight:600;color:var(--ink2);margin:0">Is Unrationed showing up?</p>
+    </div>
+    <p style="font-size:clamp(26px,4.2vh,46px);font-weight:700;color:var(--red);margin:0;font-family:'DM Mono',monospace">No.</p>
+    <p style="font-size:clamp(15px,2.1vh,22px);color:var(--ink3);margin:0;font-weight:400">Let's understand why&hellip;</p>
+  </div>
+</div>
+</div></section>
+
+<!-- SLIDE 03: Three Root Problems -->
+<section><div class="s">
+<div class="shdr" data-n="03"></div>
+<h2 style="margin:0 0 clamp(10px,1.5vh,16px)">Three Root Problems <span style="color:var(--red)">Holding Unrationed Back</span></h2>
+<div style="font-size:clamp(14px,1.9vh,19px);color:var(--ink2);font-weight:500;margin-bottom:clamp(14px,2vh,24px);flex-shrink:0">Every missed AI response, every invisible search result, and every man who finds a competitor first traces back to one of these three.</div>
+<div style="display:flex;gap:clamp(14px,2vw,24px);flex-shrink:0">
+
+  <div style="flex:1;min-width:0;min-height:0;display:flex;flex-direction:column;background:var(--paper2);border:1.5px solid var(--rule);border-radius:12px;padding:clamp(12px,1.6vh,22px) clamp(16px,1.8vw,24px);overflow:hidden">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:clamp(7px,0.9vh,12px);flex-shrink:0">
+      <span style="font-family:'DM Mono',monospace;font-size:clamp(11px,1.4vh,14px);font-weight:500;color:var(--red);background:var(--red-bg);border:1px solid var(--red-bd);border-radius:4px;padding:2px 8px">01 / 03</span>
+      <span style="font-size:clamp(10px,1.25vh,13px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4)">Content</span>
+    </div>
+    <div style="font-size:clamp(20px,2.9vh,30px);font-weight:700;color:var(--ink);line-height:1.15;margin-bottom:clamp(12px,1.6vh,20px);flex-shrink:0;font-family:'Cormorant Garamond',serif">No AEO Content</div>
+    <div style="font-size:clamp(14px,1.95vh,20px);color:var(--ink2);line-height:1.5;flex-shrink:0;display:flex;flex-direction:column;gap:7px">
+      <div style="display:flex;gap:8px;align-items:flex-start"><span style="color:var(--red);flex-shrink:0">&#9679;</span><span>Blog is personal essays only: zero commercial, comparison, or best-of content</span></div>
+      <div style="display:flex;gap:8px;align-items:flex-start"><span style="color:var(--red);flex-shrink:0">&#9679;</span><span>No comparison pages, no alternatives guides, no transformation case studies</span></div>
+    </div>
+    <div style="flex:1;min-height:clamp(14px,1.8vh,22px)"></div>
+    <div style="padding-top:clamp(6px,0.8vh,10px);border-top:1px solid var(--rule);flex-shrink:0">
+      <span style="font-family:'DM Mono',monospace;font-size:clamp(22px,3.2vh,36px);font-weight:700;color:var(--red)">0</span>
+      <span style="font-size:clamp(11px,1.4vh,14px);color:var(--ink3);font-weight:500;margin-left:6px">comparison or alternatives pages<br><span style="font-size:clamp(10px,1.2vh,12px)">every buyer query goes to a competitor</span></span>
+    </div>
+  </div>
+
+  <div style="flex:1;min-width:0;min-height:0;display:flex;flex-direction:column;background:var(--paper2);border:1.5px solid var(--rule);border-radius:12px;padding:clamp(12px,1.6vh,22px) clamp(16px,1.8vw,24px);overflow:hidden">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:clamp(7px,0.9vh,12px);flex-shrink:0">
+      <span style="font-family:'DM Mono',monospace;font-size:clamp(11px,1.4vh,14px);font-weight:500;color:var(--red);background:var(--red-bg);border:1px solid var(--red-bd);border-radius:4px;padding:2px 8px">02 / 03</span>
+      <span style="font-size:clamp(10px,1.25vh,13px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4)">Authority</span>
+    </div>
+    <div style="font-size:clamp(20px,2.9vh,30px);font-weight:700;color:var(--ink);line-height:1.15;margin-bottom:clamp(12px,1.6vh,20px);flex-shrink:0;font-family:'Cormorant Garamond',serif">Authority Gap</div>
+    <div style="font-size:clamp(14px,1.95vh,20px);color:var(--ink2);line-height:1.5;flex-shrink:0;display:flex;flex-direction:column;gap:7px">
+      <div style="display:flex;gap:8px;align-items:flex-start"><span style="color:var(--red);flex-shrink:0">&#9679;</span><span>Low domain authority versus established players: ManKind Project, GoBundance, Tony Robbins</span></div>
+      <div style="display:flex;gap:8px;align-items:flex-start"><span style="color:var(--red);flex-shrink:0">&#9679;</span><span>No editorial links from men's wellness, entrepreneurship, or outdoor publications</span></div>
+    </div>
+    <div style="flex:1;min-height:clamp(14px,1.8vh,22px)"></div>
+    <div style="padding-top:clamp(6px,0.8vh,10px);border-top:1px solid var(--rule);flex-shrink:0">
+      <span style="font-family:'DM Mono',monospace;font-size:clamp(22px,3.2vh,36px);font-weight:700;color:var(--red)">0</span>
+      <span style="font-size:clamp(11px,1.4vh,14px);color:var(--ink3);font-weight:500;margin-left:6px">editorial backlinks from relevant publications<br><span style="font-size:clamp(10px,1.2vh,12px)">AI cites domains with proven authority</span></span>
+    </div>
+  </div>
+
+  <div style="flex:1;min-width:0;min-height:0;display:flex;flex-direction:column;background:var(--paper2);border:1.5px solid var(--rule);border-radius:12px;padding:clamp(12px,1.6vh,22px) clamp(16px,1.8vw,24px);overflow:hidden">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:clamp(7px,0.9vh,12px);flex-shrink:0">
+      <span style="font-family:'DM Mono',monospace;font-size:clamp(11px,1.4vh,14px);font-weight:500;color:var(--red);background:var(--red-bg);border:1px solid var(--red-bd);border-radius:4px;padding:2px 8px">03 / 03</span>
+      <span style="font-size:clamp(10px,1.25vh,13px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4)">AI Visibility</span>
+    </div>
+    <div style="font-size:clamp(20px,2.9vh,30px);font-weight:700;color:var(--ink);line-height:1.15;margin-bottom:clamp(12px,1.6vh,20px);flex-shrink:0;font-family:'Cormorant Garamond',serif">AI Invisible</div>
+    <div style="font-size:clamp(14px,1.95vh,20px);color:var(--ink2);line-height:1.5;flex-shrink:0;display:flex;flex-direction:column;gap:7px">
+      <div style="display:flex;gap:8px;align-items:flex-start"><span style="color:var(--red);flex-shrink:0">&#9679;</span><span>Visible on 0 of 32 commercial discovery prompts</span></div>
+      <div style="display:flex;gap:8px;align-items:flex-start"><span style="color:var(--red);flex-shrink:0">&#9679;</span><span>Competitors cited 60+ times in AI answers; Unrationed cited 0 times commercially</span></div>
+    </div>
+    <div style="flex:1;min-height:clamp(14px,1.8vh,22px)"></div>
+    <div style="padding-top:clamp(6px,0.8vh,10px);border-top:1px solid var(--rule);flex-shrink:0">
+      <span style="font-family:'DM Mono',monospace;font-size:clamp(22px,3.2vh,36px);font-weight:700;color:var(--red)">9/100</span>
+      <span style="font-size:clamp(11px,1.4vh,14px);color:var(--ink3);font-weight:500;margin-left:6px">AI visibility score<br><span style="font-size:clamp(10px,1.2vh,12px)">across 35 tracked prompts</span></span>
+    </div>
+  </div>
+
+</div>
+</div></section>
+
+<!-- SLIDE 04: Problem 01 Deep Dive (Content) -->
+<section><div class="s">
+<div class="shdr" data-n="04"></div>
+<div style="display:flex;align-items:center;gap:10px;margin-bottom:clamp(10px,1.5vh,16px);flex-shrink:0">
+  <span style="font-family:'DM Mono',monospace;font-size:clamp(10px,1.2vh,12px);font-weight:500;color:var(--red);background:var(--red-bg);border:1px solid var(--red-bd);border-radius:4px;padding:2px 8px">01 / 03</span>
+  <h2 style="margin:0">Every Buyer Query Returns a Competitor</h2>
+</div>
+<div style="font-size:clamp(15px,2.1vh,21px);color:var(--ink2);font-weight:500;margin-bottom:clamp(16px,2.5vh,28px);flex-shrink:0">The blog tells the Unrationed story beautifully. It does not answer the questions men type into AI when they are choosing where to invest a year of their life.</div>
+
+<div style="flex:1;min-height:0;display:flex;gap:clamp(12px,1.6vw,20px);overflow:hidden">
+
+  <div style="flex:1.1;min-width:0;min-height:0;display:flex;flex-direction:column;gap:clamp(6px,0.8vh,10px);overflow:hidden">
+    <div style="font-size:clamp(12px,1.5vh,15px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4);flex-shrink:0">Why Discovery Content Wins AI Citations</div>
+    <div style="flex:1;min-height:0;display:flex;flex-direction:column;gap:clamp(9px,1.2vh,14px);overflow:hidden">
+      <div style="display:flex;gap:10px;align-items:flex-start;background:var(--paper2);border:1px solid var(--rule);border-radius:6px;padding:clamp(7px,1vh,12px) clamp(10px,1.2vw,14px);flex-shrink:0">
+        <span style="color:var(--red);font-size:13px;flex-shrink:0;margin-top:1px">&#9679;</span>
+        <span style="font-size:clamp(14px,1.95vh,20px);color:var(--ink2);line-height:1.45">32 commercial prompts were tested. Unrationed scores 0/0 on every single one: no AI model recommends it for a buying-intent query</span>
+      </div>
+      <div style="display:flex;gap:10px;align-items:flex-start;background:var(--paper2);border:1px solid var(--rule);border-radius:6px;padding:clamp(7px,1vh,12px) clamp(10px,1.2vw,14px);flex-shrink:0">
+        <span style="color:var(--red);font-size:13px;flex-shrink:0;margin-top:1px">&#9679;</span>
+        <span style="font-size:clamp(14px,1.95vh,20px);color:var(--ink2);line-height:1.45">The blog contains only personal essays: no best men's accountability group comparison, no program-versus-program content, no outcome-based guides AI models can cite</span>
+      </div>
+      <div style="display:flex;gap:10px;align-items:flex-start;background:var(--paper2);border:1px solid var(--rule);border-radius:6px;padding:clamp(7px,1vh,12px) clamp(10px,1.2vw,14px);flex-shrink:0">
+        <span style="color:var(--red);font-size:13px;flex-shrink:0;margin-top:1px">&#9679;</span>
+        <span style="font-size:clamp(14px,1.95vh,20px);color:var(--ink2);line-height:1.45">mensgroup.com and bookretreats.com are cited 41 and 27 times across the same prompt space Unrationed is absent from</span>
+      </div>
+      <div style="background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:8px;padding:clamp(10px,1.4vh,16px) clamp(12px,1.4vw,16px);flex-shrink:0">
+        <p style="font-size:clamp(14px,1.95vh,20px);color:var(--ink);margin:0;line-height:1.5;font-weight:600">When a man asks AI which men's program to join, AI cites the source that wrote the definitive answer. Unrationed has not written it.</p>
+      </div>
+    </div>
+  </div>
+
+  <div style="flex:1;min-width:0;min-height:0;display:flex;flex-direction:column;gap:clamp(6px,0.8vh,10px);overflow:hidden">
+    <div style="font-size:clamp(12px,1.5vh,15px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4);flex-shrink:0">Discovery Content: What Exists vs. What Is Missing</div>
+    <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:8px;overflow:hidden;flex-shrink:0">
+      <div style="display:grid;grid-template-columns:1fr auto;padding:clamp(7px,0.9vh,10px) clamp(10px,1.2vw,14px);border-bottom:1px solid var(--rule);background:var(--paper3)">
+        <span style="font-size:clamp(12px,1.5vh,15px);font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--ink4)">Page</span>
+        <span style="font-size:clamp(12px,1.5vh,15px);font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--ink4)">Status</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr auto;padding:clamp(7px,0.9vh,10px) clamp(10px,1.2vw,14px);border-bottom:1px solid var(--rule);align-items:center;gap:10px">
+        <span style="font-size:clamp(14px,1.95vh,20px);color:var(--ink2);line-height:1.4">Program and challenge pages</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(11px,1.3vh,13px);font-weight:500;color:var(--ok);background:var(--ok-bg);border:1px solid var(--ok-bd);border-radius:3px;padding:1px 7px;flex-shrink:0">Live</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr auto;padding:clamp(7px,0.9vh,10px) clamp(10px,1.2vw,14px);border-bottom:1px solid var(--rule);align-items:center;gap:10px;background:var(--red-bg)">
+        <span style="font-size:clamp(14px,1.95vh,20px);color:var(--ink);line-height:1.4;font-weight:500">Unrationed vs GoBundance comparison</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(11px,1.3vh,13px);font-weight:500;color:var(--red);background:var(--red-bg);border:1px solid var(--red-bd);border-radius:3px;padding:1px 7px;flex-shrink:0">Missing</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr auto;padding:clamp(7px,0.9vh,10px) clamp(10px,1.2vw,14px);border-bottom:1px solid var(--rule);align-items:center;gap:10px;background:var(--red-bg)">
+        <span style="font-size:clamp(14px,1.95vh,20px);color:var(--ink);line-height:1.4;font-weight:500">Best Men's Retreat Programs US category guide</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(11px,1.3vh,13px);font-weight:500;color:var(--red);background:var(--red-bg);border:1px solid var(--red-bd);border-radius:3px;padding:1px 7px;flex-shrink:0">Missing</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr auto;padding:clamp(7px,0.9vh,10px) clamp(10px,1.2vw,14px);border-bottom:1px solid var(--rule);align-items:center;gap:10px;background:var(--red-bg)">
+        <span style="font-size:clamp(14px,1.95vh,20px);color:var(--ink);line-height:1.4;font-weight:500">Transformation case studies and outcome guides</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(11px,1.3vh,13px);font-weight:500;color:var(--red);background:var(--red-bg);border:1px solid var(--red-bd);border-radius:3px;padding:1px 7px;flex-shrink:0">Missing</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr auto;padding:clamp(7px,0.9vh,10px) clamp(10px,1.2vw,14px);align-items:center;gap:10px;background:var(--red-bg)">
+        <span style="font-size:clamp(14px,1.95vh,20px);color:var(--ink);line-height:1.4;font-weight:500">Modern rites of passage explainer for men</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(11px,1.3vh,13px);font-weight:500;color:var(--red);background:var(--red-bg);border:1px solid var(--red-bd);border-radius:3px;padding:1px 7px;flex-shrink:0">Missing</span>
+      </div>
+    </div>
+    <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:6px;padding:clamp(8px,1.1vh,13px) clamp(10px,1.2vw,14px);flex-shrink:0">
+      <p style="font-size:clamp(13px,1.75vh,17px);color:var(--ink2);margin:0;line-height:1.5">Each missing page is a buying-intent query that lands on GoBundance, Tony Robbins, or a third-party listicle. All four gaps can be filled in the first months of the engagement.</p>
+    </div>
+  </div>
+
+</div>
+</div></section>
+
+<!-- SLIDE 05: Problem 02 Deep Dive (Authority) -->
+<section><div class="s">
+<div class="shdr" data-n="05"></div>
+<div style="display:flex;align-items:center;gap:10px;margin-bottom:clamp(10px,1.5vh,16px);flex-shrink:0">
+  <span style="font-family:'DM Mono',monospace;font-size:clamp(10px,1.2vh,12px);font-weight:500;color:var(--red);background:var(--red-bg);border:1px solid var(--red-bd);border-radius:4px;padding:2px 8px">02 / 03</span>
+  <h2 style="margin:0">No Editorial Presence in the Channels That Matter</h2>
+</div>
+<div style="font-size:clamp(15px,2.1vh,21px);color:var(--ink2);font-weight:500;margin-bottom:clamp(16px,2.5vh,28px);flex-shrink:0">AI models cite domains with proven authority. Unrationed's 29 citations all come from branded prompts: men who already know the brand find it, men using AI to discover a program never will.</div>
+
+<div style="flex:1;min-height:0;display:flex;gap:clamp(12px,1.6vw,20px);overflow:hidden">
+
+  <div style="flex:1;min-width:0;min-height:0;display:flex;flex-direction:column;gap:clamp(6px,0.8vh,10px);overflow:hidden">
+    <div style="font-size:clamp(12px,1.5vh,15px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4);flex-shrink:0">The Authority Gap, in Plain Numbers</div>
+    <div style="flex:1;min-height:0;display:flex;flex-direction:column;gap:clamp(9px,1.2vh,14px);overflow:hidden">
+      <div style="display:flex;gap:10px;align-items:flex-start;background:var(--paper2);border:1px solid var(--rule);border-radius:6px;padding:clamp(7px,1vh,12px) clamp(10px,1.2vw,14px);flex-shrink:0">
+        <span style="color:var(--red);font-size:13px;flex-shrink:0;margin-top:1px">&#9679;</span>
+        <span style="font-size:clamp(14px,1.95vh,20px);color:var(--ink2);line-height:1.45">Unrationed.com receives 29 AI citations: every one of them from a branded prompt where the searcher already typed the name</span>
+      </div>
+      <div style="display:flex;gap:10px;align-items:flex-start;background:var(--paper2);border:1px solid var(--rule);border-radius:6px;padding:clamp(7px,1vh,12px) clamp(10px,1.2vw,14px);flex-shrink:0">
+        <span style="color:var(--red);font-size:13px;flex-shrink:0;margin-top:1px">&#9679;</span>
+        <span style="font-size:clamp(14px,1.95vh,20px);color:var(--ink2);line-height:1.45">mankindproject.org earns 25 AI mentions and gobundance.com 21: both backed by years of editorial coverage and an established link profile</span>
+      </div>
+      <div style="display:flex;gap:10px;align-items:flex-start;background:var(--paper2);border:1px solid var(--rule);border-radius:6px;padding:clamp(7px,1vh,12px) clamp(10px,1.2vw,14px);flex-shrink:0">
+        <span style="color:var(--red);font-size:13px;flex-shrink:0;margin-top:1px">&#9679;</span>
+        <span style="font-size:clamp(14px,1.95vh,20px);color:var(--ink2);line-height:1.45">Zero backlinks from men's wellness publishers, entrepreneurship media, or outdoor and adventure press: no third-party signal of authority for AI to weigh</span>
+      </div>
+      <div style="background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:8px;padding:clamp(10px,1.4vh,16px) clamp(12px,1.4vw,16px);flex-shrink:0">
+        <p style="font-size:clamp(14px,1.95vh,20px);color:var(--ink);margin:0;line-height:1.5;font-weight:600">Without editorial links from niche publications, Unrationed cannot compete for citation share on the queries that bring new members.</p>
+      </div>
+    </div>
+  </div>
+
+  <div style="flex:1;min-width:0;min-height:0;display:flex;flex-direction:column;gap:clamp(6px,0.8vh,10px);overflow:hidden">
+    <div style="font-size:clamp(12px,1.5vh,15px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4);flex-shrink:0">AI Citations: Branded Only vs. Established Players</div>
+    <div style="flex:1;min-height:0;display:flex;flex-direction:column;gap:clamp(5px,0.7vh,8px);overflow:hidden">
+      <div style="display:grid;grid-template-columns:1fr auto auto;align-items:center;gap:8px;background:var(--paper2);border:1px solid var(--rule);border-radius:6px;padding:clamp(6px,0.9vh,10px) clamp(10px,1.2vw,14px);flex-shrink:0">
+        <div style="display:flex;align-items:center;gap:8px"><img src="https://www.google.com/s2/favicons?domain=mensgroup.com&sz=32" style="width:14px;height:14px;border-radius:2px;flex-shrink:0"><span style="font-size:clamp(13px,1.75vh,17px);color:var(--ink2)">mensgroup.com</span></div>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.75vh,17px);font-weight:700;color:var(--ink)">41</span>
+        <span style="font-size:clamp(10px,1.2vh,12px);color:var(--ink4)">citations</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr auto auto;align-items:center;gap:8px;background:var(--paper2);border:1px solid var(--rule);border-radius:6px;padding:clamp(6px,0.9vh,10px) clamp(10px,1.2vw,14px);flex-shrink:0">
+        <div style="display:flex;align-items:center;gap:8px"><img src="https://www.google.com/s2/favicons?domain=bookretreats.com&sz=32" style="width:14px;height:14px;border-radius:2px;flex-shrink:0"><span style="font-size:clamp(13px,1.75vh,17px);color:var(--ink2)">bookretreats.com</span></div>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.75vh,17px);font-weight:700;color:var(--ink)">27</span>
+        <span style="font-size:clamp(10px,1.2vh,12px);color:var(--ink4)">citations</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr auto auto;align-items:center;gap:8px;background:var(--paper2);border:1px solid var(--rule);border-radius:6px;padding:clamp(6px,0.9vh,10px) clamp(10px,1.2vw,14px);flex-shrink:0">
+        <div style="display:flex;align-items:center;gap:8px"><img src="https://www.google.com/s2/favicons?domain=mankindproject.org&sz=32" style="width:14px;height:14px;border-radius:2px;flex-shrink:0"><span style="font-size:clamp(13px,1.75vh,17px);color:var(--ink2)">mankindproject.org</span></div>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.75vh,17px);font-weight:700;color:var(--ink)">25</span>
+        <span style="font-size:clamp(10px,1.2vh,12px);color:var(--ink4)">citations</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr auto auto;align-items:center;gap:8px;background:var(--paper2);border:1px solid var(--rule);border-radius:6px;padding:clamp(6px,0.9vh,10px) clamp(10px,1.2vw,14px);flex-shrink:0">
+        <div style="display:flex;align-items:center;gap:8px"><img src="https://www.google.com/s2/favicons?domain=gobundance.com&sz=32" style="width:14px;height:14px;border-radius:2px;flex-shrink:0"><span style="font-size:clamp(13px,1.75vh,17px);color:var(--ink2)">gobundance.com</span></div>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.75vh,17px);font-weight:700;color:var(--ink)">21</span>
+        <span style="font-size:clamp(10px,1.2vh,12px);color:var(--ink4)">citations</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr auto auto;align-items:center;gap:8px;background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:6px;padding:clamp(6px,0.9vh,10px) clamp(10px,1.2vw,14px);flex-shrink:0">
+        <div style="display:flex;align-items:center;gap:8px"><img src="https://www.google.com/s2/favicons?domain=unrationed.com&sz=32" style="width:14px;height:14px;border-radius:2px;flex-shrink:0"><span style="font-size:clamp(13px,1.75vh,17px);color:var(--accent-dark);font-weight:600">unrationed.com (branded only)</span></div>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.75vh,17px);font-weight:700;color:var(--red)">29</span>
+        <span style="font-size:clamp(10px,1.2vh,12px);color:var(--accent-dark)">citations</span>
+      </div>
+    </div>
+    <div style="background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:8px;padding:clamp(8px,1.1vh,13px) clamp(12px,1.5vw,18px);flex-shrink:0">
+      <span style="font-size:clamp(12px,1.6vh,16px);color:var(--ink2);line-height:1.4">Unrationed's 29 citations look healthy until you see they are <strong style="color:var(--ink)">100% branded</strong>. The strategy: build content that earns citations on non-branded discovery queries.</span>
+    </div>
+  </div>
+
+</div>
+</div></section>
+
+<!-- SLIDE 06: Problem 03 Deep Dive (Reddit / Community Presence) -->
+<section><div class="s">
+<div class="shdr" data-n="06" data-source="reddit"></div>
+<div style="display:flex;align-items:center;gap:10px;margin-bottom:clamp(10px,1.5vh,16px);flex-shrink:0">
+  <span style="font-family:'DM Mono',monospace;font-size:clamp(10px,1.2vh,12px);font-weight:500;color:var(--red);background:var(--red-bg);border:1px solid var(--red-bd);border-radius:4px;padding:2px 8px">03 / 03</span>
+  <h2 style="margin:0">Competitors Own the Conversations Unrationed Needs</h2>
+</div>
+<div style="font-size:clamp(15px,2.1vh,21px);color:var(--ink2);font-weight:500;margin-bottom:clamp(16px,2.5vh,28px);flex-shrink:0">Men vet personal development programs on Reddit before they ever book a call. In the threads that matter most, competitors are named and Unrationed is not.</div>
+
+<div style="display:flex;gap:clamp(12px,1.8vw,20px);margin-bottom:clamp(12px,1.8vh,22px);flex-shrink:0">
+  <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:8px;padding:clamp(12px,1.6vh,20px);text-align:center;flex:1;min-width:0">
+    <div style="font-family:'DM Mono',monospace;font-size:clamp(24px,3.6vh,42px);font-weight:700;color:var(--ink);line-height:1">62</div>
+    <div style="font-size:clamp(12px,1.5vh,15px);color:var(--ink3);margin-top:4px;font-weight:500">Tony Robbins mentions in scored Reddit threads</div>
+  </div>
+  <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:8px;padding:clamp(12px,1.6vh,20px);text-align:center;flex:1;min-width:0">
+    <div style="font-family:'DM Mono',monospace;font-size:clamp(24px,3.6vh,42px);font-weight:700;color:var(--ink);line-height:1">60</div>
+    <div style="font-size:clamp(12px,1.5vh,15px);color:var(--ink3);margin-top:4px;font-weight:500">ManKind Project and Evryman mentions</div>
+  </div>
+  <div style="background:var(--red-bg);border:1px solid var(--red-bd);border-radius:8px;padding:clamp(12px,1.6vh,20px);text-align:center;flex:1;min-width:0">
+    <div style="font-family:'DM Mono',monospace;font-size:clamp(24px,3.6vh,42px);font-weight:700;color:var(--red);line-height:1">0</div>
+    <div style="font-size:clamp(12px,1.5vh,15px);color:var(--ink3);margin-top:4px;font-weight:500">Unrationed mentions across all 126 posts</div>
+  </div>
+</div>
+
+<div style="flex:1;min-height:0;display:flex;flex-direction:column;gap:clamp(6px,0.9vh,10px);overflow:hidden">
+  <div style="font-size:clamp(12px,1.5vh,15px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4);flex-shrink:0">Threads Where Unrationed Should Appear But Does Not</div>
+  <div style="display:flex;flex-direction:column;gap:clamp(8px,1.1vh,13px);flex-shrink:0">
+    <div style="display:flex;gap:12px;align-items:flex-start;background:var(--paper2);border:1px solid var(--rule);border-radius:6px;padding:clamp(9px,1.3vh,14px) clamp(12px,1.4vw,16px)">
+      <img src="https://www.google.com/s2/favicons?domain=reddit.com&sz=32" style="width:16px;height:16px;border-radius:3px;flex-shrink:0;margin-top:2px">
+      <div><span style="font-size:clamp(14px,1.9vh,19px);color:var(--ink);font-weight:600">r/AskMen:</span> <span style="font-size:clamp(14px,1.9vh,19px);color:var(--ink2)">"How much value do you place on having a tribe?" GoBundance and Evryman are named in the answers.</span></div>
+    </div>
+    <div style="display:flex;gap:12px;align-items:flex-start;background:var(--paper2);border:1px solid var(--rule);border-radius:6px;padding:clamp(9px,1.3vh,14px) clamp(12px,1.4vw,16px)">
+      <img src="https://www.google.com/s2/favicons?domain=reddit.com&sz=32" style="width:16px;height:16px;border-radius:3px;flex-shrink:0;margin-top:2px">
+      <div><span style="font-size:clamp(14px,1.9vh,19px);color:var(--ink);font-weight:600">r/Jung:</span> <span style="font-size:clamp(14px,1.9vh,19px);color:var(--ink2)">"How to create a modern day rite of passage for oneself?" ManKind Project is named as the answer.</span></div>
+    </div>
+    <div style="display:flex;gap:12px;align-items:flex-start;background:var(--paper2);border:1px solid var(--rule);border-radius:6px;padding:clamp(9px,1.3vh,14px) clamp(12px,1.4vw,16px)">
+      <img src="https://www.google.com/s2/favicons?domain=reddit.com&sz=32" style="width:16px;height:16px;border-radius:3px;flex-shrink:0;margin-top:2px">
+      <div><span style="font-size:clamp(14px,1.9vh,19px);color:var(--ink);font-weight:600">r/AskMenOver30:</span> <span style="font-size:clamp(14px,1.9vh,19px);color:var(--ink2)">"Can you truly change who you are in your 30s?" 6 competitors named, Unrationed absent.</span></div>
+    </div>
+  </div>
+  <div style="flex:1;min-height:0"></div>
+  <div style="background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:8px;padding:clamp(10px,1.4vh,16px) clamp(14px,1.6vw,20px);flex-shrink:0">
+    <p style="font-size:clamp(14px,1.9vh,20px);color:var(--ink);margin:0;line-height:1.5;font-weight:600">16 high-fit posts where the Unrationed value proposition fits perfectly. Unrationed appears in none of them.</p>
+  </div>
+</div>
+</div></section>
+
+<!-- SLIDE 07: AI Visibility (Peekaboo) -->
+<section><div class="s">
+<div class="shdr" data-n="07" data-source="peekaboo"></div>
+<div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:clamp(8px,1.2vh,14px);flex-shrink:0">
+  <h2 style="margin:0">Competitors Dominating the <span style="color:var(--red)">AI Responses Unrationed Needs</span></h2>
+  <div class="data-src"><img src="https://www.aipeekaboo.com/icon.jpg"><span>Data: AI Peekaboo</span></div>
+</div>
+<p style="font-size:clamp(14px,2vh,20px);color:var(--ink2);line-height:1.5;margin:0 0 clamp(12px,1.7vh,20px);font-weight:500;flex-shrink:0">166 buyer conversations analyzed across 5 AI models. Unrationed scores 9/100: known to the men who already follow it, invisible to every man using AI to discover a program.</p>
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(10px,1.4vw,18px);flex-shrink:0;margin-bottom:clamp(12px,1.7vh,20px)">
+  <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(11px,1.5vh,18px) clamp(12px,1.4vw,16px)">
+    <div style="font-family:'DM Mono',monospace;font-size:clamp(26px,4vh,46px);font-weight:700;color:var(--red);line-height:1">9/100</div>
+    <div style="font-size:clamp(13px,1.7vh,17px);font-weight:700;color:var(--ink);margin-top:6px">AI Visibility Score</div>
+    <div style="font-size:clamp(11px,1.4vh,14px);color:var(--ink3);margin-top:2px">Avg across 35 prompts</div>
+  </div>
+  <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(11px,1.5vh,18px) clamp(12px,1.4vw,16px)">
+    <div style="font-family:'DM Mono',monospace;font-size:clamp(26px,4vh,46px);font-weight:700;color:var(--ink);line-height:1">35</div>
+    <div style="font-size:clamp(13px,1.7vh,17px);font-weight:700;color:var(--ink);margin-top:6px">Prompts Tested</div>
+    <div style="font-size:clamp(11px,1.4vh,14px);color:var(--ink3);margin-top:2px">Across 5 AI models</div>
+  </div>
+  <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(11px,1.5vh,18px) clamp(12px,1.4vw,16px)">
+    <div style="font-family:'DM Mono',monospace;font-size:clamp(26px,4vh,46px);font-weight:700;color:var(--red);line-height:1">32</div>
+    <div style="font-size:clamp(13px,1.7vh,17px);font-weight:700;color:var(--ink);margin-top:6px">Prompts With Zero Visibility</div>
+    <div style="font-size:clamp(11px,1.4vh,14px);color:var(--ink3);margin-top:2px">91% of all prompts tested</div>
+  </div>
+  <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(11px,1.5vh,18px) clamp(12px,1.4vw,16px)">
+    <div style="font-family:'DM Mono',monospace;font-size:clamp(26px,4vh,46px);font-weight:700;color:var(--ink);line-height:1">29</div>
+    <div style="font-size:clamp(13px,1.7vh,17px);font-weight:700;color:var(--ink);margin-top:6px">Unrationed.com Citations</div>
+    <div style="font-size:clamp(11px,1.4vh,14px);color:var(--ink3);margin-top:2px">All from branded prompts only</div>
+  </div>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,2vw,24px);flex:1;min-height:0">
+
+  <div style="display:flex;flex-direction:column;gap:clamp(6px,0.9vh,10px);min-height:0">
+    <div style="font-size:clamp(12px,1.5vh,15px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4);flex-shrink:0">Top Domains AI Models Cite Instead of Unrationed</div>
+    <div style="display:flex;flex-direction:column;gap:clamp(5px,0.7vh,8px);flex:1;overflow:hidden">
+      <div style="display:grid;grid-template-columns:auto auto 1fr auto;align-items:center;gap:10px;background:var(--paper2);border:1px solid var(--rule);border-radius:6px;padding:clamp(6px,0.9vh,10px) clamp(10px,1.2vw,14px);flex-shrink:0">
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.5vh,15px);font-weight:500;color:var(--ink4)">1</span>
+        <img src="https://www.google.com/s2/favicons?domain=mensgroup.com&sz=32" style="width:15px;height:15px;border-radius:2px;flex-shrink:0">
+        <span style="font-size:clamp(13px,1.75vh,17px);color:var(--ink2)">mensgroup.com</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.75vh,17px);font-weight:700;color:var(--ink)">41</span>
+      </div>
+      <div style="display:grid;grid-template-columns:auto auto 1fr auto;align-items:center;gap:10px;background:var(--paper2);border:1px solid var(--rule);border-radius:6px;padding:clamp(6px,0.9vh,10px) clamp(10px,1.2vw,14px);flex-shrink:0">
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.5vh,15px);font-weight:500;color:var(--ink4)">2</span>
+        <img src="https://www.google.com/s2/favicons?domain=mankindproject.org&sz=32" style="width:15px;height:15px;border-radius:2px;flex-shrink:0">
+        <span style="font-size:clamp(13px,1.75vh,17px);color:var(--ink2)">mankindproject.org</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.75vh,17px);font-weight:700;color:var(--ink)">25</span>
+      </div>
+      <div style="display:grid;grid-template-columns:auto auto 1fr auto;align-items:center;gap:10px;background:var(--paper2);border:1px solid var(--rule);border-radius:6px;padding:clamp(6px,0.9vh,10px) clamp(10px,1.2vw,14px);flex-shrink:0">
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.5vh,15px);font-weight:500;color:var(--ink4)">3</span>
+        <img src="https://www.google.com/s2/favicons?domain=gobundance.com&sz=32" style="width:15px;height:15px;border-radius:2px;flex-shrink:0">
+        <span style="font-size:clamp(13px,1.75vh,17px);color:var(--ink2)">gobundance.com</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.75vh,17px);font-weight:700;color:var(--ink)">21</span>
+      </div>
+      <div style="display:grid;grid-template-columns:auto auto 1fr auto;align-items:center;gap:10px;background:var(--paper2);border:1px solid var(--rule);border-radius:6px;padding:clamp(6px,0.9vh,10px) clamp(10px,1.2vw,14px);flex-shrink:0">
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.5vh,15px);font-weight:500;color:var(--ink4)">4</span>
+        <img src="https://www.google.com/s2/favicons?domain=bookretreats.com&sz=32" style="width:15px;height:15px;border-radius:2px;flex-shrink:0">
+        <span style="font-size:clamp(13px,1.75vh,17px);color:var(--ink2)">bookretreats.com</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.75vh,17px);font-weight:700;color:var(--ink)">27</span>
+      </div>
+      <div style="display:grid;grid-template-columns:auto auto 1fr auto;align-items:center;gap:10px;background:var(--paper2);border:1px solid var(--rule);border-radius:6px;padding:clamp(6px,0.9vh,10px) clamp(10px,1.2vw,14px);flex-shrink:0">
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.5vh,15px);font-weight:500;color:var(--ink4)">5</span>
+        <img src="https://www.google.com/s2/favicons?domain=youtube.com&sz=32" style="width:15px;height:15px;border-radius:2px;flex-shrink:0">
+        <span style="font-size:clamp(13px,1.75vh,17px);color:var(--ink2)">youtube.com</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.75vh,17px);font-weight:700;color:var(--ink)">99</span>
+      </div>
+      <div style="display:grid;grid-template-columns:auto auto 1fr auto;align-items:center;gap:10px;background:var(--paper2);border:1px solid var(--rule);border-radius:6px;padding:clamp(6px,0.9vh,10px) clamp(10px,1.2vw,14px);flex-shrink:0">
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.5vh,15px);font-weight:500;color:var(--ink4)">6</span>
+        <img src="https://www.google.com/s2/favicons?domain=reddit.com&sz=32" style="width:15px;height:15px;border-radius:2px;flex-shrink:0">
+        <span style="font-size:clamp(13px,1.75vh,17px);color:var(--ink2)">reddit.com</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.75vh,17px);font-weight:700;color:var(--ink)">63</span>
+      </div>
+    </div>
+  </div>
+
+  <div style="display:flex;flex-direction:column;gap:clamp(6px,0.9vh,10px);min-height:0">
+    <div style="font-size:clamp(12px,1.5vh,15px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4);flex-shrink:0">What This Means</div>
+    <div style="flex:1;min-height:0;display:flex;flex-direction:column;gap:clamp(8px,1.1vh,13px);overflow:hidden">
+      <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:8px;padding:clamp(9px,1.3vh,15px) clamp(12px,1.4vw,16px);flex-shrink:0">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:5px"><span style="font-size:clamp(13px,1.7vh,17px);font-weight:700;color:var(--ink)">3 Branded Prompts: 100/100</span><span class="ok-badge" style="margin:0">Strong</span></div>
+        <div style="font-size:clamp(13px,1.75vh,17px);color:var(--ink3);line-height:1.45">When someone searches specifically for Unrationed, AI models find it. The brand exists. The content does not.</div>
+      </div>
+      <div style="background:var(--red-bg);border:1px solid var(--red-bd);border-radius:8px;padding:clamp(9px,1.3vh,15px) clamp(12px,1.4vw,16px);flex-shrink:0">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:5px"><span style="font-size:clamp(13px,1.7vh,17px);font-weight:700;color:var(--ink)">32 Discovery Prompts: 0/0</span><span style="font-size:clamp(11px,1.3vh,13px);font-weight:700;color:var(--red);background:#fff;border:1px solid var(--red-bd);border-radius:3px;padding:1px 6px">Missing</span></div>
+        <div style="font-size:clamp(13px,1.75vh,17px);color:var(--ink3);line-height:1.45">No AI model recommends Unrationed when a buyer asks for the best men's accountability program or a men's rites of passage program. The opportunity window is open.</div>
+      </div>
+      <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:8px;padding:clamp(9px,1.3vh,15px) clamp(12px,1.4vw,16px);flex-shrink:0">
+        <div style="font-size:clamp(13px,1.7vh,17px);font-weight:700;color:var(--ink);margin-bottom:5px">5 AI Models Tested</div>
+        <div style="font-size:clamp(13px,1.75vh,17px);color:var(--ink3);line-height:1.45">ChatGPT, Gemini, Perplexity, Google AIO, and Google AI Mode: none cite Unrationed for commercial queries.</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div></section>
+
+<!-- SLIDE 08: Competitive Gap (Ahrefs) -->
+<section><div class="s">
+<div class="shdr" data-n="08" data-source="ahrefs"></div>
+<div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:clamp(10px,1.5vh,18px);flex-shrink:0">
+  <h2 style="margin:0">The Authority Gap That Keeps Unrationed Out of AI Answers</h2>
+</div>
+<p style="font-size:clamp(15px,2.1vh,21px);color:var(--ink2);font-weight:500;margin:0 0 clamp(14px,2vh,22px);flex-shrink:0">AI models weight domain authority and citation history when deciding what to recommend. Every competitor below has years of editorial coverage in the channels Unrationed needs.</p>
+<div style="border:1px solid var(--rule);border-radius:12px;overflow:hidden;flex-shrink:0">
+  <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr 1.6fr;background:var(--paper3)">
+    <div style="padding:clamp(8px,1.1vh,12px) clamp(10px,1.3vw,16px);font-size:clamp(10px,1.2vh,12px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4)">Company</div>
+    <div style="padding:clamp(8px,1.1vh,12px) clamp(10px,1.3vw,16px);font-size:clamp(10px,1.2vh,12px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4);text-align:center">Domain Rating</div>
+    <div style="padding:clamp(8px,1.1vh,12px) clamp(10px,1.3vw,16px);font-size:clamp(10px,1.2vh,12px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4);text-align:center">Backlinks</div>
+    <div style="padding:clamp(8px,1.1vh,12px) clamp(10px,1.3vw,16px);font-size:clamp(10px,1.2vh,12px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4)">Note</div>
+  </div>
+  <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr 1.6fr;border-top:1px solid var(--rule)">
+    <div style="padding:clamp(9px,1.2vh,14px) clamp(10px,1.3vw,16px);display:flex;align-items:center;gap:8px"><img src="https://www.google.com/s2/favicons?domain=tonyrobbins.com&sz=32" style="width:16px;height:16px;border-radius:2px;flex-shrink:0"><span style="font-size:clamp(14px,1.9vh,19px);font-weight:600;color:var(--ink)">Tony Robbins</span></div>
+    <div style="padding:clamp(9px,1.2vh,14px) clamp(10px,1.3vw,16px);text-align:center;font-family:'DM Mono',monospace;font-size:clamp(14px,1.9vh,19px);color:var(--ink4)">[&mdash;]</div>
+    <div style="padding:clamp(9px,1.2vh,14px) clamp(10px,1.3vw,16px);text-align:center;font-family:'DM Mono',monospace;font-size:clamp(14px,1.9vh,19px);color:var(--ink4)">[&mdash;]</div>
+    <div style="padding:clamp(9px,1.2vh,14px) clamp(10px,1.3vw,16px);font-size:clamp(13px,1.75vh,17px);color:var(--ink2)">Dominant authority</div>
+  </div>
+  <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr 1.6fr;border-top:1px solid var(--rule)">
+    <div style="padding:clamp(9px,1.2vh,14px) clamp(10px,1.3vw,16px);display:flex;align-items:center;gap:8px"><img src="https://www.google.com/s2/favicons?domain=mankindproject.org&sz=32" style="width:16px;height:16px;border-radius:2px;flex-shrink:0"><span style="font-size:clamp(14px,1.9vh,19px);font-weight:600;color:var(--ink)">ManKind Project</span></div>
+    <div style="padding:clamp(9px,1.2vh,14px) clamp(10px,1.3vw,16px);text-align:center;font-family:'DM Mono',monospace;font-size:clamp(14px,1.9vh,19px);color:var(--ink4)">[&mdash;]</div>
+    <div style="padding:clamp(9px,1.2vh,14px) clamp(10px,1.3vw,16px);text-align:center;font-family:'DM Mono',monospace;font-size:clamp(14px,1.9vh,19px);color:var(--ink4)">[&mdash;]</div>
+    <div style="padding:clamp(9px,1.2vh,14px) clamp(10px,1.3vw,16px);font-size:clamp(13px,1.75vh,17px);color:var(--ink2)">Legacy, well-cited</div>
+  </div>
+  <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr 1.6fr;border-top:1px solid var(--rule)">
+    <div style="padding:clamp(9px,1.2vh,14px) clamp(10px,1.3vw,16px);display:flex;align-items:center;gap:8px"><img src="https://www.google.com/s2/favicons?domain=gobundance.com&sz=32" style="width:16px;height:16px;border-radius:2px;flex-shrink:0"><span style="font-size:clamp(14px,1.9vh,19px);font-weight:600;color:var(--ink)">GoBundance</span></div>
+    <div style="padding:clamp(9px,1.2vh,14px) clamp(10px,1.3vw,16px);text-align:center;font-family:'DM Mono',monospace;font-size:clamp(14px,1.9vh,19px);color:var(--ink4)">[&mdash;]</div>
+    <div style="padding:clamp(9px,1.2vh,14px) clamp(10px,1.3vw,16px);text-align:center;font-family:'DM Mono',monospace;font-size:clamp(14px,1.9vh,19px);color:var(--ink4)">[&mdash;]</div>
+    <div style="padding:clamp(9px,1.2vh,14px) clamp(10px,1.3vw,16px);font-size:clamp(13px,1.75vh,17px);color:var(--ink2)">FIRE / wealth community</div>
+  </div>
+  <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr 1.6fr;border-top:1px solid var(--rule)">
+    <div style="padding:clamp(9px,1.2vh,14px) clamp(10px,1.3vw,16px);display:flex;align-items:center;gap:8px"><img src="https://www.google.com/s2/favicons?domain=evryman.com&sz=32" style="width:16px;height:16px;border-radius:2px;flex-shrink:0"><span style="font-size:clamp(14px,1.9vh,19px);font-weight:600;color:var(--ink)">Evryman</span></div>
+    <div style="padding:clamp(9px,1.2vh,14px) clamp(10px,1.3vw,16px);text-align:center;font-family:'DM Mono',monospace;font-size:clamp(14px,1.9vh,19px);color:var(--ink4)">[&mdash;]</div>
+    <div style="padding:clamp(9px,1.2vh,14px) clamp(10px,1.3vw,16px);text-align:center;font-family:'DM Mono',monospace;font-size:clamp(14px,1.9vh,19px);color:var(--ink4)">[&mdash;]</div>
+    <div style="padding:clamp(9px,1.2vh,14px) clamp(10px,1.3vw,16px);font-size:clamp(13px,1.75vh,17px);color:var(--ink2)">Men's emotional development</div>
+  </div>
+  <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr 1.6fr;border-top:1px solid var(--rule)">
+    <div style="padding:clamp(9px,1.2vh,14px) clamp(10px,1.3vw,16px);display:flex;align-items:center;gap:8px"><img src="https://www.google.com/s2/favicons?domain=theartofcharm.com&sz=32" style="width:16px;height:16px;border-radius:2px;flex-shrink:0"><span style="font-size:clamp(14px,1.9vh,19px);font-weight:600;color:var(--ink)">The Art of Charm</span></div>
+    <div style="padding:clamp(9px,1.2vh,14px) clamp(10px,1.3vw,16px);text-align:center;font-family:'DM Mono',monospace;font-size:clamp(14px,1.9vh,19px);color:var(--ink4)">[&mdash;]</div>
+    <div style="padding:clamp(9px,1.2vh,14px) clamp(10px,1.3vw,16px);text-align:center;font-family:'DM Mono',monospace;font-size:clamp(14px,1.9vh,19px);color:var(--ink4)">[&mdash;]</div>
+    <div style="padding:clamp(9px,1.2vh,14px) clamp(10px,1.3vw,16px);font-size:clamp(13px,1.75vh,17px);color:var(--ink2)">Lifestyle / dating crossover</div>
+  </div>
+  <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr 1.6fr;border-top:1px solid var(--rule);background:var(--accent-bg)">
+    <div style="padding:clamp(9px,1.2vh,14px) clamp(10px,1.3vw,16px);display:flex;align-items:center;gap:8px"><img src="https://www.google.com/s2/favicons?domain=unrationed.com&sz=32" style="width:16px;height:16px;border-radius:2px;flex-shrink:0"><span style="font-size:clamp(14px,1.9vh,19px);font-weight:700;color:var(--red)">Unrationed</span></div>
+    <div style="padding:clamp(9px,1.2vh,14px) clamp(10px,1.3vw,16px);text-align:center;font-family:'DM Mono',monospace;font-size:clamp(14px,1.9vh,19px);font-weight:700;color:var(--red)">[&mdash;]</div>
+    <div style="padding:clamp(9px,1.2vh,14px) clamp(10px,1.3vw,16px);text-align:center;font-family:'DM Mono',monospace;font-size:clamp(14px,1.9vh,19px);font-weight:700;color:var(--red)">[&mdash;]</div>
+    <div style="padding:clamp(9px,1.2vh,14px) clamp(10px,1.3vw,16px);font-size:clamp(13px,1.75vh,17px);color:var(--accent-dark);font-weight:700">Building</div>
+  </div>
+</div>
+<div style="margin-top:clamp(8px,1.1vh,14px);font-size:clamp(11px,1.3vh,13px);color:var(--ink4);font-family:'DM Mono',monospace;flex-shrink:0">Ahrefs data to be updated &mdash; pending DataForSEO pull.</div>
+<div style="background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:8px;padding:clamp(10px,1.4vh,16px) clamp(14px,1.6vw,20px);flex-shrink:0;margin-top:clamp(10px,1.5vh,18px);display:flex;align-items:flex-start;gap:12px">
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent-dark);flex-shrink:0;margin-top:2px"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+  <div style="font-size:clamp(13px,1.7vh,17px);color:var(--ink2);line-height:1.5">AI models weight domain authority and citation history when deciding what to recommend. Every competitor listed here has years of editorial coverage in men's wellness, entrepreneurship, and lifestyle publications. Unrationed has none yet: that is the gap we close.</div>
+</div>
+</div></section>
+
+<!-- SLIDE 09: Reddit Opportunity -->
+<section><div class="s">
+<div class="shdr" data-n="09" data-source="reddit"></div>
+<h2 style="margin:0 0 clamp(12px,1.7vh,20px)"><img src="https://www.google.com/s2/favicons?domain=reddit.com&sz=32" style="width:24px;height:24px;border-radius:5px;vertical-align:-3px;margin-right:8px">16 High-Fit Threads. <span style="color:var(--red)">Zero Unrationed Presence.</span></h2>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,2.2vw,28px);flex:1;min-height:0">
+
+  <div style="display:flex;flex-direction:column;gap:clamp(8px,1.1vh,14px);min-height:0">
+    <div style="display:flex;gap:clamp(8px,1.1vw,14px);flex-shrink:0">
+      <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:8px;padding:clamp(8px,1.1vh,14px);text-align:center;flex:1;min-width:0">
+        <div style="font-family:'DM Mono',monospace;font-size:clamp(18px,2.6vh,30px);font-weight:700;color:var(--ink);line-height:1">126</div>
+        <div style="font-size:clamp(10px,1.3vh,13px);color:var(--ink3);margin-top:3px">Posts Analyzed</div>
+      </div>
+      <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:8px;padding:clamp(8px,1.1vh,14px);text-align:center;flex:1;min-width:0">
+        <div style="font-family:'DM Mono',monospace;font-size:clamp(18px,2.6vh,30px);font-weight:700;color:var(--ok);line-height:1">16</div>
+        <div style="font-size:clamp(10px,1.3vh,13px);color:var(--ink3);margin-top:3px">High-Fit Posts</div>
+      </div>
+      <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:8px;padding:clamp(8px,1.1vh,14px);text-align:center;flex:1;min-width:0">
+        <div style="font-family:'DM Mono',monospace;font-size:clamp(18px,2.6vh,30px);font-weight:700;color:var(--ink);line-height:1">8</div>
+        <div style="font-size:clamp(10px,1.3vh,13px);color:var(--ink3);margin-top:3px">Active Communities</div>
+      </div>
+    </div>
+    <div style="border:1px solid var(--rule);border-radius:10px;overflow:hidden;flex-shrink:0">
+      <div style="display:grid;grid-template-columns:1fr auto auto;background:var(--paper3);padding:clamp(7px,1vh,11px) clamp(10px,1.3vw,16px);gap:8px">
+        <div style="font-size:clamp(10px,1.2vh,12px);font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--ink4)">Subreddit</div>
+        <div style="font-size:clamp(10px,1.2vh,12px);font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--ink4);text-align:right">Members</div>
+        <div style="font-size:clamp(10px,1.2vh,12px);font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--ink4);text-align:center">High-Fit Posts</div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr auto auto;border-top:1px solid var(--rule);padding:clamp(6px,0.85vh,10px) clamp(10px,1.3vw,16px);gap:8px;align-items:center;background:rgba(22,163,74,0.04)">
+        <span style="font-size:clamp(13px,1.7vh,16px);font-weight:600;color:var(--ink)">r/AskMen</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.7vh,16px);color:var(--ink2);text-align:right">6.3M</span>
+        <span class="ok-badge">1</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr auto auto;border-top:1px solid var(--rule);padding:clamp(6px,0.85vh,10px) clamp(10px,1.3vw,16px);gap:8px;align-items:center;background:rgba(22,163,74,0.04)">
+        <span style="font-size:clamp(13px,1.7vh,16px);font-weight:600;color:var(--ink)">r/AskMenOver30</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.7vh,16px);color:var(--ink2);text-align:right">850K</span>
+        <span class="ok-badge">1</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr auto auto;border-top:1px solid var(--rule);padding:clamp(6px,0.85vh,10px) clamp(10px,1.3vw,16px);gap:8px;align-items:center;background:rgba(22,163,74,0.04)">
+        <span style="font-size:clamp(13px,1.7vh,16px);font-weight:600;color:var(--ink)">r/Jung</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.7vh,16px);color:var(--ink2);text-align:right">320K</span>
+        <span class="ok-badge">2</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr auto auto;border-top:1px solid var(--rule);padding:clamp(6px,0.85vh,10px) clamp(10px,1.3vw,16px);gap:8px;align-items:center;background:rgba(22,163,74,0.04)">
+        <span style="font-size:clamp(13px,1.7vh,16px);font-weight:600;color:var(--ink)">r/unpopularopinion</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.7vh,16px);color:var(--ink2);text-align:right">4.1M</span>
+        <span class="ok-badge">1</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr auto auto;border-top:1px solid var(--rule);padding:clamp(6px,0.85vh,10px) clamp(10px,1.3vw,16px);gap:8px;align-items:center;background:rgba(22,163,74,0.04)">
+        <span style="font-size:clamp(13px,1.7vh,16px);font-weight:600;color:var(--ink)">r/Fitness</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.7vh,16px);color:var(--ink2);text-align:right">10.2M</span>
+        <span class="ok-badge">1</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr auto auto;border-top:1px solid var(--rule);padding:clamp(6px,0.85vh,10px) clamp(10px,1.3vw,16px);gap:8px;align-items:center;background:rgba(22,163,74,0.04)">
+        <span style="font-size:clamp(13px,1.7vh,16px);font-weight:600;color:var(--ink)">r/MotivationByDesign</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.7vh,16px);color:var(--ink2);text-align:right">45K</span>
+        <span class="ok-badge">1</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr auto auto;border-top:1px solid var(--rule);padding:clamp(6px,0.85vh,10px) clamp(10px,1.3vw,16px);gap:8px;align-items:center">
+        <span style="font-size:clamp(13px,1.7vh,16px);color:var(--ink2)">r/MensLib</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.7vh,16px);color:var(--ink2);text-align:right">170K</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.7vh,16px);color:var(--ink3);text-align:center">0</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr auto auto;border-top:1px solid var(--rule);padding:clamp(6px,0.85vh,10px) clamp(10px,1.3vw,16px);gap:8px;align-items:center">
+        <span style="font-size:clamp(13px,1.7vh,16px);color:var(--ink2)">r/PurplePillDebate</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.7vh,16px);color:var(--ink2);text-align:right">220K</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.7vh,16px);color:var(--ink3);text-align:center">0</span>
+      </div>
+    </div>
+  </div>
+
+  <div style="display:flex;flex-direction:column;gap:clamp(8px,1.1vh,14px);min-height:0">
+    <div style="font-size:clamp(12px,1.5vh,15px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4);flex-shrink:0">Who Reddit Recommends Instead</div>
+    <div style="border:1px solid var(--rule);border-radius:10px;overflow:hidden;flex-shrink:0">
+      <div style="display:grid;grid-template-columns:1fr auto auto;background:var(--paper3);padding:clamp(7px,1vh,11px) clamp(10px,1.3vw,16px);gap:8px">
+        <div style="font-size:clamp(10px,1.2vh,12px);font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--ink4)">Brand</div>
+        <div style="font-size:clamp(10px,1.2vh,12px);font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--ink4);text-align:center">Mentions</div>
+        <div style="font-size:clamp(10px,1.2vh,12px);font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--ink4)">Sentiment</div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr auto auto;border-top:1px solid var(--rule);padding:clamp(6px,0.85vh,10px) clamp(10px,1.3vw,16px);gap:8px;align-items:center">
+        <span style="font-size:clamp(13px,1.7vh,16px);color:var(--ink)">Tony Robbins</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.7vh,16px);font-weight:700;color:var(--ink);text-align:center">62</span>
+        <span style="font-size:clamp(11px,1.4vh,14px);font-weight:600;color:var(--warn);background:var(--warn-bg);border:1px solid var(--warn-bd);border-radius:3px;padding:1px 7px;text-align:center">Mixed</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr auto auto;border-top:1px solid var(--rule);padding:clamp(6px,0.85vh,10px) clamp(10px,1.3vw,16px);gap:8px;align-items:center">
+        <span style="font-size:clamp(13px,1.7vh,16px);color:var(--ink)">Evryman</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.7vh,16px);font-weight:700;color:var(--ink);text-align:center">60</span>
+        <span style="font-size:clamp(11px,1.4vh,14px);font-weight:600;color:var(--ink3);background:var(--paper3);border:1px solid var(--rule);border-radius:3px;padding:1px 7px;text-align:center">Neutral</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr auto auto;border-top:1px solid var(--rule);padding:clamp(6px,0.85vh,10px) clamp(10px,1.3vw,16px);gap:8px;align-items:center">
+        <span style="font-size:clamp(13px,1.7vh,16px);color:var(--ink)">ManKind Project</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.7vh,16px);font-weight:700;color:var(--ink);text-align:center">60</span>
+        <span style="font-size:clamp(11px,1.4vh,14px);font-weight:600;color:var(--ok);background:var(--ok-bg);border:1px solid var(--ok-bd);border-radius:3px;padding:1px 7px;text-align:center">Positive</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr auto auto;border-top:1px solid var(--rule);padding:clamp(6px,0.85vh,10px) clamp(10px,1.3vw,16px);gap:8px;align-items:center">
+        <span style="font-size:clamp(13px,1.7vh,16px);color:var(--ink)">GoBundance</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.7vh,16px);font-weight:700;color:var(--ink);text-align:center">59</span>
+        <span style="font-size:clamp(11px,1.4vh,14px);font-weight:600;color:var(--ink3);background:var(--paper3);border:1px solid var(--rule);border-radius:3px;padding:1px 7px;text-align:center">Neutral</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr auto auto;border-top:1px solid var(--rule);padding:clamp(6px,0.85vh,10px) clamp(10px,1.3vw,16px);gap:8px;align-items:center">
+        <span style="font-size:clamp(13px,1.7vh,16px);color:var(--ink)">Landmark Forum</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.7vh,16px);font-weight:700;color:var(--ink);text-align:center">59</span>
+        <span style="font-size:clamp(11px,1.4vh,14px);font-weight:600;color:var(--red);background:var(--red-bg);border:1px solid var(--red-bd);border-radius:3px;padding:1px 7px;text-align:center">Negative</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr auto auto;border-top:1px solid var(--rule);padding:clamp(6px,0.85vh,10px) clamp(10px,1.3vw,16px);gap:8px;align-items:center">
+        <span style="font-size:clamp(13px,1.7vh,16px);color:var(--ink)">The Art of Charm</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.7vh,16px);font-weight:700;color:var(--ink);text-align:center">59</span>
+        <span style="font-size:clamp(11px,1.4vh,14px);font-weight:600;color:var(--warn);background:var(--warn-bg);border:1px solid var(--warn-bd);border-radius:3px;padding:1px 7px;text-align:center">Mixed</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr auto auto;border-top:1px solid var(--rule);padding:clamp(6px,0.85vh,10px) clamp(10px,1.3vw,16px);gap:8px;align-items:center;background:var(--accent-bg)">
+        <span style="font-size:clamp(13px,1.7vh,16px);font-weight:700;color:var(--red)">Unrationed</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.7vh,16px);font-weight:700;color:var(--red);text-align:center">0</span>
+        <span style="font-size:clamp(11px,1.4vh,14px);font-weight:700;color:var(--red);font-style:italic;text-align:center">Not present</span>
+      </div>
+    </div>
+    <div style="flex:1;min-height:0"></div>
+    <div style="background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:8px;padding:clamp(9px,1.3vh,15px) clamp(12px,1.5vw,18px);flex-shrink:0">
+      <span style="font-size:clamp(13px,1.7vh,17px);color:var(--ink2);line-height:1.45">Landmark Forum's Reddit reputation is actively negative: users report manipulation and cult-like tactics. This is the opening: Unrationed's authentic, founder-led, physically grounded approach is exactly what Reddit audiences are searching for.</span>
+    </div>
+  </div>
+
+</div>
+</div></section>
+
+<!-- SLIDE 10: Transition -->
+<section><div class="s">
+<div class="shdr" data-n="10"></div>
+<div style="flex:1;min-height:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:clamp(24px,4vh,48px);text-align:center;overflow:hidden">
+  <div style="display:flex;align-items:center;gap:clamp(10px,1.5vw,20px)">
+    <div style="display:flex;align-items:center;gap:8px;background:var(--red-bg);border:1px solid var(--red-bd);border-radius:32px;padding:clamp(8px,1.2vh,14px) clamp(14px,2vw,22px);flex-shrink:0">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+      <span style="font-size:clamp(13px,1.8vh,18px);font-weight:600;color:var(--red)">No AEO content</span>
+    </div>
+    <div style="font-size:clamp(20px,3vh,38px);font-weight:700;color:var(--ink3)">+</div>
+    <div style="display:flex;align-items:center;gap:8px;background:var(--red-bg);border:1px solid var(--red-bd);border-radius:32px;padding:clamp(8px,1.2vh,14px) clamp(14px,2vw,22px);flex-shrink:0">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+      <span style="font-size:clamp(13px,1.8vh,18px);font-weight:600;color:var(--red)">Authority gap</span>
+    </div>
+    <div style="font-size:clamp(20px,3vh,38px);font-weight:700;color:var(--ink3)">+</div>
+    <div style="display:flex;align-items:center;gap:8px;background:var(--red-bg);border:1px solid var(--red-bd);border-radius:32px;padding:clamp(8px,1.2vh,14px) clamp(14px,2vw,22px);flex-shrink:0">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
+      <span style="font-size:clamp(13px,1.8vh,18px);font-weight:600;color:var(--red)">AI invisible</span>
+    </div>
+  </div>
+  <div style="display:flex;flex-direction:column;align-items:center;gap:clamp(10px,1.5vh,18px)">
+    <div style="display:flex;align-items:center;justify-content:center;gap:clamp(10px,1.5vw,18px)">
+      <img src="https://www.google.com/s2/favicons?domain=unrationed.com&sz=64" style="width:clamp(32px,4.5vh,52px);height:clamp(32px,4.5vh,52px);border-radius:8px;flex-shrink:0;object-fit:contain">
+      <div style="font-family:'Cormorant Garamond',serif;font-size:clamp(34px,6vh,72px);font-weight:700;color:var(--ink);letter-spacing:-0.01em;line-height:1.1">Here is what we do about it.</div>
+    </div>
+    <div style="font-size:clamp(16px,2.2vh,24px);color:var(--ink3);font-weight:400">Three vectors, one compounding system.</div>
+  </div>
+</div>
+</div></section>
+
+<!-- SLIDE 11: Content Strategy -->
+<section><div class="s">
+<div class="shdr" data-n="11"></div>
+<h2 style="margin:0 0 clamp(12px,1.7vh,20px)">Three Content Vectors <span style="color:var(--accent-dark)">That Build AI Citation Share</span></h2>
+<p style="font-size:clamp(15px,2.1vh,21px);color:var(--ink2);font-weight:500;margin:0 0 clamp(14px,2vh,22px);flex-shrink:0">Each vector maps directly to a gap in the audit. Together they build the comparison cluster and category authority AI needs to cite Unrationed on commercial queries.</p>
+<div style="flex:1;min-height:0;display:flex;gap:clamp(14px,2vw,24px);overflow:hidden">
+
+  <div style="background:var(--paper2);border:1.5px solid var(--rule);border-radius:12px;padding:clamp(14px,1.9vh,24px) clamp(16px,1.8vw,22px);display:flex;flex-direction:column;gap:clamp(10px,1.4vh,16px);flex:1;min-width:0">
+    <div style="display:flex;align-items:center;gap:8px;flex-shrink:0">
+      <span style="font-family:'DM Mono',monospace;font-size:clamp(11px,1.4vh,14px);background:var(--accent-bg);border:1px solid var(--accent-bd);color:var(--accent-dark);padding:2px 8px;border-radius:4px;font-weight:500;flex-shrink:0">01</span>
+      <span style="font-size:clamp(11px,1.4vh,14px);color:var(--ink4);text-transform:uppercase;letter-spacing:.07em;font-weight:600">Comparison Pages</span>
+    </div>
+    <div style="font-size:clamp(19px,2.7vh,28px);font-weight:700;color:var(--ink);font-family:'Cormorant Garamond',serif;line-height:1.15">Competitor Comparison Pages</div>
+    <div style="display:flex;flex-direction:column;gap:clamp(6px,0.9vh,10px)">
+      <div style="display:flex;align-items:flex-start;gap:8px;font-size:clamp(13px,1.7vh,17px);color:var(--ink2);line-height:1.45"><span style="color:var(--accent-dark);font-weight:700;flex-shrink:0;margin-top:1px">&middot;</span><span>Unrationed vs GoBundance, the definitive head-to-head for driven men weighing both</span></div>
+      <div style="display:flex;align-items:flex-start;gap:8px;font-size:clamp(13px,1.7vh,17px);color:var(--ink2);line-height:1.45"><span style="color:var(--accent-dark);font-weight:700;flex-shrink:0;margin-top:1px">&middot;</span><span>Unrationed vs Evryman, framed around accountability crews and physical experiences</span></div>
+      <div style="display:flex;align-items:flex-start;gap:8px;font-size:clamp(13px,1.7vh,17px);color:var(--ink2);line-height:1.45"><span style="color:var(--accent-dark);font-weight:700;flex-shrink:0;margin-top:1px">&middot;</span><span>Best Men's Accountability Programs, with Unrationed as the featured recommendation</span></div>
+      <div style="display:flex;align-items:flex-start;gap:8px;font-size:clamp(13px,1.7vh,17px);color:var(--ink2);line-height:1.45"><span style="color:var(--accent-dark);font-weight:700;flex-shrink:0;margin-top:1px">&middot;</span><span>Targets the commercial prompts where competitors currently dominate</span></div>
+    </div>
+  </div>
+
+  <div style="background:var(--paper2);border:1.5px solid var(--rule);border-radius:12px;padding:clamp(14px,1.9vh,24px) clamp(16px,1.8vw,22px);display:flex;flex-direction:column;gap:clamp(10px,1.4vh,16px);flex:1;min-width:0">
+    <div style="display:flex;align-items:center;gap:8px;flex-shrink:0">
+      <span style="font-family:'DM Mono',monospace;font-size:clamp(11px,1.4vh,14px);background:var(--accent-bg);border:1px solid var(--accent-bd);color:var(--accent-dark);padding:2px 8px;border-radius:4px;font-weight:500;flex-shrink:0">02</span>
+      <span style="font-size:clamp(11px,1.4vh,14px);color:var(--ink4);text-transform:uppercase;letter-spacing:.07em;font-weight:600">Decision Guides</span>
+    </div>
+    <div style="font-size:clamp(19px,2.7vh,28px);font-weight:700;color:var(--ink);font-family:'Cormorant Garamond',serif;line-height:1.15">Buyer Decision Guides</div>
+    <div style="display:flex;flex-direction:column;gap:clamp(6px,0.9vh,10px)">
+      <div style="display:flex;align-items:flex-start;gap:8px;font-size:clamp(13px,1.7vh,17px);color:var(--ink2);line-height:1.45"><span style="color:var(--accent-dark);font-weight:700;flex-shrink:0;margin-top:1px">&middot;</span><span>How to Choose a Men's Rites of Passage Program</span></div>
+      <div style="display:flex;align-items:flex-start;gap:8px;font-size:clamp(13px,1.7vh,17px);color:var(--ink2);line-height:1.45"><span style="color:var(--accent-dark);font-weight:700;flex-shrink:0;margin-top:1px">&middot;</span><span>Men's Community vs Executive Coaching: which fits your stage?</span></div>
+      <div style="display:flex;align-items:flex-start;gap:8px;font-size:clamp(13px,1.7vh,17px);color:var(--ink2);line-height:1.45"><span style="color:var(--accent-dark);font-weight:700;flex-shrink:0;margin-top:1px">&middot;</span><span>WILD32 vs the Full-Year Commitment: a clear decision path into the offer</span></div>
+      <div style="display:flex;align-items:flex-start;gap:8px;font-size:clamp(13px,1.7vh,17px);color:var(--ink2);line-height:1.45"><span style="color:var(--accent-dark);font-weight:700;flex-shrink:0;margin-top:1px">&middot;</span><span>Captures mid-funnel discovery queries before competitors do</span></div>
+    </div>
+  </div>
+
+  <div style="background:var(--paper2);border:1.5px solid var(--rule);border-radius:12px;padding:clamp(14px,1.9vh,24px) clamp(16px,1.8vw,22px);display:flex;flex-direction:column;gap:clamp(10px,1.4vh,16px);flex:1;min-width:0">
+    <div style="display:flex;align-items:center;gap:8px;flex-shrink:0">
+      <span style="font-family:'DM Mono',monospace;font-size:clamp(11px,1.4vh,14px);background:var(--accent-bg);border:1px solid var(--accent-bd);color:var(--accent-dark);padding:2px 8px;border-radius:4px;font-weight:500;flex-shrink:0">03</span>
+      <span style="font-size:clamp(11px,1.4vh,14px);color:var(--ink4);text-transform:uppercase;letter-spacing:.07em;font-weight:600">Topic Clusters</span>
+    </div>
+    <div style="font-size:clamp(19px,2.7vh,28px);font-weight:700;color:var(--ink);font-family:'Cormorant Garamond',serif;line-height:1.15">Topic Clusters + AEO</div>
+    <div style="display:flex;flex-direction:column;gap:clamp(6px,0.9vh,10px)">
+      <div style="display:flex;align-items:flex-start;gap:8px;font-size:clamp(13px,1.7vh,17px);color:var(--ink2);line-height:1.45"><span style="color:var(--accent-dark);font-weight:700;flex-shrink:0;margin-top:1px">&middot;</span><span>Brotherhood for Entrepreneurs: a hub built around peer accountability</span></div>
+      <div style="display:flex;align-items:flex-start;gap:8px;font-size:clamp(13px,1.7vh,17px);color:var(--ink2);line-height:1.45"><span style="color:var(--accent-dark);font-weight:700;flex-shrink:0;margin-top:1px">&middot;</span><span>Modern Rites of Passage for Men: the explainer AI cites by default</span></div>
+      <div style="display:flex;align-items:flex-start;gap:8px;font-size:clamp(13px,1.7vh,17px);color:var(--ink2);line-height:1.45"><span style="color:var(--accent-dark);font-weight:700;flex-shrink:0;margin-top:1px">&middot;</span><span>Men's Wilderness Retreats US: category guide tied to the 40-mile treks</span></div>
+      <div style="display:flex;align-items:flex-start;gap:8px;font-size:clamp(13px,1.7vh,17px);color:var(--ink2);line-height:1.45"><span style="color:var(--accent-dark);font-weight:700;flex-shrink:0;margin-top:1px">&middot;</span><span>Schema-marked and structured for AI citation around the 32 zero-visibility prompts</span></div>
+    </div>
+  </div>
+
+</div>
+</div></section>
+
+<!-- SLIDE 12: Three-Part Fix -->
+<section><div class="s">
+<div class="shdr" data-n="12"></div>
+<h2 style="margin:0 0 clamp(12px,1.7vh,20px)">The Three-Part Fix: <span style="color:var(--accent-dark)">Content, Authority and AI Presence</span></h2>
+<p style="font-size:clamp(15px,2.1vh,21px);color:var(--ink2);font-weight:500;margin:0 0 clamp(14px,2vh,22px);flex-shrink:0">Each root problem has a direct solution. Together they compound: more content builds authority, more authority drives AI citations, more citations bring driven men to Unrationed.</p>
+<div style="flex:1;min-height:0;display:flex;gap:clamp(14px,2vw,24px);overflow:hidden">
+
+  <div style="flex:1;min-width:0;display:flex;flex-direction:column;background:var(--paper2);border:1.5px solid var(--rule);border-radius:12px;padding:clamp(14px,1.9vh,24px) clamp(16px,1.8vw,22px)">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:clamp(10px,1.4vh,16px);flex-shrink:0">
+      <div style="width:36px;height:36px;background:var(--accent-bg);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-dark)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+      </div>
+      <span style="font-size:clamp(13px,1.7vh,17px);text-transform:uppercase;letter-spacing:.08em;color:var(--accent-dark);font-weight:700">Content</span>
+    </div>
+    <div style="font-size:clamp(19px,2.6vh,27px);font-weight:700;color:var(--ink);font-family:'Cormorant Garamond',serif;line-height:1.15;margin-bottom:clamp(10px,1.4vh,16px);flex-shrink:0">Comparison Cluster + AEO Guides</div>
+    <div style="display:flex;flex-direction:column;gap:clamp(8px,1.1vh,13px);flex:1">
+      <div style="display:flex;align-items:flex-start;gap:8px;font-size:clamp(14px,1.95vh,20px);color:var(--ink2);line-height:1.5"><span style="color:var(--accent-dark);font-weight:700;flex-shrink:0;margin-top:1px">&middot;</span><span>12 articles per month: comparison pages, decision guides, and topic clusters</span></div>
+      <div style="display:flex;align-items:flex-start;gap:8px;font-size:clamp(14px,1.95vh,20px);color:var(--ink2);line-height:1.5"><span style="color:var(--accent-dark);font-weight:700;flex-shrink:0;margin-top:1px">&middot;</span><span>AEO-optimized transformation guides built from real member outcomes</span></div>
+      <div style="display:flex;align-items:flex-start;gap:8px;font-size:clamp(14px,1.95vh,20px);color:var(--ink2);line-height:1.5"><span style="color:var(--accent-dark);font-weight:700;flex-shrink:0;margin-top:1px">&middot;</span><span>FAQ schema so AI models parse and confidently cite unrationed.com</span></div>
+    </div>
+  </div>
+
+  <div style="flex:1;min-width:0;display:flex;flex-direction:column;background:var(--paper2);border:1.5px solid var(--rule);border-radius:12px;padding:clamp(14px,1.9vh,24px) clamp(16px,1.8vw,22px)">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:clamp(10px,1.4vh,16px);flex-shrink:0">
+      <div style="width:36px;height:36px;background:var(--accent-bg);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-dark)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+      </div>
+      <span style="font-size:clamp(13px,1.7vh,17px);text-transform:uppercase;letter-spacing:.08em;color:var(--accent-dark);font-weight:700">Authority</span>
+    </div>
+    <div style="font-size:clamp(19px,2.6vh,27px);font-weight:700;color:var(--ink);font-family:'Cormorant Garamond',serif;line-height:1.15;margin-bottom:clamp(10px,1.4vh,16px);flex-shrink:0">Editorial Outreach + Reddit</div>
+    <div style="display:flex;flex-direction:column;gap:clamp(8px,1.1vh,13px);flex:1">
+      <div style="display:flex;align-items:flex-start;gap:8px;font-size:clamp(14px,1.95vh,20px);color:var(--ink2);line-height:1.5"><span style="color:var(--accent-dark);font-weight:700;flex-shrink:0;margin-top:1px">&middot;</span><span>Editorial outreach to men's wellness, entrepreneurship, and outdoor publications</span></div>
+      <div style="display:flex;align-items:flex-start;gap:8px;font-size:clamp(14px,1.95vh,20px);color:var(--ink2);line-height:1.5"><span style="color:var(--accent-dark);font-weight:700;flex-shrink:0;margin-top:1px">&middot;</span><span>Editorial backlinks that give AI a third-party authority signal to weigh</span></div>
+      <div style="display:flex;align-items:flex-start;gap:8px;font-size:clamp(14px,1.95vh,20px);color:var(--ink2);line-height:1.5"><span style="color:var(--accent-dark);font-weight:700;flex-shrink:0;margin-top:1px">&middot;</span><span>Reddit engagement: 20 targeted comments per month in men's development threads</span></div>
+    </div>
+  </div>
+
+  <div style="flex:1;min-width:0;display:flex;flex-direction:column;background:var(--paper2);border:1.5px solid var(--rule);border-radius:12px;padding:clamp(14px,1.9vh,24px) clamp(16px,1.8vw,22px)">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:clamp(10px,1.4vh,16px);flex-shrink:0">
+      <div style="width:36px;height:36px;background:var(--accent-bg);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-dark)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+      </div>
+      <span style="font-size:clamp(13px,1.7vh,17px);text-transform:uppercase;letter-spacing:.08em;color:var(--accent-dark);font-weight:700">AI Visibility</span>
+    </div>
+    <div style="font-size:clamp(19px,2.6vh,27px);font-weight:700;color:var(--ink);font-family:'Cormorant Garamond',serif;line-height:1.15;margin-bottom:clamp(10px,1.4vh,16px);flex-shrink:0">Tracking Across 5 AI Models</div>
+    <div style="display:flex;flex-direction:column;gap:clamp(8px,1.1vh,13px);flex:1">
+      <div style="display:flex;align-items:flex-start;gap:8px;font-size:clamp(14px,1.95vh,20px);color:var(--ink2);line-height:1.5"><span style="color:var(--accent-dark);font-weight:700;flex-shrink:0;margin-top:1px">&middot;</span><span>AI citation tracking across ChatGPT, Gemini, Perplexity, and Google AI surfaces</span></div>
+      <div style="display:flex;align-items:flex-start;gap:8px;font-size:clamp(14px,1.95vh,20px);color:var(--ink2);line-height:1.5"><span style="color:var(--accent-dark);font-weight:700;flex-shrink:0;margin-top:1px">&middot;</span><span>Visibility score reviewed month over month against the 32 zero-visibility prompts</span></div>
+      <div style="display:flex;align-items:flex-start;gap:8px;font-size:clamp(14px,1.95vh,20px);color:var(--ink2);line-height:1.5"><span style="color:var(--accent-dark);font-weight:700;flex-shrink:0;margin-top:1px">&middot;</span><span>Clear evidence of whether new content converts into AI recommendations</span></div>
+    </div>
+  </div>
+
+</div>
+</div></section>
+
+<!-- SLIDE 13: Deliverables -->
+<section><div class="s">
+<div class="shdr" data-n="13"></div>
+<h2 style="margin:0 0 clamp(12px,1.7vh,20px)">What We Deliver Every Month</h2>
+<p style="font-size:clamp(15px,2.1vh,21px);color:var(--ink2);font-weight:500;margin:0 0 clamp(14px,2vh,22px);flex-shrink:0">A full managed service covering everything Unrationed needs to grow in search and AI.</p>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(10px,1.4vw,16px);flex:1;min-height:0;align-content:start">
+
+  <div class="card">
+    <svg style="width:17px;height:17px;flex-shrink:0;margin-top:3px" viewBox="0 0 24 24" fill="none" stroke="var(--accent-dark)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+    <div style="flex:1;min-width:0">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:clamp(3px,0.4vh,5px)">
+        <div style="font-size:clamp(15px,2.1vh,21px);font-weight:700;color:var(--ink)">12 High-Quality Content Pieces</div>
+        <span class="badge">Per month</span>
+      </div>
+      <div style="font-size:clamp(14px,1.85vh,18px);color:var(--ink3);line-height:1.5">12 keyword-targeted articles per month built to rank and get cited by AI. Each targets comparison queries, decision guides, and men's development topic clusters.</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <svg style="width:17px;height:17px;flex-shrink:0;margin-top:3px" viewBox="0 0 24 24" fill="none" stroke="var(--accent-dark)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+    <div style="flex:1;min-width:0">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:clamp(3px,0.4vh,5px)">
+        <div style="font-size:clamp(15px,2.1vh,21px);font-weight:700;color:var(--ink)">Content Refresh Programme</div>
+        <span class="badge">Ongoing</span>
+      </div>
+      <div style="font-size:clamp(14px,1.85vh,18px);color:var(--ink3);line-height:1.5">Existing essays and program pages updated with LLM-optimised structure. Fastest path to new AI citations from the current site.</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <svg style="width:17px;height:17px;flex-shrink:0;margin-top:3px" viewBox="0 0 24 24" fill="none" stroke="var(--accent-dark)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+    <div style="flex:1;min-width:0">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:clamp(3px,0.4vh,5px)">
+        <div style="font-size:clamp(15px,2.1vh,21px);font-weight:700;color:var(--ink)">Schema Markup Implementation</div>
+        <span class="badge">Site-wide</span>
+      </div>
+      <div style="font-size:clamp(14px,1.85vh,18px);color:var(--ink3);line-height:1.5">Organization, FAQ, and Course schema so AI models understand and confidently cite unrationed.com.</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <svg style="width:17px;height:17px;flex-shrink:0;margin-top:3px" viewBox="0 0 24 24" fill="none" stroke="var(--accent-dark)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+    <div style="flex:1;min-width:0">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:clamp(3px,0.4vh,5px)">
+        <div style="font-size:clamp(15px,2.1vh,21px);font-weight:700;color:var(--ink)">On-Page SEO Optimisation</div>
+        <span class="badge">Ongoing</span>
+      </div>
+      <div style="font-size:clamp(14px,1.85vh,18px);color:var(--ink3);line-height:1.5">Meta titles, headings, and internal linking across all pages treated as entry points for men researching personal development programs.</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <svg style="width:17px;height:17px;flex-shrink:0;margin-top:3px" viewBox="0 0 24 24" fill="none" stroke="var(--accent-dark)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+    <div style="flex:1;min-width:0">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:clamp(3px,0.4vh,5px)">
+        <div style="font-size:clamp(15px,2.1vh,21px);font-weight:700;color:var(--ink)">Link Building</div>
+        <span class="badge">Ongoing</span>
+      </div>
+      <div style="font-size:clamp(14px,1.85vh,18px);color:var(--ink3);line-height:1.5">Editorial links from men's wellness, entrepreneurship, and outdoor and adventure publications to build the authority AI rewards.</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://www.google.com/s2/favicons?domain=reddit.com&sz=32" style="width:17px;height:17px;flex-shrink:0;margin-top:3px;border-radius:4px">
+    <div style="flex:1;min-width:0">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:clamp(3px,0.4vh,5px)">
+        <div style="font-size:clamp(15px,2.1vh,21px);font-weight:700;color:var(--ink)">Reddit Presence</div>
+        <span class="badge">20 comments/month</span>
+      </div>
+      <div style="font-size:clamp(14px,1.85vh,18px);color:var(--ink3);line-height:1.5">reddit.com is a top AI-cited source in this space. 20 targeted comments per month in r/AskMen, r/Jung, r/AskMenOver30, and r/Fitness.</div>
+    </div>
+  </div>
+
+  <div class="card" style="grid-column:span 2">
+    <svg style="width:17px;height:17px;flex-shrink:0;margin-top:3px" viewBox="0 0 24 24" fill="none" stroke="var(--accent-dark)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+    <div style="flex:1;min-width:0">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:clamp(3px,0.4vh,5px)">
+        <div style="font-size:clamp(15px,2.1vh,21px);font-weight:700;color:var(--ink)">Monthly Reporting</div>
+        <span class="badge">Monthly</span>
+      </div>
+      <div style="font-size:clamp(14px,1.85vh,18px);color:var(--ink3);line-height:1.5">AI citation count, organic traffic, domain authority progress, and non-branded query movement delivered every month via AI Peekaboo, Google Search Console, and GA4.</div>
+    </div>
+  </div>
+
+</div>
+</div></section>
+
+<!-- SLIDE 14: How We Measure Progress -->
+<section><div class="s">
+<div class="shdr" data-n="14"></div>
+<h2 style="margin:0 0 clamp(12px,1.7vh,20px)">How We Measure Progress</h2>
+<p style="font-size:clamp(15px,2.1vh,21px);color:var(--ink2);font-weight:500;margin:0 0 clamp(14px,2vh,22px);flex-shrink:0">We track progress across both traditional search and AI platforms every month, so Unrationed always knows exactly where it is gaining ground.</p>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:clamp(14px,2vw,24px);flex:1;min-height:0;align-items:start">
+
+  <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(12px,1.6vh,20px) clamp(14px,1.6vw,20px);display:flex;flex-direction:column">
+    <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/google-search-console-icon.png" style="width:clamp(32px,4.5vh,46px);height:clamp(32px,4.5vh,46px);border-radius:8px;margin-bottom:clamp(10px,1.4vh,16px);display:block">
+    <div style="font-size:clamp(17px,2.3vh,24px);font-weight:700;color:var(--ink);margin-bottom:clamp(8px,1.1vh,14px)">Google Search Console</div>
+    <p style="font-size:clamp(13px,1.75vh,17px);color:var(--ink3);line-height:1.5;margin:0 0 clamp(12px,1.7vh,20px)">Tracks clicks and impressions for every query unrationed.com appears for. Confirms content drives visits and surfaces in AI Overviews.</p>
+    <div style="display:flex;flex-direction:column;gap:clamp(6px,0.9vh,10px)">
+      <div style="background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:6px;padding:clamp(6px,0.8vh,10px) clamp(10px,1.2vw,14px);font-size:clamp(13px,1.7vh,17px);color:var(--ink2);display:flex;align-items:flex-start;gap:6px">
+        <span style="color:var(--accent-dark);font-weight:700;flex-shrink:0">&middot;</span>Clicks and impressions month over month
+      </div>
+      <div style="background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:6px;padding:clamp(6px,0.8vh,10px) clamp(10px,1.2vw,14px);font-size:clamp(13px,1.7vh,17px);color:var(--ink2);display:flex;align-items:flex-start;gap:6px">
+        <span style="color:var(--accent-dark);font-weight:700;flex-shrink:0">&middot;</span>Non-branded men's development queries gaining impressions
+      </div>
+    </div>
+  </div>
+
+  <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(12px,1.6vh,20px) clamp(14px,1.6vw,20px);display:flex;flex-direction:column">
+    <img src="https://images.icon-icons.com/2699/PNG/512/google_analytics_image_logo_icon_168152.png" style="width:clamp(32px,4.5vh,46px);height:clamp(32px,4.5vh,46px);border-radius:8px;margin-bottom:clamp(10px,1.4vh,16px);display:block">
+    <div style="font-size:clamp(17px,2.3vh,24px);font-weight:700;color:var(--ink);margin-bottom:clamp(8px,1.1vh,14px)">Google Analytics 4</div>
+    <p style="font-size:clamp(13px,1.75vh,17px);color:var(--ink3);line-height:1.5;margin:0 0 clamp(12px,1.7vh,20px)">Tracks traffic by source so Unrationed can see organic growth, LLM referrals, and Reddit building momentum as a measurable direct channel.</p>
+    <div style="display:flex;flex-direction:column;gap:clamp(6px,0.9vh,10px)">
+      <div style="background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:6px;padding:clamp(6px,0.8vh,10px) clamp(10px,1.2vw,14px);font-size:clamp(13px,1.7vh,17px);color:var(--ink2);display:flex;align-items:flex-start;gap:6px">
+        <span style="color:var(--accent-dark);font-weight:700;flex-shrink:0">&middot;</span>Organic vs paid vs direct traffic split
+      </div>
+      <div style="background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:6px;padding:clamp(6px,0.8vh,10px) clamp(10px,1.2vw,14px);font-size:clamp(13px,1.7vh,17px);color:var(--ink2);display:flex;align-items:flex-start;gap:6px">
+        <span style="color:var(--accent-dark);font-weight:700;flex-shrink:0">&middot;</span>Referral traffic from ChatGPT, Perplexity, Gemini
+      </div>
+      <div style="background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:6px;padding:clamp(6px,0.8vh,10px) clamp(10px,1.2vw,14px);font-size:clamp(13px,1.7vh,17px);color:var(--ink2);display:flex;align-items:center;gap:6px">
+        <img src="https://www.google.com/s2/favicons?domain=reddit.com&sz=16" style="width:13px;height:13px;border-radius:2px;flex-shrink:0">Reddit as a direct traffic source
+      </div>
+    </div>
+  </div>
+
+  <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(12px,1.6vh,20px) clamp(14px,1.6vw,20px);display:flex;flex-direction:column">
+    <img src="https://www.aipeekaboo.com/icon.jpg" style="width:clamp(32px,4.5vh,46px);height:clamp(32px,4.5vh,46px);border-radius:8px;margin-bottom:clamp(10px,1.4vh,16px);display:block">
+    <div style="font-size:clamp(17px,2.3vh,24px);font-weight:700;color:var(--ink);margin-bottom:clamp(8px,1.1vh,14px)">AI Peekaboo</div>
+    <p style="font-size:clamp(13px,1.75vh,17px);color:var(--ink3);line-height:1.5;margin:0 0 clamp(12px,1.7vh,20px)">Baseline 9/100 overall, with 32 of 35 prompts at zero visibility. We track whether new content converts into AI recommendations on commercial queries.</p>
+    <div style="display:flex;flex-direction:column;gap:clamp(6px,0.9vh,10px)">
+      <div style="background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:6px;padding:clamp(6px,0.8vh,10px) clamp(10px,1.2vw,14px);font-size:clamp(13px,1.7vh,17px);color:var(--ink2);display:flex;align-items:center;gap:6px">
+        <img src="https://www.google.com/s2/favicons?domain=google.com&sz=16" style="width:13px;height:13px;border-radius:2px;flex-shrink:0">Google AI Overviews
+      </div>
+      <div style="background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:6px;padding:clamp(6px,0.8vh,10px) clamp(10px,1.2vw,14px);font-size:clamp(13px,1.7vh,17px);color:var(--ink2);display:flex;align-items:center;gap:6px">
+        <img src="https://www.google.com/s2/favicons?domain=chatgpt.com&sz=16" style="width:13px;height:13px;border-radius:2px;flex-shrink:0">ChatGPT
+      </div>
+      <div style="background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:6px;padding:clamp(6px,0.8vh,10px) clamp(10px,1.2vw,14px);font-size:clamp(13px,1.7vh,17px);color:var(--ink2);display:flex;align-items:center;gap:6px">
+        <img src="https://www.google.com/s2/favicons?domain=perplexity.ai&sz=16" style="width:13px;height:13px;border-radius:2px;flex-shrink:0">Perplexity
+      </div>
+      <div style="background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:6px;padding:clamp(6px,0.8vh,10px) clamp(10px,1.2vw,14px);font-size:clamp(13px,1.7vh,17px);color:var(--ink2);display:flex;align-items:center;gap:6px">
+        <img src="https://www.google.com/s2/favicons?domain=gemini.google.com&sz=16" style="width:13px;height:13px;border-radius:2px;flex-shrink:0">Gemini
+      </div>
+    </div>
+  </div>
+
+</div>
+</div></section>
+
+<!-- SLIDE 15: Your Investment -->
+<section><div class="s">
+<div class="shdr" data-n="15"></div>
+<h2 style="margin:0 0 clamp(12px,1.7vh,20px)">Your Investment. What We Deliver and When.</h2>
+<div style="flex:1;min-height:0;overflow:hidden;display:grid;grid-template-columns:1.1fr 0.9fr;gap:clamp(16px,2vw,28px);align-items:start">
+
+  <div style="display:flex;flex-direction:column;gap:0">
+
+    <div style="display:flex;gap:clamp(12px,1.5vw,18px)">
+      <div style="display:flex;flex-direction:column;align-items:center;flex-shrink:0;width:clamp(28px,3.5vw,38px)">
+        <div style="width:clamp(11px,1.4vh,14px);height:clamp(11px,1.4vh,14px);border-radius:50%;background:var(--accent-dark);flex-shrink:0;margin-top:3px"></div>
+        <div style="width:2px;flex:1;background:var(--rule);min-height:clamp(10px,1.5vh,18px)"></div>
+      </div>
+      <div style="flex:1;padding-bottom:clamp(14px,2vh,24px)">
+        <div style="display:inline-block;background:var(--accent-dark);color:#fff;font-size:clamp(11px,1.4vh,15px);font-weight:600;letter-spacing:0.04em;border-radius:4px;padding:2px 8px;margin-bottom:4px">Month 1 &middot; Foundation</div>
+        <div style="font-size:clamp(14px,1.9vh,20px);font-weight:700;color:var(--ink);margin-bottom:clamp(6px,0.9vh,10px)">Audit, Strategy and First Deliverables</div>
+        <div style="font-size:clamp(12px,1.5vh,16px);color:var(--ink3);line-height:1.5;display:flex;flex-direction:column;gap:3px">
+          <div>Full SEO and AEO audit of unrationed.com + competitive benchmark</div>
+          <div>12 articles targeting men's development keywords, drafted and published</div>
+          <div>Schema implementation begins</div>
+          <div>Reddit strategy agreed: identify top 5 subreddits for engagement</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:flex;gap:clamp(12px,1.5vw,18px)">
+      <div style="display:flex;flex-direction:column;align-items:center;flex-shrink:0;width:clamp(28px,3.5vw,38px)">
+        <div style="width:clamp(11px,1.4vh,14px);height:clamp(11px,1.4vh,14px);border-radius:50%;background:var(--accent-dark);flex-shrink:0;margin-top:3px"></div>
+        <div style="width:2px;flex:1;background:var(--rule);min-height:clamp(10px,1.5vh,18px)"></div>
+      </div>
+      <div style="flex:1;padding-bottom:clamp(14px,2vh,24px)">
+        <div style="display:inline-block;background:var(--accent-dark);color:#fff;font-size:clamp(11px,1.4vh,15px);font-weight:600;letter-spacing:0.04em;border-radius:4px;padding:2px 8px;margin-bottom:4px">Month 2 &middot; Build</div>
+        <div style="font-size:clamp(14px,1.9vh,20px);font-weight:700;color:var(--ink);margin-bottom:clamp(6px,0.9vh,10px)">Content, Reddit and First Outreach</div>
+        <div style="font-size:clamp(12px,1.5vh,16px);color:var(--ink3);line-height:1.5;display:flex;flex-direction:column;gap:3px">
+          <div>12 articles published</div>
+          <div>Reddit presence: 20 Reddit comments/month in men's development threads</div>
+          <div>First editorial outreach to men's wellness and entrepreneurship publications</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:flex;gap:clamp(12px,1.5vw,18px)">
+      <div style="display:flex;flex-direction:column;align-items:center;flex-shrink:0;width:clamp(28px,3.5vw,38px)">
+        <div style="width:clamp(11px,1.4vh,14px);height:clamp(11px,1.4vh,14px);border-radius:50%;background:var(--accent-dark);flex-shrink:0;margin-top:3px"></div>
+        <div style="width:2px;flex:1;background:var(--rule);min-height:clamp(10px,1.5vh,18px)"></div>
+      </div>
+      <div style="flex:1;padding-bottom:clamp(14px,2vh,24px)">
+        <div style="display:inline-block;background:var(--accent-dark);color:#fff;font-size:clamp(11px,1.4vh,15px);font-weight:600;letter-spacing:0.04em;border-radius:4px;padding:2px 8px;margin-bottom:4px">Month 3 &middot; Compound</div>
+        <div style="font-size:clamp(14px,1.9vh,20px);font-weight:700;color:var(--ink);margin-bottom:clamp(6px,0.9vh,10px)">Comparison Pages and Authority Push</div>
+        <div style="font-size:clamp(12px,1.5vh,16px);color:var(--ink3);line-height:1.5;display:flex;flex-direction:column;gap:3px">
+          <div>12 articles published</div>
+          <div>20 Reddit comments/month, scaling presence across subreddits</div>
+          <div>Comparison pages live: Unrationed vs GoBundance</div>
+          <div>Editorial links from outdoor and adventure press</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:flex;gap:clamp(12px,1.5vw,18px)">
+      <div style="display:flex;flex-direction:column;align-items:center;flex-shrink:0;width:clamp(28px,3.5vw,38px)">
+        <div style="width:clamp(11px,1.4vh,14px);height:clamp(11px,1.4vh,14px);border-radius:50%;background:var(--ink4);flex-shrink:0;margin-top:3px"></div>
+      </div>
+      <div style="flex:1">
+        <div style="display:inline-block;background:var(--accent-bg);color:var(--accent-dark);border:1px solid var(--accent-bd);font-size:clamp(11px,1.4vh,15px);font-weight:600;letter-spacing:0.04em;border-radius:4px;padding:2px 8px;margin-bottom:4px">Month 4+ &middot; Ongoing</div>
+        <div style="font-size:clamp(14px,1.9vh,20px);font-weight:700;color:var(--ink);margin-bottom:clamp(6px,0.9vh,10px)">Continued Growth</div>
+        <div style="font-size:clamp(12px,1.5vh,16px);color:var(--ink3);line-height:1.5">Each month builds on the last. Content compounds, AI citations grow, DR climbs, Reddit presence builds month over month.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div style="display:flex;flex-direction:column;gap:clamp(10px,1.4vh,18px)">
+    <div style="background:var(--accent-bg);border:1.5px solid var(--accent-bd);border-radius:12px;padding:clamp(14px,2vh,24px)">
+      <span style="background:var(--accent-dark);color:#fff;font-size:clamp(10px,1.25vh,13px);font-weight:600;border-radius:20px;padding:2px 10px">Complete Solution</span>
+      <div style="font-size:clamp(16px,2.2vh,24px);font-weight:700;color:var(--ink);margin:clamp(8px,1.1vh,14px) 0 2px;font-family:'Cormorant Garamond',serif">Full AI Search Optimization</div>
+      <div style="font-size:clamp(11px,1.4vh,14px);color:var(--ink3);margin-bottom:clamp(8px,1.1vh,14px)">SEO + AEO + Reddit</div>
+      <div style="font-size:clamp(22px,3.2vh,40px);font-weight:800;color:var(--accent-dark);margin-bottom:clamp(8px,1.1vh,14px)">$3,000<span style="font-size:clamp(13px,1.7vh,17px);font-weight:500;color:var(--ink3)">/month</span></div>
+      <div style="height:1px;background:var(--accent-bd);margin-bottom:clamp(10px,1.4vh,16px)"></div>
+      <div style="display:flex;flex-direction:column;gap:clamp(7px,1vh,12px);margin-bottom:clamp(10px,1.4vh,14px)">
+        <div style="display:flex;align-items:flex-start;gap:10px">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="flex-shrink:0;margin-top:2px"><circle cx="8" cy="8" r="8" fill="#f0fdf4"/><path d="M4.5 8.5l2.5 2.5 4.5-5" stroke="#16a34a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span style="font-size:clamp(12px,1.6vh,17px);color:var(--ink2);line-height:1.5">12 content pieces/month targeting men's development keywords</span>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:10px">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="flex-shrink:0;margin-top:2px"><circle cx="8" cy="8" r="8" fill="#f0fdf4"/><path d="M4.5 8.5l2.5 2.5 4.5-5" stroke="#16a34a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span style="font-size:clamp(12px,1.6vh,17px);color:var(--ink2);line-height:1.5">2 comparison pages/month vs GoBundance, Evryman, ManKind Project</span>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:10px">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="flex-shrink:0;margin-top:2px"><circle cx="8" cy="8" r="8" fill="#f0fdf4"/><path d="M4.5 8.5l2.5 2.5 4.5-5" stroke="#16a34a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span style="font-size:clamp(12px,1.6vh,17px);color:var(--ink2);line-height:1.5">Reddit engagement: 20 targeted comments in men's development threads</span>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:10px">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="flex-shrink:0;margin-top:2px"><circle cx="8" cy="8" r="8" fill="#f0fdf4"/><path d="M4.5 8.5l2.5 2.5 4.5-5" stroke="#16a34a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span style="font-size:clamp(12px,1.6vh,17px);color:var(--ink2);line-height:1.5">Editorial link outreach to men's wellness and entrepreneurship publications</span>
+        </div>
+      </div>
+      <div style="font-size:clamp(11px,1.35vh,14px);color:var(--ink4);font-style:italic;border-top:1px solid var(--accent-bd);padding-top:8px">Includes AI Peekaboo monitoring for visibility tracking across Claude, ChatGPT and Perplexity. 3-month minimum.</div>
+    </div>
+    <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:12px;padding:clamp(14px,2vh,24px)">
+      <span style="background:var(--paper3);color:var(--ink4);font-size:clamp(10px,1.25vh,13px);font-weight:600;border-radius:20px;padding:2px 10px;border:1px solid var(--rule)">Entry Point</span>
+      <div style="font-size:clamp(16px,2.2vh,24px);font-weight:700;color:var(--ink);margin:clamp(8px,1.1vh,14px) 0 2px;font-family:'Cormorant Garamond',serif">Reddit Only</div>
+      <div style="font-size:clamp(11px,1.4vh,14px);color:var(--ink3);margin-bottom:clamp(8px,1.1vh,14px)">Build trust where men decide</div>
+      <div style="font-size:clamp(22px,3.2vh,40px);font-weight:800;color:var(--ink);margin-bottom:clamp(8px,1.1vh,14px)">$1,500<span style="font-size:clamp(13px,1.7vh,17px);font-weight:500;color:var(--ink3)">/month</span></div>
+      <div style="height:1px;background:var(--rule);margin-bottom:clamp(10px,1.4vh,16px)"></div>
+      <div style="display:flex;flex-direction:column;gap:clamp(7px,1vh,12px);margin-bottom:clamp(10px,1.4vh,14px)">
+        <div style="display:flex;align-items:flex-start;gap:10px">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="flex-shrink:0;margin-top:2px"><circle cx="8" cy="8" r="8" fill="#f0fdf4"/><path d="M4.5 8.5l2.5 2.5 4.5-5" stroke="#16a34a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span style="font-size:clamp(12px,1.6vh,17px);color:var(--ink2);line-height:1.5">Reddit engagement: 20 targeted comments per month in men's development and accountability threads</span>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:10px">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="flex-shrink:0;margin-top:2px"><circle cx="8" cy="8" r="8" fill="#f0fdf4"/><path d="M4.5 8.5l2.5 2.5 4.5-5" stroke="#16a34a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span style="font-size:clamp(12px,1.6vh,17px);color:var(--ink2);line-height:1.5">Thread monitoring across r/AskMen, r/Jung, r/AskMenOver30, r/Fitness</span>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:10px">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="flex-shrink:0;margin-top:2px"><circle cx="8" cy="8" r="8" fill="#f0fdf4"/><path d="M4.5 8.5l2.5 2.5 4.5-5" stroke="#16a34a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span style="font-size:clamp(12px,1.6vh,17px);color:var(--ink2);line-height:1.5">AI citation tracking: when Reddit threads surface Unrationed in LLM answers</span>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:10px">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="flex-shrink:0;margin-top:2px"><circle cx="8" cy="8" r="8" fill="#f0fdf4"/><path d="M4.5 8.5l2.5 2.5 4.5-5" stroke="#16a34a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span style="font-size:clamp(12px,1.6vh,17px);color:var(--ink2);line-height:1.5">Monthly Reddit report: mention share vs Tony Robbins, Evryman, GoBundance</span>
+        </div>
+      </div>
+      <div style="font-size:clamp(11px,1.35vh,14px);color:var(--ink4);font-style:italic;border-top:1px solid var(--rule);padding-top:8px">Scale up to Full AI Search Optimization anytime. 3-month minimum.</div>
+    </div>
+    <p style="font-size:clamp(12px,1.5vh,15px);color:var(--ink4);text-align:center;margin:0">3-month minimum commitment. After month 3, renews month-to-month with 30 days cancellation notice.</p>
+  </div>
+
+</div>
+</div></section>
+
+<!-- SLIDE 16: CTA / Team -->
+<section><div class="s">
+<div class="shdr" data-n="16"></div>
+<h2 style="margin:0 0 clamp(10px,1.5vh,18px);text-align:center">Ready to Own Men's Personal Development AI Search Before GoBundance Does?</h2>
+<a href="https://calendly.com/filipe-aipeekaboo/30min" target="_blank" rel="noopener" style="display:block;width:100%;background:var(--accent-bg);border:2px solid var(--accent-bd);border-radius:8px;padding:clamp(14px,2vh,22px);text-align:center;text-decoration:none;margin:clamp(12px,1.8vh,20px) 0 clamp(8px,1.1vh,14px);flex-shrink:0">
+  <span style="font-size:clamp(14px,1.9vh,22px);font-weight:700;color:var(--accent-dark);letter-spacing:0.01em">Book a 30-Minute Strategy Call</span>
+</a>
+<p style="text-align:center;font-size:clamp(13px,1.7vh,17px);color:var(--ink3);margin:0 auto clamp(12px,1.8vh,22px);max-width:90ch;flex-shrink:0">Limited to 3 new SEO / AEO clients per quarter. Every day without comparison content is another day men searching for accountability programs find GoBundance or Tony Robbins instead of Unrationed.</p>
+<div style="text-align:center;margin-bottom:clamp(8px,1.1vh,14px);flex-shrink:0">
+  <span style="font-size:clamp(11px,1.4vh,14px);font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--ink4)">The Team</span>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:clamp(12px,1.6vw,20px);align-items:start;flex-shrink:0">
+
+  <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:12px;padding:clamp(14px,1.9vh,22px);display:flex;flex-direction:column;gap:clamp(10px,1.3vh,16px);flex-shrink:0">
+    <div style="display:flex;align-items:center;gap:clamp(12px,1.6vh,17px)">
+      <img src="filipe.jpeg" style="width:50px;height:50px;border-radius:50%;object-fit:cover;border:2px solid var(--rule);flex-shrink:0">
+      <div>
+        <div style="font-size:clamp(14px,1.8vh,20px);font-weight:700;color:var(--ink)">Filipe Lins Duarte</div>
+        <div style="font-size:clamp(12px,1.5vh,16px);color:var(--accent-dark);font-weight:500">Co-Founder &amp; CEO</div>
+        <a href="https://www.linkedin.com/in/filipelinsduarte" target="_blank" rel="noopener" style="font-size:clamp(11px,1.4vh,15px);color:var(--ink4);text-decoration:none">linkedin.com/in/filipelinsduarte</a>
+      </div>
+    </div>
+    <div style="font-size:clamp(12px,1.5vh,16px);color:var(--ink3);line-height:1.5">Sales leader turned founder. Built revenue teams across SaaS in Europe and the US. Leads strategy and client relationships.</div>
+    <div style="display:flex;flex-direction:column;gap:clamp(5px,0.7vh,8px)">
+      <div style="display:flex;align-items:center;gap:8px">
+        <img src="https://www.google.com/s2/favicons?domain=aipeekaboo.com&sz=32" style="width:16px;height:16px;border-radius:3px;flex-shrink:0">
+        <span style="font-size:clamp(11px,1.4vh,15px);font-weight:600;color:var(--ink2)">AI Peekaboo</span>
+        <span style="font-size:clamp(10px,1.2vh,13px);color:var(--ink3)">Co-Founder &amp; CEO</span>
+        <span style="font-size:clamp(10px,1.2vh,13px);color:var(--ink4);margin-left:auto">Aug 2025</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <img src="https://www.google.com/s2/favicons?domain=uber.com&sz=32" style="width:16px;height:16px;border-radius:3px;flex-shrink:0">
+        <span style="font-size:clamp(11px,1.4vh,15px);font-weight:600;color:var(--ink2)">Uber for Business</span>
+        <span style="font-size:clamp(10px,1.2vh,13px);color:var(--ink3)">Mid-Market AE</span>
+        <span style="font-size:clamp(10px,1.2vh,13px);color:var(--ink4);margin-left:auto">Sep 2024</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <img src="https://www.google.com/s2/favicons?domain=meistertask.com&sz=32" style="width:16px;height:16px;border-radius:3px;flex-shrink:0">
+        <span style="font-size:clamp(11px,1.4vh,15px);font-weight:600;color:var(--ink2)">Meister</span>
+        <span style="font-size:clamp(10px,1.2vh,13px);color:var(--ink3)">#1 AE 2023</span>
+        <span style="font-size:clamp(10px,1.2vh,13px);color:var(--ink4);margin-left:auto">Aug 2022</span>
+      </div>
+    </div>
+  </div>
+
+  <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:12px;padding:clamp(14px,1.9vh,22px);display:flex;flex-direction:column;gap:clamp(10px,1.3vh,16px);flex-shrink:0">
+    <div style="display:flex;align-items:center;gap:clamp(12px,1.6vh,17px)">
+      <img src="john.jpeg" style="width:50px;height:50px;border-radius:50%;object-fit:cover;border:2px solid var(--rule);flex-shrink:0">
+      <div>
+        <div style="font-size:clamp(14px,1.8vh,20px);font-weight:700;color:var(--ink)">John Rice</div>
+        <div style="font-size:clamp(12px,1.5vh,16px);color:var(--accent-dark);font-weight:500">Co-Founder &amp; CTO</div>
+        <a href="https://www.linkedin.com/in/johnwilliamrice/" target="_blank" rel="noopener" style="font-size:clamp(11px,1.4vh,15px);color:var(--ink4);text-decoration:none">linkedin.com/in/johnwilliamrice</a>
+      </div>
+    </div>
+    <div style="font-size:clamp(12px,1.5vh,16px);color:var(--ink3);line-height:1.5">Full-stack engineer and serial builder. Designed the AI Peekaboo platform from scratch. Leads product and engineering.</div>
+    <div style="display:flex;flex-direction:column;gap:clamp(5px,0.7vh,8px)">
+      <div style="display:flex;align-items:center;gap:8px">
+        <img src="https://www.google.com/s2/favicons?domain=aipeekaboo.com&sz=32" style="width:16px;height:16px;border-radius:3px;flex-shrink:0">
+        <span style="font-size:clamp(11px,1.4vh,15px);font-weight:600;color:var(--ink2)">AI Peekaboo</span>
+        <span style="font-size:clamp(10px,1.2vh,13px);color:var(--ink3)">Co-Founder &amp; CTO</span>
+        <span style="font-size:clamp(10px,1.2vh,13px);color:var(--ink4);margin-left:auto">Apr 2025</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <img src="https://www.google.com/s2/favicons?domain=subredditsignals.com&sz=32" style="width:16px;height:16px;border-radius:3px;flex-shrink:0">
+        <span style="font-size:clamp(11px,1.4vh,15px);font-weight:600;color:var(--ink2)">Subreddit Signals</span>
+        <span style="font-size:clamp(10px,1.2vh,13px);color:var(--ink3)">Founder</span>
+        <span style="font-size:clamp(10px,1.2vh,13px);color:var(--ink4);margin-left:auto">Nov 2024</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <img src="https://www.google.com/s2/favicons?domain=magiclinks.com&sz=32" style="width:16px;height:16px;border-radius:3px;flex-shrink:0">
+        <span style="font-size:clamp(11px,1.4vh,15px);font-weight:600;color:var(--ink2)">MagicLinks</span>
+        <span style="font-size:clamp(10px,1.2vh,13px);color:var(--ink3)">Senior Software Engineer</span>
+        <span style="font-size:clamp(10px,1.2vh,13px);color:var(--ink4);margin-left:auto">Jul 2021</span>
+      </div>
+    </div>
+  </div>
+
+  <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:12px;padding:clamp(14px,1.9vh,22px);display:flex;flex-direction:column;gap:clamp(10px,1.3vh,16px);flex-shrink:0">
+    <div style="display:flex;align-items:center;gap:clamp(12px,1.6vh,17px)">
+      <img src="danny-kirk.jpeg" style="width:50px;height:50px;border-radius:50%;object-fit:cover;border:2px solid var(--rule);flex-shrink:0">
+      <div>
+        <div style="font-size:clamp(14px,1.8vh,20px);font-weight:700;color:var(--ink)">Danny Kirk</div>
+        <div style="font-size:clamp(12px,1.5vh,16px);color:var(--accent-dark);font-weight:500">COO &amp; Advisory</div>
+        <a href="https://www.linkedin.com/in/danielpkirk/" target="_blank" rel="noopener" style="font-size:clamp(11px,1.4vh,15px);color:var(--ink4);text-decoration:none">linkedin.com/in/danielpkirk</a>
+      </div>
+    </div>
+    <div style="font-size:clamp(12px,1.5vh,16px);color:var(--ink3);line-height:1.5">Reddit community expert and operator. Founded ReddiReach in 2017. Brings platform-native knowledge and operator experience.</div>
+    <div style="display:flex;flex-direction:column;gap:clamp(5px,0.7vh,8px)">
+      <div style="display:flex;align-items:center;gap:8px">
+        <img src="https://www.google.com/s2/favicons?domain=reddit.com&sz=32" style="width:16px;height:16px;border-radius:3px;flex-shrink:0">
+        <span style="font-size:clamp(11px,1.4vh,15px);font-weight:600;color:var(--ink2)">ReddiReach</span>
+        <span style="font-size:clamp(10px,1.2vh,13px);color:var(--ink3)">Founder</span>
+        <span style="font-size:clamp(10px,1.2vh,13px);color:var(--ink4);margin-left:auto">Dec 2017</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <img src="https://www.google.com/s2/favicons?domain=goaheadventures.com&sz=32" style="width:16px;height:16px;border-radius:3px;flex-shrink:0">
+        <span style="font-size:clamp(11px,1.4vh,15px);font-weight:600;color:var(--ink2)">GoAhead Ventures</span>
+        <span style="font-size:clamp(10px,1.2vh,13px);color:var(--ink3)">Venture Scout</span>
+        <span style="font-size:clamp(10px,1.2vh,13px);color:var(--ink4);margin-left:auto">Oct 2024</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <img src="https://www.google.com/s2/favicons?domain=energentmedia.com&sz=32" style="width:16px;height:16px;border-radius:3px;flex-shrink:0">
+        <span style="font-size:clamp(11px,1.4vh,15px);font-weight:600;color:var(--ink2)">Energent Media</span>
+        <span style="font-size:clamp(10px,1.2vh,13px);color:var(--ink3)">COO</span>
+        <span style="font-size:clamp(10px,1.2vh,13px);color:var(--ink4);margin-left:auto">Jun 2018</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div></section>
+
+      </div>
+    </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reveal.min.js"></script>
+<script>
+var T=16, D='unrationed.com', P='SEO / AEO Proposal';
+Reveal.initialize({hash:true,transition:'none',disableLayout:true,width:1920,height:1080,margin:0,minScale:0.1,maxScale:3});
+document.querySelectorAll('.shdr').forEach(function(el){
+  var n=el.getAttribute('data-n');
+  var src=el.getAttribute('data-source');
+  var srcHtml='';
+  if(src){
+    var srcMap={
+      'ahrefs':['https://www.google.com/s2/favicons?domain=ahrefs.com&sz=32','data from Ahrefs'],
+      'peekaboo':['https://www.aipeekaboo.com/icon.jpg','data from Peekaboo'],
+      'reddit':['https://www.google.com/s2/favicons?domain=reddit.com&sz=32','data from Reddit']
+    };
+    if(srcMap[src]) srcHtml='<div class="data-src"><img src="'+srcMap[src][0]+'"><span>'+srcMap[src][1]+'</span></div>';
+  }
+  var LEAD='<img src="https://www.google.com/s2/favicons?domain=unrationed.com&sz=64" class="hdr-favicon">';
+  el.innerHTML='<div class="stripe"></div><div class="hdr"><div style="display:flex;align-items:center;gap:10px">'+LEAD+'<span class="tag">'+P+'</span></div><div class="hdr-right"><span class="snum">'+n+' / '+T+'</span><a class="powered" href="https://www.aipeekaboo.com" target="_blank" rel="noopener"><span>Powered by</span><img src="https://www.aipeekaboo.com/images/peekaboo-logo-black.png"></a></div></div><div class="divider"></div>'+(srcHtml?'<div style="display:flex;justify-content:flex-end;margin-bottom:clamp(5px,0.7vh,9px)">'+srcHtml+'</div>':'');
+});
+</script>
+</body>
+</html>

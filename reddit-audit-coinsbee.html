@@ -598,52 +598,6 @@
     line-height: 1.55;
   }
 
-  /* CTA */
-  .cta-block {
-    background: var(--accent-bg);
-    border: 1.5px solid var(--accent-bd);
-    border-radius: 14px;
-    padding: 36px 40px;
-    text-align: center;
-    margin-top: 28px;
-  }
-  .cta-block h2 { margin-bottom: 10px; }
-  .cta-block > p {
-    font-size: 15px;
-    color: var(--ink3);
-    max-width: 480px;
-    margin: 0 auto 24px;
-  }
-  .cta-buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
-  .cta-email, .cta-calendar {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 15px;
-    padding: 12px 24px;
-    border-radius: 8px;
-    transition: background 0.15s, border-color 0.15s;
-  }
-  .cta-email { background: var(--accent); color: #fff; }
-  .cta-email:hover { background: var(--accent-dark); }
-  .cta-calendar {
-    background: #fff;
-    color: var(--accent);
-    border: 1.5px solid var(--accent-bd);
-  }
-  .cta-calendar:hover {
-    background: var(--accent-bg);
-    border-color: var(--accent);
-  }
-  .cta-email svg, .cta-calendar svg { width: 16px; height: 16px; }
-  .cta-note {
-    font-size: 13px;
-    color: var(--ink4);
-    margin-top: 14px;
-  }
-
   /* Footer */
   .footer {
     margin-top: 56px;
@@ -672,8 +626,6 @@
     .page { padding: 32px 12px 64px; }
     .sheet { padding: 32px 22px 40px; border-radius: 12px; }
     .stat-chip { flex: 1 0 calc(50% - 5px); min-width: 0; }
-    .cta-buttons { flex-direction: column; align-items: center; }
-    .cta-block { padding: 28px 20px; }
     .thread { padding: 18px 18px; }
     .thread-date { margin-left: 0; }
     .timeline-card { width: 170px; }
@@ -1614,20 +1566,6 @@
             <p>You get a clear monthly report showing every comment posted, its engagement, and the impact on AI visibility in a simple monthly report. Threads that perform get a second comment, threads that need a different angle get rewritten.</p>
           </div>
         </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="cta-block">
-        <h2>Want us to start this week?</h2>
-        <p>Pick a time below or reply directly. We can be live in the first three threads within five working days.</p>
-        <div class="cta-buttons">
-          <a class="cta-email" href="mailto:hello@youragency.com">
-            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h12c1.1 0 2 .9 2 2v8c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            Email Filipe
-          </a>
-        </div>
-        <p class="cta-note">hello@youragency.com</p>
       </div>
     </section>
 

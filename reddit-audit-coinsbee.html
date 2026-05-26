@@ -1,0 +1,1738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CoinsBee · Reddit Audit · AI Peekaboo</title>
+
+<!-- GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YV8FCLN403"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-YV8FCLN403');</script>
+
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js" defer></script>
+
+<style>
+  :root {
+    --accent:      #FF4500;
+    --accent-dark: #cc3700;
+    --accent-bg:   #fff4f0;
+    --accent-bd:   #ffd0bf;
+    --ink:         #1c1c1c;
+    --ink2:        #313131;
+    --ink3:        #6b6b6b;
+    --ink4:        #a8a8a8;
+    --paper:       #dae0e6;
+    --paper2:      #f6f7f8;
+    --paper3:      #edeff1;
+    --rule:        #edeff1;
+    --ok:          #46d160;
+    --ok-bg:       #edfbf0;
+    --ok-bd:       #b3f0c4;
+    --warn:        #ffd635;
+    --warn-bg:     #fffbe6;
+    --warn-bd:     #ffe680;
+    --red:         #ea0027;
+    --neutral:     #a8a8a8;
+    --mixed:       #FF4500;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { background: var(--paper); }
+  body {
+    font-family: "Lato", sans-serif;
+    font-size: 16px;
+    line-height: 1.65;
+    color: var(--ink);
+    background: var(--paper);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Top bar */
+  .topbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--rule);
+    padding: 12px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  .topbar-left { display: flex; align-items: center; gap: 10px; }
+  .topbar-left img { width: 22px; height: 22px; border-radius: 5px; object-fit: contain; }
+  .topbar-left .brand-name { font-size: 14px; font-weight: 700; color: var(--ink2); }
+  .topbar-left .sep { color: var(--rule); font-size: 14px; }
+  .topbar-left .topbar-sub { font-size: 13px; color: var(--ink4); font-weight: 400; }
+  .topbar-right { display: flex; align-items: center; gap: 6px; text-decoration: none; }
+  .topbar-right span { font-size: 13px; color: var(--ink4); }
+  .topbar-right img { height: 16px; width: auto; opacity: 0.6; }
+
+  /* Page */
+  .page { max-width: 760px; margin: 0 auto; padding: 56px 24px 100px; }
+  .sheet {
+    background: #fff;
+    border: 1px solid var(--rule);
+    border-radius: 16px;
+    padding: 56px 56px 64px;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.02);
+  }
+
+  /* Cover */
+  .cover { padding-bottom: 44px; border-bottom: 1px solid var(--rule); margin-bottom: 48px; }
+  .cover-favicon {
+    width: 48px; height: 48px;
+    border-radius: 12px;
+    object-fit: contain;
+    background: #fff;
+    border: 1px solid var(--rule);
+    padding: 6px;
+    margin-bottom: 18px;
+    display: block;
+  }
+  .cover-meta {
+    display: flex; align-items: center; gap: 8px;
+    margin-bottom: 18px; flex-wrap: wrap;
+    font-family: "DM Mono", monospace;
+    font-size: 12px;
+    color: var(--ink4);
+    letter-spacing: 0.04em;
+  }
+  .cover-meta .sep { color: var(--rule); }
+  .cover h1 {
+    font-family: "Lato", sans-serif;
+    font-weight: 900;
+    font-size: clamp(28px, 4vw, 40px);
+    line-height: 1.12;
+    color: var(--ink);
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+  }
+  .cover-sub {
+    font-size: 17px; color: var(--ink3); line-height: 1.65; max-width: 620px;
+  }
+
+  /* Stat chips */
+  .stats-row {
+    display: flex; gap: 10px;
+    margin: 24px 0 0;
+    flex-wrap: wrap;
+  }
+  .stat-chip {
+    background: var(--paper2);
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    padding: 12px 16px;
+    flex-shrink: 0;
+    min-width: 120px;
+  }
+  .stat-chip-num {
+    font-family: "DM Mono", monospace;
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--ink);
+    line-height: 1.1;
+    display: block;
+  }
+  .stat-chip-label {
+    font-size: 11px;
+    font-family: "DM Mono", monospace;
+    color: var(--ink4);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-top: 4px;
+    display: block;
+  }
+  .stat-chip.accent {
+    background: var(--accent-bg);
+    border-color: var(--accent-bd);
+  }
+  .stat-chip.accent .stat-chip-num { color: var(--accent-dark); }
+  .stat-chip.accent .stat-chip-label { color: var(--accent); }
+
+  /* Sections */
+  .section { margin-top: 56px; }
+  .section-label {
+    font-family: "DM Mono", monospace;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .section-label img {
+    width: 16px; height: 16px;
+    border-radius: 3px;
+    object-fit: contain;
+  }
+  h2 {
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    font-size: clamp(20px, 3vw, 26px);
+    color: var(--ink);
+    line-height: 1.25;
+    margin-bottom: 14px;
+  }
+  h3 { font-size: 15px; font-weight: 700; color: var(--ink); margin-bottom: 6px; line-height: 1.4; }
+  p { font-size: 16px; color: var(--ink2); line-height: 1.7; margin-bottom: 12px; }
+  p:last-child { margin-bottom: 0; }
+
+  /* Section card wrapper */
+  .card {
+    background: #fff;
+    border: 1px solid var(--rule);
+    border-radius: 12px;
+    padding: 24px;
+    margin-top: 18px;
+    flex-shrink: 0;
+  }
+
+  /* Chart containers */
+  .chart-wrap {
+    height: 280px;
+    position: relative;
+    margin-top: 8px;
+  }
+  .chart-wrap.donut { height: 240px; }
+  .chart-wrap.bar-h { height: 320px; }
+
+  /* Competitor table */
+  .comp-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 22px;
+    font-size: 14px;
+  }
+  .comp-table th {
+    text-align: left;
+    font-family: "DM Mono", monospace;
+    font-size: 10px;
+    font-weight: 500;
+    color: var(--ink4);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 8px 8px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .comp-table td {
+    padding: 10px 8px;
+    border-bottom: 1px solid var(--paper3);
+    vertical-align: middle;
+    color: var(--ink2);
+  }
+  .comp-table tr:last-child td { border-bottom: none; }
+  .comp-table tr.highlight td { background: var(--accent-bg); }
+  .comp-name {
+    display: flex; align-items: center; gap: 8px;
+    font-weight: 700;
+    color: var(--ink);
+  }
+  .comp-name img {
+    width: 18px; height: 18px;
+    border-radius: 4px;
+    object-fit: contain;
+    flex-shrink: 0;
+  }
+  .comp-count {
+    font-family: "DM Mono", monospace;
+    font-size: 13px;
+    color: var(--ink3);
+    text-align: right;
+    width: 1%;
+    white-space: nowrap;
+  }
+  .sent-bar {
+    display: flex;
+    height: 8px;
+    border-radius: 4px;
+    overflow: hidden;
+    background: var(--paper3);
+    min-width: 140px;
+  }
+  .sent-bar > span { display: block; height: 100%; }
+  .sent-bar .pos { background: var(--ok); }
+  .sent-bar .neg { background: var(--red); }
+  .sent-bar .neu { background: var(--neutral); }
+  .sent-bar .mix { background: var(--mixed); }
+
+  /* Sentiment legend */
+  .sent-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 14px;
+    font-family: "DM Mono", monospace;
+    font-size: 11px;
+    color: var(--ink3);
+  }
+  .sent-legend .dot {
+    display: inline-block;
+    width: 9px; height: 9px;
+    border-radius: 2px;
+    margin-right: 5px;
+    vertical-align: middle;
+  }
+
+  /* Two-column layout */
+  .two-col {
+    display: flex;
+    gap: 18px;
+    margin-top: 18px;
+    flex-wrap: wrap;
+  }
+  .two-col > .card { margin-top: 0; flex: 1 1 320px; min-width: 0; }
+  .two-col > .card.narrow { flex: 0 0 240px; }
+
+  @media (max-width: 700px) {
+    .two-col { flex-direction: column; }
+    .two-col > .card.narrow { flex: 1; }
+  }
+
+  /* Posts table */
+  .posts-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin-top: 8px;
+  }
+  .posts-table th {
+    text-align: left;
+    font-family: "DM Mono", monospace;
+    font-size: 10px;
+    font-weight: 500;
+    color: var(--ink4);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 8px 8px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .posts-table td {
+    padding: 12px 8px;
+    border-bottom: 1px solid var(--paper3);
+    vertical-align: middle;
+    color: var(--ink2);
+  }
+  .posts-table tr:last-child td { border-bottom: none; }
+  .posts-table a {
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--rule);
+    transition: border-color 0.15s, color 0.15s;
+  }
+  .posts-table a:hover {
+    color: var(--accent-dark);
+    border-bottom-color: var(--accent);
+  }
+
+  .pill {
+    font-family: "DM Mono", monospace;
+    font-size: 11px;
+    color: var(--ink3);
+    background: var(--paper2);
+    border: 1px solid var(--rule);
+    padding: 3px 8px;
+    border-radius: 999px;
+    flex-shrink: 0;
+    display: inline-block;
+    white-space: nowrap;
+  }
+
+  .sent-badge {
+    font-family: "DM Mono", monospace;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 4px;
+    display: inline-block;
+    white-space: nowrap;
+  }
+  .sent-badge.positive { background: var(--ok-bg); color: #1b8a3a; border: 1px solid var(--ok-bd); }
+  .sent-badge.negative { background: #fdecec; color: #b51c1c; border: 1px solid #f5b7b7; }
+  .sent-badge.neutral  { background: var(--paper3); color: var(--ink3); border: 1px solid var(--rule); }
+  .sent-badge.mixed    { background: var(--accent-bg); color: var(--accent-dark); border: 1px solid var(--accent-bd); }
+
+  /* Filter pills */
+  .filter-row {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin: 4px 0 14px;
+  }
+  .filter-pill {
+    font-family: "DM Mono", monospace;
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    border: 1px solid var(--rule);
+    border-radius: 999px;
+    background: #fff;
+    color: var(--ink3);
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s, border-color 0.15s;
+  }
+  .filter-pill:hover { border-color: var(--accent-bd); }
+  .filter-pill.active {
+    background: var(--accent);
+    color: #fff;
+    border-color: var(--accent);
+  }
+
+  /* Timeline */
+  .timeline-wrap {
+    margin-top: 18px;
+    overflow-x: auto;
+    padding-bottom: 4px;
+  }
+  .timeline {
+    display: flex;
+    gap: 10px;
+    min-width: min-content;
+  }
+  .timeline-card {
+    flex-shrink: 0;
+    width: 200px;
+    background: var(--paper2);
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    padding: 12px;
+    text-decoration: none;
+    color: inherit;
+    transition: border-color 0.15s, background 0.15s;
+    display: block;
+  }
+  .timeline-card:hover {
+    border-color: var(--accent-bd);
+    background: var(--accent-bg);
+  }
+  .timeline-card .pill { margin-bottom: 8px; }
+  .timeline-card .tl-date {
+    font-family: "DM Mono", monospace;
+    font-size: 11px;
+    color: var(--ink4);
+    margin-bottom: 6px;
+  }
+  .timeline-card .tl-title {
+    font-size: 12px;
+    color: var(--ink2);
+    line-height: 1.45;
+    font-weight: 600;
+  }
+
+  /* Thread cards */
+  .threads {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 18px;
+  }
+  .thread {
+    background: #fff;
+    border: 1px solid var(--rule);
+    border-radius: 12px;
+    padding: 20px 24px;
+  }
+  .thread-top {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+  }
+  .badge {
+    font-family: "DM Mono", monospace;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 4px;
+    flex-shrink: 0;
+  }
+  .badge.high { background: var(--accent-bg); color: var(--accent-dark); border: 1px solid var(--accent-bd); }
+  .badge.medium { background: var(--paper3); color: var(--ink3); border: 1px solid var(--rule); }
+  .thread-date {
+    font-family: "DM Mono", monospace;
+    font-size: 11px;
+    color: var(--ink4);
+    margin-left: auto;
+    flex-shrink: 0;
+  }
+  .thread h3 { font-size: 16px; margin-bottom: 8px; line-height: 1.4; }
+  .thread h3 a {
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.15s, color 0.15s;
+  }
+  .thread h3 a:hover {
+    color: var(--accent-dark);
+    border-bottom-color: var(--accent);
+  }
+  .thread-stats {
+    font-family: "DM Mono", monospace;
+    font-size: 11px;
+    color: var(--ink4);
+    margin-bottom: 14px;
+    letter-spacing: 0.02em;
+  }
+  .thread-stats .dot { margin: 0 8px; opacity: 0.5; }
+  .thread-why {
+    font-size: 14px;
+    color: var(--ink2);
+    line-height: 1.6;
+    margin-bottom: 14px;
+  }
+  .thread-why strong { color: var(--ink); font-weight: 700; }
+  .angle {
+    background: var(--paper2);
+    border-left: 3px solid var(--accent);
+    border-radius: 4px;
+    padding: 14px 16px 14px 18px;
+  }
+  .angle-label {
+    font-family: "DM Mono", monospace;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 6px;
+    display: block;
+  }
+  .angle p {
+    font-size: 14px;
+    color: var(--ink2);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* Steps */
+  .steps {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-top: 18px;
+    background: #fff;
+    border: 1px solid var(--rule);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .step {
+    display: flex;
+    gap: 20px;
+    padding: 20px 24px;
+    border-bottom: 1px solid var(--rule);
+    align-items: flex-start;
+  }
+  .step:last-child { border-bottom: none; }
+  .step-num {
+    font-family: "DM Mono", monospace;
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--accent);
+    background: var(--accent-bg);
+    border: 1px solid var(--accent-bd);
+    border-radius: 4px;
+    padding: 2px 7px;
+    flex-shrink: 0;
+    margin-top: 2px;
+    letter-spacing: 0.05em;
+  }
+  .step-body h3 { margin-bottom: 4px; }
+  .step-body p {
+    font-size: 14px;
+    margin: 0;
+    color: var(--ink3);
+    line-height: 1.55;
+  }
+
+  /* CTA */
+  .cta-block {
+    background: var(--accent-bg);
+    border: 1.5px solid var(--accent-bd);
+    border-radius: 14px;
+    padding: 36px 40px;
+    text-align: center;
+    margin-top: 28px;
+  }
+  .cta-block h2 { margin-bottom: 10px; }
+  .cta-block > p {
+    font-size: 15px;
+    color: var(--ink3);
+    max-width: 480px;
+    margin: 0 auto 24px;
+  }
+  .cta-buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .cta-email, .cta-calendar {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 15px;
+    padding: 12px 24px;
+    border-radius: 8px;
+    transition: background 0.15s, border-color 0.15s;
+  }
+  .cta-email { background: var(--accent); color: #fff; }
+  .cta-email:hover { background: var(--accent-dark); }
+  .cta-calendar {
+    background: #fff;
+    color: var(--accent);
+    border: 1.5px solid var(--accent-bd);
+  }
+  .cta-calendar:hover {
+    background: var(--accent-bg);
+    border-color: var(--accent);
+  }
+  .cta-email svg, .cta-calendar svg { width: 16px; height: 16px; }
+  .cta-note {
+    font-size: 13px;
+    color: var(--ink4);
+    margin-top: 14px;
+  }
+
+  /* Footer */
+  .footer {
+    margin-top: 56px;
+    padding-top: 28px;
+    border-top: 1px solid var(--rule);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .footer-left { display: flex; align-items: center; gap: 10px; }
+  .footer-left img.brand-fav {
+    width: 22px; height: 22px;
+    border-radius: 4px;
+    object-fit: contain;
+    border: 1px solid var(--rule);
+    padding: 2px;
+  }
+  .footer-left a {
+    display: flex; align-items: center; gap: 8px; text-decoration: none;
+  }
+  .footer-left img.peekaboo {
+    height: 18px;
+    width: auto;
+    opacity: 0.55;
+  }
+  .footer-right { font-size: 13px; color: var(--ink4); }
+
+  @media (max-width: 700px) {
+    .page { padding: 32px 12px 64px; }
+    .sheet { padding: 32px 22px 40px; border-radius: 12px; }
+    .stat-chip { flex: 1 0 calc(50% - 5px); min-width: 0; }
+    .cta-buttons { flex-direction: column; align-items: center; }
+    .cta-block { padding: 28px 20px; }
+    .thread { padding: 18px 18px; }
+    .thread-date { margin-left: 0; }
+    .timeline-card { width: 170px; }
+  }
+</style>
+</head>
+
+<body>
+
+<!-- Top bar (favicon use #1) -->
+<div class="topbar">
+  <div class="topbar-left">
+    <img src="https://www.google.com/s2/favicons?domain=coinsbee.com&sz=32" alt="CoinsBee">
+    <span class="brand-name">CoinsBee</span>
+    <span class="sep">·</span>
+    <span class="topbar-sub">Reddit Audit</span>
+  </div>
+  <a class="topbar-right" href="https://www.aipeekaboo.com" target="_blank" rel="noopener">
+    <span>Powered by</span>
+    <img src="https://www.aipeekaboo.com/images/peekaboo-logo-black.png" alt="AI Peekaboo">
+  </a>
+</div>
+
+<div class="page">
+  <div class="sheet">
+
+    <!-- Cover (favicon use #2, large) -->
+    <div class="cover">
+      <img class="cover-favicon" src="https://www.google.com/s2/favicons?domain=coinsbee.com&sz=64" alt="CoinsBee">
+      <div class="cover-meta">
+        <span>Crypto gift cards · Global</span>
+        <span class="sep">·</span>
+        <span>256 posts reviewed</span>
+        <span class="sep">·</span>
+        <span>May 2026</span>
+      </div>
+      <h1>CoinsBee, Reddit Thread Audit</h1>
+      <p class="cover-sub">Every “BitRefill alternative” thread is a CoinsBee thread waiting to happen. The audience is hunting for crypto gift card platforms on r/Bitcoin, r/btc, r/BitcoinBeginners, r/ethereum and r/CryptoIndia, and CoinsBee already gets organic mentions. May 2026.</p>
+
+      <div class="stats-row">
+        <div class="stat-chip">
+          <span class="stat-chip-num">256</span>
+          <span class="stat-chip-label">Posts reviewed</span>
+        </div>
+        <div class="stat-chip">
+          <span class="stat-chip-num">22</span>
+          <span class="stat-chip-label">Threads selected</span>
+        </div>
+        <div class="stat-chip accent">
+          <span class="stat-chip-num">4</span>
+          <span class="stat-chip-label">High priority</span>
+        </div>
+      </div>
+    </div>
+
+    
+    <section class="section" id="competitor-section">
+      <div class="section-label">
+        <img src="https://www.google.com/s2/favicons?domain=coinsbee.com&sz=32" alt="CoinsBee">
+        Competitor landscape
+      </div>
+      <h2>Who else is in the conversation</h2>
+      <p>Mentions of CoinsBee's top competitors across the full audit pass. Click a bar to highlight the row below.</p>
+
+      <div class="card">
+        <div class="chart-wrap bar-h">
+          <canvas id="compChart"></canvas>
+        </div>
+        <table class="comp-table">
+          <thead>
+            <tr>
+              <th>Competitor</th>
+              <th class="comp-count">Mentions</th>
+              <th>Sentiment mix</th>
+            </tr>
+          </thead>
+          <tbody id="compTbody">
+            <tr data-comp-idx="0">
+              <td>
+                <div class="comp-name">
+                  <img src="https://www.google.com/s2/favicons?domain=bitrefill.com&sz=32" alt="BitRefill" loading="lazy"
+                       onerror="this.style.visibility='hidden'">
+                  <span>BitRefill</span>
+                </div>
+              </td>
+              <td class="comp-count">119</td>
+              <td>
+                <div class="sent-bar" title="positive 45 · negative 6 · neutral 64">
+                  <span class="pos" style="width:39.1%"></span>
+                  <span class="neg" style="width:5.2%"></span>
+                  <span class="neu" style="width:55.7%"></span>
+                </div>
+              </td>
+            </tr>
+<tr data-comp-idx="1">
+              <td>
+                <div class="comp-name">
+                  <img src="https://www.google.com/s2/favicons?domain=crypto.com&sz=32" alt="Crypto.com Pay" loading="lazy"
+                       onerror="this.style.visibility='hidden'">
+                  <span>Crypto.com Pay</span>
+                </div>
+              </td>
+              <td class="comp-count">103</td>
+              <td>
+                <div class="sent-bar" title="positive 4 · negative 2 · neutral 76">
+                  <span class="pos" style="width:4.9%"></span>
+                  <span class="neg" style="width:2.4%"></span>
+                  <span class="neu" style="width:92.7%"></span>
+                </div>
+              </td>
+            </tr>
+<tr data-comp-idx="2">
+              <td>
+                <div class="comp-name">
+                  <img src="https://www.google.com/s2/favicons?domain=binance.com&sz=32" alt="Binance Gift Cards" loading="lazy"
+                       onerror="this.style.visibility='hidden'">
+                  <span>Binance Gift Cards</span>
+                </div>
+              </td>
+              <td class="comp-count">103</td>
+              <td>
+                <div class="sent-bar" title="positive 3 · negative 2 · neutral 77">
+                  <span class="pos" style="width:3.7%"></span>
+                  <span class="neg" style="width:2.4%"></span>
+                  <span class="neu" style="width:93.9%"></span>
+                </div>
+              </td>
+            </tr>
+<tr data-comp-idx="3">
+              <td>
+                <div class="comp-name">
+                  <img src="https://www.google.com/s2/favicons?domain=paxful.com&sz=32" alt="Paxful" loading="lazy"
+                       onerror="this.style.visibility='hidden'">
+                  <span>Paxful</span>
+                </div>
+              </td>
+              <td class="comp-count">102</td>
+              <td>
+                <div class="sent-bar" title="positive 3 · negative 2 · neutral 76">
+                  <span class="pos" style="width:3.7%"></span>
+                  <span class="neg" style="width:2.5%"></span>
+                  <span class="neu" style="width:93.8%"></span>
+                </div>
+              </td>
+            </tr>
+<tr data-comp-idx="4">
+              <td>
+                <div class="comp-name">
+                  <img src="https://www.google.com/s2/favicons?domain=coincards.com&sz=32" alt="CoinCards" loading="lazy"
+                       onerror="this.style.visibility='hidden'">
+                  <span>CoinCards</span>
+                </div>
+              </td>
+              <td class="comp-count">102</td>
+              <td>
+                <div class="sent-bar" title="positive 7 · negative 1 · neutral 73">
+                  <span class="pos" style="width:8.6%"></span>
+                  <span class="neg" style="width:1.2%"></span>
+                  <span class="neu" style="width:90.1%"></span>
+                </div>
+              </td>
+            </tr>
+<tr data-comp-idx="5">
+              <td>
+                <div class="comp-name">
+                  <img src="https://www.google.com/s2/favicons?domain=egifter.com&sz=32" alt="eGifter" loading="lazy"
+                       onerror="this.style.visibility='hidden'">
+                  <span>eGifter</span>
+                </div>
+              </td>
+              <td class="comp-count">102</td>
+              <td>
+                <div class="sent-bar" title="positive 4 · negative 2 · neutral 75">
+                  <span class="pos" style="width:4.9%"></span>
+                  <span class="neg" style="width:2.5%"></span>
+                  <span class="neu" style="width:92.6%"></span>
+                </div>
+              </td>
+            </tr>
+<tr data-comp-idx="6">
+              <td>
+                <div class="comp-name">
+                  <img src="https://www.google.com/s2/favicons?domain=reloadit.com&sz=32" alt="Reloadit" loading="lazy"
+                       onerror="this.style.visibility='hidden'">
+                  <span>Reloadit</span>
+                </div>
+              </td>
+              <td class="comp-count">96</td>
+              <td>
+                <div class="sent-bar" title="positive 3 · negative 1 · neutral 71">
+                  <span class="pos" style="width:4.0%"></span>
+                  <span class="neg" style="width:1.3%"></span>
+                  <span class="neu" style="width:94.7%"></span>
+                </div>
+              </td>
+            </tr>
+<tr data-comp-idx="7">
+              <td>
+                <div class="comp-name">
+                  <img src="https://www.google.com/s2/favicons?domain=coinbase.com&sz=32" alt="Coinbase" loading="lazy"
+                       onerror="this.style.visibility='hidden'">
+                  <span>Coinbase</span>
+                </div>
+              </td>
+              <td class="comp-count">6</td>
+              <td>
+                <div class="sent-bar" title="positive 1 · negative 2 · neutral 3">
+                  <span class="pos" style="width:16.7%"></span>
+                  <span class="neg" style="width:33.3%"></span>
+                  <span class="neu" style="width:50.0%"></span>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="sent-legend">
+          <span><span class="dot" style="background:var(--ok)"></span>positive</span>
+          <span><span class="dot" style="background:var(--red)"></span>negative</span>
+          <span><span class="dot" style="background:var(--neutral)"></span>neutral</span>
+        </div>
+        <p style="font-size:14px;color:var(--ink3);margin-top:14px;">Across the full audit, CoinsBee is <strong style="color:var(--ink)">not mentioned</strong> in any of these competitor comparison threads. The competitor set above is the conversation buyers are having. The brand is currently outside it.</p>
+      </div>
+    </section>
+    
+    
+    <section class="section" id="community-section">
+      <div class="section-label">
+        <img src="https://www.google.com/s2/favicons?domain=coinsbee.com&sz=32" alt="CoinsBee">
+        What the community is saying
+      </div>
+      <h2>Sentiment of the selected threads</h2>
+      <p>The 22 threads selected for action, by sentiment. Filter the table or hover the donut for counts.</p>
+
+      <div class="two-col">
+        <div class="card narrow">
+          <div class="chart-wrap donut">
+            <canvas id="sentDonut"></canvas>
+          </div>
+          <div class="sent-legend" style="justify-content:center;">
+            <span><span class="dot" style="background:var(--ok)"></span>positive</span>
+            <span><span class="dot" style="background:var(--red)"></span>negative</span>
+            <span><span class="dot" style="background:var(--neutral)"></span>neutral</span>
+            <span><span class="dot" style="background:var(--mixed)"></span>mixed</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="filter-row" data-filter-target="postsTbody">
+            <button class="filter-pill active" data-filter="all">All</button>
+            <button class="filter-pill" data-filter="positive">Positive</button>
+            <button class="filter-pill" data-filter="negative">Negative</button>
+            <button class="filter-pill" data-filter="mixed">Mixed</button>
+            <button class="filter-pill" data-filter="neutral">Neutral</button>
+          </div>
+          <table class="posts-table">
+            <thead>
+              <tr>
+                <th>Thread</th>
+                <th>Subreddit</th>
+                <th>Sentiment</th>
+              </tr>
+            </thead>
+            <tbody id="postsTbody">
+              <tr data-sentiment="positive">
+              <td><a href="https://www.reddit.com/r/nanocurrency/comments/1nyjimm/bought_something_on_coinsbee_with_nano_and" target="_blank" rel="noopener">Bought something on Coinsbee with nano and refilled my stack</a></td>
+              <td><span class="pill">r/nanocurrency</span></td>
+              <td><span class="sent-badge positive">positive</span></td>
+            </tr>
+<tr data-sentiment="mixed">
+              <td><a href="https://www.reddit.com/r/BitcoinBeginners/comments/1rtb2s9/can_you_suggest_any_bitrefill_alternatives_for" target="_blank" rel="noopener">Can you suggest any bitrefill alternatives for buying iTunes gift cards ...</a></td>
+              <td><span class="pill">r/BitcoinBeginners</span></td>
+              <td><span class="sent-badge mixed">mixed</span></td>
+            </tr>
+<tr data-sentiment="positive">
+              <td><a href="https://www.reddit.com/r/btc/comments/sm5hn1/bitrefill_options" target="_blank" rel="noopener">Bitrefill options? : r/btc - Reddit</a></td>
+              <td><span class="pill">r/btc</span></td>
+              <td><span class="sent-badge positive">positive</span></td>
+            </tr>
+<tr data-sentiment="mixed">
+              <td><a href="https://www.reddit.com/r/ethereum/comments/1qmiimm/has_anyone_actually_bought_digital_gift_cards" target="_blank" rel="noopener">Has anyone actually bought digital gift cards with cryptocurrency?</a></td>
+              <td><span class="pill">r/ethereum</span></td>
+              <td><span class="sent-badge mixed">mixed</span></td>
+            </tr>
+<tr data-sentiment="mixed">
+              <td><a href="https://www.reddit.com/r/btc/comments/kzgocv/any_gift_card_venders_like_bitrefill" target="_blank" rel="noopener">Any gift card venders like bitrefill? : r/btc - Reddit</a></td>
+              <td><span class="pill">r/btc</span></td>
+              <td><span class="sent-badge mixed">mixed</span></td>
+            </tr>
+<tr data-sentiment="mixed">
+              <td><a href="https://www.reddit.com/r/BitcoinBeginners/comments/138o1u8/can_you_suggest_bitrefill_alternatives_for_buying" target="_blank" rel="noopener">Can you suggest BitRefill alternatives for buying gift cards? - Reddit</a></td>
+              <td><span class="pill">r/BitcoinBeginners</span></td>
+              <td><span class="sent-badge mixed">mixed</span></td>
+            </tr>
+<tr data-sentiment="neutral">
+              <td><a href="https://www.reddit.com/r/fintech/comments/1o1m6bs/looking_for_global_gift_card_providers_for" target="_blank" rel="noopener">Looking for Global Gift Card Providers for Partnership : r/fintech</a></td>
+              <td><span class="pill">r/fintech</span></td>
+              <td><span class="sent-badge neutral">neutral</span></td>
+            </tr>
+<tr data-sentiment="mixed">
+              <td><a href="https://www.reddit.com/r/Bitcoin/comments/1b1noth/buying_gift_cards_with_bitcoin_and_not_getting" target="_blank" rel="noopener">Buying gift cards with bitcoin, and not getting raided by the feds</a></td>
+              <td><span class="pill">r/Bitcoin</span></td>
+              <td><span class="sent-badge mixed">mixed</span></td>
+            </tr>
+<tr data-sentiment="mixed">
+              <td><a href="https://www.reddit.com/r/btc/comments/1f23a8j/im_kinda_new_to_crypto_what_are_some_ways_to_buy" target="_blank" rel="noopener">I&#x27;m kinda new to crypto , what are some ways to buy giftcards online ...</a></td>
+              <td><span class="pill">r/btc</span></td>
+              <td><span class="sent-badge mixed">mixed</span></td>
+            </tr>
+<tr data-sentiment="mixed">
+              <td><a href="https://www.reddit.com/r/CryptoIndia/comments/1l5g8wa/how_practical_is_it_to_live_off_crypto_via_gift" target="_blank" rel="noopener">How practical is it to live off crypto (via gift cards)? What are the legal ...</a></td>
+              <td><span class="pill">r/CryptoIndia</span></td>
+              <td><span class="sent-badge mixed">mixed</span></td>
+            </tr>
+<tr data-sentiment="mixed">
+              <td><a href="https://www.reddit.com/r/Bitcoin/comments/1rqo3bp/best_ways_to_spend_btc_without_selling_it" target="_blank" rel="noopener">Best ways to spend BTC without selling it : r/Bitcoin - Reddit</a></td>
+              <td><span class="pill">r/Bitcoin</span></td>
+              <td><span class="sent-badge mixed">mixed</span></td>
+            </tr>
+<tr data-sentiment="mixed">
+              <td><a href="https://www.reddit.com/r/Bitcoin/comments/1gtrgbu/you_never_sell_bitcoin_but_how_take_advantage" target="_blank" rel="noopener">You never sell Bitcoin, but how take advantage? - Reddit</a></td>
+              <td><span class="pill">r/Bitcoin</span></td>
+              <td><span class="sent-badge mixed">mixed</span></td>
+            </tr>
+<tr data-sentiment="mixed">
+              <td><a href="https://www.reddit.com/r/Bitcoin/comments/8bywr5/value_of_ln_and_merchant_integration_vs_a_crypto" target="_blank" rel="noopener">Value of LN and merchant integration vs. a crypto debit card for spending, In a…</a></td>
+              <td><span class="pill">r/Bitcoin</span></td>
+              <td><span class="sent-badge mixed">mixed</span></td>
+            </tr>
+<tr data-sentiment="mixed">
+              <td><a href="https://www.reddit.com/r/Gifts/comments/1q7bikm/has_anyone_compared_carddelivery_coinsbee_or" target="_blank" rel="noopener">Has anyone compared CardDelivery, Coinsbee, or Bitrefill ... - Reddit</a></td>
+              <td><span class="pill">r/Gifts</span></td>
+              <td><span class="sent-badge mixed">mixed</span></td>
+            </tr>
+<tr data-sentiment="mixed">
+              <td><a href="https://www.reddit.com/r/BitcoinCA/comments/1b6ljsl/how_is_bitrefill" target="_blank" rel="noopener">How is bitrefill? : r/BitcoinCA - Reddit</a></td>
+              <td><span class="pill">r/BitcoinCA</span></td>
+              <td><span class="sent-badge mixed">mixed</span></td>
+            </tr>
+<tr data-sentiment="mixed">
+              <td><a href="https://www.reddit.com/r/CryptoIndia/comments/1gsskp6/sendcrypto_or_bitrefill" target="_blank" rel="noopener">SendCrypto or Bitrefill : r/CryptoIndia - Reddit</a></td>
+              <td><span class="pill">r/CryptoIndia</span></td>
+              <td><span class="sent-badge mixed">mixed</span></td>
+            </tr>
+<tr data-sentiment="mixed">
+              <td><a href="https://www.reddit.com/r/CryptoIndia/comments/1h13d93/i_think_i_have_found_the_best_alternative_for" target="_blank" rel="noopener">I think I have found the best alternative for Bitrefill! : r/CryptoIndia</a></td>
+              <td><span class="pill">r/CryptoIndia</span></td>
+              <td><span class="sent-badge mixed">mixed</span></td>
+            </tr>
+<tr data-sentiment="mixed">
+              <td><a href="https://www.reddit.com/r/ArgamingConsultas/comments/1nz5udz/alguna_alternativa_a_bitrefill_para_gift_cards" target="_blank" rel="noopener">Any alternative to Bitrefill for gift cards? : r/ArgamingConsultas - Reddit</a></td>
+              <td><span class="pill">r/ArgamingConsultas</span></td>
+              <td><span class="sent-badge mixed">mixed</span></td>
+            </tr>
+<tr data-sentiment="mixed">
+              <td><a href="https://www.reddit.com/r/CryptoIndia/comments/1l7q2pu/is_bitrefill_still_trusted" target="_blank" rel="noopener">Is Bitrefill still trusted : r/CryptoIndia - Reddit</a></td>
+              <td><span class="pill">r/CryptoIndia</span></td>
+              <td><span class="sent-badge mixed">mixed</span></td>
+            </tr>
+<tr data-sentiment="mixed">
+              <td><a href="https://www.reddit.com/r/Bitcoin/comments/1lapnba/where_and_how_can_i_buy_bitcoin_with_gift_cards" target="_blank" rel="noopener">Where and how can I buy Bitcoin with gift cards? - Reddit</a></td>
+              <td><span class="pill">r/Bitcoin</span></td>
+              <td><span class="sent-badge mixed">mixed</span></td>
+            </tr>
+<tr data-sentiment="mixed">
+              <td><a href="https://www.reddit.com/r/btc/comments/11atzxg/whats_a_trusted_site_to_buy_giftcards_with_crypto" target="_blank" rel="noopener">What&#x27;s a trusted site to buy giftcards with crypto? - Reddit</a></td>
+              <td><span class="pill">r/btc</span></td>
+              <td><span class="sent-badge mixed">mixed</span></td>
+            </tr>
+<tr data-sentiment="mixed">
+              <td><a href="https://www.reddit.com/r/BitcoinBeginners/comments/1rya1r8/where_can_i_buy_gift_cards_using_btc" target="_blank" rel="noopener">where can I buy gift cards using btc? : r/BitcoinBeginners - Reddit</a></td>
+              <td><span class="pill">r/BitcoinBeginners</span></td>
+              <td><span class="sent-badge mixed">mixed</span></td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+    
+    
+    <section class="section" id="subreddit-section">
+      <div class="section-label">Posts by subreddit</div>
+      <h2>Where the conversation lives</h2>
+      <p>Distribution of selected threads across subreddits, and a timeline from oldest to newest.</p>
+
+      <div class="card">
+        <div class="chart-wrap">
+          <canvas id="subChart"></canvas>
+        </div>
+        <div class="timeline-wrap">
+          <div class="timeline">
+            <a class="timeline-card" href="https://www.reddit.com/r/Bitcoin/comments/8bywr5/value_of_ln_and_merchant_integration_vs_a_crypto" target="_blank" rel="noopener">
+              <span class="pill">r/Bitcoin</span>
+              <div class="tl-date">Apr 2018</div>
+              <div class="tl-title">Value of LN and merchant integration vs. a crypto…</div>
+            </a>
+<a class="timeline-card" href="https://www.reddit.com/r/btc/comments/kzgocv/any_gift_card_venders_like_bitrefill" target="_blank" rel="noopener">
+              <span class="pill">r/btc</span>
+              <div class="tl-date">Jan 2021</div>
+              <div class="tl-title">Any gift card venders like bitrefill? : r/btc - R…</div>
+            </a>
+<a class="timeline-card" href="https://www.reddit.com/r/btc/comments/sm5hn1/bitrefill_options" target="_blank" rel="noopener">
+              <span class="pill">r/btc</span>
+              <div class="tl-date">Feb 2022</div>
+              <div class="tl-title">Bitrefill options? : r/btc - Reddit</div>
+            </a>
+<a class="timeline-card" href="https://www.reddit.com/r/btc/comments/11atzxg/whats_a_trusted_site_to_buy_giftcards_with_crypto" target="_blank" rel="noopener">
+              <span class="pill">r/btc</span>
+              <div class="tl-date">Feb 2023</div>
+              <div class="tl-title">What&#x27;s a trusted site to buy giftcards with crypt…</div>
+            </a>
+<a class="timeline-card" href="https://www.reddit.com/r/BitcoinBeginners/comments/138o1u8/can_you_suggest_bitrefill_alternatives_for_buying" target="_blank" rel="noopener">
+              <span class="pill">r/BitcoinBeginners</span>
+              <div class="tl-date">May 2023</div>
+              <div class="tl-title">Can you suggest BitRefill alternatives for buying…</div>
+            </a>
+<a class="timeline-card" href="https://www.reddit.com/r/Bitcoin/comments/1b1noth/buying_gift_cards_with_bitcoin_and_not_getting" target="_blank" rel="noopener">
+              <span class="pill">r/Bitcoin</span>
+              <div class="tl-date">Feb 2024</div>
+              <div class="tl-title">Buying gift cards with bitcoin, and not getting r…</div>
+            </a>
+<a class="timeline-card" href="https://www.reddit.com/r/BitcoinCA/comments/1b6ljsl/how_is_bitrefill" target="_blank" rel="noopener">
+              <span class="pill">r/BitcoinCA</span>
+              <div class="tl-date">Mar 2024</div>
+              <div class="tl-title">How is bitrefill? : r/BitcoinCA - Reddit</div>
+            </a>
+<a class="timeline-card" href="https://www.reddit.com/r/btc/comments/1f23a8j/im_kinda_new_to_crypto_what_are_some_ways_to_buy" target="_blank" rel="noopener">
+              <span class="pill">r/btc</span>
+              <div class="tl-date">Aug 2024</div>
+              <div class="tl-title">I&#x27;m kinda new to crypto , what are some ways to b…</div>
+            </a>
+<a class="timeline-card" href="https://www.reddit.com/r/CryptoIndia/comments/1gsskp6/sendcrypto_or_bitrefill" target="_blank" rel="noopener">
+              <span class="pill">r/CryptoIndia</span>
+              <div class="tl-date">Nov 2024</div>
+              <div class="tl-title">SendCrypto or Bitrefill : r/CryptoIndia - Reddit</div>
+            </a>
+<a class="timeline-card" href="https://www.reddit.com/r/Bitcoin/comments/1gtrgbu/you_never_sell_bitcoin_but_how_take_advantage" target="_blank" rel="noopener">
+              <span class="pill">r/Bitcoin</span>
+              <div class="tl-date">Nov 2024</div>
+              <div class="tl-title">You never sell Bitcoin, but how take advantage? -…</div>
+            </a>
+<a class="timeline-card" href="https://www.reddit.com/r/CryptoIndia/comments/1h13d93/i_think_i_have_found_the_best_alternative_for" target="_blank" rel="noopener">
+              <span class="pill">r/CryptoIndia</span>
+              <div class="tl-date">Nov 2024</div>
+              <div class="tl-title">I think I have found the best alternative for Bit…</div>
+            </a>
+<a class="timeline-card" href="https://www.reddit.com/r/CryptoIndia/comments/1l5g8wa/how_practical_is_it_to_live_off_crypto_via_gift" target="_blank" rel="noopener">
+              <span class="pill">r/CryptoIndia</span>
+              <div class="tl-date">Jun 2025</div>
+              <div class="tl-title">How practical is it to live off crypto (via gift…</div>
+            </a>
+<a class="timeline-card" href="https://www.reddit.com/r/CryptoIndia/comments/1l7q2pu/is_bitrefill_still_trusted" target="_blank" rel="noopener">
+              <span class="pill">r/CryptoIndia</span>
+              <div class="tl-date">Jun 2025</div>
+              <div class="tl-title">Is Bitrefill still trusted : r/CryptoIndia - Redd…</div>
+            </a>
+<a class="timeline-card" href="https://www.reddit.com/r/Bitcoin/comments/1lapnba/where_and_how_can_i_buy_bitcoin_with_gift_cards" target="_blank" rel="noopener">
+              <span class="pill">r/Bitcoin</span>
+              <div class="tl-date">Jun 2025</div>
+              <div class="tl-title">Where and how can I buy Bitcoin with gift cards?…</div>
+            </a>
+<a class="timeline-card" href="https://www.reddit.com/r/nanocurrency/comments/1nyjimm/bought_something_on_coinsbee_with_nano_and" target="_blank" rel="noopener">
+              <span class="pill">r/nanocurrency</span>
+              <div class="tl-date">Oct 2025</div>
+              <div class="tl-title">Bought something on Coinsbee with nano and refill…</div>
+            </a>
+<a class="timeline-card" href="https://www.reddit.com/r/ArgamingConsultas/comments/1nz5udz/alguna_alternativa_a_bitrefill_para_gift_cards" target="_blank" rel="noopener">
+              <span class="pill">r/ArgamingConsultas</span>
+              <div class="tl-date">Oct 2025</div>
+              <div class="tl-title">Any alternative to Bitrefill for gift cards? : r/…</div>
+            </a>
+<a class="timeline-card" href="https://www.reddit.com/r/fintech/comments/1o1m6bs/looking_for_global_gift_card_providers_for" target="_blank" rel="noopener">
+              <span class="pill">r/fintech</span>
+              <div class="tl-date">Oct 2025</div>
+              <div class="tl-title">Looking for Global Gift Card Providers for Partne…</div>
+            </a>
+<a class="timeline-card" href="https://www.reddit.com/r/Gifts/comments/1q7bikm/has_anyone_compared_carddelivery_coinsbee_or" target="_blank" rel="noopener">
+              <span class="pill">r/Gifts</span>
+              <div class="tl-date">Jan 2026</div>
+              <div class="tl-title">Has anyone compared CardDelivery, Coinsbee, or Bi…</div>
+            </a>
+<a class="timeline-card" href="https://www.reddit.com/r/ethereum/comments/1qmiimm/has_anyone_actually_bought_digital_gift_cards" target="_blank" rel="noopener">
+              <span class="pill">r/ethereum</span>
+              <div class="tl-date">Jan 2026</div>
+              <div class="tl-title">Has anyone actually bought digital gift cards wit…</div>
+            </a>
+<a class="timeline-card" href="https://www.reddit.com/r/Bitcoin/comments/1rqo3bp/best_ways_to_spend_btc_without_selling_it" target="_blank" rel="noopener">
+              <span class="pill">r/Bitcoin</span>
+              <div class="tl-date">Mar 2026</div>
+              <div class="tl-title">Best ways to spend BTC without selling it : r/Bit…</div>
+            </a>
+<a class="timeline-card" href="https://www.reddit.com/r/BitcoinBeginners/comments/1rtb2s9/can_you_suggest_any_bitrefill_alternatives_for" target="_blank" rel="noopener">
+              <span class="pill">r/BitcoinBeginners</span>
+              <div class="tl-date">Mar 2026</div>
+              <div class="tl-title">Can you suggest any bitrefill alternatives for bu…</div>
+            </a>
+<a class="timeline-card" href="https://www.reddit.com/r/BitcoinBeginners/comments/1rya1r8/where_can_i_buy_gift_cards_using_btc" target="_blank" rel="noopener">
+              <span class="pill">r/BitcoinBeginners</span>
+              <div class="tl-date">Mar 2026</div>
+              <div class="tl-title">where can I buy gift cards using btc? : r/Bitcoin…</div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    
+    <section class="section" id="threads-section">
+      <div class="section-label">Selected threads</div>
+      <h2>The threads we recommend commenting on</h2>
+      <p>Each thread is open and accepting comments today. Filter by priority below.</p>
+
+      <div class="filter-row" data-filter-target="threadsList">
+        <button class="filter-pill active" data-priority-filter="all">All (22)</button>
+        <button class="filter-pill" data-priority-filter="high">High (4)</button>
+        <button class="filter-pill" data-priority-filter="medium">Medium (18)</button>
+      </div>
+
+      <div class="threads" id="threadsList">
+        <div class="thread" data-priority="high">
+            <div class="thread-top">
+              <span class="badge high">High priority</span>
+              <span class="pill">r/nanocurrency</span>
+              <span class="thread-date">Oct 2025</span>
+            </div>
+            <h3><a href="https://www.reddit.com/r/nanocurrency/comments/1nyjimm/bought_something_on_coinsbee_with_nano_and" target="_blank" rel="noopener">Bought something on Coinsbee with nano and refilled my stack</a></h3>
+            <div class="thread-stats">44 upvotes <span class="dot">·</span> 7 comments <span class="dot">·</span> 124,882 subscribers</div>
+            <p class="thread-why">The post is by a user who actively uses CoinsBee to purchase gift cards with cryptocurrency, which aligns perfectly with CoinsBee&#x27;s target audience of crypto holders looking to spend their assets.</p>
+            <div class="angle">
+              <span class="angle-label">Comment angle</span>
+              <p>CoinsBee could engage by thanking users for their positive experiences and encouraging them to share more about the brands they wish to see.</p>
+            </div>
+          </div>
+<div class="thread" data-priority="high">
+            <div class="thread-top">
+              <span class="badge high">High priority</span>
+              <span class="pill">r/BitcoinBeginners</span>
+              <span class="thread-date">Mar 2026</span>
+            </div>
+            <h3><a href="https://www.reddit.com/r/BitcoinBeginners/comments/1rtb2s9/can_you_suggest_any_bitrefill_alternatives_for" target="_blank" rel="noopener">Can you suggest any bitrefill alternatives for buying iTunes gift cards ...</a></h3>
+            <div class="thread-stats">3 upvotes <span class="dot">·</span> 8 comments <span class="dot">·</span> 1,218,832 subscribers</div>
+            <p class="thread-why">The post is from a cryptocurrency user actively seeking alternatives for purchasing gift cards, which aligns well with CoinsBee&#x27;s target audience and services.</p>
+            <div class="angle">
+              <span class="angle-label">Comment angle</span>
+              <p>CoinsBee could engage by highlighting its ease of use and broad selection of gift cards available for purchase with cryptocurrencies.</p>
+            </div>
+          </div>
+<div class="thread" data-priority="high">
+            <div class="thread-top">
+              <span class="badge high">High priority</span>
+              <span class="pill">r/btc</span>
+              <span class="thread-date">Feb 2022</span>
+            </div>
+            <h3><a href="https://www.reddit.com/r/btc/comments/sm5hn1/bitrefill_options" target="_blank" rel="noopener">Bitrefill options? : r/btc - Reddit</a></h3>
+            <div class="thread-stats">21 upvotes <span class="dot">·</span> 38 comments <span class="dot">·</span> 1,211,739 subscribers</div>
+            <p class="thread-why">The post is directly related to purchasing gift cards with cryptocurrencies, which aligns with CoinsBee&#x27;s offerings. Users are actively discussing alternatives to Bitrefill, indicating a need for the services CoinsBee provides.</p>
+            <div class="angle">
+              <span class="angle-label">Comment angle</span>
+              <p>CoinsBee should engage by highlighting its extensive brand selection and KYC-free purchasing process.</p>
+            </div>
+          </div>
+<div class="thread" data-priority="high">
+            <div class="thread-top">
+              <span class="badge high">High priority</span>
+              <span class="pill">r/ethereum</span>
+              <span class="thread-date">Jan 2026</span>
+            </div>
+            <h3><a href="https://www.reddit.com/r/ethereum/comments/1qmiimm/has_anyone_actually_bought_digital_gift_cards" target="_blank" rel="noopener">Has anyone actually bought digital gift cards with cryptocurrency?</a></h3>
+            <div class="thread-stats">8 upvotes <span class="dot">·</span> 41 comments <span class="dot">·</span> 3,722,414 subscribers</div>
+            <p class="thread-why">The original poster is a cryptocurrency holder looking for ways to spend their crypto on everyday purchases, which aligns well with CoinsBee&#x27;s offerings.</p>
+            <div class="angle">
+              <span class="angle-label">Comment angle</span>
+              <p>CoinsBee could engage by highlighting its secure and instant gift card purchasing process, addressing concerns about scams.</p>
+            </div>
+          </div>
+<div class="thread" data-priority="medium">
+            <div class="thread-top">
+              <span class="badge medium">Medium priority</span>
+              <span class="pill">r/btc</span>
+              <span class="thread-date">Jan 2021</span>
+            </div>
+            <h3><a href="https://www.reddit.com/r/btc/comments/kzgocv/any_gift_card_venders_like_bitrefill" target="_blank" rel="noopener">Any gift card venders like bitrefill? : r/btc - Reddit</a></h3>
+            <div class="thread-stats">23 upvotes <span class="dot">·</span> 25 comments <span class="dot">·</span> 1,211,739 subscribers</div>
+            <p class="thread-why">The post discusses the need for gift card vendors that accept cryptocurrencies, which aligns with CoinsBee&#x27;s offerings, particularly for BCH users.</p>
+            <div class="angle">
+              <span class="angle-label">Comment angle</span>
+              <p>CoinsBee should highlight its support for a wide range of cryptocurrencies and brands to attract BCH users looking for gift card solutions.</p>
+            </div>
+          </div>
+<div class="thread" data-priority="medium">
+            <div class="thread-top">
+              <span class="badge medium">Medium priority</span>
+              <span class="pill">r/BitcoinBeginners</span>
+              <span class="thread-date">May 2023</span>
+            </div>
+            <h3><a href="https://www.reddit.com/r/BitcoinBeginners/comments/138o1u8/can_you_suggest_bitrefill_alternatives_for_buying" target="_blank" rel="noopener">Can you suggest BitRefill alternatives for buying gift cards? - Reddit</a></h3>
+            <div class="thread-stats">5 upvotes <span class="dot">·</span> 22 comments <span class="dot">·</span> 1,218,832 subscribers</div>
+            <p class="thread-why">The post discusses alternatives for purchasing gift cards with cryptocurrency, which aligns with CoinsBee&#x27;s offerings, though it primarily focuses on fees rather than specific features.</p>
+            <div class="angle">
+              <span class="angle-label">Comment angle</span>
+              <p>CoinsBee could engage by highlighting its competitive fees and extensive brand support, positioning itself as a viable alternative.</p>
+            </div>
+          </div>
+<div class="thread" data-priority="medium">
+            <div class="thread-top">
+              <span class="badge medium">Medium priority</span>
+              <span class="pill">r/fintech</span>
+              <span class="thread-date">Oct 2025</span>
+            </div>
+            <h3><a href="https://www.reddit.com/r/fintech/comments/1o1m6bs/looking_for_global_gift_card_providers_for" target="_blank" rel="noopener">Looking for Global Gift Card Providers for Partnership : r/fintech</a></h3>
+            <div class="thread-stats">1 upvotes <span class="dot">·</span> 0 comments <span class="dot">·</span> 84,849 subscribers</div>
+            <p class="thread-why">The post is from someone looking for global gift card providers that accept crypto payments, which aligns with CoinsBee&#x27;s offerings. While not directly targeting CoinsBee&#x27;s audience, the inquiry reflects a relevant interest in crypto gift card solutions.</p>
+            <div class="angle">
+              <span class="angle-label">Comment angle</span>
+              <p>CoinsBee could introduce itself as a leading provider of gift cards that accept cryptocurrencies and offer API access for seamless integration.</p>
+            </div>
+          </div>
+<div class="thread" data-priority="medium">
+            <div class="thread-top">
+              <span class="badge medium">Medium priority</span>
+              <span class="pill">r/Bitcoin</span>
+              <span class="thread-date">Feb 2024</span>
+            </div>
+            <h3><a href="https://www.reddit.com/r/Bitcoin/comments/1b1noth/buying_gift_cards_with_bitcoin_and_not_getting" target="_blank" rel="noopener">Buying gift cards with bitcoin, and not getting raided by the feds</a></h3>
+            <div class="thread-stats">0 upvotes <span class="dot">·</span> 20 comments <span class="dot">·</span> 8,122,542 subscribers</div>
+            <p class="thread-why">The post is from a cryptocurrency user looking for alternatives to convert BTC into gift cards without involving fiat, which aligns with CoinsBee&#x27;s offerings.</p>
+            <div class="angle">
+              <span class="angle-label">Comment angle</span>
+              <p>CoinsBee could highlight its secure and legitimate platform for purchasing gift cards with cryptocurrencies, addressing the concerns raised in the thread.</p>
+            </div>
+          </div>
+<div class="thread" data-priority="medium">
+            <div class="thread-top">
+              <span class="badge medium">Medium priority</span>
+              <span class="pill">r/btc</span>
+              <span class="thread-date">Aug 2024</span>
+            </div>
+            <h3><a href="https://www.reddit.com/r/btc/comments/1f23a8j/im_kinda_new_to_crypto_what_are_some_ways_to_buy" target="_blank" rel="noopener">I&#x27;m kinda new to crypto , what are some ways to buy giftcards online ...</a></h3>
+            <div class="thread-stats">7 upvotes <span class="dot">·</span> 23 comments <span class="dot">·</span> 1,211,739 subscribers</div>
+            <p class="thread-why">The post reflects a new user&#x27;s interest in purchasing gift cards with crypto, which aligns with CoinsBee&#x27;s offerings. However, the user is also exploring other options, indicating a broader search for solutions.</p>
+            <div class="angle">
+              <span class="angle-label">Comment angle</span>
+              <p>CoinsBee could engage by highlighting its extensive brand support and fee structure, addressing the user&#x27;s concerns about costs.</p>
+            </div>
+          </div>
+<div class="thread" data-priority="medium">
+            <div class="thread-top">
+              <span class="badge medium">Medium priority</span>
+              <span class="pill">r/CryptoIndia</span>
+              <span class="thread-date">Jun 2025</span>
+            </div>
+            <h3><a href="https://www.reddit.com/r/CryptoIndia/comments/1l5g8wa/how_practical_is_it_to_live_off_crypto_via_gift" target="_blank" rel="noopener">How practical is it to live off crypto (via gift cards)? What are the legal ...</a></h3>
+            <div class="thread-stats">29 upvotes <span class="dot">·</span> 34 comments <span class="dot">·</span> 324,109 subscribers</div>
+            <p class="thread-why">The post discusses living off crypto through gift cards, which aligns with CoinsBee&#x27;s offerings. The audience is exploring practical solutions for spending crypto, a key area CoinsBee addresses.</p>
+            <div class="angle">
+              <span class="angle-label">Comment angle</span>
+              <p>CoinsBee could contribute by providing insights on how their platform simplifies the process of purchasing gift cards with crypto, addressing concerns about regulations and limits.</p>
+            </div>
+          </div>
+<div class="thread" data-priority="medium">
+            <div class="thread-top">
+              <span class="badge medium">Medium priority</span>
+              <span class="pill">r/Bitcoin</span>
+              <span class="thread-date">Mar 2026</span>
+            </div>
+            <h3><a href="https://www.reddit.com/r/Bitcoin/comments/1rqo3bp/best_ways_to_spend_btc_without_selling_it" target="_blank" rel="noopener">Best ways to spend BTC without selling it : r/Bitcoin - Reddit</a></h3>
+            <div class="thread-stats">32 upvotes <span class="dot">·</span> 21 comments <span class="dot">·</span> 8,122,542 subscribers</div>
+            <p class="thread-why">The post discusses various methods to spend Bitcoin without selling it, which aligns with CoinsBee&#x27;s offerings. While not directly mentioning gift cards, the conversation around crypto spending indicates a relevant audience.</p>
+            <div class="angle">
+              <span class="angle-label">Comment angle</span>
+              <p>CoinsBee could highlight its extensive range of gift cards and the ease of using crypto for everyday purchases in response to the conversation.</p>
+            </div>
+          </div>
+<div class="thread" data-priority="medium">
+            <div class="thread-top">
+              <span class="badge medium">Medium priority</span>
+              <span class="pill">r/Bitcoin</span>
+              <span class="thread-date">Nov 2024</span>
+            </div>
+            <h3><a href="https://www.reddit.com/r/Bitcoin/comments/1gtrgbu/you_never_sell_bitcoin_but_how_take_advantage" target="_blank" rel="noopener">You never sell Bitcoin, but how take advantage? - Reddit</a></h3>
+            <div class="thread-stats">23 upvotes <span class="dot">·</span> 104 comments <span class="dot">·</span> 8,122,542 subscribers</div>
+            <p class="thread-why">The post discusses how to utilize Bitcoin without selling it for fiat, which aligns with CoinsBee&#x27;s offering of spending crypto on everyday purchases through gift cards.</p>
+            <div class="angle">
+              <span class="angle-label">Comment angle</span>
+              <p>CoinsBee could highlight how users can spend their Bitcoin directly on gift cards for everyday purchases, aligning with their desire to avoid converting to fiat.</p>
+            </div>
+          </div>
+<div class="thread" data-priority="medium">
+            <div class="thread-top">
+              <span class="badge medium">Medium priority</span>
+              <span class="pill">r/Bitcoin</span>
+              <span class="thread-date">Apr 2018</span>
+            </div>
+            <h3><a href="https://www.reddit.com/r/Bitcoin/comments/8bywr5/value_of_ln_and_merchant_integration_vs_a_crypto" target="_blank" rel="noopener">Value of LN and merchant integration vs. a crypto debit card for spending, In addition to personal safety from potential extortion and kidnapping</a></h3>
+            <div class="thread-stats">0 upvotes <span class="dot">·</span> 5 comments <span class="dot">·</span> 8,122,548 subscribers</div>
+            <p class="thread-why">The post discusses the challenges of spending cryptocurrency and the convenience of debit cards, which aligns with CoinsBee&#x27;s mission to facilitate crypto spending through gift cards.</p>
+            <div class="angle">
+              <span class="angle-label">Comment angle</span>
+              <p>CoinsBee could highlight how their platform offers a seamless way to spend crypto without the drawbacks of traditional debit cards.</p>
+            </div>
+          </div>
+<div class="thread" data-priority="medium">
+            <div class="thread-top">
+              <span class="badge medium">Medium priority</span>
+              <span class="pill">r/Gifts</span>
+              <span class="thread-date">Jan 2026</span>
+            </div>
+            <h3><a href="https://www.reddit.com/r/Gifts/comments/1q7bikm/has_anyone_compared_carddelivery_coinsbee_or" target="_blank" rel="noopener">Has anyone compared CardDelivery, Coinsbee, or Bitrefill ... - Reddit</a></h3>
+            <div class="thread-stats">26 upvotes <span class="dot">·</span> 11 comments <span class="dot">·</span> 322,788 subscribers</div>
+            <p class="thread-why">While the post discusses gift card platforms in general, it highlights concerns about delivery speed, scam protection, and support, which are relevant to CoinsBee&#x27;s offerings.</p>
+            <div class="angle">
+              <span class="angle-label">Comment angle</span>
+              <p>CoinsBee could address these concerns by emphasizing its reliable delivery and customer support.</p>
+            </div>
+          </div>
+<div class="thread" data-priority="medium">
+            <div class="thread-top">
+              <span class="badge medium">Medium priority</span>
+              <span class="pill">r/BitcoinCA</span>
+              <span class="thread-date">Mar 2024</span>
+            </div>
+            <h3><a href="https://www.reddit.com/r/BitcoinCA/comments/1b6ljsl/how_is_bitrefill" target="_blank" rel="noopener">How is bitrefill? : r/BitcoinCA - Reddit</a></h3>
+            <div class="thread-stats">2 upvotes <span class="dot">·</span> 22 comments <span class="dot">·</span> 101,303 subscribers</div>
+            <p class="thread-why">The post discusses platforms for purchasing gift cards with cryptocurrency, which aligns with CoinsBee&#x27;s offerings, though it primarily focuses on competitors.</p>
+            <div class="angle">
+              <span class="angle-label">Comment angle</span>
+              <p>CoinsBee could join the conversation by highlighting its unique offerings and competitive fees compared to Bitrefill and Coincards.</p>
+            </div>
+          </div>
+<div class="thread" data-priority="medium">
+            <div class="thread-top">
+              <span class="badge medium">Medium priority</span>
+              <span class="pill">r/CryptoIndia</span>
+              <span class="thread-date">Nov 2024</span>
+            </div>
+            <h3><a href="https://www.reddit.com/r/CryptoIndia/comments/1gsskp6/sendcrypto_or_bitrefill" target="_blank" rel="noopener">SendCrypto or Bitrefill : r/CryptoIndia - Reddit</a></h3>
+            <div class="thread-stats">11 upvotes <span class="dot">·</span> 33 comments <span class="dot">·</span> 324,109 subscribers</div>
+            <p class="thread-why">The post is from someone looking for alternatives to Bitrefill for purchasing gift cards with crypto, which aligns with CoinsBee&#x27;s offerings. However, the primary focus is on Bitrefill, indicating a more established preference.</p>
+            <div class="angle">
+              <span class="angle-label">Comment angle</span>
+              <p>CoinsBee could enter the conversation by highlighting its competitive rates and the variety of brands supported, addressing the users&#x27; concerns about anonymity and trust.</p>
+            </div>
+          </div>
+<div class="thread" data-priority="medium">
+            <div class="thread-top">
+              <span class="badge medium">Medium priority</span>
+              <span class="pill">r/CryptoIndia</span>
+              <span class="thread-date">Nov 2024</span>
+            </div>
+            <h3><a href="https://www.reddit.com/r/CryptoIndia/comments/1h13d93/i_think_i_have_found_the_best_alternative_for" target="_blank" rel="noopener">I think I have found the best alternative for Bitrefill! : r/CryptoIndia</a></h3>
+            <div class="thread-stats">6 upvotes <span class="dot">·</span> 12 comments <span class="dot">·</span> 324,109 subscribers</div>
+            <p class="thread-why">The post discusses alternatives to popular gift card platforms and mentions user experiences with cryptocurrency spending, which aligns with CoinsBee&#x27;s target audience and offerings.</p>
+            <div class="angle">
+              <span class="angle-label">Comment angle</span>
+              <p>CoinsBee could highlight its competitive pricing and extensive brand support in response to users looking for better alternatives.</p>
+            </div>
+          </div>
+<div class="thread" data-priority="medium">
+            <div class="thread-top">
+              <span class="badge medium">Medium priority</span>
+              <span class="pill">r/ArgamingConsultas</span>
+              <span class="thread-date">Oct 2025</span>
+            </div>
+            <h3><a href="https://www.reddit.com/r/ArgamingConsultas/comments/1nz5udz/alguna_alternativa_a_bitrefill_para_gift_cards" target="_blank" rel="noopener">Any alternative to Bitrefill for gift cards? : r/ArgamingConsultas - Reddit</a></h3>
+            <div class="thread-stats">0 upvotes <span class="dot">·</span> 4 comments <span class="dot">·</span> 31,798 subscribers</div>
+            <p class="thread-why">While the post is primarily about finding alternatives to Bitrefill for gift cards, the discussion indicates a need for reliable platforms to purchase gift cards with cryptocurrencies, which aligns with CoinsBee&#x27;s offerings.</p>
+            <div class="angle">
+              <span class="angle-label">Comment angle</span>
+              <p>CoinsBee could be introduced as a reliable alternative for purchasing gift cards with cryptocurrencies, highlighting its extensive brand support and ease of use.</p>
+            </div>
+          </div>
+<div class="thread" data-priority="medium">
+            <div class="thread-top">
+              <span class="badge medium">Medium priority</span>
+              <span class="pill">r/CryptoIndia</span>
+              <span class="thread-date">Jun 2025</span>
+            </div>
+            <h3><a href="https://www.reddit.com/r/CryptoIndia/comments/1l7q2pu/is_bitrefill_still_trusted" target="_blank" rel="noopener">Is Bitrefill still trusted : r/CryptoIndia - Reddit</a></h3>
+            <div class="thread-stats">5 upvotes <span class="dot">·</span> 16 comments <span class="dot">·</span> 324,109 subscribers</div>
+            <p class="thread-why">While the post is primarily focused on Bitrefill, the mention of CoinsBee as a potential alternative indicates that the audience is exploring options for purchasing gift cards with cryptocurrency, which aligns with CoinsBee&#x27;s offerings.</p>
+            <div class="angle">
+              <span class="angle-label">Comment angle</span>
+              <p>CoinsBee could engage by highlighting its competitive fees and the variety of brands available for gift cards.</p>
+            </div>
+          </div>
+<div class="thread" data-priority="medium">
+            <div class="thread-top">
+              <span class="badge medium">Medium priority</span>
+              <span class="pill">r/Bitcoin</span>
+              <span class="thread-date">Jun 2025</span>
+            </div>
+            <h3><a href="https://www.reddit.com/r/Bitcoin/comments/1lapnba/where_and_how_can_i_buy_bitcoin_with_gift_cards" target="_blank" rel="noopener">Where and how can I buy Bitcoin with gift cards? - Reddit</a></h3>
+            <div class="thread-stats">9 upvotes <span class="dot">·</span> 24 comments <span class="dot">·</span> 8,122,542 subscribers</div>
+            <p class="thread-why">While the post is primarily focused on buying Bitcoin with gift cards, there is a relevant discussion around anonymity and KYC requirements, which CoinsBee addresses with its no-KYC policy for smaller orders.</p>
+            <div class="angle">
+              <span class="angle-label">Comment angle</span>
+              <p>CoinsBee could highlight its no-KYC policy and ease of use for gift card purchases to engage with users seeking privacy.</p>
+            </div>
+          </div>
+<div class="thread" data-priority="medium">
+            <div class="thread-top">
+              <span class="badge medium">Medium priority</span>
+              <span class="pill">r/btc</span>
+              <span class="thread-date">Feb 2023</span>
+            </div>
+            <h3><a href="https://www.reddit.com/r/btc/comments/11atzxg/whats_a_trusted_site_to_buy_giftcards_with_crypto" target="_blank" rel="noopener">What&#x27;s a trusted site to buy giftcards with crypto? - Reddit</a></h3>
+            <div class="thread-stats">14 upvotes <span class="dot">·</span> 33 comments <span class="dot">·</span> 1,211,739 subscribers</div>
+            <p class="thread-why">While the post primarily discusses alternatives to gift card platforms, it reflects a clear interest in using cryptocurrency for purchasing gift cards, which aligns with CoinsBee&#x27;s offerings.</p>
+            <div class="angle">
+              <span class="angle-label">Comment angle</span>
+              <p>CoinsBee could join the conversation by highlighting its extensive brand support and ease of use for purchasing gift cards with crypto.</p>
+            </div>
+          </div>
+<div class="thread" data-priority="medium">
+            <div class="thread-top">
+              <span class="badge medium">Medium priority</span>
+              <span class="pill">r/BitcoinBeginners</span>
+              <span class="thread-date">Mar 2026</span>
+            </div>
+            <h3><a href="https://www.reddit.com/r/BitcoinBeginners/comments/1rya1r8/where_can_i_buy_gift_cards_using_btc" target="_blank" rel="noopener">where can I buy gift cards using btc? : r/BitcoinBeginners - Reddit</a></h3>
+            <div class="thread-stats">9 upvotes <span class="dot">·</span> 24 comments <span class="dot">·</span> 1,218,832 subscribers</div>
+            <p class="thread-why">While the post is primarily focused on where to buy gift cards with Bitcoin, it indicates an interest in spending cryptocurrency, which aligns with CoinsBee&#x27;s offerings.</p>
+            <div class="angle">
+              <span class="angle-label">Comment angle</span>
+              <p>CoinsBee could engage by highlighting its unique offerings and advantages over the mentioned competitors.</p>
+            </div>
+          </div>
+      </div>
+    </section>
+    
+    
+    <section class="section">
+      <div class="section-label">What happens next</div>
+      <h2>From audit to live comments in one week</h2>
+      <p>The threads above are not theoretical. Each one is open and accepting comments today. Here is how we move from list to result.</p>
+
+      <div class="steps">
+        <div class="step">
+          <span class="step-num">01</span>
+          <div class="step-body">
+            <h3>We draft the comments</h3>
+            <p>Our Reddit team writes each comment to match the exact angle above, runs it past you for sign-off, and posts from established accounts. No copy-paste, no template language. Every comment is written for its specific thread.</p>
+          </div>
+        </div>
+        <div class="step">
+          <span class="step-num">02</span>
+          <div class="step-body">
+            <h3>We track engagement</h3>
+            <p>Each comment is monitored for upvotes, replies, and downstream subreddit visibility. We capture screenshots, response patterns, and any direct messages received as a result.</p>
+          </div>
+        </div>
+        <div class="step">
+          <span class="step-num">03</span>
+          <div class="step-body">
+            <h3>We report back monthly</h3>
+            <p>You get a clear monthly report showing every comment posted, its engagement, and the impact on AI visibility through AI Peekaboo. Threads that perform get a second comment, threads that need a different angle get rewritten.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="cta-block">
+        <h2>Want us to start this week?</h2>
+        <p>Pick a time below or reply directly. We can be live in the first three threads within five working days.</p>
+        <div class="cta-buttons">
+          <a class="cta-calendar" href="https://calendly.com/filipe-aipeekaboo/30min" target="_blank" rel="noopener">
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="14" height="13" rx="2"/><line x1="3" y1="8" x2="17" y2="8"/><line x1="8" y1="2" x2="8" y2="5"/><line x1="12" y1="2" x2="12" y2="5"/></svg>
+            Book a call
+          </a>
+          <a class="cta-email" href="mailto:filipe@aipeekaboo.com?subject=Reddit%20audit%20for%20CoinsBee">
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h12c1.1 0 2 .9 2 2v8c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            Email Filipe
+          </a>
+        </div>
+        <p class="cta-note">filipe@aipeekaboo.com</p>
+      </div>
+    </section>
+
+    <div class="footer">
+      <div class="footer-left">
+        <img class="brand-fav" src="https://www.google.com/s2/favicons?domain=coinsbee.com&sz=32" alt="CoinsBee">
+        <a href="https://www.aipeekaboo.com" target="_blank" rel="noopener">
+          <img class="peekaboo" src="https://www.aipeekaboo.com/images/peekaboo-logo-black.png" alt="AI Peekaboo">
+        </a>
+      </div>
+      <span class="footer-right">May 2026 · CoinsBee Reddit Audit</span>
+    </div>
+    
+
+  </div>
+</div>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  // ----- Competitor horizontal bar chart -----
+  try {
+    var compCanvas = document.getElementById("compChart");
+    if (compCanvas && typeof Chart !== "undefined") {
+      var compData = {"labels": ["BitRefill", "Crypto.com Pay", "Binance Gift Cards", "Paxful", "CoinCards", "eGifter", "Reloadit", "Coinbase"], "data": [119, 103, 103, 102, 102, 102, 96, 6]};
+      var compChart = new Chart(compCanvas.getContext("2d"), {
+        type: "bar",
+        data: {
+          labels: compData.labels,
+          datasets: [{
+            label: "Mentions",
+            data: compData.data,
+            backgroundColor: "#FF4500",
+            borderRadius: 4,
+            barThickness: 16
+          }]
+        },
+        options: {
+          indexAxis: "y",
+          responsive: true,
+          maintainAspectRatio: false,
+          animation: { duration: 700, easing: "easeInOutQuart" },
+          plugins: {
+            legend: { display: false },
+            tooltip: {
+              backgroundColor: "#1c1c1c",
+              titleFont: { family: "Lato", weight: "700" },
+              bodyFont: { family: "DM Mono" },
+              padding: 10,
+              displayColors: false
+            }
+          },
+          scales: {
+            x: {
+              beginAtZero: true,
+              grid: { color: "#edeff1" },
+              ticks: { color: "#a8a8a8", font: { family: "DM Mono", size: 11 } }
+            },
+            y: {
+              grid: { display: false },
+              ticks: { color: "#313131", font: { family: "Lato", size: 12, weight: "700" } }
+            }
+          },
+          onClick: function (evt, els) {
+            if (!els || !els.length) return;
+            var idx = els[0].index;
+            var rows = document.querySelectorAll("#compTbody tr");
+            rows.forEach(function (r) {
+              if (parseInt(r.getAttribute("data-comp-idx"), 10) === idx) {
+                r.classList.add("highlight");
+              } else {
+                r.classList.remove("highlight");
+              }
+            });
+          }
+        }
+      });
+    }
+  } catch (e) { console.error("compChart error", e); }
+
+  // ----- Sentiment donut -----
+  try {
+    var donutCanvas = document.getElementById("sentDonut");
+    if (donutCanvas && typeof Chart !== "undefined") {
+      var donutData = {"positive": 2, "negative": 0, "neutral": 1, "mixed": 19};
+      var labels = ["Positive", "Negative", "Neutral", "Mixed"];
+      var values = [donutData.positive, donutData.negative, donutData.neutral, donutData.mixed];
+      var colors = ["#46d160", "#ea0027", "#a8a8a8", "#FF4500"];
+      new Chart(donutCanvas.getContext("2d"), {
+        type: "doughnut",
+        data: {
+          labels: labels,
+          datasets: [{
+            data: values,
+            backgroundColor: colors,
+            borderColor: "#ffffff",
+            borderWidth: 2
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          cutout: "62%",
+          animation: { duration: 900, easing: "easeInOutQuart" },
+          plugins: {
+            legend: { display: false },
+            tooltip: {
+              backgroundColor: "#1c1c1c",
+              titleFont: { family: "Lato", weight: "700" },
+              bodyFont: { family: "DM Mono" },
+              padding: 10,
+              callbacks: {
+                label: function (ctx) { return ctx.label + ": " + ctx.parsed; }
+              }
+            }
+          }
+        }
+      });
+    }
+  } catch (e) { console.error("donut error", e); }
+
+  // ----- Subreddit bar chart -----
+  try {
+    var subCanvas = document.getElementById("subChart");
+    if (subCanvas && typeof Chart !== "undefined") {
+      var subData = {"labels": ["r/Bitcoin", "r/btc", "r/CryptoIndia", "r/BitcoinBeginners", "r/nanocurrency", "r/ethereum", "r/fintech", "r/Gifts", "r/BitcoinCA", "r/ArgamingConsultas"], "data": [5, 4, 4, 3, 1, 1, 1, 1, 1, 1]};
+      new Chart(subCanvas.getContext("2d"), {
+        type: "bar",
+        data: {
+          labels: subData.labels,
+          datasets: [{
+            label: "Threads",
+            data: subData.data,
+            backgroundColor: "#FF4500",
+            borderRadius: 4,
+            barThickness: 28
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          animation: { duration: 700, easing: "easeInOutQuart" },
+          plugins: {
+            legend: { display: false },
+            tooltip: {
+              backgroundColor: "#1c1c1c",
+              titleFont: { family: "Lato", weight: "700" },
+              bodyFont: { family: "DM Mono" },
+              padding: 10,
+              displayColors: false
+            }
+          },
+          scales: {
+            x: {
+              grid: { display: false },
+              ticks: {
+                color: "#313131",
+                font: { family: "DM Mono", size: 11 },
+                maxRotation: 30,
+                minRotation: 0
+              }
+            },
+            y: {
+              beginAtZero: true,
+              grid: { color: "#edeff1" },
+              ticks: {
+                color: "#a8a8a8",
+                font: { family: "DM Mono", size: 11 },
+                stepSize: 1,
+                precision: 0
+              }
+            }
+          }
+        }
+      });
+    }
+  } catch (e) { console.error("subChart error", e); }
+
+  // ----- Sentiment filter pills (posts table) -----
+  try {
+    var sentPills = document.querySelectorAll('[data-filter-target="postsTbody"] .filter-pill');
+    sentPills.forEach(function (pill) {
+      pill.addEventListener("click", function () {
+        sentPills.forEach(function (p) { p.classList.remove("active"); });
+        pill.classList.add("active");
+        var f = pill.getAttribute("data-filter");
+        var rows = document.querySelectorAll("#postsTbody tr");
+        rows.forEach(function (r) {
+          if (f === "all" || r.getAttribute("data-sentiment") === f) {
+            r.style.display = "";
+          } else {
+            r.style.display = "none";
+          }
+        });
+      });
+    });
+  } catch (e) { console.error("postsFilter error", e); }
+
+  // ----- Priority filter pills (thread cards) -----
+  try {
+    var priPills = document.querySelectorAll('[data-filter-target="threadsList"] .filter-pill');
+    priPills.forEach(function (pill) {
+      pill.addEventListener("click", function () {
+        priPills.forEach(function (p) { p.classList.remove("active"); });
+        pill.classList.add("active");
+        var f = pill.getAttribute("data-priority-filter");
+        var cards = document.querySelectorAll("#threadsList .thread");
+        cards.forEach(function (c) {
+          if (f === "all" || c.getAttribute("data-priority") === f) {
+            c.style.display = "";
+          } else {
+            c.style.display = "none";
+          }
+        });
+      });
+    });
+  } catch (e) { console.error("priorityFilter error", e); }
+});
+</script>
+
+
+</body>
+</html>

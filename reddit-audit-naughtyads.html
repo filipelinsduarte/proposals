@@ -708,7 +708,10 @@
 
     <!-- Cover (favicon use #2, large) -->
     <div class="cover">
-      <img class="cover-favicon" src="https://www.google.com/s2/favicons?domain=naughtyads.com.au&sz=64" alt="NaughtyAds">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:18px;">
+        <img src="https://www.google.com/s2/favicons?domain=naughtyads.com.au&sz=64" alt="NaughtyAds" style="width:48px;height:48px;border-radius:12px;border:1px solid var(--rule);padding:6px;background:#fff;flex-shrink:0;">
+        <img src="https://www.google.com/s2/favicons?domain=reddit.com&sz=64" alt="Reddit" style="width:48px;height:48px;border-radius:12px;border:1px solid var(--rule);padding:6px;background:#fff;flex-shrink:0;opacity:0.8;">
+      </div>
       <div class="cover-meta">
         <span>Adult classifieds · Australia</span>
         <span class="sep">·</span>
@@ -906,6 +909,119 @@
             <span><span class="dot" style="background:var(--mixed)"></span>mixed</span>
           </div>
         </div>
+      </div>
+
+      <div class="card" style="margin-top:14px;">
+        <div style="font-family:'DM Mono',monospace;font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:12px;">Key Themes</div>
+        <table style="width:100%;border-collapse:collapse;font-size:14px;">
+          <thead>
+            <tr>
+              <th style="text-align:left;font-family:'DM Mono',monospace;font-size:10px;font-weight:500;color:var(--ink4);letter-spacing:0.08em;text-transform:uppercase;padding:8px 8px;border-bottom:1px solid var(--rule);">Theme</th>
+              <th style="text-align:center;font-family:'DM Mono',monospace;font-size:10px;font-weight:500;color:var(--ink4);letter-spacing:0.08em;text-transform:uppercase;padding:8px 8px;border-bottom:1px solid var(--rule);">Posts</th>
+              <th style="font-family:'DM Mono',monospace;font-size:10px;font-weight:500;color:var(--ink4);letter-spacing:0.08em;text-transform:uppercase;padding:8px 8px;border-bottom:1px solid var(--rule);">Sentiment mix</th>
+              <th style="text-align:right;font-family:'DM Mono',monospace;font-size:10px;font-weight:500;color:var(--ink4);letter-spacing:0.08em;text-transform:uppercase;padding:8px 8px;border-bottom:1px solid var(--rule);">Overall</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="padding:10px 8px;border-bottom:1px solid var(--paper3);color:var(--ink2);font-weight:600;">User experiences</td>
+              <td style="padding:10px 8px;border-bottom:1px solid var(--paper3);text-align:center;font-family:'DM Mono',monospace;font-size:12px;color:var(--ink3);">4</td>
+              <td style="padding:10px 8px;border-bottom:1px solid var(--paper3);">
+                <svg width="120" height="8" style="display:block;border-radius:4px;overflow:hidden;">
+                  <rect x="0" y="0" width="0" height="8" fill="#46d160"/>
+                  <rect x="0" y="0" width="0" height="8" fill="#ea0027"/>
+                  <rect x="0" y="0" width="0" height="8" fill="#a8a8a8"/>
+                  <rect x="0" y="0" width="120" height="8" fill="#FF4500"/>
+                </svg>
+                <div style="font-family:'DM Mono',monospace;font-size:10px;color:var(--ink4);margin-top:3px;letter-spacing:0.02em;">0% pos · 0% neg · 0% neu · 100% mix</div>
+              </td>
+              <td style="padding:10px 8px;border-bottom:1px solid var(--paper3);text-align:right;">
+                <span class="sent-badge mixed">mixed</span>
+              </td>
+            </tr>
+            <tr>
+              <td style="padding:10px 8px;border-bottom:1px solid var(--paper3);color:var(--ink2);font-weight:600;">Platform recommendations</td>
+              <td style="padding:10px 8px;border-bottom:1px solid var(--paper3);text-align:center;font-family:'DM Mono',monospace;font-size:12px;color:var(--ink3);">1</td>
+              <td style="padding:10px 8px;border-bottom:1px solid var(--paper3);">
+                <svg width="120" height="8" style="display:block;border-radius:4px;overflow:hidden;">
+                  <rect x="0" y="0" width="0" height="8" fill="#46d160"/>
+                  <rect x="0" y="0" width="0" height="8" fill="#ea0027"/>
+                  <rect x="0" y="0" width="0" height="8" fill="#a8a8a8"/>
+                  <rect x="0" y="0" width="120" height="8" fill="#FF4500"/>
+                </svg>
+                <div style="font-family:'DM Mono',monospace;font-size:10px;color:var(--ink4);margin-top:3px;letter-spacing:0.02em;">0% pos · 0% neg · 0% neu · 100% mix</div>
+              </td>
+              <td style="padding:10px 8px;border-bottom:1px solid var(--paper3);text-align:right;">
+                <span class="sent-badge mixed">mixed</span>
+              </td>
+            </tr>
+            <tr>
+              <td style="padding:10px 8px;border-bottom:1px solid var(--paper3);color:var(--ink2);font-weight:600;">Adult industry experiences</td>
+              <td style="padding:10px 8px;border-bottom:1px solid var(--paper3);text-align:center;font-family:'DM Mono',monospace;font-size:12px;color:var(--ink3);">1</td>
+              <td style="padding:10px 8px;border-bottom:1px solid var(--paper3);">
+                <svg width="120" height="8" style="display:block;border-radius:4px;overflow:hidden;">
+                  <rect x="0" y="0" width="120" height="8" fill="#46d160"/>
+                  <rect x="120" y="0" width="0" height="8" fill="#ea0027"/>
+                  <rect x="120" y="0" width="0" height="8" fill="#a8a8a8"/>
+                  <rect x="120" y="0" width="0" height="8" fill="#FF4500"/>
+                </svg>
+                <div style="font-family:'DM Mono',monospace;font-size:10px;color:var(--ink4);margin-top:3px;letter-spacing:0.02em;">100% pos · 0% neg · 0% neu · 0% mix</div>
+              </td>
+              <td style="padding:10px 8px;border-bottom:1px solid var(--paper3);text-align:right;">
+                <span class="sent-badge positive">positive</span>
+              </td>
+            </tr>
+            <tr>
+              <td style="padding:10px 8px;border-bottom:1px solid var(--paper3);color:var(--ink2);font-weight:600;">Personal preferences</td>
+              <td style="padding:10px 8px;border-bottom:1px solid var(--paper3);text-align:center;font-family:'DM Mono',monospace;font-size:12px;color:var(--ink3);">1</td>
+              <td style="padding:10px 8px;border-bottom:1px solid var(--paper3);">
+                <svg width="120" height="8" style="display:block;border-radius:4px;overflow:hidden;">
+                  <rect x="0" y="0" width="120" height="8" fill="#46d160"/>
+                  <rect x="120" y="0" width="0" height="8" fill="#ea0027"/>
+                  <rect x="120" y="0" width="0" height="8" fill="#a8a8a8"/>
+                  <rect x="120" y="0" width="0" height="8" fill="#FF4500"/>
+                </svg>
+                <div style="font-family:'DM Mono',monospace;font-size:10px;color:var(--ink4);margin-top:3px;letter-spacing:0.02em;">100% pos · 0% neg · 0% neu · 0% mix</div>
+              </td>
+              <td style="padding:10px 8px;border-bottom:1px solid var(--paper3);text-align:right;">
+                <span class="sent-badge positive">positive</span>
+              </td>
+            </tr>
+            <tr>
+              <td style="padding:10px 8px;border-bottom:1px solid var(--paper3);color:var(--ink2);font-weight:600;">Trustworthiness</td>
+              <td style="padding:10px 8px;border-bottom:1px solid var(--paper3);text-align:center;font-family:'DM Mono',monospace;font-size:12px;color:var(--ink3);">1</td>
+              <td style="padding:10px 8px;border-bottom:1px solid var(--paper3);">
+                <svg width="120" height="8" style="display:block;border-radius:4px;overflow:hidden;">
+                  <rect x="0" y="0" width="0" height="8" fill="#46d160"/>
+                  <rect x="0" y="0" width="0" height="8" fill="#ea0027"/>
+                  <rect x="0" y="0" width="0" height="8" fill="#a8a8a8"/>
+                  <rect x="0" y="0" width="120" height="8" fill="#FF4500"/>
+                </svg>
+                <div style="font-family:'DM Mono',monospace;font-size:10px;color:var(--ink4);margin-top:3px;letter-spacing:0.02em;">0% pos · 0% neg · 0% neu · 100% mix</div>
+              </td>
+              <td style="padding:10px 8px;border-bottom:1px solid var(--paper3);text-align:right;">
+                <span class="sent-badge mixed">mixed</span>
+              </td>
+            </tr>
+            <tr>
+              <td style="padding:10px 8px;color:var(--ink2);font-weight:600;">Pricing</td>
+              <td style="padding:10px 8px;text-align:center;font-family:'DM Mono',monospace;font-size:12px;color:var(--ink3);">1</td>
+              <td style="padding:10px 8px;">
+                <svg width="120" height="8" style="display:block;border-radius:4px;overflow:hidden;">
+                  <rect x="0" y="0" width="0" height="8" fill="#46d160"/>
+                  <rect x="0" y="0" width="0" height="8" fill="#ea0027"/>
+                  <rect x="0" y="0" width="0" height="8" fill="#a8a8a8"/>
+                  <rect x="0" y="0" width="120" height="8" fill="#FF4500"/>
+                </svg>
+                <div style="font-family:'DM Mono',monospace;font-size:10px;color:var(--ink4);margin-top:3px;letter-spacing:0.02em;">0% pos · 0% neg · 0% neu · 100% mix</div>
+              </td>
+              <td style="padding:10px 8px;text-align:right;">
+                <span class="sent-badge mixed">mixed</span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <p style="font-size:13px;color:var(--ink4);margin-top:14px;margin-bottom:0;line-height:1.5;font-style:italic;">Sentiment is assessed per post based on the overall tone of the thread (title, body, top comments). Each post is classified as Positive, Negative, Neutral, or Mixed based on the dominant emotional signal across all participants.</p>
       </div>
 
       <div class="card" style="margin-top:14px;">

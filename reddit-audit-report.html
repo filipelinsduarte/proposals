@@ -1,0 +1,1407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reddit Thread Audit: Leroy Merlin, NaughtyAds, CoinsBee · AI Peekaboo</title>
+
+<!-- GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YV8FCLN403"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-YV8FCLN403');</script>
+
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --accent:      #FF4500;
+    --accent-dark: #cc3700;
+    --accent-bg:   #fff4f0;
+    --accent-bd:   #ffd0bf;
+    --ink:         #1c1c1c;
+    --ink2:        #313131;
+    --ink3:        #6b6b6b;
+    --ink4:        #a8a8a8;
+    --paper:       #dae0e6;
+    --paper2:      #f6f7f8;
+    --paper3:      #edeff1;
+    --rule:        #edeff1;
+    --ok:          #46d160;
+    --ok-bg:       #edfbf0;
+    --ok-bd:       #b3f0c4;
+    --warn:        #ffd635;
+    --warn-bg:     #fffbe6;
+    --warn-bd:     #ffe680;
+    --red:         #ea0027;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { background: var(--paper); }
+
+  body {
+    font-family: "Lato", sans-serif;
+    font-size: 16px;
+    line-height: 1.65;
+    color: var(--ink);
+    background: var(--paper);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Top bar */
+  .topbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--rule);
+    padding: 12px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  .topbar-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .topbar-left img {
+    width: 22px;
+    height: 22px;
+    border-radius: 5px;
+    object-fit: contain;
+  }
+  .topbar-left span {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--ink2);
+  }
+  .topbar-right {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    text-decoration: none;
+  }
+  .topbar-right span {
+    font-size: 13px;
+    color: var(--ink4);
+  }
+  .topbar-right img {
+    height: 16px;
+    width: auto;
+    opacity: 0.6;
+  }
+
+  /* Page wrapper */
+  .page {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 56px 24px 100px;
+    background: transparent;
+  }
+
+  /* White content wrapper sits on grey paper */
+  .sheet {
+    background: #ffffff;
+    border: 1px solid var(--rule);
+    border-radius: 16px;
+    padding: 56px 56px 64px;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.02);
+  }
+
+  /* Cover block */
+  .cover {
+    padding-bottom: 44px;
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 48px;
+  }
+  .cover-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+  }
+  .cover-meta img {
+    width: 18px;
+    height: 18px;
+    border-radius: 4px;
+    object-fit: contain;
+  }
+  .cover-meta span {
+    font-family: "DM Mono", monospace;
+    font-size: 12px;
+    color: var(--ink4);
+    letter-spacing: 0.04em;
+  }
+  .cover-meta .sep { color: var(--rule); }
+
+  .cover h1 {
+    font-family: "Lato", sans-serif;
+    font-weight: 900;
+    font-size: clamp(26px, 4vw, 38px);
+    line-height: 1.15;
+    color: var(--ink);
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+  }
+  .cover-sub {
+    font-size: 17px;
+    color: var(--ink3);
+    line-height: 1.65;
+    max-width: 620px;
+  }
+
+  /* Brand block */
+  .brand-block {
+    margin-bottom: 56px;
+  }
+  .brand-block:last-of-type {
+    margin-bottom: 24px;
+  }
+  .brand-block + .brand-block {
+    padding-top: 56px;
+    border-top: 1px solid var(--rule);
+  }
+
+  .section-label {
+    font-family: "DM Mono", monospace;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .section-label img {
+    width: 14px;
+    height: 14px;
+    border-radius: 3px;
+    object-fit: contain;
+  }
+
+  h2 {
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    font-size: clamp(20px, 3vw, 26px);
+    color: var(--ink);
+    line-height: 1.25;
+    margin-bottom: 14px;
+  }
+
+  h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 6px;
+    line-height: 1.4;
+  }
+
+  p {
+    font-size: 16px;
+    color: var(--ink2);
+    line-height: 1.7;
+    margin-bottom: 12px;
+  }
+  p:last-child { margin-bottom: 0; }
+
+  /* Summary stats row */
+  .stats-row {
+    display: flex;
+    gap: 10px;
+    margin: 22px 0 28px;
+    flex-wrap: wrap;
+  }
+  .stat-chip {
+    background: var(--paper2);
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    padding: 12px 16px;
+    flex-shrink: 0;
+    min-width: 120px;
+  }
+  .stat-chip-num {
+    font-family: "DM Mono", monospace;
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--ink);
+    line-height: 1.1;
+    display: block;
+  }
+  .stat-chip-label {
+    font-size: 11px;
+    font-family: "DM Mono", monospace;
+    color: var(--ink4);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-top: 4px;
+    display: block;
+  }
+  .stat-chip.accent {
+    background: var(--accent-bg);
+    border-color: var(--accent-bd);
+  }
+  .stat-chip.accent .stat-chip-num { color: var(--accent-dark); }
+  .stat-chip.accent .stat-chip-label { color: var(--accent); }
+
+  /* Thread card */
+  .threads {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .thread {
+    background: #fff;
+    border: 1px solid var(--rule);
+    border-radius: 12px;
+    padding: 20px 24px;
+  }
+  .thread-top {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+  }
+  .badge {
+    font-family: "DM Mono", monospace;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 4px;
+    flex-shrink: 0;
+  }
+  .badge.high {
+    background: var(--accent-bg);
+    color: var(--accent-dark);
+    border: 1px solid var(--accent-bd);
+  }
+  .badge.medium {
+    background: var(--paper3);
+    color: var(--ink3);
+    border: 1px solid var(--rule);
+  }
+  .pill {
+    font-family: "DM Mono", monospace;
+    font-size: 11px;
+    color: var(--ink3);
+    background: var(--paper2);
+    border: 1px solid var(--rule);
+    padding: 3px 8px;
+    border-radius: 999px;
+    flex-shrink: 0;
+  }
+  .thread-date {
+    font-family: "DM Mono", monospace;
+    font-size: 11px;
+    color: var(--ink4);
+    margin-left: auto;
+    flex-shrink: 0;
+  }
+
+  .thread h3 {
+    font-size: 16px;
+    margin-bottom: 8px;
+    line-height: 1.4;
+  }
+  .thread h3 a {
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.15s, color 0.15s;
+  }
+  .thread h3 a:hover {
+    color: var(--accent-dark);
+    border-bottom-color: var(--accent);
+  }
+
+  .thread-stats {
+    font-family: "DM Mono", monospace;
+    font-size: 11px;
+    color: var(--ink4);
+    margin-bottom: 14px;
+    letter-spacing: 0.02em;
+  }
+  .thread-stats .dot {
+    margin: 0 8px;
+    opacity: 0.5;
+  }
+
+  .thread-why {
+    font-size: 14px;
+    color: var(--ink2);
+    line-height: 1.6;
+    margin-bottom: 14px;
+  }
+  .thread-why strong {
+    color: var(--ink);
+    font-weight: 700;
+  }
+
+  .angle {
+    background: var(--paper2);
+    border-left: 3px solid var(--accent);
+    border-radius: 4px;
+    padding: 14px 16px 14px 18px;
+  }
+  .angle-label {
+    font-family: "DM Mono", monospace;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 6px;
+    display: block;
+  }
+  .angle p {
+    font-size: 14px;
+    color: var(--ink2);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* Steps */
+  .steps {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-top: 24px;
+    background: #fff;
+    border: 1px solid var(--rule);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .step {
+    display: flex;
+    gap: 20px;
+    padding: 20px 24px;
+    border-bottom: 1px solid var(--rule);
+    align-items: flex-start;
+  }
+  .step:last-child { border-bottom: none; }
+  .step-num {
+    font-family: "DM Mono", monospace;
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--accent);
+    background: var(--accent-bg);
+    border: 1px solid var(--accent-bd);
+    border-radius: 4px;
+    padding: 2px 7px;
+    flex-shrink: 0;
+    margin-top: 2px;
+    letter-spacing: 0.05em;
+  }
+  .step-body h3 {
+    margin-bottom: 4px;
+  }
+  .step-body p {
+    font-size: 14px;
+    margin: 0;
+    color: var(--ink3);
+    line-height: 1.55;
+  }
+
+  /* CTA */
+  .cta-block {
+    background: var(--accent-bg);
+    border: 1.5px solid var(--accent-bd);
+    border-radius: 14px;
+    padding: 36px 40px;
+    text-align: center;
+    margin-top: 28px;
+  }
+  .cta-block h2 {
+    margin-bottom: 10px;
+  }
+  .cta-block > p {
+    font-size: 15px;
+    color: var(--ink3);
+    max-width: 480px;
+    margin: 0 auto 24px;
+  }
+  .cta-buttons {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .cta-email {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--accent);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 15px;
+    padding: 12px 24px;
+    border-radius: 8px;
+    transition: background 0.15s;
+  }
+  .cta-email:hover {
+    background: var(--accent-dark);
+  }
+  .cta-email svg {
+    width: 16px;
+    height: 16px;
+  }
+  .cta-calendar {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #fff;
+    color: var(--accent);
+    border: 1.5px solid var(--accent-bd);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 15px;
+    padding: 12px 24px;
+    border-radius: 8px;
+    transition: border-color 0.15s, background 0.15s;
+  }
+  .cta-calendar:hover {
+    background: var(--accent-bg);
+    border-color: var(--accent);
+  }
+  .cta-calendar svg {
+    width: 16px;
+    height: 16px;
+  }
+  .cta-note {
+    font-size: 13px;
+    color: var(--ink4);
+    margin-top: 14px;
+    margin-bottom: 0;
+  }
+
+  /* Footer */
+  .footer {
+    margin-top: 56px;
+    padding-top: 28px;
+    border-top: 1px solid var(--rule);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .footer-left {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+  }
+  .footer-left img {
+    height: 18px;
+    width: auto;
+    opacity: 0.55;
+  }
+  .footer-right {
+    font-size: 13px;
+    color: var(--ink4);
+  }
+
+  @media (max-width: 700px) {
+    .page { padding: 32px 12px 64px; }
+    .sheet { padding: 32px 22px 40px; border-radius: 12px; }
+    .stat-chip { flex: 1 0 calc(50% - 5px); min-width: 0; }
+    .cta-buttons { flex-direction: column; align-items: center; }
+    .cta-block { padding: 28px 20px; }
+    .thread { padding: 18px 18px; }
+    .thread-date { margin-left: 0; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Top bar -->
+<div class="topbar">
+  <div class="topbar-left">
+    <img src="https://www.google.com/s2/favicons?domain=reddit.com&sz=32" alt="Reddit">
+    <span>Reddit Thread Audit</span>
+  </div>
+  <a class="topbar-right" href="https://www.aipeekaboo.com" target="_blank" rel="noopener">
+    <span>Powered by</span>
+    <img src="https://www.aipeekaboo.com/images/peekaboo-logo-black.png" alt="AI Peekaboo">
+  </a>
+</div>
+
+<div class="page">
+  <div class="sheet">
+
+    <!-- Cover -->
+    <div class="cover">
+      <div class="cover-meta">
+        <img src="https://www.google.com/s2/favicons?domain=reddit.com&sz=32" alt="Reddit">
+        <span>3 brands</span>
+        <span class="sep">·</span>
+        <span>44 threads reviewed</span>
+        <span class="sep">·</span>
+        <span>May 2026</span>
+      </div>
+      <h1>Reddit Thread Audit: Where Your Buyers Are Already Talking</h1>
+      <p class="cover-sub">A curated list of live, commentable threads across three brands, each mapped to a specific comment angle. Every thread was hand-picked after a full audit pass. This is where you belong in the conversation.</p>
+    </div>
+
+    <!-- ============== LEROY MERLIN PT ============== -->
+    <div class="brand-block">
+      <div class="section-label">
+        <img src="https://www.google.com/s2/favicons?domain=leroymerlin.pt&sz=32" alt="Leroy Merlin">
+        Leroy Merlin · Home Improvement Portugal
+      </div>
+      <h2>DIYers in Portugal are asking. Nobody from Leroy Merlin is answering.</h2>
+      <p>Leroy Merlin is the leading DIY chain in Portugal, with hundreds of thousands of Portuguese-speaking homeowners, renovators, and contractors active in r/portugal, r/TudoCasa, and r/PortugalExpats every month. The threads below show buyers comparing stores, sharing delivery complaints, and asking for material recommendations in real time, and Leroy Merlin has almost no presence in any of them.</p>
+
+      <div class="stats-row">
+        <div class="stat-chip">
+          <span class="stat-chip-num">13</span>
+          <span class="stat-chip-label">Threads kept</span>
+        </div>
+        <div class="stat-chip">
+          <span class="stat-chip-num">775k</span>
+          <span class="stat-chip-label">Top subreddit reach</span>
+        </div>
+        <div class="stat-chip accent">
+          <span class="stat-chip-num">7</span>
+          <span class="stat-chip-label">High priority</span>
+        </div>
+      </div>
+
+      <div class="threads">
+
+        <!-- LM Thread 1 -->
+        <div class="thread">
+          <div class="thread-top">
+            <span class="badge high">High priority</span>
+            <span class="pill">r/portugal</span>
+            <span class="thread-date">Jun 2018</span>
+          </div>
+          <h3><a href="https://www.reddit.com/r/portugal/comments/8pejov/dono_da_aki_e_leroy_merlin_quer_abrir_mais_18" target="_blank" rel="noopener">Dono da AKI e Leroy Merlin quer abrir mais 18 lojas em Portugal</a></h3>
+          <div class="thread-stats">14 upvotes <span class="dot">·</span> 19 comments <span class="dot">·</span> 774,976 subscribers</div>
+          <p class="thread-why">Discussion about Leroy Merlin's expansion in Portugal and how it compares to Aki. Commenters appreciate the variety and accessibility, noting that the stores cater to both professionals and casual DIYers. The brand is named directly and the audience is buying.</p>
+          <div class="angle">
+            <span class="angle-label">Comment angle</span>
+            <p>Highlight Leroy Merlin's commitment to carrying a wide range of products that serve both professionals and homeowners, and frame the brand's role in the booming Portuguese renovation market.</p>
+          </div>
+        </div>
+
+        <!-- LM Thread 2 -->
+        <div class="thread">
+          <div class="thread-top">
+            <span class="badge high">High priority</span>
+            <span class="pill">r/portugal</span>
+            <span class="thread-date">Jun 2024</span>
+          </div>
+          <h3><a href="https://www.reddit.com/r/portugal/comments/1d7ya8t/leroy_merlin_online_n%C3%A3o_me_entrega_os_artigos" target="_blank" rel="noopener">Leroy Merlin Online não me entrega os artigos comprados</a></h3>
+          <div class="thread-stats">16 upvotes <span class="dot">·</span> 23 comments <span class="dot">·</span> 774,976 subscribers</div>
+          <p class="thread-why">A customer complaining about a partial delivery and slow communication. Other commenters chime in with similar experiences and escalation advice. A direct service recovery opportunity where the brand needs to be visible, not silent.</p>
+          <div class="angle">
+            <span class="angle-label">Comment angle</span>
+            <p>Acknowledge the customer's experience publicly, point them to the correct escalation path, and outline the specific improvements being made to the online ordering and delivery flow.</p>
+          </div>
+        </div>
+
+        <!-- LM Thread 3 -->
+        <div class="thread">
+          <div class="thread-top">
+            <span class="badge high">High priority</span>
+            <span class="pill">r/TudoCasa</span>
+            <span class="thread-date">Feb 2026</span>
+          </div>
+          <h3><a href="https://www.reddit.com/r/TudoCasa/comments/1r83uee/melhor_loja_para_comprar_materiais" target="_blank" rel="noopener">Melhor loja para comprar materiais</a></h3>
+          <div class="thread-stats">1 upvote <span class="dot">·</span> 3 comments <span class="dot">·</span> 37,524 subscribers</div>
+          <p class="thread-why">A user actively asking where to buy materials for a renovation and mentioning Leroy Merlin by name as a likely option. Competing stores like Obramat and Montalto are being pushed in the replies. A live decision is happening right now.</p>
+          <div class="angle">
+            <span class="angle-label">Comment angle</span>
+            <p>Highlight the competitive pricing and product range, then add three short first-time-buyer tips for sourcing materials in Portugal (delivery quote, in-store cutting service, professional account) to anchor the recommendation.</p>
+          </div>
+        </div>
+
+        <!-- LM Thread 4 -->
+        <div class="thread">
+          <div class="thread-top">
+            <span class="badge high">High priority</span>
+            <span class="pill">r/portugal</span>
+            <span class="thread-date">Feb 2024</span>
+          </div>
+          <h3><a href="https://www.reddit.com/r/portugal/comments/1amz8da/leroy_merlin_reembolso_encomenda_online" target="_blank" rel="noopener">Leroy merlin reembolso encomenda online</a></h3>
+          <div class="thread-stats">5 upvotes <span class="dot">·</span> 12 comments <span class="dot">·</span> 774,978 subscribers</div>
+          <p class="thread-why">A user dealing with an online order cancellation and poor support. Comments echo the same frustration. The brand is named directly and the audience is reading.</p>
+          <div class="angle">
+            <span class="angle-label">Comment angle</span>
+            <p>Acknowledge the issue, provide clear resolution steps inside the comment (order number, support email, expected timeline), and reinforce the commitment to fixing the online ordering experience.</p>
+          </div>
+        </div>
+
+        <!-- LM Thread 5 -->
+        <div class="thread">
+          <div class="thread-top">
+            <span class="badge high">High priority</span>
+            <span class="pill">r/TudoCasa</span>
+            <span class="thread-date">Sep 2024</span>
+          </div>
+          <h3><a href="https://www.reddit.com/r/TudoCasa/comments/1fojlbi/vinilico_vs_laminado" target="_blank" rel="noopener">Vinilico VS Laminado</a></h3>
+          <div class="thread-stats">5 upvotes <span class="dot">·</span> 25 comments <span class="dot">·</span> 37,524 subscribers</div>
+          <p class="thread-why">A first-time homebuyer comparing vinyl versus laminate flooring. Commenters are sharing experiences on water resistance, sound insulation, and price. Pure buying-intent territory.</p>
+          <div class="angle">
+            <span class="angle-label">Comment angle</span>
+            <p>Offer practical expert guidance on vinyl versus laminate (sub-floor prep, moisture rating, click systems), then surface Leroy Merlin's premium vinyl lines as the recommended pick for long-term satisfaction.</p>
+          </div>
+        </div>
+
+        <!-- LM Thread 6 -->
+        <div class="thread">
+          <div class="thread-top">
+            <span class="badge high">High priority</span>
+            <span class="pill">r/TudoCasa</span>
+            <span class="thread-date">Sep 2024</span>
+          </div>
+          <h3><a href="https://www.reddit.com/r/TudoCasa/comments/1fdvub1/obras_em_casa_estou_a_ser_roubada" target="_blank" rel="noopener">Obras em casa, estou a ser roubada?</a></h3>
+          <div class="thread-stats">13 upvotes <span class="dot">·</span> 63 comments <span class="dot">·</span> 37,524 subscribers</div>
+          <p class="thread-why">A first-time homeowner pricing flooring, painting, and demolition work, fearing overcharges. The thread is split between DIY and professional quotes. Exactly the buyer Leroy Merlin should be talking to.</p>
+          <div class="angle">
+            <span class="angle-label">Comment angle</span>
+            <p>Walk through realistic Portuguese market prices for flooring, paint, and demolition supplies, then point to which jobs are safely DIY and which are not, with specific Leroy Merlin product categories named.</p>
+          </div>
+        </div>
+
+        <!-- LM Thread 7 -->
+        <div class="thread">
+          <div class="thread-top">
+            <span class="badge high">High priority</span>
+            <span class="pill">r/portugal</span>
+            <span class="thread-date">May 2026</span>
+          </div>
+          <h3><a href="https://www.reddit.com/r/portugal/comments/1t5ej05/obras_em_casa" target="_blank" rel="noopener">Obras em casa</a></h3>
+          <div class="thread-stats">1 upvote <span class="dot">·</span> 4 comments <span class="dot">·</span> 774,978 subscribers</div>
+          <p class="thread-why">A homeowner converting a basement into a livable studio, asking about moisture, flooring, and ventilation. Practical DIY problem, no brand mentioned yet, very early in the thread.</p>
+          <div class="angle">
+            <span class="angle-label">Comment angle</span>
+            <p>Recommend a moisture-resistant flooring system, a ventilation solution, and the specific Leroy Merlin SKUs that fit the basement-to-studio use case.</p>
+          </div>
+        </div>
+
+        <!-- LM Thread 8 -->
+        <div class="thread">
+          <div class="thread-top">
+            <span class="badge medium">Medium priority</span>
+            <span class="pill">r/PortugalExpats</span>
+            <span class="thread-date">Jul 2025</span>
+          </div>
+          <h3><a href="https://www.reddit.com/r/PortugalExpats/comments/1m5oy77/tell_me_it_gets_easier" target="_blank" rel="noopener">Tell me it gets easier…</a></h3>
+          <div class="thread-stats">98 upvotes <span class="dot">·</span> 178 comments <span class="dot">·</span> 66,766 subscribers</div>
+          <p class="thread-why">Expat homeowners venting about renovation contractors in Portugal. Maxmat, Bricomarché, Brico Depôt, OBI, and IKEA are all named. Leroy Merlin is not. This is a major thread with sustained traffic where the brand is currently invisible.</p>
+          <div class="angle">
+            <span class="angle-label">Comment angle</span>
+            <p>Provide a short, useful resource for expats dealing with contractor frustration: a list of Leroy Merlin's in-store consultation services, project planning tools, and which work can realistically be DIY'd by a non-Portuguese-speaking homeowner.</p>
+          </div>
+        </div>
+
+        <!-- LM Thread 9 -->
+        <div class="thread">
+          <div class="thread-top">
+            <span class="badge medium">Medium priority</span>
+            <span class="pill">r/portugal</span>
+            <span class="thread-date">Feb 2026</span>
+          </div>
+          <h3><a href="https://www.reddit.com/r/portugal/comments/1qtryai/leroy_merlin_n%C3%A3o_assume_erro" target="_blank" rel="noopener">Leroy Merlin não assume erro</a></h3>
+          <div class="thread-stats">4 upvotes <span class="dot">·</span> 8 comments <span class="dot">·</span> 774,976 subscribers</div>
+          <p class="thread-why">A complaint about a mismeasured door from Leroy Merlin. Mixed comments, some defending the brand, some sharing positive in-store experiences. A nuanced thread that benefits from a calm, specific response.</p>
+          <div class="angle">
+            <span class="angle-label">Comment angle</span>
+            <p>Address the customer's mismeasurement issue head-on with the exact returns and remake policy, and confirm the team is following up. No corporate language, just a clear path to resolution.</p>
+          </div>
+        </div>
+
+        <!-- LM Thread 10 -->
+        <div class="thread">
+          <div class="thread-top">
+            <span class="badge medium">Medium priority</span>
+            <span class="pill">r/TudoCasa</span>
+            <span class="thread-date">Mar 2025</span>
+          </div>
+          <h3><a href="https://www.reddit.com/r/TudoCasa/comments/1jfrc4h/obras_em_casa" target="_blank" rel="noopener">Obras em casa</a></h3>
+          <div class="thread-stats">27 upvotes <span class="dot">·</span> 57 comments <span class="dot">·</span> 37,524 subscribers</div>
+          <p class="thread-why">Homeowner sharing a renovation quote, asking the community to sanity-check it. Discussion centres on capoto and pladur pricing. Practical material questions where Leroy Merlin should be the trusted source.</p>
+          <div class="angle">
+            <span class="angle-label">Comment angle</span>
+            <p>Walk through how to read a renovation quote line by line, explain what fair pricing looks like for capoto and pladur in Portugal, and name the Leroy Merlin material lines that match each spec.</p>
+          </div>
+        </div>
+
+        <!-- LM Thread 11 -->
+        <div class="thread">
+          <div class="thread-top">
+            <span class="badge medium">Medium priority</span>
+            <span class="pill">r/portugal</span>
+            <span class="thread-date">Nov 2025</span>
+          </div>
+          <h3><a href="https://www.reddit.com/r/portugal/comments/1opfsnz/gatos_em_apartamentos_como_combater_mau_cheiro" target="_blank" rel="noopener">Gatos em apartamentos, como combater mau cheiro das casinhas de banho deles?</a></h3>
+          <div class="thread-stats">119 upvotes <span class="dot">·</span> 328 comments <span class="dot">·</span> 774,978 subscribers</div>
+          <p class="thread-why">High-traffic thread on managing odour and cleanliness in small Portuguese apartments. Adjacent to home maintenance and air quality, both Leroy Merlin categories. The reach here is unusually high.</p>
+          <div class="angle">
+            <span class="angle-label">Comment angle</span>
+            <p>Recommend specific Leroy Merlin cleaning, ventilation, and air-purification products that solve the apartment-pet-odour problem, with a short note on placement and frequency.</p>
+          </div>
+        </div>
+
+        <!-- LM Thread 12 -->
+        <div class="thread">
+          <div class="thread-top">
+            <span class="badge medium">Medium priority</span>
+            <span class="pill">r/PortugalExpats</span>
+            <span class="thread-date">Jan 2024</span>
+          </div>
+          <h3><a href="https://www.reddit.com/r/PortugalExpats/comments/199u0bh/anybody_has_experienceknowledge_building_a_house" target="_blank" rel="noopener">Anybody has experience/knowledge building a house in Portugal?</a></h3>
+          <div class="thread-stats">6 upvotes <span class="dot">·</span> 35 comments <span class="dot">·</span> 66,766 subscribers</div>
+          <p class="thread-why">A foreign buyer asking about realistic construction costs in the Algarve. Aki, Bricomarché, Brico Depôt, OBI, IKEA, Maxmat, Saint-Gobain and Worten are all mentioned in the thread. Leroy Merlin is not.</p>
+          <div class="angle">
+            <span class="angle-label">Comment angle</span>
+            <p>Provide a sourcing guide for self-builders in Portugal: which materials make sense to buy at Leroy Merlin versus a specialist supplier, realistic per-square-metre costs, and which trade services Leroy Merlin offers in-store.</p>
+          </div>
+        </div>
+
+        <!-- LM Thread 13 -->
+        <div class="thread">
+          <div class="thread-top">
+            <span class="badge medium">Medium priority</span>
+            <span class="pill">r/portugal</span>
+            <span class="thread-date">Sep 2022</span>
+          </div>
+          <h3><a href="https://www.reddit.com/r/portugal/comments/xgusr9/site_para_comprar_ferramentas" target="_blank" rel="noopener">Site para comprar ferramentas</a></h3>
+          <div class="thread-stats">2 upvotes <span class="dot">·</span> 8 comments <span class="dot">·</span> 774,976 subscribers</div>
+          <p class="thread-why">A buyer comparing tool retailers online. Bricoprivé, Parkside, Amazon, Drogaria Seara, Valpec, and Maxmat are all named. Leroy Merlin gets a passing mention as a fallback for urgent in-person buys. The brand belongs higher in the conversation.</p>
+          <div class="angle">
+            <span class="angle-label">Comment angle</span>
+            <p>Compare the four main ways to buy power tools in Portugal (Leroy Merlin online, Leroy Merlin in-store, marketplace, specialist), give a quick honest take on quality and price for each, and explain when Leroy Merlin wins on both.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ============== NAUGHTYADS AU ============== -->
+    <div class="brand-block">
+      <div class="section-label">
+        <img src="https://www.google.com/s2/favicons?domain=naughtyads.com.au&sz=32" alt="NaughtyAds">
+        NaughtyAds · Adult Classifieds Australia
+      </div>
+      <h2>Australian buyers are asking which platforms are legit. NaughtyAds is rarely in the answer.</h2>
+      <p>NaughtyAds is an 18+ Australian adult classifieds platform serving both service providers and clients. Users on r/MelbourneAfterDark, r/RealHookupAdvice, and r/escortblacklist are openly comparing platforms, calling out fake ads, and asking for trusted alternatives. NaughtyAds appears in almost none of these conversations, while competitors Scarlet Blue, Locanto, SkipTheGames, AdultWork, and Slixa are named in every single one.</p>
+
+      <div class="stats-row">
+        <div class="stat-chip">
+          <span class="stat-chip-num">9</span>
+          <span class="stat-chip-label">Threads kept</span>
+        </div>
+        <div class="stat-chip">
+          <span class="stat-chip-num">22.5M</span>
+          <span class="stat-chip-label">Top subreddit reach</span>
+        </div>
+        <div class="stat-chip accent">
+          <span class="stat-chip-num">3</span>
+          <span class="stat-chip-label">High priority</span>
+        </div>
+      </div>
+
+      <div class="threads">
+
+        <!-- NA Thread 1 -->
+        <div class="thread">
+          <div class="thread-top">
+            <span class="badge high">High priority</span>
+            <span class="pill">r/MelbourneAfterDark</span>
+            <span class="thread-date">Oct 2023</span>
+          </div>
+          <h3><a href="https://www.reddit.com/r/MelbourneAfterDark/comments/17icz8z/whats_the_best_escort_website_to_find_a_hot_but" target="_blank" rel="noopener">What's the best escort website to find a hot but reasonably priced provider?</a></h3>
+          <div class="thread-stats">45 upvotes <span class="dot">·</span> 30 comments <span class="dot">·</span> 41,052 subscribers</div>
+          <p class="thread-why">A direct buyer-intent question about which Australian escort platform to use. Comments cover trust, pricing, and platform reliability. Scarlet Blue, Locanto, Punter Planet, AdultWork, EscortGuide Australia, SkipTheGames, and Slixa are all mentioned. NaughtyAds belongs in this list.</p>
+          <div class="angle">
+            <span class="angle-label">Comment angle</span>
+            <p>Compare the top Australian platforms honestly, focusing on what each one is actually good for (city coverage, verification process, fees), and place NaughtyAds in context for Melbourne and Sydney clients looking for verified providers.</p>
+          </div>
+        </div>
+
+        <!-- NA Thread 2 -->
+        <div class="thread">
+          <div class="thread-top">
+            <span class="badge high">High priority</span>
+            <span class="pill">r/doublelist24</span>
+            <span class="thread-date">Jan 2024</span>
+          </div>
+          <h3><a href="https://www.reddit.com/r/doublelist24/comments/1915x00/which_are_the_best_escort_sites_reddit_recommends" target="_blank" rel="noopener">Which are the best escort sites reddit recommends? (legit escort and sex worker platforms)</a></h3>
+          <div class="thread-stats">48 upvotes <span class="dot">·</span> 102 comments <span class="dot">·</span> 238 subscribers</div>
+          <p class="thread-why">102 comments of buyers and providers swapping platform recommendations after major platforms shut down. Scarlet Blue, Locanto Australia, Punter Planet, AdultWork, EscortGuide Australia, SkipTheGames, and Slixa are all named. The thread is small in subreddit size but ranks for the exact query.</p>
+          <div class="angle">
+            <span class="angle-label">Comment angle</span>
+            <p>Name NaughtyAds as a legitimate Australian-focused alternative, explain the verification process for ads, and outline the protections in place against the fake-listing and scam problem the thread is reacting to.</p>
+          </div>
+        </div>
+
+        <!-- NA Thread 3 -->
+        <div class="thread">
+          <div class="thread-top">
+            <span class="badge high">High priority</span>
+            <span class="pill">r/escortblacklist</span>
+            <span class="thread-date">Jun 2025</span>
+          </div>
+          <h3><a href="https://www.reddit.com/r/escortblacklist/comments/1lgxapf/escort_listing_platform_eurogirlsescort_allows" target="_blank" rel="noopener">Escort Listing Platform (EuroGirlsEscort) Allows Fraudulent Ads and Silences Real Reviews</a></h3>
+          <div class="thread-stats">7 upvotes <span class="dot">·</span> 26 comments <span class="dot">·</span> 122 subscribers</div>
+          <p class="thread-why">Active complaints about fake ads and silenced reviews on a major competitor platform. Users are openly looking for a directory with real moderation. This is the platform-trust moment NaughtyAds is positioned for.</p>
+          <div class="angle">
+            <span class="angle-label">Comment angle</span>
+            <p>Position NaughtyAds as a directory that takes ad authenticity seriously, with a concrete description of how listings are moderated and reviews handled. No platform attack, just a clear contrast on policy.</p>
+          </div>
+        </div>
+
+        <!-- NA Thread 4 -->
+        <div class="thread">
+          <div class="thread-top">
+            <span class="badge medium">Medium priority</span>
+            <span class="pill">r/IAmA</span>
+            <span class="thread-date">Jan 2015</span>
+          </div>
+          <h3><a href="https://www.reddit.com/r/IAmA/comments/2s11zp/iama_australian_porn_star_escort_and_geek_lucie" target="_blank" rel="noopener">IamA Australian Porn Star, Escort and Geek, Lucie Bee! AMA!</a></h3>
+          <div class="thread-stats">1,077 upvotes <span class="dot">·</span> 1,096 comments <span class="dot">·</span> 22,456,963 subscribers</div>
+          <p class="thread-why">A highly-trafficked AMA in r/IAmA from an Australian escort, still indexed and still receiving views. Massive subreddit reach. A respectful late comment can earn visibility from a long tail of search and on-platform browsing.</p>
+          <div class="angle">
+            <span class="angle-label">Comment angle</span>
+            <p>Add a useful reference comment for readers landing on the thread today: what has changed in the Australian adult classifieds market since 2015, how providers verify and advertise now, and where NaughtyAds fits in the current landscape.</p>
+          </div>
+        </div>
+
+        <!-- NA Thread 5 -->
+        <div class="thread">
+          <div class="thread-top">
+            <span class="badge medium">Medium priority</span>
+            <span class="pill">r/australia</span>
+            <span class="thread-date">Jun 2015</span>
+          </div>
+          <h3><a href="https://www.reddit.com/r/australia/comments/39wjf5/in_need_of_a_paypaltype_alternative_that_works_in" target="_blank" rel="noopener">In need of a Paypal-type alternative that works in Australia and is, uh, NSFW-friendly</a></h3>
+          <div class="thread-stats">31 upvotes <span class="dot">·</span> 42 comments <span class="dot">·</span> 2,836,333 subscribers</div>
+          <p class="thread-why">A provider asking about payment processors that work for adult services in Australia. Bitcoin and prepaid cards come up. Adjacent to NaughtyAds's audience and a useful place to be seen by operators.</p>
+          <div class="angle">
+            <span class="angle-label">Comment angle</span>
+            <p>Offer a practical rundown of payment options Australian providers actually use in 2026 (current crypto routes, prepaid cards, in-person), with a note on how NaughtyAds works for advertising regardless of which payment method the provider chooses.</p>
+          </div>
+        </div>
+
+        <!-- NA Thread 6 -->
+        <div class="thread">
+          <div class="thread-top">
+            <span class="badge medium">Medium priority</span>
+            <span class="pill">r/TrueOffMyChest</span>
+            <span class="thread-date">Apr 2026</span>
+          </div>
+          <h3><a href="https://www.reddit.com/r/TrueOffMyChest/comments/1sdgf48/i_had_sex_with_a_sex_workerand_i_just_am_not_sure" target="_blank" rel="noopener">I had sex with a sex worker, and I just am not sure how to process that right now</a></h3>
+          <div class="thread-stats">1,605 upvotes <span class="dot">·</span> 207 comments <span class="dot">·</span> 2,491,687 subscribers</div>
+          <p class="thread-why">High-traffic personal thread reflecting on a first experience with a sex worker. Sympathetic, mixed audience. Not a direct sales thread, but a place where a thoughtful, respectful comment about the industry lands well.</p>
+          <div class="angle">
+            <span class="angle-label">Comment angle</span>
+            <p>Contribute a calm, non-promotional perspective on consent, professionalism, and how the legal Australian adult services industry actually works. NaughtyAds is mentioned only as a frame of reference, not as a pitch.</p>
+          </div>
+        </div>
+
+        <!-- NA Thread 7 -->
+        <div class="thread">
+          <div class="thread-top">
+            <span class="badge medium">Medium priority</span>
+            <span class="pill">r/aussie</span>
+            <span class="thread-date">Sep 2025</span>
+          </div>
+          <h3><a href="https://www.reddit.com/r/aussie/comments/1nerjdv/porn_agecheck_rules_will_risk_users_privacy_and" target="_blank" rel="noopener">Porn age-check rules will risk users' privacy and lead to censorship, sex workers and adult industry say</a></h3>
+          <div class="thread-stats">21 upvotes <span class="dot">·</span> 10 comments <span class="dot">·</span> 58,965 subscribers</div>
+          <p class="thread-why">A regulatory thread covering the Australian age-check rules and their effect on the adult industry. Privacy and safety are the main themes. Directly relevant to a platform that has to navigate the new rules.</p>
+          <div class="angle">
+            <span class="angle-label">Comment angle</span>
+            <p>Explain how NaughtyAds is approaching the new Australian age-check rules in practice: what changes for providers, what changes for clients, and how the platform handles privacy under the new framework.</p>
+          </div>
+        </div>
+
+        <!-- NA Thread 8 -->
+        <div class="thread">
+          <div class="thread-top">
+            <span class="badge medium">Medium priority</span>
+            <span class="pill">r/tabled</span>
+            <span class="thread-date">Oct 2013</span>
+          </div>
+          <h3><a href="https://www.reddit.com/r/tabled/comments/1nx0js/table_iama_im_an_independent_fully_licensed_and" target="_blank" rel="noopener">[Table] IAmA: I'm an independent, fully licensed and legal private escort in Australia. AMAA.</a></h3>
+          <div class="thread-stats">15 upvotes <span class="dot">·</span> 0 comments <span class="dot">·</span> 17,957 subscribers</div>
+          <p class="thread-why">A table summary thread from a high-engagement original AMA. Still ranks for "legal escort Australia" queries. No comments yet means a first-mover comment is unusually visible.</p>
+          <div class="angle">
+            <span class="angle-label">Comment angle</span>
+            <p>Add an evergreen reference comment for independent licensed Australian providers: how to advertise, how to vet clients, and how NaughtyAds supports independent professionals specifically.</p>
+          </div>
+        </div>
+
+        <!-- NA Thread 9 -->
+        <div class="thread">
+          <div class="thread-top">
+            <span class="badge medium">Medium priority</span>
+            <span class="pill">r/RealHookupAdvice</span>
+            <span class="thread-date">Jan 2023</span>
+          </div>
+          <h3><a href="https://www.reddit.com/r/RealHookupAdvice/comments/10o5w3y/which_are_the_best_escort_sites_reddit_recommends" target="_blank" rel="noopener">Which are the best escort sites reddit recommends? (legit escort and sex worker platforms)</a></h3>
+          <div class="thread-stats">325 upvotes <span class="dot">·</span> 189 comments <span class="dot">·</span> 61,663 subscribers</div>
+          <p class="thread-why">A heavily upvoted, 189-comment platform-comparison thread that ranks globally for the exact query. SkipTheGames, AdultFriendFinder, Seeking, Eros, Slixa, Private Delights, and Tryst are all named. NaughtyAds is missing from the recommendation set.</p>
+          <div class="angle">
+            <span class="angle-label">Comment angle</span>
+            <p>Add NaughtyAds as the dedicated Australian recommendation in this global thread, with a clear explanation of why a country-specific platform matters for verification, safety, and meeting in person.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ============== COINSBEE ============== -->
+    <div class="brand-block">
+      <div class="section-label">
+        <img src="https://www.google.com/s2/favicons?domain=coinsbee.com&sz=32" alt="CoinsBee">
+        CoinsBee · Crypto Gift Cards
+      </div>
+      <h2>Every "BitRefill alternative" thread is a CoinsBee thread waiting to happen.</h2>
+      <p>CoinsBee lets crypto holders buy gift cards from 1,000+ brands across 50+ countries using BTC, ETH, LTC, USDT, XRP and more. The audience is openly hunting for alternatives to BitRefill on r/Bitcoin, r/btc, r/BitcoinBeginners, r/ethereum, and r/CryptoIndia, and CoinsBee already gets organic mentions in many of them. The opportunity is to be the helpful answer, not a passing namedrop.</p>
+
+      <div class="stats-row">
+        <div class="stat-chip">
+          <span class="stat-chip-num">22</span>
+          <span class="stat-chip-label">Threads kept</span>
+        </div>
+        <div class="stat-chip">
+          <span class="stat-chip-num">8.1M</span>
+          <span class="stat-chip-label">Top subreddit reach</span>
+        </div>
+        <div class="stat-chip accent">
+          <span class="stat-chip-num">4</span>
+          <span class="stat-chip-label">High priority</span>
+        </div>
+      </div>
+
+      <div class="threads">
+
+        <!-- CB Thread 1 -->
+        <div class="thread">
+          <div class="thread-top">
+            <span class="badge high">High priority</span>
+            <span class="pill">r/nanocurrency</span>
+            <span class="thread-date">Oct 2025</span>
+          </div>
+          <h3><a href="https://www.reddit.com/r/nanocurrency/comments/1nyjimm/bought_something_on_coinsbee_with_nano_and" target="_blank" rel="noopener">Bought something on Coinsbee with nano and refilled my stack</a></h3>
+          <div class="thread-stats">44 upvotes <span class="dot">·</span> 7 comments <span class="dot">·</span> 124,882 subscribers</div>
+          <p class="thread-why">A happy CoinsBee customer posting about a real Nano purchase. The thread is positive and active, but the brand is not in the comments to acknowledge it or extend the conversation to other Nano use cases.</p>
+          <div class="angle">
+            <span class="angle-label">Comment angle</span>
+            <p>Thank the user for the post, ask which brands they want to see added next on the Nano payment rail, and surface two or three brands the community frequently asks for to keep the conversation going.</p>
+          </div>
+        </div>
+
+        <!-- CB Thread 2 -->
+        <div class="thread">
+          <div class="thread-top">
+            <span class="badge high">High priority</span>
+            <span class="pill">r/BitcoinBeginners</span>
+            <span class="thread-date">Mar 2026</span>
+          </div>
+          <h3><a href="https://www.reddit.com/r/BitcoinBeginners/comments/1rtb2s9/can_you_suggest_any_bitrefill_alternatives_for" target="_blank" rel="noopener">Can you suggest any bitrefill alternatives for buying iTunes gift cards?</a></h3>
+          <div class="thread-stats">3 upvotes <span class="dot">·</span> 8 comments <span class="dot">·</span> 1,218,832 subscribers</div>
+          <p class="thread-why">Direct intent: a user explicitly asking for a BitRefill alternative. BitRefill, CoinCards, eGifter, and CryptoRefills are named. A focused recommendation here can convert.</p>
+          <div class="angle">
+            <span class="angle-label">Comment angle</span>
+            <p>Recommend CoinsBee specifically for iTunes gift cards, confirm which cryptocurrencies are supported at checkout, and outline the redemption flow so the user knows exactly what to expect.</p>
+          </div>
+        </div>
+
+        <!-- CB Thread 3 -->
+        <div class="thread">
+          <div class="thread-top">
+            <span class="badge high">High priority</span>
+            <span class="pill">r/btc</span>
+            <span class="thread-date">Feb 2022</span>
+          </div>
+          <h3><a href="https://www.reddit.com/r/btc/comments/sm5hn1/bitrefill_options" target="_blank" rel="noopener">Bitrefill options?</a></h3>
+          <div class="thread-stats">21 upvotes <span class="dot">·</span> 38 comments <span class="dot">·</span> 1,211,739 subscribers</div>
+          <p class="thread-why">A 38-comment alternatives thread that still ranks. CoinsBee is already getting organic positive mentions, which means a clear, helpful follow-up comment from the brand compounds existing trust.</p>
+          <div class="angle">
+            <span class="angle-label">Comment angle</span>
+            <p>Lay out the CoinsBee feature set that matters for this audience: KYC-free flow for smaller orders, supported coins, supported brands across regions, and a clear comparison line against BitRefill on each.</p>
+          </div>
+        </div>
+
+        <!-- CB Thread 4 -->
+        <div class="thread">
+          <div class="thread-top">
+            <span class="badge high">High priority</span>
+            <span class="pill">r/ethereum</span>
+            <span class="thread-date">Jan 2026</span>
+          </div>
+          <h3><a href="https://www.reddit.com/r/ethereum/comments/1qmiimm/has_anyone_actually_bought_digital_gift_cards" target="_blank" rel="noopener">Has anyone actually bought digital gift cards with cryptocurrency?</a></h3>
+          <div class="thread-stats">8 upvotes <span class="dot">·</span> 41 comments <span class="dot">·</span> 3,722,414 subscribers</div>
+          <p class="thread-why">Massive audience asking the use-case question CoinsBee is built to answer. Comments include scam concerns and platform comparisons. The opportunity is to be the credible, specific answer.</p>
+          <div class="angle">
+            <span class="angle-label">Comment angle</span>
+            <p>Confirm the use case works, walk through the CoinsBee purchase flow end to end (coin selection, brand pick, code delivery, redemption), and address the scam concerns directly with the specific anti-fraud measures in place.</p>
+          </div>
+        </div>
+
+        <!-- CB Thread 5 -->
+        <div class="thread">
+          <div class="thread-top">
+            <span class="badge medium">Medium priority</span>
+            <span class="pill">r/btc</span>
+            <span class="thread-date">Jan 2021</span>
+          </div>
+          <h3><a href="https://www.reddit.com/r/btc/comments/kzgocv/any_gift_card_venders_like_bitrefill" target="_blank" rel="noopener">Any gift card venders like bitrefill?</a></h3>
+          <div class="thread-stats">23 upvotes <span class="dot">·</span> 25 comments <span class="dot">·</span> 1,211,739 subscribers</div>
+          <p class="thread-why">BCH users frustrated with BitRefill's limited acceptance. CoinsBee, Keys4Coins, and Dundle all named. An evergreen thread that still ranks for BCH gift card queries.</p>
+          <div class="angle">
+            <span class="angle-label">Comment angle</span>
+            <p>Confirm CoinsBee supports Bitcoin Cash directly at checkout, list the most relevant brand categories for BCH holders (streaming, gaming, retail), and clarify the regional availability so the user can act today.</p>
+          </div>
+        </div>
+
+        <!-- CB Thread 6 -->
+        <div class="thread">
+          <div class="thread-top">
+            <span class="badge medium">Medium priority</span>
+            <span class="pill">r/BitcoinBeginners</span>
+            <span class="thread-date">May 2023</span>
+          </div>
+          <h3><a href="https://www.reddit.com/r/BitcoinBeginners/comments/138o1u8/can_you_suggest_bitrefill_alternatives_for_buying" target="_blank" rel="noopener">Can you suggest BitRefill alternatives for buying gift cards?</a></h3>
+          <div class="thread-stats">5 upvotes <span class="dot">·</span> 22 comments <span class="dot">·</span> 1,218,832 subscribers</div>
+          <p class="thread-why">Direct alternative-seeking thread on the most relevant subreddit for first-time crypto buyers. Multiple platforms named, fee concerns surfaced.</p>
+          <div class="angle">
+            <span class="angle-label">Comment angle</span>
+            <p>Position CoinsBee on price and selection: typical fee ranges versus BitRefill, the brand catalogue size, and which brands tend to have the best value when paying with crypto.</p>
+          </div>
+        </div>
+
+        <!-- CB Thread 7 -->
+        <div class="thread">
+          <div class="thread-top">
+            <span class="badge medium">Medium priority</span>
+            <span class="pill">r/fintech</span>
+            <span class="thread-date">Oct 2025</span>
+          </div>
+          <h3><a href="https://www.reddit.com/r/fintech/comments/1o1m6bs/looking_for_global_gift_card_providers_for" target="_blank" rel="noopener">Looking for Global Gift Card Providers for Partnership</a></h3>
+          <div class="thread-stats">1 upvote <span class="dot">·</span> 0 comments <span class="dot">·</span> 84,849 subscribers</div>
+          <p class="thread-why">A B2B inbound: someone explicitly asking for global crypto gift card providers and partnerships. Zero comments, so a first response is the only response.</p>
+          <div class="angle">
+            <span class="angle-label">Comment angle</span>
+            <p>Introduce CoinsBee as a global gift card provider with crypto rails, summarise the API and integration options, and invite a direct conversation about partnership terms.</p>
+          </div>
+        </div>
+
+        <!-- CB Thread 8 -->
+        <div class="thread">
+          <div class="thread-top">
+            <span class="badge medium">Medium priority</span>
+            <span class="pill">r/Bitcoin</span>
+            <span class="thread-date">Feb 2024</span>
+          </div>
+          <h3><a href="https://www.reddit.com/r/Bitcoin/comments/1b1noth/buying_gift_cards_with_bitcoin_and_not_getting" target="_blank" rel="noopener">Buying gift cards with bitcoin, and not getting raided by the feds</a></h3>
+          <div class="thread-stats">0 upvotes <span class="dot">·</span> 20 comments <span class="dot">·</span> 8,122,542 subscribers</div>
+          <p class="thread-why">Safety and legitimacy framing on the largest crypto subreddit. Users want a clear answer on how to convert BTC into gift cards without fraud risk. Adjacent platforms named.</p>
+          <div class="angle">
+            <span class="angle-label">Comment angle</span>
+            <p>Lay out exactly how CoinsBee handles transaction security, what the compliance footprint looks like for end users, and which buying patterns are completely standard versus which ones trigger reviews.</p>
+          </div>
+        </div>
+
+        <!-- CB Thread 9 -->
+        <div class="thread">
+          <div class="thread-top">
+            <span class="badge medium">Medium priority</span>
+            <span class="pill">r/btc</span>
+            <span class="thread-date">Aug 2024</span>
+          </div>
+          <h3><a href="https://www.reddit.com/r/btc/comments/1f23a8j/im_kinda_new_to_crypto_what_are_some_ways_to_buy" target="_blank" rel="noopener">I'm kinda new to crypto, what are some ways to buy giftcards online?</a></h3>
+          <div class="thread-stats">7 upvotes <span class="dot">·</span> 23 comments <span class="dot">·</span> 1,211,739 subscribers</div>
+          <p class="thread-why">Beginner buyer-intent thread on r/btc. CoinsBee already mentioned in the replies. Fee structure is the open question.</p>
+          <div class="angle">
+            <span class="angle-label">Comment angle</span>
+            <p>Break down CoinsBee fees and total cost transparently against BitRefill and CoinCards for the most common gift card categories, with a practical recommendation by use case.</p>
+          </div>
+        </div>
+
+        <!-- CB Thread 10 -->
+        <div class="thread">
+          <div class="thread-top">
+            <span class="badge medium">Medium priority</span>
+            <span class="pill">r/CryptoIndia</span>
+            <span class="thread-date">Jun 2025</span>
+          </div>
+          <h3><a href="https://www.reddit.com/r/CryptoIndia/comments/1l5g8wa/how_practical_is_it_to_live_off_crypto_via_gift" target="_blank" rel="noopener">How practical is it to live off crypto (via gift cards)? What are the legal implications?</a></h3>
+          <div class="thread-stats">29 upvotes <span class="dot">·</span> 34 comments <span class="dot">·</span> 324,109 subscribers</div>
+          <p class="thread-why">A "can you live off crypto" thread, exactly the lifestyle frame CoinsBee owns. KYC and gift card limits are the active concerns.</p>
+          <div class="angle">
+            <span class="angle-label">Comment angle</span>
+            <p>Outline how a CoinsBee user can realistically run a weekly grocery, delivery, gaming, and streaming basket through gift cards, where the limits sit, and what to watch for from a tax perspective in India specifically.</p>
+          </div>
+        </div>
+
+        <!-- CB Thread 11 -->
+        <div class="thread">
+          <div class="thread-top">
+            <span class="badge medium">Medium priority</span>
+            <span class="pill">r/Bitcoin</span>
+            <span class="thread-date">Mar 2026</span>
+          </div>
+          <h3><a href="https://www.reddit.com/r/Bitcoin/comments/1rqo3bp/best_ways_to_spend_btc_without_selling_it" target="_blank" rel="noopener">Best ways to spend BTC without selling it</a></h3>
+          <div class="thread-stats">32 upvotes <span class="dot">·</span> 21 comments <span class="dot">·</span> 8,122,542 subscribers</div>
+          <p class="thread-why">A top-of-funnel "how do I actually use Bitcoin" thread on the largest crypto subreddit. Lightning Network, crypto cards, and gift cards all in play.</p>
+          <div class="angle">
+            <span class="angle-label">Comment angle</span>
+            <p>Compare crypto cards versus gift cards versus Lightning on the three things people actually care about (fees, acceptance, privacy), and explain when CoinsBee is the right pick versus when a crypto card wins.</p>
+          </div>
+        </div>
+
+        <!-- CB Thread 12 -->
+        <div class="thread">
+          <div class="thread-top">
+            <span class="badge medium">Medium priority</span>
+            <span class="pill">r/Bitcoin</span>
+            <span class="thread-date">Nov 2024</span>
+          </div>
+          <h3><a href="https://www.reddit.com/r/Bitcoin/comments/1gtrgbu/you_never_sell_bitcoin_but_how_take_advantage" target="_blank" rel="noopener">You never sell Bitcoin, but how take advantage?</a></h3>
+          <div class="thread-stats">23 upvotes <span class="dot">·</span> 104 comments <span class="dot">·</span> 8,122,542 subscribers</div>
+          <p class="thread-why">A 104-comment HODL-versus-spend thread. The audience is split on whether selling is ever acceptable. Gift cards are the bridge.</p>
+          <div class="angle">
+            <span class="angle-label">Comment angle</span>
+            <p>Make the practical HODLer case for gift cards: you never have to sell, you keep your stack intact, and you offload day-to-day expenses through CoinsBee. Include a short list of the highest-leverage brands to start with.</p>
+          </div>
+        </div>
+
+        <!-- CB Thread 13 -->
+        <div class="thread">
+          <div class="thread-top">
+            <span class="badge medium">Medium priority</span>
+            <span class="pill">r/Bitcoin</span>
+            <span class="thread-date">Apr 2018</span>
+          </div>
+          <h3><a href="https://www.reddit.com/r/Bitcoin/comments/8bywr5/value_of_ln_and_merchant_integration_vs_a_crypto" target="_blank" rel="noopener">Value of LN and merchant integration vs a crypto debit card for spending</a></h3>
+          <div class="thread-stats">0 upvotes <span class="dot">·</span> 5 comments <span class="dot">·</span> 8,122,548 subscribers</div>
+          <p class="thread-why">A debit-card-versus-spending thread. Small, but on the biggest crypto subreddit, still findable, and directly adjacent to the CoinsBee value prop.</p>
+          <div class="angle">
+            <span class="angle-label">Comment angle</span>
+            <p>Add a 2026 update: what has changed for crypto debit cards, where they fall short on fees and geographic support, and how a gift card platform like CoinsBee fills the gap for international holders.</p>
+          </div>
+        </div>
+
+        <!-- CB Thread 14 -->
+        <div class="thread">
+          <div class="thread-top">
+            <span class="badge medium">Medium priority</span>
+            <span class="pill">r/Gifts</span>
+            <span class="thread-date">Jan 2026</span>
+          </div>
+          <h3><a href="https://www.reddit.com/r/Gifts/comments/1q7bikm/has_anyone_compared_carddelivery_coinsbee_or" target="_blank" rel="noopener">Has anyone compared CardDelivery, Coinsbee, or Bitrefill?</a></h3>
+          <div class="thread-stats">26 upvotes <span class="dot">·</span> 11 comments <span class="dot">·</span> 322,788 subscribers</div>
+          <p class="thread-why">A head-to-head comparison thread with CoinsBee in the title. Anxiety about activation issues and code failure is the open concern.</p>
+          <div class="angle">
+            <span class="angle-label">Comment angle</span>
+            <p>Address the activation and code failure concern head on, explain CoinsBee's delivery guarantee and support process, and provide concrete steps for the rare cases where a code does not activate.</p>
+          </div>
+        </div>
+
+        <!-- CB Thread 15 -->
+        <div class="thread">
+          <div class="thread-top">
+            <span class="badge medium">Medium priority</span>
+            <span class="pill">r/BitcoinCA</span>
+            <span class="thread-date">Mar 2024</span>
+          </div>
+          <h3><a href="https://www.reddit.com/r/BitcoinCA/comments/1b6ljsl/how_is_bitrefill" target="_blank" rel="noopener">How is bitrefill?</a></h3>
+          <div class="thread-stats">2 upvotes <span class="dot">·</span> 22 comments <span class="dot">·</span> 101,303 subscribers</div>
+          <p class="thread-why">A Canadian-specific platform comparison thread. Bitrefill versus Coincards is the main debate. CoinsBee is not currently in the conversation.</p>
+          <div class="angle">
+            <span class="angle-label">Comment angle</span>
+            <p>Add CoinsBee as a Canadian-compatible third option, with specific notes on Canadian brand availability, transaction fees in CAD pairs, and KYC behaviour for Canadian users.</p>
+          </div>
+        </div>
+
+        <!-- CB Thread 16 -->
+        <div class="thread">
+          <div class="thread-top">
+            <span class="badge medium">Medium priority</span>
+            <span class="pill">r/CryptoIndia</span>
+            <span class="thread-date">Nov 2024</span>
+          </div>
+          <h3><a href="https://www.reddit.com/r/CryptoIndia/comments/1gsskp6/sendcrypto_or_bitrefill" target="_blank" rel="noopener">SendCrypto or Bitrefill</a></h3>
+          <div class="thread-stats">11 upvotes <span class="dot">·</span> 33 comments <span class="dot">·</span> 324,109 subscribers</div>
+          <p class="thread-why">Bitrefill versus SendCrypto in India, with CoinsBee already being suggested by other users. Trust and anonymity are the open themes.</p>
+          <div class="angle">
+            <span class="angle-label">Comment angle</span>
+            <p>Address the trust and anonymity questions directly: what CoinsBee does and does not store, which Indian brands have the strongest availability, and the supported payment coins for Indian users.</p>
+          </div>
+        </div>
+
+        <!-- CB Thread 17 -->
+        <div class="thread">
+          <div class="thread-top">
+            <span class="badge medium">Medium priority</span>
+            <span class="pill">r/CryptoIndia</span>
+            <span class="thread-date">Nov 2024</span>
+          </div>
+          <h3><a href="https://www.reddit.com/r/CryptoIndia/comments/1h13d93/i_think_i_have_found_the_best_alternative_for" target="_blank" rel="noopener">I think I have found the best alternative for Bitrefill!</a></h3>
+          <div class="thread-stats">6 upvotes <span class="dot">·</span> 12 comments <span class="dot">·</span> 324,109 subscribers</div>
+          <p class="thread-why">A user actively championing an alternative platform in the title. Pricing and reliability are the open arguments.</p>
+          <div class="angle">
+            <span class="angle-label">Comment angle</span>
+            <p>Make a clear, evidence-based case for CoinsBee on price and brand support specifically for Indian users, and contrast it with the alternative being championed in the original post.</p>
+          </div>
+        </div>
+
+        <!-- CB Thread 18 -->
+        <div class="thread">
+          <div class="thread-top">
+            <span class="badge medium">Medium priority</span>
+            <span class="pill">r/ArgamingConsultas</span>
+            <span class="thread-date">Oct 2025</span>
+          </div>
+          <h3><a href="https://www.reddit.com/r/ArgamingConsultas/comments/1nz5udz/alguna_alternativa_a_bitrefill_para_gift_cards" target="_blank" rel="noopener">Any alternative to Bitrefill for gift cards?</a></h3>
+          <div class="thread-stats">0 upvotes <span class="dot">·</span> 4 comments <span class="dot">·</span> 31,798 subscribers</div>
+          <p class="thread-why">An Argentinian gaming community asking for alternatives to Bitrefill, specifically for Steam. Stock issues with competing platforms are the open complaint.</p>
+          <div class="angle">
+            <span class="angle-label">Comment angle</span>
+            <p>Confirm CoinsBee supports Steam gift cards for Argentinian buyers, outline the supported coins, and explain how the stock and availability differ from the platforms the user has already tried.</p>
+          </div>
+        </div>
+
+        <!-- CB Thread 19 -->
+        <div class="thread">
+          <div class="thread-top">
+            <span class="badge medium">Medium priority</span>
+            <span class="pill">r/CryptoIndia</span>
+            <span class="thread-date">Jun 2025</span>
+          </div>
+          <h3><a href="https://www.reddit.com/r/CryptoIndia/comments/1l7q2pu/is_bitrefill_still_trusted" target="_blank" rel="noopener">Is Bitrefill still trusted</a></h3>
+          <div class="thread-stats">5 upvotes <span class="dot">·</span> 16 comments <span class="dot">·</span> 324,109 subscribers</div>
+          <p class="thread-why">Bitrefill trust thread with CoinsBee already suggested in the comments. The conversation is open and the audience is receptive.</p>
+          <div class="angle">
+            <span class="angle-label">Comment angle</span>
+            <p>Add a precise, non-defensive note on CoinsBee fees, supported brands for Indian users, and the account security setup, so readers can decide on the spot whether to try it.</p>
+          </div>
+        </div>
+
+        <!-- CB Thread 20 -->
+        <div class="thread">
+          <div class="thread-top">
+            <span class="badge medium">Medium priority</span>
+            <span class="pill">r/Bitcoin</span>
+            <span class="thread-date">Jun 2025</span>
+          </div>
+          <h3><a href="https://www.reddit.com/r/Bitcoin/comments/1lapnba/where_and_how_can_i_buy_bitcoin_with_gift_cards" target="_blank" rel="noopener">Where and how can I buy Bitcoin with gift cards?</a></h3>
+          <div class="thread-stats">9 upvotes <span class="dot">·</span> 24 comments <span class="dot">·</span> 8,122,542 subscribers</div>
+          <p class="thread-why">The inverse use case, gift cards to Bitcoin, is being discussed alongside KYC concerns. A natural place to reframe the conversation around the more common direction (crypto to gift cards) where CoinsBee leads.</p>
+          <div class="angle">
+            <span class="angle-label">Comment angle</span>
+            <p>Reframe for users who actually want to spend their crypto, explain how CoinsBee's no-KYC threshold works for smaller orders, and outline the privacy-focused checkout flow.</p>
+          </div>
+        </div>
+
+        <!-- CB Thread 21 -->
+        <div class="thread">
+          <div class="thread-top">
+            <span class="badge medium">Medium priority</span>
+            <span class="pill">r/btc</span>
+            <span class="thread-date">Feb 2023</span>
+          </div>
+          <h3><a href="https://www.reddit.com/r/btc/comments/11atzxg/whats_a_trusted_site_to_buy_giftcards_with_crypto" target="_blank" rel="noopener">What's a trusted site to buy giftcards with crypto?</a></h3>
+          <div class="thread-stats">14 upvotes <span class="dot">·</span> 33 comments <span class="dot">·</span> 1,211,739 subscribers</div>
+          <p class="thread-why">Trust-keyword thread on r/btc with a wide competitor mention set: BitRefill, CoinCards, eGifter, Crypto.com Pay, Binance Gift Cards, Paxful, Reloadit, Fluz App, Cash App. CoinsBee should be in this list.</p>
+          <div class="angle">
+            <span class="angle-label">Comment angle</span>
+            <p>Make the trust case for CoinsBee with specifics: years operating, brand catalogue size, supported coins, customer support response times, and the typical resolution path when something goes wrong.</p>
+          </div>
+        </div>
+
+        <!-- CB Thread 22 -->
+        <div class="thread">
+          <div class="thread-top">
+            <span class="badge medium">Medium priority</span>
+            <span class="pill">r/BitcoinBeginners</span>
+            <span class="thread-date">Mar 2026</span>
+          </div>
+          <h3><a href="https://www.reddit.com/r/BitcoinBeginners/comments/1rya1r8/where_can_i_buy_gift_cards_using_btc" target="_blank" rel="noopener">Where can I buy gift cards using btc?</a></h3>
+          <div class="thread-stats">9 upvotes <span class="dot">·</span> 24 comments <span class="dot">·</span> 1,218,832 subscribers</div>
+          <p class="thread-why">A beginner-level thread on the most relevant subreddit. BitRefill, CoinCards, eGifter, Lolli, BuySellVouchers, and others are mentioned. Scam awareness is the active worry.</p>
+          <div class="angle">
+            <span class="angle-label">Comment angle</span>
+            <p>Give a beginner-friendly walkthrough of the CoinsBee buying flow, the difference between gift cards and crypto debit cards, and the three red flags that signal a scam platform so the reader can make a safe choice.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ============== WHAT HAPPENS NEXT ============== -->
+    <section style="margin-top: 56px;">
+      <div class="section-label">What happens next</div>
+      <h2>From audit to live comments in one week.</h2>
+      <p>The threads above are not theoretical. Each one is open and accepting comments today. Here is how we move from list to result.</p>
+
+      <div class="steps">
+        <div class="step">
+          <span class="step-num">01</span>
+          <div class="step-body">
+            <h3>We submit the comments</h3>
+            <p>Our Reddit team drafts each comment to match the exact angle above, runs it past you for sign-off, and posts from established accounts. No copy-paste, no template language. Every comment is written for its specific thread.</p>
+          </div>
+        </div>
+        <div class="step">
+          <span class="step-num">02</span>
+          <div class="step-body">
+            <h3>We track engagement</h3>
+            <p>Each comment is monitored for upvotes, replies, and downstream subreddit visibility. We capture screenshots, response patterns, and any direct messages the brand receives as a result.</p>
+          </div>
+        </div>
+        <div class="step">
+          <span class="step-num">03</span>
+          <div class="step-body">
+            <h3>We report back monthly</h3>
+            <p>You get a clear monthly report showing every comment posted, its engagement, and the impact on AI visibility through AI Peekaboo. Threads that perform get a second comment, threads that need a different angle get rewritten.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section>
+      <div class="cta-block">
+        <h2>Want us to start this week?</h2>
+        <p>Pick a time below or reply directly. We can be live in the first three threads within five working days.</p>
+        <div class="cta-buttons">
+          <a class="cta-calendar" href="https://calendly.com/filipe-aipeekaboo/30min" target="_blank" rel="noopener">
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><rect x="3" y="4" width="14" height="13" rx="2"/><line x1="3" y1="8" x2="17" y2="8"/><line x1="8" y1="2" x2="8" y2="5"/><line x1="12" y1="2" x2="12" y2="5"/></svg>
+            Book a call
+          </a>
+          <a class="cta-email" href="mailto:filipe@aipeekaboo.com?subject=Reddit%20audit%20-%20let's%20talk">
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M4 4h12c1.1 0 2 .9 2 2v8c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            Email Filipe
+          </a>
+        </div>
+        <p class="cta-note">filipe@aipeekaboo.com</p>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <div class="footer">
+      <a class="footer-left" href="https://www.aipeekaboo.com" target="_blank" rel="noopener">
+        <img src="https://www.aipeekaboo.com/images/peekaboo-logo-black.png" alt="AI Peekaboo">
+      </a>
+      <span class="footer-right">May 2026</span>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>

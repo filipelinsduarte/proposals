@@ -811,7 +811,9 @@ function normalizeData(d) {
   });
 
   // brandPerception: migrate old `brands` array → new `brandPerception.competitors` object
-  if (!d.brandPerception && Array.isArray(d.brands)) {
+  const _bpHasComps = d.brandPerception && d.brandPerception.competitors && Object.keys(d.brandPerception.competitors).length > 0;
+  if (!_bpHasComps && Array.isArray(d.brands)) {
+    d.brandPerception = null;
     const competitors = {};
     const vsNotes = {};
     (d.brands || []).forEach(b => {

@@ -2946,7 +2946,13 @@ function renderSection(name) {
     subreddits: buildSubreddits
   };
   if (fns[name]) {
-    el.innerHTML = fns[name]();
+    try {
+      el.innerHTML = fns[name]();
+    } catch(err) {
+      console.error('renderSection error', name, err);
+      el.innerHTML = '<div class="empty-main"><div class="empty-title" style="color:#c02a2a">Error: ' + String(err.message) + '</div><div style="font-family:monospace;font-size:11px;color:#c02a2a;margin-top:8px;white-space:pre-wrap;padding:12px">' + String(err.stack || '').slice(0, 800) + '</div></div>';
+      return;
+    }
   } else {
     el.innerHTML = '<div class="empty-main"><div class="empty-title">Section not found</div></div>';
   }

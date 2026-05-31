@@ -987,8 +987,8 @@ function initCharts(section) {
     const sentCtx=document.getElementById('chartSent');
     if(sentCtx)S.charts.sent=new Chart(sentCtx,{type:'bar',data:{labels:['Positive','Negative','Neutral','Mixed'],datasets:[{data:[sentMap.POSITIVE,sentMap.NEGATIVE,sentMap.NEUTRAL,sentMap.MIXED],backgroundColor:['rgba(40,122,74,0.2)','rgba(192,42,42,0.2)','rgba(156,152,149,0.2)','rgba(194,98,42,0.2)'],borderColor:['#287a4a','#c02a2a','#9c9895','#c2622a'],borderWidth:1.5,borderRadius:4}]},options:{plugins:{legend:{display:false}},scales:{x:{grid:{display:false},ticks:{font:{family:'Geist,sans-serif',size:11}}},y:{grid:{color:'#f0efec'},ticks:{font:{family:'Geist,sans-serif',size:11}}}}}});
     // Community mood distribution
-    const moodOrder=['excited','frustrated','curious','skeptical','pragmatic','confused','satisfied'];
-    const moodColors={excited:'#287a4a',frustrated:'#c02a2a',curious:'#c2622a',skeptical:'#9c9895',pragmatic:'#d4824a',confused:'#9c9895',satisfied:'#287a4a'};
+    const moodOrder=['supportive','helpful','informational','curious','analytical','frustrated'];
+    const moodColors={supportive:'#287a4a',helpful:'#287a4a',informational:'#9c9895',curious:'#c2622a',analytical:'#c2622a',frustrated:'#c02a2a'};
     const moodCounts={};
     moodOrder.forEach(m=>moodCounts[m]=0);
     threads.forEach(t=>{const m=(t.community_mood||'').toLowerCase();if(moodCounts[m]!=null)moodCounts[m]++;});
@@ -1146,12 +1146,12 @@ function buildCompetitors() {
   const threads = S.data.threads || [];
 
   // Aggregate toolMap from threads[].competitors_mentioned
+  // competitors_mentioned can be either an array OR a comma-separated string
   const toolMap = {};
-  let hasThreadData = false;
   threads.forEach(t => {
-    const mentioned = t.competitors_mentioned;
-    if (!Array.isArray(mentioned) || !mentioned.length) return;
-    hasThreadData = true;
+    const raw = t.competitors_mentioned;
+    const mentioned = Array.isArray(raw) ? raw : (raw ? String(raw).split(/\s*,\s*/).filter(Boolean) : []);
+    if (!mentioned.length) return;
     mentioned.forEach(rawName => {
       const name = (rawName || '').trim();
       if (!name) return;
@@ -1160,27 +1160,35 @@ function buildCompetitors() {
       }
       const entry = toolMap[name];
       entry.postCount++;
-      const sent = (t.sentiment || 'neutral').toLowerCase();
-      if (entry.sentiments[sent] !== undefined) entry.sentiments[sent]++;
-      else entry.sentiments.neutral++;
       entry._fitSum += (t.fit_score || 0);
       entry.posts.push({ title: t.title || '', url: t.url || '', subreddit: t.subreddit || '', fit_score: t.fit_score || 0, sentiment: t.sentiment || 'neutral' });
     });
   });
 
-  // Fall back to brandPerception.competitors if threads had no competitors_mentioned
-  if (!hasThreadData) {
-    const perception = S.data.brandPerception || {};
-    const comps = perception.competitors || {};
-    Object.entries(comps).forEach(([name, data]) => {
-      const mentions = data.mentions || 0;
-      toolMap[name] = {
-        name, postCount: mentions, posts: [],
-        sentiments: { positive: data.positive || 0, negative: data.negative || 0, neutral: 0, mixed: data.mixed || 0 },
-        avgFit: 0, _fitSum: 0
-      };
-    });
-  }
+  // Merge in canonical brand data from S.data.brands (the authoritative aggregated source).
+  // - Ensures brands missing from threads still appear
+  // - Overrides per-thread sentiment counts with each brand's pre-computed sentiment label,
+  //   since brand-level sentiment in DATA.brands is already aggregated across all mentions.
+  const brandsArr = Array.isArray(S.data.brands) ? S.data.brands : [];
+  brandsArr.forEach(b => {
+    const name = (b.brand || b.name || '').trim();
+    if (!name) return;
+    if (!toolMap[name]) {
+      toolMap[name] = { name, postCount: 0, posts: [], sentiments: { positive: 0, negative: 0, neutral: 0, mixed: 0 }, avgFit: 0, _fitSum: 0 };
+    }
+    const entry = toolMap[name];
+    // Prefer the brand-level mentions count when present and larger than threads-derived count
+    const brandMentions = Number(b.mentions) || 0;
+    if (brandMentions > entry.postCount) entry.postCount = brandMentions;
+    // Map the brand's canonical sentiment label into the sentiments counter
+    const sentLabel = (b.sentiment || '').toLowerCase();
+    const mentionsForSent = entry.postCount || brandMentions || 0;
+    entry.sentiments = { positive: 0, negative: 0, neutral: 0, mixed: 0 };
+    if (sentLabel === 'positive')      entry.sentiments.positive = mentionsForSent;
+    else if (sentLabel === 'negative') entry.sentiments.negative = mentionsForSent;
+    else if (sentLabel === 'mixed')    entry.sentiments.mixed    = mentionsForSent;
+    else                                entry.sentiments.neutral  = mentionsForSent;
+  });
 
   // Finalize avgFit
   Object.values(toolMap).forEach(t => {
@@ -1557,13 +1565,12 @@ function buildPosts() {
           </select>
           <select id="postsMoodFilter" class="filter-select" onchange="filterPostsTable()">
             <option value="">All moods</option>
-            <option value="excited">Excited</option>
-            <option value="frustrated">Frustrated</option>
+            <option value="supportive">Supportive</option>
+            <option value="helpful">Helpful</option>
+            <option value="informational">Informational</option>
             <option value="curious">Curious</option>
-            <option value="skeptical">Skeptical</option>
-            <option value="pragmatic">Pragmatic</option>
-            <option value="confused">Confused</option>
-            <option value="satisfied">Satisfied</option>
+            <option value="analytical">Analytical</option>
+            <option value="frustrated">Frustrated</option>
           </select>
           <button onclick="resetPostsFilters()" style="padding:5px 11px;border:1px solid var(--border);border-radius:var(--radius);font-family:var(--font);font-size:12px;color:var(--text-3);background:none;cursor:pointer;white-space:nowrap;transition:all 0.15s" onmouseover="this.style.borderColor='var(--orange)';this.style.color='var(--orange)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--text-3)'">Reset</button>
         </div>
@@ -1799,15 +1806,14 @@ function buildSentiment() {
 
   /* mood colours */
   const moodColors = {
-    excited:    '#287a4a',
-    frustrated: '#c02a2a',
-    curious:    '#c2622a',
-    skeptical:  '#9c9895',
-    pragmatic:  '#d4824a',
-    confused:   '#9c9895',
-    satisfied:  '#287a4a'
+    supportive:    '#287a4a',
+    helpful:       '#287a4a',
+    informational: '#9c9895',
+    curious:       '#c2622a',
+    analytical:    '#c2622a',
+    frustrated:    '#c02a2a'
   };
-  const MOODS = ['excited','frustrated','curious','skeptical','pragmatic','confused','satisfied'];
+  const MOODS = ['supportive','helpful','informational','curious','analytical','frustrated'];
 
   /* Section 1: Overview KPI tiles + donut */
   let overviewHtml = '';
@@ -2029,7 +2035,7 @@ function buildSentiment() {
 
   /* Section 2: Filter bar */
   const uniqueSubs = [...new Set(threads.map(t => t.subreddit).filter(Boolean))].sort();
-  const MOODS_LIST = ['excited','frustrated','curious','skeptical','pragmatic','confused','satisfied'];
+  const MOODS_LIST = ['supportive','helpful','informational','curious','analytical','frustrated'];
   let subOptsHtml = uniqueSubs.map(s => '<option value="' + esc(s) + '">r/' + esc(s) + '</option>').join('');
   let moodOptsHtml = MOODS_LIST.map(m => '<option value="' + m + '">' + m.charAt(0).toUpperCase() + m.slice(1) + '</option>').join('');
 
@@ -2116,7 +2122,7 @@ function filterSentimentCards() {
     if ((S._sentBreakdownView || 'post') === 'subreddit') {
       _renderSentBreakdownBySub(cardsEl, filtered);
     } else {
-      const VALID_MOODS = ['excited','frustrated','curious','skeptical','pragmatic','confused','satisfied'];
+      const VALID_MOODS = ['supportive','helpful','informational','curious','analytical','frustrated'];
       const rows = filtered.slice(0, 32).map(t => {
         const bk = t.sentiment_breakdown || {};
         const posPct = bk.positive_pct || 0;
@@ -2161,7 +2167,7 @@ function filterSentimentCards() {
   const summEl = document.getElementById('sentSummaries');
   if (summEl) {
     const SENT_LBL = { positive: 'Positive', negative: 'Negative', neutral: 'Neutral', mixed: 'Mixed' };
-    const VALID_MOODS2 = ['excited','frustrated','curious','skeptical','pragmatic','confused','satisfied'];
+    const VALID_MOODS2 = ['supportive','helpful','informational','curious','analytical','frustrated'];
     const cards = filtered.slice(0, 20).map(t => {
       const mood = (t.community_mood || '').toLowerCase();
       const moodPillClass = VALID_MOODS2.includes(mood) ? mood : '';
@@ -2972,7 +2978,7 @@ function buildKeywords() {
     '<div style="margin-bottom:24px">' +
       '<div style="font-size:20px;font-weight:600;color:var(--text);margin-bottom:6px">Search Queries → SERP Reddit Visibility</div>' +
       '<div style="font-size:13px;color:var(--text-2);max-width:780px;line-height:1.55">' +
-        '3-layer keyword strategy used to find this audit\'s posts. Each Layer 1 and Layer 3 keyword was searched 3 times in the US via MiniMax SERP — we tracked which ones consistently surfaced reddit.com URLs in the organic results.' +
+        '3-layer keyword strategy used to find this audit\'s posts. Each Layer 1 and Layer 3 keyword was searched 3 times in the US via MiniMax SERP — we tracked which ones consistently surfaced reddit.com URLs in the organic results. <span style="color:var(--text-3)">(Google favicons indicate SERP-analyzed terms.)</span>' +
       '</div>' +
     '</div>';
 
@@ -2996,11 +3002,11 @@ function buildKeywords() {
       const r3 = k.run3_reddit_count || 0;
       const urls = k.reddit_urls || [];
       const urlList = urls.length
-        ? urls.slice(0, 3).map(u => '<a href="' + u + '" target="_blank" rel="noopener" style="display:block;font-size:11px;color:var(--orange-text);text-decoration:none;line-height:1.4;margin-bottom:2px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">' + u.replace('https://www.reddit.com', '').replace('https://reddit.com', '') + '</a>').join('')
+        ? urls.slice(0, 3).map(u => '<a href="' + u + '" target="_blank" rel="noopener" style="display:block;font-size:11px;color:var(--orange-text);text-decoration:none;line-height:1.4;margin-bottom:2px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap"><img src="https://www.google.com/s2/favicons?domain=reddit.com&sz=14" alt="" style="width:12px;height:12px;vertical-align:-2px;margin-right:5px;flex-shrink:0">' + u.replace('https://www.reddit.com', '').replace('https://reddit.com', '') + '</a>').join('')
         : '<span style="color:var(--text-3);font-size:11px">—</span>';
       if (showRunCols) {
         return '<tr>' +
-          '<td><strong>' + esc(k.keyword || '') + '</strong></td>' +
+          '<td><strong><img src="https://www.google.com/s2/favicons?domain=google.com&sz=16" alt="" style="width:13px;height:13px;vertical-align:-2px;margin-right:5px;flex-shrink:0">' + esc(k.keyword || '') + '</strong></td>' +
           '<td style="color:var(--text-2);font-size:12px">' + esc(k.reason || '') + '</td>' +
           '<td style="text-align:center">' + r1 + '</td>' +
           '<td style="text-align:center">' + r2 + '</td>' +
@@ -3039,7 +3045,7 @@ function buildKeywords() {
 
     return '<div style="margin-bottom:32px">' +
       '<div style="display:flex;align-items:baseline;gap:12px;margin-bottom:12px">' +
-        '<div style="font-size:12px;font-weight:600;background:var(--orange-mid);color:var(--orange-text);padding:3px 10px;border-radius:4px">Layer ' + layerNum + '</div>' +
+        '<div style="font-size:12px;font-weight:600;background:var(--orange-mid);color:var(--orange-text);padding:3px 10px;border-radius:4px;display:inline-flex;align-items:center">' + (showRunCols ? '<img src="https://www.google.com/s2/favicons?domain=google.com&sz=16" alt="" style="width:13px;height:13px;vertical-align:-2px;margin-right:4px;flex-shrink:0">' : '') + 'Layer ' + layerNum + '</div>' +
         '<div style="font-size:14px;font-weight:600;color:var(--text)">' + esc(layerName) + '</div>' +
         '<div style="font-size:12px;color:var(--text-3)">' + keywords.length + ' keywords</div>' +
       '</div>' +

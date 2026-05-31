@@ -2937,6 +2937,46 @@ function updateSortHeaders(tableId, col, dir) {
   });
 }
 
+function filterKeywords() {
+  const q   = (document.getElementById('kwSearch')?.value || '').toLowerCase();
+  const lay = (document.getElementById('kwLayerFilter')?.value || '');
+  const vis = (document.getElementById('kwVisFilter')?.value || '');
+  const run = (document.getElementById('kwRunsFilter')?.value || '');
+  let shown = 0;
+  document.querySelectorAll('[data-kwrow]').forEach(row => {
+    const kw       = row.dataset.kw || '';
+    const layer    = row.dataset.layer || '';
+    const scanned  = row.dataset.scanned === 'true';
+    const pulled   = row.dataset.pulled === 'true';
+    const hits     = row.dataset.hits || '0';
+    const okSearch = !q || kw.includes(q);
+    const okLayer  = !lay || layer === lay;
+    const okVis    = !vis ||
+                     (vis === 'pulled' && scanned && pulled) ||
+                     (vis === 'nopull' && scanned && !pulled) ||
+                     (vis === 'notscanned' && !scanned);
+    const okRun    = !run || (scanned && hits === run);
+    const visible  = okSearch && okLayer && okVis && okRun;
+    row.style.display = visible ? '' : 'none';
+    if (visible) shown++;
+  });
+  // Hide entire layer sections that have no visible rows
+  document.querySelectorAll('[data-layerwrap]').forEach(wrap => {
+    const anyVisible = Array.from(wrap.querySelectorAll('[data-kwrow]')).some(r => r.style.display !== 'none');
+    wrap.style.display = anyVisible ? '' : 'none';
+  });
+  const cEl = document.getElementById('kwFilterCount');
+  if (cEl) cEl.textContent = shown + ' keyword' + (shown !== 1 ? 's' : '') + ' shown';
+}
+
+function resetKeywordsFilters() {
+  ['kwLayerFilter','kwVisFilter','kwRunsFilter'].forEach(id => {
+    const el = document.getElementById(id); if (el) el.value = '';
+  });
+  const s = document.getElementById('kwSearch'); if (s) s.value = '';
+  filterKeywords();
+}
+
 function _optsWithCounts(items, valueFn, labelFn, allLabel, opts) {
   opts = opts || {};
   const counts = {};
@@ -3288,7 +3328,8 @@ function buildKeywords() {
         ? urls.slice(0, 3).map(u => '<a href="' + u + '" target="_blank" rel="noopener" style="display:block;font-size:11px;color:var(--orange-text);text-decoration:none;line-height:1.4;margin-bottom:2px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap"><img src="https://www.google.com/s2/favicons?domain=reddit.com&sz=14" alt="" style="width:12px;height:12px;vertical-align:-2px;margin-right:5px;flex-shrink:0">' + u.replace('https://www.reddit.com', '').replace('https://reddit.com', '') + '</a>').join('')
         : '<span style="color:var(--text-3);font-size:11px">—</span>';
       if (showRunCols) {
-        return '<tr>' +
+        const _pulled = sum > 0 ? 'true' : 'false';
+        return '<tr data-kwrow="1" data-layer="' + layerNum + '" data-scanned="true" data-pulled="' + _pulled + '" data-hits="' + hits + '" data-sum="' + sum + '" data-kw="' + esc((k.keyword || '').toLowerCase()) + '">' +
           '<td><strong><img src="https://www.google.com/s2/favicons?domain=google.com&sz=16" alt="" style="width:13px;height:13px;vertical-align:-2px;margin-right:5px;flex-shrink:0">' + esc(k.keyword || '') + '</strong></td>' +
           '<td style="color:var(--text-2);font-size:12px">' + esc(k.reason || '') + '</td>' +
           '<td style="text-align:center">' + r1 + '</td>' +
@@ -3300,7 +3341,7 @@ function buildKeywords() {
           '<td style="min-width:200px;max-width:320px">' + urlList + '</td>' +
         '</tr>';
       } else {
-        return '<tr>' +
+        return '<tr data-kwrow="1" data-layer="' + layerNum + '" data-scanned="false" data-pulled="false" data-hits="0" data-sum="0" data-kw="' + esc((k.keyword || '').toLowerCase()) + '">' +
           '<td><strong>' + esc(k.keyword || '') + '</strong></td>' +
           '<td style="color:var(--text-2);font-size:12px">' + esc(k.reason || '') + '</td>' +
           '<td style="color:var(--text-3);font-size:11.5px;font-style:italic" colspan="7">Layer 2 (competitor terms) not included in SERP scan</td>' +
@@ -3326,7 +3367,7 @@ function buildKeywords() {
           '<th colspan="7" style="color:var(--text-3);font-weight:400;font-size:11.5px">(no SERP scan)</th>' +
         '</tr></thead>';
 
-    return '<div style="margin-bottom:32px">' +
+    return '<div data-layerwrap="' + layerNum + '" style="margin-bottom:32px">' +
       '<div style="display:flex;align-items:baseline;gap:12px;margin-bottom:12px">' +
         '<div style="font-size:12px;font-weight:600;background:var(--orange-mid);color:var(--orange-text);padding:3px 10px;border-radius:4px;display:inline-flex;align-items:center">' + (showRunCols ? '<img src="https://www.google.com/s2/favicons?domain=google.com&sz=16" alt="" style="width:13px;height:13px;vertical-align:-2px;margin-right:4px;flex-shrink:0">' : '') + 'Layer ' + layerNum + '</div>' +
         '<div style="font-size:14px;font-weight:600;color:var(--text)">' + esc(layerName) + '</div>' +
@@ -3341,7 +3382,64 @@ function buildKeywords() {
     '</div>';
   }).join('');
 
-  return intro + statCards + layerSections;
+  // Compute filter dropdown counts
+  let _kwTotal = 0, _kwScanned = 0, _kwPulled = 0, _kwNoPull = 0, _kwNotScanned = 0;
+  const _kwHitCounts = {0:0, 1:0, 2:0, 3:0};
+  const _kwLayerCounts = {};
+  layers.forEach(L => {
+    const num = L.layer;
+    const kws = L.keywords || [];
+    _kwLayerCounts[num] = (_kwLayerCounts[num] || 0) + kws.length;
+    _kwTotal += kws.length;
+    const isScanned = num !== '2';
+    kws.forEach(k => {
+      if (isScanned) {
+        _kwScanned++;
+        const sum = k.reddit_sum_across_runs || 0;
+        const hits = k.reddit_runs_hit || 0;
+        if (sum > 0) _kwPulled++; else _kwNoPull++;
+        if (_kwHitCounts[hits] != null) _kwHitCounts[hits]++;
+      } else {
+        _kwNotScanned++;
+      }
+    });
+  });
+
+  const _kwLayerOpts = Object.keys(_kwLayerCounts).sort().map(num => {
+    return '<option value="' + num + '">Layer ' + num + ' (' + _kwLayerCounts[num] + ')</option>';
+  }).join('');
+
+  const _kwVisOpts =
+    (_kwPulled > 0 ? '<option value="pulled">Pulled Reddit (' + _kwPulled + ')</option>' : '') +
+    (_kwNoPull > 0 ? '<option value="nopull">Did not pull (' + _kwNoPull + ')</option>' : '') +
+    (_kwNotScanned > 0 ? '<option value="notscanned">Not SERP-scanned (' + _kwNotScanned + ')</option>' : '');
+
+  const _kwRunsOpts =
+    (_kwHitCounts[3] > 0 ? '<option value="3">3 of 3 runs · Stable (' + _kwHitCounts[3] + ')</option>' : '') +
+    (_kwHitCounts[2] > 0 ? '<option value="2">2 of 3 runs (' + _kwHitCounts[2] + ')</option>' : '') +
+    (_kwHitCounts[1] > 0 ? '<option value="1">1 of 3 runs (' + _kwHitCounts[1] + ')</option>' : '') +
+    (_kwHitCounts[0] > 0 ? '<option value="0">0 of 3 runs (' + _kwHitCounts[0] + ')</option>' : '');
+
+  const filterBar =
+    '<div class="filter-bar" style="margin-bottom:18px;padding:14px 16px;background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);gap:10px">' +
+      '<div style="position:relative;min-width:200px;max-width:260px;flex:1">' +
+        '<svg width="13" height="13" viewBox="0 0 13 13" fill="none" style="position:absolute;left:9px;top:50%;transform:translateY(-50%);color:var(--text-3);pointer-events:none"><circle cx="5.5" cy="5.5" r="4.5" stroke="currentColor" stroke-width="1.3"/><path d="M9 9l2.5 2.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>' +
+        '<input id="kwSearch" type="text" placeholder="Search keyword…" style="width:100%;padding:7px 10px 7px 29px;border:1px solid var(--border);border-radius:var(--radius);font-size:12.5px;background:var(--page-bg);color:var(--text);font-family:var(--font);outline:none" oninput="filterKeywords()">' +
+      '</div>' +
+      '<select id="kwLayerFilter" class="filter-select" onchange="filterKeywords()">' +
+        '<option value="">All layers (' + _kwTotal + ')</option>' + _kwLayerOpts +
+      '</select>' +
+      '<select id="kwVisFilter" class="filter-select" onchange="filterKeywords()">' +
+        '<option value="">All SERP states (' + _kwTotal + ')</option>' + _kwVisOpts +
+      '</select>' +
+      '<select id="kwRunsFilter" class="filter-select" onchange="filterKeywords()">' +
+        '<option value="">All run counts (' + _kwScanned + ' scanned)</option>' + _kwRunsOpts +
+      '</select>' +
+      '<button class="filter-reset" onclick="resetKeywordsFilters()">Reset</button>' +
+      '<span id="kwFilterCount" style="margin-left:auto;font-size:11.5px;color:var(--text-3)"></span>' +
+    '</div>';
+
+  return intro + statCards + filterBar + layerSections;
 }
 
 /* ── Section switching ── */
@@ -3380,6 +3478,7 @@ function renderSection(name) {
   initCharts(name);
   if (name === 'posts') initPostsSort();
   if (name === 'subreddits') initSubredditSort();
+  if (name === 'keywords') setTimeout(() => { try { filterKeywords(); } catch(e) {} }, 30);
   setTimeout(() => { initSentSelects(); _wireFilterActiveStyling(); }, 60);
 }
 

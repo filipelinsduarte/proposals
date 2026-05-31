@@ -1265,10 +1265,10 @@ function buildCompetitors() {
   // Initialize chart and cards after DOM is ready
   setTimeout(() => {
     _initCompCards();
-    _renderCompFreqChart(toolList.slice(0, 20));
+    _renderCompFreqChart(_getCompPageView(toolList, S._compPage || 0));
   }, 0);
 
-  S._compSentToolList = toolList.slice(0, 15);
+  S._compSentToolList = toolList;
 
   return `<div class="section">
 
@@ -1325,9 +1325,15 @@ function buildCompetitors() {
     </div>
 
     <div class="chart-card" style="margin-bottom:20px;padding:0;overflow:hidden">
-      <div style="padding:16px 20px;border-bottom:1px solid var(--border-light)">
-        <div class="chart-title" style="margin-bottom:2px">Top tools by post count</div>
-        <div class="chart-meta" style="margin-bottom:0">Top 20 tools ranked by number of posts mentioning them</div>
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 20px;border-bottom:1px solid var(--border-light);flex-wrap:wrap">
+        <div>
+          <div class="chart-title" style="margin-bottom:2px">Top tools by post count</div>
+          <div class="chart-meta" style="margin-bottom:0">Up to 40 tools ranked by number of posts (paginated)</div>
+        </div>
+        <div style="display:flex;gap:4px;flex-shrink:0">
+          <button class="bp-pill active" id="compPageBtn1" onclick="setCompPage(0)">Top 1–20</button>
+          <button class="bp-pill" id="compPageBtn2" onclick="setCompPage(1)">Top 21–40</button>
+        </div>
       </div>
       <div id="compFreqChart" style="padding:20px"></div>
     </div>
@@ -1353,12 +1359,47 @@ function buildCompetitors() {
           <button onclick="resetCompSentFilters()" style="padding:5px 11px;border:1px solid var(--border);border-radius:var(--radius);font-family:var(--font);font-size:12px;color:var(--text-3);background:none;cursor:pointer;white-space:nowrap;transition:all 0.15s" onmouseover="this.style.borderColor='var(--orange)';this.style.color='var(--orange)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--text-3)'">Reset</button>
         </div>
       </div>
-      <div id="compSentTableWrap" style="padding:0">${_renderCompSentTable(toolList.slice(0, 15))}</div>
+      <div id="compSentTableWrap" style="padding:0">${_renderCompSentTable(_getCompPageView(toolList, 0))}</div>
     </div>
 
     <div class="section-title" style="font-size:13px;margin-bottom:12px">All tools</div>
     <div class="comp-tool-grid" id="compCards"></div>
   </div>`;
+}
+
+/* ── Competitor pagination helpers ─────────────────────────────────────── */
+function _getCompPageView(tools, page) {
+  // Returns flat array: [client?, ...competitors[page*20..page*20+20]]
+  // Sets ._rank on each competitor for display (continues across pages).
+  if (!Array.isArray(tools)) return [];
+  page = page || 0;
+  const client = tools.find(t => t && t.is_client) || null;
+  const competitors = tools.filter(t => t && !t.is_client);
+  const start = page * 20;
+  const slice = competitors.slice(start, start + 20);
+  slice.forEach((t, i) => { t._rank = start + i + 1; });
+  return client ? [client].concat(slice) : slice;
+}
+
+function _updateCompPageButtons(tools) {
+  if (!Array.isArray(tools)) return;
+  const competitors = tools.filter(t => t && !t.is_client);
+  const btn2 = document.getElementById('compPageBtn2');
+  if (btn2) btn2.disabled = competitors.length <= 20;
+}
+
+function setCompPage(page) {
+  S._compPage = page;
+  const tools = S._compFilteredTools || S._compTools || [];
+  const view = _getCompPageView(tools, page);
+  _renderCompFreqChart(view);
+  const wrap = document.getElementById('compSentTableWrap');
+  if (wrap) wrap.innerHTML = _renderCompSentTable(view);
+  const btn1 = document.getElementById('compPageBtn1');
+  const btn2 = document.getElementById('compPageBtn2');
+  if (btn1) btn1.classList.toggle('active', page === 0);
+  if (btn2) btn2.classList.toggle('active', page === 1);
+  _updateCompPageButtons(tools);
 }
 
 function _renderCompFreqChart(tools) {
@@ -1371,10 +1412,10 @@ function _renderCompFreqChart(tools) {
     const initial = tool.name.charAt(0).toUpperCase();
     const uid = 'cfb_' + tool.name.replace(/[^a-zA-Z0-9]/g, '_');
     return '<div style="display:flex;align-items:center;gap:10px;padding:4px 0;border-bottom:1px solid var(--border-light)">'
-      + '<span style="font-size:11px;color:var(--text-3);min-width:16px;text-align:right">' + (i + 1) + '</span>'
+      + '<span style="font-size:11px;color:var(--text-3);min-width:16px;text-align:right">' + (tool.is_client ? '' : (tool._rank != null ? tool._rank : (i + 1))) + '</span>'
       + '<img id="' + uid + '_img" src="https://www.google.com/s2/favicons?domain=' + domain + '&sz=16" width="16" height="16" style="border-radius:3px;flex-shrink:0;object-fit:contain" alt="" onerror="this.style.display=\'none\';document.getElementById(\'' + uid + '_fb\').style.display=\'flex\'">'
       + '<span id="' + uid + '_fb" style="display:none;width:16px;height:16px;border-radius:3px;background:var(--orange-mid);color:var(--orange-text);font-size:8px;font-weight:700;align-items:center;justify-content:center;flex-shrink:0">' + esc(initial) + '</span>'
-      + '<span style="font-size:12px;color:var(--text);min-width:130px;max-width:130px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="' + esc(tool.name) + '">' + esc(tool.name) + '</span>'
+      + '<span style="font-size:12px;color:var(--text);min-width:130px;max-width:130px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;display:inline-flex;align-items:center;gap:5px" title="' + esc(tool.name) + '"><span style="overflow:hidden;text-overflow:ellipsis">' + esc(tool.name) + '</span>'+ (tool.is_client ? '<span style="display:inline-flex;align-items:center;background:var(--orange-light);color:var(--orange-text);font-size:9px;font-weight:600;padding:1px 5px;border-radius:3px;letter-spacing:.2px;text-transform:uppercase;flex-shrink:0">You</span>' : '')+ '</span>'
       + '<div style="flex:1;height:8px;background:var(--border-light);border-radius:4px;overflow:hidden">'
       + '<div style="height:100%;width:' + barW + '%;background:rgba(194,98,42,0.7);border-radius:4px;transition:width 0.3s"></div>'
       + '</div>'
@@ -1444,7 +1485,7 @@ function _renderCompSentTable(tools) {
       + '<span style="display:inline-flex;align-items:center;gap:5px;max-width:100%">'
       + faviconHtml
       + '<span style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="' + esc(tool.name) + '">' + esc(tool.name) + '</span>'
-      + (tool.is_client ? ' <span style="display:inline-flex;align-items:center;background:var(--orange-light);color:var(--orange-text);font-size:9px;font-weight:600;padding:1px 5px;border-radius:3px;letter-spacing:.2px;text-transform:uppercase;margin-left:4px;flex-shrink:0">Client Brand</span>' : '')
+      + (tool.is_client ? ' <span style="display:inline-flex;align-items:center;background:var(--orange-light);color:var(--orange-text);font-size:9px;font-weight:600;padding:1px 5px;border-radius:3px;letter-spacing:.2px;text-transform:uppercase;margin-left:4px;flex-shrink:0">You</span>' : '')
       + '</span>'
       + '</td>'
       + '<td style="padding:6px 8px;width:120px;vertical-align:middle">'
@@ -1578,7 +1619,10 @@ function filterCompetitors() {
   }
 
   // Re-render HTML chart
-  _renderCompFreqChart(filtered.slice(0, 20));
+  _renderCompFreqChart(_getCompPageView(filtered, S._compPage || 0));
+  const _stw = document.getElementById('compSentTableWrap');
+  if (_stw) _stw.innerHTML = _renderCompSentTable(_getCompPageView(filtered, S._compPage || 0));
+  _updateCompPageButtons(filtered);
 }
 
 function _initCompCards() {

@@ -1215,6 +1215,35 @@ function buildCompetitors() {
     else                                entry.sentiments.neutral  = mentionsForSent;
   });
 
+  // Populate posts[] for each brand from DATA.brandMentions
+  // (threads' competitors_mentioned was stripped during dashboard normalization,
+  //  so we rebuild the per-brand → post mapping from brandMentions instead)
+  (S.data.brandMentions || []).forEach(function(bm) {
+    const name = (bm && bm.brand) || '';
+    if (!name) return;
+    if (!toolMap[name]) {
+      toolMap[name] = {
+        name: name,
+        postCount: 0,
+        posts: [],
+        sentiments: { positive: 0, negative: 0, neutral: 0, mixed: 0 },
+        avgFit: 0,
+        _fitSum: 0
+      };
+    }
+    const entry = toolMap[name];
+    // dedupe by URL — brandMentions may have duplicates if both body + comments matched
+    if (!entry.posts.some(function(p) { return p.url === bm.url; })) {
+      entry.posts.push({
+        title:     bm.title || '',
+        url:       bm.url || '',
+        subreddit: bm.subreddit || '',
+        fit_score: bm.fit_score || 0,
+        sentiment: ((bm.rating || bm.sentiment || 'neutral') + '').toLowerCase()
+      });
+    }
+  });
+
   // Finalize avgFit
   Object.values(toolMap).forEach(t => {
     t.avgFit = t.postCount > 0 ? Math.round((t._fitSum / t.postCount) * 10) / 10 : 0;

@@ -1257,7 +1257,7 @@ function buildCompetitors() {
 
   // KPI tiles
   const uniqueCount = toolList.length;
-  const topTool = toolList[0] || {};
+  const topTool = toolList.filter(t => !t.is_client)[0] || {};
   const threePlusCount = toolList.filter(t => t.postCount >= 3).length;
   const postsWithTools = threads.filter(t => Array.isArray(t.competitors_mentioned) && t.competitors_mentioned.length).length;
   const coveragePct = threads.length ? Math.round(postsWithTools / threads.length * 100) : 0;
@@ -1368,6 +1368,55 @@ function buildCompetitors() {
   </div>`;
 }
 
+/* ── Brand-posts expansion helpers ─────────────────────────────────────── */
+function _brandKey(name) { return String(name || '').toLowerCase().replace(/[^a-z0-9]/g, '_'); }
+
+function _renderBrandPostsTable(tool) {
+  const posts = (tool && tool.posts) || [];
+  if (!posts.length) {
+    return '<div style="padding:14px 20px;font-size:11.5px;color:var(--text-3);font-style:italic">No posts available for ' + esc(tool.name) + '.</div>';
+  }
+  const sentColors = { positive: 'var(--green)', negative: 'var(--red)', mixed: '#d4824a', neutral: 'var(--text-3)' };
+  const rows = posts.map(function(p) {
+    const sClass = (p.sentiment || '').toLowerCase();
+    const dot = sentColors[sClass] || sentColors.neutral;
+    const fit = (p.fit_score != null ? p.fit_score : '');
+    const url = p.url || '';
+    const titleHtml = url
+      ? '<a href="' + esc(url) + '" target="_blank" rel="noopener" style="color:var(--text);text-decoration:none">' + esc(p.title || url) + '</a>'
+      : esc(p.title || '');
+    const openIcon = url
+      ? '<a href="' + esc(url) + '" target="_blank" rel="noopener" title="Open in Reddit" style="color:var(--text-3);text-decoration:none;font-size:13px">↗</a>'
+      : '';
+    return '<tr>'
+      + '<td style="padding:6px 10px 6px 16px;font-size:11.5px;color:var(--text);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:0">' + titleHtml + '</td>'
+      + '<td style="padding:6px 10px;font-size:11px;color:var(--text-2);white-space:nowrap">r/' + esc(p.subreddit || '') + '</td>'
+      + '<td style="padding:6px 10px;font-size:11px;color:var(--text-2);text-align:center;width:42px">' + esc(String(fit)) + '</td>'
+      + '<td style="padding:6px 10px;font-size:11px;color:var(--text-2);text-transform:capitalize;width:84px"><span style="display:inline-flex;align-items:center;gap:5px"><span style="width:7px;height:7px;border-radius:50%;background:' + dot + ';display:inline-block"></span>' + esc(sClass || '—') + '</span></td>'
+      + '<td style="padding:6px 16px 6px 10px;text-align:right;width:36px">' + openIcon + '</td>'
+      + '</tr>';
+  }).join('');
+  return '<table style="width:100%;border-collapse:collapse;table-layout:fixed;background:transparent">'
+    + '<thead><tr style="background:transparent">'
+    + '<th style="padding:6px 10px 6px 16px;font-size:10px;font-weight:600;color:var(--text-3);text-align:left;letter-spacing:.3px;text-transform:uppercase">Post title</th>'
+    + '<th style="padding:6px 10px;font-size:10px;font-weight:600;color:var(--text-3);text-align:left;letter-spacing:.3px;text-transform:uppercase;width:120px">Subreddit</th>'
+    + '<th style="padding:6px 10px;font-size:10px;font-weight:600;color:var(--text-3);text-align:center;letter-spacing:.3px;text-transform:uppercase;width:42px">Fit</th>'
+    + '<th style="padding:6px 10px;font-size:10px;font-weight:600;color:var(--text-3);text-align:left;letter-spacing:.3px;text-transform:uppercase;width:84px">Sentiment</th>'
+    + '<th style="padding:6px 16px 6px 10px;width:36px"></th>'
+    + '</tr></thead><tbody>' + rows + '</tbody></table>';
+}
+
+function _toggleBrandExpansion(viewName, brandKey, btn) {
+  const target = document.getElementById('exp_' + viewName + '_' + brandKey);
+  if (!target) return;
+  const open = target.style.display === 'none' || !target.style.display;
+  target.style.display = open ? 'block' : 'none';
+  if (btn) {
+    btn.textContent = open ? '▼' : '▶';
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  }
+}
+
 /* ── Competitor pagination helpers ─────────────────────────────────────── */
 function _getCompPageView(tools, page) {
   // Returns flat array: [client?, ...competitors[page*20..page*20+20]]
@@ -1419,7 +1468,10 @@ function _renderCompFreqChart(tools) {
     const domain = _brandDomain(tool.name);
     const initial = tool.name.charAt(0).toUpperCase();
     const uid = 'cfb_' + tool.name.replace(/[^a-zA-Z0-9]/g, '_');
-    return '<div style="display:flex;align-items:center;gap:10px;padding:4px 0;border-bottom:1px solid var(--border-light)">'
+    const _bk = _brandKey(tool.name);
+    return '<div style="border-bottom:1px solid var(--border-light)">'
+      + '<div style="display:flex;align-items:center;gap:10px;padding:4px 0">'
+      + '<button onclick="_toggleBrandExpansion(\'freq\',\'' + _bk + '\',this)" aria-expanded="false" title="Show posts" style="background:none;border:none;color:var(--text-3);cursor:pointer;font-size:9px;padding:0;width:14px;height:14px;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0">▶</button>'
       + '<span style="font-size:11px;color:var(--text-3);min-width:16px;text-align:right">' + (tool.is_client ? '' : (tool._rank != null ? tool._rank : (i + 1))) + '</span>'
       + '<img id="' + uid + '_img" src="https://www.google.com/s2/favicons?domain=' + domain + '&sz=16" width="16" height="16" style="border-radius:3px;flex-shrink:0;object-fit:contain" alt="" onerror="this.style.display=\'none\';document.getElementById(\'' + uid + '_fb\').style.display=\'flex\'">'
       + '<span id="' + uid + '_fb" style="display:none;width:16px;height:16px;border-radius:3px;background:var(--orange-mid);color:var(--orange-text);font-size:8px;font-weight:700;align-items:center;justify-content:center;flex-shrink:0">' + esc(initial) + '</span>'
@@ -1428,6 +1480,8 @@ function _renderCompFreqChart(tools) {
       + '<div style="height:100%;width:' + barW + '%;background:rgba(194,98,42,0.7);border-radius:4px;transition:width 0.3s"></div>'
       + '</div>'
       + '<span style="font-size:11px;font-weight:600;color:var(--text-2);min-width:24px;text-align:right">' + tool.postCount + '</span>'
+      + '</div>'
+      + '<div id="exp_freq_' + _bk + '" style="display:none;background:var(--page-bg);border-top:1px solid var(--border-light);margin:4px -12px 0 -12px">' + _renderBrandPostsTable(tool) + '</div>'
       + '</div>';
   }).join('');
 }
@@ -1488,8 +1542,11 @@ function _renderCompSentTable(tools) {
     const praise    = trunc(bData.praise    || '', 130);
     const criticism = trunc(bData.criticism || '', 130);
 
+    const _bk = _brandKey(tool.name);
+    const _caretCell = '<td style="padding:6px 4px 6px 14px;width:18px;vertical-align:middle"><button onclick="_toggleBrandExpansion(\'sent\',\'' + _bk + '\',this)" aria-expanded="false" title="Show posts" style="background:none;border:none;color:var(--text-3);cursor:pointer;font-size:9px;padding:0;width:14px;height:14px;display:inline-flex;align-items:center;justify-content:center">▶</button></td>';
     return '<tr>'
-      + '<td style="padding:6px 8px 6px 20px;font-size:12px;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:0">'
+      + _caretCell
+      + '<td style="padding:6px 8px 6px 6px;font-size:12px;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:0">'
       + '<span style="display:inline-flex;align-items:center;gap:5px;max-width:100%">'
       + faviconHtml
       + '<span style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="' + esc(tool.name) + '">' + esc(tool.name) + '</span>'
@@ -1506,13 +1563,15 @@ function _renderCompSentTable(tools) {
       + '<td style="padding:6px 10px;width:180px;font-size:11px;color:var(--text-2);vertical-align:middle;white-space:nowrap;overflow:hidden;text-overflow:ellipsis" title="' + esc(criticism || '') + '">'
       + (criticism ? esc(criticism) : '<span style="color:var(--text-3)">—</span>')
       + '</td>'
-      + '</tr>';
+      + '</tr>'
+      + '<tr id="exp_sent_' + _bk + '" style="display:none"><td colspan="6" style="padding:0;background:var(--page-bg);border-bottom:1px solid var(--border-light)"><div style="padding:8px 4px 14px 28px">' + _renderBrandPostsTable(tool) + '</div></td></tr>';
   }).join('');
 
   const _ii = function(tip) { return '<span class="info-icon" data-tip="' + tip + '">ⓘ</span>'; };
   return '<table class="data-table" style="table-layout:fixed;width:100%">'
     + '<thead><tr>'
-    + '<th style="padding:6px 8px 6px 20px;font-size:11px;font-weight:600;color:var(--text-3);text-align:left;width:140px">Tool</th>'
+    + '<th style="padding:6px 4px 6px 14px;font-size:11px;font-weight:600;color:var(--text-3);text-align:left;width:18px"></th>'
+    + '<th style="padding:6px 8px 6px 6px;font-size:11px;font-weight:600;color:var(--text-3);text-align:left;width:140px">Tool</th>'
     + '<th style="padding:6px 8px;font-size:11px;font-weight:600;color:var(--text-3);text-align:left;width:120px">Sentiment split</th>'
     + '<th style="padding:6px 8px;font-size:11px;font-weight:600;color:var(--text-3);text-align:center;width:44px">Posts</th>'
     + '<th style="padding:6px 12px;font-size:11px;font-weight:600;color:var(--text-3);text-align:left;width:180px">Known for ' + _ii('What Reddit users praise about this tool based on how it\'s discussed across threads') + '</th>'

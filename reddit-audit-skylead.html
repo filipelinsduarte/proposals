@@ -1334,6 +1334,19 @@ function buildCompetitors() {
     t.avgFit = t.postCount > 0 ? Math.round((t._fitSum / t.postCount) * 10) / 10 : 0;
   });
 
+  // Recompute sentiment split from each tool's actual posts so the bars show a real
+  // multi-color split (positive / mixed / neutral / negative), not one solid color.
+  Object.values(toolMap).forEach(t => {
+    const posts = t.posts || [];
+    if (!posts.length) return;
+    const sc = { positive: 0, negative: 0, neutral: 0, mixed: 0 };
+    posts.forEach(p => {
+      const s = (p.sentiment || 'neutral').toLowerCase();
+      if (sc[s] != null) sc[s]++; else sc.neutral++;
+    });
+    t.sentiments = sc;
+  });
+
   // Sort by postCount desc
   // Ensure client brand is always in toolMap, pinned at top
   const CLIENT_BRAND_NAME = (S.data.brand || 'Skylead');
@@ -1412,13 +1425,18 @@ function buildCompetitors() {
 
   S._compSentToolList = toolList;
 
+  // Competitor chips with favicons for the callout banner
+  const _chip = function(name){ return '<span style="display:inline-flex;align-items:center;gap:4px;white-space:nowrap"><img src="'+_favSrc(_brandDomain(name),16)+'" width="13" height="13" style="border-radius:3px;object-fit:contain;flex-shrink:0" alt="">'+esc(name)+'</span>'; };
+  const compChips = toolList.filter(t => !t.is_client).slice(0,8).map(t => _chip(t.name)).join(', ');
+  const topToolFav = (topTool && topTool.name) ? '<img src="'+_favSrc(_brandDomain(topTool.name),32)+'" width="20" height="20" style="border-radius:4px;object-fit:contain;flex-shrink:0" alt="">' : '';
+
   return `<div class="section">
 
     <div style="background:linear-gradient(135deg,rgba(0,128,255,0.10) 0%,rgba(0,128,255,0.03) 100%);border:1px solid rgba(0,128,255,0.28);border-radius:var(--radius-lg);padding:16px 18px;margin-bottom:18px;display:flex;align-items:flex-start;gap:12px">
       <img src="${_favSrc('skylead.io',32)}" width="22" height="22" style="border-radius:5px;flex-shrink:0;object-fit:contain;margin-top:1px" alt="">
       <div style="flex:1;min-width:0">
         <div style="font-size:13.5px;font-weight:600;color:#0080FF;margin-bottom:4px">Skylead has just <strong style="color:#0080FF">1 direct mention</strong> across the 20 analyzed 2026 threads</div>
-        <div style="font-size:12.5px;color:var(--text-2);line-height:1.55">The LinkedIn automation and multichannel outreach category is <strong style="color:var(--ink)">highly active on Reddit, yet Skylead is almost invisible</strong>. Competitors like <strong style="color:var(--ink)">Waalaxy, Lemlist, Clay, Instantly, Apollo, Expandi, HeyReach and La Growth Machine dominate every comparison</strong>. This is a direct opportunity to claim share of voice through authentic engagement.</div>
+        <div style="font-size:12.5px;color:var(--text-2);line-height:1.7">The LinkedIn automation and multichannel outreach category is <strong style="color:var(--ink)">highly active on Reddit, yet Skylead is almost invisible</strong>. Competitors that <strong style="color:var(--ink)">dominate the conversation</strong> include <span style="display:inline-flex;flex-wrap:wrap;gap:4px 10px;vertical-align:top">${compChips}</span>. This is a direct opportunity to claim share of voice through authentic engagement.</div>
       </div>
     </div>
     <div class="kpi-grid" style="margin-bottom:24px">
@@ -1429,7 +1447,7 @@ function buildCompetitors() {
       </div>
       <div class="kpi-tile">
         <div class="kpi-label">Most mentioned</div>
-        <div class="kpi-value" style="font-size:22px;word-break:break-word">${esc(topTool.name || '--')}</div>
+        <div class="kpi-value" style="font-size:22px;word-break:break-word;display:flex;align-items:center;gap:8px">${topToolFav}<span>${esc(topTool.name || '--')}</span></div>
         <div class="kpi-sub">${topTool.postCount || 0} post${topTool.postCount !== 1 ? 's' : ''}</div>
       </div>
       <div class="kpi-tile">

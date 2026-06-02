@@ -1220,7 +1220,7 @@ function renderSubredditRows() {
       <td>
         <div style="display:flex;align-items:center;gap:6px">
           ${expandBtn}
-          <span style="font-weight:500">r/${esc(r.name)}</span>
+          <span style="font-weight:500;display:inline-flex;align-items:center">${_rfav()}r/${esc(r.name)}</span>
         </div>
       </td>
       <td>
@@ -1434,6 +1434,8 @@ function buildCompetitors() {
   const topToolFav = (topTool && topTool.name) ? '<img src="'+_favSrc(_brandDomain(topTool.name),32)+'" width="20" height="20" style="border-radius:4px;object-fit:contain;flex-shrink:0" alt="">' : '';
 
   return `<div class="section">
+    <div class="section-title">Who is winning the conversation</div>
+    <div class="section-subtitle">The tools mentioned most across these Reddit threads, how often they come up, and how people feel about each one.</div>
 
     <div style="background:linear-gradient(135deg,rgba(0,128,255,0.10) 0%,rgba(0,128,255,0.03) 100%);border:1px solid rgba(0,128,255,0.28);border-radius:var(--radius-lg);padding:16px 18px;margin-bottom:18px;display:flex;align-items:flex-start;gap:12px">
       <img src="${_favSrc('skylead.io',32)}" width="22" height="22" style="border-radius:5px;flex-shrink:0;object-fit:contain;margin-top:1px" alt="">
@@ -1563,7 +1565,7 @@ function _renderBrandPostsTable(tool) {
       : '<span style="font-size:11.5px;color:var(--text-3)">No quote captured</span>';
     return '<div style="display:flex;align-items:flex-start;width:100%;border-bottom:1px solid var(--border-light)">'
       + '<div style="' + colTitle + ';font-size:12px;color:var(--text);font-weight:500;line-height:1.4;word-break:break-word">' + titleHtml + '</div>'
-      + '<div style="' + colSub + ';font-size:11.5px;color:var(--text-2);word-break:break-word">r/' + esc(p.subreddit || '') + '</div>'
+      + '<div style="' + colSub + ';font-size:11.5px;color:var(--text-2);word-break:break-word">' + (p.subreddit ? _rfav() + 'r/' + esc(p.subreddit) : '') + '</div>'
       + '<div style="' + colSaid + '">' + saidHtml + '</div>'
       + '<div style="' + colSent + ';font-size:11.5px;color:var(--text-2);text-transform:capitalize"><span style="display:inline-flex;align-items:center;gap:6px"><span style="width:8px;height:8px;border-radius:50%;background:' + dot + ';display:inline-block;flex-shrink:0"></span>' + esc(sClass || '-') + '</span></div>'
       + '<div style="' + colIcon + '">' + openIcon + '</div>'
@@ -2009,7 +2011,7 @@ function renderPostRows() {
       :`<div class="sent-mini-bar" style="width:80px"><div style="width:100%;background:var(--border-light)"></div></div>`;
     return`<tr data-title="${esc((t.title||'').toLowerCase())}" data-sub="${esc((t.subreddit||'').toLowerCase())}" data-sent="${esc((t.sentiment||'').toLowerCase())}" data-mood="${esc(mood)}" data-type="${esc((t.post_type||'').toLowerCase())}">
       <td><a class="thread-title-link" href="${esc(url)}" target="_blank" rel="noopener">${esc(t.title||'')}</a></td>
-      <td style="color:var(--text-2);font-size:12px;white-space:nowrap">r/${esc(t.subreddit||'')}</td>
+      <td style="color:var(--text-2);font-size:12px;white-space:nowrap">${t.subreddit?_rfav():''}r/${esc(t.subreddit||'')}</td>
       <td style="white-space:nowrap">${typeLabel?`<span class="type-pill type-${typeClassKey}">${esc(typeLabel)}</span>`:''}</td>
       <td style="font-size:12px">${postScore}</td>
       <td style="font-size:12px">${comments}</td>
@@ -2098,6 +2100,8 @@ function _deduplicateBrands(brands) {
 }
 const CLAY_LOGO = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAAAWlBMVEVHcEw70/070/070/3+XXU71P471P470/3/zAA70/3/VXH+oUI70/7+XXX/ywD/V3f/U2r/zwA9z/n/oUAo2P9nweiSq8/kco3/UGf+dGT/lEy+kbDOhKL/wRJZfdDVAAAADHRSTlMAacGNpEclpKTipKTavalOAAABg0lEQVRYhbWX6XKDMAyEQ1KgtIA53HCl7/+aTaaZYpuVLFCzw9/9WMuXfDoxSpP8XHQlUMLZfpVdCuR8Ko/Z06KEfxYCEtYcBWRcdgEgj9s5gOT3HCAT2WlAKvRTALGfAGzz24c6IAzY2MvrMpixAfpA/qD+9uvWNKbCegP+S2AfGsJMAPwC2GVk7BDgDaCrqOwkIPXiR+wIULh+bvQEwFtCUTsAnJ0AQ3QAAOD4r8EADFK4kBIHELinuQf6JEfgBTBmrtv2/m30To/A/f1UtzVWAHBWoTOFZqLsG8BaArs4U0D7Q8C6j+ywBujlAKeGoyhACChACcy8AwAnsWf8EoD5PgIotQA3Aef/9wQdAuwp4t802oPTqF5IcClXO5ayejPh7VzJt7P6QOGPNKQQoD5U1ce6/mJxrjZ76Grzbvcjl6v+evci2AMNRtji3Ha3OKDJYlIgAGjzxl1tnr7R1Le66mZb3+7LCa978pzUjy5hiNc+PB9KIymiAPXj+5lD8Pz/AXtrk/+kgZpWAAAAAElFTkSuQmCC';
 function _favSrc(domain, size){ if(domain==='clay.com') return CLAY_LOGO; return 'https://www.google.com/s2/favicons?domain='+domain+'&sz='+size; }
+// Inline Reddit favicon, used wherever a subreddit (r/...) is named in a table or chip, for visual consistency.
+function _rfav(){ return '<img src="' + _favSrc('reddit.com',16) + '" width="13" height="13" style="border-radius:3px;vertical-align:-2px;object-fit:contain;margin-right:4px;flex-shrink:0" alt="">'; }
 // Shared sentiment-split bar: returns colored segment divs (positive/mixed/neutral/negative)
 // so every competitor/brand bar shows the same multi-color split. Place inside a flex container.
 function _sentSplitHTML(s){
@@ -2564,7 +2568,7 @@ function filterSentimentCards() {
         + (t.sentiment_drivers ? '<div class="sent-summary-driver">' + esc(t.sentiment_drivers) + '</div>' : '')
         + (t.comment_summary   ? '<div class="sent-summary-body">'   + esc(t.comment_summary)   + '</div>' : '')
         + '<div class="sent-summary-footer">'
-        + (t.subreddit ? '<span>r/' + esc(t.subreddit) + '</span>' : '')
+        + (t.subreddit ? '<span style="display:inline-flex;align-items:center">' + _rfav() + 'r/' + esc(t.subreddit) + '</span>' : '')
         + '</div>'
         + '</div>';
     }).join('');
@@ -2632,7 +2636,7 @@ function _renderSentBreakdownBySub(el, threads) {
     const negW = 100 - posW - neuW;
     const fitCls = s.avgFit >= 7 ? 'fit-high' : s.avgFit >= 4 ? 'fit-mid' : 'fit-low';
     return '<tr>'
-      + '<td style="padding:6px 8px 6px 20px;font-size:12.5px;font-weight:500;color:var(--text)">r/' + esc(s.name) + '</td>'
+      + '<td style="padding:6px 8px 6px 20px;font-size:12.5px;font-weight:500;color:var(--text)">' + _rfav() + 'r/' + esc(s.name) + '</td>'
       + '<td style="padding:6px 16px"><div style="height:10px;border-radius:5px;overflow:hidden;display:flex;background:var(--border-light)">'
       + '<div style="width:' + posW + '%;background:var(--green)" title="' + s.pos + '% positive"></div>'
       + '<div style="width:' + neuW + '%;background:#9c9895;opacity:.45" title="' + s.neu + '% neutral"></div>'
@@ -2718,7 +2722,7 @@ function _openPainModalInner(idx) {
                 : (quote ? '<span style="color:var(--text-2);font-style:italic">' + esc(quote.length>180 ? quote.slice(0,180)+'…' : quote) + '</span>' : ''))
             + '</td>'
             + '<td><span style="font-size:11px;font-weight:600;padding:3px 9px;border-radius:20px;background:' + sentBg + ';color:' + sentColor + ';text-transform:capitalize;white-space:nowrap">' + esc(t.sentiment||'neutral') + '</span></td>'
-            + '<td style="font-size:11.5px;color:var(--text-3)">' + (t.subreddit ? 'r/' + esc(t.subreddit) : '') + '</td>'
+            + '<td style="font-size:11.5px;color:var(--text-3)">' + (t.subreddit ? _rfav() + 'r/' + esc(t.subreddit) : '') + '</td>'
             + '<td>' + (fit ? '<span class="fit-score ' + fitCls + '">' + fit + '</span>' : '<span style="color:var(--text-3);font-size:11px">-</span>') + '</td>'
             + '<td style="font-size:11.5px;color:var(--text-3);white-space:nowrap">' + (t.date ? esc(fmtDate(t.date)) : t.created_utc ? esc(fmtDate(t.created_utc)) : '') + '</td>'
             + '</tr>';
@@ -2982,7 +2986,7 @@ function renderTopicsCards() {
   }
 
   const cards = filtered.map((g, gi) => {
-    const subBadges = (g.subreddits || []).slice(0, 2).map(s => `<span class="topic-badge">r/${esc(s)}</span>`).join('');
+    const subBadges = (g.subreddits || []).slice(0, 2).map(s => `<span class="topic-badge" style="display:inline-flex;align-items:center">${_rfav()}r/${esc(s)}</span>`).join('');
     const allPosts = g.top_posts || [];
     const postRow = p => `<div class="topic-post-row" style="display:flex;align-items:flex-start;gap:8px;margin-top:6px;font-size:12px;line-height:1.4">
         <a href="${p.url || '#'}" target="_blank" rel="noopener" style="color:var(--text-2);text-decoration:none">${esc(p.title || '')}</a>

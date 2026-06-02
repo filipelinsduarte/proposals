@@ -999,7 +999,7 @@ function buildOverview() {
                   + '<div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:5px">'
                   + '<span style="font-size:12px;color:var(--text-2)">'+(qgLabels[g.group]||g.group)+_qgi(g.group)+'</span>'
                   + '<span style="font-size:12px;font-weight:700;color:var(--ink)">'+g.post_count+'</span></div>'
-                  + '<div style="height:7px;background:var(--border-light);border-radius:4px;overflow:hidden"><div style="height:100%;width:'+barW+'%;background:#0080FF;border-radius:4px"></div></div>'
+                  + '<div style="height:7px;background:var(--border-light);border-radius:4px;overflow:hidden"><div style="height:100%;width:'+barW+'%;background:#444ce7;border-radius:4px"></div></div>'
                   + '</div>';
               }).join('')
             + '</div>';
@@ -1023,7 +1023,7 @@ function buildOverview() {
           const _rfav='<img src="'+_favSrc('reddit.com',16)+'" width="14" height="14" style="border-radius:3px;vertical-align:-2px;object-fit:contain" alt="Reddit">';
           return '<div class="chart-card"><div class="chart-title" style="display:flex;align-items:center;gap:6px">'+_gfav+'<span>+</span>'+_rfav+'<span>Top keywords driving Reddit mentions</span> <span class="info-icon" data-tip="The Google searches that pull Reddit threads into the results, ranked by how often. These are the searches sending buyers into Reddit before they reach your site.">&#9432;</span></div><div class="chart-meta">Google searches surfacing Reddit threads, by frequency</div>'
             + '<div style="margin-top:14px;display:flex;flex-direction:column;gap:9px">'
-            + top.map(function(k){const bw=Math.round((score(k)/maxv)*100);return '<div style="display:flex;align-items:center;gap:8px"><span style="font-size:11.5px;color:var(--text);flex:0 0 132px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;cursor:default" data-tip="'+esc(k.keyword)+'" title="'+esc(k.keyword)+'">'+esc(k.keyword)+'</span><div style="flex:1;height:7px;background:var(--border-light);border-radius:4px;overflow:hidden"><div style="height:100%;width:'+bw+'%;background:#0080FF;border-radius:4px"></div></div><span style="font-size:11px;font-weight:600;color:var(--text-2);min-width:16px;text-align:right">'+score(k)+'</span></div>';}).join('')
+            + top.map(function(k){const bw=Math.round((score(k)/maxv)*100);return '<div style="display:flex;align-items:center;gap:8px"><span style="font-size:11.5px;color:var(--text);flex:0 0 132px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;cursor:default" data-tip="'+esc(k.keyword)+'" title="'+esc(k.keyword)+'">'+esc(k.keyword)+'</span><div style="flex:1;height:7px;background:var(--border-light);border-radius:4px;overflow:hidden"><div style="height:100%;width:'+bw+'%;background:#444ce7;border-radius:4px"></div></div><span style="font-size:11px;font-weight:600;color:var(--text-2);min-width:16px;text-align:right">'+score(k)+'</span></div>';}).join('')
             + '</div></div>';
         })()}
       </div>
@@ -1069,7 +1069,7 @@ function initCharts(section) {
     const typeMap={};
     threads.forEach(t=>{const ty=t.post_type||'Other';typeMap[ty]=(typeMap[ty]||0)+1;});
     const typeEntries=Object.entries(typeMap).sort((a,b)=>b[1]-a[1]);
-    const typeColors=['#0080FF','#3B475D','#AECAF8','#2E80F9','#E36776','#C0E279','#757B8A','#00d084','#2C72F7','#9c9895'];
+    const typeColors=['#444ce7','#3B475D','#AECAF8','#2E80F9','#E36776','#C0E279','#757B8A','#00d084','#2C72F7','#9c9895'];
     const fitCtx=document.getElementById('chartFit');
     if(fitCtx)S.charts.fit=new Chart(fitCtx,{type:'doughnut',data:{labels:typeEntries.map(e=>e[0]),datasets:[{data:typeEntries.map(e=>e[1]),backgroundColor:typeEntries.map((e,i)=>typeColors[i%typeColors.length]),borderWidth:2,borderColor:'#fff'}]},options:{plugins:{legend:{position:'right',labels:{font:{family:'Geist,sans-serif',size:11},padding:8}}},cutout:'58%',maintainAspectRatio:true}});
     // Subs bar
@@ -1082,7 +1082,7 @@ function initCharts(section) {
     if(scCtx){
       const eBuckets=[{label:'0-4',min:0,max:4},{label:'5-9',min:5,max:9},{label:'10-19',min:10,max:19},{label:'20+',min:20,max:1e9}];
       const eTypes=[...new Set(threads.map(t=>t.post_type||'Other'))];
-      const eColors={Recommend:'#0080FF',Pain:'#E36776',Opinion:'#3B475D',Comparison:'#2E80F9',Switching:'#AECAF8',Advisor:'#C0E279',Budget:'#00d084',Validation:'#2C72F7',Other:'#9c9895'};
+      const eColors={Recommend:'#444ce7',Pain:'#E36776',Opinion:'#3B475D',Comparison:'#2E80F9',Switching:'#AECAF8',Advisor:'#C0E279',Budget:'#00d084',Validation:'#2C72F7',Other:'#9c9895'};
       const eDatasets=eTypes.map(ty=>({label:ty,data:eBuckets.map(bk=>threads.filter(t=>(t.post_type||'Other')===ty&&(t.score||0)>=bk.min&&(t.score||0)<=bk.max).length),backgroundColor:eColors[ty]||'#9c9895',borderWidth:0,borderRadius:3}));
       S.charts.sc=new Chart(scCtx,{type:'bar',data:{labels:eBuckets.map(b=>b.label),datasets:eDatasets},options:{plugins:{legend:{position:'bottom',labels:{font:{family:'Geist,sans-serif',size:11},padding:8,boxWidth:10}}},scales:{x:{stacked:true,title:{display:true,text:'Reddit upvotes',font:{family:'Geist,sans-serif',size:11}},grid:{display:false},ticks:{font:{family:'Geist,sans-serif',size:11}}},y:{stacked:true,beginAtZero:true,title:{display:true,text:'Posts',font:{family:'Geist,sans-serif',size:11}},grid:{color:'#f0efec'},ticks:{font:{family:'Geist,sans-serif',size:11},precision:0}}}}});
     }
@@ -3296,7 +3296,7 @@ function _kfmt(n){
 function _nfmt(n){ return Math.round(n || 0).toLocaleString('en-US'); }
 
 function buildMarketOpportunity() {
-  const blue = '#0080FF';
+  const blue = '#444ce7';
   const o = computeOpportunity();
   const gfav = '<img src="' + _favSrc('google.com', 16) + '" width="14" height="14" style="border-radius:3px;vertical-align:-2px;object-fit:contain;margin-right:5px" alt="Google">';
   const rfav = '<img src="' + _favSrc('reddit.com', 16) + '" width="14" height="14" style="border-radius:3px;vertical-align:-2px;object-fit:contain;margin-right:5px" alt="Reddit">';

@@ -1043,11 +1043,11 @@ function buildOverview() {
               const barW=Math.round(((b.mentions||0)/maxM)*100);
               return `<div class="brands-chart-row" style="padding:4px 0">
                 <div class="brands-chart-label" style="width:130px">
-                  <img class="brands-chart-favicon" src="https://www.google.com/s2/favicons?domain=${domain}&sz=16" alt="" onerror="this.outerHTML='<span class=fav-placeholder style=width:16px;height:16px;font-size:8px>${fl}</span>'">
+                  <img class="brands-chart-favicon" src="${_favSrc(domain,16)}" alt="" onerror="this.outerHTML='<span class=fav-placeholder style=width:16px;height:16px;font-size:8px>${fl}</span>'">
                   <span class="brands-chart-name" title="${esc(b.brand||b.name||'')}">${esc(b.brand||b.name||'')}</span>
                 </div>
-                <div class="brands-chart-bar-wrap" style="height:6px">
-                  <div class="brands-chart-bar-fill" style="width:${barW}%;height:6px"></div>
+                <div class="brands-chart-bar-wrap" style="height:6px;display:flex">
+                  ${_sentSplitHTML(_brandSentObj(b.brand||b.name||''))}
                 </div>
                 <span class="brands-chart-count">${b.mentions||0}</span>
               </div>`;
@@ -1643,9 +1643,7 @@ function _renderCompFreqChart(tools) {
       + '<img id="' + uid + '_img" src="' + _favSrc(domain, 16) + '" width="16" height="16" style="border-radius:3px;flex-shrink:0;object-fit:contain" alt="" onerror="this.style.display=\'none\';document.getElementById(\'' + uid + '_fb\').style.display=\'flex\'">'
       + '<span id="' + uid + '_fb" style="display:none;width:16px;height:16px;border-radius:3px;background:var(--orange-mid);color:var(--orange-text);font-size:8px;font-weight:700;align-items:center;justify-content:center;flex-shrink:0">' + esc(initial) + '</span>'
       + '<span style="font-size:12px;color:var(--text);min-width:130px;max-width:130px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;display:inline-flex;align-items:center;gap:5px" title="' + esc(tool.name) + '"><span style="overflow:hidden;text-overflow:ellipsis">' + esc(tool.name) + '</span>'+ (tool.is_client ? '<span style="display:inline-flex;align-items:center;background:var(--orange-light);color:var(--orange-text);font-size:9px;font-weight:600;padding:1px 5px;border-radius:3px;letter-spacing:.2px;text-transform:uppercase;flex-shrink:0">You</span>' : '')+ '</span>'
-      + '<div style="flex:1;height:8px;background:var(--border-light);border-radius:4px;overflow:hidden">'
-      + '<div style="height:100%;width:' + barW + '%;border-radius:4px;display:flex;overflow:hidden;transition:width 0.3s">' + _fsegs + '</div>'
-      + '</div>'
+      + '<div style="flex:1;height:8px;background:var(--border-light);border-radius:4px;overflow:hidden;display:flex">' + _sentSplitHTML(tool.sentiments) + '</div>'
       + '<span style="font-size:11px;font-weight:600;color:var(--text-2);min-width:24px;text-align:right">' + tool.postCount + '</span>'
       + '</div>'
       + '<div id="exp_freq_' + _bk + '" style="display:none;background:var(--page-bg);border-top:1px solid var(--border-light);margin:4px -12px 0 -12px">' + _renderBrandPostsTable(tool) + '</div>'
@@ -1756,7 +1754,7 @@ function _compToolCardHtml(tool) {
   const pNeu = Math.max(0, 100 - pPos - pNeg - pMix);
   const initial = name.charAt(0).toUpperCase();
   const domain = _brandDomain(name);
-  const avatarHtml = `<img class="comp-tool-avatar comp-tool-favicon" src="https://www.google.com/s2/favicons?domain=${domain}&sz=32" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="comp-tool-avatar comp-tool-avatar-fallback" style="display:none">${initial}</div>`;
+  const avatarHtml = `<img class="comp-tool-avatar comp-tool-favicon" src="${_favSrc(domain,32)}" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="comp-tool-avatar comp-tool-avatar-fallback" style="display:none">${initial}</div>`;
   const postItems = posts.slice(0, 8).map(p => {
     const sentClass = (p.sentiment || '').toLowerCase();
     const sentColors = { positive: 'var(--green)', negative: 'var(--red)', mixed: '#d4824a', neutral: 'var(--text-3)' };
@@ -2095,6 +2093,26 @@ function _deduplicateBrands(brands) {
 }
 const CLAY_LOGO = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAAAWlBMVEVHcEw70/070/070/3+XXU71P471P470/3/zAA70/3/VXH+oUI70/7+XXX/ywD/V3f/U2r/zwA9z/n/oUAo2P9nweiSq8/kco3/UGf+dGT/lEy+kbDOhKL/wRJZfdDVAAAADHRSTlMAacGNpEclpKTipKTavalOAAABg0lEQVRYhbWX6XKDMAyEQ1KgtIA53HCl7/+aTaaZYpuVLFCzw9/9WMuXfDoxSpP8XHQlUMLZfpVdCuR8Ko/Z06KEfxYCEtYcBWRcdgEgj9s5gOT3HCAT2WlAKvRTALGfAGzz24c6IAzY2MvrMpixAfpA/qD+9uvWNKbCegP+S2AfGsJMAPwC2GVk7BDgDaCrqOwkIPXiR+wIULh+bvQEwFtCUTsAnJ0AQ3QAAOD4r8EADFK4kBIHELinuQf6JEfgBTBmrtv2/m30To/A/f1UtzVWAHBWoTOFZqLsG8BaArs4U0D7Q8C6j+ywBujlAKeGoyhACChACcy8AwAnsWf8EoD5PgIotQA3Aef/9wQdAuwp4t802oPTqF5IcClXO5ayejPh7VzJt7P6QOGPNKQQoD5U1ce6/mJxrjZ76Grzbvcjl6v+evci2AMNRtji3Ha3OKDJYlIgAGjzxl1tnr7R1Le66mZb3+7LCa978pzUjy5hiNc+PB9KIymiAPXj+5lD8Pz/AXtrk/+kgZpWAAAAAElFTkSuQmCC';
 function _favSrc(domain, size){ if(domain==='clay.com') return CLAY_LOGO; return 'https://www.google.com/s2/favicons?domain='+domain+'&sz='+size; }
+// Shared sentiment-split bar: returns colored segment divs (positive/mixed/neutral/negative)
+// so every competitor/brand bar shows the same multi-color split. Place inside a flex container.
+function _sentSplitHTML(s){
+  s = s || {};
+  var total = ((s.positive||0)+(s.negative||0)+(s.neutral||0)+(s.mixed||0)) || 1;
+  var defs = [['positive','var(--green)','0.8'],['mixed','#d4824a','0.8'],['neutral','var(--text-3)','0.4'],['negative','var(--red)','0.8']];
+  return defs.map(function(d){
+    var v = s[d[0]]||0; if(!v) return '';
+    var w = Math.round(v/total*100);
+    return '<div title="'+w+'% '+d[0]+'" style="width:'+w+'%;background:'+d[1]+';opacity:'+d[2]+'"></div>';
+  }).join('');
+}
+// Sentiment split for a brand, computed from its brandMentions (usable outside buildCompetitors)
+function _brandSentObj(name){
+  var c = {positive:0,negative:0,neutral:0,mixed:0};
+  (S.data.brandMentions||[]).forEach(function(m){
+    if((m.brand||'')===name){ var s=((m.rating||m.sentiment||'neutral')+'').toLowerCase(); if(c[s]!=null)c[s]++; else c.neutral++; }
+  });
+  return c;
+}
 function _brandDomain(name) {
   if (!name) return '';
   const OVERRIDES = {

@@ -938,7 +938,6 @@ function buildOverview() {
           + '</ul></div>';
       })()}
       ${(()=>{
-        const postsCard = '<div class="stat-card" style="flex:0 0 220px;display:flex;flex-direction:column;justify-content:center"><div class="stat-label">Posts analyzed</div><div class="stat-value">'+total+'</div><div class="stat-sub">'+subs+' subreddits</div></div>';
         const qgp = S.data.queryGroupPerf || [];
         const qgLabels = { brand: 'Brand queries', competitor: 'Competitor queries', category: 'Category / Pain queries', audience: 'Audience queries' };
         const qgTips = {
@@ -948,26 +947,27 @@ function buildOverview() {
           audience: 'Searches phrased the way the target buyer would, for example agencies or recruiters looking for outreach tools.'
         };
         const _qgi = (g)=> qgTips[g] ? ' <span class="info-icon" data-tip="'+qgTips[g]+'">&#9432;</span>' : '';
-        const filtered = qgp.filter(g => g.group !== 'unknown' && g.post_count > 0);
-        if (!filtered.length) return '<div style="margin-bottom:20px;display:flex">'+postsCard+'</div>';
-        const qgCard = '<div class="chart-card" style="flex:1;min-width:0">'
-          + '<div class="chart-title">Query Group Performance</div>'
-          + '<div class="chart-meta">Average relevance score of posts found by each query strategy</div>'
-          + '<div style="margin-top:12px;display:grid;grid-template-columns:repeat(4,1fr);gap:18px">'
-          + qgp.filter(g => g.group !== 'unknown').map(function(g){
-              const barW = Math.round((g.avg_fit / 10) * 100);
-              const color = g.avg_fit >= 7 ? 'var(--green)' : g.avg_fit >= 5 ? 'var(--orange)' : 'var(--text-3)';
-              return '<div style="padding:2px 0">'
-                + '<div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:4px">'
-                + '<span style="font-size:12px;color:var(--text-2)">'+(qgLabels[g.group]||g.group)+_qgi(g.group)+'</span>'
-                + '<span style="font-size:11px;color:var(--text-3)">'+g.post_count+' posts</span></div>'
-                + '<div style="display:flex;align-items:center;gap:8px">'
-                + '<div style="flex:1;height:6px;background:var(--border-light);border-radius:3px;overflow:hidden"><div style="height:100%;width:'+barW+'%;background:'+color+';border-radius:3px"></div></div>'
-                + '<span style="font-size:12px;font-weight:600;color:'+color+';min-width:28px;text-align:right">'+g.avg_fit+'</span></div>'
-                + '</div>';
-            }).join('')
-          + '</div></div>';
-        return '<div style="display:flex;gap:16px;margin-bottom:20px;align-items:stretch">'+postsCard+qgCard+'</div>';
+        const groups = qgp.filter(g => g.group !== 'unknown' && g.post_count > 0);
+        let body = '';
+        if (groups.length) {
+          const maxC = Math.max.apply(null, groups.map(g=>g.post_count).concat([1]));
+          body = '<div style="margin-top:16px;display:grid;grid-template-columns:repeat(4,1fr);gap:24px">'
+            + groups.map(function(g){
+                const barW = Math.round((g.post_count / maxC) * 100);
+                return '<div style="padding:2px 0">'
+                  + '<div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:5px">'
+                  + '<span style="font-size:12px;color:var(--text-2)">'+(qgLabels[g.group]||g.group)+_qgi(g.group)+'</span>'
+                  + '<span style="font-size:12px;font-weight:700;color:var(--ink)">'+g.post_count+'</span></div>'
+                  + '<div style="height:7px;background:var(--border-light);border-radius:4px;overflow:hidden"><div style="height:100%;width:'+barW+'%;background:#0080FF;border-radius:4px"></div></div>'
+                  + '</div>';
+              }).join('')
+            + '</div>';
+        }
+        return '<div class="chart-card" style="margin-bottom:20px">'
+          + '<div style="display:flex;align-items:baseline;gap:10px"><span style="font-size:28px;font-weight:700;color:var(--ink);letter-spacing:-0.02em;line-height:1">'+total+'</span><span class="chart-title" style="margin:0">posts analyzed across '+subs+' subreddits</span></div>'
+          + '<div class="chart-meta" style="margin-top:6px">Grouped by the type of Google search query that surfaced each post on Reddit</div>'
+          + body
+          + '</div>';
       })()}
       <div class="charts-grid">
         <div class="chart-card"><div class="chart-title">Post types</div><div class="chart-meta">Breakdown by conversation type</div><div class="chart-wrap"><canvas id="chartFit"></canvas></div></div>
@@ -978,7 +978,9 @@ function buildOverview() {
           const top=kw.filter(k=>score(k)>0).sort((a,b)=>score(b)-score(a)).slice(0,8);
           if(!top.length) return '<div class="chart-card"></div>';
           const maxv=Math.max(...top.map(score),1);
-          return '<div class="chart-card"><div class="chart-title">Top keywords driving Reddit mentions</div><div class="chart-meta">Google searches surfacing Reddit threads, by frequency</div>'
+          const _gfav='<img src="'+_favSrc('google.com',16)+'" width="14" height="14" style="border-radius:3px;vertical-align:-2px;object-fit:contain" alt="Google">';
+          const _rfav='<img src="'+_favSrc('reddit.com',16)+'" width="14" height="14" style="border-radius:3px;vertical-align:-2px;object-fit:contain" alt="Reddit">';
+          return '<div class="chart-card"><div class="chart-title" style="display:flex;align-items:center;gap:6px">'+_gfav+'<span>+</span>'+_rfav+'<span>Top keywords driving Reddit mentions</span></div><div class="chart-meta">Google searches surfacing Reddit threads, by frequency</div>'
             + '<div style="margin-top:14px;display:flex;flex-direction:column;gap:9px">'
             + top.map(function(k){const bw=Math.round((score(k)/maxv)*100);return '<div style="display:flex;align-items:center;gap:8px"><span style="font-size:11.5px;color:var(--text);flex:0 0 132px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="'+esc(k.keyword)+'">'+esc(k.keyword)+'</span><div style="flex:1;height:7px;background:var(--border-light);border-radius:4px;overflow:hidden"><div style="height:100%;width:'+bw+'%;background:#0080FF;border-radius:4px"></div></div><span style="font-size:11px;font-weight:600;color:var(--text-2);min-width:16px;text-align:right">'+score(k)+'</span></div>';}).join('')
             + '</div></div>';
@@ -1155,12 +1157,13 @@ function renderSubredditRows() {
       const fc = fit>=7?'fit-high':fit>=4?'fit-mid':'fit-low';
       const sent = (t.sentiment||'neutral').toLowerCase();
       const sc = sent==='positive'?'pos':sent==='negative'?'neg':'neu';
-      const impact = t.community_impact!=null ? parseFloat(t.community_impact).toFixed(2) : '-';
+      const ptype = t.post_type || 'Other';
+      const ptClass = 'type-' + ptype.toLowerCase();
       const url = t.url||t.post_url||'#';
       return `<tr>
         <td style="width:50%"><a class="sub-post-title-link" href="${url}" target="_blank" rel="noopener">${esc(t.title||'Untitled')}</a></td>
         <td style="text-align:center"><span class="fit-score ${fc}">${fit}</span></td>
-        <td style="text-align:center">${impact}</td>
+        <td style="text-align:center"><span class="type-pill ${ptClass}">${esc(ptype)}</span></td>
         <td><span class="pill ${sc}">${sent.charAt(0).toUpperCase()+sent.slice(1)}</span></td>
         <td style="text-align:right;font-variant-numeric:tabular-nums;color:var(--text-3)">${t.score!=null?Number(t.score).toLocaleString():'-'}</td>
       </tr>`;
@@ -1173,7 +1176,7 @@ function renderSubredditRows() {
             <thead><tr>
               <th>Post title</th>
               <th style="text-align:center">Relevance</th>
-              <th style="text-align:center">Impact</th>
+              <th style="text-align:center">Type</th>
               <th>Sentiment</th>
               <th style="text-align:right">Upvotes</th>
             </tr></thead>
@@ -2797,20 +2800,6 @@ function buildTopics() {
         <div class="kpi-value" style="font-size:18px;word-break:break-all">${topSub ? 'r/' + esc(topSub) : '--'}</div>
         <div class="kpi-sub">most active community</div>
       </div>
-    </div>
-
-    <div class="filter-bar">
-      <select class="filter-select" id="topicsSubFilter" onchange="filterTopics()">
-        <option value="">All subreddits (${_topicsTotal})</option>
-        ${subOptions}
-      </select>
-      <div class="filter-pill-group">
-        <button class="bp-pill active" id="topicsFitAll" onclick="topicsFitFilter(this,'all')">All</button>
-        <button class="bp-pill" id="topicsFitHigh" onclick="topicsFitFilter(this,'high')">High fit (7+)</button>
-        <button class="bp-pill" id="topicsFitMed" onclick="topicsFitFilter(this,'med')">Medium (4-6)</button>
-      </div>
-      <input class="filter-input" id="topicsSearch" placeholder="Search topics…" oninput="filterTopics()">
-      <button class="filter-reset" onclick="resetTopicsFilters()">Reset</button>
     </div>
 
     <div class="topics-charts-row">

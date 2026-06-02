@@ -209,7 +209,7 @@
     .chart-meta { font-size: 11px; color: var(--text-3); margin-bottom: 14px; }
     .chart-wrap { position: relative; }
     .chart-wrap canvas { max-height: 200px; }
-    .chart-wrap.tall canvas { max-height: 320px; }
+    .chart-wrap.tall canvas { max-height: 400px; }
 
     /* Table */
     .data-table-wrap { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); overflow: hidden; }
@@ -820,12 +820,12 @@
       </div>
       <nav class="top-tabs">
         <button class="top-tab active" data-section="overview" onclick="switchSection(this)">Overview</button>
-        <button class="top-tab" data-section="topics" onclick="switchSection(this)">Topics</button>
-        <button class="top-tab" data-section="sentiment" onclick="switchSection(this)">Sentiment</button>
-        <button class="top-tab" data-section="posts" onclick="switchSection(this)">Posts</button>
         <button class="top-tab" data-section="competitors" onclick="switchSection(this)">Competitors</button>
-        <button class="top-tab" data-section="subreddits" onclick="switchSection(this)">Subreddits</button>
+        <button class="top-tab" data-section="sentiment" onclick="switchSection(this)">Sentiment</button>
         <button class="top-tab" data-section="keywords" onclick="switchSection(this)">Keywords</button>
+        <button class="top-tab" data-section="topics" onclick="switchSection(this)">Topics</button>
+        <button class="top-tab" data-section="posts" onclick="switchSection(this)">Posts</button>
+        <button class="top-tab" data-section="subreddits" onclick="switchSection(this)">Subreddits</button>
       </nav>
     </div>
     <div class="main">
@@ -1016,18 +1016,6 @@ function buildOverview() {
         <div class="chart-card"><div class="chart-title">Engagement by post type <span class="info-icon" data-tip="How much attention posts get by Reddit upvotes, grouped by post type. It shows which kinds of conversations draw the most eyes, so you can prioritize the ones worth joining.">&#9432;</span></div><div class="chart-meta">Posts grouped by Reddit upvote range, split by post type</div><div class="chart-wrap"><canvas id="chartScatter"></canvas></div></div>
         <div class="chart-card"><div class="chart-title">Sentiment breakdown <span class="info-icon" data-tip="The overall tone of the conversations, whether they lean positive, negative, neutral, or mixed. A quick read on how people feel in this space.">&#9432;</span></div><div class="chart-meta">Overall tone across posts</div><div class="chart-wrap"><canvas id="chartSent"></canvas></div></div>
       </div>
-      <div class="charts-grid" style="grid-template-columns:1fr 1fr;margin-top:16px">
-        <div class="chart-card">
-          <div class="chart-title">Community mood distribution <span class="info-icon" data-tip="The general mood of the communities across these threads, like supportive, curious, or frustrated. It helps you match your tone to the room.">&#9432;</span></div>
-          <div class="chart-meta">How Reddit communities feel about these topics</div>
-          <div class="chart-wrap" style="height:240px"><canvas id="chartMood" style="max-height:240px"></canvas></div>
-        </div>
-        <div class="chart-card">
-          <div class="chart-title">Sentiment by subreddit <span class="info-icon" data-tip="How sentiment differs from one community to another. Some subreddits are more positive or more critical, which changes how you should engage in each.">&#9432;</span></div>
-          <div class="chart-meta">Stacked sentiment breakdown per community</div>
-          <div class="chart-wrap" style="height:240px"><canvas id="chartSubSent" style="max-height:240px"></canvas></div>
-        </div>
-      </div>
       ${(()=>{
         const allBrands = _deduplicateBrands((S.data.brands||[]).filter(b=>b.brand||b.name));
         const top10 = [...allBrands].sort((a,b)=>(b.mentions||0)-(a.mentions||0)).slice(0,10);
@@ -1073,7 +1061,7 @@ function initCharts(section) {
     const sm={};threads.forEach(t=>{sm[t.subreddit]=(sm[t.subreddit]||0)+1;});
     const se=Object.entries(sm).sort((a,b)=>b[1]-a[1]).slice(0,10);
     const subCtx=document.getElementById('chartSubs');
-    if(subCtx)S.charts.subs=new Chart(subCtx,{type:'bar',data:{labels:se.map(e=>'r/'+e[0]),datasets:[{data:se.map(e=>e[1]),backgroundColor:'rgba(194,98,42,0.18)',borderColor:'rgba(194,98,42,0.8)',borderWidth:1.5,borderRadius:4}]},options:{indexAxis:'y',plugins:{legend:{display:false}},scales:{x:{grid:{color:'#f0efec'},ticks:{font:{family:'Geist,sans-serif',size:11}}},y:{grid:{display:false},ticks:{font:{family:'Geist,sans-serif',size:11}}}},maintainAspectRatio:false}});
+    if(subCtx)S.charts.subs=new Chart(subCtx,{type:'bar',data:{labels:se.map(e=>'r/'+e[0]),datasets:[{data:se.map(e=>e[1]),backgroundColor:'rgba(194,98,42,0.18)',borderColor:'rgba(194,98,42,0.8)',borderWidth:1.5,borderRadius:4}]},options:{indexAxis:'y',plugins:{legend:{display:false}},scales:{x:{grid:{color:'#f0efec'},ticks:{font:{family:'Geist,sans-serif',size:11}}},y:{grid:{display:false},ticks:{autoSkip:false,font:{family:'Geist,sans-serif',size:11}}}},maintainAspectRatio:false}});
     // Engagement by post type, upvote buckets on x, stacked by post type
     const scCtx=document.getElementById('chartScatter');
     if(scCtx){

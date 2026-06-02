@@ -949,6 +949,20 @@ function buildOverview() {
         const subCount={}; threads.forEach(t=>{if(t.subreddit)subCount[t.subreddit]=(subCount[t.subreddit]||0)+1;});
         const topSubs=Object.entries(subCount).sort((a,b)=>b[1]-a[1]).slice(0,2).map(e=>'r/'+e[0]);
         const comps=(S.data.brands||[]).filter(b=>!b.is_client).sort((a,b)=>(b.mentions||0)-(a.mentions||0)).slice(0,3).map(b=>b.name);
+        // Inline favicon decorator: prepend a brand favicon to any brand name and the Reddit favicon to any r/subreddit mention.
+        const _brandNames=[...new Set([(S.data.brands||[]).map(b=>b.name||b.brand), ['Skylead']].flat().filter(Boolean))].sort((a,b)=>b.length-a.length);
+        const _bfav=(dom)=>'<img src="'+_favSrc(dom,16)+'" width="13" height="13" style="border-radius:3px;vertical-align:-2px;object-fit:contain;margin-right:3px" alt="">';
+        const _rfavInline='<img src="'+_favSrc('reddit.com',16)+'" width="13" height="13" style="border-radius:3px;vertical-align:-2px;object-fit:contain;margin-right:2px" alt="">';
+        const _escRe=(s)=>s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
+        const _decorate=(str)=>{
+          let out=esc(str);
+          out=out.replace(/r\/([A-Za-z0-9_]+)/g,(m)=>_rfavInline+m);
+          _brandNames.forEach((name)=>{
+            const re=new RegExp('(^|[^A-Za-z0-9>])('+_escRe(esc(name))+')(?![A-Za-z0-9])','g');
+            out=out.replace(re,(m,pre,nm)=>pre+_bfav(_brandDomain(name))+nm);
+          });
+          return out;
+        };
         // Each bullet has a bold takeaway (b) and supporting detail (r). No em dashes.
         const bullets=[
           {b:'Skylead is absent from nearly every comparison', r:' across the '+total+' high-intent threads where buyers actively choose LinkedIn automation and multichannel outreach tools in 2026.'},
@@ -960,7 +974,7 @@ function buildOverview() {
         return '<div style="background:linear-gradient(135deg,rgba(0,128,255,0.10) 0%,rgba(0,128,255,0.03) 100%);border:1px solid rgba(0,128,255,0.28);border-radius:var(--radius-lg);padding:20px 24px;margin-bottom:24px">'
           + '<div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">'+fav+'<span style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:'+blue+'">Key findings</span></div>'
           + '<ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px">'
-          + bullets.map(function(o){return '<li style="display:flex;gap:10px;align-items:flex-start;font-size:13.5px;line-height:1.55;color:var(--text)"><span style="color:'+blue+';flex-shrink:0;font-weight:700;font-size:15px;line-height:1.4">&bull;</span><span><strong style="font-weight:700;color:var(--ink)">'+esc(o.b)+'</strong>'+esc(o.r)+'</span></li>';}).join('')
+          + bullets.map(function(o){return '<li style="display:flex;gap:10px;align-items:flex-start;font-size:13.5px;line-height:1.55;color:var(--text)"><span style="color:'+blue+';flex-shrink:0;font-weight:700;font-size:15px;line-height:1.4">&bull;</span><span><strong style="font-weight:700;color:var(--ink)">'+_decorate(o.b)+'</strong>'+_decorate(o.r)+'</span></li>';}).join('')
           + '</ul></div>';
       })()}
       ${(()=>{

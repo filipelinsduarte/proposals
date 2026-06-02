@@ -1870,6 +1870,8 @@ function buildPosts() {
   const moodOptions=_optsWithCounts(threads, t=>(t.community_mood||'').toLowerCase(), null, 'All moods', {predefined:[{value:"supportive",label:"Supportive"},{value:"helpful",label:"Helpful"},{value:"informational",label:"Informational"},{value:"curious",label:"Curious"},{value:"analytical",label:"Analytical"},{value:"frustrated",label:"Frustrated"}]}).replace(/^<option value="">[^<]+<\/option>/,'');
   const totalCount=threads.length;
   return`<div class="section">
+    <div class="section-title">Every post we analyzed</div>
+    <div class="section-subtitle">The full list of Reddit threads in this audit, with the type of post, sentiment, and how relevant each one is. Use the filters to narrow it down.</div>
     <div class="data-table-wrap">
       <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;padding:14px 14px;border-bottom:1px solid var(--border-light);flex-wrap:wrap;">
         <div style="position:relative;min-width:200px;max-width:340px;flex:1;">
@@ -2845,6 +2847,9 @@ function buildTopics() {
 
   return `<div class="section">
 
+    <div class="section-title">What people are talking about</div>
+    <div class="section-subtitle">The main themes and recurring discussions grouped from the analyzed Reddit threads, and where each one shows up</div>
+
     <div class="kpi-grid" style="margin-bottom:20px">
       <div class="kpi-tile">
         <div class="kpi-label">Total Posts</div>
@@ -3262,9 +3267,9 @@ function buildKeywords() {
 
   const intro =
     '<div style="margin-bottom:24px">' +
-      '<div style="font-size:20px;font-weight:600;color:var(--text);margin-bottom:6px">Search Queries → SERP Reddit Visibility</div>' +
+      '<div style="font-size:20px;font-weight:600;color:var(--text);margin-bottom:6px">Keywords that surface these Reddit threads</div>' +
       '<div style="font-size:13px;color:var(--text-2);max-width:780px;line-height:1.55">' +
-        '3-layer keyword strategy used to find this audit\'s posts. Each Layer 1 and Layer 3 keyword was searched 3 times in the US via MiniMax SERP, we tracked which ones consistently surfaced reddit.com URLs in the organic results. <span style="color:var(--text-3)">(Google favicons indicate SERP-analyzed terms.)</span>' +
+        'These are the searches your buyers run where Reddit threads show up in the results. The more often a keyword pulls Reddit into the results, the more it matters, because that is where buyers land and form opinions before they ever reach your site.' +
       '</div>' +
     '</div>';
 

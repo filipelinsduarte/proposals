@@ -779,6 +779,32 @@
     .mood-informational { background:rgba(156,152,149,0.15);color:#6b6866; }
     .mood-analytical { background:rgba(194,98,42,0.12);color:#c2622a; }
     .sent-mini-bar { height:6px;border-radius:3px;overflow:hidden;display:flex;min-width:40px; }
+
+    /* ---- Responsive: collapse multi-column grids on smaller screens ---- */
+    @media (max-width: 1024px) {
+      .charts-grid, .charts-grid.two { grid-template-columns: 1fr 1fr !important; }
+      .charts-grid .span2, .chart-card.span2 { grid-column: auto !important; }
+      .kpi-grid, .stats-grid { grid-template-columns: 1fr 1fr !important; }
+      .comp-tool-grid { grid-template-columns: 1fr 1fr !important; }
+      .cc-grid.cols-3, .cc-grid.cols-2 { grid-template-columns: 1fr 1fr !important; }
+      .topics-grid, .topics-cards-grid, .archetypes-grid, .strategy-grid, .triggers-grid, .comp-grid, .engage-grid { grid-template-columns: 1fr 1fr !important; }
+      .qg-grid { grid-template-columns: 1fr 1fr !important; }
+      .topics-charts-row, .topics-chart-row, .sov-two-col, .feed-wrap, .sent-overview-wrap, .sent-mood-row, .bp-grid { grid-template-columns: 1fr !important; }
+      .top-tabs { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+      .top-tab { white-space: nowrap; }
+    }
+    @media (max-width: 680px) {
+      .charts-grid, .charts-grid.two, .kpi-grid, .stats-grid, .stats-row, .comp-tool-grid,
+      .cc-grid, .cc-grid.cols-3, .cc-grid.cols-2, .topics-grid, .topics-cards-grid,
+      .archetypes-grid, .strategy-grid, .triggers-grid, .comp-grid, .engage-grid,
+      .qg-grid, .bp-grid, .topics-charts-row, .topics-chart-row, .sov-two-col, .feed-wrap { grid-template-columns: 1fr !important; }
+      .content { padding: 16px 14px 36px !important; }
+      .top-bar { padding: 0 14px; }
+      .top-bar-brand { margin-right: 14px; }
+      .filter-bar { gap: 8px; }
+      .filter-select, .filter-input { min-width: 0; flex: 1 1 140px; }
+      h1, .h1 { font-size: clamp(1.6rem, 5vw, 2.2rem); }
+    }
   </style>
 </head>
 <body>
@@ -951,7 +977,7 @@ function buildOverview() {
         let body = '';
         if (groups.length) {
           const maxC = Math.max.apply(null, groups.map(g=>g.post_count).concat([1]));
-          body = '<div style="margin-top:16px;display:grid;grid-template-columns:repeat(4,1fr);gap:24px">'
+          body = '<div class="qg-grid" style="margin-top:16px;display:grid;grid-template-columns:repeat(4,1fr);gap:24px">'
             + groups.map(function(g){
                 const barW = Math.round((g.post_count / maxC) * 100);
                 return '<div style="padding:2px 0">'
@@ -982,7 +1008,7 @@ function buildOverview() {
           const _rfav='<img src="'+_favSrc('reddit.com',16)+'" width="14" height="14" style="border-radius:3px;vertical-align:-2px;object-fit:contain" alt="Reddit">';
           return '<div class="chart-card"><div class="chart-title" style="display:flex;align-items:center;gap:6px">'+_gfav+'<span>+</span>'+_rfav+'<span>Top keywords driving Reddit mentions</span></div><div class="chart-meta">Google searches surfacing Reddit threads, by frequency</div>'
             + '<div style="margin-top:14px;display:flex;flex-direction:column;gap:9px">'
-            + top.map(function(k){const bw=Math.round((score(k)/maxv)*100);return '<div style="display:flex;align-items:center;gap:8px"><span style="font-size:11.5px;color:var(--text);flex:0 0 132px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="'+esc(k.keyword)+'">'+esc(k.keyword)+'</span><div style="flex:1;height:7px;background:var(--border-light);border-radius:4px;overflow:hidden"><div style="height:100%;width:'+bw+'%;background:#0080FF;border-radius:4px"></div></div><span style="font-size:11px;font-weight:600;color:var(--text-2);min-width:16px;text-align:right">'+score(k)+'</span></div>';}).join('')
+            + top.map(function(k){const bw=Math.round((score(k)/maxv)*100);return '<div style="display:flex;align-items:center;gap:8px"><span style="font-size:11.5px;color:var(--text);flex:0 0 132px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;cursor:default" data-tip="'+esc(k.keyword)+'" title="'+esc(k.keyword)+'">'+esc(k.keyword)+'</span><div style="flex:1;height:7px;background:var(--border-light);border-radius:4px;overflow:hidden"><div style="height:100%;width:'+bw+'%;background:#0080FF;border-radius:4px"></div></div><span style="font-size:11px;font-weight:600;color:var(--text-2);min-width:16px;text-align:right">'+score(k)+'</span></div>';}).join('')
             + '</div></div>';
         })()}
       </div>
@@ -1337,6 +1363,14 @@ function buildCompetitors() {
   S._compTools = toolList;
   S._compFilteredTools = toolList;
   S._compFitTier = 'all';
+  // Map each Google keyword to the Reddit post URLs it surfaces, for the keyword filter
+  S._compKwMap = {};
+  ((S.data.keywords && S.data.keywords.layers) || []).forEach(function(L){
+    (L.keywords || []).forEach(function(k){
+      if (k.reddit_urls && k.reddit_urls.length) S._compKwMap[k.keyword] = k.reddit_urls;
+    });
+  });
+  const kwOptions = Object.keys(S._compKwMap).map(function(kw){ return '<option value="'+esc(kw)+'">'+esc(kw)+'</option>'; }).join('');
 
   // Build subreddit options + sentiment options with TOOL-level counts
   // (a tool appears in subreddit X if any of its posts is in r/X; dominant sentiment is the most-common sentiment across its posts)
@@ -1420,12 +1454,10 @@ function buildCompetitors() {
         <option value="">All subreddits (${_compSentTotal})</option>
         ${subOptions}
       </select>
-      <div class="filter-pill-group">
-        <button class="bp-pill active" id="compFitAll" onclick="compFitFilter(this,'all')">All</button>
-        <button class="bp-pill" id="compFitHigh" onclick="compFitFilter(this,'high')">High fit (7+)</button>
-        <button class="bp-pill" id="compFitMed" onclick="compFitFilter(this,'med')">Medium (5-6)</button>
-        <button class="bp-pill" id="compFitLow" onclick="compFitFilter(this,'low')">Low (below 5)</button>
-      </div>
+      <select class="filter-select" id="compKwFilter" onchange="filterCompetitors()">
+        <option value="">All Google keywords</option>
+        ${kwOptions}
+      </select>
       <button class="filter-reset" onclick="resetCompFilters()">Reset</button>
     </div>
 
@@ -1582,15 +1614,19 @@ function _renderCompFreqChart(tools) {
     const initial = tool.name.charAt(0).toUpperCase();
     const uid = 'cfb_' + tool.name.replace(/[^a-zA-Z0-9]/g, '_');
     const _bk = _brandKey(tool.name);
+    // sentiment-stacked segments inside the bar (length = post count, colors = sentiment split)
+    const _stot = ((tool.sentiments.positive||0)+(tool.sentiments.negative||0)+(tool.sentiments.neutral||0)+(tool.sentiments.mixed||0)) || tool.postCount || 1;
+    const _fsegs = [['positive','var(--green)','0.85'],['mixed','#d4824a','0.85'],['neutral','var(--text-3)','0.4'],['negative','var(--red)','0.85']]
+      .map(function(s){ const v=tool.sentiments[s[0]]||0; if(!v) return ''; const w=Math.round(v/_stot*100); return '<div title="'+w+'% '+s[0]+'" style="width:'+w+'%;background:'+s[1]+';opacity:'+s[2]+'"></div>'; }).join('');
     return '<div style="border-bottom:1px solid var(--border-light)">'
       + '<div style="display:flex;align-items:center;gap:10px;padding:4px 0">'
       + '<button onclick="_toggleBrandExpansion(\'freq\',\'' + _bk + '\',this)" aria-expanded="false" title="Show posts" style="background:none;border:none;color:var(--text-3);cursor:pointer;font-size:9px;padding:0;width:14px;height:14px;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0">▶</button>'
       + '<span style="font-size:11px;color:var(--text-3);min-width:16px;text-align:right">' + (tool.is_client ? '' : (tool._rank != null ? tool._rank : (i + 1))) + '</span>'
-      + '<img id="' + uid + '_img" src="https://www.google.com/s2/favicons?domain=' + domain + '&sz=16" width="16" height="16" style="border-radius:3px;flex-shrink:0;object-fit:contain" alt="" onerror="this.style.display=\'none\';document.getElementById(\'' + uid + '_fb\').style.display=\'flex\'">'
+      + '<img id="' + uid + '_img" src="' + _favSrc(domain, 16) + '" width="16" height="16" style="border-radius:3px;flex-shrink:0;object-fit:contain" alt="" onerror="this.style.display=\'none\';document.getElementById(\'' + uid + '_fb\').style.display=\'flex\'">'
       + '<span id="' + uid + '_fb" style="display:none;width:16px;height:16px;border-radius:3px;background:var(--orange-mid);color:var(--orange-text);font-size:8px;font-weight:700;align-items:center;justify-content:center;flex-shrink:0">' + esc(initial) + '</span>'
       + '<span style="font-size:12px;color:var(--text);min-width:130px;max-width:130px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;display:inline-flex;align-items:center;gap:5px" title="' + esc(tool.name) + '"><span style="overflow:hidden;text-overflow:ellipsis">' + esc(tool.name) + '</span>'+ (tool.is_client ? '<span style="display:inline-flex;align-items:center;background:var(--orange-light);color:var(--orange-text);font-size:9px;font-weight:600;padding:1px 5px;border-radius:3px;letter-spacing:.2px;text-transform:uppercase;flex-shrink:0">You</span>' : '')+ '</span>'
       + '<div style="flex:1;height:8px;background:var(--border-light);border-radius:4px;overflow:hidden">'
-      + '<div style="height:100%;width:' + barW + '%;background:rgba(194,98,42,0.7);border-radius:4px;transition:width 0.3s"></div>'
+      + '<div style="height:100%;width:' + barW + '%;border-radius:4px;display:flex;overflow:hidden;transition:width 0.3s">' + _fsegs + '</div>'
       + '</div>'
       + '<span style="font-size:11px;font-weight:600;color:var(--text-2);min-width:24px;text-align:right">' + tool.postCount + '</span>'
       + '</div>'
@@ -1747,20 +1783,12 @@ function toggleCompCard(uid) {
   }
 }
 
-function compFitFilter(btn, tier) {
-  document.querySelectorAll('#compFitAll,#compFitHigh,#compFitMed,#compFitLow').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-  S._compFitTier = tier;
-  filterCompetitors();
-}
 
 function resetCompFilters() {
   const s = document.getElementById('compSearch'); if (s) s.value = '';
   const sf = document.getElementById('compSentFilter'); if (sf) sf.value = '';
   const sub = document.getElementById('compSubFilter'); if (sub) sub.value = '';
-  S._compFitTier = 'all';
-  document.querySelectorAll('#compFitAll,#compFitHigh,#compFitMed,#compFitLow').forEach(b => b.classList.remove('active'));
-  const allBtn = document.getElementById('compFitAll'); if (allBtn) allBtn.classList.add('active');
+  const kw = document.getElementById('compKwFilter'); if (kw) kw.value = '';
   filterCompetitors();
 }
 
@@ -1769,7 +1797,8 @@ function filterCompetitors() {
   const query = ((document.getElementById('compSearch') || {}).value || '').toLowerCase().trim();
   const sentFilter = ((document.getElementById('compSentFilter') || {}).value || '').toLowerCase();
   const subFilter = ((document.getElementById('compSubFilter') || {}).value || '').toLowerCase();
-  const fitTier = S._compFitTier || 'all';
+  const kwFilter = ((document.getElementById('compKwFilter') || {}).value || '');
+  const kwUrls = (kwFilter && S._compKwMap && S._compKwMap[kwFilter]) ? S._compKwMap[kwFilter] : null;
 
   const filtered = toolList.filter(tool => {
     if (query && !tool.name.toLowerCase().includes(query)) return false;
@@ -1781,9 +1810,10 @@ function filterCompetitors() {
       const hasSub = tool.posts.some(p => (p.subreddit || '').toLowerCase() === subFilter);
       if (!hasSub) return false;
     }
-    if (fitTier === 'high' && tool.avgFit < 7) return false;
-    if (fitTier === 'med' && (tool.avgFit < 5 || tool.avgFit >= 7)) return false;
-    if (fitTier === 'low' && tool.avgFit >= 5) return false;
+    if (kwUrls) {
+      const inKw = tool.posts.some(p => kwUrls.indexOf(p.url) !== -1);
+      if (!inKw) return false;
+    }
     return true;
   });
 

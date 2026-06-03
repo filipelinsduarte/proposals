@@ -811,8 +811,8 @@
   <div class="app">
     <div class="top-bar">
       <div class="top-bar-brand">
-        <img class="top-bar-favicon" src="https://www.google.com/s2/favicons?sz=64&domain=skylead.io" alt="" onerror="this.style.display='none'">
-        <span class="top-bar-name">Skylead</span>
+        <img class="top-bar-favicon" id="top-bar-favicon-img" src="" alt="" onerror="this.style.display='none'">
+        <span class="top-bar-name" id="top-bar-brand-name"></span>
         <span class="top-bar-label" style="display:inline-flex;align-items:center;gap:5px;">
           <img src="https://www.google.com/s2/favicons?sz=16&domain=reddit.com" alt="" style="width:14px;height:14px;flex-shrink:0;">
           Reddit Audit
@@ -946,12 +946,13 @@ function buildOverview() {
     <div class="section">
       ${(()=>{
         const blue='#74A233';
-        const fav='<img src="'+_favSrc('skylead.io',32)+'" width="22" height="22" style="border-radius:5px;flex-shrink:0;object-fit:contain" alt="">';
+        const clientBrandDomain=_brandDomain(S.data.brand||'');
+        const fav='<img src="'+_favSrc(clientBrandDomain,32)+'" width="22" height="22" style="border-radius:5px;flex-shrink:0;object-fit:contain" alt="">';
         const subCount={}; threads.forEach(t=>{if(t.subreddit)subCount[t.subreddit]=(subCount[t.subreddit]||0)+1;});
         const topSubs=Object.entries(subCount).sort((a,b)=>b[1]-a[1]).slice(0,2).map(e=>'r/'+e[0]);
         const comps=(S.data.brands||[]).filter(b=>!b.is_client).sort((a,b)=>(b.mentions||0)-(a.mentions||0)).slice(0,3).map(b=>b.name);
         // Inline favicon decorator: prepend a brand favicon to any brand name and the Reddit favicon to any r/subreddit mention.
-        const _brandNames=[...new Set([(S.data.brands||[]).map(b=>b.name||b.brand), ['Skylead']].flat().filter(Boolean))].sort((a,b)=>b.length-a.length);
+        const _brandNames=[...new Set([(S.data.brands||[]).map(b=>b.name||b.brand), [S.data.brand]].flat().filter(Boolean))].sort((a,b)=>b.length-a.length);
         const _bfav=(dom)=>'<img src="'+_favSrc(dom,16)+'" width="13" height="13" style="border-radius:3px;vertical-align:-2px;object-fit:contain;margin-right:3px" alt="">';
         const _rfavInline='<img src="'+_favSrc('reddit.com',16)+'" width="13" height="13" style="border-radius:3px;vertical-align:-2px;object-fit:contain;margin-right:2px" alt="">';
         const _escRe=(s)=>s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
@@ -965,14 +966,18 @@ function buildOverview() {
           return out;
         };
         // Each bullet has a bold takeaway (b) and supporting detail (r). No em dashes.
+        const clientBrand=S.data.brand||'the brand';
+        const clientMentions=(S.data.stats||{}).brand_mentioned_count||0;
+        const topPain0=(S.data.painPoints&&S.data.painPoints[0])?S.data.painPoints[0].name:'the top buyer pain';
+        const topPain1=(S.data.painPoints&&S.data.painPoints[1])?S.data.painPoints[1].name:'a second key pain';
         const bullets=[
-          {b:'Skylead is absent from nearly every comparison', r:' across the '+total+' high-intent threads where buyers actively choose LinkedIn automation and multichannel outreach tools in 2026.'},
-          {b:'r/GrowthHacking and r/automation are the primary battlegrounds', r:', carrying most of the high-intent tool-selection threads, so engagement should start there.'},
-          {b:'Most-mentioned alternatives are '+(comps.length?comps.join(', '):'Waalaxy, Lemlist, Clay'), r:', and they dominate the recommendation lists while Skylead goes unmentioned.'},
-          {b:'Account safety and ban risk is the number one anxiety', r:' in LinkedIn automation threads, a gap Skylead can own with its safe-limit smart sequences.'},
-          {b:'Buyers want LinkedIn plus email and built-in warmup in one tool', r:', which is exactly the Skylead positioning against single-channel competitors.'}
+          {b:clientBrand+(clientMentions===0?' has zero Reddit mentions':' has just '+clientMentions+' direct mention'+(clientMentions===1?'':'s')), r:' across the '+total+' high-intent threads in this audit, despite buyers actively describing the exact problem '+clientBrand+' solves.'},
+          {b:(topSubs.length?topSubs.join(' and ')+' are the primary communities':'These communities are the primary battlegrounds'), r:', carrying the highest volume of high-intent threads. Engagement should start there.'},
+          {b:'Most-mentioned alternatives are '+(comps.length?comps.join(', '):'the leading competitors'), r:', dominating recommendation lists while '+clientBrand+' goes unmentioned.'},
+          {b:topPain0+' is the top buyer pain', r:' across all threads in this audit. No brand is consistently answering it, giving '+clientBrand+' first-mover advantage.'},
+          {b:topPain1+' is the second highest-frequency pain', r:', with active buyers searching for solutions. Direct engagement establishes '+clientBrand+' as the authoritative answer.'}
         ];
-        return '<div style="background:linear-gradient(135deg,rgba(0,128,255,0.10) 0%,rgba(0,128,255,0.03) 100%);border:1px solid rgba(0,128,255,0.28);border-radius:var(--radius-lg);padding:20px 24px;margin-bottom:24px">'
+        return '<div style="background:linear-gradient(135deg,rgba(0,128,255,0.10) 0%,rgba(0,128,255,0.03) 100%);border:1px solid rgba(0,128,255,0.28);border-radius:var(--radius-lg);padding:20px 24px;margin-bottom:24px">' .replace(/rgba\(0,128,255,0\.10\)/g,'var(--brand-bg-10,rgba(0,128,255,0.10))').replace(/rgba\(0,128,255,0\.03\)/g,'var(--brand-bg-03,rgba(0,128,255,0.03))').replace(/rgba\(0,128,255,0\.28\)/g,'var(--brand-bd-28,rgba(0,128,255,0.28))')
           + '<div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">'+fav+'<span style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:'+blue+'">Key findings</span></div>'
           + '<ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px">'
           + bullets.map(function(o){return '<li style="display:flex;gap:10px;align-items:flex-start;font-size:13.5px;line-height:1.55;color:var(--text)"><span style="color:'+blue+';flex-shrink:0;font-weight:700;font-size:15px;line-height:1.4">&bull;</span><span><strong style="font-weight:700;color:var(--ink)">'+_decorate(o.b)+'</strong>'+_decorate(o.r)+'</span></li>';}).join('')
@@ -982,7 +987,7 @@ function buildOverview() {
         const qgp = S.data.queryGroupPerf || [];
         const qgLabels = { brand: 'Brand queries', competitor: 'Competitor queries', category: 'Category / Pain queries', audience: 'Audience queries' };
         const qgTips = {
-          brand: 'Searches that include the Skylead brand name directly, for example "skylead" or "skylead review".',
+          brand: 'Searches that include the '+S.data.brand+' brand name directly, for example "'+(S.data.brand||'brand').toLowerCase()+'" or "'+(S.data.brand||'brand').toLowerCase()+' review".',
           competitor: 'Searches comparing or seeking alternatives to rival tools, for example "Lemlist alternative" or "Waalaxy vs".',
           category: 'Searches for the product category or the problem it solves, for example "best LinkedIn automation tool".',
           audience: 'Searches phrased the way the target buyer would, for example agencies or recruiters looking for outreach tools.'
@@ -1352,7 +1357,7 @@ function buildCompetitors() {
 
   // Sort by postCount desc
   // Ensure client brand is always in toolMap, pinned at top
-  const CLIENT_BRAND_NAME = (S.data.brand || 'Skylead');
+  const CLIENT_BRAND_NAME = (S.data.brand || 'the brand');
   const clientKey = CLIENT_BRAND_NAME;
   if (!toolMap[clientKey]) {
     toolMap[clientKey] = {
@@ -1437,11 +1442,11 @@ function buildCompetitors() {
     <div class="section-title">Who is winning the conversation</div>
     <div class="section-subtitle">The tools mentioned most across these Reddit threads, how often they come up, and how people feel about each one.</div>
 
-    <div style="background:linear-gradient(135deg,rgba(0,128,255,0.10) 0%,rgba(0,128,255,0.03) 100%);border:1px solid rgba(0,128,255,0.28);border-radius:var(--radius-lg);padding:16px 18px;margin-bottom:18px;display:flex;align-items:flex-start;gap:12px">
-      <img src="${_favSrc('skylead.io',32)}" width="22" height="22" style="border-radius:5px;flex-shrink:0;object-fit:contain;margin-top:1px" alt="">
+    <div style="background:linear-gradient(135deg,var(--brand-bg-10,rgba(0,128,255,0.10)) 0%,var(--brand-bg-03,rgba(0,128,255,0.03)) 100%);border:1px solid var(--brand-bd-28,rgba(0,128,255,0.28));border-radius:var(--radius-lg);padding:16px 18px;margin-bottom:18px;display:flex;align-items:flex-start;gap:12px">
+      <img src="${_favSrc(_brandDomain(CLIENT_BRAND_NAME),32)}" width="22" height="22" style="border-radius:5px;flex-shrink:0;object-fit:contain;margin-top:1px" alt="">
       <div style="flex:1;min-width:0">
-        <div style="font-size:13.5px;font-weight:600;color:#74A233;margin-bottom:4px">Skylead has just <strong style="color:#74A233">1 direct mention</strong> across the 20 analyzed 2026 threads</div>
-        <div style="font-size:12.5px;color:var(--text-2);line-height:1.7">The LinkedIn automation and multichannel outreach category is <strong style="color:var(--ink)">highly active on Reddit, yet Skylead is almost invisible</strong>. Competitors that <strong style="color:var(--ink)">dominate the conversation</strong> include <span style="display:inline-flex;flex-wrap:wrap;gap:4px 10px;vertical-align:top">${compChips}</span>. This is a direct opportunity to claim share of voice through authentic engagement.</div>
+        <div style="font-size:13.5px;font-weight:600;color:var(--brand-color,#0080FF);margin-bottom:4px">${CLIENT_BRAND_NAME} has <strong style="color:var(--brand-color,#0080FF)">${((S.data.stats||{}).brand_mentioned_count||0)===0?"zero Reddit mentions":((S.data.stats||{}).brand_mentioned_count||0)+" direct mention"+((S.data.stats||{}).brand_mentioned_count===1?"":"s")}</strong> across the ${threads.length} analyzed threads</div>
+        <div style="font-size:12.5px;color:var(--text-2);line-height:1.7">The conversation in these communities is <strong style="color:var(--ink)">highly active, yet ${CLIENT_BRAND_NAME} is almost invisible</strong>. Competitors that <strong style="color:var(--ink)">dominate the conversation</strong> include <span style="display:inline-flex;flex-wrap:wrap;gap:4px 10px;vertical-align:top">${compChips}</span>. This is a direct opportunity to claim share of voice through authentic engagement.</div>
       </div>
     </div>
     <div class="kpi-grid" style="margin-bottom:24px">
@@ -3656,6 +3661,14 @@ async function init() {
   try {
     const j = {ok: true, data: DATA};
     S.data = normalizeData(DATA);
+  // Dynamically set top-bar brand name and favicon from DATA
+  (function() {
+    var _tbFavEl = document.getElementById('top-bar-favicon-img');
+    var _tbNameEl = document.getElementById('top-bar-brand-name');
+    if (_tbFavEl && S.data.brand) { _tbFavEl.src = _favSrc(_brandDomain(S.data.brand), 64); }
+    if (_tbNameEl && S.data.brand) { _tbNameEl.textContent = S.data.brand; }
+  })();
+
   // Overlay praise/criticism from BRAND_PERCEPTION_OVERRIDES into brands array
   (S.data.brands || []).forEach(function(b) {
     var key = (b.name || b.brand || '').toLowerCase().trim();

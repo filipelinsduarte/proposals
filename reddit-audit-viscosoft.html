@@ -3249,7 +3249,7 @@ function computeOpportunity() {
     const rate = Math.min(OPP_CAP, OPP_PER_LISTING_CTR * presence);
     const reddit_bound = vol * rate;
     const value = reddit_bound * cpc;
-    return { keyword: k.keyword, vol: vol, cpc: cpc, runs_hit: k.reddit_runs_hit || 0, rate: rate, reddit_bound: reddit_bound, value: value };
+    return { keyword: k.keyword, vol: vol, cpc: cpc, runs_hit: k.reddit_runs_hit || 0, rate: rate, reddit_bound: reddit_bound, value: value, reddit_urls: k.reddit_urls || [] };
   });
 
   const totVol = rows.reduce(function(s,r){ return s + r.vol; }, 0);
@@ -3329,6 +3329,15 @@ function buildMarketOpportunity() {
     if (r.runs_hit <= 0) return '<span style="color:var(--text-3)">Not ranking</span>';
     return rfav + r.runs_hit + '/3 runs';
   };
+  const _oppSubreddit = function(url){
+    var m = (url || '').match(/reddit\.com\/r\/([^\/]+)/);
+    return m ? 'r/' + m[1] : '';
+  };
+  const _oppUrlTitle = function(url){
+    var parts = (url || '').replace(/\/$/, '').split('/');
+    var slug = parts[parts.length - 1] || '';
+    return slug.replace(/[-_]/g, ' ');
+  };
   const kwTable = '<div class="data-table-wrap" style="margin-bottom:8px">'
     + '<table class="data-table">'
     + '<thead><tr>'
@@ -3340,16 +3349,33 @@ function buildMarketOpportunity() {
     + '<th style="text-align:right">Reddit searches / mo</th>'
     + '<th style="text-align:right">Value / mo</th>'
     + '</tr></thead><tbody>'
-    + ranked.map(function(r){
-        return '<tr>'
-          + '<td style="font-weight:500;color:var(--ink)">' + esc(r.keyword) + '</td>'
+    + ranked.map(function(r, i){
+        var hasUrls = r.reddit_urls && r.reddit_urls.length > 0;
+        var chev = hasUrls
+          ? '<span id="opp-chev-' + i + '" style="display:inline-block;width:10px;margin-right:5px;color:var(--text-3);font-size:9px;transition:transform .15s;vertical-align:middle">&#9654;</span>'
+          : '<span style="display:inline-block;width:10px;margin-right:5px"></span>';
+        var rowAttr = hasUrls ? ' onclick="toggleOppKw(' + i + ')" style="cursor:pointer"' : '';
+        var detailRows = hasUrls ? r.reddit_urls.map(function(url){
+          var sub = _oppSubreddit(url);
+          var title = _oppUrlTitle(url);
+          return '<tr>'
+            + '<td style="width:150px;padding:6px 10px;font-size:12px;font-weight:600;color:' + blue + ';white-space:nowrap">' + esc(sub) + '</td>'
+            + '<td style="padding:6px 10px;font-size:12px"><a href="' + url + '" target="_blank" rel="noopener" style="color:var(--ink);text-decoration:none">' + esc(title) + ' <span style="color:var(--text-3);font-size:11px">&#8599;</span></a></td>'
+            + '</tr>';
+        }).join('') : '';
+        var detailRow = hasUrls
+          ? '<tr id="opp-detail-' + i + '" style="display:none"><td colspan="7" style="padding:0;background:var(--bg,#f9f9fb);border-bottom:1px solid var(--border-light,#eee)"><table style="width:100%;border-collapse:collapse">' + detailRows + '</table></td></tr>'
+          : '';
+        return '<tr' + rowAttr + '>'
+          + '<td style="font-weight:500;color:var(--ink)">' + chev + esc(r.keyword) + '</td>'
           + '<td style="text-align:right">' + _nfmt(r.vol) + '</td>'
           + '<td style="text-align:right;color:var(--text-2)">$' + r.cpc.toFixed(2) + '</td>'
           + '<td style="text-align:center;font-size:12px">' + presenceCell(r) + '</td>'
           + '<td style="text-align:right;color:' + (r.rate > 0 ? blue : 'var(--text-3)') + ';font-weight:600">' + (r.rate * 100).toFixed(0) + '%</td>'
           + '<td style="text-align:right">' + _nfmt(r.reddit_bound) + '</td>'
           + '<td style="text-align:right;font-weight:600;color:var(--ink)">$' + _nfmt(r.value) + '</td>'
-          + '</tr>';
+          + '</tr>'
+          + detailRow;
       }).join('')
     + '</tbody></table></div>';
   const noVolNote = noVolCount > 0
@@ -3399,6 +3425,15 @@ function buildMarketOpportunity() {
     + reachTable
     + methodology
     + '</div>';
+}
+
+function toggleOppKw(i) {
+  var row = document.getElementById('opp-detail-' + i);
+  var chev = document.getElementById('opp-chev-' + i);
+  if (!row) return;
+  var open = row.style.display !== 'none';
+  row.style.display = open ? 'none' : '';
+  if (chev) chev.style.transform = open ? '' : 'rotate(90deg)';
 }
 
 /* ── Build Keywords tab ─────────────────────────────────────────────────── */

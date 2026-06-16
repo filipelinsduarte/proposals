@@ -1,0 +1,1200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ScaleStation SEO / AEO Proposal</title>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YV8FCLN403"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-YV8FCLN403');
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=DM+Mono:wght@400;500&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reveal.min.css">
+<style>
+  :root {
+    --accent:      #FF724F;
+    --accent-bg:   #FFF1ED;
+    --accent-bd:   #FFD0C2;
+    --accent-dark: #D9502E;
+    --ink:         #0a2540;
+    --ink2:        #1e3a5f;
+    --ink3:        #617899;
+    --ink4:        #9EB3CC;
+    --paper:       #fff;
+    --paper2:      #F8F7F4;
+    --paper3:      #EFEDE7;
+    --rule:        #E4E0D6;
+    --ok:          #16a34a;
+    --ok-bg:       #f0fdf4;
+    --ok-bd:       #bbf7d0;
+    --warn:        #ea580c;
+    --warn-bg:     #fff7ed;
+    --warn-bd:     #fed7aa;
+    --red:         #dc2626;
+    --red-bg:      #fef2f2;
+    --red-bd:      #fecaca;
+  }
+  *{box-sizing:border-box;font-family:'Poppins',sans-serif}
+  body { font-family:'Poppins',sans-serif }
+  html,body{margin:0;padding:0;width:100%;height:100%;overflow:hidden;background:#fff}
+  .reveal-viewport,.reveal{width:100%!important;height:100%!important;background:#fff!important}
+  .reveal .slides section{width:100vw!important;height:100vh!important;padding:0!important;background:#fff!important;display:flex!important;flex-direction:column!important;text-align:left!important}
+  .s{width:100vw;height:100vh;padding:3vh 4.5vw 2.5vh;display:flex;flex-direction:column;position:relative;overflow:hidden}
+  .stripe{position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--accent-dark)}
+  .hdr{display:flex;justify-content:space-between;align-items:center;flex-shrink:0;margin-bottom:.6vh}
+  .hdr-right{display:flex;flex-direction:column;align-items:flex-end}
+  .snum{font-family:'DM Mono',monospace;font-size:clamp(10px,1.2vh,12px);font-weight:500;color:var(--accent-dark);background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:3px;padding:2px 8px;letter-spacing:.06em}
+  .tag{font-size:clamp(10px,1.2vh,12px);font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink4)}
+  .powered{display:flex;align-items:center;gap:5px;text-decoration:none;margin-top:3px}
+  .powered span{font-size:clamp(8px,1vh,10px);color:var(--ink4)}
+  .powered img{height:clamp(10px,1.4vh,14px);width:auto;opacity:.7}
+  .divider{height:1px;background:var(--rule);flex-shrink:0;margin-bottom:clamp(10px,1.5vh,18px)}
+  h1,h2{font-family:'Poppins',sans-serif}
+  h2{font-size:clamp(24px,4.2vh,46px);font-weight:700;color:var(--ink);margin:0 0 clamp(14px,2vh,22px);line-height:1.15;flex-shrink:0}
+  .rg2{display:grid;grid-template-columns:1fr 1fr}
+  .rg3{display:grid;grid-template-columns:1fr 1fr 1fr}
+  .rf3{display:flex}
+  .hdr-favicon{border-radius:10px;width:clamp(26px,3.5vh,40px);height:clamp(26px,3.5vh,40px);object-fit:contain}
+  .card{background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(13px,1.7vh,19px) clamp(14px,1.7vw,19px);display:flex;align-items:flex-start;gap:14px;flex-shrink:0}
+  .badge{font-size:clamp(9px,1.05vh,11px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-dark);background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:3px;padding:1px 6px;white-space:nowrap;flex-shrink:0}
+  .ok-badge{font-size:clamp(11px,1.3vh,13px);font-weight:700;color:var(--ok);background:var(--ok-bg);border:1px solid var(--ok-bd);border-radius:3px;padding:1px 5px;text-align:center;margin:auto}
+  .bullet-row{font-size:clamp(14px,1.9vh,18px);color:var(--ink3);display:flex;gap:7px}
+  .favicon-sm{width:12px;height:12px;border-radius:2px;opacity:0.6}
+  .data-src{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--rule);border-radius:5px;padding:3px 9px;background:var(--paper2);flex-shrink:0}
+  .data-src span{font-size:clamp(10px,1.25vh,12px);color:var(--ink3);font-weight:500}
+  .data-src img{height:clamp(13px,1.6vh,16px);width:auto;border-radius:2px;opacity:.85}
+  @media(max-width:1024px){.s{height:100svh!important;overflow-y:auto!important;-webkit-overflow-scrolling:touch!important}}
+  @media(max-width:900px){.rg3{grid-template-columns:1fr 1fr!important}.rf3{flex-wrap:wrap!important}.rf3>*{flex:1 1 calc(50% - 20px)!important;min-width:calc(50% - 20px)!important}}
+  @media(max-width:768px){[style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr!important}}
+  @media(max-width:640px){.rg2,.rg3{grid-template-columns:1fr!important}.rf3{flex-direction:column!important}.card{flex-direction:column}}
+</style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- SLIDE 01: Cover -->
+<section><div class="s" style="justify-content:center;gap:clamp(16px,2.5vh,32px)">
+<div class="stripe"></div>
+<div style="display:flex;align-items:center;gap:12px;flex-shrink:0">
+  <img src="https://www.google.com/s2/favicons?domain=scalestation.io&sz=128" style="border-radius:10px;width:clamp(36px,5vh,54px);height:clamp(36px,5vh,54px);flex-shrink:0;object-fit:contain">
+  <span class="tag" style="font-family:'DM Mono',monospace;font-weight:500;letter-spacing:.16em;color:var(--accent-dark);background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:4px;padding:5px 11px;text-transform:uppercase">SEO / AEO Proposal</span>
+</div>
+<h1 style="font-family:'Poppins',sans-serif;font-size:clamp(34px,6vh,68px);font-weight:700;color:var(--ink);margin:0;line-height:1.1;max-width:24ch;flex-shrink:0">How ScaleStation Can Own HubSpot and RevOps AI Search in Australia Before Neighbourhood Does.</h1>
+<p style="font-size:clamp(16px,2.2vh,22px);color:var(--ink3);margin:0;max-width:68ch;line-height:1.5;flex-shrink:0">A 122-post blog with almost no buyer-decision content. Domain rating 27 against competitors at 36 to 59. Zero presence in the Reddit threads where mid-market companies choose a HubSpot partner.</p>
+<div style="display:flex;align-items:center;gap:clamp(12px,1.6vw,20px);margin-top:clamp(10px,2vh,20px);flex-shrink:0">
+  <div style="display:flex;align-items:center;gap:8px">
+    <span style="font-size:clamp(10px,1.15vh,12px);font-weight:600;color:var(--ink4);letter-spacing:.12em;text-transform:uppercase">Powered by</span>
+    <img src="https://www.google.com/s2/favicons?domain=aipeekaboo.com&sz=64" alt="AI Peekaboo" style="width:18px;height:18px;border-radius:4px">
+    <span style="font-size:clamp(12px,1.4vh,15px);font-weight:600;color:var(--ink2)">aipeekaboo.com</span>
+  </div>
+  <div style="width:1px;height:18px;background:var(--rule)"></div>
+  <span style="font-size:clamp(11px,1.3vh,13px);color:var(--ink3);font-family:'DM Mono',monospace">Prepared for ScaleStation &middot; June 2026</span>
+</div>
+</div></section>
+
+<!-- SLIDE 02: The Hook -->
+<section><div class="s">
+<div class="shdr" data-n="02"></div>
+<div style="flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;min-height:0">
+  <div style="display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:clamp(40px,6vh,72px)">
+    <img src="https://www.google.com/s2/favicons?domain=google.com&sz=64" style="width:clamp(28px,3.8vh,40px);height:clamp(28px,3.8vh,40px);border-radius:4px;flex-shrink:0">
+    <img src="https://www.google.com/s2/favicons?domain=chatgpt.com&sz=64" style="width:clamp(28px,3.8vh,40px);height:clamp(28px,3.8vh,40px);border-radius:4px;flex-shrink:0">
+    <p style="font-size:clamp(24px,3.8vh,40px);font-weight:700;letter-spacing:.02em;color:var(--ink);margin:0">Go on Google or ChatGPT and ask&hellip;</p>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:clamp(10px,1.6vh,18px);margin-bottom:clamp(44px,7vh,80px);width:100%;max-width:82ch">
+    <div style="display:flex;align-items:center;gap:14px;background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:10px;padding:clamp(14px,2vh,24px) clamp(18px,2.4vw,28px);text-align:left">
+      <svg style="width:18px;height:18px;flex-shrink:0;color:var(--ink4)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <span style="font-size:clamp(16px,2.2vh,23px);color:var(--ink);font-weight:500">best HubSpot implementation partner in Australia</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:14px;background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:10px;padding:clamp(14px,2vh,24px) clamp(18px,2.4vw,28px);text-align:left">
+      <svg style="width:18px;height:18px;flex-shrink:0;color:var(--ink4)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <span style="font-size:clamp(16px,2.2vh,23px);color:var(--ink);font-weight:500">fractional RevOps vs hiring in-house</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:14px;background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:10px;padding:clamp(14px,2vh,24px) clamp(18px,2.4vw,28px);text-align:left">
+      <svg style="width:18px;height:18px;flex-shrink:0;color:var(--ink4)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <span style="font-size:clamp(16px,2.2vh,23px);color:var(--ink);font-weight:500">who should set up HubSpot for a mid-market B2B company</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:14px;background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:10px;padding:clamp(14px,2vh,24px) clamp(18px,2.4vw,28px);text-align:left">
+      <svg style="width:18px;height:18px;flex-shrink:0;color:var(--ink4)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <span style="font-size:clamp(16px,2.2vh,23px);color:var(--ink);font-weight:500">best RevOps agency for B2B SaaS</span>
+    </div>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:clamp(8px,1.2vh,14px);align-items:center">
+    <div style="display:flex;align-items:center;gap:12px">
+      <img src="https://www.google.com/s2/favicons?domain=scalestation.io&sz=64" style="width:clamp(22px,3vh,32px);height:clamp(22px,3vh,32px);border-radius:6px;flex-shrink:0;object-fit:contain">
+      <p style="font-size:clamp(22px,3.4vh,36px);font-weight:600;color:var(--ink2);margin:0">Is ScaleStation showing up?</p>
+    </div>
+    <p style="font-size:clamp(26px,4.2vh,46px);font-weight:700;color:var(--red);margin:0;font-family:'DM Mono',monospace">No.</p>
+    <p style="font-size:clamp(15px,2.1vh,22px);color:var(--ink3);margin:0;font-weight:400">Let's understand why&hellip;</p>
+  </div>
+</div>
+</div></section>
+
+<!-- SLIDE 03: Three Root Problems -->
+<section><div class="s">
+<div class="shdr" data-n="03"></div>
+<h2 style="margin:0 0 clamp(10px,1.5vh,16px)">Three Root Problems <span style="color:var(--red)">Holding ScaleStation Back</span></h2>
+<div style="font-size:clamp(14px,1.9vh,19px);color:var(--ink2);font-weight:500;margin-bottom:clamp(14px,2vh,24px);flex-shrink:0">Every buyer who asks AI or Google for a HubSpot partner, every comparison query, and every mid-market RevOps decision traces back to one of these three.</div>
+<div style="display:flex;gap:clamp(14px,2vw,24px);flex-shrink:0">
+
+  <div style="flex:1;min-width:0;min-height:0;display:flex;flex-direction:column;background:var(--paper2);border:1.5px solid var(--rule);border-radius:12px;padding:clamp(12px,1.6vh,22px) clamp(16px,1.8vw,24px);overflow:hidden">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:clamp(7px,0.9vh,12px);flex-shrink:0">
+      <span style="font-family:'DM Mono',monospace;font-size:clamp(11px,1.4vh,14px);font-weight:500;color:var(--red);background:var(--red-bg);border:1px solid var(--red-bd);border-radius:4px;padding:2px 8px">01 / 03</span>
+      <span style="font-size:clamp(10px,1.25vh,13px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4)">Content</span>
+    </div>
+    <div style="font-size:clamp(20px,2.9vh,30px);font-weight:700;color:var(--ink);line-height:1.15;margin-bottom:clamp(12px,1.6vh,20px);flex-shrink:0;font-family:'Poppins',sans-serif">Thin Decision Content</div>
+    <div style="font-size:clamp(14px,1.95vh,20px);color:var(--ink2);line-height:1.5;flex-shrink:0;display:flex;flex-direction:column;gap:7px">
+      <div style="display:flex;gap:8px;align-items:flex-start"><span style="color:var(--red);flex-shrink:0">&#9679;</span><span>122 blog posts, but almost all are generic top-of-funnel SEO and HubSpot how-to filler</span></div>
+      <div style="display:flex;gap:8px;align-items:flex-start"><span style="color:var(--red);flex-shrink:0">&#9679;</span><span>Almost no comparison or "vs" pages against the HubSpot partners buyers actually shortlist</span></div>
+    </div>
+    <div style="flex:1;min-height:clamp(14px,1.8vh,22px)"></div>
+    <div style="padding-top:clamp(6px,0.8vh,10px);border-top:1px solid var(--rule);flex-shrink:0">
+      <span style="font-family:'DM Mono',monospace;font-size:clamp(22px,3.2vh,36px);font-weight:700;color:var(--red)">0</span>
+      <span style="font-size:clamp(11px,1.4vh,14px);color:var(--ink3);font-weight:500;margin-left:6px">comparison pages vs named ANZ HubSpot partners<br><span style="font-size:clamp(10px,1.2vh,12px)">every shortlist query goes to a competitor</span></span>
+    </div>
+  </div>
+
+  <div style="flex:1;min-width:0;min-height:0;display:flex;flex-direction:column;background:var(--paper2);border:1.5px solid var(--rule);border-radius:12px;padding:clamp(12px,1.6vh,22px) clamp(16px,1.8vw,24px);overflow:hidden">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:clamp(7px,0.9vh,12px);flex-shrink:0">
+      <span style="font-family:'DM Mono',monospace;font-size:clamp(11px,1.4vh,14px);font-weight:500;color:var(--red);background:var(--red-bg);border:1px solid var(--red-bd);border-radius:4px;padding:2px 8px">02 / 03</span>
+      <span style="font-size:clamp(10px,1.25vh,13px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4)">Authority</span>
+    </div>
+    <div style="font-size:clamp(20px,2.9vh,30px);font-weight:700;color:var(--ink);line-height:1.15;margin-bottom:clamp(12px,1.6vh,20px);flex-shrink:0;font-family:'Poppins',sans-serif">Authority Gap</div>
+    <div style="font-size:clamp(14px,1.95vh,20px);color:var(--ink2);line-height:1.5;flex-shrink:0;display:flex;flex-direction:column;gap:7px">
+      <div style="display:flex;gap:8px;align-items:flex-start"><span style="color:var(--red);flex-shrink:0">&#9679;</span><span>Domain rating 27, the lowest in the competitive set (Neighbourhood 36, Avidly 39, RedPandas 40, Six &amp; Flow 59)</span></div>
+      <div style="display:flex;gap:8px;align-items:flex-start"><span style="color:var(--red);flex-shrink:0">&#9679;</span><span>Few editorial links from RevOps, SaaS, or ANZ business publications</span></div>
+    </div>
+    <div style="flex:1;min-height:clamp(14px,1.8vh,22px)"></div>
+    <div style="padding-top:clamp(6px,0.8vh,10px);border-top:1px solid var(--rule);flex-shrink:0">
+      <span style="font-family:'DM Mono',monospace;font-size:clamp(22px,3.2vh,36px);font-weight:700;color:var(--red)">DR 27</span>
+      <span style="font-size:clamp(11px,1.4vh,14px);color:var(--ink3);font-weight:500;margin-left:6px">domain rating<br><span style="font-size:clamp(10px,1.2vh,12px)">competitors sit at 36 to 59</span></span>
+    </div>
+  </div>
+
+  <div style="flex:1;min-width:0;min-height:0;display:flex;flex-direction:column;background:var(--paper2);border:1.5px solid var(--rule);border-radius:12px;padding:clamp(12px,1.6vh,22px) clamp(16px,1.8vw,24px);overflow:hidden">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:clamp(7px,0.9vh,12px);flex-shrink:0">
+      <span style="font-family:'DM Mono',monospace;font-size:clamp(11px,1.4vh,14px);font-weight:500;color:var(--red);background:var(--red-bg);border:1px solid var(--red-bd);border-radius:4px;padding:2px 8px">03 / 03</span>
+      <span style="font-size:clamp(10px,1.25vh,13px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4)">AI Visibility</span>
+    </div>
+    <div style="font-size:clamp(20px,2.9vh,30px);font-weight:700;color:var(--ink);line-height:1.15;margin-bottom:clamp(12px,1.6vh,20px);flex-shrink:0;font-family:'Poppins',sans-serif">AI Invisible</div>
+    <div style="font-size:clamp(14px,1.95vh,20px);color:var(--ink2);line-height:1.5;flex-shrink:0;display:flex;flex-direction:column;gap:7px">
+      <div style="display:flex;gap:8px;align-items:flex-start"><span style="color:var(--red);flex-shrink:0">&#9679;</span><span>Not surfaced when buyers ask AI "best HubSpot partner" or "RevOps agency in Australia"</span></div>
+      <div style="display:flex;gap:8px;align-items:flex-start"><span style="color:var(--red);flex-shrink:0">&#9679;</span><span>Competitors and the in-house, freelancer or DIY alternatives own the answer; ScaleStation is absent</span></div>
+    </div>
+    <div style="flex:1;min-height:clamp(14px,1.8vh,22px)"></div>
+    <div style="padding-top:clamp(6px,0.8vh,10px);border-top:1px solid var(--rule);flex-shrink:0">
+      <span style="font-family:'DM Mono',monospace;font-size:clamp(22px,3.2vh,36px);font-weight:700;color:var(--red)">0</span>
+      <span style="font-size:clamp(11px,1.4vh,14px);color:var(--ink3);font-weight:500;margin-left:6px">appearances in AI buyer answers<br><span style="font-size:clamp(10px,1.2vh,12px)">baseline tracking launching via AI Peekaboo</span></span>
+    </div>
+  </div>
+
+</div>
+</div></section>
+
+<!-- SLIDE 04: Problem 01 Deep Dive (Content) -->
+<section><div class="s">
+<div class="shdr" data-n="04"></div>
+<div style="display:flex;align-items:center;gap:10px;margin-bottom:clamp(10px,1.5vh,16px);flex-shrink:0">
+  <span style="font-family:'DM Mono',monospace;font-size:clamp(10px,1.2vh,12px);font-weight:500;color:var(--red);background:var(--red-bg);border:1px solid var(--red-bd);border-radius:4px;padding:2px 8px">01 / 03</span>
+  <h2 style="margin:0">Buyers Researching a HubSpot Partner Never Find ScaleStation</h2>
+</div>
+<div style="font-size:clamp(15px,2.1vh,21px);color:var(--ink2);font-weight:500;margin-bottom:clamp(16px,2.5vh,28px);flex-shrink:0">The blog covers HubSpot features and generic marketing tips well. It does not answer the high-intent questions mid-market buyers type into AI when choosing who implements their revenue engine.</div>
+
+<div style="flex:1;min-height:0;display:flex;gap:clamp(12px,1.6vw,20px);overflow:hidden">
+
+  <div style="flex:1.1;min-width:0;min-height:0;display:flex;flex-direction:column;gap:clamp(6px,0.8vh,10px);overflow:hidden">
+    <div style="font-size:clamp(12px,1.5vh,15px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4);flex-shrink:0">Why Decision Content Wins AI Citations</div>
+    <div style="flex:1;min-height:0;display:flex;flex-direction:column;gap:clamp(9px,1.2vh,14px);overflow:hidden">
+      <div style="display:flex;gap:10px;align-items:flex-start;background:var(--paper2);border:1px solid var(--rule);border-radius:6px;padding:clamp(7px,1vh,12px) clamp(10px,1.2vw,14px);flex-shrink:0">
+        <span style="color:var(--red);font-size:13px;flex-shrink:0;margin-top:1px">&#9679;</span>
+        <span style="font-size:clamp(14px,1.95vh,20px);color:var(--ink2);line-height:1.45">122 posts published, but the buyer-decision cluster (pricing, implementation cost, partner choice, HubSpot vs Salesforce, RevOps) is a small, recent fraction</span>
+      </div>
+      <div style="display:flex;gap:10px;align-items:flex-start;background:var(--paper2);border:1px solid var(--rule);border-radius:6px;padding:clamp(7px,1vh,12px) clamp(10px,1.2vw,14px);flex-shrink:0">
+        <span style="color:var(--red);font-size:13px;flex-shrink:0;margin-top:1px">&#9679;</span>
+        <span style="font-size:clamp(14px,1.95vh,20px);color:var(--ink2);line-height:1.45">No head-to-head comparison pages against Neighbourhood, Avidly, RedPandas or the in-house, fractional or freelancer alternatives buyers weigh</span>
+      </div>
+      <div style="display:flex;gap:10px;align-items:flex-start;background:var(--paper2);border:1px solid var(--rule);border-radius:6px;padding:clamp(7px,1vh,12px) clamp(10px,1.2vw,14px);flex-shrink:0">
+        <span style="color:var(--red);font-size:13px;flex-shrink:0;margin-top:1px">&#9679;</span>
+        <span style="font-size:clamp(14px,1.95vh,20px);color:var(--ink2);line-height:1.45">The generic SEO back-catalogue dilutes topical authority on the RevOps and GTM queries that actually convert</span>
+      </div>
+      <div style="background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:8px;padding:clamp(10px,1.4vh,16px) clamp(12px,1.4vw,16px);flex-shrink:0">
+        <p style="font-size:clamp(14px,1.95vh,20px);color:var(--ink);margin:0;line-height:1.5;font-weight:600">When a mid-market company asks AI who should implement HubSpot in Australia, AI cites whoever wrote the definitive answer. ScaleStation has not written it.</p>
+      </div>
+    </div>
+  </div>
+
+  <div style="flex:1;min-width:0;min-height:0;display:flex;flex-direction:column;gap:clamp(6px,0.8vh,10px);overflow:hidden">
+    <div style="font-size:clamp(12px,1.5vh,15px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4);flex-shrink:0">What Exists vs. What Is Missing</div>
+    <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:8px;overflow:hidden;flex-shrink:0">
+      <div style="display:grid;grid-template-columns:1fr auto;padding:clamp(7px,0.9vh,10px) clamp(10px,1.2vw,14px);border-bottom:1px solid var(--rule);background:var(--paper3)">
+        <span style="font-size:clamp(12px,1.5vh,15px);font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--ink4)">Page</span>
+        <span style="font-size:clamp(12px,1.5vh,15px);font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--ink4)">Status</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr auto;padding:clamp(7px,0.9vh,10px) clamp(10px,1.2vw,14px);border-bottom:1px solid var(--rule);align-items:center;gap:10px">
+        <span style="font-size:clamp(14px,1.95vh,20px);color:var(--ink2);line-height:1.4">HubSpot how-to and feature posts</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(11px,1.3vh,13px);font-weight:500;color:var(--ok);background:var(--ok-bg);border:1px solid var(--ok-bd);border-radius:3px;padding:1px 7px;flex-shrink:0">Live</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr auto;padding:clamp(7px,0.9vh,10px) clamp(10px,1.2vw,14px);border-bottom:1px solid var(--rule);align-items:center;gap:10px;background:var(--red-bg)">
+        <span style="font-size:clamp(14px,1.95vh,20px);color:var(--ink);line-height:1.4;font-weight:500">ScaleStation vs Neighbourhood / Avidly comparison</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(11px,1.3vh,13px);font-weight:500;color:var(--red);background:var(--red-bg);border:1px solid var(--red-bd);border-radius:3px;padding:1px 7px;flex-shrink:0">Missing</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr auto;padding:clamp(7px,0.9vh,10px) clamp(10px,1.2vw,14px);border-bottom:1px solid var(--rule);align-items:center;gap:10px;background:var(--red-bg)">
+        <span style="font-size:clamp(14px,1.95vh,20px);color:var(--ink);line-height:1.4;font-weight:500">Fractional RevOps vs in-house hire vs agency guide</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(11px,1.3vh,13px);font-weight:500;color:var(--red);background:var(--red-bg);border:1px solid var(--red-bd);border-radius:3px;padding:1px 7px;flex-shrink:0">Missing</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr auto;padding:clamp(7px,0.9vh,10px) clamp(10px,1.2vw,14px);border-bottom:1px solid var(--rule);align-items:center;gap:10px;background:var(--red-bg)">
+        <span style="font-size:clamp(14px,1.95vh,20px);color:var(--ink);line-height:1.4;font-weight:500">HubSpot implementation cost &amp; timeline (ANZ) decision guide</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(11px,1.3vh,13px);font-weight:500;color:var(--red);background:var(--red-bg);border:1px solid var(--red-bd);border-radius:3px;padding:1px 7px;flex-shrink:0">Missing</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr auto;padding:clamp(7px,0.9vh,10px) clamp(10px,1.2vw,14px);align-items:center;gap:10px;background:var(--red-bg)">
+        <span style="font-size:clamp(14px,1.95vh,20px);color:var(--ink);line-height:1.4;font-weight:500">How to choose a HubSpot partner in NZ + tier explainer</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(11px,1.3vh,13px);font-weight:500;color:var(--red);background:var(--red-bg);border:1px solid var(--red-bd);border-radius:3px;padding:1px 7px;flex-shrink:0">Missing</span>
+      </div>
+    </div>
+    <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:6px;padding:clamp(8px,1.1vh,13px) clamp(10px,1.2vw,14px);flex-shrink:0">
+      <p style="font-size:clamp(13px,1.75vh,17px);color:var(--ink2);margin:0;line-height:1.5">Each missing page is a buying-intent query that currently lands on a competitor or a generic listicle. All can be filled in the first months of the engagement.</p>
+    </div>
+  </div>
+
+</div>
+</div></section>
+
+<!-- SLIDE 05: Problem 02 Deep Dive (Authority) -->
+<section><div class="s">
+<div class="shdr" data-n="05"></div>
+<div style="display:flex;align-items:center;gap:10px;margin-bottom:clamp(10px,1.5vh,16px);flex-shrink:0">
+  <span style="font-family:'DM Mono',monospace;font-size:clamp(10px,1.2vh,12px);font-weight:500;color:var(--red);background:var(--red-bg);border:1px solid var(--red-bd);border-radius:4px;padding:2px 8px">02 / 03</span>
+  <h2 style="margin:0">Domain Authority Below Every Named Competitor</h2>
+</div>
+<div style="font-size:clamp(15px,2.1vh,21px);color:var(--ink2);font-weight:500;margin-bottom:clamp(16px,2.5vh,28px);flex-shrink:0">AI models and Google both lean on domain authority and editorial links. ScaleStation's DR 27 sits below every competitor in the set, so even strong content starts at a disadvantage.</div>
+
+<div style="flex:1;min-height:0;display:flex;gap:clamp(12px,1.6vw,20px);overflow:hidden">
+
+  <div style="flex:1;min-width:0;min-height:0;display:flex;flex-direction:column;gap:clamp(6px,0.8vh,10px);overflow:hidden">
+    <div style="font-size:clamp(12px,1.5vh,15px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4);flex-shrink:0">The Authority Gap, in Plain Numbers</div>
+    <div style="flex:1;min-height:0;display:flex;flex-direction:column;gap:clamp(9px,1.2vh,14px);overflow:hidden">
+      <div style="display:flex;gap:10px;align-items:flex-start;background:var(--paper2);border:1px solid var(--rule);border-radius:6px;padding:clamp(7px,1vh,12px) clamp(10px,1.2vw,14px);flex-shrink:0">
+        <span style="color:var(--red);font-size:13px;flex-shrink:0;margin-top:1px">&#9679;</span>
+        <span style="font-size:clamp(14px,1.95vh,20px);color:var(--ink2);line-height:1.45">ScaleStation domain rating is 27, the lowest of the five firms benchmarked</span>
+      </div>
+      <div style="display:flex;gap:10px;align-items:flex-start;background:var(--paper2);border:1px solid var(--rule);border-radius:6px;padding:clamp(7px,1vh,12px) clamp(10px,1.2vw,14px);flex-shrink:0">
+        <span style="color:var(--red);font-size:13px;flex-shrink:0;margin-top:1px">&#9679;</span>
+        <span style="font-size:clamp(14px,1.95vh,20px);color:var(--ink2);line-height:1.45">Six &amp; Flow (59) and the ANZ Diamond peers (36 to 40) have years of editorial coverage and stronger link profiles</span>
+      </div>
+      <div style="display:flex;gap:10px;align-items:flex-start;background:var(--paper2);border:1px solid var(--rule);border-radius:6px;padding:clamp(7px,1vh,12px) clamp(10px,1.2vw,14px);flex-shrink:0">
+        <span style="color:var(--red);font-size:13px;flex-shrink:0;margin-top:1px">&#9679;</span>
+        <span style="font-size:clamp(14px,1.95vh,20px);color:var(--ink2);line-height:1.45">Few links from RevOps, B2B SaaS, HubSpot-ecosystem or ANZ business publications, so there is little third-party authority signal for AI to weigh</span>
+      </div>
+      <div style="background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:8px;padding:clamp(10px,1.4vh,16px) clamp(12px,1.4vw,16px);flex-shrink:0">
+        <p style="font-size:clamp(14px,1.95vh,20px);color:var(--ink);margin:0;line-height:1.5;font-weight:600">Without editorial links from ecosystem and ANZ business publications, ScaleStation cannot compete for citation share on the queries that bring new clients.</p>
+      </div>
+    </div>
+  </div>
+
+  <div style="flex:1;min-width:0;min-height:0;display:flex;flex-direction:column;gap:clamp(6px,0.8vh,10px);overflow:hidden">
+    <div style="font-size:clamp(12px,1.5vh,15px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4);flex-shrink:0">Domain Rating: ScaleStation vs Competitors</div>
+    <div style="flex:1;min-height:0;display:flex;flex-direction:column;gap:clamp(5px,0.7vh,8px);overflow:hidden">
+      <div style="display:grid;grid-template-columns:1fr auto auto;align-items:center;gap:8px;background:var(--paper2);border:1px solid var(--rule);border-radius:6px;padding:clamp(6px,0.9vh,10px) clamp(10px,1.2vw,14px);flex-shrink:0">
+        <div style="display:flex;align-items:center;gap:8px"><img src="https://www.google.com/s2/favicons?domain=sixandflow.com&sz=32" style="width:14px;height:14px;border-radius:2px;flex-shrink:0"><span style="font-size:clamp(13px,1.75vh,17px);color:var(--ink2)">sixandflow.com</span></div>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.75vh,17px);font-weight:700;color:var(--ink)">59</span>
+        <span style="font-size:clamp(10px,1.2vh,12px);color:var(--ink4)">DR</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr auto auto;align-items:center;gap:8px;background:var(--paper2);border:1px solid var(--rule);border-radius:6px;padding:clamp(6px,0.9vh,10px) clamp(10px,1.2vw,14px);flex-shrink:0">
+        <div style="display:flex;align-items:center;gap:8px"><img src="https://www.google.com/s2/favicons?domain=redpandas.com.au&sz=32" style="width:14px;height:14px;border-radius:2px;flex-shrink:0"><span style="font-size:clamp(13px,1.75vh,17px);color:var(--ink2)">redpandas.com.au</span></div>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.75vh,17px);font-weight:700;color:var(--ink)">40</span>
+        <span style="font-size:clamp(10px,1.2vh,12px);color:var(--ink4)">DR</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr auto auto;align-items:center;gap:8px;background:var(--paper2);border:1px solid var(--rule);border-radius:6px;padding:clamp(6px,0.9vh,10px) clamp(10px,1.2vw,14px);flex-shrink:0">
+        <div style="display:flex;align-items:center;gap:8px"><img src="https://www.google.com/s2/favicons?domain=avidlyapac.com&sz=32" style="width:14px;height:14px;border-radius:2px;flex-shrink:0"><span style="font-size:clamp(13px,1.75vh,17px);color:var(--ink2)">avidlyapac.com</span></div>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.75vh,17px);font-weight:700;color:var(--ink)">39</span>
+        <span style="font-size:clamp(10px,1.2vh,12px);color:var(--ink4)">DR</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr auto auto;align-items:center;gap:8px;background:var(--paper2);border:1px solid var(--rule);border-radius:6px;padding:clamp(6px,0.9vh,10px) clamp(10px,1.2vw,14px);flex-shrink:0">
+        <div style="display:flex;align-items:center;gap:8px"><img src="https://www.google.com/s2/favicons?domain=nbh.co&sz=32" style="width:14px;height:14px;border-radius:2px;flex-shrink:0"><span style="font-size:clamp(13px,1.75vh,17px);color:var(--ink2)">nbh.co</span></div>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.75vh,17px);font-weight:700;color:var(--ink)">36</span>
+        <span style="font-size:clamp(10px,1.2vh,12px);color:var(--ink4)">DR</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr auto auto;align-items:center;gap:8px;background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:6px;padding:clamp(6px,0.9vh,10px) clamp(10px,1.2vw,14px);flex-shrink:0">
+        <div style="display:flex;align-items:center;gap:8px"><img src="https://www.google.com/s2/favicons?domain=scalestation.io&sz=32" style="width:14px;height:14px;border-radius:2px;flex-shrink:0"><span style="font-size:clamp(13px,1.75vh,17px);color:var(--accent-dark);font-weight:600">scalestation.io (lowest)</span></div>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.75vh,17px);font-weight:700;color:var(--red)">27</span>
+        <span style="font-size:clamp(10px,1.2vh,12px);color:var(--accent-dark)">DR</span>
+      </div>
+    </div>
+    <div style="background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:8px;padding:clamp(8px,1.1vh,13px) clamp(12px,1.5vw,18px);flex-shrink:0">
+      <span style="font-size:clamp(12px,1.6vh,16px);color:var(--ink2);line-height:1.4">DR is not destiny, but it is the starting line. The plan: earn editorial links and authority content that closes the gap.</span>
+    </div>
+  </div>
+
+</div>
+</div></section>
+
+<!-- SLIDE 06: Problem 03 Deep Dive (Reddit / Community Presence) -->
+<section><div class="s">
+<div class="shdr" data-n="06" data-source="reddit"></div>
+<div style="display:flex;align-items:center;gap:10px;margin-bottom:clamp(10px,1.5vh,16px);flex-shrink:0">
+  <span style="font-family:'DM Mono',monospace;font-size:clamp(10px,1.2vh,12px);font-weight:500;color:var(--red);background:var(--red-bg);border:1px solid var(--red-bd);border-radius:4px;padding:2px 8px">03 / 03</span>
+  <h2 style="margin:0">Zero Presence Where Buyers Choose a HubSpot Partner</h2>
+</div>
+<div style="font-size:clamp(15px,2.1vh,21px);color:var(--ink2);font-weight:500;margin-bottom:clamp(16px,2.5vh,28px);flex-shrink:0">Mid-market buyers debate how to get HubSpot and RevOps help, fractional vs in-house vs agency vs freelancer vs DIY, across r/hubspot, r/revops, r/SaaS and more, and recommend each other by name. ScaleStation never comes up.</div>
+
+<div style="display:flex;gap:clamp(12px,1.8vw,20px);margin-bottom:clamp(12px,1.8vh,22px);flex-shrink:0">
+  <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:8px;padding:clamp(12px,1.6vh,20px);text-align:center;flex:1;min-width:0">
+    <div style="font-family:'DM Mono',monospace;font-size:clamp(24px,3.6vh,42px);font-weight:700;color:var(--ink);line-height:1">233</div>
+    <div style="font-size:clamp(12px,1.5vh,15px);color:var(--ink3);margin-top:4px;font-weight:500">threads collected across HubSpot and RevOps communities</div>
+  </div>
+  <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:8px;padding:clamp(12px,1.6vh,20px);text-align:center;flex:1;min-width:0">
+    <div style="font-family:'DM Mono',monospace;font-size:clamp(24px,3.6vh,42px);font-weight:700;color:var(--ink);line-height:1">44</div>
+    <div style="font-size:clamp(12px,1.5vh,15px);color:var(--ink3);margin-top:4px;font-weight:500">high-fit threads from 125 relevant posts</div>
+  </div>
+  <div style="background:var(--red-bg);border:1px solid var(--red-bd);border-radius:8px;padding:clamp(12px,1.6vh,20px);text-align:center;flex:1;min-width:0">
+    <div style="font-family:'DM Mono',monospace;font-size:clamp(24px,3.6vh,42px);font-weight:700;color:var(--red);line-height:1">0</div>
+    <div style="font-size:clamp(12px,1.5vh,15px);color:var(--ink3);margin-top:4px;font-weight:500">ScaleStation mentions across all 233 threads</div>
+  </div>
+</div>
+
+<div style="flex:1;min-height:0;display:flex;flex-direction:column;gap:clamp(6px,0.9vh,10px);overflow:hidden">
+  <div style="font-size:clamp(12px,1.5vh,15px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4);flex-shrink:0">Threads Where ScaleStation Should Appear But Does Not</div>
+  <div style="display:flex;flex-direction:column;gap:clamp(8px,1.1vh,13px);flex-shrink:0">
+    <div style="display:flex;gap:12px;align-items:flex-start;background:var(--paper2);border:1px solid var(--rule);border-radius:6px;padding:clamp(9px,1.3vh,14px) clamp(12px,1.4vw,16px)">
+      <img src="https://www.google.com/s2/favicons?domain=reddit.com&sz=32" style="width:16px;height:16px;border-radius:3px;flex-shrink:0;margin-top:2px">
+      <div><span style="font-size:clamp(14px,1.9vh,19px);color:var(--ink);font-weight:600">r/hubspot:</span> <span style="font-size:clamp(14px,1.9vh,19px);color:var(--ink2)">"Australia: need HubSpot agency recommendations" (36 comments). Named agencies and freelancers are recommended, ScaleStation is not.</span></div>
+    </div>
+    <div style="display:flex;gap:12px;align-items:flex-start;background:var(--paper2);border:1px solid var(--rule);border-radius:6px;padding:clamp(9px,1.3vh,14px) clamp(12px,1.4vw,16px)">
+      <img src="https://www.google.com/s2/favicons?domain=reddit.com&sz=32" style="width:16px;height:16px;border-radius:3px;flex-shrink:0;margin-top:2px">
+      <div><span style="font-size:clamp(14px,1.9vh,19px);color:var(--ink);font-weight:600">r/revops:</span> <span style="font-size:clamp(14px,1.9vh,19px);color:var(--ink2)">"Fractional RevOps vs hiring in-house?" Buyers weigh fractional providers and in-house hires, no agency like ScaleStation is named.</span></div>
+    </div>
+    <div style="display:flex;gap:12px;align-items:flex-start;background:var(--paper2);border:1px solid var(--rule);border-radius:6px;padding:clamp(9px,1.3vh,14px) clamp(12px,1.4vw,16px)">
+      <img src="https://www.google.com/s2/favicons?domain=reddit.com&sz=32" style="width:16px;height:16px;border-radius:3px;flex-shrink:0;margin-top:2px">
+      <div><span style="font-size:clamp(14px,1.9vh,19px);color:var(--ink);font-weight:600">r/SaaS:</span> <span style="font-size:clamp(14px,1.9vh,19px);color:var(--ink2)">"Who should set up HubSpot for a mid-market B2B company?" Freelancers and named agencies surface, ScaleStation absent.</span></div>
+    </div>
+  </div>
+  <div style="flex:1;min-height:0"></div>
+  <div style="background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:8px;padding:clamp(10px,1.4vh,16px) clamp(14px,1.6vw,20px);flex-shrink:0">
+    <p style="font-size:clamp(14px,1.9vh,20px);color:var(--ink);margin:0;line-height:1.5;font-weight:600">44 high-fit threads where the ScaleStation value proposition fits perfectly. ScaleStation appears in none of them.</p>
+  </div>
+</div>
+</div></section>
+
+<!-- SLIDE 07: AI Visibility (Peekaboo) -->
+<section><div class="s">
+<div class="shdr" data-n="07" data-source="peekaboo"></div>
+<div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:clamp(8px,1.2vh,14px);flex-shrink:0">
+  <h2 style="margin:0">Competitors Own the <span style="color:var(--red)">AI Answers</span> ScaleStation Needs</h2>
+  <div class="data-src"><img src="https://www.aipeekaboo.com/icon.jpg"><span>Data: AI Peekaboo</span></div>
+</div>
+<p style="font-size:clamp(14px,2vh,20px);color:var(--ink2);line-height:1.5;margin:0 0 clamp(12px,1.7vh,20px);font-weight:500;flex-shrink:0">AI Peekaboo will track ScaleStation across ChatGPT, Claude and Perplexity for the commercial prompts mid-market buyers use to choose a HubSpot partner. The first monthly report establishes the baseline; the engagement moves the number.</p>
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(10px,1.4vw,18px);flex-shrink:0;margin-bottom:clamp(12px,1.7vh,20px)">
+  <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(11px,1.5vh,18px) clamp(12px,1.4vw,16px)">
+    <div style="font-family:'DM Mono',monospace;font-size:clamp(26px,4vh,46px);font-weight:700;color:var(--ink);line-height:1">Pending</div>
+    <div style="font-size:clamp(13px,1.7vh,17px);font-weight:700;color:var(--ink);margin-top:6px">Baseline</div>
+    <div style="font-size:clamp(11px,1.4vh,14px);color:var(--ink3);margin-top:2px">AI visibility score, live within 48h via AI Peekaboo</div>
+  </div>
+  <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(11px,1.5vh,18px) clamp(12px,1.4vw,16px)">
+    <div style="font-family:'DM Mono',monospace;font-size:clamp(26px,4vh,46px);font-weight:700;color:var(--ink);line-height:1">40</div>
+    <div style="font-size:clamp(13px,1.7vh,17px);font-weight:700;color:var(--ink);margin-top:6px">Prompts Queued</div>
+    <div style="font-size:clamp(11px,1.4vh,14px);color:var(--ink3);margin-top:2px">Commercial prompts queued for tracking</div>
+  </div>
+  <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(11px,1.5vh,18px) clamp(12px,1.4vw,16px)">
+    <div style="font-family:'DM Mono',monospace;font-size:clamp(26px,4vh,46px);font-weight:700;color:var(--red);line-height:1">0</div>
+    <div style="font-size:clamp(13px,1.7vh,17px);font-weight:700;color:var(--ink);margin-top:6px">Buyer Prompts Visible In</div>
+    <div style="font-size:clamp(11px,1.4vh,14px);color:var(--ink3);margin-top:2px">Buyer prompts ScaleStation currently appears in</div>
+  </div>
+  <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(11px,1.5vh,18px) clamp(12px,1.4vw,16px)">
+    <div style="font-family:'DM Mono',monospace;font-size:clamp(26px,4vh,46px);font-weight:700;color:var(--ink);line-height:1">5</div>
+    <div style="font-size:clamp(13px,1.7vh,17px);font-weight:700;color:var(--ink);margin-top:6px">Competitors Cited</div>
+    <div style="font-size:clamp(11px,1.4vh,14px);color:var(--ink3);margin-top:2px">Competitors already cited in AI answers</div>
+  </div>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,2vw,24px);flex:1;min-height:0">
+
+  <div style="display:flex;flex-direction:column;gap:clamp(6px,0.9vh,10px);min-height:0">
+    <div style="font-size:clamp(12px,1.5vh,15px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4);flex-shrink:0">Who AI and Buyers Surface Instead of ScaleStation</div>
+    <div style="display:flex;flex-direction:column;gap:clamp(5px,0.7vh,8px);flex:1;overflow:hidden">
+      <div style="display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:10px;background:var(--paper2);border:1px solid var(--rule);border-radius:6px;padding:clamp(6px,0.9vh,10px) clamp(10px,1.2vw,14px);flex-shrink:0">
+        <img src="https://www.google.com/s2/favicons?domain=nbh.co&sz=32" style="width:15px;height:15px;border-radius:2px;flex-shrink:0">
+        <span style="font-size:clamp(13px,1.75vh,17px);color:var(--ink2)">Neighbourhood</span>
+        <span style="font-size:clamp(11px,1.4vh,14px);font-weight:600;color:var(--ok);background:var(--ok-bg);border:1px solid var(--ok-bd);border-radius:3px;padding:1px 7px;text-align:center">Positive</span>
+      </div>
+      <div style="display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:10px;background:var(--paper2);border:1px solid var(--rule);border-radius:6px;padding:clamp(6px,0.9vh,10px) clamp(10px,1.2vw,14px);flex-shrink:0">
+        <img src="https://www.google.com/s2/favicons?domain=avidlyapac.com&sz=32" style="width:15px;height:15px;border-radius:2px;flex-shrink:0">
+        <span style="font-size:clamp(13px,1.75vh,17px);color:var(--ink2)">Avidly APAC</span>
+        <span style="font-size:clamp(11px,1.4vh,14px);font-weight:600;color:var(--ok);background:var(--ok-bg);border:1px solid var(--ok-bd);border-radius:3px;padding:1px 7px;text-align:center">Positive</span>
+      </div>
+      <div style="display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:10px;background:var(--paper2);border:1px solid var(--rule);border-radius:6px;padding:clamp(6px,0.9vh,10px) clamp(10px,1.2vw,14px);flex-shrink:0">
+        <img src="https://www.google.com/s2/favicons?domain=sixandflow.com&sz=32" style="width:15px;height:15px;border-radius:2px;flex-shrink:0">
+        <span style="font-size:clamp(13px,1.75vh,17px);color:var(--ink2)">Six &amp; Flow</span>
+        <span style="font-size:clamp(11px,1.4vh,14px);font-weight:600;color:var(--ok);background:var(--ok-bg);border:1px solid var(--ok-bd);border-radius:3px;padding:1px 7px;text-align:center">Positive</span>
+      </div>
+      <div style="display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:10px;background:var(--paper2);border:1px solid var(--rule);border-radius:6px;padding:clamp(6px,0.9vh,10px) clamp(10px,1.2vw,14px);flex-shrink:0">
+        <img src="https://www.google.com/s2/favicons?domain=reddit.com&sz=32" style="width:15px;height:15px;border-radius:2px;flex-shrink:0">
+        <span style="font-size:clamp(13px,1.75vh,17px);color:var(--ink2)">Fractional RevOps providers</span>
+        <span style="font-size:clamp(11px,1.4vh,14px);font-weight:600;color:var(--warn);background:var(--warn-bg);border:1px solid var(--warn-bd);border-radius:3px;padding:1px 7px;text-align:center">Mixed</span>
+      </div>
+      <div style="display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:10px;background:var(--paper2);border:1px solid var(--rule);border-radius:6px;padding:clamp(6px,0.9vh,10px) clamp(10px,1.2vw,14px);flex-shrink:0">
+        <img src="https://www.google.com/s2/favicons?domain=reddit.com&sz=32" style="width:15px;height:15px;border-radius:2px;flex-shrink:0">
+        <span style="font-size:clamp(13px,1.75vh,17px);color:var(--ink2)">In-house RevOps hire</span>
+        <span style="font-size:clamp(11px,1.4vh,14px);font-weight:600;color:var(--warn);background:var(--warn-bg);border:1px solid var(--warn-bd);border-radius:3px;padding:1px 7px;text-align:center">Mixed</span>
+      </div>
+      <div style="display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:10px;background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:6px;padding:clamp(6px,0.9vh,10px) clamp(10px,1.2vw,14px);flex-shrink:0">
+        <img src="https://www.google.com/s2/favicons?domain=scalestation.io&sz=32" style="width:15px;height:15px;border-radius:2px;flex-shrink:0">
+        <span style="font-size:clamp(13px,1.75vh,17px);color:var(--accent-dark);font-weight:600">ScaleStation</span>
+        <span style="font-size:clamp(11px,1.4vh,14px);font-weight:700;color:var(--red);font-style:italic;text-align:center">Not yet visible</span>
+      </div>
+    </div>
+  </div>
+
+  <div style="display:flex;flex-direction:column;gap:clamp(6px,0.9vh,10px);min-height:0">
+    <div style="font-size:clamp(12px,1.5vh,15px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4);flex-shrink:0">What This Means</div>
+    <div style="flex:1;min-height:0;display:flex;flex-direction:column;gap:clamp(8px,1.1vh,13px);overflow:hidden">
+      <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:8px;padding:clamp(9px,1.3vh,15px) clamp(12px,1.4vw,16px);flex-shrink:0">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:5px"><span style="font-size:clamp(13px,1.7vh,17px);font-weight:700;color:var(--ink)">Baseline Live Within 48h</span><span class="ok-badge" style="margin:0">Setup</span></div>
+        <div style="font-size:clamp(13px,1.75vh,17px);color:var(--ink3);line-height:1.45">AI Peekaboo will track ScaleStation across ChatGPT, Claude and Perplexity for the 40 commercial prompts mid-market buyers actually use.</div>
+      </div>
+      <div style="background:var(--red-bg);border:1px solid var(--red-bd);border-radius:8px;padding:clamp(9px,1.3vh,15px) clamp(12px,1.4vw,16px);flex-shrink:0">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:5px"><span style="font-size:clamp(13px,1.7vh,17px);font-weight:700;color:var(--ink)">Competitors Already Cited</span><span style="font-size:clamp(11px,1.3vh,13px);font-weight:700;color:var(--red);background:#fff;border:1px solid var(--red-bd);border-radius:3px;padding:1px 6px">Gap</span></div>
+        <div style="font-size:clamp(13px,1.75vh,17px);color:var(--ink3);line-height:1.45">When a buyer asks AI for the best HubSpot partner or a RevOps agency in Australia, competitors and the in-house, freelancer and DIY alternatives own the answer. The window is open.</div>
+      </div>
+      <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:8px;padding:clamp(9px,1.3vh,15px) clamp(12px,1.4vw,16px);flex-shrink:0">
+        <div style="font-size:clamp(13px,1.7vh,17px);font-weight:700;color:var(--ink);margin-bottom:5px">The First Report Sets the Baseline</div>
+        <div style="font-size:clamp(13px,1.75vh,17px);color:var(--ink3);line-height:1.45">The first monthly report establishes the baseline; the engagement moves the number across every commercial buyer prompt.</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div></section>
+
+<!-- SLIDE 08: Competitive Gap (Ahrefs) -->
+<section><div class="s">
+<div class="shdr" data-n="08" data-source="ahrefs"></div>
+<div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:clamp(10px,1.5vh,18px);flex-shrink:0">
+  <h2 style="margin:0">The Authority Gap, in Numbers</h2>
+</div>
+<p style="font-size:clamp(15px,2.1vh,21px);color:var(--ink2);font-weight:500;margin:0 0 clamp(14px,2vh,22px);flex-shrink:0">AI models weight domain authority and citation history when deciding what to recommend. Every competitor below sits above ScaleStation on domain rating today.</p>
+<div style="border:1px solid var(--rule);border-radius:12px;overflow:hidden;flex-shrink:0">
+  <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr 1.6fr;background:var(--paper3)">
+    <div style="padding:clamp(8px,1.1vh,12px) clamp(10px,1.3vw,16px);font-size:clamp(10px,1.2vh,12px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4)">Company</div>
+    <div style="padding:clamp(8px,1.1vh,12px) clamp(10px,1.3vw,16px);font-size:clamp(10px,1.2vh,12px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4);text-align:center">Domain Rating</div>
+    <div style="padding:clamp(8px,1.1vh,12px) clamp(10px,1.3vw,16px);font-size:clamp(10px,1.2vh,12px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4);text-align:center">HubSpot Tier</div>
+    <div style="padding:clamp(8px,1.1vh,12px) clamp(10px,1.3vw,16px);font-size:clamp(10px,1.2vh,12px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4)">Region</div>
+  </div>
+  <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr 1.6fr;border-top:1px solid var(--rule)">
+    <div style="padding:clamp(9px,1.2vh,14px) clamp(10px,1.3vw,16px);display:flex;align-items:center;gap:8px"><img src="https://www.google.com/s2/favicons?domain=sixandflow.com&sz=32" style="width:16px;height:16px;border-radius:2px;flex-shrink:0"><span style="font-size:clamp(14px,1.9vh,19px);font-weight:600;color:var(--ink)">Six &amp; Flow</span></div>
+    <div style="padding:clamp(9px,1.2vh,14px) clamp(10px,1.3vw,16px);text-align:center;font-family:'DM Mono',monospace;font-size:clamp(14px,1.9vh,19px);color:var(--ink)">59</div>
+    <div style="padding:clamp(9px,1.2vh,14px) clamp(10px,1.3vw,16px);text-align:center;font-size:clamp(13px,1.75vh,17px);color:var(--ink2)">Elite</div>
+    <div style="padding:clamp(9px,1.2vh,14px) clamp(10px,1.3vw,16px);font-size:clamp(13px,1.75vh,17px);color:var(--ink2)">UK / US</div>
+  </div>
+  <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr 1.6fr;border-top:1px solid var(--rule)">
+    <div style="padding:clamp(9px,1.2vh,14px) clamp(10px,1.3vw,16px);display:flex;align-items:center;gap:8px"><img src="https://www.google.com/s2/favicons?domain=redpandas.com.au&sz=32" style="width:16px;height:16px;border-radius:2px;flex-shrink:0"><span style="font-size:clamp(14px,1.9vh,19px);font-weight:600;color:var(--ink)">RedPandas</span></div>
+    <div style="padding:clamp(9px,1.2vh,14px) clamp(10px,1.3vw,16px);text-align:center;font-family:'DM Mono',monospace;font-size:clamp(14px,1.9vh,19px);color:var(--ink)">40</div>
+    <div style="padding:clamp(9px,1.2vh,14px) clamp(10px,1.3vw,16px);text-align:center;font-size:clamp(13px,1.75vh,17px);color:var(--ink2)">Diamond</div>
+    <div style="padding:clamp(9px,1.2vh,14px) clamp(10px,1.3vw,16px);font-size:clamp(13px,1.75vh,17px);color:var(--ink2)">Sydney, AU</div>
+  </div>
+  <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr 1.6fr;border-top:1px solid var(--rule)">
+    <div style="padding:clamp(9px,1.2vh,14px) clamp(10px,1.3vw,16px);display:flex;align-items:center;gap:8px"><img src="https://www.google.com/s2/favicons?domain=avidlyapac.com&sz=32" style="width:16px;height:16px;border-radius:2px;flex-shrink:0"><span style="font-size:clamp(14px,1.9vh,19px);font-weight:600;color:var(--ink)">Avidly APAC</span></div>
+    <div style="padding:clamp(9px,1.2vh,14px) clamp(10px,1.3vw,16px);text-align:center;font-family:'DM Mono',monospace;font-size:clamp(14px,1.9vh,19px);color:var(--ink)">39</div>
+    <div style="padding:clamp(9px,1.2vh,14px) clamp(10px,1.3vw,16px);text-align:center;font-size:clamp(13px,1.75vh,17px);color:var(--ink2)">Elite</div>
+    <div style="padding:clamp(9px,1.2vh,14px) clamp(10px,1.3vw,16px);font-size:clamp(13px,1.75vh,17px);color:var(--ink2)">ANZ</div>
+  </div>
+  <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr 1.6fr;border-top:1px solid var(--rule)">
+    <div style="padding:clamp(9px,1.2vh,14px) clamp(10px,1.3vw,16px);display:flex;align-items:center;gap:8px"><img src="https://www.google.com/s2/favicons?domain=nbh.co&sz=32" style="width:16px;height:16px;border-radius:2px;flex-shrink:0"><span style="font-size:clamp(14px,1.9vh,19px);font-weight:600;color:var(--ink)">Neighbourhood</span></div>
+    <div style="padding:clamp(9px,1.2vh,14px) clamp(10px,1.3vw,16px);text-align:center;font-family:'DM Mono',monospace;font-size:clamp(14px,1.9vh,19px);color:var(--ink)">36</div>
+    <div style="padding:clamp(9px,1.2vh,14px) clamp(10px,1.3vw,16px);text-align:center;font-size:clamp(13px,1.75vh,17px);color:var(--ink2)">Diamond</div>
+    <div style="padding:clamp(9px,1.2vh,14px) clamp(10px,1.3vw,16px);font-size:clamp(13px,1.75vh,17px);color:var(--ink2)">Australia</div>
+  </div>
+  <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr 1.6fr;border-top:1px solid var(--rule);background:var(--accent-bg)">
+    <div style="padding:clamp(9px,1.2vh,14px) clamp(10px,1.3vw,16px);display:flex;align-items:center;gap:8px"><img src="https://www.google.com/s2/favicons?domain=scalestation.io&sz=32" style="width:16px;height:16px;border-radius:2px;flex-shrink:0"><span style="font-size:clamp(14px,1.9vh,19px);font-weight:700;color:var(--red)">ScaleStation</span><span style="font-size:clamp(9px,1.05vh,11px);font-weight:700;letter-spacing:.08em;color:var(--accent-dark);background:#fff;border:1px solid var(--accent-bd);border-radius:3px;padding:1px 6px">YOU</span></div>
+    <div style="padding:clamp(9px,1.2vh,14px) clamp(10px,1.3vw,16px);text-align:center;font-family:'DM Mono',monospace;font-size:clamp(14px,1.9vh,19px);font-weight:700;color:var(--red)">27</div>
+    <div style="padding:clamp(9px,1.2vh,14px) clamp(10px,1.3vw,16px);text-align:center;font-size:clamp(13px,1.75vh,17px);color:var(--accent-dark);font-weight:700">Diamond</div>
+    <div style="padding:clamp(9px,1.2vh,14px) clamp(10px,1.3vw,16px);font-size:clamp(13px,1.75vh,17px);color:var(--accent-dark);font-weight:700">ANZ</div>
+  </div>
+</div>
+<div style="margin-top:clamp(8px,1.1vh,14px);font-size:clamp(11px,1.3vh,13px);color:var(--ink4);font-family:'DM Mono',monospace;flex-shrink:0">Domain Rating from Ahrefs. ScaleStation already holds Diamond partner status; the gap is purely search authority, and that is the fastest thing to move with content and links.</div>
+<div style="background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:8px;padding:clamp(10px,1.4vh,16px) clamp(14px,1.6vw,20px);flex-shrink:0;margin-top:clamp(10px,1.5vh,18px);display:flex;align-items:flex-start;gap:12px">
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent-dark);flex-shrink:0;margin-top:2px"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+  <div style="font-size:clamp(13px,1.7vh,17px);color:var(--ink2);line-height:1.5">AI models weight domain authority and citation history when deciding what to recommend. Every competitor listed here has years of editorial coverage in RevOps, B2B SaaS, and ANZ business publications. ScaleStation has little yet: that is the gap we close.</div>
+</div>
+</div></section>
+
+<!-- SLIDE 09: Reddit Opportunity -->
+<section><div class="s">
+<div class="shdr" data-n="09" data-source="reddit"></div>
+<h2 style="margin:0 0 clamp(12px,1.7vh,20px)"><img src="https://www.google.com/s2/favicons?domain=reddit.com&sz=32" style="width:24px;height:24px;border-radius:5px;vertical-align:-3px;margin-right:8px">The Conversation Is Already Happening on Reddit. <span style="color:var(--red)">Zero ScaleStation Presence.</span></h2>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,2.2vw,28px);flex:1;min-height:0">
+
+  <div style="display:flex;flex-direction:column;gap:clamp(8px,1.1vh,14px);min-height:0">
+    <div style="display:flex;gap:clamp(8px,1.1vw,14px);flex-shrink:0">
+      <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:8px;padding:clamp(8px,1.1vh,14px);text-align:center;flex:1;min-width:0">
+        <div style="font-family:'DM Mono',monospace;font-size:clamp(18px,2.6vh,30px);font-weight:700;color:var(--ink);line-height:1">233</div>
+        <div style="font-size:clamp(10px,1.3vh,13px);color:var(--ink3);margin-top:3px">Posts Analyzed</div>
+      </div>
+      <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:8px;padding:clamp(8px,1.1vh,14px);text-align:center;flex:1;min-width:0">
+        <div style="font-family:'DM Mono',monospace;font-size:clamp(18px,2.6vh,30px);font-weight:700;color:var(--ok);line-height:1">44</div>
+        <div style="font-size:clamp(10px,1.3vh,13px);color:var(--ink3);margin-top:3px">High-Fit Posts</div>
+      </div>
+      <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:8px;padding:clamp(8px,1.1vh,14px);text-align:center;flex:1;min-width:0">
+        <div style="font-family:'DM Mono',monospace;font-size:clamp(18px,2.6vh,30px);font-weight:700;color:var(--ink);line-height:1">8</div>
+        <div style="font-size:clamp(10px,1.3vh,13px);color:var(--ink3);margin-top:3px">Active Communities</div>
+      </div>
+    </div>
+    <div style="border:1px solid var(--rule);border-radius:10px;overflow:hidden;flex-shrink:0">
+      <div style="display:grid;grid-template-columns:1fr auto auto;background:var(--paper3);padding:clamp(7px,1vh,11px) clamp(10px,1.3vw,16px);gap:8px">
+        <div style="font-size:clamp(10px,1.2vh,12px);font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--ink4)">Subreddit</div>
+        <div style="font-size:clamp(10px,1.2vh,12px);font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--ink4);text-align:right">Members</div>
+        <div style="font-size:clamp(10px,1.2vh,12px);font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--ink4);text-align:center">High-Fit Posts</div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr auto auto;border-top:1px solid var(--rule);padding:clamp(6px,0.85vh,10px) clamp(10px,1.3vw,16px);gap:8px;align-items:center;background:rgba(22,163,74,0.04)">
+        <span style="font-size:clamp(13px,1.7vh,16px);font-weight:600;color:var(--ink)">r/hubspot</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.7vh,16px);color:var(--ink2);text-align:right">62K</span>
+        <span class="ok-badge">14</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr auto auto;border-top:1px solid var(--rule);padding:clamp(6px,0.85vh,10px) clamp(10px,1.3vw,16px);gap:8px;align-items:center;background:rgba(22,163,74,0.04)">
+        <span style="font-size:clamp(13px,1.7vh,16px);font-weight:600;color:var(--ink)">r/revops</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.7vh,16px);color:var(--ink2);text-align:right">30K</span>
+        <span class="ok-badge">11</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr auto auto;border-top:1px solid var(--rule);padding:clamp(6px,0.85vh,10px) clamp(10px,1.3vw,16px);gap:8px;align-items:center;background:rgba(22,163,74,0.04)">
+        <span style="font-size:clamp(13px,1.7vh,16px);font-weight:600;color:var(--ink)">r/SaaS</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.7vh,16px);color:var(--ink2);text-align:right">340K</span>
+        <span class="ok-badge">9</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr auto auto;border-top:1px solid var(--rule);padding:clamp(6px,0.85vh,10px) clamp(10px,1.3vw,16px);gap:8px;align-items:center;background:rgba(22,163,74,0.04)">
+        <span style="font-size:clamp(13px,1.7vh,16px);font-weight:600;color:var(--ink)">r/FractionalRevOps</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.7vh,16px);color:var(--ink2);text-align:right">4K</span>
+        <span class="ok-badge">5</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr auto auto;border-top:1px solid var(--rule);padding:clamp(6px,0.85vh,10px) clamp(10px,1.3vw,16px);gap:8px;align-items:center;background:rgba(22,163,74,0.04)">
+        <span style="font-size:clamp(13px,1.7vh,16px);font-weight:600;color:var(--ink)">r/smallbusiness</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.7vh,16px);color:var(--ink2);text-align:right">2.2M</span>
+        <span class="ok-badge">3</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr auto auto;border-top:1px solid var(--rule);padding:clamp(6px,0.85vh,10px) clamp(10px,1.3vw,16px);gap:8px;align-items:center;background:rgba(22,163,74,0.04)">
+        <span style="font-size:clamp(13px,1.7vh,16px);font-weight:600;color:var(--ink)">r/msp</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.7vh,16px);color:var(--ink2);text-align:right">280K</span>
+        <span class="ok-badge">2</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr auto auto;border-top:1px solid var(--rule);padding:clamp(6px,0.85vh,10px) clamp(10px,1.3vw,16px);gap:8px;align-items:center">
+        <span style="font-size:clamp(13px,1.7vh,16px);color:var(--ink2)">r/SalesOps</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.7vh,16px);color:var(--ink2);text-align:right">20K</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.7vh,16px);color:var(--ink3);text-align:center">0</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr auto auto;border-top:1px solid var(--rule);padding:clamp(6px,0.85vh,10px) clamp(10px,1.3vw,16px);gap:8px;align-items:center">
+        <span style="font-size:clamp(13px,1.7vh,16px);color:var(--ink2)">r/CRM</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.7vh,16px);color:var(--ink2);text-align:right">30K</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.7vh,16px);color:var(--ink3);text-align:center">0</span>
+      </div>
+    </div>
+  </div>
+
+  <div style="display:flex;flex-direction:column;gap:clamp(8px,1.1vh,14px);min-height:0">
+    <div style="font-size:clamp(12px,1.5vh,15px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4);flex-shrink:0">Who Buyers Name as the Alternative</div>
+    <div style="border:1px solid var(--rule);border-radius:10px;overflow:hidden;flex-shrink:0">
+      <div style="display:grid;grid-template-columns:1fr auto auto;background:var(--paper3);padding:clamp(7px,1vh,11px) clamp(10px,1.3vw,16px);gap:8px">
+        <div style="font-size:clamp(10px,1.2vh,12px);font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--ink4)">Brand</div>
+        <div style="font-size:clamp(10px,1.2vh,12px);font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--ink4);text-align:center">Mentions</div>
+        <div style="font-size:clamp(10px,1.2vh,12px);font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--ink4)">Sentiment</div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr auto auto;border-top:1px solid var(--rule);padding:clamp(6px,0.85vh,10px) clamp(10px,1.3vw,16px);gap:8px;align-items:center">
+        <span style="font-size:clamp(13px,1.7vh,16px);color:var(--ink)">Fractional RevOps provider</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.7vh,16px);font-weight:700;color:var(--ink);text-align:center">13</span>
+        <span style="font-size:clamp(11px,1.4vh,14px);font-weight:600;color:var(--warn);background:var(--warn-bg);border:1px solid var(--warn-bd);border-radius:3px;padding:1px 7px;text-align:center">Mixed</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr auto auto;border-top:1px solid var(--rule);padding:clamp(6px,0.85vh,10px) clamp(10px,1.3vw,16px);gap:8px;align-items:center">
+        <span style="font-size:clamp(13px,1.7vh,16px);color:var(--ink)">Salesforce (the rival CRM)</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.7vh,16px);font-weight:700;color:var(--ink);text-align:center">13</span>
+        <span style="font-size:clamp(11px,1.4vh,14px);font-weight:600;color:var(--warn);background:var(--warn-bg);border:1px solid var(--warn-bd);border-radius:3px;padding:1px 7px;text-align:center">Mixed</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr auto auto;border-top:1px solid var(--rule);padding:clamp(6px,0.85vh,10px) clamp(10px,1.3vw,16px);gap:8px;align-items:center">
+        <span style="font-size:clamp(13px,1.7vh,16px);color:var(--ink)">Freelancer / solo HubSpot consultant</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.7vh,16px);font-weight:700;color:var(--ink);text-align:center">9</span>
+        <span style="font-size:clamp(11px,1.4vh,14px);font-weight:600;color:var(--warn);background:var(--warn-bg);border:1px solid var(--warn-bd);border-radius:3px;padding:1px 7px;text-align:center">Mixed</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr auto auto;border-top:1px solid var(--rule);padding:clamp(6px,0.85vh,10px) clamp(10px,1.3vw,16px);gap:8px;align-items:center">
+        <span style="font-size:clamp(13px,1.7vh,16px);color:var(--ink)">In-house RevOps hire</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.7vh,16px);font-weight:700;color:var(--ink);text-align:center">6</span>
+        <span style="font-size:clamp(11px,1.4vh,14px);font-weight:600;color:var(--warn);background:var(--warn-bg);border:1px solid var(--warn-bd);border-radius:3px;padding:1px 7px;text-align:center">Mixed</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr auto auto;border-top:1px solid var(--rule);padding:clamp(6px,0.85vh,10px) clamp(10px,1.3vw,16px);gap:8px;align-items:center">
+        <span style="font-size:clamp(13px,1.7vh,16px);color:var(--ink)">DIY / self-implement</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.7vh,16px);font-weight:700;color:var(--ink);text-align:center">6</span>
+        <span style="font-size:clamp(11px,1.4vh,14px);font-weight:600;color:var(--red);background:var(--red-bg);border:1px solid var(--red-bd);border-radius:3px;padding:1px 7px;text-align:center">Negative</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr auto auto;border-top:1px solid var(--rule);padding:clamp(6px,0.85vh,10px) clamp(10px,1.3vw,16px);gap:8px;align-items:center">
+        <span style="font-size:clamp(13px,1.7vh,16px);color:var(--ink)">Named agencies (Huble, RevPartners, New Breed)</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.7vh,16px);font-weight:700;color:var(--ink);text-align:center">3</span>
+        <span style="font-size:clamp(11px,1.4vh,14px);font-weight:600;color:var(--ok);background:var(--ok-bg);border:1px solid var(--ok-bd);border-radius:3px;padding:1px 7px;text-align:center">Positive</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr auto auto;border-top:1px solid var(--rule);padding:clamp(6px,0.85vh,10px) clamp(10px,1.3vw,16px);gap:8px;align-items:center;background:var(--accent-bg)">
+        <span style="font-size:clamp(13px,1.7vh,16px);font-weight:700;color:var(--red)">ScaleStation</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.7vh,16px);font-weight:700;color:var(--red);text-align:center">0</span>
+        <span style="font-size:clamp(11px,1.4vh,14px);font-weight:700;color:var(--red);font-style:italic;text-align:center">Not present</span>
+      </div>
+    </div>
+    <div style="flex:1;min-height:0"></div>
+    <div style="background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:8px;padding:clamp(9px,1.3vh,15px) clamp(12px,1.5vw,18px);flex-shrink:0">
+      <span style="font-size:clamp(13px,1.7vh,17px);color:var(--ink2);line-height:1.45">Hundreds of mid-market companies a week debate how to get HubSpot and RevOps help, and recommend each other to fractional providers, freelancers and named agencies. ScaleStation is in none of these conversations. A live high-fit thread: r/hubspot "Australia: need HubSpot agency recommendations" (36 comments), exactly ScaleStation's market.</span>
+    </div>
+  </div>
+
+</div>
+</div></section>
+
+<!-- SLIDE 10: Transition -->
+<section><div class="s">
+<div class="shdr" data-n="10"></div>
+<div style="flex:1;min-height:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:clamp(24px,4vh,48px);text-align:center;overflow:hidden">
+  <div style="display:flex;align-items:center;gap:clamp(10px,1.5vw,20px)">
+    <div style="display:flex;align-items:center;gap:8px;background:var(--red-bg);border:1px solid var(--red-bd);border-radius:32px;padding:clamp(8px,1.2vh,14px) clamp(14px,2vw,22px);flex-shrink:0">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+      <span style="font-size:clamp(13px,1.8vh,18px);font-weight:600;color:var(--red)">No AEO content</span>
+    </div>
+    <div style="font-size:clamp(20px,3vh,38px);font-weight:700;color:var(--ink3)">+</div>
+    <div style="display:flex;align-items:center;gap:8px;background:var(--red-bg);border:1px solid var(--red-bd);border-radius:32px;padding:clamp(8px,1.2vh,14px) clamp(14px,2vw,22px);flex-shrink:0">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+      <span style="font-size:clamp(13px,1.8vh,18px);font-weight:600;color:var(--red)">Authority gap</span>
+    </div>
+    <div style="font-size:clamp(20px,3vh,38px);font-weight:700;color:var(--ink3)">+</div>
+    <div style="display:flex;align-items:center;gap:8px;background:var(--red-bg);border:1px solid var(--red-bd);border-radius:32px;padding:clamp(8px,1.2vh,14px) clamp(14px,2vw,22px);flex-shrink:0">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
+      <span style="font-size:clamp(13px,1.8vh,18px);font-weight:600;color:var(--red)">AI invisible</span>
+    </div>
+  </div>
+  <div style="display:flex;flex-direction:column;align-items:center;gap:clamp(10px,1.5vh,18px)">
+    <div style="display:flex;align-items:center;justify-content:center;gap:clamp(10px,1.5vw,18px)">
+      <img src="https://www.google.com/s2/favicons?domain=scalestation.io&sz=64" style="width:clamp(32px,4.5vh,52px);height:clamp(32px,4.5vh,52px);border-radius:8px;flex-shrink:0;object-fit:contain">
+      <div style="font-family:'Poppins',sans-serif;font-size:clamp(34px,6vh,72px);font-weight:700;color:var(--ink);letter-spacing:-0.01em;line-height:1.1">Here is what we do about it.</div>
+    </div>
+    <div style="font-size:clamp(16px,2.2vh,24px);color:var(--ink3);font-weight:400">Three vectors, one compounding system.</div>
+  </div>
+</div>
+</div></section>
+
+<!-- SLIDE 11: Content Strategy -->
+<section><div class="s">
+<div class="shdr" data-n="11"></div>
+<h2 style="margin:0 0 clamp(12px,1.7vh,20px)">Three Content Vectors <span style="color:var(--accent-dark)">That Build AI Citation Share</span></h2>
+<p style="font-size:clamp(15px,2.1vh,21px);color:var(--ink2);font-weight:500;margin:0 0 clamp(14px,2vh,22px);flex-shrink:0">Each vector maps directly to a gap in the audit. Together they build the comparison cluster and category authority AI needs to cite ScaleStation on commercial queries.</p>
+<div style="flex:1;min-height:0;display:flex;gap:clamp(14px,2vw,24px);overflow:hidden">
+
+  <div style="background:var(--paper2);border:1.5px solid var(--rule);border-radius:12px;padding:clamp(14px,1.9vh,24px) clamp(16px,1.8vw,22px);display:flex;flex-direction:column;gap:clamp(10px,1.4vh,16px);flex:1;min-width:0">
+    <div style="display:flex;align-items:center;gap:8px;flex-shrink:0">
+      <span style="font-family:'DM Mono',monospace;font-size:clamp(11px,1.4vh,14px);background:var(--accent-bg);border:1px solid var(--accent-bd);color:var(--accent-dark);padding:2px 8px;border-radius:4px;font-weight:500;flex-shrink:0">01</span>
+      <span style="font-size:clamp(11px,1.4vh,14px);color:var(--ink4);text-transform:uppercase;letter-spacing:.07em;font-weight:600">Comparison Pages</span>
+    </div>
+    <div style="font-size:clamp(19px,2.7vh,28px);font-weight:700;color:var(--ink);font-family:'Poppins',sans-serif;line-height:1.15">Competitor Comparison Pages</div>
+    <div style="display:flex;flex-direction:column;gap:clamp(6px,0.9vh,10px)">
+      <div style="display:flex;align-items:flex-start;gap:8px;font-size:clamp(13px,1.7vh,17px);color:var(--ink2);line-height:1.45"><span style="color:var(--accent-dark);font-weight:700;flex-shrink:0;margin-top:1px">&middot;</span><span>ScaleStation vs Neighbourhood, Avidly and RedPandas, the definitive head-to-head for ANZ buyers</span></div>
+      <div style="display:flex;align-items:flex-start;gap:8px;font-size:clamp(13px,1.7vh,17px);color:var(--ink2);line-height:1.45"><span style="color:var(--accent-dark);font-weight:700;flex-shrink:0;margin-top:1px">&middot;</span><span>Fractional RevOps vs in-house vs agency, framed around cost, speed and outcomes</span></div>
+      <div style="display:flex;align-items:flex-start;gap:8px;font-size:clamp(13px,1.7vh,17px);color:var(--ink2);line-height:1.45"><span style="color:var(--accent-dark);font-weight:700;flex-shrink:0;margin-top:1px">&middot;</span><span>HubSpot vs Salesforce for mid-market, with ScaleStation as the featured implementation partner</span></div>
+      <div style="display:flex;align-items:flex-start;gap:8px;font-size:clamp(13px,1.7vh,17px);color:var(--ink2);line-height:1.45"><span style="color:var(--accent-dark);font-weight:700;flex-shrink:0;margin-top:1px">&middot;</span><span>Targets the commercial prompts where competitors currently dominate</span></div>
+    </div>
+  </div>
+
+  <div style="background:var(--paper2);border:1.5px solid var(--rule);border-radius:12px;padding:clamp(14px,1.9vh,24px) clamp(16px,1.8vw,22px);display:flex;flex-direction:column;gap:clamp(10px,1.4vh,16px);flex:1;min-width:0">
+    <div style="display:flex;align-items:center;gap:8px;flex-shrink:0">
+      <span style="font-family:'DM Mono',monospace;font-size:clamp(11px,1.4vh,14px);background:var(--accent-bg);border:1px solid var(--accent-bd);color:var(--accent-dark);padding:2px 8px;border-radius:4px;font-weight:500;flex-shrink:0">02</span>
+      <span style="font-size:clamp(11px,1.4vh,14px);color:var(--ink4);text-transform:uppercase;letter-spacing:.07em;font-weight:600">Decision Guides</span>
+    </div>
+    <div style="font-size:clamp(19px,2.7vh,28px);font-weight:700;color:var(--ink);font-family:'Poppins',sans-serif;line-height:1.15">Buyer Decision Guides</div>
+    <div style="display:flex;flex-direction:column;gap:clamp(6px,0.9vh,10px)">
+      <div style="display:flex;align-items:flex-start;gap:8px;font-size:clamp(13px,1.7vh,17px);color:var(--ink2);line-height:1.45"><span style="color:var(--accent-dark);font-weight:700;flex-shrink:0;margin-top:1px">&middot;</span><span>How to choose a HubSpot partner in Australia &amp; NZ</span></div>
+      <div style="display:flex;align-items:flex-start;gap:8px;font-size:clamp(13px,1.7vh,17px);color:var(--ink2);line-height:1.45"><span style="color:var(--accent-dark);font-weight:700;flex-shrink:0;margin-top:1px">&middot;</span><span>HubSpot implementation cost &amp; timeline (ANZ)</span></div>
+      <div style="display:flex;align-items:flex-start;gap:8px;font-size:clamp(13px,1.7vh,17px);color:var(--ink2);line-height:1.45"><span style="color:var(--accent-dark);font-weight:700;flex-shrink:0;margin-top:1px">&middot;</span><span>When to hire RevOps (and what it costs)</span></div>
+      <div style="display:flex;align-items:flex-start;gap:8px;font-size:clamp(13px,1.7vh,17px);color:var(--ink2);line-height:1.45"><span style="color:var(--accent-dark);font-weight:700;flex-shrink:0;margin-top:1px">&middot;</span><span>Captures mid-funnel discovery queries before competitors do</span></div>
+    </div>
+  </div>
+
+  <div style="background:var(--paper2);border:1.5px solid var(--rule);border-radius:12px;padding:clamp(14px,1.9vh,24px) clamp(16px,1.8vw,22px);display:flex;flex-direction:column;gap:clamp(10px,1.4vh,16px);flex:1;min-width:0">
+    <div style="display:flex;align-items:center;gap:8px;flex-shrink:0">
+      <span style="font-family:'DM Mono',monospace;font-size:clamp(11px,1.4vh,14px);background:var(--accent-bg);border:1px solid var(--accent-bd);color:var(--accent-dark);padding:2px 8px;border-radius:4px;font-weight:500;flex-shrink:0">03</span>
+      <span style="font-size:clamp(11px,1.4vh,14px);color:var(--ink4);text-transform:uppercase;letter-spacing:.07em;font-weight:600">Topic Clusters</span>
+    </div>
+    <div style="font-size:clamp(19px,2.7vh,28px);font-weight:700;color:var(--ink);font-family:'Poppins',sans-serif;line-height:1.15">Topic Clusters + AEO</div>
+    <div style="display:flex;flex-direction:column;gap:clamp(6px,0.9vh,10px)">
+      <div style="display:flex;align-items:flex-start;gap:8px;font-size:clamp(13px,1.7vh,17px);color:var(--ink2);line-height:1.45"><span style="color:var(--accent-dark);font-weight:700;flex-shrink:0;margin-top:1px">&middot;</span><span>RevOps: a hub built around revenue operations strategy and outcomes</span></div>
+      <div style="display:flex;align-items:flex-start;gap:8px;font-size:clamp(13px,1.7vh,17px);color:var(--ink2);line-height:1.45"><span style="color:var(--accent-dark);font-weight:700;flex-shrink:0;margin-top:1px">&middot;</span><span>Go-to-market strategy: the explainer AI cites by default</span></div>
+      <div style="display:flex;align-items:flex-start;gap:8px;font-size:clamp(13px,1.7vh,17px);color:var(--ink2);line-height:1.45"><span style="color:var(--accent-dark);font-weight:700;flex-shrink:0;margin-top:1px">&middot;</span><span>HubSpot Operations Hub and the RevOps tech stack: a category guide</span></div>
+      <div style="display:flex;align-items:flex-start;gap:8px;font-size:clamp(13px,1.7vh,17px);color:var(--ink2);line-height:1.45"><span style="color:var(--accent-dark);font-weight:700;flex-shrink:0;margin-top:1px">&middot;</span><span>Schema-marked and structured for AI citation around the commercial buyer prompts</span></div>
+    </div>
+  </div>
+
+</div>
+</div></section>
+
+<!-- SLIDE 12: Three-Part Fix -->
+<section><div class="s">
+<div class="shdr" data-n="12"></div>
+<h2 style="margin:0 0 clamp(12px,1.7vh,20px)">The Three-Part Fix: <span style="color:var(--accent-dark)">Content, Authority and AI Presence</span></h2>
+<p style="font-size:clamp(15px,2.1vh,21px);color:var(--ink2);font-weight:500;margin:0 0 clamp(14px,2vh,22px);flex-shrink:0">Each root problem has a direct solution. Together they compound: more content builds authority, more authority drives AI citations, more citations bring mid-market buyers to ScaleStation.</p>
+<div style="flex:1;min-height:0;display:flex;gap:clamp(14px,2vw,24px);overflow:hidden">
+
+  <div style="flex:1;min-width:0;display:flex;flex-direction:column;background:var(--paper2);border:1.5px solid var(--rule);border-radius:12px;padding:clamp(14px,1.9vh,24px) clamp(16px,1.8vw,22px)">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:clamp(10px,1.4vh,16px);flex-shrink:0">
+      <div style="width:36px;height:36px;background:var(--accent-bg);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-dark)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+      </div>
+      <span style="font-size:clamp(13px,1.7vh,17px);text-transform:uppercase;letter-spacing:.08em;color:var(--accent-dark);font-weight:700">Content</span>
+    </div>
+    <div style="font-size:clamp(19px,2.6vh,27px);font-weight:700;color:var(--ink);font-family:'Poppins',sans-serif;line-height:1.15;margin-bottom:clamp(10px,1.4vh,16px);flex-shrink:0">Comparison Cluster + AEO Guides</div>
+    <div style="display:flex;flex-direction:column;gap:clamp(8px,1.1vh,13px);flex:1">
+      <div style="display:flex;align-items:flex-start;gap:8px;font-size:clamp(14px,1.95vh,20px);color:var(--ink2);line-height:1.5"><span style="color:var(--accent-dark);font-weight:700;flex-shrink:0;margin-top:1px">&middot;</span><span>12 articles per month: comparison pages, decision guides, and topic clusters</span></div>
+      <div style="display:flex;align-items:flex-start;gap:8px;font-size:clamp(14px,1.95vh,20px);color:var(--ink2);line-height:1.5"><span style="color:var(--accent-dark);font-weight:700;flex-shrink:0;margin-top:1px">&middot;</span><span>AEO-optimized decision guides built from real client implementation outcomes</span></div>
+      <div style="display:flex;align-items:flex-start;gap:8px;font-size:clamp(14px,1.95vh,20px);color:var(--ink2);line-height:1.5"><span style="color:var(--accent-dark);font-weight:700;flex-shrink:0;margin-top:1px">&middot;</span><span>FAQ schema so AI models parse and confidently cite scalestation.io</span></div>
+    </div>
+  </div>
+
+  <div style="flex:1;min-width:0;display:flex;flex-direction:column;background:var(--paper2);border:1.5px solid var(--rule);border-radius:12px;padding:clamp(14px,1.9vh,24px) clamp(16px,1.8vw,22px)">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:clamp(10px,1.4vh,16px);flex-shrink:0">
+      <div style="width:36px;height:36px;background:var(--accent-bg);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-dark)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+      </div>
+      <span style="font-size:clamp(13px,1.7vh,17px);text-transform:uppercase;letter-spacing:.08em;color:var(--accent-dark);font-weight:700">Authority</span>
+    </div>
+    <div style="font-size:clamp(19px,2.6vh,27px);font-weight:700;color:var(--ink);font-family:'Poppins',sans-serif;line-height:1.15;margin-bottom:clamp(10px,1.4vh,16px);flex-shrink:0">Editorial Outreach + Reddit</div>
+    <div style="display:flex;flex-direction:column;gap:clamp(8px,1.1vh,13px);flex:1">
+      <div style="display:flex;align-items:flex-start;gap:8px;font-size:clamp(14px,1.95vh,20px);color:var(--ink2);line-height:1.5"><span style="color:var(--accent-dark);font-weight:700;flex-shrink:0;margin-top:1px">&middot;</span><span>Editorial outreach to RevOps, B2B SaaS, and ANZ business publications</span></div>
+      <div style="display:flex;align-items:flex-start;gap:8px;font-size:clamp(14px,1.95vh,20px);color:var(--ink2);line-height:1.5"><span style="color:var(--accent-dark);font-weight:700;flex-shrink:0;margin-top:1px">&middot;</span><span>Editorial backlinks that give AI a third-party authority signal to weigh</span></div>
+      <div style="display:flex;align-items:flex-start;gap:8px;font-size:clamp(14px,1.95vh,20px);color:var(--ink2);line-height:1.5"><span style="color:var(--accent-dark);font-weight:700;flex-shrink:0;margin-top:1px">&middot;</span><span>Reddit engagement: 20 targeted comments per month in HubSpot, RevOps and GTM threads</span></div>
+    </div>
+  </div>
+
+  <div style="flex:1;min-width:0;display:flex;flex-direction:column;background:var(--paper2);border:1.5px solid var(--rule);border-radius:12px;padding:clamp(14px,1.9vh,24px) clamp(16px,1.8vw,22px)">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:clamp(10px,1.4vh,16px);flex-shrink:0">
+      <div style="width:36px;height:36px;background:var(--accent-bg);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-dark)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+      </div>
+      <span style="font-size:clamp(13px,1.7vh,17px);text-transform:uppercase;letter-spacing:.08em;color:var(--accent-dark);font-weight:700">AI Visibility</span>
+    </div>
+    <div style="font-size:clamp(19px,2.6vh,27px);font-weight:700;color:var(--ink);font-family:'Poppins',sans-serif;line-height:1.15;margin-bottom:clamp(10px,1.4vh,16px);flex-shrink:0">Tracking Across 5 AI Models</div>
+    <div style="display:flex;flex-direction:column;gap:clamp(8px,1.1vh,13px);flex:1">
+      <div style="display:flex;align-items:flex-start;gap:8px;font-size:clamp(14px,1.95vh,20px);color:var(--ink2);line-height:1.5"><span style="color:var(--accent-dark);font-weight:700;flex-shrink:0;margin-top:1px">&middot;</span><span>AI citation tracking across ChatGPT, Gemini, Perplexity, and Google AI surfaces</span></div>
+      <div style="display:flex;align-items:flex-start;gap:8px;font-size:clamp(14px,1.95vh,20px);color:var(--ink2);line-height:1.5"><span style="color:var(--accent-dark);font-weight:700;flex-shrink:0;margin-top:1px">&middot;</span><span>Visibility score reviewed month over month against the 40 commercial buyer prompts</span></div>
+      <div style="display:flex;align-items:flex-start;gap:8px;font-size:clamp(14px,1.95vh,20px);color:var(--ink2);line-height:1.5"><span style="color:var(--accent-dark);font-weight:700;flex-shrink:0;margin-top:1px">&middot;</span><span>Clear evidence of whether new content converts into AI recommendations</span></div>
+    </div>
+  </div>
+
+</div>
+</div></section>
+
+<!-- SLIDE 13: Deliverables -->
+<section><div class="s">
+<div class="shdr" data-n="13"></div>
+<h2 style="margin:0 0 clamp(12px,1.7vh,20px)">What We Deliver Every Month</h2>
+<p style="font-size:clamp(15px,2.1vh,21px);color:var(--ink2);font-weight:500;margin:0 0 clamp(14px,2vh,22px);flex-shrink:0">A full managed service covering everything ScaleStation needs to grow in search and AI.</p>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(10px,1.4vw,16px);flex:1;min-height:0;align-content:start">
+
+  <div class="card">
+    <svg style="width:17px;height:17px;flex-shrink:0;margin-top:3px" viewBox="0 0 24 24" fill="none" stroke="var(--accent-dark)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+    <div style="flex:1;min-width:0">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:clamp(3px,0.4vh,5px)">
+        <div style="font-size:clamp(15px,2.1vh,21px);font-weight:700;color:var(--ink)">12 High-Quality Content Pieces</div>
+        <span class="badge">Per month</span>
+      </div>
+      <div style="font-size:clamp(14px,1.85vh,18px);color:var(--ink3);line-height:1.5">12 keyword-targeted articles per month built to rank and get cited by AI. Each targets comparison queries, decision guides, and HubSpot, RevOps and GTM topic clusters.</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <svg style="width:17px;height:17px;flex-shrink:0;margin-top:3px" viewBox="0 0 24 24" fill="none" stroke="var(--accent-dark)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+    <div style="flex:1;min-width:0">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:clamp(3px,0.4vh,5px)">
+        <div style="font-size:clamp(15px,2.1vh,21px);font-weight:700;color:var(--ink)">Content Refresh Programme</div>
+        <span class="badge">Ongoing</span>
+      </div>
+      <div style="font-size:clamp(14px,1.85vh,18px);color:var(--ink3);line-height:1.5">Existing blog posts and service pages updated with LLM-optimised structure. Fastest path to new AI citations from the current site.</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <svg style="width:17px;height:17px;flex-shrink:0;margin-top:3px" viewBox="0 0 24 24" fill="none" stroke="var(--accent-dark)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+    <div style="flex:1;min-width:0">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:clamp(3px,0.4vh,5px)">
+        <div style="font-size:clamp(15px,2.1vh,21px);font-weight:700;color:var(--ink)">Schema Markup Implementation</div>
+        <span class="badge">Site-wide</span>
+      </div>
+      <div style="font-size:clamp(14px,1.85vh,18px);color:var(--ink3);line-height:1.5">Organization, FAQ, and Service schema so AI models understand and confidently cite scalestation.io.</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <svg style="width:17px;height:17px;flex-shrink:0;margin-top:3px" viewBox="0 0 24 24" fill="none" stroke="var(--accent-dark)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+    <div style="flex:1;min-width:0">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:clamp(3px,0.4vh,5px)">
+        <div style="font-size:clamp(15px,2.1vh,21px);font-weight:700;color:var(--ink)">On-Page SEO Optimisation</div>
+        <span class="badge">Ongoing</span>
+      </div>
+      <div style="font-size:clamp(14px,1.85vh,18px);color:var(--ink3);line-height:1.5">Meta titles, headings, and internal linking across all pages treated as entry points for mid-market buyers researching a HubSpot and RevOps partner.</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <svg style="width:17px;height:17px;flex-shrink:0;margin-top:3px" viewBox="0 0 24 24" fill="none" stroke="var(--accent-dark)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+    <div style="flex:1;min-width:0">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:clamp(3px,0.4vh,5px)">
+        <div style="font-size:clamp(15px,2.1vh,21px);font-weight:700;color:var(--ink)">Link Building</div>
+        <span class="badge">Ongoing</span>
+      </div>
+      <div style="font-size:clamp(14px,1.85vh,18px);color:var(--ink3);line-height:1.5">Editorial links from RevOps, B2B SaaS, HubSpot-ecosystem and ANZ business publications to build the authority AI rewards.</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://www.google.com/s2/favicons?domain=reddit.com&sz=32" style="width:17px;height:17px;flex-shrink:0;margin-top:3px;border-radius:4px">
+    <div style="flex:1;min-width:0">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:clamp(3px,0.4vh,5px)">
+        <div style="font-size:clamp(15px,2.1vh,21px);font-weight:700;color:var(--ink)">Reddit Presence</div>
+        <span class="badge">20 comments/month</span>
+      </div>
+      <div style="font-size:clamp(14px,1.85vh,18px);color:var(--ink3);line-height:1.5">reddit.com is a top AI-cited source in this space. 20 targeted comments per month in r/hubspot, r/revops, r/SaaS, and r/FractionalRevOps.</div>
+    </div>
+  </div>
+
+  <div class="card" style="grid-column:span 2">
+    <svg style="width:17px;height:17px;flex-shrink:0;margin-top:3px" viewBox="0 0 24 24" fill="none" stroke="var(--accent-dark)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+    <div style="flex:1;min-width:0">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:clamp(3px,0.4vh,5px)">
+        <div style="font-size:clamp(15px,2.1vh,21px);font-weight:700;color:var(--ink)">Monthly Reporting</div>
+        <span class="badge">Monthly</span>
+      </div>
+      <div style="font-size:clamp(14px,1.85vh,18px);color:var(--ink3);line-height:1.5">AI citation count, organic traffic, domain authority progress, and non-branded query movement delivered every month via AI Peekaboo, Google Search Console, and GA4.</div>
+    </div>
+  </div>
+
+</div>
+</div></section>
+
+<!-- SLIDE 14: How We Measure Progress -->
+<section><div class="s">
+<div class="shdr" data-n="14"></div>
+<h2 style="margin:0 0 clamp(12px,1.7vh,20px)">How We Measure Progress</h2>
+<p style="font-size:clamp(15px,2.1vh,21px);color:var(--ink2);font-weight:500;margin:0 0 clamp(14px,2vh,22px);flex-shrink:0">We track progress across both traditional search and AI platforms every month, so ScaleStation always knows exactly where it is gaining ground.</p>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:clamp(14px,2vw,24px);flex:1;min-height:0;align-items:start">
+
+  <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(12px,1.6vh,20px) clamp(14px,1.6vw,20px);display:flex;flex-direction:column">
+    <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/google-search-console-icon.png" style="width:clamp(32px,4.5vh,46px);height:clamp(32px,4.5vh,46px);border-radius:8px;margin-bottom:clamp(10px,1.4vh,16px);display:block">
+    <div style="font-size:clamp(17px,2.3vh,24px);font-weight:700;color:var(--ink);margin-bottom:clamp(8px,1.1vh,14px)">Google Search Console</div>
+    <p style="font-size:clamp(13px,1.75vh,17px);color:var(--ink3);line-height:1.5;margin:0 0 clamp(12px,1.7vh,20px)">Tracks clicks and impressions for every query scalestation.io appears for. Confirms content drives visits and surfaces in AI Overviews.</p>
+    <div style="display:flex;flex-direction:column;gap:clamp(6px,0.9vh,10px)">
+      <div style="background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:6px;padding:clamp(6px,0.8vh,10px) clamp(10px,1.2vw,14px);font-size:clamp(13px,1.7vh,17px);color:var(--ink2);display:flex;align-items:flex-start;gap:6px">
+        <span style="color:var(--accent-dark);font-weight:700;flex-shrink:0">&middot;</span>Clicks and impressions month over month
+      </div>
+      <div style="background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:6px;padding:clamp(6px,0.8vh,10px) clamp(10px,1.2vw,14px);font-size:clamp(13px,1.7vh,17px);color:var(--ink2);display:flex;align-items:flex-start;gap:6px">
+        <span style="color:var(--accent-dark);font-weight:700;flex-shrink:0">&middot;</span>Non-branded HubSpot and RevOps queries gaining impressions
+      </div>
+    </div>
+  </div>
+
+  <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(12px,1.6vh,20px) clamp(14px,1.6vw,20px);display:flex;flex-direction:column">
+    <img src="https://images.icon-icons.com/2699/PNG/512/google_analytics_image_logo_icon_168152.png" style="width:clamp(32px,4.5vh,46px);height:clamp(32px,4.5vh,46px);border-radius:8px;margin-bottom:clamp(10px,1.4vh,16px);display:block">
+    <div style="font-size:clamp(17px,2.3vh,24px);font-weight:700;color:var(--ink);margin-bottom:clamp(8px,1.1vh,14px)">Google Analytics 4</div>
+    <p style="font-size:clamp(13px,1.75vh,17px);color:var(--ink3);line-height:1.5;margin:0 0 clamp(12px,1.7vh,20px)">Tracks traffic by source so ScaleStation can see organic growth, LLM referrals, and Reddit building momentum as a measurable direct channel.</p>
+    <div style="display:flex;flex-direction:column;gap:clamp(6px,0.9vh,10px)">
+      <div style="background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:6px;padding:clamp(6px,0.8vh,10px) clamp(10px,1.2vw,14px);font-size:clamp(13px,1.7vh,17px);color:var(--ink2);display:flex;align-items:flex-start;gap:6px">
+        <span style="color:var(--accent-dark);font-weight:700;flex-shrink:0">&middot;</span>Organic vs paid vs direct traffic split
+      </div>
+      <div style="background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:6px;padding:clamp(6px,0.8vh,10px) clamp(10px,1.2vw,14px);font-size:clamp(13px,1.7vh,17px);color:var(--ink2);display:flex;align-items:flex-start;gap:6px">
+        <span style="color:var(--accent-dark);font-weight:700;flex-shrink:0">&middot;</span>Referral traffic from ChatGPT, Perplexity, Gemini
+      </div>
+      <div style="background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:6px;padding:clamp(6px,0.8vh,10px) clamp(10px,1.2vw,14px);font-size:clamp(13px,1.7vh,17px);color:var(--ink2);display:flex;align-items:center;gap:6px">
+        <img src="https://www.google.com/s2/favicons?domain=reddit.com&sz=16" style="width:13px;height:13px;border-radius:2px;flex-shrink:0">Reddit as a direct traffic source
+      </div>
+    </div>
+  </div>
+
+  <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(12px,1.6vh,20px) clamp(14px,1.6vw,20px);display:flex;flex-direction:column">
+    <img src="https://www.aipeekaboo.com/icon.jpg" style="width:clamp(32px,4.5vh,46px);height:clamp(32px,4.5vh,46px);border-radius:8px;margin-bottom:clamp(10px,1.4vh,16px);display:block">
+    <div style="font-size:clamp(17px,2.3vh,24px);font-weight:700;color:var(--ink);margin-bottom:clamp(8px,1.1vh,14px)">AI Peekaboo</div>
+    <p style="font-size:clamp(13px,1.75vh,17px);color:var(--ink3);line-height:1.5;margin:0 0 clamp(12px,1.7vh,20px)">Baseline established within 48 hours of kickoff, then tracked monthly. We track whether new content converts into AI recommendations on commercial queries.</p>
+    <div style="display:flex;flex-direction:column;gap:clamp(6px,0.9vh,10px)">
+      <div style="background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:6px;padding:clamp(6px,0.8vh,10px) clamp(10px,1.2vw,14px);font-size:clamp(13px,1.7vh,17px);color:var(--ink2);display:flex;align-items:center;gap:6px">
+        <img src="https://www.google.com/s2/favicons?domain=google.com&sz=16" style="width:13px;height:13px;border-radius:2px;flex-shrink:0">Google AI Overviews
+      </div>
+      <div style="background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:6px;padding:clamp(6px,0.8vh,10px) clamp(10px,1.2vw,14px);font-size:clamp(13px,1.7vh,17px);color:var(--ink2);display:flex;align-items:center;gap:6px">
+        <img src="https://www.google.com/s2/favicons?domain=chatgpt.com&sz=16" style="width:13px;height:13px;border-radius:2px;flex-shrink:0">ChatGPT
+      </div>
+      <div style="background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:6px;padding:clamp(6px,0.8vh,10px) clamp(10px,1.2vw,14px);font-size:clamp(13px,1.7vh,17px);color:var(--ink2);display:flex;align-items:center;gap:6px">
+        <img src="https://www.google.com/s2/favicons?domain=perplexity.ai&sz=16" style="width:13px;height:13px;border-radius:2px;flex-shrink:0">Perplexity
+      </div>
+      <div style="background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:6px;padding:clamp(6px,0.8vh,10px) clamp(10px,1.2vw,14px);font-size:clamp(13px,1.7vh,17px);color:var(--ink2);display:flex;align-items:center;gap:6px">
+        <img src="https://www.google.com/s2/favicons?domain=gemini.google.com&sz=16" style="width:13px;height:13px;border-radius:2px;flex-shrink:0">Gemini
+      </div>
+    </div>
+  </div>
+
+</div>
+</div></section>
+
+<!-- SLIDE 15: Your Investment -->
+<section><div class="s">
+<div class="shdr" data-n="15"></div>
+<h2 style="margin:0 0 clamp(12px,1.7vh,20px)">Your Investment. What We Deliver and When.</h2>
+<div style="flex:1;min-height:0;overflow:hidden;display:grid;grid-template-columns:1.1fr 0.9fr;gap:clamp(16px,2vw,28px);align-items:start">
+
+  <div style="display:flex;flex-direction:column;gap:0">
+
+    <div style="display:flex;gap:clamp(12px,1.5vw,18px)">
+      <div style="display:flex;flex-direction:column;align-items:center;flex-shrink:0;width:clamp(28px,3.5vw,38px)">
+        <div style="width:clamp(11px,1.4vh,14px);height:clamp(11px,1.4vh,14px);border-radius:50%;background:var(--accent-dark);flex-shrink:0;margin-top:3px"></div>
+        <div style="width:2px;flex:1;background:var(--rule);min-height:clamp(10px,1.5vh,18px)"></div>
+      </div>
+      <div style="flex:1;padding-bottom:clamp(14px,2vh,24px)">
+        <div style="display:inline-block;background:var(--accent-dark);color:#fff;font-size:clamp(11px,1.4vh,15px);font-weight:600;letter-spacing:0.04em;border-radius:4px;padding:2px 8px;margin-bottom:4px">Month 1 &middot; Foundation</div>
+        <div style="font-size:clamp(14px,1.9vh,20px);font-weight:700;color:var(--ink);margin-bottom:clamp(6px,0.9vh,10px)">Audit, Strategy and First Deliverables</div>
+        <div style="font-size:clamp(12px,1.5vh,16px);color:var(--ink3);line-height:1.5;display:flex;flex-direction:column;gap:3px">
+          <div>Full SEO and AEO audit of scalestation.io + competitive benchmark</div>
+          <div>12 articles targeting HubSpot, RevOps and GTM keywords, drafted and published</div>
+          <div>Schema implementation begins; 20 Reddit comments/month underway</div>
+          <div>Reddit strategy agreed: identify top 5 subreddits for engagement</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:flex;gap:clamp(12px,1.5vw,18px)">
+      <div style="display:flex;flex-direction:column;align-items:center;flex-shrink:0;width:clamp(28px,3.5vw,38px)">
+        <div style="width:clamp(11px,1.4vh,14px);height:clamp(11px,1.4vh,14px);border-radius:50%;background:var(--accent-dark);flex-shrink:0;margin-top:3px"></div>
+        <div style="width:2px;flex:1;background:var(--rule);min-height:clamp(10px,1.5vh,18px)"></div>
+      </div>
+      <div style="flex:1;padding-bottom:clamp(14px,2vh,24px)">
+        <div style="display:inline-block;background:var(--accent-dark);color:#fff;font-size:clamp(11px,1.4vh,15px);font-weight:600;letter-spacing:0.04em;border-radius:4px;padding:2px 8px;margin-bottom:4px">Month 2 &middot; Build</div>
+        <div style="font-size:clamp(14px,1.9vh,20px);font-weight:700;color:var(--ink);margin-bottom:clamp(6px,0.9vh,10px)">Content, Reddit and First Outreach</div>
+        <div style="font-size:clamp(12px,1.5vh,16px);color:var(--ink3);line-height:1.5;display:flex;flex-direction:column;gap:3px">
+          <div>12 articles published</div>
+          <div>Reddit presence: 20 Reddit comments/month in HubSpot and RevOps threads</div>
+          <div>First editorial outreach to RevOps and B2B SaaS publications</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:flex;gap:clamp(12px,1.5vw,18px)">
+      <div style="display:flex;flex-direction:column;align-items:center;flex-shrink:0;width:clamp(28px,3.5vw,38px)">
+        <div style="width:clamp(11px,1.4vh,14px);height:clamp(11px,1.4vh,14px);border-radius:50%;background:var(--accent-dark);flex-shrink:0;margin-top:3px"></div>
+        <div style="width:2px;flex:1;background:var(--rule);min-height:clamp(10px,1.5vh,18px)"></div>
+      </div>
+      <div style="flex:1;padding-bottom:clamp(14px,2vh,24px)">
+        <div style="display:inline-block;background:var(--accent-dark);color:#fff;font-size:clamp(11px,1.4vh,15px);font-weight:600;letter-spacing:0.04em;border-radius:4px;padding:2px 8px;margin-bottom:4px">Month 3 &middot; Compound</div>
+        <div style="font-size:clamp(14px,1.9vh,20px);font-weight:700;color:var(--ink);margin-bottom:clamp(6px,0.9vh,10px)">Comparison Pages and Authority Push</div>
+        <div style="font-size:clamp(12px,1.5vh,16px);color:var(--ink3);line-height:1.5;display:flex;flex-direction:column;gap:3px">
+          <div>12 articles published</div>
+          <div>20 Reddit comments/month, scaling presence across subreddits</div>
+          <div>Comparison pages live: ScaleStation vs Neighbourhood, Avidly and RedPandas</div>
+          <div>Editorial links from ANZ business and HubSpot-ecosystem press</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:flex;gap:clamp(12px,1.5vw,18px)">
+      <div style="display:flex;flex-direction:column;align-items:center;flex-shrink:0;width:clamp(28px,3.5vw,38px)">
+        <div style="width:clamp(11px,1.4vh,14px);height:clamp(11px,1.4vh,14px);border-radius:50%;background:var(--ink4);flex-shrink:0;margin-top:3px"></div>
+      </div>
+      <div style="flex:1">
+        <div style="display:inline-block;background:var(--accent-bg);color:var(--accent-dark);border:1px solid var(--accent-bd);font-size:clamp(11px,1.4vh,15px);font-weight:600;letter-spacing:0.04em;border-radius:4px;padding:2px 8px;margin-bottom:4px">Month 4+ &middot; Ongoing</div>
+        <div style="font-size:clamp(14px,1.9vh,20px);font-weight:700;color:var(--ink);margin-bottom:clamp(6px,0.9vh,10px)">Continued Growth</div>
+        <div style="font-size:clamp(12px,1.5vh,16px);color:var(--ink3);line-height:1.5">Each month builds on the last. Content compounds, AI citations grow, DR climbs, Reddit presence builds month over month.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div style="display:flex;flex-direction:column;gap:clamp(10px,1.4vh,18px)">
+    <div style="background:var(--accent-bg);border:1.5px solid var(--accent-bd);border-radius:12px;padding:clamp(14px,2vh,24px)">
+      <span style="background:var(--accent-dark);color:#fff;font-size:clamp(10px,1.25vh,13px);font-weight:600;border-radius:20px;padding:2px 10px">Complete Solution</span>
+      <div style="font-size:clamp(16px,2.2vh,24px);font-weight:700;color:var(--ink);margin:clamp(8px,1.1vh,14px) 0 2px;font-family:'Poppins',sans-serif">Full AI Search Optimization</div>
+      <div style="font-size:clamp(11px,1.4vh,14px);color:var(--ink3);margin-bottom:clamp(8px,1.1vh,14px)">SEO + AEO + Reddit</div>
+      <div style="font-size:clamp(22px,3.2vh,40px);font-weight:800;color:var(--accent-dark);margin-bottom:clamp(8px,1.1vh,14px)">$3,500<span style="font-size:clamp(13px,1.7vh,17px);font-weight:500;color:var(--ink3)">/month</span></div>
+      <div style="height:1px;background:var(--accent-bd);margin-bottom:clamp(10px,1.4vh,16px)"></div>
+      <div style="display:flex;flex-direction:column;gap:clamp(7px,1vh,12px);margin-bottom:clamp(10px,1.4vh,14px)">
+        <div style="display:flex;align-items:flex-start;gap:10px">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="flex-shrink:0;margin-top:2px"><circle cx="8" cy="8" r="8" fill="#f0fdf4"/><path d="M4.5 8.5l2.5 2.5 4.5-5" stroke="#16a34a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span style="font-size:clamp(12px,1.6vh,17px);color:var(--ink2);line-height:1.5">12 content pieces/month targeting HubSpot, RevOps and GTM keywords</span>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:10px">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="flex-shrink:0;margin-top:2px"><circle cx="8" cy="8" r="8" fill="#f0fdf4"/><path d="M4.5 8.5l2.5 2.5 4.5-5" stroke="#16a34a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span style="font-size:clamp(12px,1.6vh,17px);color:var(--ink2);line-height:1.5">2 comparison pages per month vs Neighbourhood, Avidly and RedPandas</span>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:10px">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="flex-shrink:0;margin-top:2px"><circle cx="8" cy="8" r="8" fill="#f0fdf4"/><path d="M4.5 8.5l2.5 2.5 4.5-5" stroke="#16a34a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span style="font-size:clamp(12px,1.6vh,17px);color:var(--ink2);line-height:1.5">Reddit engagement: 20 targeted comments in HubSpot, RevOps and GTM threads</span>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:10px">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="flex-shrink:0;margin-top:2px"><circle cx="8" cy="8" r="8" fill="#f0fdf4"/><path d="M4.5 8.5l2.5 2.5 4.5-5" stroke="#16a34a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span style="font-size:clamp(12px,1.6vh,17px);color:var(--ink2);line-height:1.5">Editorial link outreach to RevOps, B2B SaaS and ANZ business publications</span>
+        </div>
+      </div>
+      <div style="font-size:clamp(11px,1.35vh,14px);color:var(--ink4);font-style:italic;border-top:1px solid var(--accent-bd);padding-top:8px">Includes AI Peekaboo monitoring for visibility tracking across Claude, ChatGPT and Perplexity. 3-month minimum.</div>
+    </div>
+    <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:12px;padding:clamp(14px,2vh,24px)">
+      <span style="background:var(--paper3);color:var(--ink4);font-size:clamp(10px,1.25vh,13px);font-weight:600;border-radius:20px;padding:2px 10px;border:1px solid var(--rule)">Entry Point</span>
+      <div style="font-size:clamp(16px,2.2vh,24px);font-weight:700;color:var(--ink);margin:clamp(8px,1.1vh,14px) 0 2px;font-family:'Poppins',sans-serif">Reddit Only</div>
+      <div style="font-size:clamp(11px,1.4vh,14px);color:var(--ink3);margin-bottom:clamp(8px,1.1vh,14px)">Build trust where buyers decide</div>
+      <div style="font-size:clamp(22px,3.2vh,40px);font-weight:800;color:var(--ink);margin-bottom:clamp(8px,1.1vh,14px)">$1,500<span style="font-size:clamp(13px,1.7vh,17px);font-weight:500;color:var(--ink3)">/month</span></div>
+      <div style="height:1px;background:var(--rule);margin-bottom:clamp(10px,1.4vh,16px)"></div>
+      <div style="display:flex;flex-direction:column;gap:clamp(7px,1vh,12px);margin-bottom:clamp(10px,1.4vh,14px)">
+        <div style="display:flex;align-items:flex-start;gap:10px">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="flex-shrink:0;margin-top:2px"><circle cx="8" cy="8" r="8" fill="#f0fdf4"/><path d="M4.5 8.5l2.5 2.5 4.5-5" stroke="#16a34a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span style="font-size:clamp(12px,1.6vh,17px);color:var(--ink2);line-height:1.5">Reddit engagement: 20 targeted comments per month in HubSpot, RevOps and GTM threads</span>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:10px">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="flex-shrink:0;margin-top:2px"><circle cx="8" cy="8" r="8" fill="#f0fdf4"/><path d="M4.5 8.5l2.5 2.5 4.5-5" stroke="#16a34a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span style="font-size:clamp(12px,1.6vh,17px);color:var(--ink2);line-height:1.5">Thread monitoring across r/hubspot, r/revops, r/SaaS, r/FractionalRevOps</span>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:10px">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="flex-shrink:0;margin-top:2px"><circle cx="8" cy="8" r="8" fill="#f0fdf4"/><path d="M4.5 8.5l2.5 2.5 4.5-5" stroke="#16a34a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span style="font-size:clamp(12px,1.6vh,17px);color:var(--ink2);line-height:1.5">AI citation tracking: when Reddit threads surface ScaleStation in LLM answers</span>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:10px">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="flex-shrink:0;margin-top:2px"><circle cx="8" cy="8" r="8" fill="#f0fdf4"/><path d="M4.5 8.5l2.5 2.5 4.5-5" stroke="#16a34a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span style="font-size:clamp(12px,1.6vh,17px);color:var(--ink2);line-height:1.5">Monthly Reddit report: mention share vs fractional providers, freelancers and named agencies</span>
+        </div>
+      </div>
+      <div style="font-size:clamp(11px,1.35vh,14px);color:var(--ink4);font-style:italic;border-top:1px solid var(--rule);padding-top:8px">Scale up to Full AI Search Optimization anytime. 3-month minimum.</div>
+    </div>
+    <p style="font-size:clamp(12px,1.5vh,15px);color:var(--ink4);text-align:center;margin:0">3-month minimum commitment. After month 3, renews month-to-month with 30 days cancellation notice.</p>
+  </div>
+
+</div>
+</div></section>
+
+<!-- SLIDE 16: CTA / Team -->
+<section><div class="s">
+<div class="shdr" data-n="16"></div>
+<h2 style="margin:0 0 clamp(10px,1.5vh,18px);text-align:center">Ready to Own HubSpot and RevOps AI Search in ANZ Before Competitors Do?</h2>
+<a href="https://calendly.com/filipe-aipeekaboo/30min" target="_blank" rel="noopener" style="display:block;width:100%;background:var(--accent-bg);border:2px solid var(--accent-bd);border-radius:8px;padding:clamp(14px,2vh,22px);text-align:center;text-decoration:none;margin:clamp(12px,1.8vh,20px) 0 clamp(8px,1.1vh,14px);flex-shrink:0">
+  <span style="font-size:clamp(14px,1.9vh,22px);font-weight:700;color:var(--accent-dark);letter-spacing:0.01em">Book a 30-Minute Strategy Call</span>
+</a>
+<p style="text-align:center;font-size:clamp(13px,1.7vh,17px);color:var(--ink3);margin:0 auto clamp(12px,1.8vh,22px);max-width:90ch;flex-shrink:0">Limited to 3 new SEO / AEO clients per quarter. Every week without comparison content and Reddit presence is another mid-market company that finds Neighbourhood, Avidly or an in-house hire instead of ScaleStation.</p>
+<div style="text-align:center;margin-bottom:clamp(8px,1.1vh,14px);flex-shrink:0">
+  <span style="font-size:clamp(11px,1.4vh,14px);font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--ink4)">The Team</span>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:clamp(12px,1.6vw,20px);align-items:start;flex-shrink:0">
+
+  <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:12px;padding:clamp(14px,1.9vh,22px);display:flex;flex-direction:column;gap:clamp(10px,1.3vh,16px);flex-shrink:0">
+    <div style="display:flex;align-items:center;gap:clamp(12px,1.6vh,17px)">
+      <img src="filipe.jpeg" style="width:50px;height:50px;border-radius:50%;object-fit:cover;border:2px solid var(--rule);flex-shrink:0">
+      <div>
+        <div style="font-size:clamp(14px,1.8vh,20px);font-weight:700;color:var(--ink)">Filipe Lins Duarte</div>
+        <div style="font-size:clamp(12px,1.5vh,16px);color:var(--accent-dark);font-weight:500">Co-Founder &amp; CEO</div>
+        <a href="https://www.linkedin.com/in/filipelinsduarte" target="_blank" rel="noopener" style="font-size:clamp(11px,1.4vh,15px);color:var(--ink4);text-decoration:none">linkedin.com/in/filipelinsduarte</a>
+      </div>
+    </div>
+    <div style="font-size:clamp(12px,1.5vh,16px);color:var(--ink3);line-height:1.5">Sales leader turned founder. Built revenue teams across SaaS in Europe and the US. Leads strategy and client relationships.</div>
+    <div style="display:flex;flex-direction:column;gap:clamp(5px,0.7vh,8px)">
+      <div style="display:flex;align-items:center;gap:8px">
+        <img src="https://www.google.com/s2/favicons?domain=aipeekaboo.com&sz=32" style="width:16px;height:16px;border-radius:3px;flex-shrink:0">
+        <span style="font-size:clamp(11px,1.4vh,15px);font-weight:600;color:var(--ink2)">AI Peekaboo</span>
+        <span style="font-size:clamp(10px,1.2vh,13px);color:var(--ink3)">Co-Founder &amp; CEO</span>
+        <span style="font-size:clamp(10px,1.2vh,13px);color:var(--ink4);margin-left:auto">Aug 2025</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <img src="https://www.google.com/s2/favicons?domain=uber.com&sz=32" style="width:16px;height:16px;border-radius:3px;flex-shrink:0">
+        <span style="font-size:clamp(11px,1.4vh,15px);font-weight:600;color:var(--ink2)">Uber for Business</span>
+        <span style="font-size:clamp(10px,1.2vh,13px);color:var(--ink3)">Mid-Market AE</span>
+        <span style="font-size:clamp(10px,1.2vh,13px);color:var(--ink4);margin-left:auto">Sep 2024</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <img src="https://www.google.com/s2/favicons?domain=meistertask.com&sz=32" style="width:16px;height:16px;border-radius:3px;flex-shrink:0">
+        <span style="font-size:clamp(11px,1.4vh,15px);font-weight:600;color:var(--ink2)">Meister</span>
+        <span style="font-size:clamp(10px,1.2vh,13px);color:var(--ink3)">#1 AE 2023</span>
+        <span style="font-size:clamp(10px,1.2vh,13px);color:var(--ink4);margin-left:auto">Aug 2022</span>
+      </div>
+    </div>
+  </div>
+
+  <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:12px;padding:clamp(14px,1.9vh,22px);display:flex;flex-direction:column;gap:clamp(10px,1.3vh,16px);flex-shrink:0">
+    <div style="display:flex;align-items:center;gap:clamp(12px,1.6vh,17px)">
+      <img src="john.jpeg" style="width:50px;height:50px;border-radius:50%;object-fit:cover;border:2px solid var(--rule);flex-shrink:0">
+      <div>
+        <div style="font-size:clamp(14px,1.8vh,20px);font-weight:700;color:var(--ink)">John Rice</div>
+        <div style="font-size:clamp(12px,1.5vh,16px);color:var(--accent-dark);font-weight:500">Co-Founder &amp; CTO</div>
+        <a href="https://www.linkedin.com/in/johnwilliamrice/" target="_blank" rel="noopener" style="font-size:clamp(11px,1.4vh,15px);color:var(--ink4);text-decoration:none">linkedin.com/in/johnwilliamrice</a>
+      </div>
+    </div>
+    <div style="font-size:clamp(12px,1.5vh,16px);color:var(--ink3);line-height:1.5">Full-stack engineer and serial builder. Designed the AI Peekaboo platform from scratch. Leads product and engineering.</div>
+    <div style="display:flex;flex-direction:column;gap:clamp(5px,0.7vh,8px)">
+      <div style="display:flex;align-items:center;gap:8px">
+        <img src="https://www.google.com/s2/favicons?domain=aipeekaboo.com&sz=32" style="width:16px;height:16px;border-radius:3px;flex-shrink:0">
+        <span style="font-size:clamp(11px,1.4vh,15px);font-weight:600;color:var(--ink2)">AI Peekaboo</span>
+        <span style="font-size:clamp(10px,1.2vh,13px);color:var(--ink3)">Co-Founder &amp; CTO</span>
+        <span style="font-size:clamp(10px,1.2vh,13px);color:var(--ink4);margin-left:auto">Apr 2025</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <img src="https://www.google.com/s2/favicons?domain=subredditsignals.com&sz=32" style="width:16px;height:16px;border-radius:3px;flex-shrink:0">
+        <span style="font-size:clamp(11px,1.4vh,15px);font-weight:600;color:var(--ink2)">Subreddit Signals</span>
+        <span style="font-size:clamp(10px,1.2vh,13px);color:var(--ink3)">Founder</span>
+        <span style="font-size:clamp(10px,1.2vh,13px);color:var(--ink4);margin-left:auto">Nov 2024</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <img src="https://www.google.com/s2/favicons?domain=magiclinks.com&sz=32" style="width:16px;height:16px;border-radius:3px;flex-shrink:0">
+        <span style="font-size:clamp(11px,1.4vh,15px);font-weight:600;color:var(--ink2)">MagicLinks</span>
+        <span style="font-size:clamp(10px,1.2vh,13px);color:var(--ink3)">Senior Software Engineer</span>
+        <span style="font-size:clamp(10px,1.2vh,13px);color:var(--ink4);margin-left:auto">Jul 2021</span>
+      </div>
+    </div>
+  </div>
+
+  <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:12px;padding:clamp(14px,1.9vh,22px);display:flex;flex-direction:column;gap:clamp(10px,1.3vh,16px);flex-shrink:0">
+    <div style="display:flex;align-items:center;gap:clamp(12px,1.6vh,17px)">
+      <img src="danny-kirk.jpeg" style="width:50px;height:50px;border-radius:50%;object-fit:cover;border:2px solid var(--rule);flex-shrink:0">
+      <div>
+        <div style="font-size:clamp(14px,1.8vh,20px);font-weight:700;color:var(--ink)">Danny Kirk</div>
+        <div style="font-size:clamp(12px,1.5vh,16px);color:var(--accent-dark);font-weight:500">COO &amp; Advisory</div>
+        <a href="https://www.linkedin.com/in/danielpkirk/" target="_blank" rel="noopener" style="font-size:clamp(11px,1.4vh,15px);color:var(--ink4);text-decoration:none">linkedin.com/in/danielpkirk</a>
+      </div>
+    </div>
+    <div style="font-size:clamp(12px,1.5vh,16px);color:var(--ink3);line-height:1.5">Reddit community expert and operator. Founded ReddiReach in 2017. Brings platform-native knowledge and operator experience.</div>
+    <div style="display:flex;flex-direction:column;gap:clamp(5px,0.7vh,8px)">
+      <div style="display:flex;align-items:center;gap:8px">
+        <img src="https://www.google.com/s2/favicons?domain=reddit.com&sz=32" style="width:16px;height:16px;border-radius:3px;flex-shrink:0">
+        <span style="font-size:clamp(11px,1.4vh,15px);font-weight:600;color:var(--ink2)">ReddiReach</span>
+        <span style="font-size:clamp(10px,1.2vh,13px);color:var(--ink3)">Founder</span>
+        <span style="font-size:clamp(10px,1.2vh,13px);color:var(--ink4);margin-left:auto">Dec 2017</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <img src="https://www.google.com/s2/favicons?domain=goaheadventures.com&sz=32" style="width:16px;height:16px;border-radius:3px;flex-shrink:0">
+        <span style="font-size:clamp(11px,1.4vh,15px);font-weight:600;color:var(--ink2)">GoAhead Ventures</span>
+        <span style="font-size:clamp(10px,1.2vh,13px);color:var(--ink3)">Venture Scout</span>
+        <span style="font-size:clamp(10px,1.2vh,13px);color:var(--ink4);margin-left:auto">Oct 2024</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <img src="https://www.google.com/s2/favicons?domain=energentmedia.com&sz=32" style="width:16px;height:16px;border-radius:3px;flex-shrink:0">
+        <span style="font-size:clamp(11px,1.4vh,15px);font-weight:600;color:var(--ink2)">Energent Media</span>
+        <span style="font-size:clamp(10px,1.2vh,13px);color:var(--ink3)">COO</span>
+        <span style="font-size:clamp(10px,1.2vh,13px);color:var(--ink4);margin-left:auto">Jun 2018</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div></section>
+
+      </div>
+    </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reveal.min.js"></script>
+<script>
+var T=16, D='scalestation.io', P='SEO / AEO Proposal';
+Reveal.initialize({hash:true,transition:'none',disableLayout:true,width:1920,height:1080,margin:0,minScale:0.1,maxScale:3});
+document.querySelectorAll('.shdr').forEach(function(el){
+  var n=el.getAttribute('data-n');
+  var src=el.getAttribute('data-source');
+  var srcHtml='';
+  if(src){
+    var srcMap={
+      'ahrefs':['https://www.google.com/s2/favicons?domain=ahrefs.com&sz=32','data from Ahrefs'],
+      'peekaboo':['https://www.aipeekaboo.com/icon.jpg','data from Peekaboo'],
+      'reddit':['https://www.google.com/s2/favicons?domain=reddit.com&sz=32','data from Reddit']
+    };
+    if(srcMap[src]) srcHtml='<div class="data-src"><img src="'+srcMap[src][0]+'"><span>'+srcMap[src][1]+'</span></div>';
+  }
+  var LEAD='<img src="https://www.google.com/s2/favicons?domain=scalestation.io&sz=64" class="hdr-favicon">';
+  el.innerHTML='<div class="stripe"></div><div class="hdr"><div style="display:flex;align-items:center;gap:10px">'+LEAD+'<span class="tag">'+P+'</span></div><div class="hdr-right"><span class="snum">'+n+' / '+T+'</span><a class="powered" href="https://www.aipeekaboo.com" target="_blank" rel="noopener"><span>Powered by</span><img src="https://www.aipeekaboo.com/images/peekaboo-logo-black.png"></a></div></div><div class="divider"></div>'+(srcHtml?'<div style="display:flex;justify-content:flex-end;margin-bottom:clamp(5px,0.7vh,9px)">'+srcHtml+'</div>':'');
+});
+</script>
+</body>
+</html>

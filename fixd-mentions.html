@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FIXD — Reddit Mentions</title>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YV8FCLN403"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-YV8FCLN403');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #faf9f7;
+      --surface: #ffffff;
+      --surface-alt: #f5f3f0;
+      --border: #e5e3df;
+      --border-light: #ede9e4;
+      --text: #1a1918;
+      --text-muted: #6b6965;
+      --text-faint: #9c9895;
+      --accent: #ff4500;
+      --accent-dark: #d93a00;
+      --accent-light: #fff1ec;
+      --success: #2e9e5b;
+      --success-light: #e9f7ef;
+      --danger: #d14343;
+      --danger-light: #fcebeb;
+      --amber: #e08a2b;
+      --amber-light: #fdf2e3;
+      --topbar-h: 56px;
+      --radius: 4px;
+      --radius-sm: 3px;
+      --radius-lg: 10px;
+      --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+      --font: 'Geist', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body { font-family: var(--font); font-size: 14px; line-height: 1.5; color: var(--text); background: var(--bg); }
+
+    .topbar {
+      height: var(--topbar-h); display: flex; align-items: center;
+      padding: 0 24px; background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      position: sticky; top: 0; z-index: 50; gap: 12px;
+    }
+    .logo-icon {
+      width: 28px; height: 28px; border-radius: 7px; overflow: hidden;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+      background: #1a1918;
+    }
+    .logo-icon img { width: 28px; height: 28px; object-fit: contain; display: block; }
+    .logo-icon .logo-fallback { color: #fff; font-size: 13px; font-weight: 800; letter-spacing: -.02em; }
+    .topbar-title { font-size: 14px; font-weight: 700; letter-spacing: -.01em; }
+    .topbar-sep { color: var(--border); font-size: 18px; font-weight: 300; }
+    .topbar-sub { font-size: 13px; color: var(--text-muted); }
+    .topbar-meta { margin-left: auto; display: flex; align-items: center; gap: 16px; }
+    .topbar-stat { font-size: 12px; color: var(--text-muted); }
+    .topbar-stat strong { color: var(--text); font-weight: 600; }
+
+    .page-content { padding: 24px 28px 60px; }
+
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); box-shadow: var(--shadow); overflow: hidden; }
+    .card-header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 12px 16px; border-bottom: 1px solid var(--border-light);
+      gap: 12px; flex-wrap: wrap;
+    }
+    .card-title { font-size: 12.5px; font-weight: 700; }
+    .card-desc { font-size: 11px; color: var(--text-muted); margin-top: 1px; }
+    .card-filters { display: flex; align-items: center; gap: 8px; }
+
+    .filter-select-wrap { position: relative; display: inline-flex; align-items: center; }
+    .filter-select-wrap::after {
+      content: '';
+      position: absolute; right: 10px; top: 50%; transform: translateY(-50%);
+      border: 4px solid transparent; border-top-color: var(--text-muted);
+      border-bottom: none; margin-top: 2px; pointer-events: none;
+    }
+    select.filter-select {
+      appearance: none; -webkit-appearance: none;
+      padding: 5px 28px 5px 11px; border: 1px solid var(--border); border-radius: 6px;
+      font-size: 12px; font-weight: 500; color: var(--text-muted); background: var(--surface);
+      cursor: pointer; font-family: var(--font); transition: border-color .12s;
+      outline: none;
+    }
+    select.filter-select:hover { border-color: var(--text-faint); color: var(--text); }
+    select.filter-select:focus { border-color: var(--accent); color: var(--text); }
+
+    .sheet-wrap { overflow-x: auto; }
+    table.req-sheet { border-collapse: collapse; font-size: 12.5px; width: 100%; }
+    table.req-sheet thead th {
+      background: var(--surface-alt);
+      border-bottom: 1px solid var(--border);
+      border-right: 1px solid var(--border-light);
+      padding: 7px 10px; text-align: left;
+      font-size: 10px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: .05em; color: var(--text-muted); white-space: nowrap;
+    }
+    table.req-sheet thead th:last-child { border-right: none; }
+    table.req-sheet tbody td {
+      padding: 10px 12px; border-bottom: 1px solid var(--border-light);
+      border-right: 1px solid var(--border-light); vertical-align: top;
+    }
+    table.req-sheet tbody td:last-child { border-right: none; }
+    table.req-sheet tbody tr:last-child td { border-bottom: none; }
+    table.req-sheet tbody tr:hover td { background: var(--surface-alt); }
+
+    .req-rownum {
+      width: 36px; text-align: center; color: var(--text-faint);
+      font-size: 11px; font-variant-numeric: tabular-nums;
+      background: var(--surface-alt) !important; border-right: 1px solid var(--border) !important;
+      user-select: none; vertical-align: middle !important; padding: 10px 6px !important; white-space: nowrap;
+    }
+    table.req-sheet tbody tr:hover .req-rownum { color: var(--text-muted); }
+    table.req-sheet thead th:first-child { border-right: 1px solid var(--border) !important; }
+
+    .rfav { width: 14px; height: 14px; border-radius: 3px; vertical-align: -2px; object-fit: contain; margin-right: 5px; flex-shrink: 0; }
+    .sub-name { font-size: 12px; font-weight: 600; color: var(--text-muted); white-space: nowrap; }
+
+    .t-link { color: var(--accent-dark); text-decoration: none; font-weight: 500; }
+    .t-link:hover { text-decoration: underline; }
+
+    .post-quote {
+      margin-top: 5px; padding: 6px 10px;
+      background: var(--surface-alt); border-left: 3px solid var(--border);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      font-size: 12px; color: var(--text-muted); line-height: 1.45;
+      max-width: 520px; font-style: italic;
+    }
+    .post-quote em {
+      color: var(--accent-dark); font-style: normal; font-weight: 600;
+      background: var(--accent-light); padding: 0 2px; border-radius: 2px;
+    }
+
+    .pill { display: inline-flex; align-items: center; gap: 4px; padding: 2px 9px; border-radius: 100px; font-size: 11px; font-weight: 600; white-space: nowrap; }
+    .pill-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+    .pill-positive { background: var(--success-light); color: #1f7a45; }
+    .pill-positive .pill-dot { background: var(--success); }
+    .pill-neutral { background: var(--surface-alt); color: var(--text-muted); }
+    .pill-neutral .pill-dot { background: var(--text-faint); }
+    .pill-negative { background: var(--danger-light); color: var(--danger); }
+    .pill-negative .pill-dot { background: var(--danger); }
+    .pill-mixed { background: var(--amber-light); color: var(--amber); }
+    .pill-mixed .pill-dot { background: var(--amber); }
+
+    .loc-pill { display: inline-flex; align-items: center; padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 500; background: var(--surface-alt); color: var(--text-muted); border: 1px solid var(--border-light); }
+
+    .date-cell { font-size: 12px; color: var(--text-muted); white-space: nowrap; font-variant-numeric: tabular-nums; }
+  </style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="logo-icon">
+    <img src="https://www.fixdapp.com/favicon.ico" alt="FIXD"
+         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+    <span class="logo-fallback" style="display:none">F</span>
+  </div>
+  <span class="topbar-title">FIXD</span>
+  <span class="topbar-sep">/</span>
+  <span class="topbar-sub">Reddit Mentions</span>
+  <div class="topbar-meta">
+    <span class="topbar-stat"><strong id="visible-count">42</strong> posts</span>
+    <span class="topbar-stat"><strong>16</strong> subreddits</span>
+    <span class="topbar-stat">2018 – May 2026</span>
+  </div>
+</div>
+
+<div class="page-content">
+  <div class="card">
+    <div class="card-header">
+      <div>
+        <div class="card-title">Brand mention posts</div>
+        <div class="card-desc">All confirmed Reddit posts mentioning FIXD — combined 240-agent scan + Reddit audit data</div>
+      </div>
+      <div class="card-filters">
+        <div class="filter-select-wrap">
+          <select class="filter-select" id="year-filter">
+            <option value="all">All years</option>
+            <option value="2026">2026</option>
+            <option value="2025">2025</option>
+            <option value="2024">2024</option>
+            <option value="2023">2023</option>
+            <option value="2022">2022</option>
+            <option value="2021">2021</option>
+            <option value="2020">2020</option>
+            <option value="2018">2018</option>
+          </select>
+        </div>
+        <div class="filter-select-wrap">
+          <select class="filter-select" id="sub-filter">
+            <option value="all">All subreddits</option>
+            <option value="MechanicAdvice">r/MechanicAdvice (15)</option>
+            <option value="AskAMechanic">r/AskAMechanic (9)</option>
+            <option value="CarTalk">r/Cartalk (5)</option>
+            <option value="Autos">r/Autos (2)</option>
+            <option value="AskMechanics">r/AskMechanics (1)</option>
+            <option value="askcarguys">r/askcarguys (1)</option>
+            <option value="AutoRepair">r/AutoRepair (1)</option>
+            <option value="CarHacking">r/CarHacking (1)</option>
+            <option value="CarRepair">r/CarRepair (1)</option>
+            <option value="cars">r/cars (1)</option>
+            <option value="Hyundai">r/Hyundai (1)</option>
+            <option value="OBD2">r/OBD2 (1)</option>
+            <option value="privacy">r/privacy (1)</option>
+            <option value="prius">r/prius (1)</option>
+            <option value="UsedCars">r/UsedCars (1)</option>
+            <option value="whatcarshouldIbuy">r/whatcarshouldIbuy (1)</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="sheet-wrap">
+      <table class="req-sheet" id="mentions-table">
+        <thead>
+          <tr>
+            <th style="width:36px">#</th>
+            <th style="width:160px">Subreddit</th>
+            <th>Post title &amp; FIXD quote</th>
+            <th style="width:110px">Post Date</th>
+            <th style="width:96px">Sentiment</th>
+            <th style="width:130px">Brand Mention Location</th>
+          </tr>
+        </thead>
+        <tbody id="table-body"></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<script>
+var POSTS = [
+  { subreddit:'MechanicAdvice', title:'Catalytic converter help', url:'https://www.reddit.com/r/MechanicAdvice/comments/1q6fmyc/', date:'2026-01-07', context:'using a FIXD I found in the house I saw that I\'m getting error P2423', sentiment:'neutral', location:'post body' },
+  { subreddit:'AskAMechanic', title:'06\' Saab 9-3 2.0T (sedan 4 door) mystery sound under hood', url:'https://www.reddit.com/r/AskAMechanic/comments/1t4u7au/', date:'2026-05-05', context:'I have a fixd reader but that\'s only for electrical', sentiment:'neutral', location:'post body' },
+  { subreddit:'AskAMechanic', title:'\'06 Saab9-3 2.0T Startup, think something is off', url:'https://www.reddit.com/r/AskAMechanic/comments/1t4u1n6/', date:'2026-05-05', context:'I bought a fixd reader to see what electrical issues there might be', sentiment:'neutral', location:'post body' },
+  { subreddit:'Autos', title:'FIXD requires subscription?', url:'https://www.reddit.com/r/Autos/comments/1kv6mt6/', date:'2025-05-25', context:'The documentation says it can scan for engine codes without a subscription. FIXD is a scam. The scanner is fine, but the subscription is ...', sentiment:'negative', location:'post body' },
+  { subreddit:'AskAMechanic', title:'Low oil pressure light', url:'https://www.reddit.com/r/AskAMechanic/comments/1sy8ot8/', date:'2026-04-28', context:'I plugged in one of those FIXD code readers. And got these codes P0300, P0304, P0302. The engine seemed to be running fine.', sentiment:'neutral', location:'post body' },
+  { subreddit:'AskMechanics', title:'FixD app/code reader Legit?', url:'https://www.reddit.com/r/AskMechanics/comments/1mpzfii/', date:'2025-08-14', context:'Got a code reader just to save time and money called FIXD, anyone have any experience in using this or similar apps and how accurate they are...', sentiment:'positive', location:'post body' },
+  { subreddit:'MechanicAdvice', title:'Standard practice for check engine light?', url:'https://www.reddit.com/r/MechanicAdvice/comments/1p5u1ko/', date:'2025-11-24', context:'Before taking it in, I used my Fixd device to tell me what the code was... gave them the code: P0128 (coolant thermostat)', sentiment:'positive', location:'post body' },
+  { subreddit:'CarTalk', title:'CODE PO 171', url:'https://www.reddit.com/r/CarTalk/comments/1ovhvo9/', date:'2025-11-12', context:'I put the FIXD into the car and it came up cold p0171 on Monday — was driving 80 miles when steam came from under the hood', sentiment:'neutral', location:'post body' },
+  { subreddit:'MechanicAdvice', title:'2008 Chrysler Sebring Touring 2.7L Bank 2 o2 Sensors locations', url:'https://www.reddit.com/r/MechanicAdvice/comments/1ofh04g/', date:'2025-10-25', context:'I have an engine code of P0430 Catalyst Efficiency Below Threshold (Bank2) according to my OBD (FIXD)', sentiment:'neutral', location:'post body' },
+  { subreddit:'MechanicAdvice', title:'2014 Ford Focus SE Automatic Won\'t Start', url:'https://www.reddit.com/r/MechanicAdvice/comments/1o6xg14/', date:'2025-10-15', context:'I\'ll add some photos from the FIXD diagnostic app to help if anyone can direct me to the fix', sentiment:'positive', location:'post body' },
+  { subreddit:'AskAMechanic', title:'2013 Hyundai Sonata SE 2.4L throwing P0420 and P0420-11 codes', url:'https://www.reddit.com/r/AskAMechanic/comments/1ocjds9/', date:'2025-10-21', context:'Have a FIXD OBD reader and the initial codes were for an air fuel ratio code. Took it to the dealer.', sentiment:'neutral', location:'post body' },
+  { subreddit:'MechanicAdvice', title:'ECM issues 2015 4Runner', url:'https://www.reddit.com/r/MechanicAdvice/comments/1nsauie/', date:'2025-09-28', context:'I recently took my FixD OBD2 scanner and got 5 codes that popped up — what would be the recommended course of action?', sentiment:'neutral', location:'post body' },
+  { subreddit:'AskAMechanic', title:'2013 Chevy Impala LT ongoing issues', url:'https://www.reddit.com/r/AskAMechanic/comments/1n8f4pj/', date:'2025-09-04', context:'I have a FixD Bluetooth OBD sensor plugged into my car. It has about 80,000 miles on it.', sentiment:'neutral', location:'post body' },
+  { subreddit:'MechanicAdvice', title:'Honda Fit Engine Misfire codes', url:'https://www.reddit.com/r/MechanicAdvice/comments/1ni0tu9/', date:'2025-09-15', context:'But according to the fixd app, the codes are still there, but maybe they are saved from a prior scan?', sentiment:'neutral', location:'post body' },
+  { subreddit:'MechanicAdvice', title:'Cam Sensor Circuit Code After Battery Died', url:'https://www.reddit.com/r/MechanicAdvice/comments/1n72mea/', date:'2025-09-03', context:'the email from FIXD after the scan says the code is likely for bank 2, so I\'m at a loss', sentiment:'negative', location:'post body' },
+  { subreddit:'MechanicAdvice', title:'Opinions', url:'https://www.reddit.com/r/MechanicAdvice/comments/1n0wsmp/', date:'2025-08-26', context:'I had a P2A00 code Air Fuel sensor bank 1 sensor show up when I ran FIXD. Had a mechanic replace the sensor.', sentiment:'neutral', location:'post body' },
+  { subreddit:'AskAMechanic', title:'2013 Chevy Silverado LT 2500HD 6.0L V8, 214k miles engine codes', url:'https://www.reddit.com/r/AskAMechanic/comments/1mng9t5/', date:'2025-08-11', context:'I plugged in one of those FIXD code readers. And got these codes P0300, P0304, P0302.', sentiment:'neutral', location:'post body' },
+  { subreddit:'CarTalk', title:'2013 Chevy Silverado LT 2500 HD, 214k miles: engine codes P0741, P0700, P0776', url:'https://www.reddit.com/r/Cartalk/comments/1mngoz9/', date:'2025-08-11', context:'we got this code on our FIXD scan on 8/6. P0741 - torque converter clutch, but it showed as a moderate issue.', sentiment:'neutral', location:'post body' },
+  { subreddit:'AutoRepair', title:'B210d code after battery replacement', url:'https://www.reddit.com/r/AutoRepair/comments/1mnoeqe/', date:'2025-08-11', context:'However on my fixd tool, it shows a b210d code. Assuming this was from the old battery but not sure how to reset it.', sentiment:'neutral', location:'post body' },
+  { subreddit:'AskAMechanic', title:'New ODB scanner', url:'https://www.reddit.com/r/AskAMechanic/comments/1me0skt/', date:'2025-07-31', context:'Fixd seems to be more novice/user friendly but to really unlock its potential you need the premium subscription. Innova is more expensive but more comprehensive.', sentiment:'mixed', location:'post body' },
+  { subreddit:'MechanicAdvice', title:'2002 Mustang V6 Rough Idle, Misfire, Gas Smell. Need Help Diagnosing', url:'https://www.reddit.com/r/MechanicAdvice/comments/1lwnufh/', date:'2025-07-10', context:'Ran live data with a FIXD reader, engine load is high at idle (~37%), but MAF and timing seem okay', sentiment:'neutral', location:'post body' },
+  { subreddit:'CarRepair', title:'FIXD', url:'https://www.reddit.com/r/CarRepair/comments/1iu29nu/', date:'2025-02-20', context:'The ordering process is a scam. You think you are ordering the devices, enter your card info, then they tell you that you ordered the Fixd...', sentiment:'negative', location:'post body' },
+  { subreddit:'AskAMechanic', title:'2012 Honda Accord 2.4L PO339 & PO848 Code', url:'https://www.reddit.com/r/AskAMechanic/comments/1pbgxg3/', date:'2025-12-01', context:'Have a FIXD OBD reader and the initial codes were for a crankshaft position sensor', sentiment:'neutral', location:'post body' },
+  { subreddit:'UsedCars', title:'Code reader / FIXD to buy used car?', url:'https://www.reddit.com/r/UsedCars/comments/1h4zfd2/', date:'2024-12-02', context:'I am in the process of buying a used vehicle and I know little about cars. I have a few mechanic friends but they are all too busy at the moment to help...', sentiment:'neutral', location:'post body' },
+  { subreddit:'askcarguys', title:'Is the FIXD OBD2 scanner any good?', url:'https://www.reddit.com/r/askcarguys/comments/1fmiuvn/', date:'2024-09-22', context:'Looking to buy an obd2 scanner but don’t wanna spend so much on one nor do I wanna spend money on a cheap quality one. I just need one that does its job...', sentiment:'positive', location:'post body' },
+  { subreddit:'whatcarshouldIbuy', title:'Thoughts about using a OBD2 scanner device like FIXD', url:'https://www.reddit.com/r/whatcarshouldIbuy/comments/1ffj5ix/', date:'2024-09-13', context:'I’m in the market for a used car. The main source of my worry is not knowing what might actually be wrong with the car right now...', sentiment:'neutral', location:'post body' },
+  { subreddit:'MechanicAdvice', title:'Is the FIXD scanner device any good?', url:'https://www.reddit.com/r/MechanicAdvice/comments/1azzxxz/', date:'2024-02-25', context:'Thoughts on the FIXD OBD2 scanner? I can\'t find any reviews online that aren\'t sponsored.', sentiment:'positive', location:'post body' },
+  { subreddit:'Hyundai', title:'Has anyone tried fixd.com sensor on their Hyundai car?', url:'https://www.reddit.com/r/Hyundai/comments/1bmp327/', date:'2024-03-24', context:'It seems like a OBD scanner with a phone app. Anyone tried it on their Hyundai car? Wouldn\'t it be redundant if you have Bluelink subscriptions?', sentiment:'negative', location:'post body' },
+  { subreddit:'OBD2', title:'FIXD or Carly sensor?', url:'https://www.reddit.com/r/OBD2/comments/158t6tb/', date:'2023-07-25', context:'FIXD has always looked a bit sketchy to me, and I\'ve heard they automatically put subscriptions on people\'s cards. If you guys have any other suggestions...', sentiment:'negative', location:'post body' },
+  { subreddit:'MechanicAdvice', title:'I have a OBD2 sensor from Fixd for my car. Are there any', url:'https://www.reddit.com/r/MechanicAdvice/comments/ti1hgt/', date:'2022-03-19', context:'I want a second opinion on the codes that I\'m getting via the Fixd app, but any attempt to find this information online leads to paid blog posts and reviews...', sentiment:'neutral', location:'post body' },
+  { subreddit:'prius', title:'Help! Does FIXD OBD2 sensor work with other apps such', url:'https://www.reddit.com/r/prius/comments/s8u06m/', date:'2022-01-20', context:'The FIXD OBD2 scanner works with Dr.Prius and a hybrid. If you plug it into a non-hybrid to test it, it won\'t connect to the Dr.Prius app.', sentiment:'neutral', location:'post body' },
+  { subreddit:'cars', title:'FIXD OBD2 Bluetooth scanner question', url:'https://www.reddit.com/r/cars/comments/pcwe9j/', date:'2021-08-27', context:'I bought the FIXD OBD2 Bluetooth enabled scanner on Amazon. At first it seemed great but then I realized they want you to pay $60 a year to access half of the features.', sentiment:'positive', location:'post body' },
+  { subreddit:'MechanicAdvice', title:'FixD OBD2 scanner', url:'https://www.reddit.com/r/MechanicAdvice/comments/lc8wrh/', date:'2021-02-04', context:'So I am looking into buying a FixD OBD2 scanner and was just wondering if anyone had any thoughts on them or if there is a better Bluetooth OBD2 scanner for the money.', sentiment:'neutral', location:'post body' },
+  { subreddit:'CarHacking', title:'Should I be suspicious of companies like Fixd? Do they', url:'https://www.reddit.com/r/CarHacking/comments/hsoldh/', date:'2020-07-17', context:'Are there open source OBD II readers and apps out there? Suspicious of companies like Fixd collecting vehicle data.', sentiment:'neutral', location:'post body' },
+  { subreddit:'CarTalk', title:'Is FIXD a legit device for diagnosing your car?', url:'https://www.reddit.com/r/Cartalk/comments/gne6da/', date:'2020-05-20', context:'FIXD is basically a lower range scan tool, it can pull/clear codes and some data but that\'s it. It\'s good for beginning a diagnosis.', sentiment:'positive', location:'post body' },
+  { subreddit:'privacy', title:'I installed the Fixd app (iOS) to use the OBD2 reader I\'d just bought', url:'https://www.reddit.com/r/privacy/comments/1cb504u/i_installed_the_fixd_app_ios_to_use_the_obd2', date:'2024-03-15', context:'I installed the FIXD app on iOS — concerned about the data it collects from your car and phone. Is this a privacy risk?', sentiment:'negative', location:'post body' },
+  { subreddit:'Cartalk', title:'Safe to drive short distance with camshaft position failure 2006 LX470', url:'https://www.reddit.com/r/Cartalk/comments/1am6yo5/', date:'2024-01-24', context:'managed to scan one with FIXD and it\'s telling me there\'s an error with camshaft sensor', sentiment:'neutral', location:'post body' },
+  { subreddit:'MechanicAdvice', title:'Does anyone use FIXD or any similar sensors? Should I?', url:'https://www.reddit.com/r/MechanicAdvice/comments/xsbsog/', date:'2022-10-06', context:'Does anyone use FIXD? I\'ve seen similar offers over the years too but this one was recently recommended by a friend', sentiment:'neutral', location:'post body' },
+  { subreddit:'MechanicAdvice', title:'2012 Chevrolet Trax — the results of a diagnosis from a Fixd ODB2 plugin scanner', url:'https://www.reddit.com/r/MechanicAdvice/comments/r13pf6/', date:'2021-09-06', context:'the results of a diagnosis from a Fixd ODB2 plugin scanner. What can I do to fix these outside of bringing this to a garage?', sentiment:'neutral', location:'post body' },
+  { subreddit:'MechanicAdvice', title:'Check Engine Light came on a week ago and my FixD scanner gives P0014 code', url:'https://www.reddit.com/r/MechanicAdvice/comments/mrh2i6/', date:'2021-06-20', context:'Check Engine Light came on a week ago and my FixD scanner gives P0014 code. Anything I need to check before I buy and replace the part?', sentiment:'neutral', location:'post body' },
+  { subreddit:'Autos', title:'PLEASE HELP P0755', url:'https://www.reddit.com/r/Autos/comments/mc2gmc/', date:'2021-03-25', context:'My FIXD is throwing P0755 Shift Control solenoid valve B error code', sentiment:'neutral', location:'post body' },
+  { subreddit:'Cartalk', title:'What OBD-II reader do you recommend?', url:'https://www.reddit.com/r/Cartalk/comments/9ielrw/', date:'2018-09-30', context:'Has anyone had any experience with Fixd? Ideally it would be paired with an app and has live readings', sentiment:'neutral', location:'post body' },
+]
+
+function highlightFIXD(text) {
+  return text.replace(/fixd/gi, function(m) { return '<em>' + m + '</em>' })
+}
+
+function sentimentPill(s) {
+  var map = { positive: 'Positive', negative: 'Negative', neutral: 'Neutral', mixed: 'Mixed' }
+  return '<span class="pill pill-' + s + '"><span class="pill-dot"></span>' + (map[s] || s) + '</span>'
+}
+
+function render(subFilter, yearFilter) {
+  var tbody = document.getElementById('table-body')
+  var filtered = POSTS.filter(function(p) {
+    var subOk = subFilter === 'all' || p.subreddit === subFilter
+    var yearOk = yearFilter === 'all' || p.date.slice(0, 4) === yearFilter
+    return subOk && yearOk
+  })
+  var html = ''
+  filtered.forEach(function(p, i) {
+    var d = new Date(p.date + 'T12:00:00')
+    var dateStr = d.toLocaleDateString('en-US', { month: 'short', year: 'numeric' })
+    var quotedContext = '“' + highlightFIXD(p.context) + '”'
+    html += '<tr data-sub="' + p.subreddit + '">'
+    html += '<td class="req-rownum">' + (i + 1) + '</td>'
+    html += '<td style="vertical-align:middle">'
+    html += '<img class="rfav" src="https://www.redditstatic.com/shreddit/assets/favicon/64x64.png" alt="" onerror="this.style.display=\'none\'">'
+    html += '<span class="sub-name">r/' + p.subreddit + '</span>'
+    html += '</td>'
+    html += '<td>'
+    html += '<div><a class="t-link" href="' + p.url + '" target="_blank" rel="noopener">' + p.title + '</a></div>'
+    html += '<div class="post-quote">' + quotedContext + '</div>'
+    html += '</td>'
+    html += '<td class="date-cell" style="vertical-align:middle">' + dateStr + '</td>'
+    html += '<td style="vertical-align:middle">' + sentimentPill(p.sentiment) + '</td>'
+    html += '<td style="vertical-align:middle"><span class="loc-pill">' + p.location + '</span></td>'
+    html += '</tr>'
+  })
+  tbody.innerHTML = html
+  var countEl = document.getElementById('visible-count')
+  if (countEl) { countEl.textContent = filtered.length }
+}
+
+function getFilters() {
+  var sub = document.getElementById('sub-filter')
+  var yr = document.getElementById('year-filter')
+  return { sub: sub ? sub.value : 'all', year: yr ? yr.value : 'all' }
+}
+
+var subSel = document.getElementById('sub-filter')
+var yrSel = document.getElementById('year-filter')
+if (subSel) { subSel.addEventListener('change', function() { var f = getFilters(); render(f.sub, f.year) }) }
+if (yrSel) { yrSel.addEventListener('change', function() { var f = getFilters(); render(f.sub, f.year) }) }
+
+render('all', 'all')
+</script>
+</body>
+</html>

@@ -3337,6 +3337,9 @@ function buildMarketOpportunity() {
     + step(_nfmt(o.totBound), rfav + 'searches landing on Reddit each month', blue)
     + arrow
     + step('$' + _nfmt(o.totValue), 'monthly value at Google Ads rates', blue)
+    + '</div>'
+    + '<div style="margin-top:12px;padding:10px 14px;background:var(--orange-light);border:1px solid rgba(194,98,42,0.2);border-radius:var(--radius);font-size:12px;color:var(--orange-text);line-height:1.6">'
+    + '<strong>Why $0?</strong> Google bans firearm and ammunition advertising under its Dangerous Products policy, so there is no paid bidding data for these keywords. CPC is $0 across the board, which makes the ad-value calculation meaningless here. The search volume and Reddit presence data are still real, the opportunity is organic, not paid.'
     + '</div></div>';
 
   // Keyword table: only keywords with measurable Google volume, sorted by value then volume
@@ -3424,7 +3427,8 @@ function buildMarketOpportunity() {
 
   const methodology = '<div style="font-size:11px;color:var(--text-3);line-height:1.6;margin-top:18px;padding-top:14px;border-top:1px solid var(--border-light)">'
     + '<strong style="color:var(--text-2)">How the Reddit share is estimated.</strong> '
-    + 'Search volumes and cost-per-click come from Google Ads data via DataForSEO. For each keyword we counted how many Reddit threads appeared across three separate Google result checks. We assume each Reddit listing captures roughly 4 percent of clicks for that search, a conservative page one click-through rate, capped at 30 percent per keyword. Reddit-bound searches are that capture rate times monthly volume, and the value is those searches priced at the keyword cost-per-click, what the same traffic would cost through Google Ads.'
+    + 'Search volumes and cost-per-click come from Google Ads data via DataForSEO. For each keyword we counted how many Reddit threads appeared across three separate Google result checks. We assume each Reddit listing captures roughly 4 percent of clicks for that search, a conservative page one click-through rate, capped at 30 percent per keyword. Reddit-bound searches are that capture rate times monthly volume, and the value is those searches priced at the keyword cost-per-click, what the same traffic would cost through Google Ads. '
+    + '<strong style="color:var(--text-2)">Note on $0 CPC:</strong> Google prohibits advertising for firearms and related products under its Dangerous Products policy. As a result, CPC is $0 for all keywords in this audit and the ad-value column reflects that restriction, not low demand. The search volumes are real.'
     + '</div>';
 
   return '<div class="section">'

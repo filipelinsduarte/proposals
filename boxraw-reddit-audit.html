@@ -410,6 +410,7 @@
   <button class="tab-btn" data-tab="subreddits" role="tab" aria-selected="false">Subreddits</button>
   <button class="tab-btn" data-tab="competitors" role="tab" aria-selected="false">Competitors</button>
   <button class="tab-btn" data-tab="sentiment" role="tab" aria-selected="false">Sentiment</button>
+  <button class="tab-btn" data-tab="topics" role="tab" aria-selected="false">Topics</button>
 </nav>
 
 <main class="content">
@@ -1083,6 +1084,20 @@
     </div>
   </section>
 
+  <!-- ==================== TAB 6: TOPICS ==================== -->
+  <section class="tab-panel" id="panel-topics">
+    <div class="chart-row" style="align-items:flex-start;gap:20px;">
+      <div class="card" style="width:260px;flex-shrink:0;">
+        <div class="card__title">Top Topics</div>
+        <ul id="topic-list" style="list-style:none;padding:0;margin:0;"></ul>
+      </div>
+      <div class="card" style="flex:1;min-width:0;">
+        <div class="card__title" id="topic-panel-title" style="margin-bottom:14px;">Select a topic</div>
+        <div id="topic-panel-content"></div>
+      </div>
+    </div>
+  </section>
+
 </main>
 
 <script>
@@ -1234,6 +1249,7 @@ function bootTab(tab) {
   else if (tab === 'subreddits') initSubreddits();
   else if (tab === 'competitors') { initCompetitors();  }
   else if (tab === 'sentiment') initSentiment();
+  else if (tab === 'topics') initTopics();
 }
 
 // ============================================================
@@ -1704,6 +1720,81 @@ function initSentiment() {
     });
     sentTbody.innerHTML = rows;
   }
+}
+
+function initTopics() {
+  var topicMap = {};
+  THREADS.forEach(function(t) {
+    (t.themes || []).forEach(function(theme) {
+      var key = theme.trim().toLowerCase();
+      if (!key) return;
+      if (!topicMap[key]) topicMap[key] = [];
+      topicMap[key].push(t);
+    });
+  });
+
+  var topics = Object.entries(topicMap)
+    .sort(function(a, b) { return b[1].length - a[1].length; })
+    .slice(0, 30);
+
+  var list = document.getElementById('topic-list');
+  if (!list) return;
+  list.innerHTML = '';
+
+  var activeTheme = null;
+
+  function renderTopicPosts(theme, posts) {
+    var titleEl = document.getElementById('topic-panel-title');
+    if (titleEl) titleEl.textContent = cap(theme) + ' (' + posts.length + ' post' + (posts.length !== 1 ? 's' : '') + ')';
+    var content = document.getElementById('topic-panel-content');
+    if (!content) return;
+    var sorted = posts.slice().sort(function(a, b) { return (b.fit_score || 0) - (a.fit_score || 0); });
+    var rows = sorted.slice(0, 40).map(function(t) {
+      return '<tr style="border-bottom:1px solid var(--border)">' +
+        '<td style="padding:8px 0;max-width:360px;"><a href="' + esc(t.url) + '" target="_blank" rel="noopener" style="color:var(--blue);text-decoration:none;display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:13px">' + esc(t.title) + '</a></td>' +
+        '<td style="padding:8px 12px;white-space:nowrap;">' + sentBadge(t.sentiment) + '</td>' +
+        '<td style="padding:8px 12px;white-space:nowrap;">' + fitHtml(t.fit_score) + '</td>' +
+        '<td style="padding:8px 0;white-space:nowrap;font-size:12px;color:var(--muted)">' + esc(t.date || '') + '</td>' +
+        '</tr>';
+    }).join('');
+    content.innerHTML = '<table style="width:100%;border-collapse:collapse;">' +
+      '<thead><tr style="border-bottom:2px solid var(--border)">' +
+      '<th style="text-align:left;padding:6px 0;font-size:11px;font-weight:600;text-transform:uppercase;color:var(--muted)">Title</th>' +
+      '<th style="text-align:left;padding:6px 12px;font-size:11px;font-weight:600;text-transform:uppercase;color:var(--muted)">Sentiment</th>' +
+      '<th style="text-align:left;padding:6px 12px;font-size:11px;font-weight:600;text-transform:uppercase;color:var(--muted)">Fit</th>' +
+      '<th style="text-align:left;padding:6px 0;font-size:11px;font-weight:600;text-transform:uppercase;color:var(--muted)">Date</th>' +
+      '</tr></thead><tbody>' + rows + '</tbody></table>';
+  }
+
+  topics.forEach(function(pair, i) {
+    var theme = pair[0];
+    var posts = pair[1];
+    var li = document.createElement('li');
+    li.setAttribute('data-theme', theme);
+    li.style.cssText = 'cursor:pointer;padding:7px 10px;border-radius:6px;margin-bottom:3px;display:flex;justify-content:space-between;align-items:center;font-size:13px;color:var(--text);transition:background 0.12s;';
+    li.innerHTML = '<span style="text-transform:capitalize;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;flex:1">' + esc(theme) + '</span>' +
+      '<span style="font-size:11px;font-weight:600;color:var(--muted);flex-shrink:0;margin-left:8px">' + posts.length + '</span>';
+    li.addEventListener('mouseover', function() {
+      if (activeTheme !== theme) li.style.background = 'var(--bg)';
+    });
+    li.addEventListener('mouseout', function() {
+      if (activeTheme !== theme) li.style.background = '';
+    });
+    li.addEventListener('click', function() {
+      list.querySelectorAll('li').forEach(function(el) {
+        el.style.background = '';
+        el.style.fontWeight = '';
+        el.style.color = 'var(--text)';
+      });
+      li.style.background = '#fdf0eb';
+      li.style.fontWeight = '600';
+      li.style.color = 'var(--accent)';
+      activeTheme = theme;
+      renderTopicPosts(theme, posts);
+    });
+    list.appendChild(li);
+    if (i === 0) { li.click(); }
+  });
 }
 
 // ============================================================

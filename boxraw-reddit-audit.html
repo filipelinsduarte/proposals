@@ -225,7 +225,6 @@
     .pain-pill {
       background: var(--card);
       border: 1px solid var(--border);
-      border-left: 3px solid var(--brand);
       border-radius: var(--radius);
       padding: 14px 16px;
       font-size: 13px;
@@ -399,8 +398,10 @@
 <body>
 
 <header class="site-header">
+  <img src="https://www.google.com/s2/favicons?domain=boxraw.com&sz=32" width="22" height="22" style="border-radius:4px;vertical-align:middle;margin-right:8px;flex-shrink:0" alt="Boxraw">
   <span class="site-header__logo">BOXRAW</span>
   <div class="site-header__divider"></div>
+  <img src="https://www.google.com/s2/favicons?domain=reddit.com&sz=32" width="18" height="18" style="border-radius:3px;vertical-align:middle;margin-right:6px;flex-shrink:0" alt="Reddit">
   <span class="site-header__sub">Reddit AI Visibility Analysis</span>
 </header>
 
@@ -436,6 +437,29 @@
       </div>
     </div>
 
+    <!-- Biggest Opportunities (above charts) -->
+    <div style="background:rgba(198,98,42,0.06);border:1px solid rgba(198,98,42,0.28);border-radius:8px;padding:18px 22px;margin-bottom:20px;">
+      <div style="font-size:10px;font-weight:700;color:#c2622a;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:12px">Biggest Opportunities</div>
+      <ul style="list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+        <li style="display:flex;gap:10px;align-items:flex-start;">
+          <span style="font-size:16px;flex-shrink:0;margin-top:1px">&#128247;</span>
+          <span style="font-size:13px;color:#374151;line-height:1.5"><strong>r/fightgear is the buying room</strong> &mdash; 330 of 394 posts come from here, with 210 high-fit threads where beginners actively ask for glove and gear recommendations. Boxraw appears in fewer than 15% of those threads.</span>
+        </li>
+        <li style="display:flex;gap:10px;align-items:flex-start;">
+          <span style="font-size:16px;flex-shrink:0;margin-top:1px">&#128116;</span>
+          <span style="font-size:13px;color:#374151;line-height:1.5"><strong>Competitor comparison threads go uncontested</strong> &mdash; Hayabusa vs Venum, Everlast vs anything, Cleto Reyes discussions: Boxraw is never mentioned as the alternative. Each thread is a missed brand insertion.</span>
+        </li>
+        <li style="display:flex;gap:10px;align-items:flex-start;">
+          <span style="font-size:16px;flex-shrink:0;margin-top:1px">&#128530;</span>
+          <span style="font-size:13px;color:#374151;line-height:1.5"><strong>Price sensitivity creates a wedge</strong> &mdash; The most-cited post asks "What happened to Boxraw prices?" (173 LLM citations). Threads questioning Everlast and mid-tier value are the perfect entry point to position Boxraw as the quality step-up.</span>
+        </li>
+        <li style="display:flex;gap:10px;align-items:flex-start;">
+          <span style="font-size:16px;flex-shrink:0;margin-top:1px">&#128247;</span>
+          <span style="font-size:13px;color:#374151;line-height:1.5"><strong>Boxing shoes is an owned category</strong> &mdash; Boxraw's shoe reviews are the most upvoted brand posts in the dataset. No other premium brand dominates this sub-category on Reddit. A consistent shoe comment strategy could own it.</span>
+        </li>
+      </ul>
+    </div>
+
     <div class="chart-row">
       <div class="card">
         <div class="card__title">Sentiment Breakdown</div>
@@ -461,10 +485,7 @@
     <div class="section-title">Pain Points Identified</div>
     <div class="pain-grid" id="pain-grid"></div>
 
-    <div class="opportunity-box">
-      <div class="opportunity-box__label">Biggest Opportunity</div>
-      <div class="opportunity-box__text" id="opp-text"></div>
-    </div>
+
   </section>
 
   <!-- ==================== TAB 2: POSTS ==================== -->
@@ -1138,7 +1159,7 @@ const AGG = {"total_posts": 533, "brand_mention_count": 143, "comment_worthy_cou
     var img = document.createElement('img');
     img.src = 'https://www.google.com/s2/favicons?domain=' + domain + '&sz=20';
     img.width = 16; img.height = 16;
-    img.style.cssText = 'border-radius:3px;vertical-align:middle;margin-right:7px;';
+    img.style.cssText = 'border-radius:3px;display:block;flex-shrink:0;margin-right:7px;';
     img.onerror = function() { this.style.display = 'none'; };
     img.alt = '';
     return img.outerHTML;
@@ -1651,11 +1672,11 @@ function initCompetitors() {
   var tbody = document.getElementById('comp-tbody');
   if (tbody) {
     var rows = '<tr>' +
-      '<td style="color:var(--brand);font-weight:600">' + _compFavicon('Boxraw') + 'Boxraw</td>' +
+      '<td style="color:var(--brand);font-weight:600;display:flex;align-items:center;gap:0">' + _compFavicon('Boxraw') + '<span>Boxraw</span></td>' +
       '<td style="font-weight:700;color:var(--brand)">' + brandCount + '</td>' +
       '</tr>';
     comps.forEach(function(c) {
-      rows += '<tr><td>' + _compFavicon(c.brand) + esc(c.brand) + '</td><td style="font-weight:600">' + c.count + '</td></tr>';
+      rows += '<tr><td style="display:flex;align-items:center;gap:0">' + _compFavicon(c.brand) + '<span>' + esc(c.brand) + '</span></td><td style="font-weight:600">' + c.count + '</td></tr>';
     });
     tbody.innerHTML = rows;
   }

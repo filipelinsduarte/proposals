@@ -19,15 +19,15 @@
 
   <style>
     :root {
-      --bg: #f6f7f9;
+      --bg: #f8f8f8;
       --card: #ffffff;
-      --border: #e2e6eb;
-      --text: #111827;
-      --muted: #6b7280;
-      --accent: #c2622a;
-      --brand: #e63946;
+      --border: #e5e5e5;
+      --text: #111111;
+      --muted: #6d6d6d;
+      --accent: #ffd030;
+      --brand: #ffd030;
       --green: #16a34a;
-      --yellow: #b45309;
+      --yellow: #d29922;
       --blue: #2563eb;
       --radius: 8px;
       --radius-sm: 4px;
@@ -45,8 +45,8 @@
 
     /* ---- HEADER ---- */
     .site-header {
-      background: var(--card);
-      border-bottom: 1px solid var(--border);
+      background: #111111;
+      border-bottom: 1px solid #222222;
       padding: 18px 32px;
       display: flex;
       align-items: center;
@@ -55,7 +55,7 @@
     .site-header__logo {
       font-size: 22px;
       font-weight: 700;
-      color: #111827;
+      color: #ffffff;
       letter-spacing: 3px;
     }
     .site-header__divider {
@@ -65,7 +65,7 @@
     }
     .site-header__sub {
       font-size: 13px;
-      color: var(--muted);
+      color: rgba(255,255,255,0.6);
       font-weight: 400;
     }
 
@@ -131,8 +131,8 @@
       color: var(--text);
       line-height: 1;
     }
-    .stat-card__value.c-brand { color: var(--brand); }
-    .stat-card__value.c-accent { color: var(--accent); }
+    .stat-card__value.c-brand { color: #111111; font-weight:700; }
+    .stat-card__value.c-accent { color: #111111; font-weight:700; }
     .stat-card__value.c-green { color: var(--green); }
 
     /* ---- GENERIC CARD ---- */
@@ -234,8 +234,8 @@
 
     /* ---- OPPORTUNITY BOX ---- */
     .opportunity-box {
-      background: rgba(198,98,42,0.06);
-      border: 1px solid rgba(198, 98, 42, 0.28);
+      background: rgba(255,208,48,0.10);
+      border: 1px solid rgba(255, 208, 48, 0.45);
       border-radius: var(--radius);
       padding: 20px 24px;
       margin-bottom: 20px;
@@ -438,23 +438,23 @@
     </div>
 
     <!-- Biggest Opportunities (above charts) -->
-    <div style="background:rgba(198,98,42,0.06);border:1px solid rgba(198,98,42,0.28);border-radius:8px;padding:18px 22px;margin-bottom:20px;">
-      <div style="font-size:10px;font-weight:700;color:#c2622a;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:12px">Biggest Opportunities</div>
+    <div style="background:rgba(255,208,48,0.10);border:1px solid rgba(198,98,42,0.28);border-radius:8px;padding:18px 22px;margin-bottom:20px;">
+      <div style="font-size:10px;font-weight:700;color:#111111;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:12px">Biggest Opportunities</div>
       <ul style="list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr 1fr;gap:12px;">
         <li style="display:flex;gap:10px;align-items:flex-start;">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c2622a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#111111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
           <span style="font-size:13px;color:#374151;line-height:1.5"><strong>r/fightgear is the buying room:</strong> 330 of 394 posts come from here, with 210 high-fit threads where beginners actively ask for glove and gear recommendations. Boxraw appears in fewer than 15% of those threads.</span>
         </li>
         <li style="display:flex;gap:10px;align-items:flex-start;">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c2622a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#111111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
           <span style="font-size:13px;color:#374151;line-height:1.5"><strong>Competitor comparison threads go uncontested:</strong> Hayabusa vs Venum, Everlast vs anything, Cleto Reyes discussions. Boxraw is never mentioned as the alternative. Each thread is a missed brand insertion.</span>
         </li>
         <li style="display:flex;gap:10px;align-items:flex-start;">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c2622a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#111111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
           <span style="font-size:13px;color:#374151;line-height:1.5"><strong>Price sensitivity creates a wedge:</strong> The most-cited post asks "What happened to Boxraw prices?" (173 LLM citations). Threads questioning Everlast and mid-tier value are the perfect entry point to position Boxraw as the quality step-up.</span>
         </li>
         <li style="display:flex;gap:10px;align-items:flex-start;">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c2622a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><path d="M2 18h1.4c1.3 0 2.5-.6 3.3-1.7l6.1-8.1c.8-1.1 2-1.7 3.3-1.7H22"/><path d="m18 2 4 4-4 4"/><path d="M2 14h16a4 4 0 0 1 4 4v2H6"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#111111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><path d="M2 18h1.4c1.3 0 2.5-.6 3.3-1.7l6.1-8.1c.8-1.1 2-1.7 3.3-1.7H22"/><path d="m18 2 4 4-4 4"/><path d="M2 14h16a4 4 0 0 1 4 4v2H6"/></svg>
           <span style="font-size:13px;color:#374151;line-height:1.5"><strong>Boxing shoes is an owned category:</strong> Boxraw shoe reviews are the most upvoted brand posts in the dataset. No other premium brand dominates this sub-category on Reddit. A consistent shoe comment strategy could own it.</span>
         </li>
       </ul>
@@ -598,8 +598,8 @@
     <div class="card-full" style="margin-top:20px;">
       <div class="card__title">Competitor Sentiment Analysis</div>
       <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:14px;margin-top:12px;">
-<div style="background:#fff;border:2px solid #e63946;border-radius:8px;padding:18px 20px;position:relative;">
-  <div style="position:absolute;top:-10px;left:16px;background:#e63946;color:#fff;font-size:10px;font-weight:700;padding:2px 10px;border-radius:10px;text-transform:uppercase;letter-spacing:0.5px">Your Brand</div>
+<div style="background:#fff;border:2px solid #ffd030;border-radius:8px;padding:18px 20px;position:relative;">
+  <div style="position:absolute;top:-10px;left:16px;background:#111111;color:#fff;font-size:10px;font-weight:700;padding:2px 10px;border-radius:10px;text-transform:uppercase;letter-spacing:0.5px">Your Brand</div>
   <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;margin-top:4px;">
     <img src="https://www.google.com/s2/favicons?domain=boxraw.com&sz=20" width="16" height="16" style="border-radius:3px;vertical-align:middle" alt="">
     <span style="font-weight:700;font-size:15px;color:#111827">Boxraw</span>
@@ -613,7 +613,7 @@
     </div>
     <div>
       <div style="font-size:10px;font-weight:600;text-transform:uppercase;color:#6b7280;margin-bottom:6px">Community Trust</div>
-      <div><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e63946"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e63946"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e63946"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e63946"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e63946"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e63946"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e63946"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e63946"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span></div>
+      <div><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#ffd030"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#ffd030"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#ffd030"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#ffd030"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#ffd030"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#ffd030"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#ffd030"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#ffd030"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span></div>
       <div style="font-size:11px;color:#6b7280;margin-top:3px">8/10</div>
     </div>
     <div>
@@ -634,7 +634,7 @@
     </div>
   </div>
   <div style="margin-bottom:8px"><div style="border-left:2px solid #e2e6eb;padding:3px 10px;margin:4px 0;font-size:11px;color:#6b7280;font-style:italic">"Anyone know how Boxraw gets their tops to be so high quality?"</div><div style="border-left:2px solid #e2e6eb;padding:3px 10px;margin:4px 0;font-size:11px;color:#6b7280;font-style:italic">"What happened to Boxraw? These prices are absolutely ridiculous"</div></div>
-  <div style="margin-top:10px;padding-top:10px;border-top:1px solid #e2e6eb;font-size:11px;color:#6b7280"><span style="font-weight:600;color:#e63946">Key opportunity:</span> 45 direct brand mentions across 394 posts, with 100% comment-worthy rate. Most mentions come from r/fightgear gear recommendation threads where Boxraw is starting to appear but is not yet the default recommendation.</div>
+  <div style="margin-top:10px;padding-top:10px;border-top:1px solid #e2e6eb;font-size:11px;color:#6b7280"><span style="font-weight:600;color:#111111">Key opportunity:</span> 45 direct brand mentions across 394 posts, with 100% comment-worthy rate. Most mentions come from r/fightgear gear recommendation threads where Boxraw is starting to appear but is not yet the default recommendation.</div>
 </div>
 <div style="background:#fff;border:1px solid #e2e6eb;border-radius:8px;padding:18px 20px;">
   <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;">
@@ -650,7 +650,7 @@
     </div>
     <div>
       <div style="font-size:10px;font-weight:600;text-transform:uppercase;color:#6b7280;margin-bottom:6px">Community Trust</div>
-      <div><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span></div>
+      <div><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#ffd030"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#ffd030"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#ffd030"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#ffd030"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span></div>
       <div style="font-size:11px;color:#6b7280;margin-top:3px">4/10</div>
     </div>
     <div>
@@ -671,7 +671,7 @@
     </div>
   </div>
   <div style="margin-bottom:8px"><div style="border-left:2px solid #e2e6eb;padding:3px 10px;margin:4px 0;font-size:11px;color:#6b7280;font-style:italic">'Good starter gloves but you will want to upgrade within 3-6 months'</div><div style="border-left:2px solid #e2e6eb;padding:3px 10px;margin:4px 0;font-size:11px;color:#6b7280;font-style:italic">'Everlast is the brand you buy before you know what you are doing'</div></div>
-  <div style="margin-top:10px;padding-top:10px;border-top:1px solid #e2e6eb;font-size:11px;color:#6b7280"><span style="font-weight:600;color:#c2622a">vs Boxraw:</span> Targets the same beginner buyer but at lower price and far lower quality. Boxraw wins on craftsmanship and brand aspiration. Everlast wins on distribution reach and name recognition. Key battleground: the $80-$150 first glove purchase.</div>
+  <div style="margin-top:10px;padding-top:10px;border-top:1px solid #e2e6eb;font-size:11px;color:#6b7280"><span style="font-weight:600;color:#111111">vs Boxraw:</span> Targets the same beginner buyer but at lower price and far lower quality. Boxraw wins on craftsmanship and brand aspiration. Everlast wins on distribution reach and name recognition. Key battleground: the $80-$150 first glove purchase.</div>
 </div><div style="background:#fff;border:1px solid #e2e6eb;border-radius:8px;padding:18px 20px;">
   <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;">
     <img src="https://www.google.com/s2/favicons?domain=winning-japan.com&sz=20" width="16" height="16" style="border-radius:3px;vertical-align:middle" alt="">
@@ -686,7 +686,7 @@
     </div>
     <div>
       <div style="font-size:10px;font-weight:600;text-transform:uppercase;color:#6b7280;margin-bottom:6px">Community Trust</div>
-      <div><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span></div>
+      <div><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#ffd030"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#ffd030"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#ffd030"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#ffd030"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#ffd030"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#ffd030"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#ffd030"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#ffd030"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#ffd030"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span></div>
       <div style="font-size:11px;color:#6b7280;margin-top:3px">9/10</div>
     </div>
     <div>
@@ -707,7 +707,7 @@
     </div>
   </div>
   <div style="margin-bottom:8px"><div style="border-left:2px solid #e2e6eb;padding:3px 10px;margin:4px 0;font-size:11px;color:#6b7280;font-style:italic">'What are the best sparring gloves (besides Winning)?', the benchmark others are measured against</div><div style="border-left:2px solid #e2e6eb;padding:3px 10px;margin:4px 0;font-size:11px;color:#6b7280;font-style:italic">'If money is no object just get Winning and never think about gloves again'</div></div>
-  <div style="margin-top:10px;padding-top:10px;border-top:1px solid #e2e6eb;font-size:11px;color:#6b7280"><span style="font-weight:600;color:#c2622a">vs Boxraw:</span> Winning and Boxraw operate at different ends of the market. Winning owns the serious competitor/sparring niche at $400+; Boxraw competes in the premium training and lifestyle space at $80-$180. Low direct competitive threat, Boxraw can use Winning's positioning to anchor its own premium narrative ('premium training gear for the serious athlete').</div>
+  <div style="margin-top:10px;padding-top:10px;border-top:1px solid #e2e6eb;font-size:11px;color:#6b7280"><span style="font-weight:600;color:#111111">vs Boxraw:</span> Winning and Boxraw operate at different ends of the market. Winning owns the serious competitor/sparring niche at $400+; Boxraw competes in the premium training and lifestyle space at $80-$180. Low direct competitive threat, Boxraw can use Winning's positioning to anchor its own premium narrative ('premium training gear for the serious athlete').</div>
 </div><div style="background:#fff;border:1px solid #e2e6eb;border-radius:8px;padding:18px 20px;">
   <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;">
     <img src="https://www.google.com/s2/favicons?domain=venum.com&sz=20" width="16" height="16" style="border-radius:3px;vertical-align:middle" alt="">
@@ -722,7 +722,7 @@
     </div>
     <div>
       <div style="font-size:10px;font-weight:600;text-transform:uppercase;color:#6b7280;margin-bottom:6px">Community Trust</div>
-      <div><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span></div>
+      <div><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#ffd030"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#ffd030"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#ffd030"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#ffd030"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#ffd030"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#ffd030"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#ffd030"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span></div>
       <div style="font-size:11px;color:#6b7280;margin-top:3px">7/10</div>
     </div>
     <div>
@@ -743,7 +743,7 @@
     </div>
   </div>
   <div style="margin-bottom:8px"><div style="border-left:2px solid #e2e6eb;padding:3px 10px;margin:4px 0;font-size:11px;color:#6b7280;font-style:italic">'Venum is what you get when you want something better than Everlast but aren't ready to commit to a specialist brand'</div><div style="border-left:2px solid #e2e6eb;padding:3px 10px;margin:4px 0;font-size:11px;color:#6b7280;font-style:italic">'Good gloves at their price point but nothing special'</div></div>
-  <div style="margin-top:10px;padding-top:10px;border-top:1px solid #e2e6eb;font-size:11px;color:#6b7280"><span style="font-weight:600;color:#c2622a">vs Boxraw:</span> Venum is the closest mass-market rival to Boxraw in the $80-$140 range for people seeking an upgrade from Everlast. Boxraw differentiates on UK premium identity and better apparel quality. Key battleground: r/fightgear recommendation threads where both brands are frequently compared.</div>
+  <div style="margin-top:10px;padding-top:10px;border-top:1px solid #e2e6eb;font-size:11px;color:#6b7280"><span style="font-weight:600;color:#111111">vs Boxraw:</span> Venum is the closest mass-market rival to Boxraw in the $80-$140 range for people seeking an upgrade from Everlast. Boxraw differentiates on UK premium identity and better apparel quality. Key battleground: r/fightgear recommendation threads where both brands are frequently compared.</div>
 </div><div style="background:#fff;border:1px solid #e2e6eb;border-radius:8px;padding:18px 20px;">
   <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;">
     <img src="https://www.google.com/s2/favicons?domain=hayabusafight.com&sz=20" width="16" height="16" style="border-radius:3px;vertical-align:middle" alt="">
@@ -758,7 +758,7 @@
     </div>
     <div>
       <div style="font-size:10px;font-weight:600;text-transform:uppercase;color:#6b7280;margin-bottom:6px">Community Trust</div>
-      <div><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span></div>
+      <div><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#ffd030"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#ffd030"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#ffd030"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#ffd030"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#ffd030"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#ffd030"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#ffd030"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#ffd030"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span></div>
       <div style="font-size:11px;color:#6b7280;margin-top:3px">8/10</div>
     </div>
     <div>
@@ -779,7 +779,7 @@
     </div>
   </div>
   <div style="margin-bottom:8px"><div style="border-left:2px solid #e2e6eb;padding:3px 10px;margin:4px 0;font-size:11px;color:#6b7280;font-style:italic">'The Hayabusa T3 is probably the best training glove under $150 full stop'</div><div style="border-left:2px solid #e2e6eb;padding:3px 10px;margin:4px 0;font-size:11px;color:#6b7280;font-style:italic">'[question] Why the hate for Hayabusa?, they seem solid to me' (post title on r/fightgear)</div></div>
-  <div style="margin-top:10px;padding-top:10px;border-top:1px solid #e2e6eb;font-size:11px;color:#6b7280"><span style="font-weight:600;color:#c2622a">vs Boxraw:</span> Hayabusa is Boxraw's most direct technical competitor in the mid-premium glove segment ($100-$160). Hayabusa wins on wrist tech reputation; Boxraw wins on brand identity and apparel. Both fight for the same 'serious enthusiast' buyer on r/fightgear. High threat level for Boxraw.</div>
+  <div style="margin-top:10px;padding-top:10px;border-top:1px solid #e2e6eb;font-size:11px;color:#6b7280"><span style="font-weight:600;color:#111111">vs Boxraw:</span> Hayabusa is Boxraw's most direct technical competitor in the mid-premium glove segment ($100-$160). Hayabusa wins on wrist tech reputation; Boxraw wins on brand identity and apparel. Both fight for the same 'serious enthusiast' buyer on r/fightgear. High threat level for Boxraw.</div>
 </div><div style="background:#fff;border:1px solid #e2e6eb;border-radius:8px;padding:18px 20px;">
   <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;">
     <img src="https://www.google.com/s2/favicons?domain=rivalboxing.com&sz=20" width="16" height="16" style="border-radius:3px;vertical-align:middle" alt="">
@@ -794,7 +794,7 @@
     </div>
     <div>
       <div style="font-size:10px;font-weight:600;text-transform:uppercase;color:#6b7280;margin-bottom:6px">Community Trust</div>
-      <div><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span></div>
+      <div><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#ffd030"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#ffd030"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#ffd030"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#ffd030"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#ffd030"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#ffd030"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#ffd030"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span></div>
       <div style="font-size:11px;color:#6b7280;margin-top:3px">7/10</div>
     </div>
     <div>
@@ -815,7 +815,7 @@
     </div>
   </div>
   <div style="margin-bottom:8px"><div style="border-left:2px solid #e2e6eb;padding:3px 10px;margin:4px 0;font-size:11px;color:#6b7280;font-style:italic">'Rival is what Everlast wishes it was, actually built for boxing'</div><div style="border-left:2px solid #e2e6eb;padding:3px 10px;margin:4px 0;font-size:11px;color:#6b7280;font-style:italic">'Not flashy but solid, every serious gym has a few Rival guys'</div></div>
-  <div style="margin-top:10px;padding-top:10px;border-top:1px solid #e2e6eb;font-size:11px;color:#6b7280"><span style="font-weight:600;color:#c2622a">vs Boxraw:</span> Rival appeals to the same serious-but-not-pro demographic as Boxraw but with less lifestyle/fashion positioning. Boxraw wins on design and brand story; Rival wins on pure boxing credibility and value perception. Medium threat, different brand personalities but overlapping buyer at the $100-$150 tier.</div>
+  <div style="margin-top:10px;padding-top:10px;border-top:1px solid #e2e6eb;font-size:11px;color:#6b7280"><span style="font-weight:600;color:#111111">vs Boxraw:</span> Rival appeals to the same serious-but-not-pro demographic as Boxraw but with less lifestyle/fashion positioning. Boxraw wins on design and brand story; Rival wins on pure boxing credibility and value perception. Medium threat, different brand personalities but overlapping buyer at the $100-$150 tier.</div>
 </div><div style="background:#fff;border:1px solid #e2e6eb;border-radius:8px;padding:18px 20px;">
   <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;">
     <img src="https://www.google.com/s2/favicons?domain=titleboxing.com&sz=20" width="16" height="16" style="border-radius:3px;vertical-align:middle" alt="">
@@ -830,7 +830,7 @@
     </div>
     <div>
       <div style="font-size:10px;font-weight:600;text-transform:uppercase;color:#6b7280;margin-bottom:6px">Community Trust</div>
-      <div><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span></div>
+      <div><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#ffd030"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#ffd030"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#ffd030"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#ffd030"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#ffd030"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#ffd030"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span></div>
       <div style="font-size:11px;color:#6b7280;margin-top:3px">6/10</div>
     </div>
     <div>
@@ -851,7 +851,7 @@
     </div>
   </div>
   <div style="margin-bottom:8px"><div style="border-left:2px solid #e2e6eb;padding:3px 10px;margin:4px 0;font-size:11px;color:#6b7280;font-style:italic">'Title is fine for gym bags and accessories but skip their gloves for anything serious'</div><div style="border-left:2px solid #e2e6eb;padding:3px 10px;margin:4px 0;font-size:11px;color:#6b7280;font-style:italic">'Big on brand recognition, light on actual quality'</div></div>
-  <div style="margin-top:10px;padding-top:10px;border-top:1px solid #e2e6eb;font-size:11px;color:#6b7280"><span style="font-weight:600;color:#c2622a">vs Boxraw:</span> Title targets the American gym market with broad product coverage. Boxraw is more premium and lifestyle-forward. Low direct threat as their buyer profiles barely overlap, Title serves the casual gym member, Boxraw serves the serious enthusiast.</div>
+  <div style="margin-top:10px;padding-top:10px;border-top:1px solid #e2e6eb;font-size:11px;color:#6b7280"><span style="font-weight:600;color:#111111">vs Boxraw:</span> Title targets the American gym market with broad product coverage. Boxraw is more premium and lifestyle-forward. Low direct threat as their buyer profiles barely overlap, Title serves the casual gym member, Boxraw serves the serious enthusiast.</div>
 </div><div style="background:#fff;border:1px solid #e2e6eb;border-radius:8px;padding:18px 20px;">
   <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;">
     <img src="https://www.google.com/s2/favicons?domain=cletoreyes.com&sz=20" width="16" height="16" style="border-radius:3px;vertical-align:middle" alt="">
@@ -866,7 +866,7 @@
     </div>
     <div>
       <div style="font-size:10px;font-weight:600;text-transform:uppercase;color:#6b7280;margin-bottom:6px">Community Trust</div>
-      <div><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span></div>
+      <div><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#ffd030"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#ffd030"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#ffd030"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#ffd030"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#ffd030"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#ffd030"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#ffd030"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#ffd030"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span></div>
       <div style="font-size:11px;color:#6b7280;margin-top:3px">8/10</div>
     </div>
     <div>
@@ -887,7 +887,7 @@
     </div>
   </div>
   <div style="margin-bottom:8px"><div style="border-left:2px solid #e2e6eb;padding:3px 10px;margin:4px 0;font-size:11px;color:#6b7280;font-style:italic">'Cleto Reyes vs Winning is the age-old debate, both are at the top of the craft'</div><div style="border-left:2px solid #e2e6eb;padding:3px 10px;margin:4px 0;font-size:11px;color:#6b7280;font-style:italic">'If you fight, Cleto Reyes. If you spar hard, Winning. If you just train, something else'</div></div>
-  <div style="margin-top:10px;padding-top:10px;border-top:1px solid #e2e6eb;font-size:11px;color:#6b7280"><span style="font-weight:600;color:#c2622a">vs Boxraw:</span> Cleto Reyes is a heritage-first brand targeting serious competitors and boxing purists. Boxraw plays in an entirely different lane, premium lifestyle and training brand. Very low competitive threat. Boxraw could even reference Cleto Reyes as a credibility anchor when positioning its own premium craftsmanship story.</div>
+  <div style="margin-top:10px;padding-top:10px;border-top:1px solid #e2e6eb;font-size:11px;color:#6b7280"><span style="font-weight:600;color:#111111">vs Boxraw:</span> Cleto Reyes is a heritage-first brand targeting serious competitors and boxing purists. Boxraw plays in an entirely different lane, premium lifestyle and training brand. Very low competitive threat. Boxraw could even reference Cleto Reyes as a credibility anchor when positioning its own premium craftsmanship story.</div>
 </div><div style="background:#fff;border:1px solid #e2e6eb;border-radius:8px;padding:18px 20px;">
   <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;">
     <img src="https://www.google.com/s2/favicons?domain=fairtex.com&sz=20" width="16" height="16" style="border-radius:3px;vertical-align:middle" alt="">
@@ -902,7 +902,7 @@
     </div>
     <div>
       <div style="font-size:10px;font-weight:600;text-transform:uppercase;color:#6b7280;margin-bottom:6px">Community Trust</div>
-      <div><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span></div>
+      <div><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#ffd030"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#ffd030"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#ffd030"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#ffd030"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#ffd030"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#ffd030"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#ffd030"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#ffd030"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span></div>
       <div style="font-size:11px;color:#6b7280;margin-top:3px">8/10</div>
     </div>
     <div>
@@ -923,7 +923,7 @@
     </div>
   </div>
   <div style="margin-bottom:8px"><div style="border-left:2px solid #e2e6eb;padding:3px 10px;margin:4px 0;font-size:11px;color:#6b7280;font-style:italic">'Fairtex or Venum, you can not go wrong with either for training'</div><div style="border-left:2px solid #e2e6eb;padding:3px 10px;margin:4px 0;font-size:11px;color:#6b7280;font-style:italic">'Fairtex sauna suits are worth every penny, best I have tried'</div></div>
-  <div style="margin-top:10px;padding-top:10px;border-top:1px solid #e2e6eb;font-size:11px;color:#6b7280"><span style="font-weight:600;color:#c2622a">vs Boxraw:</span> Fairtex dominates the Muay Thai and kickboxing communities where Boxraw has minimal presence. For pure boxing, both compete in the mid-premium training gear space. Threat is medium in the apparel/training gear category where Fairtex's sauna suit reputation creates direct overlap with Boxraw's premium training apparel.</div>
+  <div style="margin-top:10px;padding-top:10px;border-top:1px solid #e2e6eb;font-size:11px;color:#6b7280"><span style="font-weight:600;color:#111111">vs Boxraw:</span> Fairtex dominates the Muay Thai and kickboxing communities where Boxraw has minimal presence. For pure boxing, both compete in the mid-premium training gear space. Threat is medium in the apparel/training gear category where Fairtex's sauna suit reputation creates direct overlap with Boxraw's premium training apparel.</div>
 </div><div style="background:#fff;border:1px solid #e2e6eb;border-radius:8px;padding:18px 20px;">
   <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;">
     <img src="https://www.google.com/s2/favicons?domain=nike.com&sz=20" width="16" height="16" style="border-radius:3px;vertical-align:middle" alt="">
@@ -938,7 +938,7 @@
     </div>
     <div>
       <div style="font-size:10px;font-weight:600;text-transform:uppercase;color:#6b7280;margin-bottom:6px">Community Trust</div>
-      <div><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span></div>
+      <div><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#ffd030"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#ffd030"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#ffd030"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#ffd030"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#ffd030"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span></div>
       <div style="font-size:11px;color:#6b7280;margin-top:3px">5/10</div>
     </div>
     <div>
@@ -959,7 +959,7 @@
     </div>
   </div>
   <div style="margin-bottom:8px"><div style="border-left:2px solid #e2e6eb;padding:3px 10px;margin:4px 0;font-size:11px;color:#6b7280;font-style:italic">'Why You Can't Buy Nike, Adidas, or Asics Boxing Gear on Their Main Sites' (r/fightgear post title, key concern for buyers)</div><div style="border-left:2px solid #e2e6eb;padding:3px 10px;margin:4px 0;font-size:11px;color:#6b7280;font-style:italic">'Nike is fine for gym clothes but they are not a boxing brand'</div></div>
-  <div style="margin-top:10px;padding-top:10px;border-top:1px solid #e2e6eb;font-size:11px;color:#6b7280"><span style="font-weight:600;color:#c2622a">vs Boxraw:</span> Nike competes with Boxraw primarily in the training apparel space, shorts, tracksuits, compression wear. However, Nike has retreated from dedicated boxing gear. This creates a significant opening for Boxraw: athletes seeking branded boxing-specific apparel with Nike-level aesthetics but specialist credibility. Low glove threat; medium apparel threat.</div>
+  <div style="margin-top:10px;padding-top:10px;border-top:1px solid #e2e6eb;font-size:11px;color:#6b7280"><span style="font-weight:600;color:#111111">vs Boxraw:</span> Nike competes with Boxraw primarily in the training apparel space, shorts, tracksuits, compression wear. However, Nike has retreated from dedicated boxing gear. This creates a significant opening for Boxraw: athletes seeking branded boxing-specific apparel with Nike-level aesthetics but specialist credibility. Low glove threat; medium apparel threat.</div>
 </div><div style="background:#fff;border:1px solid #e2e6eb;border-radius:8px;padding:18px 20px;">
   <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;">
     <img src="https://www.google.com/s2/favicons?domain=adidas.com&sz=20" width="16" height="16" style="border-radius:3px;vertical-align:middle" alt="">
@@ -974,7 +974,7 @@
     </div>
     <div>
       <div style="font-size:10px;font-weight:600;text-transform:uppercase;color:#6b7280;margin-bottom:6px">Community Trust</div>
-      <div><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span></div>
+      <div><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#ffd030"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#ffd030"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#ffd030"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#ffd030"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#ffd030"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span></div>
       <div style="font-size:11px;color:#6b7280;margin-top:3px">5/10</div>
     </div>
     <div>
@@ -995,7 +995,7 @@
     </div>
   </div>
   <div style="margin-bottom:8px"><div style="border-left:2px solid #e2e6eb;padding:3px 10px;margin:4px 0;font-size:11px;color:#6b7280;font-style:italic">'Adidas Box Hog 4 vs Everlast shoes, Adidas wins easily for footwear'</div><div style="border-left:2px solid #e2e6eb;padding:3px 10px;margin:4px 0;font-size:11px;color:#6b7280;font-style:italic">'Great for shoes, mediocre for everything else in boxing'</div></div>
-  <div style="margin-top:10px;padding-top:10px;border-top:1px solid #e2e6eb;font-size:11px;color:#6b7280"><span style="font-weight:600;color:#c2622a">vs Boxraw:</span> Adidas competes with Boxraw on training apparel and athletic wear aesthetics. Their boxing shoes are well-respected but gloves are not. Like Nike, their retreat from dedicated boxing gear creates opportunity for Boxraw to own the 'premium boxing-specific apparel' position. Low glove threat; medium apparel/aesthetic threat.</div>
+  <div style="margin-top:10px;padding-top:10px;border-top:1px solid #e2e6eb;font-size:11px;color:#6b7280"><span style="font-weight:600;color:#111111">vs Boxraw:</span> Adidas competes with Boxraw on training apparel and athletic wear aesthetics. Their boxing shoes are well-respected but gloves are not. Like Nike, their retreat from dedicated boxing gear creates opportunity for Boxraw to own the 'premium boxing-specific apparel' position. Low glove threat; medium apparel/aesthetic threat.</div>
 </div><div style="background:#fff;border:1px solid #e2e6eb;border-radius:8px;padding:18px 20px;">
   <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;">
     <img src="https://www.google.com/s2/favicons?domain=grantboxing.com&sz=20" width="16" height="16" style="border-radius:3px;vertical-align:middle" alt="">
@@ -1010,7 +1010,7 @@
     </div>
     <div>
       <div style="font-size:10px;font-weight:600;text-transform:uppercase;color:#6b7280;margin-bottom:6px">Community Trust</div>
-      <div><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span></div>
+      <div><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#ffd030"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#ffd030"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#ffd030"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#ffd030"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#ffd030"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#ffd030"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#ffd030"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#ffd030"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#ffd030"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span></div>
       <div style="font-size:11px;color:#6b7280;margin-top:3px">9/10</div>
     </div>
     <div>
@@ -1031,7 +1031,7 @@
     </div>
   </div>
   <div style="margin-bottom:8px"><div style="border-left:2px solid #e2e6eb;padding:3px 10px;margin:4px 0;font-size:11px;color:#6b7280;font-style:italic">'Gervonta is wearing Grant gloves in his upcoming fight'</div><div style="border-left:2px solid #e2e6eb;padding:3px 10px;margin:4px 0;font-size:11px;color:#6b7280;font-style:italic">'Grant is what the pros use when they get to choose their own gloves'</div></div>
-  <div style="margin-top:10px;padding-top:10px;border-top:1px solid #e2e6eb;font-size:11px;color:#6b7280"><span style="font-weight:600;color:#c2622a">vs Boxraw:</span> Grant and Boxraw are not direct competitors. Grant serves elite professional fighters; Boxraw serves the serious training market. Grant's presence on Reddit creates aspiration signal that Boxraw can ride, positioning in conversations that include Grant signals Boxraw is in the serious category.</div>
+  <div style="margin-top:10px;padding-top:10px;border-top:1px solid #e2e6eb;font-size:11px;color:#6b7280"><span style="font-weight:600;color:#111111">vs Boxraw:</span> Grant and Boxraw are not direct competitors. Grant serves elite professional fighters; Boxraw serves the serious training market. Grant's presence on Reddit creates aspiration signal that Boxraw can ride, positioning in conversations that include Grant signals Boxraw is in the serious category.</div>
 </div><div style="background:#fff;border:1px solid #e2e6eb;border-radius:8px;padding:18px 20px;">
   <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;">
     <img src="https://www.google.com/s2/favicons?domain=ringsideworldwide.com&sz=20" width="16" height="16" style="border-radius:3px;vertical-align:middle" alt="">
@@ -1046,7 +1046,7 @@
     </div>
     <div>
       <div style="font-size:10px;font-weight:600;text-transform:uppercase;color:#6b7280;margin-bottom:6px">Community Trust</div>
-      <div><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span></div>
+      <div><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#ffd030"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#ffd030"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#ffd030"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#ffd030"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#ffd030"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#ffd030"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span></div>
       <div style="font-size:11px;color:#6b7280;margin-top:3px">6/10</div>
     </div>
     <div>
@@ -1067,7 +1067,7 @@
     </div>
   </div>
   <div style="margin-bottom:8px"><div style="border-left:2px solid #e2e6eb;padding:3px 10px;margin:4px 0;font-size:11px;color:#6b7280;font-style:italic">'Ringside is fine if you train at a Ringside gym'</div><div style="border-left:2px solid #e2e6eb;padding:3px 10px;margin:4px 0;font-size:11px;color:#6b7280;font-style:italic">'Not exciting but gets the job done for basics'</div></div>
-  <div style="margin-top:10px;padding-top:10px;border-top:1px solid #e2e6eb;font-size:11px;color:#6b7280"><span style="font-weight:600;color:#c2622a">vs Boxraw:</span> Ringside serves the American recreational boxing market with limited premium aspirations. Boxraw's premium UK positioning and distinctive design aesthetic are worlds apart. Minimal competitive threat.</div>
+  <div style="margin-top:10px;padding-top:10px;border-top:1px solid #e2e6eb;font-size:11px;color:#6b7280"><span style="font-weight:600;color:#111111">vs Boxraw:</span> Ringside serves the American recreational boxing market with limited premium aspirations. Boxraw's premium UK positioning and distinctive design aesthetic are worlds apart. Minimal competitive threat.</div>
 </div>
       </div>
     </div>
@@ -1327,7 +1327,7 @@ function initOverview() {
   var pt = safeGet('post_type_counts', {});
   var ptLabels = Object.keys(pt).map(cap);
   var ptData = Object.values(pt);
-  var ptColors = ['#c2622a','#2ea043','#58a6ff','#d29922','#e63946','#a78bfa','#6b7280'];
+  var ptColors = ['#ffd030','#2ea043','#58a6ff','#d29922','#e63946','#a78bfa','#6b7280'];
   mkChart('ch-post-type', {
     type: 'doughnut',
     data: {
@@ -1386,7 +1386,7 @@ function buildMoodChart(canvasId) {
   var mc = safeGet('mood_counts', {});
   var mLabels = Object.keys(mc).map(cap);
   var mData = Object.values(mc);
-  var mColors = ['#2ea043', '#58a6ff', '#c2622a', '#6b7280', '#d29922', '#e63946'];
+  var mColors = ['#2ea043', '#58a6ff', '#ffd030', '#6b7280', '#d29922', '#e63946'];
   mkChart(canvasId, {
     type: 'bar',
     data: {
@@ -1543,7 +1543,7 @@ function renderPosts() {
       '<td>' + sentBadge(t.sentiment) + '</td>' +
       '<td>' + fitHtml(t.fit_score) + '</td>' +
       '<td>' + (t.brand_mentioned ? '<span class="badge badge-brand">Yes</span>' : '') + '</td>' +
-      '<td style="text-align:center;font-weight:' + ((t.llm_citations || 0) > 0 ? '700' : '400') + ';color:' + ((t.llm_citations || 0) > 0 ? '#c2622a' : '#9ca3af') + '">' + (t.llm_citations || 0) + '</td>' +
+      '<td style="text-align:center;font-weight:' + ((t.llm_citations || 0) > 0 ? '700' : '400') + ';color:' + ((t.llm_citations || 0) > 0 ? '#ffd030' : '#9ca3af') + '">' + (t.llm_citations || 0) + '</td>' +
       '</tr>';
   });
   tbody.innerHTML = rows;
@@ -1595,7 +1595,7 @@ function initSubreddits() {
     type: 'bar',
     data: {
       labels: labels,
-      datasets: [{ label: 'Posts', data: counts, backgroundColor: '#c2622a', borderRadius: 4 }]
+      datasets: [{ label: 'Posts', data: counts, backgroundColor: '#ffd030', borderRadius: 4 }]
     },
     options: {
       indexAxis: 'y',
@@ -1653,7 +1653,7 @@ function initCompetitors() {
     allLabels.forEach(function(label, i) {
       var count = allCounts[i];
       var pct = Math.round((count / maxCount) * 100);
-      var barColor = i === 0 ? '#e63946' : '#c2622a';
+      var barColor = i === 0 ? '#e63946' : '#ffd030';
       var faviconHTML = _compFavicon(label);
       barHTML +=
         '<div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">' +
@@ -1776,7 +1776,7 @@ function initTopics() {
     var sorted = posts.slice().sort(function(a, b) { return (b.fit_score || 0) - (a.fit_score || 0); });
     var rows = sorted.slice(0, 40).map(function(t) {
       var citeHtml = (t.llm_citations || 0) > 0
-        ? '<span style="font-size:11px;font-weight:600;color:#c2622a">' + t.llm_citations + '</span>'
+        ? '<span style="font-size:11px;font-weight:700;color:#b8900a">' + t.llm_citations + '</span>'
         : '<span style="font-size:11px;color:#d1d5db">0</span>';
       return '<tr style="border-bottom:1px solid var(--border);vertical-align:middle;">' +
         '<td style="padding:10px 12px 10px 0;min-width:0;">' +
@@ -1822,7 +1822,7 @@ function initTopics() {
       li.style.background = '#fdf0eb';
       li.style.fontWeight = '600';
       li.style.color = 'var(--accent)';
-      li.style.borderLeft = '3px solid #c2622a';
+      li.style.borderLeft = '3px solid #ffd030';
       activeTheme = theme;
       renderTopicPosts(theme, posts);
     });

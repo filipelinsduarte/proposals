@@ -511,7 +511,7 @@
             <th data-sort="subreddit">Subreddit</th>
             <th data-sort="title">Title</th>
             <th data-sort="date_iso">Date</th>
-            <th data-sort="score">Score</th>
+            <th data-sort="score">Upvotes</th>
             <th data-sort="post_type">Type</th>
             <th data-sort="sentiment">Sentiment</th>
             <th data-sort="fit_score">Fit</th>
@@ -558,7 +558,7 @@
     <div class="card-full">
       <div class="card__title">Competitor Brand Mentions vs Boxraw</div>
       <p class="comp-note" id="comp-note">Loading...</p>
-      <div class="chart-wrap-lg"><canvas id="ch-comp-bar"></canvas></div>
+      <div id="comp-html-bar" style="margin:12px 0;"></div>
     </div>
     <div class="table-wrap">
       <table aria-label="Competitor mentions">
@@ -572,11 +572,443 @@
       </table>
     </div>
 
-    <!-- Competitor Sentiment Analysis (loaded by data) -->
-    <div class="card-full" style="margin-top:20px;" id="comp-sentiment-section">
+    <!-- Competitor Sentiment Analysis (static) -->
+    <div class="card-full" style="margin-top:20px;">
       <div class="card__title">Competitor Sentiment Analysis</div>
-      <div id="comp-sentiment-cards" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:14px;margin-top:4px;">
-        <div style="color:var(--muted);font-size:13px;padding:20px 0;">Loading competitor sentiment analysis...</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:14px;margin-top:12px;">
+<div style="background:#fff;border:1px solid #e2e6eb;border-radius:8px;padding:18px 20px;">
+  <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;">
+    <img src="https://www.google.com/s2/favicons?domain=everlast.com&sz=20" width="16" height="16" style="border-radius:3px;vertical-align:middle" alt="">
+    <span style="font-weight:700;font-size:15px;color:#111827">Everlast</span>
+    <span style="margin-left:auto;font-size:10px;font-weight:600;text-transform:uppercase;color:#6b7280;background:#f1f3f6;padding:2px 8px;border-radius:4px">budget</span>
+    <span style="font-size:11px;color:#9ca3af">43 posts</span>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px;">
+    <div>
+      <div style="font-size:10px;font-weight:600;text-transform:uppercase;color:#6b7280;margin-bottom:3px">Sentiment</div>
+      <div style="font-size:24px;font-weight:700;color:#b45309">52<span style="font-size:12px;color:#9ca3af">/100</span></div>
+    </div>
+    <div>
+      <div style="font-size:10px;font-weight:600;text-transform:uppercase;color:#6b7280;margin-bottom:6px">Community Trust</div>
+      <div><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span></div>
+      <div style="font-size:11px;color:#6b7280;margin-top:3px">4/10</div>
+    </div>
+    <div>
+      <div style="font-size:10px;font-weight:600;text-transform:uppercase;color:#6b7280;margin-bottom:3px">Threat to Boxraw</div>
+      <div style="font-size:13px;font-weight:700;color:#b45309;text-transform:capitalize">medium</div>
+      <div style="font-size:11px;color:#9ca3af">beginner bag work</div>
+    </div>
+  </div>
+  <div style="font-size:12px;color:#374151;background:#f8f9fb;border-radius:4px;padding:8px 10px;margin-bottom:12px;font-style:italic">&ldquo;the Walmart of boxing, universally known, universally outgrown&rdquo;</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px;">
+    <div>
+      <div style="font-size:10px;font-weight:600;text-transform:uppercase;color:#16a34a;margin-bottom:5px">Reddit Loves</div>
+      <ul style="list-style:none;padding:0;margin:0"><li style="color:#16a34a;font-size:12px;line-height:1.6;padding:1px 0">&#43; Maximum brand recognition, first name in boxing for most beginners</li><li style="color:#16a34a;font-size:12px;line-height:1.6;padding:1px 0">&#43; Widely available at Walmart, Amazon, sporting goods stores</li><li style="color:#16a34a;font-size:12px;line-height:1.6;padding:1px 0">&#43; Affordable entry point for people just starting out</li><li style="color:#16a34a;font-size:12px;line-height:1.6;padding:1px 0">&#43; Broad product range covering everything from gloves to heavy bags</li></ul>
+    </div>
+    <div>
+      <div style="font-size:10px;font-weight:600;text-transform:uppercase;color:#dc2626;margin-bottom:5px">Reddit Criticizes</div>
+      <ul style="list-style:none;padding:0;margin:0"><li style="color:#dc2626;font-size:12px;line-height:1.6;padding:1px 0">&#8722; Padding breaks down quickly under sustained heavy bag use</li><li style="color:#dc2626;font-size:12px;line-height:1.6;padding:1px 0">&#8722; Serious boxers actively warn beginners away from them</li><li style="color:#dc2626;font-size:12px;line-height:1.6;padding:1px 0">&#8722; Perceived as fashion accessory brand rather than performance gear</li><li style="color:#dc2626;font-size:12px;line-height:1.6;padding:1px 0">&#8722; Quality degraded significantly since being acquired by a larger conglomerate</li></ul>
+    </div>
+  </div>
+  <div style="margin-bottom:8px"><div style="border-left:2px solid #e2e6eb;padding:3px 10px;margin:4px 0;font-size:11px;color:#6b7280;font-style:italic">'Good starter gloves but you will want to upgrade within 3-6 months'</div><div style="border-left:2px solid #e2e6eb;padding:3px 10px;margin:4px 0;font-size:11px;color:#6b7280;font-style:italic">'Everlast is the brand you buy before you know what you are doing'</div></div>
+  <div style="margin-top:10px;padding-top:10px;border-top:1px solid #e2e6eb;font-size:11px;color:#6b7280"><span style="font-weight:600;color:#c2622a">vs Boxraw:</span> Targets the same beginner buyer but at lower price and far lower quality. Boxraw wins on craftsmanship and brand aspiration. Everlast wins on distribution reach and name recognition. Key battleground: the $80-$150 first glove purchase.</div>
+</div><div style="background:#fff;border:1px solid #e2e6eb;border-radius:8px;padding:18px 20px;">
+  <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;">
+    <img src="https://www.google.com/s2/favicons?domain=winning-japan.com&sz=20" width="16" height="16" style="border-radius:3px;vertical-align:middle" alt="">
+    <span style="font-weight:700;font-size:15px;color:#111827">Winning</span>
+    <span style="margin-left:auto;font-size:10px;font-weight:600;text-transform:uppercase;color:#6b7280;background:#f1f3f6;padding:2px 8px;border-radius:4px">luxury</span>
+    <span style="font-size:11px;color:#9ca3af">34 posts</span>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px;">
+    <div>
+      <div style="font-size:10px;font-weight:600;text-transform:uppercase;color:#6b7280;margin-bottom:3px">Sentiment</div>
+      <div style="font-size:24px;font-weight:700;color:#16a34a">91<span style="font-size:12px;color:#9ca3af">/100</span></div>
+    </div>
+    <div>
+      <div style="font-size:10px;font-weight:600;text-transform:uppercase;color:#6b7280;margin-bottom:6px">Community Trust</div>
+      <div><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span></div>
+      <div style="font-size:11px;color:#6b7280;margin-top:3px">9/10</div>
+    </div>
+    <div>
+      <div style="font-size:10px;font-weight:600;text-transform:uppercase;color:#6b7280;margin-bottom:3px">Threat to Boxraw</div>
+      <div style="font-size:13px;font-weight:700;color:#16a34a;text-transform:capitalize">low</div>
+      <div style="font-size:11px;color:#9ca3af">sparring / competition</div>
+    </div>
+  </div>
+  <div style="font-size:12px;color:#374151;background:#f8f9fb;border-radius:4px;padding:8px 10px;margin-bottom:12px;font-style:italic">&ldquo;the undisputed gold standard, almost mythologized on Reddit&rdquo;</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px;">
+    <div>
+      <div style="font-size:10px;font-weight:600;text-transform:uppercase;color:#16a34a;margin-bottom:5px">Reddit Loves</div>
+      <ul style="list-style:none;padding:0;margin:0"><li style="color:#16a34a;font-size:12px;line-height:1.6;padding:1px 0">&#43; Universally considered the best sparring gloves in the world</li><li style="color:#16a34a;font-size:12px;line-height:1.6;padding:1px 0">&#43; Padding and wrist protection praised as unmatched across all price tiers</li><li style="color:#16a34a;font-size:12px;line-height:1.6;padding:1px 0">&#43; Used by top professional fighters, carries strong aspiration signal</li><li style="color:#16a34a;font-size:12px;line-height:1.6;padding:1px 0">&#43; Leather quality and craftsmanship described as exceptional even after years of use</li></ul>
+    </div>
+    <div>
+      <div style="font-size:10px;font-weight:600;text-transform:uppercase;color:#dc2626;margin-bottom:5px">Reddit Criticizes</div>
+      <ul style="list-style:none;padding:0;margin:0"><li style="color:#dc2626;font-size:12px;line-height:1.6;padding:1px 0">&#8722; Price puts them out of reach for most amateurs ($400-$500+)</li><li style="color:#dc2626;font-size:12px;line-height:1.6;padding:1px 0">&#8722; Primarily available through Japanese market, shipping and availability issues</li><li style="color:#dc2626;font-size:12px;line-height:1.6;padding:1px 0">&#8722; Some find the style dated compared to newer premium brands</li><li style="color:#dc2626;font-size:12px;line-height:1.6;padding:1px 0">&#8722; Overkill for casual bag work, perceived as sparring-specialist only</li></ul>
+    </div>
+  </div>
+  <div style="margin-bottom:8px"><div style="border-left:2px solid #e2e6eb;padding:3px 10px;margin:4px 0;font-size:11px;color:#6b7280;font-style:italic">'What are the best sparring gloves (besides Winning)?', the benchmark others are measured against</div><div style="border-left:2px solid #e2e6eb;padding:3px 10px;margin:4px 0;font-size:11px;color:#6b7280;font-style:italic">'If money is no object just get Winning and never think about gloves again'</div></div>
+  <div style="margin-top:10px;padding-top:10px;border-top:1px solid #e2e6eb;font-size:11px;color:#6b7280"><span style="font-weight:600;color:#c2622a">vs Boxraw:</span> Winning and Boxraw operate at different ends of the market. Winning owns the serious competitor/sparring niche at $400+; Boxraw competes in the premium training and lifestyle space at $80-$180. Low direct competitive threat, Boxraw can use Winning's positioning to anchor its own premium narrative ('premium training gear for the serious athlete').</div>
+</div><div style="background:#fff;border:1px solid #e2e6eb;border-radius:8px;padding:18px 20px;">
+  <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;">
+    <img src="https://www.google.com/s2/favicons?domain=venum.com&sz=20" width="16" height="16" style="border-radius:3px;vertical-align:middle" alt="">
+    <span style="font-weight:700;font-size:15px;color:#111827">Venum</span>
+    <span style="margin-left:auto;font-size:10px;font-weight:600;text-transform:uppercase;color:#6b7280;background:#f1f3f6;padding:2px 8px;border-radius:4px">mid</span>
+    <span style="font-size:11px;color:#9ca3af">25 posts</span>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px;">
+    <div>
+      <div style="font-size:10px;font-weight:600;text-transform:uppercase;color:#6b7280;margin-bottom:3px">Sentiment</div>
+      <div style="font-size:24px;font-weight:700;color:#b45309">64<span style="font-size:12px;color:#9ca3af">/100</span></div>
+    </div>
+    <div>
+      <div style="font-size:10px;font-weight:600;text-transform:uppercase;color:#6b7280;margin-bottom:6px">Community Trust</div>
+      <div><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span></div>
+      <div style="font-size:11px;color:#6b7280;margin-top:3px">7/10</div>
+    </div>
+    <div>
+      <div style="font-size:10px;font-weight:600;text-transform:uppercase;color:#6b7280;margin-bottom:3px">Threat to Boxraw</div>
+      <div style="font-size:13px;font-weight:700;color:#e63946;text-transform:capitalize">high</div>
+      <div style="font-size:11px;color:#9ca3af">general training / bag work</div>
+    </div>
+  </div>
+  <div style="font-size:12px;color:#374151;background:#f8f9fb;border-radius:4px;padding:8px 10px;margin-bottom:12px;font-style:italic">&ldquo;solid mid-range pick, MMA crossover appeal, strong marketing&rdquo;</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px;">
+    <div>
+      <div style="font-size:10px;font-weight:600;text-transform:uppercase;color:#16a34a;margin-bottom:5px">Reddit Loves</div>
+      <ul style="list-style:none;padding:0;margin:0"><li style="color:#16a34a;font-size:12px;line-height:1.6;padding:1px 0">&#43; Good value for money at the $70-$120 price point</li><li style="color:#16a34a;font-size:12px;line-height:1.6;padding:1px 0">&#43; Strong brand identity through UFC sponsorship deals</li><li style="color:#16a34a;font-size:12px;line-height:1.6;padding:1px 0">&#43; Contender and Elite lines well-regarded for recreational training</li><li style="color:#16a34a;font-size:12px;line-height:1.6;padding:1px 0">&#43; Wide product catalog appealing to both boxing and MMA athletes</li></ul>
+    </div>
+    <div>
+      <div style="font-size:10px;font-weight:600;text-transform:uppercase;color:#dc2626;margin-bottom:5px">Reddit Criticizes</div>
+      <ul style="list-style:none;padding:0;margin:0"><li style="color:#dc2626;font-size:12px;line-height:1.6;padding:1px 0">&#8722; Perceived as marketing-heavy, substance-light compared to specialist brands</li><li style="color:#dc2626;font-size:12px;line-height:1.6;padding:1px 0">&#8722; Wrist support criticised in several reviews as inadequate for hard hitters</li><li style="color:#dc2626;font-size:12px;line-height:1.6;padding:1px 0">&#8722; Shorts noted as poor quality in r/fightgear ('awful quality, avoid')</li><li style="color:#dc2626;font-size:12px;line-height:1.6;padding:1px 0">&#8722; Brand diluted by being available everywhere including discount retailers</li></ul>
+    </div>
+  </div>
+  <div style="margin-bottom:8px"><div style="border-left:2px solid #e2e6eb;padding:3px 10px;margin:4px 0;font-size:11px;color:#6b7280;font-style:italic">'Venum is what you get when you want something better than Everlast but aren't ready to commit to a specialist brand'</div><div style="border-left:2px solid #e2e6eb;padding:3px 10px;margin:4px 0;font-size:11px;color:#6b7280;font-style:italic">'Good gloves at their price point but nothing special'</div></div>
+  <div style="margin-top:10px;padding-top:10px;border-top:1px solid #e2e6eb;font-size:11px;color:#6b7280"><span style="font-weight:600;color:#c2622a">vs Boxraw:</span> Venum is the closest mass-market rival to Boxraw in the $80-$140 range for people seeking an upgrade from Everlast. Boxraw differentiates on UK premium identity and better apparel quality. Key battleground: r/fightgear recommendation threads where both brands are frequently compared.</div>
+</div><div style="background:#fff;border:1px solid #e2e6eb;border-radius:8px;padding:18px 20px;">
+  <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;">
+    <img src="https://www.google.com/s2/favicons?domain=hayabusafight.com&sz=20" width="16" height="16" style="border-radius:3px;vertical-align:middle" alt="">
+    <span style="font-weight:700;font-size:15px;color:#111827">Hayabusa</span>
+    <span style="margin-left:auto;font-size:10px;font-weight:600;text-transform:uppercase;color:#6b7280;background:#f1f3f6;padding:2px 8px;border-radius:4px">mid-premium</span>
+    <span style="font-size:11px;color:#9ca3af">24 posts</span>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px;">
+    <div>
+      <div style="font-size:10px;font-weight:600;text-transform:uppercase;color:#6b7280;margin-bottom:3px">Sentiment</div>
+      <div style="font-size:24px;font-weight:700;color:#16a34a">72<span style="font-size:12px;color:#9ca3af">/100</span></div>
+    </div>
+    <div>
+      <div style="font-size:10px;font-weight:600;text-transform:uppercase;color:#6b7280;margin-bottom:6px">Community Trust</div>
+      <div><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span></div>
+      <div style="font-size:11px;color:#6b7280;margin-top:3px">8/10</div>
+    </div>
+    <div>
+      <div style="font-size:10px;font-weight:600;text-transform:uppercase;color:#6b7280;margin-bottom:3px">Threat to Boxraw</div>
+      <div style="font-size:13px;font-weight:700;color:#e63946;text-transform:capitalize">high</div>
+      <div style="font-size:11px;color:#9ca3af">bag work / general training</div>
+    </div>
+  </div>
+  <div style="font-size:12px;color:#374151;background:#f8f9fb;border-radius:4px;padding:8px 10px;margin-bottom:12px;font-style:italic">&ldquo;technically impressive, the engineering brand of boxing gear&rdquo;</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px;">
+    <div>
+      <div style="font-size:10px;font-weight:600;text-transform:uppercase;color:#16a34a;margin-bottom:5px">Reddit Loves</div>
+      <ul style="list-style:none;padding:0;margin:0"><li style="color:#16a34a;font-size:12px;line-height:1.6;padding:1px 0">&#43; T3 gloves widely considered one of the best all-around training gloves under $150</li><li style="color:#16a34a;font-size:12px;line-height:1.6;padding:1px 0">&#43; Dual-X wrist closure system praised for superior wrist support and injury prevention</li><li style="color:#16a34a;font-size:12px;line-height:1.6;padding:1px 0">&#43; Build quality and longevity consistently highlighted across multiple years of use</li><li style="color:#16a34a;font-size:12px;line-height:1.6;padding:1px 0">&#43; Attractive to both boxing and MMA crossover athletes</li></ul>
+    </div>
+    <div>
+      <div style="font-size:10px;font-weight:600;text-transform:uppercase;color:#dc2626;margin-bottom:5px">Reddit Criticizes</div>
+      <ul style="list-style:none;padding:0;margin:0"><li style="color:#dc2626;font-size:12px;line-height:1.6;padding:1px 0">&#8722; Accused of copying designs from smaller specialty brands (Phenom, Boxraw etc.)</li><li style="color:#dc2626;font-size:12px;line-height:1.6;padding:1px 0">&#8722; Some community members question the 'hate', suggests divisive reputation</li><li style="color:#dc2626;font-size:12px;line-height:1.6;padding:1px 0">&#8722; Padding can feel hard for sparring compared to Winning or Rival at similar price</li><li style="color:#dc2626;font-size:12px;line-height:1.6;padding:1px 0">&#8722; Perceived as more MMA-adjacent than pure boxing, creating some credibility gap with purists</li></ul>
+    </div>
+  </div>
+  <div style="margin-bottom:8px"><div style="border-left:2px solid #e2e6eb;padding:3px 10px;margin:4px 0;font-size:11px;color:#6b7280;font-style:italic">'The Hayabusa T3 is probably the best training glove under $150 full stop'</div><div style="border-left:2px solid #e2e6eb;padding:3px 10px;margin:4px 0;font-size:11px;color:#6b7280;font-style:italic">'[question] Why the hate for Hayabusa?, they seem solid to me' (post title on r/fightgear)</div></div>
+  <div style="margin-top:10px;padding-top:10px;border-top:1px solid #e2e6eb;font-size:11px;color:#6b7280"><span style="font-weight:600;color:#c2622a">vs Boxraw:</span> Hayabusa is Boxraw's most direct technical competitor in the mid-premium glove segment ($100-$160). Hayabusa wins on wrist tech reputation; Boxraw wins on brand identity and apparel. Both fight for the same 'serious enthusiast' buyer on r/fightgear. High threat level for Boxraw.</div>
+</div><div style="background:#fff;border:1px solid #e2e6eb;border-radius:8px;padding:18px 20px;">
+  <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;">
+    <img src="https://www.google.com/s2/favicons?domain=rivalboxing.com&sz=20" width="16" height="16" style="border-radius:3px;vertical-align:middle" alt="">
+    <span style="font-weight:700;font-size:15px;color:#111827">Rival</span>
+    <span style="margin-left:auto;font-size:10px;font-weight:600;text-transform:uppercase;color:#6b7280;background:#f1f3f6;padding:2px 8px;border-radius:4px">mid-premium</span>
+    <span style="font-size:11px;color:#9ca3af">24 posts</span>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px;">
+    <div>
+      <div style="font-size:10px;font-weight:600;text-transform:uppercase;color:#6b7280;margin-bottom:3px">Sentiment</div>
+      <div style="font-size:24px;font-weight:700;color:#16a34a">71<span style="font-size:12px;color:#9ca3af">/100</span></div>
+    </div>
+    <div>
+      <div style="font-size:10px;font-weight:600;text-transform:uppercase;color:#6b7280;margin-bottom:6px">Community Trust</div>
+      <div><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span></div>
+      <div style="font-size:11px;color:#6b7280;margin-top:3px">7/10</div>
+    </div>
+    <div>
+      <div style="font-size:10px;font-weight:600;text-transform:uppercase;color:#6b7280;margin-bottom:3px">Threat to Boxraw</div>
+      <div style="font-size:13px;font-weight:700;color:#b45309;text-transform:capitalize">medium</div>
+      <div style="font-size:11px;color:#9ca3af">sparring / all-round training</div>
+    </div>
+  </div>
+  <div style="font-size:12px;color:#374151;background:#f8f9fb;border-radius:4px;padding:8px 10px;margin-bottom:12px;font-style:italic">&ldquo;respected but understated, the serious boxer's mid-tier choice&rdquo;</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px;">
+    <div>
+      <div style="font-size:10px;font-weight:600;text-transform:uppercase;color:#16a34a;margin-bottom:5px">Reddit Loves</div>
+      <ul style="list-style:none;padding:0;margin:0"><li style="color:#16a34a;font-size:12px;line-height:1.6;padding:1px 0">&#43; Consistently recommended as the best value in the mid-premium segment</li><li style="color:#16a34a;font-size:12px;line-height:1.6;padding:1px 0">&#43; Padding suited to both bag work and light sparring, versatile</li><li style="color:#16a34a;font-size:12px;line-height:1.6;padding:1px 0">&#43; Canadian brand with strong reputation in the serious boxing community</li><li style="color:#16a34a;font-size:12px;line-height:1.6;padding:1px 0">&#43; Good wrist support across their glove range</li></ul>
+    </div>
+    <div>
+      <div style="font-size:10px;font-weight:600;text-transform:uppercase;color:#dc2626;margin-bottom:5px">Reddit Criticizes</div>
+      <ul style="list-style:none;padding:0;margin:0"><li style="color:#dc2626;font-size:12px;line-height:1.6;padding:1px 0">&#8722; Less brand awareness among newer fighters, often discovered later in the journey</li><li style="color:#dc2626;font-size:12px;line-height:1.6;padding:1px 0">&#8722; Apparel and accessories (trunks review on r/fightgear) received mixed feedback</li><li style="color:#dc2626;font-size:12px;line-height:1.6;padding:1px 0">&#8722; Not as aspirational or fashion-forward as Boxraw or Hayabusa</li><li style="color:#dc2626;font-size:12px;line-height:1.6;padding:1px 0">&#8722; Some inconsistency noted between product lines in quality</li></ul>
+    </div>
+  </div>
+  <div style="margin-bottom:8px"><div style="border-left:2px solid #e2e6eb;padding:3px 10px;margin:4px 0;font-size:11px;color:#6b7280;font-style:italic">'Rival is what Everlast wishes it was, actually built for boxing'</div><div style="border-left:2px solid #e2e6eb;padding:3px 10px;margin:4px 0;font-size:11px;color:#6b7280;font-style:italic">'Not flashy but solid, every serious gym has a few Rival guys'</div></div>
+  <div style="margin-top:10px;padding-top:10px;border-top:1px solid #e2e6eb;font-size:11px;color:#6b7280"><span style="font-weight:600;color:#c2622a">vs Boxraw:</span> Rival appeals to the same serious-but-not-pro demographic as Boxraw but with less lifestyle/fashion positioning. Boxraw wins on design and brand story; Rival wins on pure boxing credibility and value perception. Medium threat, different brand personalities but overlapping buyer at the $100-$150 tier.</div>
+</div><div style="background:#fff;border:1px solid #e2e6eb;border-radius:8px;padding:18px 20px;">
+  <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;">
+    <img src="https://www.google.com/s2/favicons?domain=titleboxing.com&sz=20" width="16" height="16" style="border-radius:3px;vertical-align:middle" alt="">
+    <span style="font-weight:700;font-size:15px;color:#111827">Title Boxing</span>
+    <span style="margin-left:auto;font-size:10px;font-weight:600;text-transform:uppercase;color:#6b7280;background:#f1f3f6;padding:2px 8px;border-radius:4px">mid</span>
+    <span style="font-size:11px;color:#9ca3af">20 posts</span>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px;">
+    <div>
+      <div style="font-size:10px;font-weight:600;text-transform:uppercase;color:#6b7280;margin-bottom:3px">Sentiment</div>
+      <div style="font-size:24px;font-weight:700;color:#b45309">58<span style="font-size:12px;color:#9ca3af">/100</span></div>
+    </div>
+    <div>
+      <div style="font-size:10px;font-weight:600;text-transform:uppercase;color:#6b7280;margin-bottom:6px">Community Trust</div>
+      <div><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span></div>
+      <div style="font-size:11px;color:#6b7280;margin-top:3px">6/10</div>
+    </div>
+    <div>
+      <div style="font-size:10px;font-weight:600;text-transform:uppercase;color:#6b7280;margin-bottom:3px">Threat to Boxraw</div>
+      <div style="font-size:13px;font-weight:700;color:#16a34a;text-transform:capitalize">low</div>
+      <div style="font-size:11px;color:#9ca3af">bag work / general training</div>
+    </div>
+  </div>
+  <div style="font-size:12px;color:#374151;background:#f8f9fb;border-radius:4px;padding:8px 10px;margin-bottom:12px;font-style:italic">&ldquo;solid American staple, gym standard without excitement&rdquo;</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px;">
+    <div>
+      <div style="font-size:10px;font-weight:600;text-transform:uppercase;color:#16a34a;margin-bottom:5px">Reddit Loves</div>
+      <ul style="list-style:none;padding:0;margin:0"><li style="color:#16a34a;font-size:12px;line-height:1.6;padding:1px 0">&#43; Wide product range covering every type of boxing equipment</li><li style="color:#16a34a;font-size:12px;line-height:1.6;padding:1px 0">&#43; Recognized brand name giving beginners confidence in purchase</li><li style="color:#16a34a;font-size:12px;line-height:1.6;padding:1px 0">&#43; Good for gym environments, durable and functional</li><li style="color:#16a34a;font-size:12px;line-height:1.6;padding:1px 0">&#43; Own retail stores and strong US distribution network</li></ul>
+    </div>
+    <div>
+      <div style="font-size:10px;font-weight:600;text-transform:uppercase;color:#dc2626;margin-bottom:5px">Reddit Criticizes</div>
+      <ul style="list-style:none;padding:0;margin:0"><li style="color:#dc2626;font-size:12px;line-height:1.6;padding:1px 0">&#8722; Accused of copying designs from other brands (mentioned in specific post about brand imitation)</li><li style="color:#dc2626;font-size:12px;line-height:1.6;padding:1px 0">&#8722; Not particularly respected by experienced fighters, seen as mid at best</li><li style="color:#dc2626;font-size:12px;line-height:1.6;padding:1px 0">&#8722; Quality varies significantly across their product range</li><li style="color:#dc2626;font-size:12px;line-height:1.6;padding:1px 0">&#8722; Perceived as generic, lacks distinctive identity or innovation</li></ul>
+    </div>
+  </div>
+  <div style="margin-bottom:8px"><div style="border-left:2px solid #e2e6eb;padding:3px 10px;margin:4px 0;font-size:11px;color:#6b7280;font-style:italic">'Title is fine for gym bags and accessories but skip their gloves for anything serious'</div><div style="border-left:2px solid #e2e6eb;padding:3px 10px;margin:4px 0;font-size:11px;color:#6b7280;font-style:italic">'Big on brand recognition, light on actual quality'</div></div>
+  <div style="margin-top:10px;padding-top:10px;border-top:1px solid #e2e6eb;font-size:11px;color:#6b7280"><span style="font-weight:600;color:#c2622a">vs Boxraw:</span> Title targets the American gym market with broad product coverage. Boxraw is more premium and lifestyle-forward. Low direct threat as their buyer profiles barely overlap, Title serves the casual gym member, Boxraw serves the serious enthusiast.</div>
+</div><div style="background:#fff;border:1px solid #e2e6eb;border-radius:8px;padding:18px 20px;">
+  <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;">
+    <img src="https://www.google.com/s2/favicons?domain=cletoreyes.com&sz=20" width="16" height="16" style="border-radius:3px;vertical-align:middle" alt="">
+    <span style="font-weight:700;font-size:15px;color:#111827">Cleto Reyes</span>
+    <span style="margin-left:auto;font-size:10px;font-weight:600;text-transform:uppercase;color:#6b7280;background:#f1f3f6;padding:2px 8px;border-radius:4px">premium</span>
+    <span style="font-size:11px;color:#9ca3af">16 posts</span>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px;">
+    <div>
+      <div style="font-size:10px;font-weight:600;text-transform:uppercase;color:#6b7280;margin-bottom:3px">Sentiment</div>
+      <div style="font-size:24px;font-weight:700;color:#16a34a">82<span style="font-size:12px;color:#9ca3af">/100</span></div>
+    </div>
+    <div>
+      <div style="font-size:10px;font-weight:600;text-transform:uppercase;color:#6b7280;margin-bottom:6px">Community Trust</div>
+      <div><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span></div>
+      <div style="font-size:11px;color:#6b7280;margin-top:3px">8/10</div>
+    </div>
+    <div>
+      <div style="font-size:10px;font-weight:600;text-transform:uppercase;color:#6b7280;margin-bottom:3px">Threat to Boxraw</div>
+      <div style="font-size:13px;font-weight:700;color:#16a34a;text-transform:capitalize">low</div>
+      <div style="font-size:11px;color:#9ca3af">competition / sparring</div>
+    </div>
+  </div>
+  <div style="font-size:12px;color:#374151;background:#f8f9fb;border-radius:4px;padding:8px 10px;margin-bottom:12px;font-style:italic">&ldquo;old-school Mexican craft excellence, the traditional purist choice&rdquo;</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px;">
+    <div>
+      <div style="font-size:10px;font-weight:600;text-transform:uppercase;color:#16a34a;margin-bottom:5px">Reddit Loves</div>
+      <ul style="list-style:none;padding:0;margin:0"><li style="color:#16a34a;font-size:12px;line-height:1.6;padding:1px 0">&#43; Leather quality described as best-in-class, hand-crafted in Mexico</li><li style="color:#16a34a;font-size:12px;line-height:1.6;padding:1px 0">&#43; Preferred by professional boxers, strong pro-fight credibility</li><li style="color:#16a34a;font-size:12px;line-height:1.6;padding:1px 0">&#43; Compact design suits precise punching technique over cushioned comfort</li><li style="color:#16a34a;font-size:12px;line-height:1.6;padding:1px 0">&#43; 100+ year heritage gives them unquestionable authenticity</li></ul>
+    </div>
+    <div>
+      <div style="font-size:10px;font-weight:600;text-transform:uppercase;color:#dc2626;margin-bottom:5px">Reddit Criticizes</div>
+      <ul style="list-style:none;padding:0;margin:0"><li style="color:#dc2626;font-size:12px;line-height:1.6;padding:1px 0">&#8722; Hard padding criticized for being risky in sparring, built for bag and pad work</li><li style="color:#dc2626;font-size:12px;line-height:1.6;padding:1px 0">&#8722; Price ($200-$300+) puts them out of reach for most hobby boxers</li><li style="color:#dc2626;font-size:12px;line-height:1.6;padding:1px 0">&#8722; Sizing and quality can be inconsistent, craftsmanship varies batch-to-batch</li><li style="color:#dc2626;font-size:12px;line-height:1.6;padding:1px 0">&#8722; Not suited to beginners, often mentioned as 'not for people still learning their style'</li></ul>
+    </div>
+  </div>
+  <div style="margin-bottom:8px"><div style="border-left:2px solid #e2e6eb;padding:3px 10px;margin:4px 0;font-size:11px;color:#6b7280;font-style:italic">'Cleto Reyes vs Winning is the age-old debate, both are at the top of the craft'</div><div style="border-left:2px solid #e2e6eb;padding:3px 10px;margin:4px 0;font-size:11px;color:#6b7280;font-style:italic">'If you fight, Cleto Reyes. If you spar hard, Winning. If you just train, something else'</div></div>
+  <div style="margin-top:10px;padding-top:10px;border-top:1px solid #e2e6eb;font-size:11px;color:#6b7280"><span style="font-weight:600;color:#c2622a">vs Boxraw:</span> Cleto Reyes is a heritage-first brand targeting serious competitors and boxing purists. Boxraw plays in an entirely different lane, premium lifestyle and training brand. Very low competitive threat. Boxraw could even reference Cleto Reyes as a credibility anchor when positioning its own premium craftsmanship story.</div>
+</div><div style="background:#fff;border:1px solid #e2e6eb;border-radius:8px;padding:18px 20px;">
+  <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;">
+    <img src="https://www.google.com/s2/favicons?domain=fairtex.com&sz=20" width="16" height="16" style="border-radius:3px;vertical-align:middle" alt="">
+    <span style="font-weight:700;font-size:15px;color:#111827">Fairtex</span>
+    <span style="margin-left:auto;font-size:10px;font-weight:600;text-transform:uppercase;color:#6b7280;background:#f1f3f6;padding:2px 8px;border-radius:4px">mid-premium</span>
+    <span style="font-size:11px;color:#9ca3af">15 posts</span>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px;">
+    <div>
+      <div style="font-size:10px;font-weight:600;text-transform:uppercase;color:#6b7280;margin-bottom:3px">Sentiment</div>
+      <div style="font-size:24px;font-weight:700;color:#16a34a">76<span style="font-size:12px;color:#9ca3af">/100</span></div>
+    </div>
+    <div>
+      <div style="font-size:10px;font-weight:600;text-transform:uppercase;color:#6b7280;margin-bottom:6px">Community Trust</div>
+      <div><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span></div>
+      <div style="font-size:11px;color:#6b7280;margin-top:3px">8/10</div>
+    </div>
+    <div>
+      <div style="font-size:10px;font-weight:600;text-transform:uppercase;color:#6b7280;margin-bottom:3px">Threat to Boxraw</div>
+      <div style="font-size:13px;font-weight:700;color:#b45309;text-transform:capitalize">medium</div>
+      <div style="font-size:11px;color:#9ca3af">Muay Thai / general striking</div>
+    </div>
+  </div>
+  <div style="font-size:12px;color:#374151;background:#f8f9fb;border-radius:4px;padding:8px 10px;margin-bottom:12px;font-style:italic">&ldquo;Thai heritage brand, respected, authentic, Muay Thai-first&rdquo;</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px;">
+    <div>
+      <div style="font-size:10px;font-weight:600;text-transform:uppercase;color:#16a34a;margin-bottom:5px">Reddit Loves</div>
+      <ul style="list-style:none;padding:0;margin:0"><li style="color:#16a34a;font-size:12px;line-height:1.6;padding:1px 0">&#43; Authentic Thai manufacturing with decades of Muay Thai pedigree</li><li style="color:#16a34a;font-size:12px;line-height:1.6;padding:1px 0">&#43; Excellent sauna and training apparel, specifically praised in multiple posts</li><li style="color:#16a34a;font-size:12px;line-height:1.6;padding:1px 0">&#43; Gloves praised for durability and wrist support across mid-premium tier</li><li style="color:#16a34a;font-size:12px;line-height:1.6;padding:1px 0">&#43; Strong following in r/MuayThai and r/Kickboxing communities</li></ul>
+    </div>
+    <div>
+      <div style="font-size:10px;font-weight:600;text-transform:uppercase;color:#dc2626;margin-bottom:5px">Reddit Criticizes</div>
+      <ul style="list-style:none;padding:0;margin:0"><li style="color:#dc2626;font-size:12px;line-height:1.6;padding:1px 0">&#8722; Knuckle guards received very mixed feedback, inconsistent quality vs price</li><li style="color:#dc2626;font-size:12px;line-height:1.6;padding:1px 0">&#8722; Primarily associated with Muay Thai, limiting crossover to pure boxing community</li><li style="color:#dc2626;font-size:12px;line-height:1.6;padding:1px 0">&#8722; Some sizing inconsistency noted across product lines</li><li style="color:#dc2626;font-size:12px;line-height:1.6;padding:1px 0">&#8722; Less aspirational visual identity than newer brands like Boxraw or Hayabusa</li></ul>
+    </div>
+  </div>
+  <div style="margin-bottom:8px"><div style="border-left:2px solid #e2e6eb;padding:3px 10px;margin:4px 0;font-size:11px;color:#6b7280;font-style:italic">'Fairtex or Venum, you can not go wrong with either for training'</div><div style="border-left:2px solid #e2e6eb;padding:3px 10px;margin:4px 0;font-size:11px;color:#6b7280;font-style:italic">'Fairtex sauna suits are worth every penny, best I have tried'</div></div>
+  <div style="margin-top:10px;padding-top:10px;border-top:1px solid #e2e6eb;font-size:11px;color:#6b7280"><span style="font-weight:600;color:#c2622a">vs Boxraw:</span> Fairtex dominates the Muay Thai and kickboxing communities where Boxraw has minimal presence. For pure boxing, both compete in the mid-premium training gear space. Threat is medium in the apparel/training gear category where Fairtex's sauna suit reputation creates direct overlap with Boxraw's premium training apparel.</div>
+</div><div style="background:#fff;border:1px solid #e2e6eb;border-radius:8px;padding:18px 20px;">
+  <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;">
+    <img src="https://www.google.com/s2/favicons?domain=nike.com&sz=20" width="16" height="16" style="border-radius:3px;vertical-align:middle" alt="">
+    <span style="font-weight:700;font-size:15px;color:#111827">Nike</span>
+    <span style="margin-left:auto;font-size:10px;font-weight:600;text-transform:uppercase;color:#6b7280;background:#f1f3f6;padding:2px 8px;border-radius:4px">mid</span>
+    <span style="font-size:11px;color:#9ca3af">14 posts</span>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px;">
+    <div>
+      <div style="font-size:10px;font-weight:600;text-transform:uppercase;color:#6b7280;margin-bottom:3px">Sentiment</div>
+      <div style="font-size:24px;font-weight:700;color:#b45309">61<span style="font-size:12px;color:#9ca3af">/100</span></div>
+    </div>
+    <div>
+      <div style="font-size:10px;font-weight:600;text-transform:uppercase;color:#6b7280;margin-bottom:6px">Community Trust</div>
+      <div><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span></div>
+      <div style="font-size:11px;color:#6b7280;margin-top:3px">5/10</div>
+    </div>
+    <div>
+      <div style="font-size:10px;font-weight:600;text-transform:uppercase;color:#6b7280;margin-bottom:3px">Threat to Boxraw</div>
+      <div style="font-size:13px;font-weight:700;color:#16a34a;text-transform:capitalize">low</div>
+      <div style="font-size:11px;color:#9ca3af">training apparel / footwear</div>
+    </div>
+  </div>
+  <div style="font-size:12px;color:#374151;background:#f8f9fb;border-radius:4px;padding:8px 10px;margin-bottom:12px;font-style:italic">&ldquo;giant brand that left boxing, aspirational logo but no specialist credibility&rdquo;</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px;">
+    <div>
+      <div style="font-size:10px;font-weight:600;text-transform:uppercase;color:#16a34a;margin-bottom:5px">Reddit Loves</div>
+      <ul style="list-style:none;padding:0;margin:0"><li style="color:#16a34a;font-size:12px;line-height:1.6;padding:1px 0">&#43; Brand recognition gives confidence to new athletes choosing apparel</li><li style="color:#16a34a;font-size:12px;line-height:1.6;padding:1px 0">&#43; Training shorts and compression wear commonly worn in gyms</li><li style="color:#16a34a;font-size:12px;line-height:1.6;padding:1px 0">&#43; Strong footwear options mentioned alongside boxing shoes</li><li style="color:#16a34a;font-size:12px;line-height:1.6;padding:1px 0">&#43; Familiar sizing and wide availability make it a default apparel choice</li></ul>
+    </div>
+    <div>
+      <div style="font-size:10px;font-weight:600;text-transform:uppercase;color:#dc2626;margin-bottom:5px">Reddit Criticizes</div>
+      <ul style="list-style:none;padding:0;margin:0"><li style="color:#dc2626;font-size:12px;line-height:1.6;padding:1px 0">&#8722; Nike boxing gear no longer available on their main website, brand retreat from boxing</li><li style="color:#dc2626;font-size:12px;line-height:1.6;padding:1px 0">&#8722; No specialist boxing glove range, only generic training equipment</li><li style="color:#dc2626;font-size:12px;line-height:1.6;padding:1px 0">&#8722; Perceived as generic sportswear rather than boxing-specific gear</li><li style="color:#dc2626;font-size:12px;line-height:1.6;padding:1px 0">&#8722; Community notes Nike 'abandoned' boxing, reducing authenticity</li></ul>
+    </div>
+  </div>
+  <div style="margin-bottom:8px"><div style="border-left:2px solid #e2e6eb;padding:3px 10px;margin:4px 0;font-size:11px;color:#6b7280;font-style:italic">'Why You Can't Buy Nike, Adidas, or Asics Boxing Gear on Their Main Sites' (r/fightgear post title, key concern for buyers)</div><div style="border-left:2px solid #e2e6eb;padding:3px 10px;margin:4px 0;font-size:11px;color:#6b7280;font-style:italic">'Nike is fine for gym clothes but they are not a boxing brand'</div></div>
+  <div style="margin-top:10px;padding-top:10px;border-top:1px solid #e2e6eb;font-size:11px;color:#6b7280"><span style="font-weight:600;color:#c2622a">vs Boxraw:</span> Nike competes with Boxraw primarily in the training apparel space, shorts, tracksuits, compression wear. However, Nike has retreated from dedicated boxing gear. This creates a significant opening for Boxraw: athletes seeking branded boxing-specific apparel with Nike-level aesthetics but specialist credibility. Low glove threat; medium apparel threat.</div>
+</div><div style="background:#fff;border:1px solid #e2e6eb;border-radius:8px;padding:18px 20px;">
+  <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;">
+    <img src="https://www.google.com/s2/favicons?domain=adidas.com&sz=20" width="16" height="16" style="border-radius:3px;vertical-align:middle" alt="">
+    <span style="font-weight:700;font-size:15px;color:#111827">Adidas</span>
+    <span style="margin-left:auto;font-size:10px;font-weight:600;text-transform:uppercase;color:#6b7280;background:#f1f3f6;padding:2px 8px;border-radius:4px">mid</span>
+    <span style="font-size:11px;color:#9ca3af">13 posts</span>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px;">
+    <div>
+      <div style="font-size:10px;font-weight:600;text-transform:uppercase;color:#6b7280;margin-bottom:3px">Sentiment</div>
+      <div style="font-size:24px;font-weight:700;color:#b45309">55<span style="font-size:12px;color:#9ca3af">/100</span></div>
+    </div>
+    <div>
+      <div style="font-size:10px;font-weight:600;text-transform:uppercase;color:#6b7280;margin-bottom:6px">Community Trust</div>
+      <div><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span></div>
+      <div style="font-size:11px;color:#6b7280;margin-top:3px">5/10</div>
+    </div>
+    <div>
+      <div style="font-size:10px;font-weight:600;text-transform:uppercase;color:#6b7280;margin-bottom:3px">Threat to Boxraw</div>
+      <div style="font-size:13px;font-weight:700;color:#16a34a;text-transform:capitalize">low</div>
+      <div style="font-size:11px;color:#9ca3af">boxing shoes / training apparel</div>
+    </div>
+  </div>
+  <div style="font-size:12px;color:#374151;background:#f8f9fb;border-radius:4px;padding:8px 10px;margin-bottom:12px;font-style:italic">&ldquo;heritage boxing shoes brand, respected for footwear, not gloves&rdquo;</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px;">
+    <div>
+      <div style="font-size:10px;font-weight:600;text-transform:uppercase;color:#16a34a;margin-bottom:5px">Reddit Loves</div>
+      <ul style="list-style:none;padding:0;margin:0"><li style="color:#16a34a;font-size:12px;line-height:1.6;padding:1px 0">&#43; Boxing shoes (Box Hog range) well-regarded and frequently recommended</li><li style="color:#16a34a;font-size:12px;line-height:1.6;padding:1px 0">&#43; Strong apparel range worn commonly in boxing gyms</li><li style="color:#16a34a;font-size:12px;line-height:1.6;padding:1px 0">&#43; Heritage in boxing through professional fight sponsorships</li><li style="color:#16a34a;font-size:12px;line-height:1.6;padding:1px 0">&#43; Good quality training joggers and gym wear</li></ul>
+    </div>
+    <div>
+      <div style="font-size:10px;font-weight:600;text-transform:uppercase;color:#dc2626;margin-bottom:5px">Reddit Criticizes</div>
+      <ul style="list-style:none;padding:0;margin:0"><li style="color:#dc2626;font-size:12px;line-height:1.6;padding:1px 0">&#8722; Boxing gear not available on main website (same issue as Nike)</li><li style="color:#dc2626;font-size:12px;line-height:1.6;padding:1px 0">&#8722; Gloves received negative reviews in ranking threads</li><li style="color:#dc2626;font-size:12px;line-height:1.6;padding:1px 0">&#8722; Inconsistent quality in shorts noted in r/fightgear</li><li style="color:#dc2626;font-size:12px;line-height:1.6;padding:1px 0">&#8722; Not taken seriously as a specialist boxing glove brand</li></ul>
+    </div>
+  </div>
+  <div style="margin-bottom:8px"><div style="border-left:2px solid #e2e6eb;padding:3px 10px;margin:4px 0;font-size:11px;color:#6b7280;font-style:italic">'Adidas Box Hog 4 vs Everlast shoes, Adidas wins easily for footwear'</div><div style="border-left:2px solid #e2e6eb;padding:3px 10px;margin:4px 0;font-size:11px;color:#6b7280;font-style:italic">'Great for shoes, mediocre for everything else in boxing'</div></div>
+  <div style="margin-top:10px;padding-top:10px;border-top:1px solid #e2e6eb;font-size:11px;color:#6b7280"><span style="font-weight:600;color:#c2622a">vs Boxraw:</span> Adidas competes with Boxraw on training apparel and athletic wear aesthetics. Their boxing shoes are well-respected but gloves are not. Like Nike, their retreat from dedicated boxing gear creates opportunity for Boxraw to own the 'premium boxing-specific apparel' position. Low glove threat; medium apparel/aesthetic threat.</div>
+</div><div style="background:#fff;border:1px solid #e2e6eb;border-radius:8px;padding:18px 20px;">
+  <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;">
+    <img src="https://www.google.com/s2/favicons?domain=grantboxing.com&sz=20" width="16" height="16" style="border-radius:3px;vertical-align:middle" alt="">
+    <span style="font-weight:700;font-size:15px;color:#111827">Grant</span>
+    <span style="margin-left:auto;font-size:10px;font-weight:600;text-transform:uppercase;color:#6b7280;background:#f1f3f6;padding:2px 8px;border-radius:4px">luxury</span>
+    <span style="font-size:11px;color:#9ca3af">5 posts</span>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px;">
+    <div>
+      <div style="font-size:10px;font-weight:600;text-transform:uppercase;color:#6b7280;margin-bottom:3px">Sentiment</div>
+      <div style="font-size:24px;font-weight:700;color:#16a34a">88<span style="font-size:12px;color:#9ca3af">/100</span></div>
+    </div>
+    <div>
+      <div style="font-size:10px;font-weight:600;text-transform:uppercase;color:#6b7280;margin-bottom:6px">Community Trust</div>
+      <div><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span></div>
+      <div style="font-size:11px;color:#6b7280;margin-top:3px">9/10</div>
+    </div>
+    <div>
+      <div style="font-size:10px;font-weight:600;text-transform:uppercase;color:#6b7280;margin-bottom:3px">Threat to Boxraw</div>
+      <div style="font-size:13px;font-weight:700;color:#16a34a;text-transform:capitalize">low</div>
+      <div style="font-size:11px;color:#9ca3af">professional competition</div>
+    </div>
+  </div>
+  <div style="font-size:12px;color:#374151;background:#f8f9fb;border-radius:4px;padding:8px 10px;margin-bottom:12px;font-style:italic">&ldquo;ultra-premium fight night gloves worn by champions, aspirational status symbol&rdquo;</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px;">
+    <div>
+      <div style="font-size:10px;font-weight:600;text-transform:uppercase;color:#16a34a;margin-bottom:5px">Reddit Loves</div>
+      <ul style="list-style:none;padding:0;margin:0"><li style="color:#16a34a;font-size:12px;line-height:1.6;padding:1px 0">&#43; Worn by elite professional fighters including champions at the highest level</li><li style="color:#16a34a;font-size:12px;line-height:1.6;padding:1px 0">&#43; Custom craftsmanship and exclusivity command extreme respect</li><li style="color:#16a34a;font-size:12px;line-height:1.6;padding:1px 0">&#43; Seen on televised fights which reinforces elite association</li><li style="color:#16a34a;font-size:12px;line-height:1.6;padding:1px 0">&#43; Considered the peak of American boxing glove craftsmanship</li></ul>
+    </div>
+    <div>
+      <div style="font-size:10px;font-weight:600;text-transform:uppercase;color:#dc2626;margin-bottom:5px">Reddit Criticizes</div>
+      <ul style="list-style:none;padding:0;margin:0"><li style="color:#dc2626;font-size:12px;line-height:1.6;padding:1px 0">&#8722; Extremely expensive and mainly accessible only to professional fighters</li><li style="color:#dc2626;font-size:12px;line-height:1.6;padding:1px 0">&#8722; Not practical for the training market, competition/fight night gloves only</li><li style="color:#dc2626;font-size:12px;line-height:1.6;padding:1px 0">&#8722; Very limited retail availability, custom order model</li></ul>
+    </div>
+  </div>
+  <div style="margin-bottom:8px"><div style="border-left:2px solid #e2e6eb;padding:3px 10px;margin:4px 0;font-size:11px;color:#6b7280;font-style:italic">'Gervonta is wearing Grant gloves in his upcoming fight'</div><div style="border-left:2px solid #e2e6eb;padding:3px 10px;margin:4px 0;font-size:11px;color:#6b7280;font-style:italic">'Grant is what the pros use when they get to choose their own gloves'</div></div>
+  <div style="margin-top:10px;padding-top:10px;border-top:1px solid #e2e6eb;font-size:11px;color:#6b7280"><span style="font-weight:600;color:#c2622a">vs Boxraw:</span> Grant and Boxraw are not direct competitors. Grant serves elite professional fighters; Boxraw serves the serious training market. Grant's presence on Reddit creates aspiration signal that Boxraw can ride, positioning in conversations that include Grant signals Boxraw is in the serious category.</div>
+</div><div style="background:#fff;border:1px solid #e2e6eb;border-radius:8px;padding:18px 20px;">
+  <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;">
+    <img src="https://www.google.com/s2/favicons?domain=ringsideworldwide.com&sz=20" width="16" height="16" style="border-radius:3px;vertical-align:middle" alt="">
+    <span style="font-weight:700;font-size:15px;color:#111827">Ringside</span>
+    <span style="margin-left:auto;font-size:10px;font-weight:600;text-transform:uppercase;color:#6b7280;background:#f1f3f6;padding:2px 8px;border-radius:4px">mid</span>
+    <span style="font-size:11px;color:#9ca3af">5 posts</span>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px;">
+    <div>
+      <div style="font-size:10px;font-weight:600;text-transform:uppercase;color:#6b7280;margin-bottom:3px">Sentiment</div>
+      <div style="font-size:24px;font-weight:700;color:#b45309">60<span style="font-size:12px;color:#9ca3af">/100</span></div>
+    </div>
+    <div>
+      <div style="font-size:10px;font-weight:600;text-transform:uppercase;color:#6b7280;margin-bottom:6px">Community Trust</div>
+      <div><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#c2622a"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span><span style="display:inline-block;width:14px;height:5px;border-radius:2px;margin-right:2px;background:#e2e6eb"></span></div>
+      <div style="font-size:11px;color:#6b7280;margin-top:3px">6/10</div>
+    </div>
+    <div>
+      <div style="font-size:10px;font-weight:600;text-transform:uppercase;color:#6b7280;margin-bottom:3px">Threat to Boxraw</div>
+      <div style="font-size:13px;font-weight:700;color:#16a34a;text-transform:capitalize">low</div>
+      <div style="font-size:11px;color:#9ca3af">general training / gym equipment</div>
+    </div>
+  </div>
+  <div style="font-size:12px;color:#374151;background:#f8f9fb;border-radius:4px;padding:8px 10px;margin-bottom:12px;font-style:italic">&ldquo;reliable American mid-range brand, functional but forgettable&rdquo;</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px;">
+    <div>
+      <div style="font-size:10px;font-weight:600;text-transform:uppercase;color:#16a34a;margin-bottom:5px">Reddit Loves</div>
+      <ul style="list-style:none;padding:0;margin:0"><li style="color:#16a34a;font-size:12px;line-height:1.6;padding:1px 0">&#43; Mentioned positively as a reliable mid-range option for gym beginners</li><li style="color:#16a34a;font-size:12px;line-height:1.6;padding:1px 0">&#43; Broad catalog covering all boxing equipment needs</li><li style="color:#16a34a;font-size:12px;line-height:1.6;padding:1px 0">&#43; Good brand recognition among American boxing communities</li><li style="color:#16a34a;font-size:12px;line-height:1.6;padding:1px 0">&#43; Value-focused, competitive pricing across the range</li></ul>
+    </div>
+    <div>
+      <div style="font-size:10px;font-weight:600;text-transform:uppercase;color:#dc2626;margin-bottom:5px">Reddit Criticizes</div>
+      <ul style="list-style:none;padding:0;margin:0"><li style="color:#dc2626;font-size:12px;line-height:1.6;padding:1px 0">&#8722; Lacks aspirational identity, generic gym brand perception</li><li style="color:#dc2626;font-size:12px;line-height:1.6;padding:1px 0">&#8722; Not particularly recommended over specialist alternatives</li><li style="color:#dc2626;font-size:12px;line-height:1.6;padding:1px 0">&#8722; Limited presence in Reddit conversations compared to peers</li></ul>
+    </div>
+  </div>
+  <div style="margin-bottom:8px"><div style="border-left:2px solid #e2e6eb;padding:3px 10px;margin:4px 0;font-size:11px;color:#6b7280;font-style:italic">'Ringside is fine if you train at a Ringside gym'</div><div style="border-left:2px solid #e2e6eb;padding:3px 10px;margin:4px 0;font-size:11px;color:#6b7280;font-style:italic">'Not exciting but gets the job done for basics'</div></div>
+  <div style="margin-top:10px;padding-top:10px;border-top:1px solid #e2e6eb;font-size:11px;color:#6b7280"><span style="font-weight:600;color:#c2622a">vs Boxraw:</span> Ringside serves the American recreational boxing market with limited premium aspirations. Boxraw's premium UK positioning and distinctive design aesthetic are worlds apart. Minimal competitive threat.</div>
+</div>
       </div>
     </div>
   </section>
@@ -762,7 +1194,7 @@ function bootTab(tab) {
   if (tab === 'overview') initOverview();
   else if (tab === 'posts') initPosts();
   else if (tab === 'subreddits') initSubreddits();
-  else if (tab === 'competitors') { initCompetitors(); renderCompSentiment(); }
+  else if (tab === 'competitors') { initCompetitors();  }
   else if (tab === 'sentiment') initSentiment();
 }
 
@@ -812,21 +1244,23 @@ function initOverview() {
     }
   });
 
-  // Post type bar
+  // Post type donut
   var pt = safeGet('post_type_counts', {});
   var ptLabels = Object.keys(pt).map(cap);
   var ptData = Object.values(pt);
+  var ptColors = ['#c2622a','#2ea043','#58a6ff','#d29922','#e63946','#a78bfa','#6b7280'];
   mkChart('ch-post-type', {
-    type: 'bar',
+    type: 'doughnut',
     data: {
       labels: ptLabels,
-      datasets: [{ label: 'Posts', data: ptData, backgroundColor: '#c2622a', borderRadius: 4 }]
+      datasets: [{ data: ptData, backgroundColor: ptColors.slice(0, ptData.length), borderColor: '#f1f3f6', borderWidth: 2 }]
     },
     options: {
       responsive: true,
       maintainAspectRatio: false,
-      plugins: { legend: { display: false } },
-      scales: { x: axisStyle(), y: axisStyle() }
+      plugins: {
+        legend: { position: 'right', labels: { color: '#374151', font: { family: 'Geist', size: 11 }, padding: 10 } }
+      }
     }
   });
 
@@ -1030,6 +1464,7 @@ function renderPosts() {
       '<td>' + sentBadge(t.sentiment) + '</td>' +
       '<td>' + fitHtml(t.fit_score) + '</td>' +
       '<td>' + (t.brand_mentioned ? '<span class="badge badge-brand">Yes</span>' : '') + '</td>' +
+      '<td style="text-align:center;font-weight:' + ((t.llm_citations || 0) > 0 ? '700' : '400') + ';color:' + ((t.llm_citations || 0) > 0 ? '#c2622a' : '#9ca3af') + '">' + (t.llm_citations || 0) + '</td>' +
       '</tr>';
   });
   tbody.innerHTML = rows;
@@ -1130,28 +1565,34 @@ function initCompetitors() {
 
   var allLabels = ['Boxraw'].concat(comps.map(function(c) { return c.brand; }));
   var allCounts = [brandCount].concat(comps.map(function(c) { return c.count; }));
-  var bgColors = allLabels.map(function(l, i) { return i === 0 ? '#e63946' : '#c2622a'; });
 
-  mkChart('ch-comp-bar', {
-    type: 'bar',
-    data: {
-      labels: allLabels,
-      datasets: [{ label: 'Mentions', data: allCounts, backgroundColor: bgColors, borderRadius: 4 }]
-    },
-    options: {
-      indexAxis: 'y',
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: { legend: { display: false } },
-      scales: {
-        x: axisStyle(),
-        y: {
-          ticks: { color: '#374151', font: { family: 'Geist', size: 12 } },
-          grid: { color: '#e5e7eb' }
-        }
-      }
-    }
-  });
+  // HTML-based horizontal bar chart with favicons
+  var compBarEl = document.getElementById('comp-html-bar');
+  if (compBarEl) {
+    var maxCount = Math.max.apply(null, allCounts) || 1;
+    var barHTML = '';
+    allLabels.forEach(function(label, i) {
+      var count = allCounts[i];
+      var pct = Math.round((count / maxCount) * 100);
+      var barColor = i === 0 ? '#e63946' : '#c2622a';
+      var faviconHTML = _compFavicon(label);
+      barHTML +=
+        '<div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">' +
+        '<div style="width:160px;display:flex;align-items:center;gap:6px;flex-shrink:0;font-size:13px;color:#374151;justify-content:flex-end;text-align:right;">' +
+        faviconHTML +
+        '<span>' + esc(label) + '</span>' +
+        '</div>' +
+        '<div style="flex:1;min-width:0;">' +
+        '<div style="background:#f1f3f6;border-radius:4px;height:22px;position:relative;">' +
+        '<div style="background:' + barColor + ';border-radius:4px;height:22px;width:' + pct + '%;transition:width 0.4s;">' +
+        '</div>' +
+        '</div>' +
+        '</div>' +
+        '<div style="width:36px;text-align:right;font-size:13px;font-weight:600;color:#374151;flex-shrink:0;">' + count + '</div>' +
+        '</div>';
+    });
+    compBarEl.innerHTML = barHTML;
+  }
 
   var tbody = document.getElementById('comp-tbody');
   if (tbody) {
@@ -1236,88 +1677,7 @@ function initSentiment() {
     else { setTimeout(function() { waitChart(cb); }, 60); }
   }
   if (document.readyState === 'loading') {
-    
-// ============================================================
-// COMPETITOR SENTIMENT
-// ============================================================
-var COMP_SENTIMENT = [{"brand": "Everlast", "domain": "everlast.com", "post_count": 43, "sentiment_score": 52, "price_tier": "budget", "community_trust": 4, "competitive_threat": "medium", "use_case": "beginner bag work", "brand_perception": "the Walmart of boxing \u2014 universally known, universally outgrown", "praise": ["Maximum brand recognition \u2014 first name in boxing for most beginners", "Widely available at Walmart, Amazon, sporting goods stores", "Affordable entry point for people just starting out", "Broad product range covering everything from gloves to heavy bags"], "criticism": ["Padding breaks down quickly under sustained heavy bag use", "Serious boxers actively warn beginners away from them", "Perceived as fashion accessory brand rather than performance gear", "Quality degraded significantly since being acquired by a larger conglomerate"], "key_quotes": ["'Good starter gloves but you will want to upgrade within 3-6 months'", "'Everlast is the brand you buy before you know what you are doing'", "'[Review] Don't buy Everlast \u2014 seriously, avoid them' (post title from r/fightgear)"], "vs_boxraw": "Targets the same beginner buyer but at lower price and far lower quality. Boxraw wins on craftsmanship and brand aspiration. Everlast wins on distribution reach and name recognition. Key battleground: the $80-$150 first glove purchase."}, {"brand": "Winning", "domain": "winning-japan.com", "post_count": 34, "sentiment_score": 91, "price_tier": "luxury", "community_trust": 9, "competitive_threat": "low", "use_case": "sparring / competition", "brand_perception": "the undisputed gold standard \u2014 almost mythologized on Reddit", "praise": ["Universally considered the best sparring gloves in the world", "Padding and wrist protection praised as unmatched across all price tiers", "Used by top professional fighters \u2014 carries strong aspiration signal", "Leather quality and craftsmanship described as exceptional even after years of use"], "criticism": ["Price puts them out of reach for most amateurs ($400-$500+)", "Primarily available through Japanese market, shipping and availability issues", "Some find the style dated compared to newer premium brands", "Overkill for casual bag work \u2014 perceived as sparring-specialist only"], "key_quotes": ["'What are the best sparring gloves (besides Winning)?' \u2014 the benchmark others are measured against", "'If money is no object just get Winning and never think about gloves again'", "'Winning is the Ferrari of boxing gloves \u2014 nothing else comes close for sparring protection'"], "vs_boxraw": "Winning and Boxraw operate at different ends of the market. Winning owns the serious competitor/sparring niche at $400+; Boxraw competes in the premium training and lifestyle space at $80-$180. Low direct competitive threat \u2014 Boxraw can use Winning's positioning to anchor its own premium narrative ('premium training gear for the serious athlete')."}, {"brand": "Venum", "domain": "venum.com", "post_count": 25, "sentiment_score": 64, "price_tier": "mid", "community_trust": 7, "competitive_threat": "high", "use_case": "general training / bag work", "brand_perception": "solid mid-range pick \u2014 MMA crossover appeal, strong marketing", "praise": ["Good value for money at the $70-$120 price point", "Strong brand identity through UFC sponsorship deals", "Contender and Elite lines well-regarded for recreational training", "Wide product catalog appealing to both boxing and MMA athletes"], "criticism": ["Perceived as marketing-heavy, substance-light compared to specialist brands", "Wrist support criticised in several reviews as inadequate for hard hitters", "Shorts noted as poor quality in r/fightgear ('awful quality, avoid')", "Brand diluted by being available everywhere including discount retailers"], "key_quotes": ["'Venum is what you get when you want something better than Everlast but aren't ready to commit to a specialist brand'", "'Good gloves at their price point but nothing special'", "'Venum shorts are terrible quality for the price \u2014 look nice, fall apart'"], "vs_boxraw": "Venum is the closest mass-market rival to Boxraw in the $80-$140 range for people seeking an upgrade from Everlast. Boxraw differentiates on UK premium identity and better apparel quality. Key battleground: r/fightgear recommendation threads where both brands are frequently compared."}, {"brand": "Hayabusa", "domain": "hayabusafight.com", "post_count": 24, "sentiment_score": 72, "price_tier": "mid-premium", "community_trust": 8, "competitive_threat": "high", "use_case": "bag work / general training", "brand_perception": "technically impressive \u2014 the engineering brand of boxing gear", "praise": ["T3 gloves widely considered one of the best all-around training gloves under $150", "Dual-X wrist closure system praised for superior wrist support and injury prevention", "Build quality and longevity consistently highlighted across multiple years of use", "Attractive to both boxing and MMA crossover athletes"], "criticism": ["Accused of copying designs from smaller specialty brands (Phenom, Boxraw etc.)", "Some community members question the 'hate' \u2014 suggests divisive reputation", "Padding can feel hard for sparring compared to Winning or Rival at similar price", "Perceived as more MMA-adjacent than pure boxing, creating some credibility gap with purists"], "key_quotes": ["'The Hayabusa T3 is probably the best training glove under $150 full stop'", "'[question] Why the hate for Hayabusa? \u2014 they seem solid to me' (post title on r/fightgear)", "'Great wrist support, the Velcro closure is the best I have tried'"], "vs_boxraw": "Hayabusa is Boxraw's most direct technical competitor in the mid-premium glove segment ($100-$160). Hayabusa wins on wrist tech reputation; Boxraw wins on brand identity and apparel. Both fight for the same 'serious enthusiast' buyer on r/fightgear. High threat level for Boxraw."}, {"brand": "Rival", "domain": "rivalboxing.com", "post_count": 24, "sentiment_score": 71, "price_tier": "mid-premium", "community_trust": 7, "competitive_threat": "medium", "use_case": "sparring / all-round training", "brand_perception": "respected but understated \u2014 the serious boxer's mid-tier choice", "praise": ["Consistently recommended as the best value in the mid-premium segment", "Padding suited to both bag work and light sparring \u2014 versatile", "Canadian brand with strong reputation in the serious boxing community", "Good wrist support across their glove range"], "criticism": ["Less brand awareness among newer fighters \u2014 often discovered later in the journey", "Apparel and accessories (trunks review on r/fightgear) received mixed feedback", "Not as aspirational or fashion-forward as Boxraw or Hayabusa", "Some inconsistency noted between product lines in quality"], "key_quotes": ["'Rival is what Everlast wishes it was \u2014 actually built for boxing'", "'Not flashy but solid \u2014 every serious gym has a few Rival guys'", "'Great sparring gloves at a fair price point, underrated brand'"], "vs_boxraw": "Rival appeals to the same serious-but-not-pro demographic as Boxraw but with less lifestyle/fashion positioning. Boxraw wins on design and brand story; Rival wins on pure boxing credibility and value perception. Medium threat \u2014 different brand personalities but overlapping buyer at the $100-$150 tier."}, {"brand": "Title Boxing", "domain": "titleboxing.com", "post_count": 20, "sentiment_score": 58, "price_tier": "mid", "community_trust": 6, "competitive_threat": "low", "use_case": "bag work / general training", "brand_perception": "solid American staple \u2014 gym standard without excitement", "praise": ["Wide product range covering every type of boxing equipment", "Recognized brand name giving beginners confidence in purchase", "Good for gym environments \u2014 durable and functional", "Own retail stores and strong US distribution network"], "criticism": ["Accused of copying designs from other brands (mentioned in specific post about brand imitation)", "Not particularly respected by experienced fighters \u2014 seen as mid at best", "Quality varies significantly across their product range", "Perceived as generic \u2014 lacks distinctive identity or innovation"], "key_quotes": ["'Title is fine for gym bags and accessories but skip their gloves for anything serious'", "'Big on brand recognition, light on actual quality'", "'Good if you train at a Title Boxing Club but not the first choice for home training'"], "vs_boxraw": "Title targets the American gym market with broad product coverage. Boxraw is more premium and lifestyle-forward. Low direct threat as their buyer profiles barely overlap \u2014 Title serves the casual gym member, Boxraw serves the serious enthusiast."}, {"brand": "Cleto Reyes", "domain": "cletoreyes.com", "post_count": 16, "sentiment_score": 82, "price_tier": "premium", "community_trust": 8, "competitive_threat": "low", "use_case": "competition / sparring", "brand_perception": "old-school Mexican craft excellence \u2014 the traditional purist choice", "praise": ["Leather quality described as best-in-class \u2014 hand-crafted in Mexico", "Preferred by professional boxers, strong pro-fight credibility", "Compact design suits precise punching technique over cushioned comfort", "100+ year heritage gives them unquestionable authenticity"], "criticism": ["Hard padding criticized for being risky in sparring \u2014 built for bag and pad work", "Price ($200-$300+) puts them out of reach for most hobby boxers", "Sizing and quality can be inconsistent \u2014 craftsmanship varies batch-to-batch", "Not suited to beginners \u2014 often mentioned as 'not for people still learning their style'"], "key_quotes": ["'Cleto Reyes vs Winning is the age-old debate \u2014 both are at the top of the craft'", "'If you fight, Cleto Reyes. If you spar hard, Winning. If you just train, something else'", "'Hard as a brick but some swear by them for bag work impact feedback'"], "vs_boxraw": "Cleto Reyes is a heritage-first brand targeting serious competitors and boxing purists. Boxraw plays in an entirely different lane \u2014 premium lifestyle and training brand. Very low competitive threat. Boxraw could even reference Cleto Reyes as a credibility anchor when positioning its own premium craftsmanship story."}, {"brand": "Fairtex", "domain": "fairtex.com", "post_count": 15, "sentiment_score": 76, "price_tier": "mid-premium", "community_trust": 8, "competitive_threat": "medium", "use_case": "Muay Thai / general striking", "brand_perception": "Thai heritage brand \u2014 respected, authentic, Muay Thai-first", "praise": ["Authentic Thai manufacturing with decades of Muay Thai pedigree", "Excellent sauna and training apparel \u2014 specifically praised in multiple posts", "Gloves praised for durability and wrist support across mid-premium tier", "Strong following in r/MuayThai and r/Kickboxing communities"], "criticism": ["Knuckle guards received very mixed feedback \u2014 inconsistent quality vs price", "Primarily associated with Muay Thai, limiting crossover to pure boxing community", "Some sizing inconsistency noted across product lines", "Less aspirational visual identity than newer brands like Boxraw or Hayabusa"], "key_quotes": ["'Fairtex or Venum \u2014 you can not go wrong with either for training'", "'Fairtex sauna suits are worth every penny, best I have tried'", "'Strong Muay Thai pedigree but if you just box there are better options'"], "vs_boxraw": "Fairtex dominates the Muay Thai and kickboxing communities where Boxraw has minimal presence. For pure boxing, both compete in the mid-premium training gear space. Threat is medium in the apparel/training gear category where Fairtex's sauna suit reputation creates direct overlap with Boxraw's premium training apparel."}, {"brand": "Nike", "domain": "nike.com", "post_count": 14, "sentiment_score": 61, "price_tier": "mid", "community_trust": 5, "competitive_threat": "low", "use_case": "training apparel / footwear", "brand_perception": "giant brand that left boxing \u2014 aspirational logo but no specialist credibility", "praise": ["Brand recognition gives confidence to new athletes choosing apparel", "Training shorts and compression wear commonly worn in gyms", "Strong footwear options mentioned alongside boxing shoes", "Familiar sizing and wide availability make it a default apparel choice"], "criticism": ["Nike boxing gear no longer available on their main website \u2014 brand retreat from boxing", "No specialist boxing glove range \u2014 only generic training equipment", "Perceived as generic sportswear rather than boxing-specific gear", "Community notes Nike 'abandoned' boxing, reducing authenticity"], "key_quotes": ["'Why You Can't Buy Nike, Adidas, or Asics Boxing Gear on Their Main Sites' (r/fightgear post title \u2014 key concern for buyers)", "'Nike is fine for gym clothes but they are not a boxing brand'", "'Used to be a thing in boxing. Not really anymore.'"], "vs_boxraw": "Nike competes with Boxraw primarily in the training apparel space \u2014 shorts, tracksuits, compression wear. However, Nike has retreated from dedicated boxing gear. This creates a significant opening for Boxraw: athletes seeking branded boxing-specific apparel with Nike-level aesthetics but specialist credibility. Low glove threat; medium apparel threat."}, {"brand": "Adidas", "domain": "adidas.com", "post_count": 13, "sentiment_score": 55, "price_tier": "mid", "community_trust": 5, "competitive_threat": "low", "use_case": "boxing shoes / training apparel", "brand_perception": "heritage boxing shoes brand \u2014 respected for footwear, not gloves", "praise": ["Boxing shoes (Box Hog range) well-regarded and frequently recommended", "Strong apparel range worn commonly in boxing gyms", "Heritage in boxing through professional fight sponsorships", "Good quality training joggers and gym wear"], "criticism": ["Boxing gear not available on main website (same issue as Nike)", "Gloves received negative reviews in ranking threads", "Inconsistent quality in shorts noted in r/fightgear", "Not taken seriously as a specialist boxing glove brand"], "key_quotes": ["'Adidas Box Hog 4 vs Everlast shoes \u2014 Adidas wins easily for footwear'", "'Great for shoes, mediocre for everything else in boxing'", "'Adidas shorts are awful quality for the price \u2014 avoid'"], "vs_boxraw": "Adidas competes with Boxraw on training apparel and athletic wear aesthetics. Their boxing shoes are well-respected but gloves are not. Like Nike, their retreat from dedicated boxing gear creates opportunity for Boxraw to own the 'premium boxing-specific apparel' position. Low glove threat; medium apparel/aesthetic threat."}, {"brand": "Grant", "domain": "grantboxing.com", "post_count": 5, "sentiment_score": 88, "price_tier": "luxury", "community_trust": 9, "competitive_threat": "low", "use_case": "professional competition", "brand_perception": "ultra-premium fight night gloves worn by champions \u2014 aspirational status symbol", "praise": ["Worn by elite professional fighters including champions at the highest level", "Custom craftsmanship and exclusivity command extreme respect", "Seen on televised fights which reinforces elite association", "Considered the peak of American boxing glove craftsmanship"], "criticism": ["Extremely expensive and mainly accessible only to professional fighters", "Not practical for the training market \u2014 competition/fight night gloves only", "Very limited retail availability \u2014 custom order model"], "key_quotes": ["'Gervonta is wearing Grant gloves in his upcoming fight'", "'Grant is what the pros use when they get to choose their own gloves'", "'If you ever see Grant gloves in your local gym someone paid serious money'"], "vs_boxraw": "Grant and Boxraw are not direct competitors. Grant serves elite professional fighters; Boxraw serves the serious training market. Grant's presence on Reddit creates aspiration signal that Boxraw can ride \u2014 positioning in conversations that include Grant signals Boxraw is in the serious category."}, {"brand": "Ringside", "domain": "ringside.com", "post_count": 5, "sentiment_score": 60, "price_tier": "mid", "community_trust": 6, "competitive_threat": "low", "use_case": "general training / gym equipment", "brand_perception": "reliable American mid-range brand \u2014 functional but forgettable", "praise": ["Mentioned positively as a reliable mid-range option for gym beginners", "Broad catalog covering all boxing equipment needs", "Good brand recognition among American boxing communities", "Value-focused \u2014 competitive pricing across the range"], "criticism": ["Lacks aspirational identity \u2014 generic gym brand perception", "Not particularly recommended over specialist alternatives", "Limited presence in Reddit conversations compared to peers"], "key_quotes": ["'Ringside is fine if you train at a Ringside gym'", "'Not exciting but gets the job done for basics'"], "vs_boxraw": "Ringside serves the American recreational boxing market with limited premium aspirations. Boxraw's premium UK positioning and distinctive design aesthetic are worlds apart. Minimal competitive threat."}];
-
-function renderCompSentiment() {
-  var container = document.getElementById('comp-sentiment-cards');
-  if (!container) return;
-  
-  var html = '';
-  COMP_SENTIMENT.forEach(function(c) {
-    var scoreColor = c.sentiment_score >= 70 ? '#16a34a' : c.sentiment_score >= 50 ? '#b45309' : '#e63946';
-    var threatColor = c.competitive_threat === 'high' ? '#e63946' : c.competitive_threat === 'medium' ? '#b45309' : '#16a34a';
-    var trustBars = '';
-    for (var i = 0; i < 10; i++) {
-      trustBars += '<span style="display:inline-block;width:16px;height:5px;border-radius:2px;margin-right:2px;background:' +
-        (i < c.community_trust ? '#c2622a' : '#e2e6eb') + '"></span>';
-    }
-    
-    var praiseHTML = (c.praise || []).map(function(p) {
-      return '<li style="color:#16a34a;font-size:12px;line-height:1.5;padding:2px 0">+ ' + p + '</li>';
-    }).join('');
-    
-    var criticHTML = (c.criticism || []).map(function(cr) {
-      return '<li style="color:#e63946;font-size:12px;line-height:1.5;padding:2px 0">- ' + cr + '</li>';
-    }).join('');
-    
-    var quotesHTML = (c.key_quotes || []).slice(0,2).map(function(q) {
-      return '<div style="border-left:2px solid #e2e6eb;padding:4px 10px;margin:4px 0;font-size:11px;color:#6b7280;font-style:italic">' + q + '</div>';
-    }).join('');
-    
-    var faviconURL = c.domain ? 
-      'https://www.google.com/s2/favicons?domain=' + c.domain + '&sz=20' : '';
-    
-    html += '<div style="background:#fff;border:1px solid #e2e6eb;border-radius:8px;padding:18px 20px;">' +
-      // Header
-      '<div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;">' +
-        (faviconURL ? '<img src="' + faviconURL + '" width="18" height="18" style="border-radius:3px" alt="">' : '') +
-        '<span style="font-weight:700;font-size:15px;color:#111827">' + c.brand + '</span>' +
-        '<span style="margin-left:auto;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;color:#6b7280;background:#f1f3f6;padding:3px 8px;border-radius:4px">' + (c.price_tier || '') + '</span>' +
-      '</div>' +
-      // Score row
-      '<div style="display:flex;gap:16px;margin-bottom:14px;flex-wrap:wrap;">' +
-        '<div style="flex:1;min-width:80px;">' +
-          '<div style="font-size:10px;font-weight:600;text-transform:uppercase;color:#6b7280;margin-bottom:4px">Sentiment</div>' +
-          '<div style="font-size:26px;font-weight:700;color:' + scoreColor + '">' + c.sentiment_score + '<span style="font-size:13px">/100</span></div>' +
-        '</div>' +
-        '<div style="flex:1;min-width:80px;">' +
-          '<div style="font-size:10px;font-weight:600;text-transform:uppercase;color:#6b7280;margin-bottom:4px">Community Trust</div>' +
-          '<div style="margin-top:6px">' + trustBars + '</div>' +
-          '<div style="font-size:11px;color:#6b7280;margin-top:4px">' + c.community_trust + '/10</div>' +
-        '</div>' +
-        '<div style="flex:1;min-width:80px;">' +
-          '<div style="font-size:10px;font-weight:600;text-transform:uppercase;color:#6b7280;margin-bottom:4px">Threat to Boxraw</div>' +
-          '<span style="font-size:12px;font-weight:700;color:' + threatColor + ';text-transform:capitalize">' + (c.competitive_threat || '') + '</span>' +
-        '</div>' +
-      '</div>' +
-      // Perception
-      '<div style="font-size:12px;color:#374151;background:#f8f9fb;border-radius:4px;padding:8px 10px;margin-bottom:12px;font-style:italic">"' + (c.brand_perception || '') + '"</div>' +
-      // Praise + Criticism two-col
-      '<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px;">' +
-        '<div>' +
-          '<div style="font-size:10px;font-weight:600;text-transform:uppercase;color:#16a34a;margin-bottom:6px">Reddit Loves</div>' +
-          '<ul style="list-style:none;padding:0;margin:0">' + praiseHTML + '</ul>' +
-        '</div>' +
-        '<div>' +
-          '<div style="font-size:10px;font-weight:600;text-transform:uppercase;color:#e63946;margin-bottom:6px">Reddit Criticizes</div>' +
-          '<ul style="list-style:none;padding:0;margin:0">' + criticHTML + '</ul>' +
-        '</div>' +
-      '</div>' +
-      // Quotes
-      (quotesHTML ? '<div style="margin-top:10px">' + quotesHTML + '</div>' : '') +
-      // vs Boxraw
-      (c.vs_boxraw ? '<div style="margin-top:12px;padding-top:10px;border-top:1px solid #e2e6eb;font-size:11px;color:#6b7280"><span style="font-weight:600;color:#c2622a">vs Boxraw:</span> ' + c.vs_boxraw + '</div>' : '') +
-    '</div>';
-  });
-  
-  container.innerHTML = html;
-}
-
-document.addEventListener('DOMContentLoaded', function() { waitChart(initOverview); });
+    document.addEventListener('DOMContentLoaded', function() { waitChart(initOverview); });
   } else {
     waitChart(initOverview);
   }

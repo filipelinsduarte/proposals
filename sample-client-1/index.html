@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Visibility Proposal — Peekaboo</title>
+<style>
+:root{--brand-color:#b352b3;--brand-text:#ffffff;--brand-light:#f3d6f3}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:#fff;color:#111827;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;font-size:15px;line-height:1.6}
+.error-wrap{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;gap:16px;color:#6b7280;text-align:center;padding:40px}
+.error-wrap h2{font-size:20px;color:#374151;font-weight:600}
+.error-wrap p{font-size:14px;max-width:360px}
+.header-bar{background:var(--brand-color);color:var(--brand-text);padding:18px 32px;display:flex;align-items:center;gap:16px}
+.header-left{display:flex;align-items:center;gap:12px;flex-shrink:0}
+.header-spacer{flex:1}
+.header-actions{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.header-right{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.hdr-btn{display:inline-flex;align-items:center;gap:6px;padding:7px 13px;border-radius:7px;font-size:13px;font-weight:600;font-family:inherit;cursor:pointer;white-space:nowrap;background:rgba(255,255,255,0.18);color:var(--brand-text);border:1px solid rgba(255,255,255,0.4);transition:background .15s}
+.hdr-btn:hover{background:rgba(255,255,255,0.28)}
+.hdr-btn:disabled{opacity:.6;cursor:not-allowed}
+.client-favicon{width:40px;height:40px;border-radius:50%;border:2px solid rgba(255,255,255,0.45);object-fit:cover;background:rgba(255,255,255,0.12);flex-shrink:0}
+.peekaboo-favicon{width:20px;height:20px;border-radius:50%;object-fit:cover;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.25);flex-shrink:0}
+.client-name{font-size:22px;font-weight:700;line-height:1.2;letter-spacing:-.01em}
+.proposal-subtitle{font-size:13px;opacity:.75;margin-top:1px}
+.prepared-label{font-size:13px;font-weight:600;opacity:.95;white-space:nowrap}
+.prepared-label a{color:inherit;opacity:.75;font-size:12px;text-decoration:underline;text-underline-offset:2px}
+.container{max-width:960px;margin:0 auto;padding:40px 28px 60px}
+.pricing-table{width:100%;border-collapse:collapse;border-radius:10px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.08),0 0 0 1px rgba(0,0,0,.06);margin-bottom:28px}
+.pricing-table td,.pricing-table th{padding:13px 18px;border:1px solid #e5e7eb;vertical-align:middle}
+.row-label{background:#f9fafb;font-weight:600;font-size:13px;color:#374151;width:200px;white-space:nowrap}
+.opt-name-cell{background:var(--brand-color)!important;color:var(--brand-text)!important;font-weight:700;font-size:15px;text-align:center;border-color:transparent!important}
+.data-cell{text-align:center;font-size:14px;color:#1f2937}
+.pricing-table tr:nth-child(even) .data-cell{background:var(--brand-light,#f9fafb)}
+.pricing-table tr:nth-child(odd) .data-cell{background:#fff}
+.pricing-table tr:nth-child(even) .row-label{background:#f3f4f6}
+.dp-cell{font-weight:700;font-size:15px;color:#111827}
+.models-cell{font-size:13px;color:#4b5563}
+.price-cell{font-size:1.9em;font-weight:700;color:var(--brand-color)!important;text-align:center}
+.price-note{display:block;font-size:11px;font-style:italic;color:#9ca3af;margin-top:4px;font-weight:400}
+.price-wrapper{display:flex;flex-direction:column;align-items:center}
+.formula-note{background:#f9fafb;border:1px solid #e5e7eb;border-radius:8px;padding:13px 18px;font-size:12px;color:#6b7280;margin-bottom:28px;line-height:1.5}
+.formula-note strong{color:#374151}
+.notes-box{background:#f3f4f6;border:1px solid #e5e7eb;border-radius:10px;padding:18px 20px;margin-bottom:28px}
+.notes-box-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:#6b7280;margin-bottom:8px}
+.notes-box-text{font-size:14px;color:#374151;white-space:pre-wrap;line-height:1.7}
+.footer{text-align:center;font-size:12px;color:#9ca3af;padding-top:8px;border-top:1px solid #f3f4f6}
+.footer a{color:var(--brand-color);text-decoration:none}
+.footer a:hover{text-decoration:underline}
+.no-print{}
+@media print{
+  .no-print{display:none!important}
+  .header-bar{background:#f8f8f8!important;color:#000!important;border-bottom:2px solid #333;-webkit-print-color-adjust:exact}
+  .opt-name-cell{background:#e9e9e9!important;color:#000!important;border:1px solid #ccc!important}
+  .price-cell{color:#000!important;-webkit-print-color-adjust:exact}
+}
+</style>
+<script>window.__PROPOSAL_STATE__={"clientName": "Sample Client", "clientUrl": "https://example.com", "prompts": 10, "frequency": "weekly", "models": ["gpt-4"]};</script>
+</head>
+<body>
+<script>
+(async function(){
+'use strict';
+
+function getLuminance(hex){
+  const r=parseInt(hex.slice(1,3),16)/255,g=parseInt(hex.slice(3,5),16)/255,b=parseInt(hex.slice(5,7),16)/255;
+  const lin=c=>c<=0.03928?c/12.92:Math.pow((c+0.055)/1.055,2.4);
+  return 0.2126*lin(r)+0.7152*lin(g)+0.0722*lin(b);
+}
+function mixWithWhite(hex,ratio){
+  const r=parseInt(hex.slice(1,3),16),g=parseInt(hex.slice(3,5),16),b=parseInt(hex.slice(5,7),16);
+  return'#'+[r,g,b].map(c=>Math.round(c*ratio+255*(1-ratio)).toString(16).padStart(2,'0')).join('');
+}
+function getDomain(raw){
+  raw=(raw||'').trim();if(!raw)return'';
+  const wp=raw.startsWith('http')?raw:'https://'+raw;
+  try{return new URL(wp).hostname;}catch{return raw.replace(/^https?:\/\//,'').split('/')[0];}
+}
+function fmt(n){return'$'+Number(n).toLocaleString('en-US');}
+function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+function renderError(msg){
+  document.body.innerHTML='<div class="error-wrap"><svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg><h2>Proposal Not Found</h2><p>'+esc(msg)+'</p></div>';
+}
+
+// Fast path: server-decoded state embedded as plain JSON (published proposals)
+let state;
+if(window.__PROPOSAL_STATE__){
+  state=window.__PROPOSAL_STATE__;
+}else{
+  // Local preview path: decode from URL hash
+  const hash=window.location.hash.slice(1);
+  if(!hash){renderError('No proposal data found. Please generate a link from the Proposal Builder.');return;}
+
+  async function decodeState(encoded){
+    let b64=encoded.replace(/-/g,'+').replace(/_/g,'/');
+    while(b64.length%4)b64+='=';
+    const bin=atob(b64);
+    const bytes=new Uint8Array(bin.length);
+    for(let i=0;i<bin.length;i++)bytes[i]=bin.charCodeAt(i);
+    try{
+      const stream=new DecompressionStream('deflate-raw');
+      const writer=stream.writable.getWriter();
+      writer.write(bytes);writer.close();
+      const chunks=[];const reader=stream.readable.getReader();
+      while(true){const{done,value}=await reader.read();if(done)break;chunks.push(value);}
+      const total=chunks.reduce((a,c)=>a+c.length,0);
+      const buf=new Uint8Array(total);let off=0;
+      for(const c of chunks){buf.set(c,off);off+=c.length;}
+      return JSON.parse(new TextDecoder().decode(buf));
+    }catch(e){}
+    try{return JSON.parse(decodeURIComponent(atob(b64)));}catch(e){}
+    throw new Error('Could not decode proposal data');
+  }
+
+  try{state=await decodeState(hash);}
+  catch(e){renderError('Could not decode proposal data. The link may be corrupted.');return;}
+}
+
+// Normalise to options array (support legacy optionA/optionB)
+let options=state.options||[];
+if(!options.length&&state.optionA)options=[state.optionA,state.optionB].filter(Boolean);
+if(!options.length){renderError('No pricing options found in this proposal.');return;}
+
+// Brand theming
+const brandColor=(state.brandColor||'#b352b3').trim();
+const safeBrand=brandColor.length>=7?brandColor:'#b352b3';
+const lum=getLuminance(safeBrand);
+const brandText=lum>0.4?'#1a1a1a':'#ffffff';
+const brandLight=mixWithWhite(safeBrand,0.15);
+document.documentElement.style.setProperty('--brand-color',safeBrand);
+document.documentElement.style.setProperty('--brand-text',brandText);
+document.documentElement.style.setProperty('--brand-light',brandLight);
+
+const MODEL_ICONS={
+  'ChatGPT':'https://www.google.com/s2/favicons?domain=chatgpt.com&sz=64',
+  'Gemini':'https://www.google.com/s2/favicons?domain=gemini.google.com&sz=64',
+  'Perplexity':'https://www.google.com/s2/favicons?domain=perplexity.ai&sz=64',
+  'Google AIO':'https://www.google.com/s2/favicons?domain=google.com&sz=64',
+  'Google AI Mode':'https://www.google.com/s2/favicons?domain=ai.google.com&sz=64'
+};
+
+function modelIconsHtml(models){
+  if(!models||!models.length)return'';
+  return'<div style="display:flex;flex-wrap:wrap;gap:5px;justify-content:center;align-items:center">'+
+    models.map(m=>'<div style="display:flex;flex-direction:row;align-items:center;gap:5px;background:#f3f4f6;border-radius:20px;padding:3px 8px 3px 4px">'+
+      (MODEL_ICONS[m]?'<img src="'+esc(MODEL_ICONS[m])+'" alt="'+esc(m)+'" style="width:16px;height:16px;border-radius:50%;object-fit:cover;flex-shrink:0">':'')+
+      '<span style="font-size:12px;color:#4b5563;white-space:nowrap">'+esc(m)+'</span></div>'
+    ).join('')+'</div>';
+}
+
+function totalDP(opt){
+  return(opt.brands||0)*(opt.promptsPerBrand||0)*(opt.frequencyMultiplier||0)*((opt.models||[]).length);
+}
+
+function priceCell(opt){
+  let html='<div class="price-wrapper"><span class="price-cell">'+esc(fmt(opt.monthlyPrice))+'</span>';
+  if(opt.priceNote){
+    const pct=opt.priceAdjustmentPct!=null?opt.priceAdjustmentPct:5;
+    html+='<span class="price-note">* Includes '+esc(pct)+'% price adjustment</span>';
+  }
+  return html+'</div>';
+}
+
+const clientDomain=getDomain(state.clientUrl);
+const clientFavIcon=clientDomain?'https://www.google.com/s2/favicons?domain='+clientDomain+'&sz=128':'';
+const peekaFavIcon='https://www.google.com/s2/favicons?domain=aipeekaboo.com&sz=128';
+const N=options.length;
+
+// Build table rows
+function tableRows(){
+  const rows=[
+    {label:'',cells:options.map(o=>'<td class="opt-name-cell">'+esc(o.label||'Option')+'</td>')},
+    {label:'# of Brands',cells:options.map(o=>'<td class="data-cell">'+esc(o.brands)+'</td>')},
+    {label:'# of Prompts per Brand',cells:options.map(o=>'<td class="data-cell">'+esc(o.promptsPerBrand)+'</td>')},
+    {label:'# of Data Points per Month',cells:options.map(o=>'<td class="data-cell dp-cell">'+totalDP(o).toLocaleString()+'</td>')},
+    {label:'Tracking Frequency',cells:options.map(o=>'<td class="data-cell">'+esc(o.frequencyLabel||'')+'</td>')},
+    {label:'AI Models',cells:options.map(o=>'<td class="data-cell models-cell">'+modelIconsHtml(o.models)+'</td>')},
+    {label:'Team Seats',cells:options.map(o=>'<td class="data-cell">'+esc(o.teamSeats||'Unlimited')+'</td>')},
+    {label:'Monthly Price',cells:options.map(o=>'<td class="data-cell" style="padding:16px 18px">'+priceCell(o)+'</td>')}
+  ];
+  return rows.map((row,i)=>{
+    const labelCell=row.label
+      ?'<td class="row-label">'+esc(row.label)+'</td>'
+      :'<td class="row-label" style="background:#f9fafb"></td>';
+    return'<tr>'+labelCell+row.cells.join('')+'</tr>';
+  }).join('');
+}
+
+// colgroup: 200px label + equal cols for each option
+const colgroup='<colgroup><col style="width:200px">'+options.map(()=>'<col>').join('')+'</colgroup>';
+
+const showNotes=!!(state.notes&&state.notes.trim());
+
+document.body.innerHTML=
+  '<div id="proposal-card">'+
+  '<div class="header-bar">'+
+    '<div class="header-left">'+
+      (clientFavIcon?'<img class="client-favicon" src="'+esc(clientFavIcon)+'" alt="">':'')+
+      '<div>'+
+        '<div class="client-name">'+esc(state.clientName||'Client')+'</div>'+
+        '<div class="proposal-subtitle">AI Visibility Proposal</div>'+
+      '</div>'+
+    '</div>'+
+    '<div class="header-spacer"></div>'+
+    '<div class="header-actions no-print">'+
+      '<button class="hdr-btn" id="copyLinkBtn">'+
+        '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>'+
+        'Copy Link'+
+      '</button>'+
+      '<button class="hdr-btn" id="downloadBtn">'+
+        '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>'+
+        'Download PNG'+
+      '</button>'+
+    '</div>'+
+    '<div class="header-right">'+
+      '<img class="peekaboo-favicon" src="'+esc(peekaFavIcon)+'" alt="">'+
+      '<div class="prepared-label">Prepared by Peekaboo &middot; <a href="https://aipeekaboo.com" target="_blank">aipeekaboo.com</a></div>'+
+    '</div>'+
+  '</div>'+
+  '<div class="container">'+
+    '<table class="pricing-table">'+colgroup+'<tbody>'+tableRows()+'</tbody></table>'+
+    '<div class="formula-note"><strong>Data Points</strong> = # of Brands &times; # of Prompts per Brand &times; Tracking Frequency (runs/month) &times; # of AI Models</div>'+
+    (showNotes?'<div class="notes-box"><div class="notes-box-label">Notes</div><div class="notes-box-text">'+esc(state.notes)+'</div></div>':'')+
+    '<div class="footer">Powered by Peekaboo &middot; <a href="https://aipeekaboo.com" target="_blank">aipeekaboo.com</a></div>'+
+  '</div>'+
+  '</div>';
+
+// Copy link button
+document.getElementById('copyLinkBtn').addEventListener('click',function(){
+  const btn=this;
+  navigator.clipboard.writeText(window.location.href).then(()=>{
+    btn.textContent='Copied!';
+    setTimeout(()=>{btn.innerHTML='<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>Copy Link';},1500);
+  }).catch(()=>{
+    // fallback for non-https
+    const ta=document.createElement('textarea');
+    ta.value=window.location.href;
+    document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);
+    btn.textContent='Copied!';
+    setTimeout(()=>{btn.innerHTML='<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>Copy Link';},1500);
+  });
+});
+
+// Download PNG
+async function toDataUri(url){
+  const fetchUrl='http://localhost:8765/proxy?url='+encodeURIComponent(url);
+  try{
+    const res=await fetch(fetchUrl);
+    if(res.ok){
+      const blob=await res.blob();
+      return await new Promise((resolve,reject)=>{const fr=new FileReader();fr.onload=()=>resolve(fr.result);fr.onerror=reject;fr.readAsDataURL(blob);});
+    }
+  }catch(e){}
+  return null;
+}
+
+async function preloadImagesForCapture(){
+  const card=document.getElementById('proposal-card');
+  const imgs=Array.from(card.querySelectorAll('img'));
+  const restoreFns=[];
+  await Promise.all(imgs.map(async function(img){
+    const src=img.getAttribute('src');
+    if(!src||src.startsWith('data:'))return;
+    const origSrc=src;
+    const dataUri=await toDataUri(src);
+    if(dataUri){img.src=dataUri;restoreFns.push(()=>{img.src=origSrc;});}
+    else{
+      const size=img.offsetWidth||20;
+      const ph=document.createElement('div');
+      ph.style.cssText='display:inline-flex;width:'+size+'px;height:'+size+'px;background:#d1d5db;border-radius:50%;flex-shrink:0;vertical-align:middle';
+      img.parentNode.insertBefore(ph,img);img.style.display='none';
+      restoreFns.push(()=>{if(ph.parentNode)ph.parentNode.removeChild(ph);img.style.display='';});
+    }
+  }));
+  return()=>restoreFns.forEach(fn=>fn());
+}
+
+document.getElementById('downloadBtn').addEventListener('click',function(){
+  const btn=this;
+  btn.innerHTML='<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Generating…';
+  btn.disabled=true;
+
+  async function doCapture(){
+    const restore=await preloadImagesForCapture();
+    try{
+      const captureCanvas=await window.html2canvas(document.getElementById('proposal-card'),{
+        scale:2,useCORS:false,allowTaint:true,
+        ignoreElements:el=>el.classList&&el.classList.contains('no-print')
+      });
+      restore();
+      const link=document.createElement('a');
+      const slug=(state.clientName||'client').toLowerCase().replace(/\s+/g,'-').replace(/[^a-z0-9-]/g,'');
+      link.download='peekaboo-proposal-'+slug+'.png';
+      link.href=captureCanvas.toDataURL('image/png');
+      link.click();
+    }catch(e){console.error('html2canvas:',e);restore();}
+    btn.innerHTML='<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Download PNG';
+    btn.disabled=false;
+  }
+
+  if(window.html2canvas){doCapture();}
+  else{
+    const script=document.createElement('script');
+    script.src='https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js';
+    script.onload=doCapture;
+    script.onerror=()=>{btn.textContent='Download PNG';btn.disabled=false;};
+    document.head.appendChild(script);
+  }
+});
+
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Knew Health - Trustpilot Review Intelligence Deck</title>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YV8FCLN403"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){gtag('js',new Date());gtag('config','G-YV8FCLN403');}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reveal.min.css">
+<style>
+  :root {
+ --accent: #0d4f3c;
+ --accent-bg: #e8f5f0;
+ --accent-bd: #a8d8c4;
+ --accent-dark: #082d22;
+ --gold: #c49b4c;
+ --gold-bg: #fdf6e3;
+ --gold-bd: #ead9a8;
+ --steel: #83add3;
+ --ink: #0a1929;
+ --ink2: #1e3a5f;
+ --ink3: #4a6480;
+ --ink4: #8ba3bc;
+ --paper: #fff;
+ --paper2: #f7fafd;
+ --paper3: #eef4fa;
+ --rule: #d9e7f5;
+ --ok: #16a34a;
+ --ok-bg: #f0fdf4;
+ --ok-bd: #bbf7d0;
+ --warn: #ea580c;
+ --warn-bg: #fff7ed;
+ --warn-bd: #fed7aa;
+ --red: #dc2626;
+ --red-bg: #fef2f2;
+ --red-bd: #fecaca;
+  }
+  *{box-sizing:border-box;font-family:'Inter',sans-serif}
+  html,body{margin:0;padding:0;width:100%;height:100%;overflow:hidden;background:#fff}
+  .reveal-viewport,.reveal{width:100%!important;height:100%!important;background:#fff!important}
+  .reveal .slides section{width:100vw!important;height:100vh!important;padding:0!important;background:#fff!important;display:flex!important;flex-direction:column!important;text-align:left!important}
+  .s{width:100vw;height:100vh;padding:3vh 4.5vw 2.5vh;display:flex;flex-direction:column;position:relative;overflow:hidden}
+  .stripe{position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--accent-dark)}
+  .hdr{display:flex;justify-content:space-between;align-items:center;flex-shrink:0;margin-bottom:.6vh}
+  .hdr-right{display:flex;flex-direction:column;align-items:flex-end}
+  .snum{font-family:'DM Mono',monospace;font-size:clamp(10px,1.2vh,12px);font-weight:700;color:var(--accent-dark);background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:3px;padding:2px 8px;letter-spacing:.06em}
+  .tag{font-size:clamp(10px,1.2vh,12px);font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink4)}
+  .powered{display:flex;align-items:center;gap:5px;text-decoration:none;margin-top:3px}
+  .powered span{font-size:clamp(8px,1vh,10px);color:var(--ink4)}
+  .powered img{height:clamp(10px,1.4vh,14px);width:auto;opacity:.7}
+  .divider{height:1px;background:var(--rule);flex-shrink:0;margin-bottom:clamp(10px,1.5vh,18px)}
+  h2{font-size:clamp(22px,3.8vh,42px);font-weight:700;color:var(--ink);margin:0 0 clamp(14px,2vh,22px);line-height:1.15;flex-shrink:0}
+  .hdr-favicon{border-radius:10px;width:clamp(26px,3.5vh,40px);height:clamp(26px,3.5vh,40px);object-fit:contain}
+  .card{background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(13px,1.7vh,19px) clamp(14px,1.7vw,19px);display:flex;align-items:flex-start;gap:14px;flex-shrink:0}
+  .badge{font-size:clamp(9px,1.05vh,11px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-dark);background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:3px;padding:1px 6px;white-space:nowrap;flex-shrink:0}
+  .data-src{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--rule);border-radius:5px;padding:3px 9px;background:var(--paper2);flex-shrink:0}
+  .data-src span{font-size:clamp(10px,1.25vh,12px);color:var(--ink3);font-weight:500}
+  .data-src img{height:clamp(13px,1.6vh,16px);width:auto;border-radius:2px;opacity:.85}
+  .quote{font-size:clamp(13px,1.7vh,17px);color:var(--ink2);font-style:italic;border-left:3px solid var(--accent);padding-left:clamp(10px,1.4vw,16px);line-height:1.45}
+  .quote-source{font-size:clamp(10px,1.2vh,12px);color:var(--ink4);margin-top:4px;font-style:normal;font-weight:500}
+  /* Gap-analysis card: 3 distinct tinted sections */
+  .gap-card{background:var(--paper);border:1px solid var(--rule);border-radius:12px;padding:clamp(14px,1.9vh,20px);display:flex;flex-direction:column;gap:clamp(10px,1.4vh,14px);flex-shrink:0}
+  .gap-head{display:flex;align-items:center;gap:10px;flex-shrink:0;border-bottom:1px solid var(--rule);padding-bottom:clamp(8px,1.1vh,12px)}
+  .gap-head .title{font-size:clamp(16px,2.2vh,22px);font-weight:700;color:var(--ink);line-height:1.2}
+  .gap-section{border-radius:6px;padding:clamp(10px,1.4vh,14px) clamp(12px,1.5vw,16px);flex-shrink:0}
+  .gap-section-love{background:var(--paper3);border:1px solid var(--rule);border-left:3px solid var(--gold)}
+  .gap-section-site{background:var(--paper2);border:1px solid var(--rule)}
+  .gap-section-do{background:var(--gold-bg);border:1px solid var(--gold-bd)}
+  .gap-label{font-family:'DM Mono',monospace;font-size:clamp(10px,1.2vh,13px);font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-bottom:clamp(4px,0.6vh,7px)}
+  .gap-section-love .gap-label{color:var(--gold)}
+  .gap-section-site .gap-label{color:var(--ink2)}
+  .gap-section-do .gap-label{color:var(--gold)}
+  .gap-body{font-size:clamp(12.5px,1.6vh,16px);color:var(--ink2);line-height:1.5}
+  .gap-body em{color:var(--ink3);font-style:italic}
+  .gap-body ul{margin:0;padding-left:clamp(16px,2vw,22px);color:var(--ink2)}
+  .gap-body ul li{margin-bottom:clamp(3px,0.4vh,5px)}
+  /* List cards for slides 3 and 5, tall cards, no whitespace */
+  .list-card{background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(16px,2.1vh,24px) clamp(16px,2vw,22px);display:flex;align-items:flex-start;gap:clamp(12px,1.5vw,16px);flex-shrink:0}
+  .list-num{font-family:'DM Mono',monospace;font-weight:700;color:#fff;background:var(--ink);border-radius:6px;padding:clamp(4px,0.55vh,7px) clamp(7px,0.9vw,11px);font-size:clamp(15px,2vh,20px);flex-shrink:0;text-align:center;letter-spacing:.04em}
+  .list-hash{font-family:'DM Mono',monospace;font-weight:700;color:var(--ink);background:var(--paper3);border:1px solid var(--rule);border-radius:6px;padding:clamp(4px,0.55vh,7px) clamp(7px,0.9vw,11px);font-size:clamp(15px,2vh,20px);flex-shrink:0;text-align:center;letter-spacing:.04em}
+  .list-quote{font-size:clamp(12px,1.5vh,15px);color:var(--ink2);font-style:italic;line-height:1.45;border-left:3px solid var(--rule);padding-left:clamp(8px,1vw,12px);margin-top:clamp(4px,0.5vh,6px)}
+  .quote-list{list-style:disc;margin:clamp(4px,0.5vh,7px) 0 0 0;padding-left:clamp(14px,1.6vw,20px);font-size:clamp(12px,1.5vh,15px);color:var(--ink2);line-height:1.45;font-style:italic}
+  .quote-list li{margin-bottom:clamp(3px,0.4vh,5px)}
+  .quote-list li:last-child{margin-bottom:0}
+  @media(max-width:1024px){.s{height:100svh!important;overflow-y:auto!important;-webkit-overflow-scrolling:touch!important}}
+  @media(max-width:640px){.card{flex-direction:column}}
+</style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- SLIDE 01 - Cover -->
+<section><div class="s" style="justify-content:center;gap:clamp(16px,2.5vh,32px)">
+<div class="stripe"></div>
+<div style="display:flex;align-items:center;gap:clamp(12px,1.5vw,18px);flex-shrink:0">
+<img src="https://www.google.com/s2/favicons?domain=knewhealth.com&sz=128" alt="Knew Health" style="width:clamp(36px,4.5vh,54px);height:clamp(36px,4.5vh,54px);border-radius:8px;flex-shrink:0">
+<span class="tag" style="font-family:'DM Mono',monospace;font-size:clamp(11px,1.3vh,14px);font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--accent-dark);background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:4px;padding:5px 11px">Trustpilot Review Intelligence</span>
+</div>
+<h2 style="font-size:clamp(34px,6vh,68px);font-weight:700;color:var(--ink);margin:0;line-height:1.1;max-width:24ch;flex-shrink:0">What 150 Knew Health Reviews Reveal, and Where the Site Leaves It on the Table.</h2>
+<p style="font-size:clamp(16px,2.2vh,22px);color:var(--ink3);margin:0;max-width:68ch;line-height:1.5;flex-shrink:0">A review-base audit of trustpilot.com/review/knewhealth.com (pages 1 to 6, 4.8 out of 5) cross-referenced against knewhealth.com, with a 12-item site gap analysis and a quick-win punch list.</p>
+<div style="display:flex;align-items:center;gap:clamp(12px,1.6vw,20px);margin-top:clamp(10px,2vh,20px);flex-shrink:0">
+<div style="display:flex;align-items:center;gap:8px">
+<span style="font-size:clamp(10px,1.15vh,12px);font-weight:600;color:var(--ink4);letter-spacing:.12em;text-transform:uppercase">Powered by</span>
+<img src="https://www.google.com/s2/favicons?domain=aipeekaboo.com&sz=64" alt="AI Peekaboo" style="width:18px;height:18px;border-radius:4px">
+<span style="font-size:clamp(12px,1.4vh,15px);font-weight:600;color:var(--ink2)">aipeekaboo.com</span>
+</div>
+<div style="width:1px;height:18px;background:var(--rule)"></div>
+<span style="font-size:clamp(11px,1.3vh,13px);color:var(--ink3);font-family:'DM Mono',monospace">Prepared for Knew Health &middot; July 2026</span>
+</div>
+</div></section>
+
+<!-- SLIDE 02 - Snapshot -->
+<section><div class="s">
+<div class="shdr" data-n="02"></div>
+<h2>Snapshot, what Knew Health actually is and how members rate it</h2>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,2vw,22px);flex-shrink:0;align-items:start">
+
+<div class="card" style="flex-direction:column;align-items:stretch;gap:clamp(10px,1.4vh,16px)">
+<span class="badge">What it is</span>
+<div style="font-size:clamp(15px,2.1vh,21px);color:var(--ink2);line-height:1.5;font-weight:600">A medical cost-sharing community (not insurance) for health-conscious individuals, families, and the self-employed.</div>
+<div style="font-size:clamp(13px,1.7vh,17px);color:var(--ink3);line-height:1.5">Founded 2018 by Joshua Rosenthal, founder of the Institute for Integrative Nutrition (the world's largest nutrition school). Members share each other's medical bills. Uses an "Initial Unshareable Amount" (IUA) in place of a deductible.</div>
+</div>
+
+<div class="card" style="flex-direction:column;align-items:stretch;gap:clamp(10px,1.4vh,16px)">
+<span class="badge">How members rate it</span>
+<div style="display:flex;align-items:baseline;gap:clamp(10px,1.4vw,16px);flex-shrink:0">
+<div style="font-family:'DM Mono',monospace;font-size:clamp(40px,5.5vh,68px);font-weight:700;color:var(--accent-dark);line-height:1">4.8</div>
+<div style="font-size:clamp(13px,1.7vh,17px);color:var(--ink3);line-height:1.4">out of 5 on Trustpilot<br>across roughly 150 reviews (pages 1 to 6)</div>
+</div>
+<div style="display:flex;flex-direction:column;gap:clamp(4px,0.6vh,7px);font-size:clamp(12px,1.5vh,15px);color:var(--ink3)">
+<div style="display:flex;align-items:center;gap:10px"><span style="display:inline-block;width:clamp(110px,13vw,160px);background:var(--paper3);height:8px;border-radius:4px;position:relative;overflow:hidden"><span style="position:absolute;left:0;top:0;bottom:0;width:90%;background:var(--ok);border-radius:4px"></span></span><span>5 stars ~ 90 to 91%</span></div>
+<div style="display:flex;align-items:center;gap:10px"><span style="display:inline-block;width:clamp(110px,13vw,160px);background:var(--paper3);height:8px;border-radius:4px;position:relative;overflow:hidden"><span style="position:absolute;left:0;top:0;bottom:0;width:5%;background:var(--steel);border-radius:4px"></span></span><span>4 stars ~ 5 to 6%</span></div>
+<div style="display:flex;align-items:center;gap:10px"><span style="display:inline-block;width:clamp(110px,13vw,160px);background:var(--paper3);height:8px;border-radius:4px;position:relative;overflow:hidden"><span style="position:absolute;left:0;top:0;bottom:0;width:2%;background:var(--red);border-radius:4px"></span></span><span>1 star ~ 2%</span></div>
+</div>
+</div>
+
+</div>
+
+<div class="card" style="margin-top:clamp(14px,1.9vh,22px);background:var(--paper3);border:1px solid var(--accent-bd);flex-shrink:0">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent-dark)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+<div>
+<div style="font-size:clamp(15px,2vh,20px);font-weight:700;color:var(--ink);margin-bottom:6px">Why this deck exists</div>
+<div style="font-size:clamp(13px,1.7vh,17px);color:var(--ink2);line-height:1.5">Reviews are unusually long and emotional for a healthcare or financial product. That is a content goldmine the brand is barely mining. This deck converts 150 raw reviews into positioning, content, and on-site fixes.</div>
+</div>
+</div>
+
+</div></section>
+
+<!-- SLIDE 03 - What reviewers love most (all 8) -->
+<section><div class="s">
+<div class="shdr" data-n="03"></div>
+<h2>What reviewers love most, ranked by frequency and intensity</h2>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,1.8vw,20px);flex-shrink:0;align-items:start;flex:1;min-height:0">
+
+<div class="list-card">
+<div class="list-hash">#1</div>
+<div style="display:flex;flex-direction:column;gap:6px;min-width:0">
+<div style="font-size:clamp(15px,2vh,19px);font-weight:700;color:var(--ink);line-height:1.2">Fast reimbursement</div>
+<div style="font-size:clamp(12.5px,1.6vh,16px);color:var(--ink2);line-height:1.5">The single most-praised attribute, yet buried in a collapsed FAQ on the site.</div>
+<ul class="quote-list"><li>From my initial incident to the bills being paid in full was 33 days.</li></ul>
+</div>
+</div>
+
+<div class="list-card">
+<div class="list-hash">#2</div>
+<div style="display:flex;flex-direction:column;gap:6px;min-width:0">
+<div style="font-size:clamp(15px,2vh,19px);font-weight:700;color:var(--ink);line-height:1.2">A real, named human on the phone</div>
+<div style="font-size:clamp(12.5px,1.6vh,16px);color:var(--ink2);line-height:1.5">Members name specific coordinators (John B., Craig, Hillary, Amy). "Every time I called, answered immediately by a real person."</div>
+<ul class="quote-list"><li>They even called to check on me after I submitted a claim for an ER visit.</li></ul>
+</div>
+</div>
+
+<div class="list-card">
+<div class="list-hash">#3</div>
+<div style="display:flex;flex-direction:column;gap:6px;min-width:0">
+<div style="font-size:clamp(15px,2vh,19px);font-weight:700;color:var(--ink);line-height:1.2">It actually paid when catastrophe hit</div>
+<div style="font-size:clamp(12.5px,1.6vh,16px);color:var(--ink2);line-height:1.5">Heart attack, ICU stay, ACL surgery, maternity, child hospitalization all paid. Strongest conversion proof in the base.</div>
+<ul class="quote-list"><li>I was always nervous... they paid out the bill without hesitation.</li></ul>
+</div>
+</div>
+
+<div class="list-card">
+<div class="list-hash">#4</div>
+<div style="display:flex;flex-direction:column;gap:6px;min-width:0">
+<div style="font-size:clamp(15px,2vh,19px);font-weight:700;color:var(--ink);line-height:1.2">Dramatically cheaper than ACA</div>
+<div style="font-size:clamp(12.5px,1.6vh,16px);color:var(--ink2);line-height:1.5">Members report $300 to $500 monthly savings. Brand line: "We have not increased membership prices in over 8 years."</div>
+<ul class="quote-list"><li>Saving about $500 a month from the useless insurance we had prior.</li></ul>
+</div>
+</div>
+
+<div class="list-card">
+<div class="list-hash">#5</div>
+<div style="display:flex;flex-direction:column;gap:6px;min-width:0">
+<div style="font-size:clamp(15px,2vh,19px);font-weight:700;color:var(--ink);line-height:1.2">Choose any provider, holistic OK</div>
+<div style="font-size:clamp(12.5px,1.6vh,16px);color:var(--ink2);line-height:1.5">"I loved getting to choose my own care." Wellness tribe fit with integrative and functional coverage.</div>
+<ul class="quote-list"><li>They have paid for things that traditional insurance would never have covered.</li></ul>
+</div>
+</div>
+
+<div class="list-card">
+<div class="list-hash">#6</div>
+<div style="display:flex;flex-direction:column;gap:6px;min-width:0">
+<div style="font-size:clamp(15px,2vh,19px);font-weight:700;color:var(--ink);line-height:1.2">Medical bill negotiation</div>
+<div style="font-size:clamp(12.5px,1.6vh,16px);color:var(--ink2);line-height:1.5">Members value help negotiating hospital costs and self-pay pricing. Brand cites a 46% average reduction via its negotiators.</div>
+<ul class="quote-list"><li>Helping navigate getting the real prices (self-pay rates).</li></ul>
+</div>
+</div>
+
+<div class="list-card">
+<div class="list-hash">#7</div>
+<div style="display:flex;flex-direction:column;gap:6px;min-width:0">
+<div style="font-size:clamp(15px,2vh,19px);font-weight:700;color:var(--ink);line-height:1.2">Wellness perks from day one</div>
+<div style="font-size:clamp(12.5px,1.6vh,16px);color:var(--ink2);line-height:1.5">Self-Care Credit, free labs (Evexia, FullScript), free 24/7 telemedicine, free health coaching.</div>
+<ul class="quote-list"><li>$250 allowance for health support (I use it towards supplements).</li></ul>
+</div>
+</div>
+
+<div class="list-card">
+<div class="list-hash">#8</div>
+<div style="display:flex;flex-direction:column;gap:6px;min-width:0">
+<div style="font-size:clamp(15px,2vh,19px);font-weight:700;color:var(--ink);line-height:1.2">Secular and inclusive, not faith-based</div>
+<div style="font-size:clamp(12.5px,1.6vh,16px);color:var(--ink2);line-height:1.5">"We switched after being members of a religious health share." Multiple switchers from Medi-Share, Samaritan, CHM.</div>
+<ul class="quote-list"><li>Accept everyone, regardless of religious affiliations.</li></ul>
+</div>
+</div>
+
+</div>
+</div></section>
+
+<!-- SLIDE 04 - Fear-to-relief arc (3-step horizontal) -->
+<section><div class="s">
+<div class="shdr" data-n="04"></div>
+<h2>The fear-to-relief arc, the dominant member journey and conversion lever</h2>
+
+<div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:clamp(14px,2vh,22px);min-height:0">
+
+<div style="display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:clamp(10px,1.4vw,16px);align-items:stretch;flex-shrink:0">
+
+<div style="background:var(--paper2);border:1.5px solid var(--rule);border-radius:12px;padding:clamp(14px,2vh,22px);display:flex;flex-direction:column;gap:clamp(8px,1.2vh,14px);flex-shrink:0;min-height:0">
+<div style="display:flex;align-items:center;gap:10px;flex-shrink:0">
+<div style="width:clamp(24px,3vh,30px);height:clamp(24px,3vh,30px);border-radius:50%;background:var(--red-bg);border:1.5px solid var(--red-bd);color:var(--red);font-family:'DM Mono',monospace;font-weight:700;font-size:clamp(13px,1.6vh,17px);display:flex;align-items:center;justify-content:center">1</div>
+<div style="font-size:clamp(11px,1.3vh,13px);font-family:'DM Mono',monospace;font-weight:700;letter-spacing:.1em;color:var(--red);text-transform:uppercase">BEFORE</div>
+</div>
+<div style="font-size:clamp(14px,1.9vh,18px);font-weight:700;color:var(--ink);line-height:1.25">"Will they really pay? I am terrified of being left with massive bills."</div>
+<div style="font-size:clamp(11px,1.4vh,14px);color:var(--ink4);font-style:italic;margin-top:auto;font-weight:500">Trustpilot reviewer, pre-purchase</div>
+</div>
+
+<div style="display:flex;align-items:center;color:var(--ink4);font-size:clamp(22px,2.8vh,32px);font-weight:700;flex-shrink:0">&rarr;</div>
+
+<div style="background:var(--paper3);border:1.5px solid var(--accent-bd);border-radius:12px;padding:clamp(14px,2vh,22px);display:flex;flex-direction:column;gap:clamp(8px,1.2vh,14px);flex-shrink:0;min-height:0">
+<div style="display:flex;align-items:center;gap:10px;flex-shrink:0">
+<div style="width:clamp(24px,3vh,30px);height:clamp(24px,3vh,30px);border-radius:50%;background:var(--gold);border:1.5px solid var(--gold);color:#fff;font-family:'DM Mono',monospace;font-weight:700;font-size:clamp(13px,1.6vh,17px);display:flex;align-items:center;justify-content:center">2</div>
+<div style="font-size:clamp(11px,1.3vh,13px);font-family:'DM Mono',monospace;font-weight:700;letter-spacing:.1em;color:var(--accent-dark);text-transform:uppercase">DURING</div>
+</div>
+<div style="font-size:clamp(14px,1.9vh,18px);font-weight:700;color:var(--ink);line-height:1.25">A real event hits. Heart attack, ICU stay, ACL surgery, maternity, ER.</div>
+<div style="font-size:clamp(11px,1.4vh,14px);color:var(--ink3);margin-top:auto">What they came in scared about actually happens.</div>
+</div>
+
+<div style="display:flex;align-items:center;color:var(--ink4);font-size:clamp(22px,2.8vh,32px);font-weight:700;flex-shrink:0">&rarr;</div>
+
+<div style="background:var(--ok-bg);border:1.5px solid var(--ok-bd);border-radius:12px;padding:clamp(14px,2vh,22px);display:flex;flex-direction:column;gap:clamp(8px,1.2vh,14px);flex-shrink:0;min-height:0">
+<div style="display:flex;align-items:center;gap:10px;flex-shrink:0">
+<div style="width:clamp(24px,3vh,30px);height:clamp(24px,3vh,30px);border-radius:50%;background:var(--ok);border:1.5px solid var(--ok);color:#fff;font-family:'DM Mono',monospace;font-weight:700;font-size:clamp(13px,1.6vh,17px);display:flex;align-items:center;justify-content:center">3</div>
+<div style="font-size:clamp(11px,1.3vh,13px);font-family:'DM Mono',monospace;font-weight:700;letter-spacing:.1em;color:var(--ok);text-transform:uppercase">AFTER</div>
+</div>
+<div style="font-size:clamp(14px,1.9vh,18px);font-weight:700;color:var(--ink);line-height:1.25">"They paid out the bill without hesitation. Funds in my account within days."</div>
+<div style="font-size:clamp(11px,1.4vh,14px);color:var(--ink4);font-style:italic;margin-top:auto;font-weight:500">Trustpilot reviewer, post-claim</div>
+</div>
+
+</div>
+
+<div class="card" style="background:var(--paper3);border:1.5px solid var(--accent);flex-shrink:0">
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent-dark)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+<div>
+<div style="font-size:clamp(15px,2vh,20px);font-weight:700;color:var(--ink);margin-bottom:6px">Implication, the only question that matters</div>
+<div style="font-size:clamp(13px,1.7vh,17px);color:var(--ink2);line-height:1.5">The entire site should be built around one buyer question: <strong>"Will they actually pay when catastrophe hits, and how fast?"</strong> Every section above the fold should serve that single answer.</div>
+</div>
+</div>
+
+</div>
+</div></section>
+
+<!-- SLIDE 05 - Buyer personas (numbered 1-8 with counts) -->
+<section><div class="s">
+<div class="shdr" data-n="05"></div>
+<h2>Buyer personas that emerge (numbered + approximate reviewer counts)</h2>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,1.8vw,20px);flex-shrink:0;align-items:start;flex:1;min-height:0">
+
+<div class="list-card">
+<div class="list-num">01</div>
+<div style="display:flex;flex-direction:column;gap:6px;min-width:0;flex:1">
+<div style="display:flex;justify-content:space-between;align-items:flex-start;gap:10px">
+<div style="font-size:clamp(15px,2vh,19px);font-weight:700;color:var(--ink);line-height:1.2;flex:1">Self-employed, freelancers, 1099 contractors</div>
+<div style="text-align:right;flex-shrink:0">
+<div style="font-family:'DM Mono',monospace;font-size:clamp(20px,2.6vh,28px);font-weight:700;color:var(--accent-dark);line-height:1">55+</div>
+<div style="font-size:clamp(9px,1.05vh,11px);color:var(--ink4);letter-spacing:.04em">of ~150</div>
+</div>
+</div>
+<div style="font-size:clamp(12.5px,1.6vh,16px);color:var(--ink2);line-height:1.5">Dominant persona across the entire review set.</div>
+<ul class="quote-list"><li>Saving about $500 a month from the useless insurance we had prior.</li></ul>
+</div>
+</div>
+
+<div class="list-card">
+<div class="list-num">02</div>
+<div style="display:flex;flex-direction:column;gap:6px;min-width:0;flex:1">
+<div style="display:flex;justify-content:space-between;align-items:flex-start;gap:10px">
+<div style="font-size:clamp(15px,2vh,19px);font-weight:700;color:var(--ink);line-height:1.2;flex:1">Small business owners and families</div>
+<div style="text-align:right;flex-shrink:0">
+<div style="font-family:'DM Mono',monospace;font-size:clamp(20px,2.6vh,28px);font-weight:700;color:var(--accent-dark);line-height:1">~25</div>
+<div style="font-size:clamp(9px,1.05vh,11px);color:var(--ink4);letter-spacing:.04em">of ~150</div>
+</div>
+</div>
+<div style="font-size:clamp(12.5px,1.6vh,16px);color:var(--ink2);line-height:1.5">Bundled coverage for owner plus dependents; family-of-four conversions frequent.</div>
+<ul class="quote-list"><li>"My costs never increased the entire time" (six-year member).</li></ul>
+</div>
+</div>
+
+<div class="list-card">
+<div class="list-num">03</div>
+<div style="display:flex;flex-direction:column;gap:6px;min-width:0;flex:1">
+<div style="display:flex;justify-content:space-between;align-items:flex-start;gap:10px">
+<div style="font-size:clamp(15px,2vh,19px);font-weight:700;color:var(--ink);line-height:1.2;flex:1">Early retirees and pre-Medicare gap</div>
+<div style="text-align:right;flex-shrink:0">
+<div style="font-family:'DM Mono',monospace;font-size:clamp(20px,2.6vh,28px);font-weight:700;color:var(--accent-dark);line-height:1">~15</div>
+<div style="font-size:clamp(9px,1.05vh,11px);color:var(--ink4);letter-spacing:.04em">of ~150</div>
+</div>
+</div>
+<div style="font-size:clamp(12.5px,1.6vh,16px);color:var(--ink2);line-height:1.5">60 to 64 cohort buying bridge cover ahead of Medicare.</div>
+<ul class="quote-list"><li>Emergency coverage until Medicare.</li></ul>
+</div>
+</div>
+
+<div class="list-card">
+<div class="list-num">04</div>
+<div style="display:flex;flex-direction:column;gap:6px;min-width:0;flex:1">
+<div style="display:flex;justify-content:space-between;align-items:flex-start;gap:10px">
+<div style="font-size:clamp(15px,2vh,19px);font-weight:700;color:var(--ink);line-height:1.2;flex:1">Between jobs</div>
+<div style="text-align:right;flex-shrink:0">
+<div style="font-family:'DM Mono',monospace;font-size:clamp(20px,2.6vh,28px);font-weight:700;color:var(--accent-dark);line-height:1">~15</div>
+<div style="font-size:clamp(9px,1.05vh,11px);color:var(--ink4);letter-spacing:.04em">of ~150</div>
+</div>
+</div>
+<div style="font-size:clamp(12.5px,1.6vh,16px);color:var(--ink2);line-height:1.5">High-intent, short-cycle buyers waiting on employer benefits.</div>
+<ul class="quote-list"><li>Gap insurance while waiting for employer benefits.</li></ul>
+</div>
+</div>
+
+<div class="list-card">
+<div class="list-num">05</div>
+<div style="display:flex;flex-direction:column;gap:6px;min-width:0;flex:1">
+<div style="display:flex;justify-content:space-between;align-items:flex-start;gap:10px">
+<div style="font-size:clamp(15px,2vh,19px);font-weight:700;color:var(--ink);line-height:1.2;flex:1">Functional, integrative, wellness-first</div>
+<div style="text-align:right;flex-shrink:0">
+<div style="font-family:'DM Mono',monospace;font-size:clamp(20px,2.6vh,28px);font-weight:700;color:var(--accent-dark);line-height:1">~20</div>
+<div style="font-size:clamp(9px,1.05vh,11px);color:var(--ink4);letter-spacing:.04em">of ~150</div>
+</div>
+</div>
+<div style="font-size:clamp(12.5px,1.6vh,16px);color:var(--ink2);line-height:1.5">Holistic, integrative, supplements, thermography, therapeutic massage.</div>
+<ul class="quote-list"><li>They have paid for things that traditional insurance would never have covered.</li></ul>
+</div>
+</div>
+
+<div class="list-card">
+<div class="list-num">06</div>
+<div style="display:flex;flex-direction:column;gap:6px;min-width:0;flex:1">
+<div style="display:flex;justify-content:space-between;align-items:flex-start;gap:10px">
+<div style="font-size:clamp(15px,2vh,19px);font-weight:700;color:var(--ink);line-height:1.2;flex:1">Expecting parents and maternity</div>
+<div style="text-align:right;flex-shrink:0">
+<div style="font-family:'DM Mono',monospace;font-size:clamp(20px,2.6vh,28px);font-weight:700;color:var(--accent-dark);line-height:1">~12</div>
+<div style="font-size:clamp(9px,1.05vh,11px);color:var(--ink4);letter-spacing:.04em">of ~150</div>
+</div>
+</div>
+<div style="font-size:clamp(12.5px,1.6vh,16px);color:var(--ink2);line-height:1.5">High-cost, high-intent audience. Maternity is a switching moment.</div>
+<ul class="quote-list"><li>Better than insurance for childbirth.</li></ul>
+</div>
+</div>
+
+<div class="list-card">
+<div class="list-num">07</div>
+<div style="display:flex;flex-direction:column;gap:6px;min-width:0;flex:1">
+<div style="display:flex;justify-content:space-between;align-items:flex-start;gap:10px">
+<div style="font-size:clamp(15px,2vh,19px);font-weight:700;color:var(--ink);line-height:1.2;flex:1">Fleeing faith-based shares</div>
+<div style="text-align:right;flex-shrink:0">
+<div style="font-family:'DM Mono',monospace;font-size:clamp(20px,2.6vh,28px);font-weight:700;color:var(--accent-dark);line-height:1">~12</div>
+<div style="font-size:clamp(9px,1.05vh,11px);color:var(--ink4);letter-spacing:.04em">of ~150</div>
+</div>
+</div>
+<div style="font-size:clamp(12.5px,1.6vh,16px);color:var(--ink2);line-height:1.5">Switchers from Medi-Share, Samaritan, or CHM, looking for secular.</div>
+<ul class="quote-list"><li>We switched over to Knew Health after being members of a religious health share.</li></ul>
+</div>
+</div>
+
+<div class="list-card">
+<div class="list-num">08</div>
+<div style="display:flex;flex-direction:column;gap:6px;min-width:0;flex:1">
+<div style="display:flex;justify-content:space-between;align-items:flex-start;gap:10px">
+<div style="font-size:clamp(15px,2vh,19px);font-weight:700;color:var(--ink);line-height:1.2;flex:1">Travelers and digital nomads</div>
+<div style="text-align:right;flex-shrink:0">
+<div style="font-family:'DM Mono',monospace;font-size:clamp(20px,2.6vh,28px);font-weight:700;color:var(--accent-dark);line-height:1">~8</div>
+<div style="font-size:clamp(9px,1.05vh,11px);color:var(--ink4);letter-spacing:.04em">of ~150</div>
+</div>
+</div>
+<div style="font-size:clamp(12.5px,1.6vh,16px);color:var(--ink2);line-height:1.5">Coverage that travels, not a regional network.</div>
+<ul class="quote-list"><li>Medical crisis while traveling in Mexico was handled.</li></ul>
+</div>
+</div>
+
+</div>
+
+<div style="font-size:clamp(11px,1.3vh,14px);color:var(--ink4);font-style:italic;flex-shrink:0;margin-top:clamp(8px,1.1vh,12px)">Counts are approximate and overlap, since a single self-employed reviewer may also be a faith-share switcher and a maternity buyer. Totals will exceed 150.</div>
+</div></section>
+
+<!-- SLIDE 06 - Friction and negative signals -->
+<section><div class="s">
+<div class="shdr" data-n="06"></div>
+<h2>Friction and negative signals (honesty and opportunity)</h2>
+<div style="display:flex;flex-direction:column;gap:clamp(9px,1.2vh,14px);flex-shrink:0">
+
+<div class="card" style="border-left:4px solid var(--warn);flex-shrink:0">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--warn)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+<div><div style="font-size:clamp(15px,2vh,20px);font-weight:700;color:var(--ink);margin-bottom:3px">Geographic limits</div><div style="font-size:clamp(13px,1.7vh,17px);color:var(--ink3);line-height:1.5">"Not great if you live in New York." State-by-state availability is a real blocker and is not surfaced clearly on the site.</div></div>
+</div>
+
+<div class="card" style="border-left:4px solid var(--red);flex-shrink:0">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+<div><div style="font-size:clamp(15px,2vh,20px);font-weight:700;color:var(--ink);margin-bottom:3px">One detailed 1-star: a communication failure</div><div style="font-size:clamp(13px,1.7vh,17px);color:var(--ink3);line-height:1.5">A complex claim went silent for over a year, the member was "ghosted," and cancellation met with "unanswered calls." Points to a comms-breakdown failure mode on messy claims.</div></div>
+</div>
+
+<div class="card" style="border-left:4px solid var(--warn);flex-shrink:0">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--warn)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><path d="M2 7h20M2 12h20M2 17h20"/></svg>
+<div><div style="font-size:clamp(15px,2vh,20px);font-weight:700;color:var(--ink);margin-bottom:3px">Jargon fights the customer</div><div style="font-size:clamp(13px,1.7vh,17px);color:var(--ink3);line-height:1.5">Happy members call the IUA a "deductible" and the product "coverage." The brand publicly corrects them in replies. "Supplemental Allowance" was renamed to "Self-Care Credit" mid-stream and confused at least one member.</div></div>
+</div>
+
+<div class="card" style="border-left:4px solid var(--steel);flex-shrink:0">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--steel)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/></svg>
+<div><div style="font-size:clamp(15px,2vh,20px);font-weight:700;color:var(--ink);margin-bottom:3px">Portal and UX wishes</div><div style="font-size:clamp(13px,1.7vh,17px);color:var(--ink3);line-height:1.5">Evexia lab platform is "difficult to navigate." Members want claims history "by type" with a more robust dashboard. One prospect reported being told they were ineligible with no follow-up response.</div></div>
+</div>
+
+</div>
+</div></section>
+
+<!-- SLIDE 07 - Gap 01 + 02 (refactored with tinted sections) -->
+<section><div class="s">
+<div class="shdr" data-n="07"></div>
+<h2>Gap analysis, parts 1 and 2 (of 12)</h2>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,1.8vw,22px);flex-shrink:0;align-items:start">
+
+<div class="gap-card">
+<div class="gap-head"><span class="badge" style="background:var(--red-bg);color:var(--red);border-color:var(--red-bd)">Gap 01</span><div class="title">Speed of reimbursement is buried</div></div>
+<div class="gap-section gap-section-love"><div class="gap-label">Members love this</div><div class="gap-body"><ul class="quote-list"><li>From my initial incident to the bills being paid in full was 33 days.</li><li>I usually get reimbursement checks within a week or two.</li><li>Now that I have direct deposit, funds are in my account within days.</li></ul></div></div>
+<div class="gap-section gap-section-site"><div class="gap-label">What the site does</div><div class="gap-body">The exact statistic appears only in a collapsed FAQ entry: "How quickly are expenses shared?" It is invisible to anyone not already searching for it.</div></div>
+<div class="gap-section gap-section-do"><div class="gap-label">What to do</div><div class="gap-body"><ul><li>Show a single "average reimbursement time" stat above the fold, plain language.</li><li>Add a visual timeline: submit to share-decision to payout-to-bank.</li><li>Pull the FAQ answer into the hero so buyers see it before they look for it.</li></ul></div></div>
+</div>
+
+<div class="gap-card">
+<div class="gap-head"><span class="badge" style="background:var(--red-bg);color:var(--red);border-color:var(--red-bd)">Gap 02</span><div class="title">"VIP Concierge" undersells the personal relationship</div></div>
+<div class="gap-section gap-section-love"><div class="gap-label">Members love this</div><div class="gap-body"><ul class="quote-list"><li>I always spoke to the same REAL person.</li><li>They even called to check on me after I submitted a claim for an ER visit.</li></ul></div></div>
+<div class="gap-section gap-section-site"><div class="gap-label">What the site does</div><div class="gap-body">"VIP Concierge Care Team" sounds corporate. One photo (Hillary). No mention of named continuity or that the same person stays with you through a crisis.</div></div>
+<div class="gap-section gap-section-do"><div class="gap-label">What to do</div><div class="gap-body"><ul><li>Promise a dedicated, named coordinator in plain language.</li><li>Feature real coordinator names, photos, and quick bios.</li><li>Add a quote block from a member about who their coordinator was during a claim.</li></ul></div></div>
+</div>
+
+</div>
+</div></section>
+
+<!-- SLIDE 08 - Gap 03 + 04 -->
+<section><div class="s">
+<div class="shdr" data-n="08"></div>
+<h2>Gap analysis, parts 3 and 4 (of 12)</h2>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,1.8vw,22px);flex-shrink:0;align-items:start">
+
+<div class="gap-card">
+<div class="gap-head"><span class="badge" style="background:var(--red-bg);color:var(--red);border-color:var(--red-bd)">Gap 03</span><div class="title">"Will they pay for catastrophes?" goes unanswered</div></div>
+<div class="gap-section gap-section-love"><div class="gap-label">Members love this</div><div class="gap-body"><ul class="quote-list"><li>very high</li><li>above and beyond the IUA.</li></ul></div></div>
+<div class="gap-section gap-section-site"><div class="gap-label">What the site does</div><div class="gap-body">Listed once as "Peace of mind for illness, injury and pregnancy." No on-site proof. The strongest conversion lever in the entire base is invisible.</div></div>
+<div class="gap-section gap-section-do"><div class="gap-label">What to do</div><div class="gap-body"><ul><li>Build a "Real Members, Real Paid Claims" section with anonymized outcomes.</li><li>Show event type, dollar band, and days-to-pay, with member first-name and state.</li><li>Place it directly above the pricing and sign-up CTA.</li></ul></div></div>
+</div>
+
+<div class="gap-card">
+<div class="gap-head"><span class="badge" style="background:var(--red-bg);color:var(--red);border-color:var(--red-bd)">Gap 04</span><div class="title">Medical bill negotiation is not productized</div></div>
+<div class="gap-section gap-section-love"><div class="gap-label">Members love this</div><div class="gap-body"><ul class="quote-list"><li>Pointers on negotiating hospital costs.</li><li>Working with me on payment plans.</li><li>Helping navigate getting the real prices (self-pay rates).</li></ul></div></div>
+<div class="gap-section gap-section-site"><div class="gap-label">What the site does</div><div class="gap-body">Mentioned once, under "Proven," in passing. No dedicated section, no stat, no explanation of how it works or who does it.</div></div>
+<div class="gap-section gap-section-do"><div class="gap-label">What to do</div><div class="gap-body"><ul><li>Promote the 46% reduction to headline status next to payout speed.</li><li>Add a named "Bill Negotiation Team" with a process explainer.</li><li>Cross-link from any page mentioning medical bills to this section.</li></ul></div></div>
+</div>
+
+</div>
+</div></section>
+
+<!-- SLIDE 09 - Gap 05 + 06 -->
+<section><div class="s">
+<div class="shdr" data-n="09"></div>
+<h2>Gap analysis, parts 5 and 6 (of 12)</h2>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,1.8vw,22px);flex-shrink:0;align-items:start">
+
+<div class="gap-card">
+<div class="gap-head"><span class="badge" style="background:var(--red-bg);color:var(--red);border-color:var(--red-bd)">Gap 05</span><div class="title">Proven personas are only implied</div></div>
+<div class="gap-section gap-section-love"><div class="gap-label">Members love this</div><div class="gap-body">Eight personas are proven across the review set: self-employed, families, early retirees, between-jobs, maternity, wellness-first, faith-share switchers, and travelers. Each cohort uses specific language for what they need covered.</div></div>
+<div class="gap-section gap-section-site"><div class="gap-label">What the site does</div><div class="gap-body">Only one hero quote implies the self-employed. The other seven are not surfaced anywhere. Buyers have to self-identify from generic copy.</div></div>
+<div class="gap-section gap-section-do"><div class="gap-label">What to do</div><div class="gap-body"><ul><li>Build a persona picker on the homepage ("I am self-employed," "I am between jobs").</li><li>Ship one landing page per persona with a tailored hook and proof.</li><li>Add a "Built for you" section that calls out all eight audiences by name.</li></ul></div></div>
+</div>
+
+<div class="gap-card">
+<div class="gap-head"><span class="badge" style="background:var(--red-bg);color:var(--red);border-color:var(--red-bd)">Gap 06</span><div class="title">The wellness flag is planted softly</div></div>
+<div class="gap-section gap-section-love"><div class="gap-label">Members love this</div><div class="gap-body">Deep alignment with functional, integrative, and natural health. The CEO founded the world's largest nutrition school. Members describe themselves as grass-fed, organic, supplement-using, thermography-using, and therapeutic massage customers.</div></div>
+<div class="gap-section gap-section-site"><div class="gap-label">What the site does</div><div class="gap-body">"Even licensed holistic and integrative providers" appears once. The wellness tribe is left to infer itself from generic copy.</div></div>
+<div class="gap-section gap-section-do"><div class="gap-label">What to do</div><div class="gap-body"><ul><li>Reposition around "healthcare for health-conscious people," not generic cost-share.</li><li>Add a wellness-specific page covering holistic, functional, integrative care.</li><li>Lead with the IIN founder story in the brand narrative.</li></ul></div></div>
+</div>
+
+</div>
+</div></section>
+
+<!-- SLIDE 10 - Gap 07 + 08 -->
+<section><div class="s">
+<div class="shdr" data-n="10"></div>
+<h2>Gap analysis, parts 7 and 8 (of 12)</h2>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,1.8vw,22px);flex-shrink:0;align-items:start">
+
+<div class="gap-card">
+<div class="gap-head"><span class="badge" style="background:var(--red-bg);color:var(--red);border-color:var(--red-bd)">Gap 07</span><div class="title">"Not faith-based" is hidden as a FAQ</div></div>
+<div class="gap-section gap-section-love"><div class="gap-label">Members love this</div><div class="gap-body"><ul class="quote-list"><li>We switched over to Knew Health after having been members of a religious health share.</li><li>Accept everyone, regardless of past medical conditions or religious affiliations.</li></ul></div></div>
+<div class="gap-section gap-section-site"><div class="gap-label">What the site does</div><div class="gap-body">"Are you faith-based?" sits in the FAQ. It is not part of the public value proposition, even though it is one of the strongest switcher hooks in the category.</div></div>
+<div class="gap-section gap-section-do"><div class="gap-label">What to do</div><div class="gap-body"><ul><li>Promote "secular and inclusive" to a hero claim, not a buried FAQ answer.</li><li>Build a comparison hub hitting "[competitor] alternative" queries for switchers.</li><li>Capture testimonials from religious-share refugees on a dedicated page.</li></ul></div></div>
+</div>
+
+<div class="gap-card">
+<div class="gap-head"><span class="badge" style="background:var(--red-bg);color:var(--red);border-color:var(--red-bd)">Gap 08</span><div class="title">Maternity is underdeveloped</div></div>
+<div class="gap-section gap-section-love"><div class="gap-label">Members love this</div><div class="gap-body"><ul class="quote-list"><li>Better than insurance for childbirth.</li></ul></div></div>
+<div class="gap-section gap-section-site"><div class="gap-label">What the site does</div><div class="gap-body">Pregnancy appears as one word in the hero benefit list. No dedicated page, no breakdown of what is covered, no stories, no cost examples.</div></div>
+<div class="gap-section gap-section-do"><div class="gap-label">What to do</div><div class="gap-body"><ul><li>Build a dedicated maternity page covering prenatal, birth, postpartum.</li><li>Add family cost examples with and without IUA.</li><li>Capture and publish one or two birth-story videos with member consent.</li></ul></div></div>
+</div>
+
+</div>
+</div></section>
+
+<!-- SLIDE 11 - Gap 09 + 10 -->
+<section><div class="s">
+<div class="shdr" data-n="11"></div>
+<h2>Gap analysis, parts 9 and 10 (of 12)</h2>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,1.8vw,22px);flex-shrink:0;align-items:start">
+
+<div class="gap-card">
+<div class="gap-head"><span class="badge" style="background:var(--red-bg);color:var(--red);border-color:var(--red-bd)">Gap 09</span><div class="title">Travel and portability are not framed</div></div>
+<div class="gap-section gap-section-love"><div class="gap-label">Members love this</div><div class="gap-body"><ul class="quote-list"><li>Medical crisis while traveling in Mexico was handled.</li><li>An option that worked everywhere.</li></ul></div></div>
+<div class="gap-section gap-section-site"><div class="gap-label">What the site does</div><div class="gap-body">"Our services work the same way in every state." Implies domestic, not the international portability angle. No traveler or digital-nomad positioning.</div></div>
+<div class="gap-section gap-section-do"><div class="gap-label">What to do</div><div class="gap-body"><ul><li>Add a traveler and digital-nomad angle to the hero benefits list.</li><li>Build a "Coverage that travels" explainer page with country examples.</li><li>Cross-link to it from any FAQ about coverage area or networks.</li></ul></div></div>
+</div>
+
+<div class="gap-card">
+<div class="gap-head"><span class="badge" style="background:var(--red-bg);color:var(--red);border-color:var(--red-bd)">Gap 10</span><div class="title">Trust proof is underbuilt on-site</div></div>
+<div class="gap-section gap-section-love"><div class="gap-label">Members love this</div><div class="gap-body">4.8 out of 5 on Trustpilot with roughly 150 reviews, plus an 8-year price lock. The public Trustpilot badge, the count, and the price-lock line are all usable trust signals sitting in external platforms.</div></div>
+<div class="gap-section gap-section-site"><div class="gap-label">What the site does</div><div class="gap-body">Only "thousands of members" and the price-lock line. No Trustpilot widget, no star-rating display, no review count, no recent review excerpt.</div></div>
+<div class="gap-section gap-section-do"><div class="gap-label">What to do</div><div class="gap-body"><ul><li>Embed the Trustpilot score, review count, and one rotating review on every key page.</li><li>Add a "since 2018, same price" callout next to the price-lock claim.</li><li>Surface a Trustpilot "verified review" badge in the hero CTA area.</li></ul></div></div>
+</div>
+
+</div>
+</div></section>
+
+<!-- SLIDE 12 - Gap 11 + 12 -->
+<section><div class="s">
+<div class="shdr" data-n="12"></div>
+<h2>Gap analysis, parts 11 and 12 (of 12)</h2>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,1.8vw,22px);flex-shrink:0;align-items:start">
+
+<div class="gap-card">
+<div class="gap-head"><span class="badge" style="background:var(--red-bg);color:var(--red);border-color:var(--red-bd)">Gap 11</span><div class="title">Day-one wellness value is not staged</div></div>
+<div class="gap-section gap-section-love"><div class="gap-label">Members love this</div><div class="gap-body">Self-Care Credit (formerly $250 wellness allowance), free labs via Evexia and FullScript, free 24/7 telemedicine, free health coaching, fitness classes. Members use and value these from day one, even with zero claims.</div></div>
+<div class="gap-section gap-section-site"><div class="gap-label">What the site does</div><div class="gap-body">Listed as undifferentiated perks with no dollar values attached. Buyers cannot price the wellness bundle against an insurance alternative.</div></div>
+<div class="gap-section gap-section-do"><div class="gap-label">What to do</div><div class="gap-body"><ul><li>Frame as "value you use immediately, even with no major claim."</li><li>Attach dollar figures to each perk ($250 Self-Care Credit, $0 telemedicine, etc.).</li><li>Add an "Included from day one" section with perk-by-perk breakdown.</li></ul></div></div>
+</div>
+
+<div class="gap-card">
+<div class="gap-head"><span class="badge" style="background:var(--red-bg);color:var(--red);border-color:var(--red-bd)">Gap 12</span><div class="title">The site leads with jargon</div></div>
+<div class="gap-section gap-section-love"><div class="gap-label">Members love this</div><div class="gap-body"><ul class="quote-list"><li>Supplemental Allowance</li><li>Self-Care Credit</li></ul></div></div>
+<div class="gap-section gap-section-site"><div class="gap-label">What the site does</div><div class="gap-body">Heavy use of Need, IUA, Unshareable Amount, Sharing. The brand publicly corrects members in replies when they use "deductible" or "coverage."</div></div>
+<div class="gap-section gap-section-do"><div class="gap-label">What to do</div><div class="gap-body"><ul><li>Lead with plain language and map jargon second ("your IUA, think of it like a deductible").</li><li>Stop correcting members in public replies; mirror their words.</li><li>Lock terminology changes with internal announcements before renaming perks again.</li></ul></div></div>
+</div>
+
+</div>
+</div></section>
+
+<!-- SLIDE 13 - High-intent content and landing page ideas -->
+<section><div class="s">
+<div class="shdr" data-n="13"></div>
+<h2>High-intent content and landing-page ideas (SEO and AEO)</h2>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(10px,1.4vw,18px);flex-shrink:0;align-items:start">
+
+<div class="card" style="flex-direction:column;align-items:stretch;flex-shrink:0;min-height:0">
+<span class="badge" style="align-self:flex-start">Audience-led landing pages</span>
+<div style="display:flex;flex-direction:column;gap:clamp(6px,0.85vh,10px);margin-top:clamp(8px,1.1vh,12px)">
+<div style="display:flex;align-items:flex-start;gap:10px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-dark)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><polyline points="20 6 9 17 4 12"/></svg><span style="font-size:clamp(13px,1.7vh,17px);color:var(--ink2)">Medical cost sharing for self-employed and freelancers</span></div>
+<div style="display:flex;align-items:flex-start;gap:10px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-dark)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><polyline points="20 6 9 17 4 12"/></svg><span style="font-size:clamp(13px,1.7vh,17px);color:var(--ink2)">Health insurance alternative for small businesses and families</span></div>
+<div style="display:flex;align-items:flex-start;gap:10px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-dark)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><polyline points="20 6 9 17 4 12"/></svg><span style="font-size:clamp(13px,1.7vh,17px);color:var(--ink2)">Pre-Medicare and early-retiree health coverage</span></div>
+<div style="display:flex;align-items:flex-start;gap:10px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-dark)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><polyline points="20 6 9 17 4 12"/></svg><span style="font-size:clamp(13px,1.7vh,17px);color:var(--ink2)">Gap coverage between jobs</span></div>
+<div style="display:flex;align-items:flex-start;gap:10px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-dark)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><polyline points="20 6 9 17 4 12"/></svg><span style="font-size:clamp(13px,1.7vh,17px);color:var(--ink2)">Cost sharing that covers pregnancy and birth</span></div>
+<div style="display:flex;align-items:flex-start;gap:10px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-dark)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><polyline points="20 6 9 17 4 12"/></svg><span style="font-size:clamp(13px,1.7vh,17px);color:var(--ink2)">Holistic and integrative-friendly health coverage</span></div>
+<div style="display:flex;align-items:flex-start;gap:10px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-dark)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><polyline points="20 6 9 17 4 12"/></svg><span style="font-size:clamp(13px,1.7vh,17px);color:var(--ink2)">Secular and non-religious health sharing alternative</span></div>
+<div style="display:flex;align-items:flex-start;gap:10px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-dark)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><polyline points="20 6 9 17 4 12"/></svg><span style="font-size:clamp(13px,1.7vh,17px);color:var(--ink2)">Health sharing for travelers and digital nomads</span></div>
+</div>
+</div>
+
+<div class="card" style="flex-direction:column;align-items:stretch;flex-shrink:0;min-height:0">
+<span class="badge" style="align-self:flex-start">Comparison hub (captures competitor intent)</span>
+<div style="font-size:clamp(13px,1.7vh,17px);color:var(--ink2);line-height:1.5;margin:clamp(8px,1.1vh,12px) 0">
+A clean, citeable Knew Health versus hub covering each category leader:
+</div>
+<div style="display:flex;flex-wrap:wrap;gap:clamp(6px,0.8vw,10px);margin-bottom:clamp(8px,1.1vh,12px)">
+<span style="font-family:'DM Mono',monospace;font-size:clamp(11px,1.3vh,14px);background:var(--paper3);border:1px solid var(--rule);color:var(--ink2);padding:4px 9px;border-radius:4px">vs Medi-Share</span>
+<span style="font-family:'DM Mono',monospace;font-size:clamp(11px,1.3vh,14px);background:var(--paper3);border:1px solid var(--rule);color:var(--ink2);padding:4px 9px;border-radius:4px">vs Samaritan</span>
+<span style="font-family:'DM Mono',monospace;font-size:clamp(11px,1.3vh,14px);background:var(--paper3);border:1px solid var(--rule);color:var(--ink2);padding:4px 9px;border-radius:4px">vs CHM</span>
+<span style="font-family:'DM Mono',monospace;font-size:clamp(11px,1.3vh,14px);background:var(--paper3);border:1px solid var(--rule);color:var(--ink2);padding:4px 9px;border-radius:4px">vs Sedera</span>
+<span style="font-family:'DM Mono',monospace;font-size:clamp(11px,1.3vh,14px);background:var(--paper3);border:1px solid var(--rule);color:var(--ink2);padding:4px 9px;border-radius:4px">vs OneShare</span>
+<span style="font-family:'DM Mono',monospace;font-size:clamp(11px,1.3vh,14px);background:var(--paper3);border:1px solid var(--rule);color:var(--ink2);padding:4px 9px;border-radius:4px">vs traditional insurance</span>
+</div>
+<div style="font-size:clamp(12px,1.5vh,15px);color:var(--accent-dark);font-weight:600;border-top:1px solid var(--rule);padding-top:10px">
+AEO note: these match question-shaped queries AI answer engines pull for, like "health insurance alternatives for self employed," "does health sharing cover pregnancy," "secular alternatives to Medi-Share." A citeable comparison or guide page is the lowest-effort path to citations.
+</div>
+</div>
+
+</div>
+</div></section>
+
+<!-- SLIDE 14 - Quick wins -->
+<section><div class="s">
+<div class="shdr" data-n="14"></div>
+<h2>Quick wins, low effort, high impact</h2>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(10px,1.4vw,18px);flex-shrink:0;align-items:start">
+
+<div class="card" style="flex-shrink:0;min-height:0">
+<div style="display:flex;align-items:center;gap:12px;flex-shrink:0">
+<div style="font-family:'DM Mono',monospace;background:var(--ok-bg);border:1px solid var(--ok-bd);color:var(--ok);border-radius:4px;padding:3px 8px;font-size:clamp(11px,1.3vh,14px);font-weight:700;letter-spacing:.06em">D1</div>
+<div style="font-size:clamp(14px,1.85vh,18px);font-weight:700;color:var(--ink)">Hero stats</div>
+</div>
+<ul style="margin:clamp(8px,1.1vh,12px) 0 0 0;padding-left:clamp(18px,2.2vw,24px);color:var(--ink3);font-size:clamp(12.5px,1.65vh,16.5px);line-height:1.55">
+<li>Average reimbursement time stat above the fold</li>
+<li>Surface the Trustpilot 4.8/5 score and review count on-site</li>
+<li>"Real Members, Real Paid Claims" section with 3 to 4 anonymized outcomes</li>
+</ul>
+</div>
+
+<div class="card" style="flex-shrink:0;min-height:0">
+<div style="display:flex;align-items:center;gap:12px;flex-shrink:0">
+<div style="font-family:'DM Mono',monospace;background:var(--ok-bg);border:1px solid var(--ok-bd);color:var(--ok);border-radius:4px;padding:3px 8px;font-size:clamp(11px,1.3vh,14px);font-weight:700;letter-spacing:.06em">D2</div>
+<div style="font-size:clamp(14px,1.85vh,18px);font-weight:700;color:var(--ink)">Copy and trust</div>
+</div>
+<ul style="margin:clamp(8px,1.1vh,12px) 0 0 0;padding-left:clamp(18px,2.2vw,24px);color:var(--ink3);font-size:clamp(12.5px,1.65vh,16.5px);line-height:1.55">
+<li>Rewrite "VIP Concierge Care Team" to promise a dedicated, named coordinator</li>
+<li>Productize medical bill negotiation as a named, headline benefit</li>
+<li>Soften jargon: define IUA with plain-language analogies inline</li>
+</ul>
+</div>
+
+<div class="card" style="flex-shrink:0;min-height:0">
+<div style="display:flex;align-items:center;gap:12px;flex-shrink:0">
+<div style="font-family:'DM Mono',monospace;background:var(--ok-bg);border:1px solid var(--ok-bd);color:var(--ok);border-radius:4px;padding:3px 8px;font-size:clamp(11px,1.3vh,14px);font-weight:700;letter-spacing:.06em">D3</div>
+<div style="font-size:clamp(14px,1.85vh,18px);font-weight:700;color:var(--ink)">Objection handling</div>
+</div>
+<ul style="margin:clamp(8px,1.1vh,12px) 0 0 0;padding-left:clamp(18px,2.2vw,24px);color:var(--ink3);font-size:clamp(12.5px,1.65vh,16.5px);line-height:1.55">
+<li>Add "where it works and state availability" microcopy to preempt the New York-type drop-off</li>
+<li>Lead "Real Members, Real Paid Claims" above the fold, not buried</li>
+<li>Kill the duplicate-language friction by aligning public replies with how members actually talk</li>
+</ul>
+</div>
+
+<div class="card" style="flex-shrink:0;min-height:0">
+<div style="display:flex;align-items:center;gap:12px;flex-shrink:0">
+<div style="font-family:'DM Mono',monospace;background:var(--ok-bg);border:1px solid var(--ok-bd);color:var(--ok);border-radius:4px;padding:3px 8px;font-size:clamp(11px,1.3vh,14px);font-weight:700;letter-spacing:.06em">D4</div>
+<div style="font-size:clamp(14px,1.85vh,18px);font-weight:700;color:var(--ink)">SEO and AEO</div>
+</div>
+<ul style="margin:clamp(8px,1.1vh,12px) 0 0 0;padding-left:clamp(18px,2.2vw,24px);color:var(--ink3);font-size:clamp(12.5px,1.65vh,16.5px);line-height:1.55">
+<li>Ship 2 persona landing pages (self-employed and maternity)</li>
+<li>Ship 1 comparison hub: Knew Health versus Medi-Share and versus traditional insurance</li>
+<li>Add FAQ schema across the educational content for AI citation candidacy</li>
+</ul>
+</div>
+
+</div>
+</div></section>
+
+<!-- SLIDE 15 - CTA + Team -->
+<section><div class="s">
+<div class="shdr" data-n="15"></div>
+<h2 style="margin:0 0 clamp(10px,1.5vh,18px);text-align:center">Want this turned into a 6-week AEO sprint?</h2>
+<a href="https://calendly.com/filipe-aipeekaboo/30min" target="_blank" rel="noopener" style="display:block;width:100%;background:var(--accent-bg);border:2px solid var(--accent-bd);border-radius:8px;padding:clamp(14px,2vh,22px);text-align:center;text-decoration:none;margin:clamp(12px,1.8vh,20px) 0 clamp(8px,1.1vh,14px);flex-shrink:0">
+<span style="font-size:clamp(14px,1.9vh,22px);font-weight:700;color:var(--accent-dark);letter-spacing:0.01em">Book a 30-Minute Strategy Call</span>
+</a>
+<p style="text-align:center;font-size:clamp(13px,1.7vh,17px);color:var(--ink3);margin:0 auto clamp(12px,1.8vh,22px);flex-shrink:0">Every week Knew Health is absent from an AI answer is another self-employed family choosing Medi-Share, Sedera, or OneShare by default. We close that gap inside two months.</p>
+<div style="text-align:center;margin-bottom:clamp(8px,1.1vh,14px);flex-shrink:0"><span style="font-size:clamp(11px,1.4vh,14px);font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--ink4)">The team</span></div>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:clamp(12px,1.6vw,20px);align-items:start;flex-shrink:0">
+
+<div style="background:var(--paper2);border:1px solid var(--rule);border-radius:12px;padding:clamp(14px,1.9vh,22px);display:flex;flex-direction:column;gap:clamp(10px,1.3vh,16px);flex-shrink:0">
+<div style="display:flex;align-items:center;gap:clamp(12px,1.6vh,17px)"><img src="filipe.jpeg" style="width:50px;height:50px;border-radius:50%;object-fit:cover;border:2px solid var(--rule);flex-shrink:0"><div><div style="font-size:clamp(14px,1.8vh,20px);font-weight:700;color:var(--ink)">Filipe Lins Duarte</div><div style="font-size:clamp(12px,1.5vh,16px);color:var(--accent-dark);font-weight:500">Co-Founder &amp; CEO</div></div></div>
+<div style="font-size:clamp(12px,1.5vh,16px);color:var(--ink3);line-height:1.5">Sales leader turned founder. Built revenue teams across SaaS in Europe and the US. Leads strategy and client relationships.</div>
+</div>
+
+<div style="background:var(--paper2);border:1px solid var(--rule);border-radius:12px;padding:clamp(14px,1.9vh,22px);display:flex;flex-direction:column;gap:clamp(10px,1.3vh,16px);flex-shrink:0">
+<div style="display:flex;align-items:center;gap:clamp(12px,1.6vh,17px)"><img src="john.jpeg" style="width:50px;height:50px;border-radius:50%;object-fit:cover;border:2px solid var(--rule);flex-shrink:0"><div><div style="font-size:clamp(14px,1.8vh,20px);font-weight:700;color:var(--ink)">John Rice</div><div style="font-size:clamp(12px,1.5vh,16px);color:var(--accent-dark);font-weight:500">Co-Founder &amp; CTO</div></div></div>
+<div style="font-size:clamp(12px,1.5vh,16px);color:var(--ink3);line-height:1.5">Full-stack engineer and serial builder. Designed the AI Peekaboo platform from scratch. Leads product and engineering.</div>
+</div>
+
+<div style="background:var(--paper2);border:1px solid var(--rule);border-radius:12px;padding:clamp(14px,1.9vh,22px);display:flex;flex-direction:column;gap:clamp(10px,1.3vh,16px);flex-shrink:0">
+<div style="display:flex;align-items:center;gap:clamp(12px,1.6vh,17px)"><img src="danny-kirk.jpeg" style="width:50px;height:50px;border-radius:50%;object-fit:cover;border:2px solid var(--rule);flex-shrink:0"><div><div style="font-size:clamp(14px,1.8vh,20px);font-weight:700;color:var(--ink)">Danny Kirk</div><div style="font-size:clamp(12px,1.5vh,16px);color:var(--accent-dark);font-weight:500">COO &amp; Advisory</div></div></div>
+<div style="font-size:clamp(12px,1.5vh,16px);color:var(--ink3);line-height:1.5">Reddit community expert and operator. Founded ReddiReach in 2017. Brings platform-native knowledge and operator experience.</div>
+</div>
+
+</div>
+</div></section>
+
+</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reveal.min.js"></script>
+<script>
+var T=15,D='knewhealth.com',P='Trustpilot Review Intelligence';
+Reveal.initialize({hash:true,transition:'none',disableLayout:true,width:1920,height:1080,margin:0,minScale:0.1,maxScale:3});
+document.querySelectorAll('.shdr').forEach(function(el){
+  var n=el.getAttribute('data-n');
+  var src=el.getAttribute('data-source');
+  var srcHtml='';
+  if(src){
+ var srcMap={
+ 'trustpilot':['https://www.google.com/s2/favicons?domain=trustpilot.com&sz=32','Data: Trustpilot (4.8/5, ~150 reviews)']
+ };
+ if(srcMap[src]) srcHtml='<div style="display:flex;justify-content:flex-end;margin-bottom:clamp(5px,0.7vh,9px)"><div class="data-src"><img src="'+srcMap[src][0]+'"><span>'+srcMap[src][1]+'</span></div></div>';
+  }
+  var LEAD='<img src="https://www.google.com/s2/favicons?domain=knewhealth.com&sz=64" class="hdr-favicon">';
+  el.innerHTML='<div class="stripe"></div><div class="hdr"><div style="display:flex;align-items:center;gap:10px">'+LEAD+'<span class="tag">'+P+'</span></div><div class="hdr-right"><span class="snum">'+n+' / '+T+'</span><a class="powered" href="https://www.aipeekaboo.com" target="_blank" rel="noopener"><span>Powered by</span><img src="https://www.aipeekaboo.com/images/peekaboo-logo-black.png"></a></div></div><div class="divider"></div>'+srcHtml;
+});
+</script>
+</body>
+</html>

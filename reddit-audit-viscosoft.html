@@ -2808,7 +2808,12 @@ function buildTopics() {
   S._topicsFitFilter = S._topicsFitFilter || 'all';
 
   // KPI computations
-  const totalPosts = gaps.reduce((s, g) => s + g.post_count, 0);
+  // Use the same source as the Overview tab's Total Posts stat, not a sum of
+  // cluster post_count (a thread can belong to more than one theme cluster,
+  // so summing double-counts and drifts from the real total).
+  const totalPosts = (S.data.stats && S.data.stats.total_posts != null)
+    ? S.data.stats.total_posts
+    : (S.data.threads || []).length;
   const topicClusters = gaps.length;
   const avgFit = gaps.length ? (gaps.reduce((s, g) => s + g.avg_fit, 0) / gaps.length).toFixed(1) : '0.0';
   const subCount = {};

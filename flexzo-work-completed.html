@@ -1,0 +1,1307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flexzo — Work Completed</title>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YV8FCLN403"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-YV8FCLN403');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reveal.min.css">
+<style>
+  :root {
+    --accent: #0075FF;
+    --accent-bg: #EFF7FF;
+    --accent-bd: #BAD9FF;
+    --accent-dark: #0060D0;
+    --accent2: #7C3AED;
+    --accent2-bg: #F5F3FF;
+    --accent2-bd: #DDD6FE;
+    --accent2-dark: #6D28D9;
+    --ink: #0a2540;
+    --ink2: #1e3a5f;
+    --ink3: #617899;
+    --ink4: #9EB3CC;
+    --paper: #fff;
+    --paper2: #F7FAFD;
+    --paper3: #EEF4FA;
+    --rule: #D9E7F5;
+    --ok: #16a34a;
+    --ok-bg: #f0fdf4;
+    --ok-bd: #bbf7d0;
+    --warn: #ea580c;
+    --warn-bg: #fff7ed;
+    --warn-bd: #fed7aa;
+    --red: #dc2626;
+    --red-bg: #fef2f2;
+    --red-bd: #fecaca;
+  }
+  *{box-sizing:border-box;font-family:"DM Sans",sans-serif}
+  html,body{margin:0;padding:0;width:100%;height:100%;overflow:hidden;background:#fff}
+  .reveal-viewport,.reveal{width:100%!important;height:100%!important;background:#fff!important}
+  .reveal .slides section{width:100vw!important;height:100vh!important;padding:0!important;background:#fff!important;display:flex!important;flex-direction:column!important;text-align:left!important}
+  .s{width:100vw;height:100vh;padding:3vh 4.5vw 2.5vh;display:flex;flex-direction:column;position:relative;overflow:hidden}
+  .stripe{position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--accent-dark)}
+  .hdr{display:flex;justify-content:space-between;align-items:center;flex-shrink:0;margin-bottom:.6vh}
+  .hdr-right{display:flex;flex-direction:column;align-items:flex-end}
+  .snum{font-family:"DM Mono",monospace;font-size:clamp(10px,1.2vh,12px);color:var(--accent-dark);background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:3px;padding:2px 8px;letter-spacing:.06em}
+  .tag{font-size:clamp(10px,1.2vh,12px);font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink4)}
+  .powered{display:flex;align-items:center;gap:5px;text-decoration:none;margin-top:3px}
+  .powered span{font-size:clamp(8px,1vh,10px);color:var(--ink4)}
+  .powered img{height:clamp(10px,1.4vh,14px);width:auto;opacity:.7}
+  .divider{height:1px;background:var(--rule);flex-shrink:0;margin-bottom:clamp(10px,1.5vh,18px)}
+  h2{font-size:clamp(22px,3.8vh,42px);font-weight:700;color:var(--ink);margin:0 0 clamp(14px,2vh,22px);line-height:1.15;flex-shrink:0}
+  .rg2{display:grid;grid-template-columns:1fr 1fr}
+  .rg3{display:grid;grid-template-columns:1fr 1fr 1fr}
+  .rf3{display:flex}
+  @media(max-width:1024px){.s{height:100svh!important;overflow-y:auto!important;-webkit-overflow-scrolling:touch!important}}
+  @media(max-width:900px){.rg3{grid-template-columns:1fr 1fr!important}.rf3{flex-wrap:wrap!important}.rf3>*{flex:1 1 calc(50% - 20px)!important;min-width:calc(50% - 20px)!important}}
+  @media(max-width:768px){[style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr!important}[style*="grid-template-columns:2fr 1fr 1fr 1fr"]{grid-template-columns:1fr!important}}
+  @media(max-width:640px){.rg2,.rg3{grid-template-columns:1fr!important}.rf3{flex-direction:column!important}}
+
+  /* ── Utility classes ── */
+  .hdr-favicon{border-radius:10px;width:clamp(26px,3.5vh,40px);height:clamp(26px,3.5vh,40px);object-fit:contain}
+  .card{background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(13px,1.7vh,19px) clamp(14px,1.7vw,19px);display:flex;align-items:flex-start;gap:14px}
+  .badge{font-size:clamp(9px,1.05vh,11px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-dark);background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:3px;padding:1px 6px;white-space:nowrap;flex-shrink:0}
+  .ok-badge{font-size:clamp(11px,1.3vh,13px);font-weight:700;color:var(--ok);background:var(--ok-bg);border:1px solid var(--ok-bd);border-radius:3px;padding:1px 5px;text-align:center;margin:auto}
+  .bullet-row{font-size:clamp(14px,1.9vh,18px);color:var(--ink3);display:flex;gap:7px}
+  .favicon-sm{width:12px;height:12px;border-radius:2px;opacity:0.6}
+</style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- SLIDE 01: Cover -->
+<section><div class="s" style="justify-content:center;gap:clamp(16px,2.5vh,32px)">
+<div class="stripe"></div>
+<div style="display:flex;align-items:center;gap:12px">
+  <img src="https://www.google.com/s2/favicons?domain=flexzo.ai&sz=128" style="border-radius:12px;width:clamp(36px,5vh,54px);height:clamp(36px,5vh,54px);object-fit:contain">
+  <span class="tag">Progress Update</span>
+</div>
+<div>
+  <h2 style="font-size:clamp(28px,5.5vh,62px);margin-bottom:clamp(20px,3vh,36px);font-weight:700">A Progress Report: The Work We&rsquo;ve Done So Far.</h2>
+  <p style="font-size:clamp(17px,2.5vh,26px);color:var(--ink2);line-height:1.6;margin:0;font-weight:400">Two weeks into the engagement, and the foundation is already paying off.<br>Here is what we have delivered, and the early impact it is already having.</p>
+</div>
+<div style="display:flex;align-items:center;gap:clamp(16px,2vw,28px);margin-top:clamp(8px,1.5vh,20px)">
+  <a href="https://www.aipeekaboo.com" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:8px;text-decoration:none">
+    <span style="font-size:clamp(10px,1.2vh,12px);color:var(--ink4)">Powered by</span>
+    <img src="https://www.aipeekaboo.com/images/peekaboo-logo-black.png" style="height:clamp(12px,1.8vh,20px);width:auto;opacity:.6">
+  </a>
+  <span style="color:var(--rule)">|</span>
+  <span style="font-size:clamp(10px,1.2vh,12px);color:var(--ink4)">Prepared for Flexzo &middot; June 26 &ndash; July 10, 2026</span>
+</div>
+</div></section>
+
+<!-- SLIDE 02: Looking at the Metrics (Divider) -->
+<section><div class="s">
+<div class="shdr" data-n="02"></div>
+<div style="flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:clamp(18px,2.6vh,30px);min-height:0">
+  <span class="tag">Measurement</span>
+  <h2 style="font-size:clamp(32px,5.8vh,64px);margin:0;font-weight:700;max-width:22ch;line-height:1.15">Looking at the Metrics</h2>
+  <p style="font-size:clamp(16px,2.2vh,24px);color:var(--ink2);line-height:1.6;margin:0;max-width:56ch;font-weight:400">With tracking finally accurate, here is what Google Analytics and Search Console are showing us about how people find and use flexzo.ai.</p>
+  <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(12px,1.6vw,20px);margin-top:clamp(10px,1.6vh,22px);width:100%;max-width:520px">
+    <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(14px,1.9vh,22px) clamp(10px,1.2vw,14px);display:flex;flex-direction:column;align-items:center;gap:8px">
+      <img src="https://www.gstatic.com/images/branding/product/2x/analytics_96dp.png" style="width:clamp(22px,3vh,30px);height:clamp(22px,3vh,30px);border-radius:5px">
+      <span style="font-size:clamp(12px,1.6vh,15px);font-weight:600;color:var(--ink)">Google Analytics</span>
+    </div>
+    <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(14px,1.9vh,22px) clamp(10px,1.2vw,14px);display:flex;flex-direction:column;align-items:center;gap:8px">
+      <img src="https://www.gstatic.com/images/branding/product/2x/search_console_96dp.png" style="width:clamp(22px,3vh,30px);height:clamp(22px,3vh,30px);border-radius:5px">
+      <span style="font-size:clamp(12px,1.6vh,15px);font-weight:600;color:var(--ink)">Search Console</span>
+    </div>
+  </div>
+</div>
+</div></section>
+
+<!-- SLIDE 03: Traffic Sources, Last 7 Days -->
+<section><div class="s">
+<div class="shdr" data-n="03"></div>
+
+<div style="display:flex;align-items:center;gap:10px;margin-bottom:clamp(14px,2vh,22px);flex-shrink:0">
+  <img src="https://www.gstatic.com/images/branding/product/2x/analytics_96dp.png" style="width:clamp(18px,2.4vh,24px);height:clamp(18px,2.4vh,24px);border-radius:5px;flex-shrink:0">
+  <span style="font-family:'DM Mono',monospace;font-size:clamp(10px,1.2vh,12px);font-weight:700;color:var(--accent-dark);background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:4px;padding:2px 8px">GA4</span>
+  <h2 style="margin:0">Traffic Sources, Last 7 Days</h2>
+</div>
+<div style="font-size:clamp(15px,2.1vh,21px);color:var(--ink2);font-weight:500;margin-bottom:clamp(16px,2.4vh,28px);flex-shrink:0">4,211 sessions on flexzo.ai between July 3 and July 9, 2026, broken down by channel and by individual source/medium.</div>
+
+<div style="flex:1;min-height:0;overflow:hidden;display:flex;flex-direction:column;gap:clamp(12px,1.6vh,18px)">
+
+  <div style="flex-shrink:0;background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(18px,2.2vh,26px) clamp(24px,2.4vw,32px);display:flex;flex-direction:column;gap:clamp(10px,1.4vh,16px)">
+    <div style="font-size:clamp(12px,1.4vh,14px);font-weight:700;color:var(--ink);text-transform:uppercase;letter-spacing:.03em">Channel Breakdown</div>
+    <div style="display:flex;align-items:center;gap:clamp(28px,3.2vw,44px)">
+      <svg width="200" height="200" viewBox="0 0 200 200" style="flex-shrink:0">
+        <g transform="rotate(-90 100 100)">
+          <circle cx="100" cy="100" r="70" fill="none" stroke="var(--accent)" stroke-width="28" stroke-dasharray="213.83 439.82" stroke-dashoffset="0"></circle>
+          <circle cx="100" cy="100" r="70" fill="none" stroke="var(--accent2)" stroke-width="28" stroke-dasharray="92.05 439.82" stroke-dashoffset="-216.83"></circle>
+          <circle cx="100" cy="100" r="70" fill="none" stroke="var(--ink4)" stroke-width="28" stroke-dasharray="50.89 439.82" stroke-dashoffset="-311.88"></circle>
+          <circle cx="100" cy="100" r="70" fill="none" stroke="var(--ok)" stroke-width="28" stroke-dasharray="30.11 439.82" stroke-dashoffset="-365.77"></circle>
+          <circle cx="100" cy="100" r="70" fill="none" stroke="var(--warn)" stroke-width="28" stroke-dasharray="20.29 439.82" stroke-dashoffset="-398.88"></circle>
+          <circle cx="100" cy="100" r="70" fill="none" stroke="var(--red)" stroke-width="28" stroke-dasharray="14.65 439.82" stroke-dashoffset="-422.17"></circle>
+        </g>
+        <text x="100" y="97" text-anchor="middle" style="font-family:'DM Mono',monospace;font-size:26px;font-weight:700;fill:var(--ink)">4,211</text>
+        <text x="100" y="116" text-anchor="middle" style="font-size:10px;fill:var(--ink4);text-transform:uppercase;letter-spacing:.04em">sessions</text>
+      </svg>
+
+      <div style="display:flex;flex-direction:column;gap:clamp(9px,1.2vh,13px);flex:1;min-width:0">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:12px">
+          <div style="display:flex;align-items:center;gap:8px;min-width:0">
+            <span style="width:10px;height:10px;border-radius:50%;background:var(--accent);flex-shrink:0"></span>
+            <span style="font-size:clamp(13px,1.6vh,15px);color:var(--ink2);font-weight:600">Direct</span>
+          </div>
+          <div style="display:flex;align-items:baseline;gap:10px;flex-shrink:0">
+            <span style="font-family:'DM Mono',monospace;font-size:clamp(14px,1.7vh,16px);font-weight:700;color:var(--ink)">2,076</span>
+            <span style="font-family:'DM Mono',monospace;font-size:clamp(11px,1.3vh,13px);color:var(--ink3);width:46px;text-align:right">49.3%</span>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:12px">
+          <div style="display:flex;align-items:center;gap:8px;min-width:0">
+            <span style="width:10px;height:10px;border-radius:50%;background:var(--accent2);flex-shrink:0"></span>
+            <span style="font-size:clamp(13px,1.6vh,15px);color:var(--ink2);font-weight:600">Paid (Google Ads)</span>
+          </div>
+          <div style="display:flex;align-items:baseline;gap:10px;flex-shrink:0">
+            <span style="font-family:'DM Mono',monospace;font-size:clamp(14px,1.7vh,16px);font-weight:700;color:var(--ink)">910</span>
+            <span style="font-family:'DM Mono',monospace;font-size:clamp(11px,1.3vh,13px);color:var(--ink3);width:46px;text-align:right">21.6%</span>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:12px">
+          <div style="display:flex;align-items:center;gap:8px;min-width:0">
+            <span style="width:10px;height:10px;border-radius:50%;background:var(--ink4);flex-shrink:0"></span>
+            <span style="font-size:clamp(13px,1.6vh,15px);color:var(--ink2);font-weight:600">Unassigned</span>
+          </div>
+          <div style="display:flex;align-items:baseline;gap:10px;flex-shrink:0">
+            <span style="font-family:'DM Mono',monospace;font-size:clamp(14px,1.7vh,16px);font-weight:700;color:var(--ink)">516</span>
+            <span style="font-family:'DM Mono',monospace;font-size:clamp(11px,1.3vh,13px);color:var(--ink3);width:46px;text-align:right">12.3%</span>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:12px">
+          <div style="display:flex;align-items:center;gap:8px;min-width:0">
+            <span style="width:10px;height:10px;border-radius:50%;background:var(--ok);flex-shrink:0"></span>
+            <span style="font-size:clamp(13px,1.6vh,15px);color:var(--ink2);font-weight:600">Organic Search</span>
+          </div>
+          <div style="display:flex;align-items:baseline;gap:10px;flex-shrink:0">
+            <span style="font-family:'DM Mono',monospace;font-size:clamp(14px,1.7vh,16px);font-weight:700;color:var(--ink)">317</span>
+            <span style="font-family:'DM Mono',monospace;font-size:clamp(11px,1.3vh,13px);color:var(--ink3);width:46px;text-align:right">7.5%</span>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:12px">
+          <div style="display:flex;align-items:center;gap:8px;min-width:0">
+            <span style="width:10px;height:10px;border-radius:50%;background:var(--warn);flex-shrink:0"></span>
+            <span style="font-size:clamp(13px,1.6vh,15px);color:var(--ink2);font-weight:600">Organic Social</span>
+          </div>
+          <div style="display:flex;align-items:baseline;gap:10px;flex-shrink:0">
+            <span style="font-family:'DM Mono',monospace;font-size:clamp(14px,1.7vh,16px);font-weight:700;color:var(--ink)">223</span>
+            <span style="font-family:'DM Mono',monospace;font-size:clamp(11px,1.3vh,13px);color:var(--ink3);width:46px;text-align:right">5.3%</span>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:12px">
+          <div style="display:flex;align-items:center;gap:8px;min-width:0">
+            <span style="width:10px;height:10px;border-radius:50%;background:var(--red);flex-shrink:0"></span>
+            <span style="font-size:clamp(13px,1.6vh,15px);color:var(--ink2);font-weight:600">Other (Referral + AI Assistant)</span>
+          </div>
+          <div style="display:flex;align-items:baseline;gap:10px;flex-shrink:0">
+            <span style="font-family:'DM Mono',monospace;font-size:clamp(14px,1.7vh,16px);font-weight:700;color:var(--ink)">169</span>
+            <span style="font-family:'DM Mono',monospace;font-size:clamp(11px,1.3vh,13px);color:var(--ink3);width:46px;text-align:right">4.0%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="flex:1;min-height:0;overflow:hidden;background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(14px,1.8vh,20px) clamp(20px,2vw,26px);display:flex;flex-direction:column">
+    <div style="font-size:clamp(12px,1.4vh,14px);font-weight:700;color:var(--ink);text-transform:uppercase;letter-spacing:.03em;margin-bottom:clamp(8px,1.1vh,12px);flex-shrink:0">Source / Medium Breakdown: Top 12 by Sessions</div>
+    <div style="flex:1;min-height:0;display:flex;flex-direction:column;justify-content:space-between">
+
+      <div style="display:flex;align-items:center;gap:14px;padding:clamp(4px,0.6vh,7px) 4px;background:transparent">
+        <div style="width:260px;flex-shrink:0;font-size:clamp(12px,1.4vh,14px);color:var(--ink2);font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">direct / (none)</div>
+        <div style="flex:1;height:14px;background:var(--paper3);border-radius:999px;overflow:hidden"><div style="width:100%;height:100%;background:var(--accent);border-radius:999px"></div></div>
+        <div style="width:64px;flex-shrink:0;text-align:right;font-family:'DM Mono',monospace;font-size:clamp(12px,1.4vh,14px);font-weight:700;color:var(--ink)">2,076</div>
+      </div>
+
+      <div style="display:flex;align-items:center;gap:14px;padding:clamp(4px,0.6vh,7px) 4px;background:#fff">
+        <div style="width:260px;flex-shrink:0;font-size:clamp(12px,1.4vh,14px);color:var(--ink2);font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">google / cpc</div>
+        <div style="flex:1;height:14px;background:var(--paper3);border-radius:999px;overflow:hidden"><div style="width:42.4%;height:100%;background:var(--accent);border-radius:999px"></div></div>
+        <div style="width:64px;flex-shrink:0;text-align:right;font-family:'DM Mono',monospace;font-size:clamp(12px,1.4vh,14px);font-weight:700;color:var(--ink)">881</div>
+      </div>
+
+      <div style="display:flex;align-items:center;gap:14px;padding:clamp(4px,0.6vh,7px) 4px;background:transparent">
+        <div style="width:260px;flex-shrink:0;font-size:clamp(12px,1.4vh,14px);color:var(--ink2);font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">google / organic</div>
+        <div style="flex:1;height:14px;background:var(--paper3);border-radius:999px;overflow:hidden"><div style="width:14.3%;height:100%;background:var(--accent);border-radius:999px"></div></div>
+        <div style="width:64px;flex-shrink:0;text-align:right;font-family:'DM Mono',monospace;font-size:clamp(12px,1.4vh,14px);font-weight:700;color:var(--ink)">296</div>
+      </div>
+
+      <div style="display:flex;align-items:center;gap:14px;padding:clamp(4px,0.6vh,7px) 4px;background:#fff">
+        <div style="width:260px;flex-shrink:0;font-size:clamp(12px,1.4vh,14px);color:var(--ink2);font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">jobiqo / job_board</div>
+        <div style="flex:1;height:14px;background:var(--paper3);border-radius:999px;overflow:hidden"><div style="width:10.1%;height:100%;background:var(--accent);border-radius:999px"></div></div>
+        <div style="width:64px;flex-shrink:0;text-align:right;font-family:'DM Mono',monospace;font-size:clamp(12px,1.4vh,14px);font-weight:700;color:var(--ink)">210</div>
+      </div>
+
+      <div style="display:flex;align-items:center;gap:14px;padding:clamp(4px,0.6vh,7px) 4px;background:transparent">
+        <div style="width:260px;flex-shrink:0;font-size:clamp(12px,1.4vh,14px);color:var(--ink2);font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">talroo / sponsored</div>
+        <div style="flex:1;height:14px;background:var(--paper3);border-radius:999px;overflow:hidden"><div style="width:7.9%;height:100%;background:var(--accent);border-radius:999px"></div></div>
+        <div style="width:64px;flex-shrink:0;text-align:right;font-family:'DM Mono',monospace;font-size:clamp(12px,1.4vh,14px);font-weight:700;color:var(--ink)">164</div>
+      </div>
+
+      <div style="display:flex;align-items:center;gap:14px;padding:clamp(4px,0.6vh,7px) 4px;background:#fff">
+        <div style="width:260px;flex-shrink:0;font-size:clamp(12px,1.4vh,14px);color:var(--ink2);font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">linkedin.com / referral</div>
+        <div style="flex:1;height:14px;background:var(--paper3);border-radius:999px;overflow:hidden"><div style="width:6.0%;height:100%;background:var(--accent);border-radius:999px"></div></div>
+        <div style="width:64px;flex-shrink:0;text-align:right;font-family:'DM Mono',monospace;font-size:clamp(12px,1.4vh,14px);font-weight:700;color:var(--ink)">124</div>
+      </div>
+
+      <div style="display:flex;align-items:center;gap:14px;padding:clamp(4px,0.6vh,7px) 4px;background:transparent">
+        <div style="width:260px;flex-shrink:0;font-size:clamp(12px,1.4vh,14px);color:var(--ink2);font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">linkedin / job_board</div>
+        <div style="flex:1;height:14px;background:var(--paper3);border-radius:999px;overflow:hidden"><div style="width:4.3%;height:100%;background:var(--accent);border-radius:999px"></div></div>
+        <div style="width:64px;flex-shrink:0;text-align:right;font-family:'DM Mono',monospace;font-size:clamp(12px,1.4vh,14px);font-weight:700;color:var(--ink)">89</div>
+      </div>
+
+      <div style="display:flex;align-items:center;gap:14px;padding:clamp(4px,0.6vh,7px) 4px;background:#fff">
+        <div style="width:260px;flex-shrink:0;font-size:clamp(12px,1.4vh,14px);color:var(--ink2);font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">indeed / sponsored</div>
+        <div style="flex:1;height:14px;background:var(--paper3);border-radius:999px;overflow:hidden"><div style="width:3.7%;height:100%;background:var(--accent);border-radius:999px"></div></div>
+        <div style="width:64px;flex-shrink:0;text-align:right;font-family:'DM Mono',monospace;font-size:clamp(12px,1.4vh,14px);font-weight:700;color:var(--ink)">76</div>
+      </div>
+
+      <div style="display:flex;align-items:center;gap:14px;padding:clamp(4px,0.6vh,7px) 4px;background:transparent">
+        <div style="width:260px;flex-shrink:0;font-size:clamp(12px,1.4vh,14px);color:var(--ink2);font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">ziprecruiter / sponsored</div>
+        <div style="flex:1;height:14px;background:var(--paper3);border-radius:999px;overflow:hidden"><div style="width:2.6%;height:100%;background:var(--accent);border-radius:999px"></div></div>
+        <div style="width:64px;flex-shrink:0;text-align:right;font-family:'DM Mono',monospace;font-size:clamp(12px,1.4vh,14px);font-weight:700;color:var(--ink)">54</div>
+      </div>
+
+      <div style="display:flex;align-items:center;gap:14px;padding:clamp(4px,0.6vh,7px) 4px;background:#fff">
+        <div style="width:260px;flex-shrink:0;font-size:clamp(12px,1.4vh,14px);color:var(--ink2);font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">school.footybrief.com / referral <span style="color:var(--red);font-weight:700;font-size:clamp(10px,1.1vh,12px)">&#9888; likely referral spam</span></div>
+        <div style="flex:1;height:14px;background:var(--paper3);border-radius:999px;overflow:hidden"><div style="width:1.2%;min-width:5px;height:100%;background:var(--red);border-radius:999px"></div></div>
+        <div style="width:64px;flex-shrink:0;text-align:right;font-family:'DM Mono',monospace;font-size:clamp(12px,1.4vh,14px);font-weight:700;color:var(--ink)">25</div>
+      </div>
+
+      <div style="display:flex;align-items:center;gap:14px;padding:clamp(4px,0.6vh,7px) 4px;background:transparent">
+        <div style="width:260px;flex-shrink:0;font-size:clamp(12px,1.4vh,14px);color:var(--ink2);font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">ziprecruiter / cpc</div>
+        <div style="flex:1;height:14px;background:var(--paper3);border-radius:999px;overflow:hidden"><div style="width:0.9%;min-width:4px;height:100%;background:var(--accent);border-radius:999px"></div></div>
+        <div style="width:64px;flex-shrink:0;text-align:right;font-family:'DM Mono',monospace;font-size:clamp(12px,1.4vh,14px);font-weight:700;color:var(--ink)">18</div>
+      </div>
+
+      <div style="display:flex;align-items:center;gap:14px;padding:clamp(4px,0.6vh,7px) 4px;background:#fff">
+        <div style="width:260px;flex-shrink:0;font-size:clamp(12px,1.4vh,14px);color:var(--ink2);font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">bing / organic</div>
+        <div style="flex:1;height:14px;background:var(--paper3);border-radius:999px;overflow:hidden"><div style="width:0.7%;min-width:4px;height:100%;background:var(--accent);border-radius:999px"></div></div>
+        <div style="width:64px;flex-shrink:0;text-align:right;font-family:'DM Mono',monospace;font-size:clamp(12px,1.4vh,14px);font-weight:700;color:var(--ink)">14</div>
+      </div>
+
+    </div>
+  </div>
+
+  <div style="flex-shrink:0;background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:8px;padding:clamp(9px,1.2vh,14px) clamp(12px,1.4vw,16px);font-size:clamp(13px,1.5vh,15px);color:var(--ink2);line-height:1.5">
+    <strong style="color:var(--ink)">Direct is the largest single channel</strong>, which is typical for a job and staffing platform: it reflects bookmarked returns and untagged job-board links landing as direct traffic, not literally typed URLs. Google Ads is the clear number two paid driver at 910 sessions. Beyond Google, job boards including Jobiqo, Talroo, Indeed, ZipRecruiter and LinkedIn together contribute a meaningful, independent distribution channel worth tracking on its own.
+  </div>
+
+</div>
+</div></section>
+
+<!-- SLIDE 04: AI Assistant / LLM Referral Traffic -->
+<section><div class="s">
+<div class="shdr" data-n="04"></div>
+
+<div style="display:flex;align-items:center;gap:10px;margin-bottom:clamp(14px,2vh,22px);flex-shrink:0">
+  <img src="https://www.gstatic.com/images/branding/product/2x/analytics_96dp.png" style="width:clamp(18px,2.4vh,24px);height:clamp(18px,2.4vh,24px);border-radius:5px;flex-shrink:0">
+  <span style="font-family:'DM Mono',monospace;font-size:clamp(10px,1.2vh,12px);font-weight:700;color:var(--accent2-dark);background:var(--accent2-bg);border:1px solid var(--accent2-bd);border-radius:4px;padding:2px 8px">EARLY SIGNAL</span>
+  <h2 style="margin:0">AI Assistant Referral Traffic</h2>
+</div>
+<div style="font-size:clamp(15px,2.1vh,21px);color:var(--ink2);font-weight:500;margin-bottom:clamp(16px,2.4vh,28px);flex-shrink:0">GA4, flexzo.ai, last 7 days (Jul 3&ndash;9, 2026): sessions where source/medium included an AI assistant referrer</div>
+
+<div style="flex:1;min-height:0;overflow:hidden;display:flex;flex-direction:column;gap:clamp(14px,2vh,22px)">
+
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(12px,1.4vw,18px);flex-shrink:0">
+    <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(8px,1.2vh,14px) clamp(10px,1.2vw,16px)">
+      <div style="font-family:'DM Mono',monospace;font-size:clamp(28px,3.6vh,42px);font-weight:700;color:var(--ink)">10</div>
+      <div style="font-size:clamp(11px,1.2vh,13px);font-weight:700;letter-spacing:0.03em;text-transform:uppercase;color:var(--ink3);margin-top:2px">ChatGPT Sessions This Week</div>
+    </div>
+    <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(8px,1.2vh,14px) clamp(10px,1.2vw,16px)">
+      <div style="font-family:'DM Mono',monospace;font-size:clamp(28px,3.6vh,42px);font-weight:700;color:var(--ink)">60%</div>
+      <div style="font-size:clamp(11px,1.2vh,13px);font-weight:700;letter-spacing:0.03em;text-transform:uppercase;color:var(--ink3);margin-top:2px">Engagement Rate</div>
+    </div>
+    <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(8px,1.2vh,14px) clamp(10px,1.2vw,16px)">
+      <div style="font-family:'DM Mono',monospace;font-size:clamp(28px,3.6vh,42px);font-weight:700;color:var(--ink)">1 <span style="font-size:0.5em;color:var(--ink4)">of 7</span></div>
+      <div style="font-size:clamp(11px,1.2vh,13px);font-weight:700;letter-spacing:0.03em;text-transform:uppercase;color:var(--ink3);margin-top:2px">AI Surfaces With Traffic So Far</div>
+    </div>
+    <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(8px,1.2vh,14px) clamp(10px,1.2vw,16px)">
+      <div style="font-family:'DM Mono',monospace;font-size:clamp(28px,3.6vh,42px);font-weight:700;color:var(--ink)">7</div>
+      <div style="font-size:clamp(11px,1.2vh,13px);font-weight:700;letter-spacing:0.03em;text-transform:uppercase;color:var(--ink3);margin-top:2px">Landing Pages Hit</div>
+    </div>
+  </div>
+
+  <div style="flex:1;min-height:0;display:grid;grid-template-columns:1.3fr 1fr;gap:clamp(12px,1.4vw,18px)">
+
+    <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(14px,1.8vh,22px) clamp(16px,1.6vw,24px);display:flex;flex-direction:column;min-height:0">
+      <div style="font-size:clamp(13px,1.5vh,16px);font-weight:700;color:var(--ink);margin-bottom:clamp(12px,1.6vh,18px);flex-shrink:0">Daily Trend, ChatGPT Referral Sessions (Jul 3&ndash;9)</div>
+      <div style="flex:1;display:flex;flex-direction:column;justify-content:space-between;min-height:0">
+
+        <div style="display:flex;align-items:center;gap:clamp(8px,1vw,14px)">
+          <div style="width:52px;flex-shrink:0;font-family:'DM Mono',monospace;font-size:clamp(11px,1.2vh,13px);color:var(--ink3)">Jul 3</div>
+          <div style="flex:1;height:clamp(14px,2vh,20px);background:var(--paper3);border-radius:4px;overflow:hidden"><div style="height:100%;width:0%;background:var(--accent2)"></div></div>
+          <div style="width:20px;flex-shrink:0;text-align:right;font-family:'DM Mono',monospace;font-size:clamp(12px,1.4vh,15px);font-weight:700;color:var(--ink)">0</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:clamp(8px,1vw,14px)">
+          <div style="width:52px;flex-shrink:0;font-family:'DM Mono',monospace;font-size:clamp(11px,1.2vh,13px);color:var(--ink3)">Jul 4</div>
+          <div style="flex:1;height:clamp(14px,2vh,20px);background:var(--paper3);border-radius:4px;overflow:hidden"><div style="height:100%;width:20%;background:var(--accent2)"></div></div>
+          <div style="width:20px;flex-shrink:0;text-align:right;font-family:'DM Mono',monospace;font-size:clamp(12px,1.4vh,15px);font-weight:700;color:var(--ink)">1</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:clamp(8px,1vw,14px)">
+          <div style="width:52px;flex-shrink:0;font-family:'DM Mono',monospace;font-size:clamp(11px,1.2vh,13px);color:var(--ink3)">Jul 5</div>
+          <div style="flex:1;height:clamp(14px,2vh,20px);background:var(--paper3);border-radius:4px;overflow:hidden"><div style="height:100%;width:40%;background:var(--accent2)"></div></div>
+          <div style="width:20px;flex-shrink:0;text-align:right;font-family:'DM Mono',monospace;font-size:clamp(12px,1.4vh,15px);font-weight:700;color:var(--ink)">2</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:clamp(8px,1vw,14px)">
+          <div style="width:52px;flex-shrink:0;font-family:'DM Mono',monospace;font-size:clamp(11px,1.2vh,13px);color:var(--ink3)">Jul 6</div>
+          <div style="flex:1;height:clamp(14px,2vh,20px);background:var(--paper3);border-radius:4px;overflow:hidden"><div style="height:100%;width:0%;background:var(--accent2)"></div></div>
+          <div style="width:20px;flex-shrink:0;text-align:right;font-family:'DM Mono',monospace;font-size:clamp(12px,1.4vh,15px);font-weight:700;color:var(--ink)">0</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:clamp(8px,1vw,14px)">
+          <div style="width:52px;flex-shrink:0;font-family:'DM Mono',monospace;font-size:clamp(11px,1.2vh,13px);color:var(--ink3)">Jul 7</div>
+          <div style="flex:1;height:clamp(14px,2vh,20px);background:var(--paper3);border-radius:4px;overflow:hidden"><div style="height:100%;width:20%;background:var(--accent2)"></div></div>
+          <div style="width:20px;flex-shrink:0;text-align:right;font-family:'DM Mono',monospace;font-size:clamp(12px,1.4vh,15px);font-weight:700;color:var(--ink)">1</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:clamp(8px,1vw,14px)">
+          <div style="width:52px;flex-shrink:0;font-family:'DM Mono',monospace;font-size:clamp(11px,1.2vh,13px);color:var(--ink3)">Jul 8</div>
+          <div style="flex:1;height:clamp(14px,2vh,20px);background:var(--paper3);border-radius:4px;overflow:hidden"><div style="height:100%;width:20%;background:var(--accent2)"></div></div>
+          <div style="width:20px;flex-shrink:0;text-align:right;font-family:'DM Mono',monospace;font-size:clamp(12px,1.4vh,15px);font-weight:700;color:var(--ink)">1</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:clamp(8px,1vw,14px)">
+          <div style="width:52px;flex-shrink:0;font-family:'DM Mono',monospace;font-size:clamp(11px,1.2vh,13px);color:var(--ink3)">Jul 9</div>
+          <div style="flex:1;height:clamp(14px,2vh,20px);background:var(--paper3);border-radius:4px;overflow:hidden"><div style="height:100%;width:100%;background:var(--accent2)"></div></div>
+          <div style="width:20px;flex-shrink:0;text-align:right;font-family:'DM Mono',monospace;font-size:clamp(12px,1.4vh,15px);font-weight:700;color:var(--ink)">5</div>
+        </div>
+
+      </div>
+    </div>
+
+    <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(14px,1.8vh,22px) clamp(16px,1.6vw,24px);display:flex;flex-direction:column;min-height:0">
+      <div style="font-size:clamp(13px,1.5vh,16px);font-weight:700;color:var(--ink);margin-bottom:clamp(10px,1.4vh,16px);flex-shrink:0">Landing Pages These Sessions Hit</div>
+      <div style="flex:1;display:flex;flex-direction:column;gap:clamp(7px,1vh,10px);min-height:0;overflow:hidden">
+        <div style="display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--rule);padding-bottom:clamp(6px,0.9vh,9px)">
+          <span style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.4vh,15px);color:var(--ink2)">/uk/</span>
+          <span style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.4vh,15px);font-weight:700;color:var(--accent-dark)">&times;3</span>
+        </div>
+        <div style="display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--rule);padding-bottom:clamp(6px,0.9vh,9px)">
+          <span style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.4vh,15px);color:var(--ink2)">Blog: supply teaching post</span>
+          <span style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.4vh,15px);font-weight:700;color:var(--accent-dark)">&times;1</span>
+        </div>
+        <div style="display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--rule);padding-bottom:clamp(6px,0.9vh,9px)">
+          <span style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.4vh,15px);color:var(--ink2)">Blog: supply teaching post</span>
+          <span style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.4vh,15px);font-weight:700;color:var(--accent-dark)">&times;1</span>
+        </div>
+        <div style="display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--rule);padding-bottom:clamp(6px,0.9vh,9px)">
+          <span style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.4vh,15px);color:var(--ink2)">/ (homepage)</span>
+          <span style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.4vh,15px);font-weight:700;color:var(--accent-dark)">&times;1</span>
+        </div>
+        <div style="display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--rule);padding-bottom:clamp(6px,0.9vh,9px)">
+          <span style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.4vh,15px);color:var(--ink2)">/uk/book-demo/</span>
+          <span style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.4vh,15px);font-weight:700;color:var(--accent-dark)">&times;1</span>
+        </div>
+        <div style="display:flex;align-items:center;justify-content:space-between">
+          <span style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.4vh,15px);color:var(--ink2)">/uk/products/employee-app/</span>
+          <span style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.4vh,15px);font-weight:700;color:var(--accent-dark)">&times;1</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div style="background:var(--accent2-bg);border:1px solid var(--accent2-bd);border-radius:8px;padding:clamp(9px,1.2vh,14px) clamp(12px,1.4vw,16px);flex-shrink:0">
+    <span style="font-weight:700;color:var(--accent2-dark)">Reading it straight:</span>
+    <span style="color:var(--ink2)"> AI assistant referral traffic is real but still small, and 100% of it is concentrated on ChatGPT, with no measurable volume yet from Perplexity, Gemini, Claude, Copilot, You.com, or Poe. Two of the seven landing page hits were supply teaching content, worth a quick check that this is intentional cross-publishing rather than a stray legacy page. This is the kind of metric that historically grows slowly then compounds as content investment continues, so we&rsquo;d rather re-check it monthly than judge it off one week.</span>
+  </div>
+
+</div>
+</div></section>
+
+<!-- SLIDE 05: Search Console Keywords & Pages -->
+<section><div class="s">
+<div class="shdr" data-n="05"></div>
+<div style="display:flex;align-items:center;gap:10px;margin-bottom:clamp(14px,2vh,22px);flex-shrink:0">
+  <img src="https://www.gstatic.com/images/branding/product/2x/search_console_96dp.png" style="width:clamp(18px,2.4vh,24px);height:clamp(18px,2.4vh,24px);border-radius:5px;flex-shrink:0">
+  <span style="font-family:'DM Mono',monospace;font-size:clamp(10px,1.2vh,12px);font-weight:700;color:var(--accent-dark);background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:4px;padding:2px 8px">GSC</span>
+  <h2 style="margin:0">Search Console: Keywords &amp; Pages</h2>
+</div>
+<div style="font-size:clamp(15px,2.1vh,21px);color:var(--ink2);font-weight:500;margin-bottom:clamp(16px,2.4vh,28px);flex-shrink:0">Where flexzo.ai stands in organic search today: flexzo.ai, Apr 10 &ndash; Jul 9, 2026 (last 3 months)</div>
+
+<div style="flex:1;min-height:0;overflow:hidden;display:flex;flex-direction:column;justify-content:center;gap:clamp(20px,3vh,34px)">
+
+  <div style="display:flex;gap:clamp(12px,1.4vw,18px);flex-shrink:0">
+    <div style="flex:1;background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(8px,1.2vh,14px) clamp(10px,1.2vw,16px)">
+      <div style="font-family:'DM Mono',monospace;font-size:clamp(24px,3.4vh,36px);font-weight:700;color:var(--ink)">2,062</div>
+      <div style="font-size:clamp(10px,1.15vh,12px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4);margin-top:2px">Total Clicks (Last 3 Months)</div>
+    </div>
+    <div style="flex:1;background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(8px,1.2vh,14px) clamp(10px,1.2vw,16px)">
+      <div style="font-family:'DM Mono',monospace;font-size:clamp(24px,3.4vh,36px);font-weight:700;color:var(--ink)">45,318</div>
+      <div style="font-size:clamp(10px,1.15vh,12px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4);margin-top:2px">Total Impressions</div>
+    </div>
+    <div style="flex:1;background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(8px,1.2vh,14px) clamp(10px,1.2vw,16px)">
+      <div style="font-family:'DM Mono',monospace;font-size:clamp(24px,3.4vh,36px);font-weight:700;color:var(--ink)">~43%</div>
+      <div style="font-size:clamp(10px,1.15vh,12px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4);margin-top:2px">Of Clicks Are Branded Terms (892 clicks)</div>
+    </div>
+  </div>
+
+  <div style="flex-shrink:0;display:flex;gap:clamp(14px,1.6vw,22px)">
+
+    <div style="flex:1;min-width:0;display:flex;flex-direction:column">
+      <div style="font-size:clamp(13px,1.5vh,15px);font-weight:700;color:var(--ink);margin-bottom:clamp(6px,0.9vh,10px);flex-shrink:0">Top 10 Non-Branded Queries</div>
+      <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:8px;overflow:hidden">
+        <div style="display:grid;grid-template-columns:1.6fr 60px 80px 70px;padding:clamp(6px,0.85vh,10px) clamp(10px,1.2vw,14px);border-bottom:1px solid var(--rule)">
+          <div style="font-size:clamp(10px,1.2vh,12px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4)">Query</div>
+          <div style="font-size:clamp(10px,1.2vh,12px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4);text-align:right">Clicks</div>
+          <div style="font-size:clamp(10px,1.2vh,12px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4);text-align:right">Impr.</div>
+          <div style="font-size:clamp(10px,1.2vh,12px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4);text-align:right">Avg. Pos.</div>
+        </div>
+        <div style="display:grid;grid-template-columns:1.6fr 60px 80px 70px;padding:clamp(6px,0.85vh,9px) clamp(10px,1.2vw,14px);border-bottom:1px solid var(--rule);background:#fff">
+          <div style="font-size:clamp(12px,1.4vh,14px);color:var(--ink2)">new cross hospital jobs</div>
+          <div style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.4vh,14px);color:var(--ink);text-align:right">24</div>
+          <div style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.4vh,14px);color:var(--ink2);text-align:right">1,600</div>
+          <div style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.4vh,14px);color:var(--ink2);text-align:right">3.0</div>
+        </div>
+        <div style="display:grid;grid-template-columns:1.6fr 60px 80px 70px;padding:clamp(6px,0.85vh,9px) clamp(10px,1.2vw,14px);border-bottom:1px solid var(--rule)">
+          <div style="font-size:clamp(12px,1.4vh,14px);color:var(--ink2)">nurse practitioner jobs jacksonville fl</div>
+          <div style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.4vh,14px);color:var(--ink);text-align:right">12</div>
+          <div style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.4vh,14px);color:var(--ink2);text-align:right">78</div>
+          <div style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.4vh,14px);color:var(--ink2);text-align:right">9.0</div>
+        </div>
+        <div style="display:grid;grid-template-columns:1.6fr 60px 80px 70px;padding:clamp(6px,0.85vh,9px) clamp(10px,1.2vw,14px);border-bottom:1px solid var(--rule);background:#fff">
+          <div style="font-size:clamp(12px,1.4vh,14px);color:var(--ink2)">jobs northampton</div>
+          <div style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.4vh,14px);color:var(--ink);text-align:right">10</div>
+          <div style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.4vh,14px);color:var(--ink2);text-align:right">746</div>
+          <div style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.4vh,14px);color:var(--ink2);text-align:right">6.0</div>
+        </div>
+        <div style="display:grid;grid-template-columns:1.6fr 60px 80px 70px;padding:clamp(6px,0.85vh,9px) clamp(10px,1.2vw,14px);border-bottom:1px solid var(--rule)">
+          <div style="font-size:clamp(12px,1.4vh,14px);color:var(--ink2)">gp jobs</div>
+          <div style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.4vh,14px);color:var(--ink);text-align:right">10</div>
+          <div style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.4vh,14px);color:var(--ink2);text-align:right">159</div>
+          <div style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.4vh,14px);color:var(--ink2);text-align:right">7.1</div>
+        </div>
+        <div style="display:grid;grid-template-columns:1.6fr 60px 80px 70px;padding:clamp(6px,0.85vh,9px) clamp(10px,1.2vw,14px);border-bottom:1px solid var(--rule);background:#fff">
+          <div style="font-size:clamp(12px,1.4vh,14px);color:var(--ink2)">superintendent pharmacist jobs</div>
+          <div style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.4vh,14px);color:var(--ink);text-align:right">10</div>
+          <div style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.4vh,14px);color:var(--ink2);text-align:right">62</div>
+          <div style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.4vh,14px);color:var(--ink2);text-align:right">8.9</div>
+        </div>
+        <div style="display:grid;grid-template-columns:1.6fr 60px 80px 70px;padding:clamp(6px,0.85vh,9px) clamp(10px,1.2vw,14px);border-bottom:1px solid var(--rule)">
+          <div style="font-size:clamp(12px,1.4vh,14px);color:var(--ink2)">northampton jobs</div>
+          <div style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.4vh,14px);color:var(--ink);text-align:right">7</div>
+          <div style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.4vh,14px);color:var(--ink2);text-align:right">296</div>
+          <div style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.4vh,14px);color:var(--ink2);text-align:right">5.5</div>
+        </div>
+        <div style="display:grid;grid-template-columns:1.6fr 60px 80px 70px;padding:clamp(6px,0.85vh,9px) clamp(10px,1.2vw,14px);border-bottom:1px solid var(--rule);background:#fff">
+          <div style="font-size:clamp(12px,1.4vh,14px);color:var(--ink2)">band 5 radiographer jobs</div>
+          <div style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.4vh,14px);color:var(--ink);text-align:right">7</div>
+          <div style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.4vh,14px);color:var(--ink2);text-align:right">174</div>
+          <div style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.4vh,14px);color:var(--ink2);text-align:right">8.9</div>
+        </div>
+        <div style="display:grid;grid-template-columns:1.6fr 60px 80px 70px;padding:clamp(6px,0.85vh,9px) clamp(10px,1.2vw,14px);border-bottom:1px solid var(--rule)">
+          <div style="font-size:clamp(12px,1.4vh,14px);color:var(--ink2)">cnwl jobs</div>
+          <div style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.4vh,14px);color:var(--ink);text-align:right">6</div>
+          <div style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.4vh,14px);color:var(--ink2);text-align:right">152</div>
+          <div style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.4vh,14px);color:var(--ink2);text-align:right">6.2</div>
+        </div>
+        <div style="display:grid;grid-template-columns:1.6fr 60px 80px 70px;padding:clamp(6px,0.85vh,9px) clamp(10px,1.2vw,14px);border-bottom:1px solid var(--rule);background:#fff">
+          <div style="font-size:clamp(12px,1.4vh,14px);color:var(--ink2)">locum gp jobs</div>
+          <div style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.4vh,14px);color:var(--ink);text-align:right">6</div>
+          <div style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.4vh,14px);color:var(--ink2);text-align:right">62</div>
+          <div style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.4vh,14px);color:var(--ink2);text-align:right">6.6</div>
+        </div>
+        <div style="display:grid;grid-template-columns:1.6fr 60px 80px 70px;padding:clamp(6px,0.85vh,9px) clamp(10px,1.2vw,14px)">
+          <div style="font-size:clamp(12px,1.4vh,14px);color:var(--ink2)">camhs nurse jobs</div>
+          <div style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.4vh,14px);color:var(--ink);text-align:right">6</div>
+          <div style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.4vh,14px);color:var(--ink2);text-align:right">22</div>
+          <div style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.4vh,14px);color:var(--ink2);text-align:right">7.0</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="flex:1;min-width:0;display:flex;flex-direction:column">
+      <div style="font-size:clamp(13px,1.5vh,15px);font-weight:700;color:var(--ink);margin-bottom:clamp(6px,0.9vh,10px);flex-shrink:0">Top 10 Pages by Clicks</div>
+      <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:8px;overflow:hidden">
+        <div style="display:grid;grid-template-columns:1.8fr 60px 80px 60px;padding:clamp(6px,0.85vh,10px) clamp(10px,1.2vw,14px);border-bottom:1px solid var(--rule)">
+          <div style="font-size:clamp(10px,1.2vh,12px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4)">Page</div>
+          <div style="font-size:clamp(10px,1.2vh,12px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4);text-align:right">Clicks</div>
+          <div style="font-size:clamp(10px,1.2vh,12px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4);text-align:right">Impr.</div>
+          <div style="font-size:clamp(10px,1.2vh,12px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4);text-align:right">CTR</div>
+        </div>
+        <div style="display:grid;grid-template-columns:1.8fr 60px 80px 60px;padding:clamp(6px,0.85vh,9px) clamp(10px,1.2vw,14px);border-bottom:1px solid var(--rule);background:#fff">
+          <div style="font-size:clamp(12px,1.4vh,14px);color:var(--ink2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">flexzo.ai/</div>
+          <div style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.4vh,14px);color:var(--ink);text-align:right">988</div>
+          <div style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.4vh,14px);color:var(--ink2);text-align:right">10,276</div>
+          <div style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.4vh,14px);color:var(--ink2);text-align:right">9.6%</div>
+        </div>
+        <div style="display:grid;grid-template-columns:1.8fr 60px 80px 60px;padding:clamp(6px,0.85vh,9px) clamp(10px,1.2vw,14px);border-bottom:1px solid var(--rule)">
+          <div style="font-size:clamp(12px,1.4vh,14px);color:var(--ink2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">www.flexzo.ai/</div>
+          <div style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.4vh,14px);color:var(--ink);text-align:right">63</div>
+          <div style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.4vh,14px);color:var(--ink2);text-align:right">658</div>
+          <div style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.4vh,14px);color:var(--ink2);text-align:right">9.6%</div>
+        </div>
+        <div style="display:grid;grid-template-columns:1.8fr 60px 80px 60px;padding:clamp(6px,0.85vh,9px) clamp(10px,1.2vw,14px);border-bottom:1px solid var(--rule);background:#fff">
+          <div style="font-size:clamp(12px,1.4vh,14px);color:var(--ink2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">flexzo.ai/uk/jobs/528b7945&hellip;</div>
+          <div style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.4vh,14px);color:var(--ink);text-align:right">55</div>
+          <div style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.4vh,14px);color:var(--ink2);text-align:right">1,623</div>
+          <div style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.4vh,14px);color:var(--ink2);text-align:right">3.4%</div>
+        </div>
+        <div style="display:grid;grid-template-columns:1.8fr 60px 80px 60px;padding:clamp(6px,0.85vh,9px) clamp(10px,1.2vw,14px);border-bottom:1px solid var(--rule)">
+          <div style="font-size:clamp(12px,1.4vh,14px);color:var(--ink2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">flexzo.ai/uk/jobs/16250ec6&hellip;</div>
+          <div style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.4vh,14px);color:var(--ink);text-align:right">47</div>
+          <div style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.4vh,14px);color:var(--ink2);text-align:right">643</div>
+          <div style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.4vh,14px);color:var(--ink2);text-align:right">7.3%</div>
+        </div>
+        <div style="display:grid;grid-template-columns:1.8fr 60px 80px 60px;padding:clamp(6px,0.85vh,9px) clamp(10px,1.2vw,14px);border-bottom:1px solid var(--rule);background:#fff">
+          <div style="font-size:clamp(12px,1.4vh,14px);color:var(--ink2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">flexzo.ai/uk/jobs/985d600f&hellip;</div>
+          <div style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.4vh,14px);color:var(--ink);text-align:right">44</div>
+          <div style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.4vh,14px);color:var(--ink2);text-align:right">617</div>
+          <div style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.4vh,14px);color:var(--ink2);text-align:right">7.1%</div>
+        </div>
+        <div style="display:grid;grid-template-columns:1.8fr 60px 80px 60px;padding:clamp(6px,0.85vh,9px) clamp(10px,1.2vw,14px);border-bottom:1px solid var(--rule)">
+          <div style="font-size:clamp(12px,1.4vh,14px);color:var(--ink2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">www.flexzo.ai/uk/</div>
+          <div style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.4vh,14px);color:var(--ink);text-align:right">41</div>
+          <div style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.4vh,14px);color:var(--ink2);text-align:right">500</div>
+          <div style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.4vh,14px);color:var(--ink2);text-align:right">8.2%</div>
+        </div>
+        <div style="display:grid;grid-template-columns:1.8fr 60px 80px 60px;padding:clamp(6px,0.85vh,9px) clamp(10px,1.2vw,14px);border-bottom:1px solid var(--rule);background:#fff">
+          <div style="font-size:clamp(12px,1.4vh,14px);color:var(--ink2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">flexzo.ai/us/jobs</div>
+          <div style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.4vh,14px);color:var(--ink);text-align:right">35</div>
+          <div style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.4vh,14px);color:var(--ink2);text-align:right">777</div>
+          <div style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.4vh,14px);color:var(--ink2);text-align:right">4.5%</div>
+        </div>
+        <div style="display:grid;grid-template-columns:1.8fr 60px 80px 60px;padding:clamp(6px,0.85vh,9px) clamp(10px,1.2vw,14px);border-bottom:1px solid var(--rule)">
+          <div style="font-size:clamp(12px,1.4vh,14px);color:var(--ink2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">flexzo.ai/uk/jobs/108e2f45&hellip;</div>
+          <div style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.4vh,14px);color:var(--ink);text-align:right">34</div>
+          <div style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.4vh,14px);color:var(--ink2);text-align:right">585</div>
+          <div style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.4vh,14px);color:var(--ink2);text-align:right">5.8%</div>
+        </div>
+        <div style="display:grid;grid-template-columns:1.8fr 60px 80px 60px;padding:clamp(6px,0.85vh,9px) clamp(10px,1.2vw,14px);border-bottom:1px solid var(--rule);background:#fff">
+          <div style="font-size:clamp(12px,1.4vh,14px);color:var(--ink2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">flexzo.ai/uk/jobs/029fed4f&hellip;</div>
+          <div style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.4vh,14px);color:var(--ink);text-align:right">32</div>
+          <div style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.4vh,14px);color:var(--ink2);text-align:right">810</div>
+          <div style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.4vh,14px);color:var(--ink2);text-align:right">4.0%</div>
+        </div>
+        <div style="display:grid;grid-template-columns:1.8fr 60px 80px 60px;padding:clamp(6px,0.85vh,9px) clamp(10px,1.2vw,14px)">
+          <div style="font-size:clamp(12px,1.4vh,14px);color:var(--ink2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">flexzo.ai/uk/jobs/1705ba92&hellip;</div>
+          <div style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.4vh,14px);color:var(--ink);text-align:right">32</div>
+          <div style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.4vh,14px);color:var(--ink2);text-align:right">2,118</div>
+          <div style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.4vh,14px);color:var(--ink2);text-align:right">1.5%</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div style="background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:8px;padding:clamp(9px,1.2vh,14px) clamp(12px,1.4vw,16px);flex-shrink:0">
+    <div style="font-size:clamp(13px,1.5vh,16px);color:var(--ink2);line-height:1.5">The homepage carries roughly half of all clicks (988 of 2,062) with a healthy 9.6% CTR. Beyond that, organic visibility today is a long, thin tail of individual job-title and location searches rather than one or two dominant keywords, meaning the site currently functions more as a candidate-acquisition engine than a broad content play. This is exactly the gap the content plan is built to close.</div>
+  </div>
+
+</div>
+</div></section>
+
+<!-- SLIDE 06: What We've Done So Far (Divider) -->
+<section><div class="s">
+<div class="shdr" data-n="06"></div>
+<div style="flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:clamp(18px,2.6vh,30px);min-height:0">
+  <span class="tag">Execution Detail</span>
+  <h2 style="font-size:clamp(32px,5.8vh,64px);margin:0;font-weight:700;max-width:22ch;line-height:1.15">What We&rsquo;ve Done So Far</h2>
+  <p style="font-size:clamp(16px,2.2vh,24px);color:var(--ink2);line-height:1.6;margin:0;max-width:56ch;font-weight:400">A closer look at the four areas we&rsquo;ve been working on since June 26: measurement, community engagement, technical foundations, and authority building.</p>
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(12px,1.6vw,20px);margin-top:clamp(10px,1.6vh,22px);width:100%;max-width:920px">
+    <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(14px,1.9vh,22px) clamp(10px,1.2vw,14px);display:flex;flex-direction:column;align-items:center;gap:8px">
+      <img src="https://www.google.com/s2/favicons?domain=analytics.google.com&sz=64" style="width:clamp(22px,3vh,30px);height:clamp(22px,3vh,30px);border-radius:5px">
+      <span style="font-size:clamp(12px,1.6vh,15px);font-weight:600;color:var(--ink)">Google Analytics</span>
+    </div>
+    <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(14px,1.9vh,22px) clamp(10px,1.2vw,14px);display:flex;flex-direction:column;align-items:center;gap:8px">
+      <img src="https://www.google.com/s2/favicons?domain=reddit.com&sz=64" style="width:clamp(22px,3vh,30px);height:clamp(22px,3vh,30px);border-radius:5px">
+      <span style="font-size:clamp(12px,1.6vh,15px);font-weight:600;color:var(--ink)">Reddit Engagement</span>
+    </div>
+    <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(14px,1.9vh,22px) clamp(10px,1.2vw,14px);display:flex;flex-direction:column;align-items:center;gap:8px">
+      <svg style="width:clamp(22px,3vh,30px);height:clamp(22px,3vh,30px)" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+      <span style="font-size:clamp(12px,1.6vh,15px);font-weight:600;color:var(--ink)">Technical SEO</span>
+    </div>
+    <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(14px,1.9vh,22px) clamp(10px,1.2vw,14px);display:flex;flex-direction:column;align-items:center;gap:8px">
+      <svg style="width:clamp(22px,3vh,30px);height:clamp(22px,3vh,30px)" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+      <span style="font-size:clamp(12px,1.6vh,15px);font-weight:600;color:var(--ink)">Backlinks</span>
+    </div>
+  </div>
+</div>
+</div></section>
+
+<!-- SLIDE 07: GA4 Tracking Fix -->
+<section><div class="s">
+<div class="shdr" data-n="07"></div>
+<div style="display:flex;align-items:center;gap:10px;margin-bottom:clamp(14px,2vh,22px);flex-shrink:0">
+  <span style="font-family:'DM Mono',monospace;font-size:clamp(10px,1.2vh,12px);font-weight:700;color:var(--ok);background:var(--ok-bg);border:1px solid var(--ok-bd);border-radius:4px;padding:2px 8px">FIXED</span>
+  <h2 style="margin:0">Google Analytics Tracking Was Broken. It&rsquo;s Fixed Now.</h2>
+</div>
+<div style="font-size:clamp(15px,2.1vh,21px);color:var(--ink2);font-weight:500;margin-bottom:clamp(20px,3vh,36px);flex-shrink:0">The GA4 tag on flexzo.ai was never installed correctly, meaning programmatic advertising traffic and a large share of overall site traffic went unrecorded. We fixed the tag configuration, and the impact on recorded data has been immediate.</div>
+
+<div style="flex:1;min-height:0;display:flex;gap:clamp(14px,1.8vw,24px);overflow:hidden">
+
+  <!-- LEFT: What we found / fixed -->
+  <div style="flex:0.85;min-width:0;min-height:0;display:flex;flex-direction:column;gap:clamp(10px,1.4vh,16px);overflow:hidden">
+
+    <div style="flex-shrink:0;display:flex;flex-direction:column;gap:clamp(6px,0.9vh,10px)">
+      <div style="font-size:clamp(12px,1.5vh,15px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4)">What We Found</div>
+      <div style="display:flex;gap:10px;align-items:flex-start;background:var(--paper2);border:1px solid var(--rule);border-radius:6px;padding:clamp(8px,1.1vh,13px) clamp(10px,1.2vw,14px)">
+        <span style="color:var(--red);font-size:13px;flex-shrink:0;margin-top:1px">&#9679;</span>
+        <span style="font-size:clamp(14px,1.9vh,19px);color:var(--ink2);line-height:1.45">GA4 tag was misconfigured on the live site &mdash; not firing consistently across pages</span>
+      </div>
+      <div style="display:flex;gap:10px;align-items:flex-start;background:var(--paper2);border:1px solid var(--rule);border-radius:6px;padding:clamp(8px,1.1vh,13px) clamp(10px,1.2vw,14px)">
+        <span style="color:var(--red);font-size:13px;flex-shrink:0;margin-top:1px">&#9679;</span>
+        <span style="font-size:clamp(14px,1.9vh,19px);color:var(--ink2);line-height:1.45">Programmatic advertising traffic was not being attributed at all</span>
+      </div>
+      <div style="display:flex;gap:10px;align-items:flex-start;background:var(--paper2);border:1px solid var(--rule);border-radius:6px;padding:clamp(8px,1.1vh,13px) clamp(10px,1.2vw,14px)">
+        <span style="color:var(--red);font-size:13px;flex-shrink:0;margin-top:1px">&#9679;</span>
+        <span style="font-size:clamp(14px,1.9vh,19px);color:var(--ink2);line-height:1.45">Sessions, events, and active users were significantly under-reported for every channel</span>
+      </div>
+    </div>
+
+    <div style="flex-shrink:0;display:flex;flex-direction:column;gap:clamp(6px,0.9vh,10px)">
+      <div style="font-size:clamp(12px,1.5vh,15px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4)">What We Fixed</div>
+      <div style="display:flex;gap:10px;align-items:flex-start;background:var(--ok-bg);border:1px solid var(--ok-bd);border-radius:6px;padding:clamp(8px,1.1vh,13px) clamp(10px,1.2vw,14px)">
+        <svg style="width:14px;height:14px;flex-shrink:0;margin-top:2px" viewBox="0 0 24 24" fill="none" stroke="var(--ok)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        <span style="font-size:clamp(14px,1.9vh,19px);color:var(--ink2);line-height:1.45">Re-installed and validated the GA4 tag site-wide, confirmed firing on every page template</span>
+      </div>
+      <div style="display:flex;gap:10px;align-items:flex-start;background:var(--ok-bg);border:1px solid var(--ok-bd);border-radius:6px;padding:clamp(8px,1.1vh,13px) clamp(10px,1.2vw,14px)">
+        <svg style="width:14px;height:14px;flex-shrink:0;margin-top:2px" viewBox="0 0 24 24" fill="none" stroke="var(--ok)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        <span style="font-size:clamp(14px,1.9vh,19px);color:var(--ink2);line-height:1.45">Restored attribution for programmatic ad traffic and campaign parameters</span>
+      </div>
+      <div style="display:flex;gap:10px;align-items:flex-start;background:var(--ok-bg);border:1px solid var(--ok-bd);border-radius:6px;padding:clamp(8px,1.1vh,13px) clamp(10px,1.2vw,14px)">
+        <svg style="width:14px;height:14px;flex-shrink:0;margin-top:2px" viewBox="0 0 24 24" fill="none" stroke="var(--ok)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        <span style="font-size:clamp(14px,1.9vh,19px);color:var(--ink2);line-height:1.45">Every session, event, and conversion from here on is now measurable and reportable</span>
+      </div>
+    </div>
+
+    <div style="flex:1;min-height:0"></div>
+    <div style="background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:8px;padding:clamp(9px,1.2vh,14px) clamp(12px,1.4vw,16px);flex-shrink:0">
+      <p style="font-size:clamp(12px,1.65vh,16px);color:var(--ink2);margin:0;line-height:1.5">This isn&rsquo;t organic growth &mdash; it&rsquo;s Flexzo&rsquo;s first accurate picture of its own traffic. Every decision made on the old data was working from a partial dataset.</p>
+    </div>
+  </div>
+
+  <!-- RIGHT: Screenshot + stat row -->
+  <div style="flex:1.15;min-width:0;min-height:0;display:flex;flex-direction:column;gap:clamp(10px,1.4vh,16px);overflow:hidden">
+
+    <div style="font-size:clamp(12px,1.5vh,15px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4);flex-shrink:0;display:flex;align-items:center;gap:6px">
+      <img src="https://www.google.com/s2/favicons?domain=analytics.google.com&sz=32" style="width:14px;height:14px;border-radius:2px">
+      Google Analytics 4 &mdash; Last 28 Days vs. Previous Period
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(6px,0.9vw,10px);flex-shrink:0">
+      <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:8px;padding:clamp(8px,1.1vh,13px) clamp(9px,1vw,12px)">
+        <div style="font-size:clamp(10px,1.2vh,12px);font-weight:600;color:var(--ink3)">Event count</div>
+        <div style="font-family:'DM Mono',monospace;font-size:clamp(18px,2.6vh,26px);font-weight:700;color:var(--ink);line-height:1.2;margin-top:2px">89K</div>
+        <div style="font-size:clamp(11px,1.3vh,13px);color:var(--ok);font-weight:700;margin-top:1px">&uarr; 308.5%</div>
+      </div>
+      <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:8px;padding:clamp(8px,1.1vh,13px) clamp(9px,1vw,12px)">
+        <div style="font-size:clamp(10px,1.2vh,12px);font-weight:600;color:var(--ink3)">Key events</div>
+        <div style="font-family:'DM Mono',monospace;font-size:clamp(18px,2.6vh,26px);font-weight:700;color:var(--ink);line-height:1.2;margin-top:2px">67</div>
+        <div style="font-size:clamp(11px,1.3vh,13px);color:var(--ok);font-weight:700;margin-top:1px">&uarr; 28.8%</div>
+      </div>
+      <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:8px;padding:clamp(8px,1.1vh,13px) clamp(9px,1vw,12px)">
+        <div style="font-size:clamp(10px,1.2vh,12px);font-weight:600;color:var(--ink3)">Active users</div>
+        <div style="font-family:'DM Mono',monospace;font-size:clamp(18px,2.6vh,26px);font-weight:700;color:var(--ink);line-height:1.2;margin-top:2px">9.7K</div>
+        <div style="font-size:clamp(11px,1.3vh,13px);color:var(--ok);font-weight:700;margin-top:1px">&uarr; 148.2%</div>
+      </div>
+      <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:8px;padding:clamp(8px,1.1vh,13px) clamp(9px,1vw,12px)">
+        <div style="font-size:clamp(10px,1.2vh,12px);font-weight:600;color:var(--ink3)">Sessions</div>
+        <div style="font-family:'DM Mono',monospace;font-size:clamp(18px,2.6vh,26px);font-weight:700;color:var(--ink);line-height:1.2;margin-top:2px">11K</div>
+        <div style="font-size:clamp(11px,1.3vh,13px);color:var(--ok);font-weight:700;margin-top:1px">&uarr; 145.4%</div>
+      </div>
+    </div>
+
+    <div style="flex:1;min-height:0;background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(8px,1.1vh,13px);display:flex;align-items:center;justify-content:center;overflow:hidden">
+      <img src="flexzo-ga4-setup.jpg" alt="Flexzo GA4 event count, key events, active users and sessions jumping after the tracking fix went live" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:6px">
+    </div>
+
+    <div style="font-size:clamp(10px,1.25vh,13px);color:var(--ink4);line-height:1.4;flex-shrink:0">
+      Source: Google Analytics 4, flexzo.ai property &middot; the jump on the chart marks the day the corrected tag went live
+    </div>
+  </div>
+
+</div>
+</div></section>
+
+<!-- SLIDE 08: Reddit Engagement -->
+<section><div class="s">
+<div class="shdr" data-n="08"></div>
+<div style="display:flex;align-items:center;gap:10px;margin-bottom:clamp(14px,2vh,22px);flex-shrink:0">
+  <span style="font-family:'DM Mono',monospace;font-size:clamp(10px,1.2vh,12px);font-weight:700;color:var(--ok);background:var(--ok-bg);border:1px solid var(--ok-bd);border-radius:4px;padding:2px 8px">LIVE</span>
+  <h2 style="margin:0">Direct Engagement Where NHS &amp; Travel Nurses Are Already Talking</h2>
+</div>
+<div style="font-size:clamp(15px,2.1vh,21px);color:var(--ink2);font-weight:500;margin-bottom:clamp(16px,2.4vh,28px);flex-shrink:0">Flexzo had zero Reddit presence when we started. We identified the highest-fit threads in the communities your buyers already visit and posted genuine, helpful replies that mention Flexzo naturally &mdash; all seven are live now.</div>
+
+<!-- Top stat row -->
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(8px,1.1vw,14px);flex-shrink:0;margin-bottom:clamp(12px,1.8vh,22px)">
+  <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(8px,1.2vh,14px) clamp(10px,1.2vw,16px)">
+    <div style="font-family:'DM Mono',monospace;font-size:clamp(24px,3.6vh,40px);font-weight:700;color:var(--ok);letter-spacing:-.03em;line-height:1">7</div>
+    <div style="font-size:clamp(11px,1.3vh,13px);font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--ink4);margin-top:3px">Live Comments</div>
+  </div>
+  <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(8px,1.2vh,14px) clamp(10px,1.2vw,16px)">
+    <div style="font-family:'DM Mono',monospace;font-size:clamp(24px,3.6vh,40px);font-weight:700;color:var(--ink);letter-spacing:-.03em;line-height:1">2</div>
+    <div style="font-size:clamp(11px,1.3vh,13px);font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--ink4);margin-top:3px">Subreddits Engaged</div>
+  </div>
+  <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(8px,1.2vh,14px) clamp(10px,1.2vw,16px)">
+    <div style="font-family:'DM Mono',monospace;font-size:clamp(24px,3.6vh,40px);font-weight:700;color:var(--ink);letter-spacing:-.03em;line-height:1">142K</div>
+    <div style="font-size:clamp(11px,1.3vh,13px);font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--ink4);margin-top:3px">Combined Members Reached</div>
+  </div>
+  <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(8px,1.2vh,14px) clamp(10px,1.2vw,16px)">
+    <div style="font-family:'DM Mono',monospace;font-size:clamp(24px,3.6vh,40px);font-weight:700;color:var(--ink);letter-spacing:-.03em;line-height:1">0</div>
+    <div style="font-size:clamp(11px,1.3vh,13px);font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--ink4);margin-top:3px">Removed / Flagged</div>
+  </div>
+</div>
+
+<!-- Table -->
+<div style="flex:1;min-height:0;display:flex;flex-direction:column;background:var(--paper2);border:1px solid var(--rule);border-radius:10px;overflow:hidden">
+
+  <div style="display:grid;grid-template-columns:clamp(120px,9vw,150px) clamp(120px,9vw,150px) 1fr 1.6fr clamp(84px,6vw,100px);gap:clamp(8px,1vw,12px);padding:clamp(7px,1vh,10px) clamp(12px,1.4vw,16px);border-bottom:1px solid var(--rule);flex-shrink:0">
+    <span style="font-size:clamp(10px,1.2vh,12px);font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--ink4)">Subreddit</span>
+    <span style="font-size:clamp(10px,1.2vh,12px);font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--ink4)">Category</span>
+    <span style="font-size:clamp(10px,1.2vh,12px);font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--ink4)">Post</span>
+    <span style="font-size:clamp(10px,1.2vh,12px);font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--ink4)">Our Live Comment</span>
+    <span style="font-size:clamp(10px,1.2vh,12px);font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--ink4);text-align:right">Members</span>
+  </div>
+
+  <div style="flex:1;min-height:0;display:flex;flex-direction:column;overflow:hidden">
+
+    <!-- Row 1 -->
+    <div style="display:grid;grid-template-columns:clamp(120px,9vw,150px) clamp(120px,9vw,150px) 1fr 1.6fr clamp(84px,6vw,100px);gap:clamp(8px,1vw,12px);padding:clamp(6px,0.85vh,10px) clamp(12px,1.4vw,16px);border-bottom:1px solid var(--rule);align-items:center;flex:1">
+      <div style="display:flex;align-items:center;gap:6px;min-width:0"><img src="https://www.google.com/s2/favicons?domain=reddit.com&sz=32" style="width:14px;height:14px;border-radius:2px;flex-shrink:0"><span style="font-size:clamp(12px,1.6vh,15px);font-weight:600;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">r/cna</span></div>
+      <span class="badge" style="white-space:nowrap">Per Diem Strategy</span>
+      <a href="https://www.reddit.com/r/cna/comments/1ud9a0z/per_diem" target="_blank" rel="noopener" style="font-size:clamp(12px,1.55vh,15px);color:var(--ink2);text-decoration:none;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0">Per diem</a>
+      <a href="https://www.reddit.com/r/cna/comments/1ud9a0z/comment/owivuca/?utm_source=share&amp;utm_medium=web3x&amp;utm_name=web3xcss&amp;utm_term=1&amp;utm_content=share_button" target="_blank" rel="noopener" title="smart move honestly, per diem across a few places means no single manager has that much leverage over you. flexzo's one of the platforms built for juggling shifts across facilities without agency fees cutting in, worth a look alongside whatever apps you're already using." style="font-size:clamp(11px,1.45vh,14px);color:var(--ink3);text-decoration:none;line-height:1.35;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-width:0">&ldquo;Smart move honestly, per diem across a few places means no single manager has that much leverage over you. Flexzo&rsquo;s one of the platforms built for juggling shifts&hellip;&rdquo;</a>
+      <span style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.55vh,15px);color:var(--ink2);font-weight:600;text-align:right">73.3K</span>
+    </div>
+
+    <!-- Row 2 -->
+    <div style="display:grid;grid-template-columns:clamp(120px,9vw,150px) clamp(120px,9vw,150px) 1fr 1.6fr clamp(84px,6vw,100px);gap:clamp(8px,1vw,12px);padding:clamp(6px,0.85vh,10px) clamp(12px,1.4vw,16px);border-bottom:1px solid var(--rule);align-items:center;flex:1;background:#fff">
+      <div style="display:flex;align-items:center;gap:6px;min-width:0"><img src="https://www.google.com/s2/favicons?domain=reddit.com&sz=32" style="width:14px;height:14px;border-radius:2px;flex-shrink:0"><span style="font-size:clamp(12px,1.6vh,15px);font-weight:600;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">r/TravelNursing</span></div>
+      <span class="badge" style="white-space:nowrap">Rate Check</span>
+      <a href="https://www.reddit.com/r/TravelNursing/comments/1thwwbh/is_this_a_good_rate_for_a_3x12_night_shift" target="_blank" rel="noopener" style="font-size:clamp(12px,1.55vh,15px);color:var(--ink2);text-decoration:none;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0">Is this a good rate for a 3x12 night shift?</a>
+      <a href="https://www.reddit.com/r/TravelNursing/comments/1thwwbh/comment/owiwzd1/?utm_source=share&amp;utm_medium=web3x&amp;utm_name=web3xcss&amp;utm_term=1&amp;utm_content=share_button" target="_blank" rel="noopener" title="That checks out well based on what others are saying, solid rate for the current market especially outside the usual bear trap cities. relocation at 500 is on the lower end though, might be worth pushing on that specifically. flexzo and similar platforms tend to show breakdowns pretty transparently if you want a second opinion before signing." style="font-size:clamp(11px,1.45vh,14px);color:var(--ink3);text-decoration:none;line-height:1.35;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-width:0">&ldquo;That checks out well, solid rate for the current market. Relocation at $500 is on the lower end though &mdash; Flexzo and similar platforms show breakdowns transparently&hellip;&rdquo;</a>
+      <span style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.55vh,15px);color:var(--ink2);font-weight:600;text-align:right">68.4K</span>
+    </div>
+
+    <!-- Row 3 -->
+    <div style="display:grid;grid-template-columns:clamp(120px,9vw,150px) clamp(120px,9vw,150px) 1fr 1.6fr clamp(84px,6vw,100px);gap:clamp(8px,1vw,12px);padding:clamp(6px,0.85vh,10px) clamp(12px,1.4vw,16px);border-bottom:1px solid var(--rule);align-items:center;flex:1">
+      <div style="display:flex;align-items:center;gap:6px;min-width:0"><img src="https://www.google.com/s2/favicons?domain=reddit.com&sz=32" style="width:14px;height:14px;border-radius:2px;flex-shrink:0"><span style="font-size:clamp(12px,1.6vh,15px);font-weight:600;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">r/TravelNursing</span></div>
+      <span class="badge" style="white-space:nowrap">Recruiter Advice</span>
+      <a href="https://www.reddit.com/r/TravelNursing/comments/1thxojk/travel_nurses_whos_the_best_recruiter_youve_ever" target="_blank" rel="noopener" style="font-size:clamp(12px,1.55vh,15px);color:var(--ink2);text-decoration:none;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0">Travel nurses, who&rsquo;s the best recruiter you&rsquo;ve ever had?</a>
+      <a href="https://www.reddit.com/r/TravelNursing/comments/1thxojk/comment/owix6ys/?utm_source=share&amp;utm_medium=web3x&amp;utm_name=web3xcss&amp;utm_term=1&amp;utm_content=share_button" target="_blank" rel="noopener" title="recruiter quality is the real wildcard, same agency can be amazing or terrible depending purely on who you're assigned. that multi agency profile advice further down is solid. flexzo and similar ai matching platforms without agency fees take some of that luck factor out, though amn and aya still have the volume advantage." style="font-size:clamp(11px,1.45vh,14px);color:var(--ink3);text-decoration:none;line-height:1.35;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-width:0">&ldquo;Recruiter quality is the real wildcard&hellip; Flexzo and similar AI matching platforms without agency fees take some of that luck factor out&hellip;&rdquo;</a>
+      <span style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.55vh,15px);color:var(--ink2);font-weight:600;text-align:right">68.4K</span>
+    </div>
+
+    <!-- Row 4 -->
+    <div style="display:grid;grid-template-columns:clamp(120px,9vw,150px) clamp(120px,9vw,150px) 1fr 1.6fr clamp(84px,6vw,100px);gap:clamp(8px,1vw,12px);padding:clamp(6px,0.85vh,10px) clamp(12px,1.4vw,16px);border-bottom:1px solid var(--rule);align-items:center;flex:1;background:#fff">
+      <div style="display:flex;align-items:center;gap:6px;min-width:0"><img src="https://www.google.com/s2/favicons?domain=reddit.com&sz=32" style="width:14px;height:14px;border-radius:2px;flex-shrink:0"><span style="font-size:clamp(12px,1.6vh,15px);font-weight:600;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">r/TravelNursing</span></div>
+      <span class="badge" style="white-space:nowrap">Agency Comparison</span>
+      <a href="https://www.reddit.com/r/TravelNursing/comments/1trn48c/best_travel_nurse_companies" target="_blank" rel="noopener" style="font-size:clamp(12px,1.55vh,15px);color:var(--ink2);text-decoration:none;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0">Best Travel Nurse Companies</a>
+      <a href="https://www.reddit.com/r/TravelNursing/comments/1trn48c/comment/owiy29r/?utm_source=share&amp;utm_medium=web3x&amp;utm_name=web3xcss&amp;utm_term=1&amp;utm_content=share_button" target="_blank" rel="noopener" title="vivian's just a search engine not a company, so go straight to the agency once you find a listing since their rates get outdated. worth comparing trusted health, which gets good feedback here for first timers, aya, which is more mixed and recruiter dependent, and flexzo for ai matching without agency fees." style="font-size:clamp(11px,1.45vh,14px);color:var(--ink3);text-decoration:none;line-height:1.35;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-width:0">&ldquo;Vivian&rsquo;s just a search engine, go straight to the agency&hellip; worth comparing Trusted Health, Aya, and Flexzo for AI matching without agency fees&rdquo;</a>
+      <span style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.55vh,15px);color:var(--ink2);font-weight:600;text-align:right">68.4K</span>
+    </div>
+
+    <!-- Row 5 -->
+    <div style="display:grid;grid-template-columns:clamp(120px,9vw,150px) clamp(120px,9vw,150px) 1fr 1.6fr clamp(84px,6vw,100px);gap:clamp(8px,1vw,12px);padding:clamp(6px,0.85vh,10px) clamp(12px,1.4vw,16px);border-bottom:1px solid var(--rule);align-items:center;flex:1">
+      <div style="display:flex;align-items:center;gap:6px;min-width:0"><img src="https://www.google.com/s2/favicons?domain=reddit.com&sz=32" style="width:14px;height:14px;border-radius:2px;flex-shrink:0"><span style="font-size:clamp(12px,1.6vh,15px);font-weight:600;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">r/TravelNursing</span></div>
+      <span class="badge" style="white-space:nowrap">Contract Strategy</span>
+      <a href="https://www.reddit.com/r/TravelNursing/comments/1uh5tnb/how_do_you_look_for_the_best_travel_contracts" target="_blank" rel="noopener" style="font-size:clamp(12px,1.55vh,15px);color:var(--ink2);text-decoration:none;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0">How do you look for the best travel contracts?</a>
+      <a href="https://www.reddit.com/r/TravelNursing/comments/1uh5tnb/comment/owiz6wj/?context=3&amp;utm_source=share&amp;utm_medium=web3x&amp;utm_name=web3xcss&amp;utm_term=1&amp;utm_content=share_button" target="_blank" rel="noopener" title="working 4 to 5 agencies is standard advice since no single one sees everything, and vivian selling your info to recruiters explains the spam calls. flexzo's trying to solve that exact problem with direct ai matching instead of juggling 5 recruiter relationships, no agency fees either." style="font-size:clamp(11px,1.45vh,14px);color:var(--ink3);text-decoration:none;line-height:1.35;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-width:0">&ldquo;Working 4 to 5 agencies is standard advice&hellip; Flexzo&rsquo;s trying to solve that exact problem with direct AI matching, no agency fees either&rdquo;</a>
+      <span style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.55vh,15px);color:var(--ink2);font-weight:600;text-align:right">68.4K</span>
+    </div>
+
+    <!-- Row 6 -->
+    <div style="display:grid;grid-template-columns:clamp(120px,9vw,150px) clamp(120px,9vw,150px) 1fr 1.6fr clamp(84px,6vw,100px);gap:clamp(8px,1vw,12px);padding:clamp(6px,0.85vh,10px) clamp(12px,1.4vw,16px);border-bottom:1px solid var(--rule);align-items:center;flex:1;background:#fff">
+      <div style="display:flex;align-items:center;gap:6px;min-width:0"><img src="https://www.google.com/s2/favicons?domain=reddit.com&sz=32" style="width:14px;height:14px;border-radius:2px;flex-shrink:0"><span style="font-size:clamp(12px,1.6vh,15px);font-weight:600;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">r/cna</span></div>
+      <span class="badge" style="white-space:nowrap">App Recommendation</span>
+      <a href="https://www.reddit.com/r/cna/comments/1tnkf70/agency_apps" target="_blank" rel="noopener" style="font-size:clamp(12px,1.55vh,15px);color:var(--ink2);text-decoration:none;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0">Agency apps</a>
+      <a href="https://www.reddit.com/r/cna/comments/1tnkf70/comment/owj0ehp/?utm_source=share&amp;utm_medium=web3x&amp;utm_name=web3xcss&amp;utm_term=1&amp;utm_content=share_button" target="_blank" rel="noopener" title="wisconsin coverage varies a lot depending how close you are to milwaukee versus more rural areas, signing up for a few apps rather than just one is the move. clipboard's the most commonly mentioned, flexzo's worth adding too for per diem matching, just double check their wisconsin coverage." style="font-size:clamp(11px,1.45vh,14px);color:var(--ink3);text-decoration:none;line-height:1.35;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-width:0">&ldquo;Signing up for a few apps rather than just one is the move. Clipboard&rsquo;s most commonly mentioned, Flexzo&rsquo;s worth adding too for per diem matching&hellip;&rdquo;</a>
+      <span style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.55vh,15px);color:var(--ink2);font-weight:600;text-align:right">73.3K</span>
+    </div>
+
+    <!-- Row 7 -->
+    <div style="display:grid;grid-template-columns:clamp(120px,9vw,150px) clamp(120px,9vw,150px) 1fr 1.6fr clamp(84px,6vw,100px);gap:clamp(8px,1vw,12px);padding:clamp(6px,0.85vh,10px) clamp(12px,1.4vw,16px);align-items:center;flex:1">
+      <div style="display:flex;align-items:center;gap:6px;min-width:0"><img src="https://www.google.com/s2/favicons?domain=reddit.com&sz=32" style="width:14px;height:14px;border-radius:2px;flex-shrink:0"><span style="font-size:clamp(12px,1.6vh,15px);font-weight:600;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">r/TravelNursing</span></div>
+      <span class="badge" style="white-space:nowrap">Agency Comparison</span>
+      <a href="https://www.reddit.com/r/TravelNursing/comments/1tdz0pp/what_agency_is_best_to_work_perdiem_as_a_rn_and" target="_blank" rel="noopener" style="font-size:clamp(12px,1.55vh,15px);color:var(--ink2);text-decoration:none;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0">What agency is best to work per diem as a RN, and best pay?</a>
+      <a href="https://www.reddit.com/r/TravelNursing/comments/1tdz0pp/comment/owizo39/?utm_source=share&amp;utm_medium=web3x&amp;utm_name=web3xcss&amp;utm_term=1&amp;utm_content=share_button" target="_blank" rel="noopener" title="no single best agency is the right take, it comes down to which one has the best contract in your area right now. worth having profiles with flexzo (no agency fees, keeps more of the rate), intelycare, and flexcare, compare rates across all three directly." style="font-size:clamp(11px,1.45vh,14px);color:var(--ink3);text-decoration:none;line-height:1.35;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-width:0">&ldquo;No single best agency&hellip; worth having profiles with Flexzo (no agency fees, keeps more of the rate), IntelyCare, and FlexCare, compare rates directly&rdquo;</a>
+      <span style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.55vh,15px);color:var(--ink2);font-weight:600;text-align:right">68.4K</span>
+    </div>
+
+  </div>
+</div>
+
+<div style="margin-top:clamp(8px,1.2vh,14px);font-size:clamp(10px,1.25vh,13px);color:var(--ink4);line-height:1.4;flex-shrink:0">
+  Member counts as of the June 26 &ndash; July 10, 2026 audit &middot; every row links out to the live post and comment on Reddit
+</div>
+
+</div></section>
+
+<!-- SLIDE 09: Technical SEO Improvements -->
+<section><div class="s">
+<div class="shdr" data-n="09"></div>
+<div style="display:flex;align-items:center;gap:10px;margin-bottom:clamp(14px,2vh,22px);flex-shrink:0">
+  <span style="font-family:'DM Mono',monospace;font-size:clamp(10px,1.2vh,12px);font-weight:700;color:var(--ok);background:var(--ok-bg);border:1px solid var(--ok-bd);border-radius:4px;padding:2px 8px">FIXED</span>
+  <h2 style="margin:0">Technical SEO Foundations, Rebuilt</h2>
+</div>
+<div style="font-size:clamp(15px,2.1vh,21px);color:var(--ink2);font-weight:500;margin-bottom:clamp(16px,2.4vh,28px);flex-shrink:0">Four structural issues were quietly capping how much of flexzo.ai Google could properly crawl, index and rank. All four are resolved.</div>
+
+<div style="flex:1;min-height:0;overflow:hidden;display:flex;flex-direction:column;gap:clamp(14px,2vh,20px)">
+
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(10px,1.3vw,16px);flex-shrink:0">
+    <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(10px,1.4vh,16px) clamp(12px,1.3vw,16px);display:flex;flex-direction:column;gap:7px">
+      <div style="font-size:clamp(13px,1.65vh,16px);font-weight:700;color:var(--ink)">Canonical URLs</div>
+      <div style="display:flex;gap:7px;align-items:flex-start"><span style="color:var(--red);font-size:12px;flex-shrink:0;margin-top:3px">&#9679;</span><span style="font-size:clamp(11.5px,1.4vh,13px);color:var(--ink3);line-height:1.4">No canonical tags on any page &mdash; search engines couldn&rsquo;t tell which duplicate to index</span></div>
+      <div style="display:flex;gap:7px;align-items:flex-start"><svg style="width:12px;height:12px;flex-shrink:0;margin-top:3px" viewBox="0 0 24 24" fill="none" stroke="var(--ok)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span style="font-size:clamp(11.5px,1.4vh,13px);color:var(--ink2);font-weight:600;line-height:1.4">Canonicals implemented sitewide</span></div>
+    </div>
+    <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(10px,1.4vh,16px) clamp(12px,1.3vw,16px);display:flex;flex-direction:column;gap:7px">
+      <div style="font-size:clamp(13px,1.65vh,16px);font-weight:700;color:var(--ink)">Duplicate Titles &amp; Meta</div>
+      <div style="display:flex;gap:7px;align-items:flex-start"><span style="color:var(--red);font-size:12px;flex-shrink:0;margin-top:3px">&#9679;</span><span style="font-size:clamp(11.5px,1.4vh,13px);color:var(--ink3);line-height:1.4">Large numbers of pages shared the exact same title tag and meta description</span></div>
+      <div style="display:flex;gap:7px;align-items:flex-start"><svg style="width:12px;height:12px;flex-shrink:0;margin-top:3px" viewBox="0 0 24 24" fill="none" stroke="var(--ok)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span style="font-size:clamp(11.5px,1.4vh,13px);color:var(--ink2);font-weight:600;line-height:1.4">Every page now has a unique, keyword-relevant title &amp; description</span></div>
+    </div>
+    <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(10px,1.4vh,16px) clamp(12px,1.3vw,16px);display:flex;flex-direction:column;gap:7px">
+      <div style="font-size:clamp(13px,1.65vh,16px);font-weight:700;color:var(--ink)">robots.txt</div>
+      <div style="display:flex;gap:7px;align-items:flex-start"><span style="color:var(--red);font-size:12px;flex-shrink:0;margin-top:3px">&#9679;</span><span style="font-size:clamp(11.5px,1.4vh,13px);color:var(--ink3);line-height:1.4">robots.txt was pointing crawlers to the wrong sitemap file entirely</span></div>
+      <div style="display:flex;gap:7px;align-items:flex-start"><svg style="width:12px;height:12px;flex-shrink:0;margin-top:3px" viewBox="0 0 24 24" fill="none" stroke="var(--ok)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span style="font-size:clamp(11.5px,1.4vh,13px);color:var(--ink2);font-weight:600;line-height:1.4">Now references the correct, live sitemap</span></div>
+    </div>
+    <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(10px,1.4vh,16px) clamp(12px,1.3vw,16px);display:flex;flex-direction:column;gap:7px">
+      <div style="font-size:clamp(13px,1.65vh,16px);font-weight:700;color:var(--ink)">hreflang (UK/US)</div>
+      <div style="display:flex;gap:7px;align-items:flex-start"><span style="color:var(--red);font-size:12px;flex-shrink:0;margin-top:3px">&#9679;</span><span style="font-size:clamp(11.5px,1.4vh,13px);color:var(--ink3);line-height:1.4">Sitemap had no hreflang tags &mdash; Google couldn&rsquo;t distinguish UK from US</span></div>
+      <div style="display:flex;gap:7px;align-items:flex-start"><svg style="width:12px;height:12px;flex-shrink:0;margin-top:3px" viewBox="0 0 24 24" fill="none" stroke="var(--ok)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span style="font-size:clamp(11.5px,1.4vh,13px);color:var(--ink2);font-weight:600;line-height:1.4">en-gb/en-us hreflang implemented across the sitemap</span></div>
+    </div>
+  </div>
+
+  <div style="flex:1;min-height:0;display:flex;flex-direction:column;gap:clamp(10px,1.4vh,16px);padding-top:clamp(6px,1vh,14px)">
+    <div style="font-size:clamp(12px,1.5vh,15px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4);flex-shrink:0">Ahrefs Site Audit: Health Score, Before &amp; After</div>
+    <div style="display:flex;gap:clamp(14px,1.6vw,20px);flex-shrink:0">
+
+      <!-- BEFORE -->
+      <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:clamp(6px,0.8vh,9px)">
+        <span class="badge" style="background:var(--red-bg);color:var(--red);border-color:var(--red-bd);width:fit-content">Before</span>
+        <div style="height:clamp(190px,29vh,320px);background:#fff;border:1px solid var(--rule);border-radius:10px;padding:clamp(8px,1.1vh,13px);display:flex;align-items:center;justify-content:center;overflow:hidden">
+          <img src="flexzo-technical-seo-before.png" alt="Flexzo Ahrefs Site Audit before the technical SEO fixes: Health Score 8, Crawled 116, Redirects 4, Broken 0, Blocked 0" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:6px">
+        </div>
+      </div>
+
+      <!-- AFTER -->
+      <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:clamp(6px,0.8vh,9px)">
+        <span class="ok-badge" style="width:fit-content;margin:0;padding:1px 6px">After</span>
+        <div style="height:clamp(190px,29vh,320px);background:#fff;border:1px solid var(--ok-bd);border-radius:10px;padding:clamp(8px,1.1vh,13px);display:flex;align-items:center;justify-content:center;overflow:hidden">
+          <img src="flexzo-technical-seo-after.png" alt="Flexzo Ahrefs Site Audit after the technical SEO fixes: Health Score 92, Crawled 192, Redirects 5, Broken 0, Blocked 0" style="max-width:100%;max-height:100%;object-fit:contain;border-radius:6px">
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+</div></section>
+
+<!-- SLIDE 10: Backlinks Secured -->
+<section><div class="s">
+<div class="shdr" data-n="10"></div>
+<div style="display:flex;align-items:center;gap:10px;margin-bottom:clamp(14px,2vh,22px);flex-shrink:0">
+  <span style="font-family:'DM Mono',monospace;font-size:clamp(10px,1.2vh,12px);font-weight:700;color:var(--ok);background:var(--ok-bg);border:1px solid var(--ok-bd);border-radius:4px;padding:2px 8px">LINK BUILDING</span>
+  <h2 style="margin:0">Backlinks Secured for Flexzo</h2>
+</div>
+<div style="font-size:clamp(15px,2.1vh,21px);color:var(--ink2);font-weight:500;margin-bottom:clamp(16px,2.4vh,28px);flex-shrink:0">13 placements on relevant healthcare and HR publications since May 27, 2026, each pointing to flexzo.ai with an on-topic anchor.</div>
+
+<div style="flex:1;min-height:0;overflow:hidden;display:flex;flex-direction:column;gap:clamp(12px,1.7vh,18px)">
+
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(10px,1.3vw,16px);flex-shrink:0">
+    <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(8px,1.2vh,14px) clamp(10px,1.2vw,16px)">
+      <div style="font-family:'DM Mono',monospace;font-size:clamp(24px,3.4vh,36px);font-weight:700;color:var(--ink)">13</div>
+      <div style="font-size:clamp(10px,1.15vh,12px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4);margin-top:2px">Backlinks Placed</div>
+    </div>
+    <div style="background:var(--ok-bg);border:1px solid var(--ok-bd);border-radius:10px;padding:clamp(8px,1.2vh,14px) clamp(10px,1.2vw,16px)">
+      <div style="font-family:'DM Mono',monospace;font-size:clamp(24px,3.4vh,36px);font-weight:700;color:var(--ok)">6 <span style="font-size:0.45em;color:var(--ink3);font-weight:600">live</span> / 7 <span style="font-size:0.45em;color:var(--ink3);font-weight:600">in progress</span></div>
+      <div style="font-size:clamp(10px,1.15vh,12px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4);margin-top:2px">Link Status</div>
+    </div>
+    <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(8px,1.2vh,14px) clamp(10px,1.2vw,16px)">
+      <div style="font-family:'DM Mono',monospace;font-size:clamp(24px,3.4vh,36px);font-weight:700;color:var(--ink)">49</div>
+      <div style="font-size:clamp(10px,1.15vh,12px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4);margin-top:2px">Average Domain Rating</div>
+    </div>
+    <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(8px,1.2vh,14px) clamp(10px,1.2vw,16px)">
+      <div style="font-family:'DM Mono',monospace;font-size:clamp(24px,3.4vh,36px);font-weight:700;color:var(--ink)">141K</div>
+      <div style="font-size:clamp(10px,1.15vh,12px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4);margin-top:2px">Combined Referring Page Traffic</div>
+    </div>
+  </div>
+
+  <div style="flex:1;min-height:0;overflow:hidden;background:var(--paper2);border:1px solid var(--rule);border-radius:10px;display:flex;flex-direction:column">
+    <div style="display:grid;grid-template-columns:1.5fr 60px 90px 1.4fr 100px 110px;gap:12px;padding:clamp(6px,0.85vh,10px) clamp(12px,1.4vw,16px);border-bottom:1px solid var(--rule);flex-shrink:0">
+      <span style="font-size:clamp(10px,1.2vh,12px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4)">Domain</span>
+      <span style="font-size:clamp(10px,1.2vh,12px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4);text-align:right">DR</span>
+      <span style="font-size:clamp(10px,1.2vh,12px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4);text-align:right">Traffic</span>
+      <span style="font-size:clamp(10px,1.2vh,12px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4)">Keyword Anchor</span>
+      <span style="font-size:clamp(10px,1.2vh,12px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4)">Date</span>
+      <span style="font-size:clamp(10px,1.2vh,12px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4)">Link Status</span>
+    </div>
+
+    <div style="flex:1;min-height:0;display:flex;flex-direction:column;justify-content:space-between">
+
+      <a href="https://www.medesk.net/en/blog/healthcare-workflow-management/" target="_blank" rel="noopener" style="display:grid;grid-template-columns:1.5fr 60px 90px 1.4fr 100px 110px;gap:12px;padding:clamp(4px,0.65vh,8px) clamp(12px,1.4vw,16px);align-items:center;text-decoration:none;background:#fff">
+        <span style="display:flex;align-items:center;gap:6px;min-width:0"><img src="https://www.google.com/s2/favicons?domain=medesk.net&sz=32" style="width:13px;height:13px;border-radius:2px;flex-shrink:0"><span style="font-size:clamp(12px,1.5vh,14px);font-weight:600;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">medesk.net</span></span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.45vh,14px);color:var(--ink2);text-align:right">72</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.45vh,14px);color:var(--ink2);text-align:right">14.7K</span>
+        <span style="font-size:clamp(11px,1.4vh,13px);color:var(--ink3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">AI in healthcare workflow automation</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(11px,1.35vh,13px);color:var(--ink3)">2026-05-27</span>
+        <span class="ok-badge" style="margin:0;width:fit-content">Live</span>
+      </a>
+
+      <a href="https://siit.co/guestposts/ai-workflow-automation-in-healthcare-what-it-is-how-its-used-and-best-practices/" target="_blank" rel="noopener" style="display:grid;grid-template-columns:1.5fr 60px 90px 1.4fr 100px 110px;gap:12px;padding:clamp(4px,0.65vh,8px) clamp(12px,1.4vw,16px);align-items:center;text-decoration:none">
+        <span style="display:flex;align-items:center;gap:6px;min-width:0"><img src="https://www.google.com/s2/favicons?domain=siit.co&sz=32" style="width:13px;height:13px;border-radius:2px;flex-shrink:0"><span style="font-size:clamp(12px,1.5vh,14px);font-weight:600;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">siit.co</span></span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.45vh,14px);color:var(--ink2);text-align:right">64</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.45vh,14px);color:var(--ink2);text-align:right">34.1K</span>
+        <span style="font-size:clamp(11px,1.4vh,13px);color:var(--ink3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">AI in healthcare workflow automation</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(11px,1.35vh,13px);color:var(--ink3)">2026-05-29</span>
+        <span class="ok-badge" style="margin:0;width:fit-content">Live</span>
+      </a>
+
+      <a href="https://medlifembs.com/blog/orthopedic-billing-guidelines" target="_blank" rel="noopener" style="display:grid;grid-template-columns:1.5fr 60px 90px 1.4fr 100px 110px;gap:12px;padding:clamp(4px,0.65vh,8px) clamp(12px,1.4vw,16px);align-items:center;text-decoration:none;background:#fff">
+        <span style="display:flex;align-items:center;gap:6px;min-width:0"><img src="https://www.google.com/s2/favicons?domain=medlifembs.com&sz=32" style="width:13px;height:13px;border-radius:2px;flex-shrink:0"><span style="font-size:clamp(12px,1.5vh,14px);font-weight:600;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">medlifembs.com</span></span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.45vh,14px);color:var(--ink2);text-align:right">28</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.45vh,14px);color:var(--ink2);text-align:right">700</span>
+        <span style="font-size:clamp(11px,1.4vh,13px);color:var(--ink3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">healthcare workflow automation</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(11px,1.35vh,13px);color:var(--ink3)">2026-06-02</span>
+        <span style="font-size:clamp(9px,1.1vh,11px);font-weight:700;color:var(--warn);background:var(--warn-bg);border:1px solid var(--warn-bd);border-radius:3px;padding:1px 6px;width:fit-content">In Progress</span>
+      </a>
+
+      <a href="https://www.scalacode.com/blog/ai-agents-in-healthcare/" target="_blank" rel="noopener" style="display:grid;grid-template-columns:1.5fr 60px 90px 1.4fr 100px 110px;gap:12px;padding:clamp(4px,0.65vh,8px) clamp(12px,1.4vw,16px);align-items:center;text-decoration:none">
+        <span style="display:flex;align-items:center;gap:6px;min-width:0"><img src="https://www.google.com/s2/favicons?domain=scalacode.com&sz=32" style="width:13px;height:13px;border-radius:2px;flex-shrink:0"><span style="font-size:clamp(12px,1.5vh,14px);font-weight:600;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">scalacode.com</span></span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.45vh,14px);color:var(--ink2);text-align:right">41</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.45vh,14px);color:var(--ink2);text-align:right">56</span>
+        <span style="font-size:clamp(11px,1.4vh,13px);color:var(--ink3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">healthcare workflow automation</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(11px,1.35vh,13px);color:var(--ink3)">2026-06-04</span>
+        <span class="ok-badge" style="margin:0;width:fit-content">Live</span>
+      </a>
+
+      <a href="https://www.webweq.com/blogs/ai-powered-diagnostics/" target="_blank" rel="noopener" style="display:grid;grid-template-columns:1.5fr 60px 90px 1.4fr 100px 110px;gap:12px;padding:clamp(4px,0.65vh,8px) clamp(12px,1.4vw,16px);align-items:center;text-decoration:none;background:#fff">
+        <span style="display:flex;align-items:center;gap:6px;min-width:0"><img src="https://www.google.com/s2/favicons?domain=webweq.com&sz=32" style="width:13px;height:13px;border-radius:2px;flex-shrink:0"><span style="font-size:clamp(12px,1.5vh,14px);font-weight:600;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">webweq.com</span></span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.45vh,14px);color:var(--ink2);text-align:right">55</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.45vh,14px);color:var(--ink2);text-align:right">11.3K</span>
+        <span style="font-size:clamp(11px,1.4vh,13px);color:var(--ink3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">AI-powered healthcare</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(11px,1.35vh,13px);color:var(--ink3)">2026-06-10</span>
+        <span class="ok-badge" style="margin:0;width:fit-content">Live</span>
+      </a>
+
+      <a href="https://dianapps.com/blog/ai-in-healthcare/" target="_blank" rel="noopener" style="display:grid;grid-template-columns:1.5fr 60px 90px 1.4fr 100px 110px;gap:12px;padding:clamp(4px,0.65vh,8px) clamp(12px,1.4vw,16px);align-items:center;text-decoration:none">
+        <span style="display:flex;align-items:center;gap:6px;min-width:0"><img src="https://www.google.com/s2/favicons?domain=dianapps.com&sz=32" style="width:13px;height:13px;border-radius:2px;flex-shrink:0"><span style="font-size:clamp(12px,1.5vh,14px);font-weight:600;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">dianapps.com</span></span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.45vh,14px);color:var(--ink2);text-align:right">50</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.45vh,14px);color:var(--ink2);text-align:right">80</span>
+        <span style="font-size:clamp(11px,1.4vh,13px);color:var(--ink3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">AI in healthcare</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(11px,1.35vh,13px);color:var(--ink3)">2026-06-11</span>
+        <span style="font-size:clamp(9px,1.1vh,11px);font-weight:700;color:var(--warn);background:var(--warn-bg);border:1px solid var(--warn-bd);border-radius:3px;padding:1px 6px;width:fit-content">In Progress</span>
+      </a>
+
+      <a href="https://www.datasciencesociety.net/revolutionizing-healthcare-the-power-of-effective-staffing-solutions/" target="_blank" rel="noopener" style="display:grid;grid-template-columns:1.5fr 60px 90px 1.4fr 100px 110px;gap:12px;padding:clamp(4px,0.65vh,8px) clamp(12px,1.4vw,16px);align-items:center;text-decoration:none;background:#fff">
+        <span style="display:flex;align-items:center;gap:6px;min-width:0"><img src="https://www.google.com/s2/favicons?domain=datasciencesociety.net&sz=32" style="width:13px;height:13px;border-radius:2px;flex-shrink:0"><span style="font-size:clamp(12px,1.5vh,14px);font-weight:600;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">datasciencesociety.net</span></span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.45vh,14px);color:var(--ink2);text-align:right">49</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.45vh,14px);color:var(--ink2);text-align:right">1.1K</span>
+        <span style="font-size:clamp(11px,1.4vh,13px);color:var(--ink3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">healthcare staffing</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(11px,1.35vh,13px);color:var(--ink3)">2026-06-25</span>
+        <span class="ok-badge" style="margin:0;width:fit-content">Live</span>
+      </a>
+
+      <a href="https://healthray.com/blog/hospital-management-software/must-features-hospital-workforce-management-software/" target="_blank" rel="noopener" style="display:grid;grid-template-columns:1.5fr 60px 90px 1.4fr 100px 110px;gap:12px;padding:clamp(4px,0.65vh,8px) clamp(12px,1.4vw,16px);align-items:center;text-decoration:none">
+        <span style="display:flex;align-items:center;gap:6px;min-width:0"><img src="https://www.google.com/s2/favicons?domain=healthray.com&sz=32" style="width:13px;height:13px;border-radius:2px;flex-shrink:0"><span style="font-size:clamp(12px,1.5vh,14px);font-weight:600;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">healthray.com</span></span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.45vh,14px);color:var(--ink2);text-align:right">59</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.45vh,14px);color:var(--ink2);text-align:right">800</span>
+        <span style="font-size:clamp(11px,1.4vh,13px);color:var(--ink3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">healthcare technology</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(11px,1.35vh,13px);color:var(--ink3)">2026-06-25</span>
+        <span style="font-size:clamp(9px,1.1vh,11px);font-weight:700;color:var(--warn);background:var(--warn-bg);border:1px solid var(--warn-bd);border-radius:3px;padding:1px 6px;width:fit-content">In Progress</span>
+      </a>
+
+      <a href="https://www.bigscal.com/blogs/healthcare-industry/hospital-workforce-management-software/" target="_blank" rel="noopener" style="display:grid;grid-template-columns:1.5fr 60px 90px 1.4fr 100px 110px;gap:12px;padding:clamp(4px,0.65vh,8px) clamp(12px,1.4vw,16px);align-items:center;text-decoration:none;background:#fff">
+        <span style="display:flex;align-items:center;gap:6px;min-width:0"><img src="https://www.google.com/s2/favicons?domain=bigscal.com&sz=32" style="width:13px;height:13px;border-radius:2px;flex-shrink:0"><span style="font-size:clamp(12px,1.5vh,14px);font-weight:600;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">bigscal.com</span></span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.45vh,14px);color:var(--ink2);text-align:right">44</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.45vh,14px);color:var(--ink2);text-align:right">7.9K</span>
+        <span style="font-size:clamp(11px,1.4vh,13px);color:var(--ink3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">hospital staffing software</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(11px,1.35vh,13px);color:var(--ink3)">2026-06-25</span>
+        <span style="font-size:clamp(9px,1.1vh,11px);font-weight:700;color:var(--warn);background:var(--warn-bg);border:1px solid var(--warn-bd);border-radius:3px;padding:1px 6px;width:fit-content">In Progress</span>
+      </a>
+
+      <a href="https://www.hr.com/en/app/blog/2026/02/the-future-of-healthcare-and-fitness-where-technol_mm3aw9jb.html" target="_blank" rel="noopener" style="display:grid;grid-template-columns:1.5fr 60px 90px 1.4fr 100px 110px;gap:12px;padding:clamp(4px,0.65vh,8px) clamp(12px,1.4vw,16px);align-items:center;text-decoration:none">
+        <span style="display:flex;align-items:center;gap:6px;min-width:0"><img src="https://www.google.com/s2/favicons?domain=hr.com&sz=32" style="width:13px;height:13px;border-radius:2px;flex-shrink:0"><span style="font-size:clamp(12px,1.5vh,14px);font-weight:600;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">hr.com</span></span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.45vh,14px);color:var(--ink2);text-align:right">78</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.45vh,14px);color:var(--ink2);text-align:right">61K</span>
+        <span style="font-size:clamp(11px,1.4vh,13px);color:var(--ink3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">healthcare staffing</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(11px,1.35vh,13px);color:var(--ink3)">2026-07-01</span>
+        <span class="ok-badge" style="margin:0;width:fit-content">Live</span>
+      </a>
+
+      <a href="https://nextinhr.com/blogs/build-client-base-freelance-hr-consultant" target="_blank" rel="noopener" style="display:grid;grid-template-columns:1.5fr 60px 90px 1.4fr 100px 110px;gap:12px;padding:clamp(4px,0.65vh,8px) clamp(12px,1.4vw,16px);align-items:center;text-decoration:none;background:#fff">
+        <span style="display:flex;align-items:center;gap:6px;min-width:0"><img src="https://www.google.com/s2/favicons?domain=nextinhr.com&sz=32" style="width:13px;height:13px;border-radius:2px;flex-shrink:0"><span style="font-size:clamp(12px,1.5vh,14px);font-weight:600;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">nextinhr.com</span></span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.45vh,14px);color:var(--ink2);text-align:right">32</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.45vh,14px);color:var(--ink2);text-align:right">1.7K</span>
+        <span style="font-size:clamp(11px,1.4vh,13px);color:var(--ink3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">healthcare staffing</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(11px,1.35vh,13px);color:var(--ink3)">2026-07-01</span>
+        <span style="font-size:clamp(9px,1.1vh,11px);font-weight:700;color:var(--warn);background:var(--warn-bg);border:1px solid var(--warn-bd);border-radius:3px;padding:1px 6px;width:fit-content">In Progress</span>
+      </a>
+
+      <a href="https://www.bigscal.com/blogs/healthcare-industry/hospital-workforce-management-software/" target="_blank" rel="noopener" style="display:grid;grid-template-columns:1.5fr 60px 90px 1.4fr 100px 110px;gap:12px;padding:clamp(4px,0.65vh,8px) clamp(12px,1.4vw,16px);align-items:center;text-decoration:none">
+        <span style="display:flex;align-items:center;gap:6px;min-width:0"><img src="https://www.google.com/s2/favicons?domain=bigscal.com&sz=32" style="width:13px;height:13px;border-radius:2px;flex-shrink:0"><span style="font-size:clamp(12px,1.5vh,14px);font-weight:600;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">bigscal.com</span></span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.45vh,14px);color:var(--ink2);text-align:right">44</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.45vh,14px);color:var(--ink2);text-align:right">7.9K</span>
+        <span style="font-size:clamp(11px,1.4vh,13px);color:var(--ink3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">hospital staffing software</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(11px,1.35vh,13px);color:var(--ink3)">2026-07-07</span>
+        <span style="font-size:clamp(9px,1.1vh,11px);font-weight:700;color:var(--warn);background:var(--warn-bg);border:1px solid var(--warn-bd);border-radius:3px;padding:1px 6px;width:fit-content">In Progress</span>
+      </a>
+
+      <a href="https://leelu.ai/blog/ai-for-healthcare-recruitment" target="_blank" rel="noopener" style="display:grid;grid-template-columns:1.5fr 60px 90px 1.4fr 100px 110px;gap:12px;padding:clamp(4px,0.65vh,8px) clamp(12px,1.4vw,16px);align-items:center;text-decoration:none;background:#fff">
+        <span style="display:flex;align-items:center;gap:6px;min-width:0"><img src="https://www.google.com/s2/favicons?domain=leelu.ai&sz=32" style="width:13px;height:13px;border-radius:2px;flex-shrink:0"><span style="font-size:clamp(12px,1.5vh,14px);font-weight:600;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">leelu.ai</span></span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.45vh,14px);color:var(--ink2);text-align:right">25</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.45vh,14px);color:var(--ink2);text-align:right">6</span>
+        <span style="font-size:clamp(11px,1.4vh,13px);color:var(--ink3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">healthcare staffing</span>
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(11px,1.35vh,13px);color:var(--ink3)">2026-07-09</span>
+        <span style="font-size:clamp(9px,1.1vh,11px);font-weight:700;color:var(--warn);background:var(--warn-bg);border:1px solid var(--warn-bd);border-radius:3px;padding:1px 6px;width:fit-content">In Progress</span>
+      </a>
+
+    </div>
+  </div>
+
+  <div style="flex-shrink:0;font-size:clamp(10px,1.25vh,13px);color:var(--ink4);line-height:1.4">
+    DR and traffic per Ahrefs, referring page-level &middot; every row links out to the live article &middot; &ldquo;In Progress&rdquo; links are placed and pending the publisher&rsquo;s final live push
+  </div>
+
+</div>
+</div></section>
+
+<!-- SLIDE 11: What's Next -->
+<section><div class="s">
+<div class="shdr" data-n="11"></div>
+<div style="flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:clamp(18px,2.6vh,30px);min-height:0">
+  <span class="tag">Looking Ahead</span>
+  <h2 style="font-size:clamp(32px,5.8vh,64px);margin:0;font-weight:700;max-width:20ch;line-height:1.15">What&rsquo;s Next</h2>
+  <p style="font-size:clamp(16px,2.2vh,24px);color:var(--ink2);line-height:1.6;margin:0;max-width:58ch;font-weight:400">Every fix and placement on the previous pages compounds from here. The next section covers where we&rsquo;re focused next and what we need from Flexzo to keep the pace up.</p>
+</div>
+</div></section>
+
+<!-- SLIDE 12: Backlinks & Directory Authority (Planned) -->
+<section><div class="s">
+<div class="shdr" data-n="12"></div>
+<div style="display:flex;align-items:center;gap:10px;margin-bottom:clamp(14px,2vh,22px);flex-shrink:0">
+  <span style="font-family:'DM Mono',monospace;font-size:clamp(10px,1.2vh,12px);font-weight:700;color:var(--accent2-dark);background:var(--accent2-bg);border:1px solid var(--accent2-bd);border-radius:4px;padding:2px 8px">NEXT</span>
+  <h2 style="margin:0">Scaling Backlinks &amp; Directory Authority</h2>
+</div>
+<div style="font-size:clamp(15px,2.1vh,21px);color:var(--ink2);font-weight:500;margin-bottom:clamp(20px,3vh,36px);flex-shrink:0">Domain rating and referring domains compound over time. Here is how we keep building on the 13 links already placed.</div>
+
+<div style="flex:1;min-height:0;display:flex;flex-direction:column;justify-content:center;gap:clamp(16px,2.2vh,26px)">
+
+  <div style="display:flex;gap:clamp(14px,1.8vw,24px);flex-shrink:0">
+
+    <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:clamp(10px,1.4vh,16px)">
+      <div style="display:flex;align-items:center;gap:8px;flex-shrink:0">
+        <svg style="width:16px;height:16px;flex-shrink:0" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+        <div style="font-size:clamp(12px,1.5vh,15px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4)">Continued Backlink Building</div>
+      </div>
+      <div style="display:flex;gap:10px;align-items:flex-start;background:var(--paper2);border:1px solid var(--rule);border-radius:6px;padding:clamp(8px,1.1vh,13px) clamp(10px,1.2vw,14px)">
+        <span style="color:var(--accent);font-size:13px;flex-shrink:0;margin-top:1px">&#9679;</span>
+        <span style="font-size:clamp(14px,1.9vh,19px);color:var(--ink2);line-height:1.45">Ongoing outreach to healthcare, HR-tech and workforce publications for new placements</span>
+      </div>
+      <div style="display:flex;gap:10px;align-items:flex-start;background:var(--paper2);border:1px solid var(--rule);border-radius:6px;padding:clamp(8px,1.1vh,13px) clamp(10px,1.2vw,14px)">
+        <span style="color:var(--accent);font-size:13px;flex-shrink:0;margin-top:1px">&#9679;</span>
+        <span style="font-size:clamp(14px,1.9vh,19px);color:var(--ink2);line-height:1.45">Anchors and target pages chosen to match the content clusters</span>
+      </div>
+      <div style="display:flex;gap:10px;align-items:flex-start;background:var(--paper2);border:1px solid var(--rule);border-radius:6px;padding:clamp(8px,1.1vh,13px) clamp(10px,1.2vw,14px)">
+        <span style="color:var(--accent);font-size:13px;flex-shrink:0;margin-top:1px">&#9679;</span>
+        <span style="font-size:clamp(14px,1.9vh,19px);color:var(--ink2);line-height:1.45">Every placement tracked the same way as the current 13: DR, traffic, anchor, status</span>
+      </div>
+      <div style="display:flex;gap:10px;align-items:flex-start;background:var(--paper2);border:1px solid var(--rule);border-radius:6px;padding:clamp(8px,1.1vh,13px) clamp(10px,1.2vw,14px)">
+        <span style="color:var(--accent);font-size:13px;flex-shrink:0;margin-top:1px">&#9679;</span>
+        <span style="font-size:clamp(14px,1.9vh,19px);color:var(--ink2);line-height:1.45">Goal: steady month-over-month growth in referring domains and domain rating</span>
+      </div>
+    </div>
+
+    <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:clamp(10px,1.4vh,16px)">
+      <div style="display:flex;align-items:center;gap:8px;flex-shrink:0">
+        <svg style="width:16px;height:16px;flex-shrink:0" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+        <div style="font-size:clamp(12px,1.5vh,15px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4)">Directory Listings</div>
+      </div>
+      <div style="display:flex;gap:10px;align-items:flex-start;background:var(--paper2);border:1px solid var(--rule);border-radius:6px;padding:clamp(8px,1.1vh,13px) clamp(10px,1.2vw,14px)">
+        <span style="color:var(--accent);font-size:13px;flex-shrink:0;margin-top:1px">&#9679;</span>
+        <span style="font-size:clamp(14px,1.9vh,19px);color:var(--ink2);line-height:1.45">Getting Flexzo listed across healthcare software &amp; HR tech directories</span>
+      </div>
+      <div style="display:flex;gap:10px;align-items:flex-start;background:var(--paper2);border:1px solid var(--rule);border-radius:6px;padding:clamp(8px,1.1vh,13px) clamp(10px,1.2vw,14px)">
+        <span style="color:var(--accent);font-size:13px;flex-shrink:0;margin-top:1px">&#9679;</span>
+        <span style="font-size:clamp(14px,1.9vh,19px);color:var(--ink2);line-height:1.45">Staffing and general business directory listings</span>
+      </div>
+      <div style="display:flex;gap:10px;align-items:flex-start;background:var(--paper2);border:1px solid var(--rule);border-radius:6px;padding:clamp(8px,1.1vh,13px) clamp(10px,1.2vw,14px)">
+        <span style="color:var(--accent);font-size:13px;flex-shrink:0;margin-top:1px">&#9679;</span>
+        <span style="font-size:clamp(14px,1.9vh,19px);color:var(--ink2);line-height:1.45">Consistent name, address and profile details across every listing</span>
+      </div>
+      <div style="display:flex;gap:10px;align-items:flex-start;background:var(--paper2);border:1px solid var(--rule);border-radius:6px;padding:clamp(8px,1.1vh,13px) clamp(10px,1.2vw,14px)">
+        <span style="color:var(--accent);font-size:13px;flex-shrink:0;margin-top:1px">&#9679;</span>
+        <span style="font-size:clamp(14px,1.9vh,19px);color:var(--ink2);line-height:1.45">Builds brand authority beyond editorial links, and lifts domain rating further</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div style="background:var(--accent2-bg);border:1px solid var(--accent2-bd);border-radius:8px;padding:clamp(9px,1.2vh,14px) clamp(12px,1.4vw,16px);flex-shrink:0">
+    <p style="font-size:clamp(13px,1.75vh,17px);color:var(--ink2);margin:0;line-height:1.5">These two channels compound together: more editorial links and a more consistent directory footprint both feed the same authority signals Google and AI models use to decide who to trust.</p>
+  </div>
+
+</div>
+</div></section>
+
+<!-- SLIDE 13: Continuing Reddit Engagement (Planned) -->
+<section><div class="s">
+<div class="shdr" data-n="13"></div>
+<div style="display:flex;align-items:center;gap:10px;margin-bottom:clamp(14px,2vh,22px);flex-shrink:0">
+  <span style="font-family:'DM Mono',monospace;font-size:clamp(10px,1.2vh,12px);font-weight:700;color:var(--accent2-dark);background:var(--accent2-bg);border:1px solid var(--accent2-bd);border-radius:4px;padding:2px 8px">NEXT</span>
+  <h2 style="margin:0">Continuing Reddit Engagement</h2>
+</div>
+<div style="font-size:clamp(15px,2.1vh,21px);color:var(--ink2);font-weight:500;margin-bottom:clamp(20px,3vh,36px);flex-shrink:0">The 7 live comments on r/cna and r/TravelNursing are the start. Here is how we keep showing up where NHS and travel nurses are talking.</div>
+
+<div style="flex:1;min-height:0;display:flex;flex-direction:column;justify-content:center;gap:clamp(16px,2.2vh,26px)">
+
+  <div style="display:flex;gap:clamp(14px,1.8vw,24px);flex-shrink:0">
+
+    <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:clamp(10px,1.4vh,16px)">
+      <div style="display:flex;align-items:center;gap:8px;flex-shrink:0">
+        <img src="https://www.google.com/s2/favicons?domain=reddit.com&sz=32" style="width:16px;height:16px;border-radius:3px;flex-shrink:0">
+        <div style="font-size:clamp(12px,1.5vh,15px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4)">Expanding Subreddit Coverage</div>
+      </div>
+      <div style="display:flex;gap:10px;align-items:flex-start;background:var(--paper2);border:1px solid var(--rule);border-radius:6px;padding:clamp(8px,1.1vh,13px) clamp(10px,1.2vw,14px)">
+        <span style="color:var(--accent);font-size:13px;flex-shrink:0;margin-top:1px">&#9679;</span>
+        <span style="font-size:clamp(14px,1.9vh,19px);color:var(--ink2);line-height:1.45">Identifying more high-fit subreddits beyond r/cna and r/TravelNursing, such as r/nursing and r/HospitalAdministration</span>
+      </div>
+      <div style="display:flex;gap:10px;align-items:flex-start;background:var(--paper2);border:1px solid var(--rule);border-radius:6px;padding:clamp(8px,1.1vh,13px) clamp(10px,1.2vw,14px)">
+        <span style="color:var(--accent);font-size:13px;flex-shrink:0;margin-top:1px">&#9679;</span>
+        <span style="font-size:clamp(14px,1.9vh,19px);color:var(--ink2);line-height:1.45">Keeping a weekly posting cadence in threads where Flexzo is a genuine fit</span>
+      </div>
+      <div style="display:flex;gap:10px;align-items:flex-start;background:var(--paper2);border:1px solid var(--rule);border-radius:6px;padding:clamp(8px,1.1vh,13px) clamp(10px,1.2vw,14px)">
+        <span style="color:var(--accent);font-size:13px;flex-shrink:0;margin-top:1px">&#9679;</span>
+        <span style="font-size:clamp(14px,1.9vh,19px);color:var(--ink2);line-height:1.45">Prioritizing high-engagement threads for maximum visibility per comment</span>
+      </div>
+      <div style="display:flex;gap:10px;align-items:flex-start;background:var(--paper2);border:1px solid var(--rule);border-radius:6px;padding:clamp(8px,1.1vh,13px) clamp(10px,1.2vw,14px)">
+        <span style="color:var(--accent);font-size:13px;flex-shrink:0;margin-top:1px">&#9679;</span>
+        <span style="font-size:clamp(14px,1.9vh,19px);color:var(--ink2);line-height:1.45">Every new comment tracked the same way as the current 7: subreddit, category, post, live link</span>
+      </div>
+    </div>
+
+    <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:clamp(10px,1.4vh,16px)">
+      <div style="display:flex;align-items:center;gap:8px;flex-shrink:0">
+        <svg style="width:16px;height:16px;flex-shrink:0" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+        <div style="font-size:clamp(12px,1.5vh,15px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4)">Building Long-Term Credibility</div>
+      </div>
+      <div style="display:flex;gap:10px;align-items:flex-start;background:var(--paper2);border:1px solid var(--rule);border-radius:6px;padding:clamp(8px,1.1vh,13px) clamp(10px,1.2vw,14px)">
+        <span style="color:var(--accent);font-size:13px;flex-shrink:0;margin-top:1px">&#9679;</span>
+        <span style="font-size:clamp(14px,1.9vh,19px);color:var(--ink2);line-height:1.45">Monitoring live comments daily and following up on replies where useful</span>
+      </div>
+      <div style="display:flex;gap:10px;align-items:flex-start;background:var(--paper2);border:1px solid var(--rule);border-radius:6px;padding:clamp(8px,1.1vh,13px) clamp(10px,1.2vw,14px)">
+        <span style="color:var(--accent);font-size:13px;flex-shrink:0;margin-top:1px">&#9679;</span>
+        <span style="font-size:clamp(14px,1.9vh,19px);color:var(--ink2);line-height:1.45">Growing account history and karma so future comments carry more weight</span>
+      </div>
+      <div style="display:flex;gap:10px;align-items:flex-start;background:var(--paper2);border:1px solid var(--rule);border-radius:6px;padding:clamp(8px,1.1vh,13px) clamp(10px,1.2vw,14px)">
+        <span style="color:var(--accent);font-size:13px;flex-shrink:0;margin-top:1px">&#9679;</span>
+        <span style="font-size:clamp(14px,1.9vh,19px);color:var(--ink2);line-height:1.45">Keeping replies genuinely helpful first, on-brand second, to stay within each subreddit&rsquo;s rules</span>
+      </div>
+      <div style="display:flex;gap:10px;align-items:flex-start;background:var(--paper2);border:1px solid var(--rule);border-radius:6px;padding:clamp(8px,1.1vh,13px) clamp(10px,1.2vw,14px)">
+        <span style="color:var(--accent);font-size:13px;flex-shrink:0;margin-top:1px">&#9679;</span>
+        <span style="font-size:clamp(14px,1.9vh,19px);color:var(--ink2);line-height:1.45">Tracking which subreddits and categories convert best to guide where we focus next</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div style="background:var(--accent2-bg);border:1px solid var(--accent2-bd);border-radius:8px;padding:clamp(9px,1.2vh,14px) clamp(12px,1.4vw,16px);flex-shrink:0">
+    <p style="font-size:clamp(13px,1.75vh,17px);color:var(--ink2);margin:0;line-height:1.5">Reddit rewards consistency. The more genuinely useful comments we add over time, the more Flexzo shows up both in Reddit search itself and in the AI answers that increasingly cite Reddit threads directly.</p>
+  </div>
+
+</div>
+</div></section>
+
+<!-- SLIDE 14: Content Clusters (Proposed) -->
+<section><div class="s">
+<div class="shdr" data-n="14"></div>
+<div style="display:flex;align-items:center;gap:10px;margin-bottom:clamp(14px,2vh,22px);flex-shrink:0">
+  <span style="font-family:'DM Mono',monospace;font-size:clamp(10px,1.2vh,12px);font-weight:700;color:var(--accent2-dark);background:var(--accent2-bg);border:1px solid var(--accent2-bd);border-radius:4px;padding:2px 8px">PROPOSED</span>
+  <h2 style="margin:0">Content Clusters</h2>
+</div>
+<div style="font-size:clamp(15px,2.1vh,21px);color:var(--ink2);font-weight:500;margin-bottom:clamp(20px,3vh,36px);flex-shrink:0">Five proposed content clusters, each built to own a distinct part of the search and AI answer landscape for Flexzo.</div>
+
+<div style="flex:1;min-height:0;overflow:hidden;background:var(--paper2);border:1px solid var(--rule);border-radius:10px;display:flex;flex-direction:column">
+
+  <div style="display:grid;grid-template-columns:70px 1.2fr 2fr;gap:clamp(10px,1.3vw,16px);padding:clamp(7px,1vh,10px) clamp(14px,1.6vw,18px);border-bottom:1px solid var(--rule);flex-shrink:0">
+    <span style="font-size:clamp(10px,1.2vh,12px);font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--ink4)">Cluster</span>
+    <span style="font-size:clamp(10px,1.2vh,12px);font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--ink4)">Name</span>
+    <span style="font-size:clamp(10px,1.2vh,12px);font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--ink4)">Purpose</span>
+  </div>
+
+  <div style="flex:1;min-height:0;display:flex;flex-direction:column;justify-content:space-between">
+
+    <div style="display:grid;grid-template-columns:70px 1.2fr 2fr;gap:clamp(10px,1.3vw,16px);padding:clamp(9px,1.3vh,15px) clamp(14px,1.6vw,18px);border-bottom:1px solid var(--rule);align-items:center;flex:1;background:#fff">
+      <div style="display:flex;align-items:center;gap:8px">
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.7vh,16px);font-weight:700;color:var(--accent-dark);background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:5px;width:clamp(24px,3vh,30px);height:clamp(24px,3vh,30px);display:flex;align-items:center;justify-content:center;flex-shrink:0">A</span>
+        <svg style="width:18px;height:18px;flex-shrink:0" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      </div>
+      <span style="font-size:clamp(14px,1.85vh,17px);font-weight:700;color:var(--ink)">Core Scheduling &amp; Workforce Software</span>
+      <span style="font-size:clamp(13px,1.7vh,16px);color:var(--ink2);line-height:1.4">Own the primary product category across all staff types and use cases.</span>
+    </div>
+
+    <div style="display:grid;grid-template-columns:70px 1.2fr 2fr;gap:clamp(10px,1.3vw,16px);padding:clamp(9px,1.3vh,15px) clamp(14px,1.6vw,18px);border-bottom:1px solid var(--rule);align-items:center;flex:1">
+      <div style="display:flex;align-items:center;gap:8px">
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.7vh,16px);font-weight:700;color:var(--accent-dark);background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:5px;width:clamp(24px,3vh,30px);height:clamp(24px,3vh,30px);display:flex;align-items:center;justify-content:center;flex-shrink:0">B</span>
+        <svg style="width:18px;height:18px;flex-shrink:0" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+      </div>
+      <span style="font-size:clamp(14px,1.85vh,17px);font-weight:700;color:var(--ink)">AI-Powered Workforce &amp; Recruiting</span>
+      <span style="font-size:clamp(13px,1.7vh,16px);color:var(--ink2);line-height:1.4">Position Flexzo at the intersection of AI and healthcare staffing.</span>
+    </div>
+
+    <div style="display:grid;grid-template-columns:70px 1.2fr 2fr;gap:clamp(10px,1.3vw,16px);padding:clamp(9px,1.3vh,15px) clamp(14px,1.6vw,18px);border-bottom:1px solid var(--rule);align-items:center;flex:1;background:#fff">
+      <div style="display:flex;align-items:center;gap:8px">
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.7vh,16px);font-weight:700;color:var(--accent-dark);background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:5px;width:clamp(24px,3vh,30px);height:clamp(24px,3vh,30px);display:flex;align-items:center;justify-content:center;flex-shrink:0">C</span>
+        <svg style="width:18px;height:18px;flex-shrink:0" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+      </div>
+      <span style="font-size:clamp(14px,1.85vh,17px);font-weight:700;color:var(--ink)">Best-Of / Comparison Roundups</span>
+      <span style="font-size:clamp(13px,1.7vh,16px);color:var(--ink2);line-height:1.4">Capture high-intent &ldquo;which tool should I pick&rdquo; searches.</span>
+    </div>
+
+    <div style="display:grid;grid-template-columns:70px 1.2fr 2fr;gap:clamp(10px,1.3vw,16px);padding:clamp(9px,1.3vh,15px) clamp(14px,1.6vw,18px);border-bottom:1px solid var(--rule);align-items:center;flex:1">
+      <div style="display:flex;align-items:center;gap:8px">
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.7vh,16px);font-weight:700;color:var(--accent-dark);background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:5px;width:clamp(24px,3vh,30px);height:clamp(24px,3vh,30px);display:flex;align-items:center;justify-content:center;flex-shrink:0">D</span>
+        <svg style="width:18px;height:18px;flex-shrink:0" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="12" r="7"/><circle cx="15" cy="12" r="7"/></svg>
+      </div>
+      <span style="font-size:clamp(14px,1.85vh,17px);font-weight:700;color:var(--ink)">Competitor Vs. / Alternatives / Reviews</span>
+      <span style="font-size:clamp(13px,1.7vh,16px);color:var(--ink2);line-height:1.4">Capture bottom-funnel comparison traffic &mdash; 10 competitors &times; 3 pages each.</span>
+    </div>
+
+    <div style="display:grid;grid-template-columns:70px 1.2fr 2fr;gap:clamp(10px,1.3vw,16px);padding:clamp(9px,1.3vh,15px) clamp(14px,1.6vw,18px);align-items:center;flex:1;background:#fff">
+      <div style="display:flex;align-items:center;gap:8px">
+        <span style="font-family:'DM Mono',monospace;font-size:clamp(13px,1.7vh,16px);font-weight:700;color:var(--accent-dark);background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:5px;width:clamp(24px,3vh,30px);height:clamp(24px,3vh,30px);display:flex;align-items:center;justify-content:center;flex-shrink:0">E</span>
+        <svg style="width:18px;height:18px;flex-shrink:0" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+      </div>
+      <span style="font-size:clamp(14px,1.85vh,17px);font-weight:700;color:var(--ink)">Compliance &amp; Credentialing</span>
+      <span style="font-size:clamp(13px,1.7vh,16px);color:var(--ink2);line-height:1.4">Compliance and credentialing articles to build topical authority and trust.</span>
+    </div>
+
+  </div>
+</div>
+
+</div></section>
+
+</div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reveal.min.js"></script>
+<script>
+(function(){
+  var T=14,D='flexzo.ai',P='Progress Update';
+  document.querySelectorAll('.shdr').forEach(function(el){
+    var n=String(el.dataset.n).padStart(2,'0');
+    el.outerHTML='<div class="stripe"></div><div class="hdr"><div style="display:flex;align-items:center;gap:10px"><img src="https://www.google.com/s2/favicons?domain='+D+'&sz=128" class="hdr-favicon"><span class="tag">'+P+'</span></div><div class="hdr-right"><div class="snum">'+n+' / '+T+'</div><a href="https://www.aipeekaboo.com" target="_blank" rel="noopener" class="powered"><span>Powered by</span><img src="https://www.aipeekaboo.com/images/peekaboo-logo-black.png" alt="AI Peekaboo"></a></div></div><div class="divider"></div>';
+  });
+})();
+</script>
+<script>
+Reveal.initialize({
+  hash: true,
+  controls: true,
+  progress: true,
+  slideNumber: false,
+  transition: 'none',
+  disableLayout: true,
+  width: 1920,
+  height: 1080,
+});
+document.querySelectorAll('.s').forEach(function(el){
+  el.addEventListener('touchstart', function(e){ e.stopPropagation(); }, {passive:true});
+  el.addEventListener('touchmove', function(e){ e.stopPropagation(); }, {passive:true});
+});
+</script>
+</body>
+</html>

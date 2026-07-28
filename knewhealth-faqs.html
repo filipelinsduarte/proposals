@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Knew Health FAQs | Medical Cost Sharing Questions Answered</title>
+<meta name="description" content="Answers to the most common questions about Knew Health medical cost sharing: what it is, what it costs, how the Initial Unshareable Amount works, and what is eligible for sharing.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#fff}
+.kht{--navy:#194C8C;--green:#29745F;--green-deep:#0B3B2E;--orange:#E86049;--mint:#F4FAF2;--cream:#FFF5EB;--ink:#333333;--muted:#5c6b64;--line:#e3ddd2;--paper:#fff;--serif:"Libre Baskerville",Georgia,serif;--sans:"Open Sans",system-ui,sans-serif;
+  font-family:var(--sans);color:var(--ink);background:#fff;line-height:1.6}
+.kht *{box-sizing:border-box;margin:0;padding:0}
+.kht h1,.kht h2,.kht h3{font-family:var(--serif);color:var(--navy);font-weight:700;line-height:1.15;letter-spacing:-.01em;text-wrap:balance}
+.kht p,.kht li{text-wrap:pretty}
+.kht a{color:inherit;text-decoration:none}
+.kht .wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+.kht .eyebrow{font-weight:700;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--green)}
+.kht .btn{display:inline-flex;align-items:center;gap:.5em;font-weight:700;font-size:15px;padding:15px 26px;border:2px solid transparent;cursor:pointer;white-space:nowrap}
+.kht .btn-primary{background:var(--orange);color:#fff}
+.kht .btn-ghost{background:transparent;color:var(--navy);border-color:var(--navy)}
+.kht .hero{background:#fff;padding:56px 0 56px}
+.kht .hero .grid{display:grid;grid-template-columns:1.84fr 1fr;gap:44px;align-items:start}
+.kht .hero h1{font-size:clamp(32px,4.4vw,50px);margin:16px 0 18px}
+.kht .hero h1 em{font-style:italic;color:var(--green)}
+.kht .hero .lead{font-size:19px;color:#43514b;max-width:none;margin-bottom:26px}
+.kht .cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:18px}
+.kht .hero .tp-mini{max-width:220px;margin:0 0 6px -6px;text-align:left}
+.kht .side{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:32px 24px 24px;box-shadow:0 24px 60px -34px rgba(11,59,46,.5);margin-left:16px}
+.kht .side h4{font-family:var(--sans);font-weight:700;font-size:15px;color:var(--navy);margin-bottom:20px;text-transform:uppercase;letter-spacing:.05em}
+.kht .side .line{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:14px 0;border-bottom:1px solid var(--line);font-size:17px}
+.kht .side .line:last-child{border-bottom:none}
+.kht .side .line b{color:var(--green-deep);font-size:18px}
+.kht a.line:hover span{color:var(--green);text-decoration:underline}
+.kht .carousel-section{background:#fff;padding:8px 0 48px}
+.kht .block{padding:64px 0;background:#fff}
+.kht .block.alt{background:var(--cream)}
+.kht .sec-head{max-width:660px;margin-bottom:36px}
+.kht .sec-head.center{margin-left:auto;margin-right:auto;text-align:center}
+.kht .sec-head h2{font-size:clamp(27px,3.6vw,36px);margin-top:12px}
+.kht .sec-head p{font-size:17px;color:var(--muted);margin-top:12px}
+/* faq */
+.kht .faq-wrap{max-width:840px;margin:0}
+.kht .faq-cat{scroll-margin-top:24px}
+.kht .faq-cat + .faq-cat{margin-top:52px}
+.kht .cat-head{display:flex;align-items:center;gap:14px;margin-bottom:6px}
+.kht .cat-ico{width:44px;height:44px;border-radius:11px;background:var(--mint);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.kht .cat-ico svg{width:23px;height:23px;stroke:var(--green);fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.kht .cat-head h2{font-size:26px}
+.kht .faq details.qa{border-bottom:1px solid var(--line)}
+.kht .faq details.qa:last-child{border-bottom:none}
+.kht .faq summary{list-style:none;cursor:pointer;display:flex;align-items:flex-start;justify-content:space-between;gap:20px;padding:20px 0;font-family:var(--serif);font-weight:700;font-size:19px;color:var(--navy);line-height:1.35;text-wrap:balance}
+.kht .faq summary::-webkit-details-marker{display:none}
+.kht .faq summary:hover .qtext{color:var(--green)}
+.kht .faq summary:focus-visible{outline:2px solid var(--green);outline-offset:3px}
+.kht .faq .chev{width:20px;height:20px;flex-shrink:0;stroke:var(--green);fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;margin-top:4px;transition:transform .18s ease}
+.kht .faq details[open] .chev{transform:rotate(180deg)}
+.kht .faq .ans{padding:0 40px 22px 0}
+.kht .faq .ans p{font-size:15.5px;color:var(--muted)}
+.kht .faq .ans p + p{margin-top:14px}
+.kht .faq .ans ul{margin-top:14px;padding-left:22px;list-style:disc}
+.kht .faq .ans li{font-size:15.5px;color:var(--muted);margin-bottom:8px}
+.kht .faq .ans li:last-child{margin-bottom:0}
+.kht .faq .ans b{color:var(--navy)}
+.kht .faq .ans a{color:var(--green);text-decoration:underline;font-weight:600}
+.kht .faq-note{max-width:840px;margin:44px 0 0;background:#fff;border:1px solid var(--line);border-radius:10px;padding:18px 22px;font-size:14.5px;color:var(--muted);line-height:1.6}
+.kht .faq-note b{color:var(--navy)}
+.kht .gp-section{background:var(--mint);padding:80px 24px;text-align:center}
+.kht .gp-h2{font-family:var(--serif);color:var(--navy);font-weight:700;font-size:clamp(30px,4.4vw,44px);line-height:1.15;margin:0 0 20px}
+.kht .gp-sub{font-family:var(--sans);color:var(--ink);font-size:18px;line-height:1.6;max-width:640px;margin:0 auto 40px}
+.kht .gp-card{width:100%;max-width:640px;margin:0 auto;background:#fff;border-radius:16px;padding:8px}
+.kht .q-section{background:#fff;padding:80px 24px;border-top:1px solid var(--line)}
+.kht .q-inner{max-width:1140px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:60px;flex-wrap:wrap}
+.kht .q-text{flex:1 1 420px;text-align:left}
+.kht .q-h2{font-family:var(--serif);color:var(--navy);font-weight:700;font-size:clamp(30px,4.4vw,44px);line-height:1.15;margin:0 0 16px}
+.kht .q-sub{font-family:var(--sans);color:var(--ink);font-size:18px;line-height:1.6;margin:0 0 32px}
+.kht .q-btn{display:inline-block;background:var(--orange);color:#fff;font-family:var(--sans);font-weight:700;font-size:18px;text-decoration:none;padding:20px 40px;min-width:280px;text-align:center}
+.kht .q-btn:hover{opacity:.92}
+.kht .q-photo{flex:0 0 320px;width:320px;height:320px}
+.kht .q-photo img{width:100%;height:100%;display:block}
+@media(max-width:900px){
+  .kht .gp-h2,.kht .q-h2{font-size:32px}
+  .kht .q-inner{flex-direction:column;text-align:center}
+  .kht .q-text{text-align:center}
+  .kht .q-photo{width:240px;height:240px}
+}
+@media(max-width:860px){.kht .hero .grid{grid-template-columns:1fr;gap:34px}.kht .side{margin-left:0}}
+@media(max-width:600px){.kht .faq .ans{padding-right:0}.kht .faq summary{font-size:17.5px}}
+.kht-topbar{background:#29745F;color:#fff;padding:0 28px;font-size:16px;font-weight:300;min-height:60px;display:flex;align-items:center}
+.kht-topbar .in{width:100%;max-width:1180px;margin:0 auto;display:flex;justify-content:flex-end;align-items:center;gap:10px;flex-wrap:wrap}
+.kht-topbar b{font-weight:700}
+.kht-topbar .ph{display:flex;align-items:center;gap:8px;font-weight:700;font-size:21px;margin-left:4px;color:#fff}
+.kht-topbar .ph svg{width:18px;height:18px;fill:#fff}
+.kht-nav-bar{background:#fff;border-bottom:1px solid #eee}
+.kht-nav-bar .in{max-width:1180px;margin:0 auto;padding:16px 28px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.kht-nav-bar .logo img{height:34px;display:block}
+.kht-nav-bar ul{list-style:none;display:flex;gap:26px;margin:0;padding:0}
+.kht-nav-bar ul a{font-size:16px;color:#333;font-weight:400}
+.kht-nav-bar .actions{display:flex;align-items:center;gap:12px;flex-shrink:0}
+.kht-nav-bar .actions a{padding:10px 0;font-size:18px;font-weight:700;border-radius:0;border:2px solid transparent;white-space:nowrap;display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box}
+.kht-nav-bar .actions .price{background:#E86049;color:#fff;border:2px solid #E86049;width:182px;height:48px}
+.kht-nav-bar .actions .join{background:#fff;color:#333333;border:3px solid #E86049;width:150px;height:50px}
+.kht-footer{background:#194C8C;color:#fff;padding:56px 0 0}
+.kht-footer .in{max-width:1180px;margin:0 auto;padding:0 28px}
+.kht-footer .top{display:grid;grid-template-columns:auto 1fr 1fr auto auto;gap:34px;align-items:start;padding-bottom:44px}
+.kht-footer .mark{display:block;flex-shrink:0}
+.kht-footer .mark img{width:180px;height:180px;display:block}
+.kht-footer .col a{display:block;color:#fff;font-size:16px;font-weight:400;padding:5px 0;margin-bottom:0}
+.kht-footer .join-social{display:flex;flex-direction:column;gap:16px;align-items:flex-start}
+.kht-footer .join-social a.join{border:2px solid #fff;color:#fff;padding:10px 0;font-size:16px;font-weight:700;border-radius:0;width:91px;height:46px;display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box}
+.kht-footer .social{display:flex;gap:14px}
+.kht-footer .social a{width:35px;height:40px;display:inline-flex;align-items:center;justify-content:center}
+.kht-footer .social svg{width:30px;height:30px;fill:#fff}
+.kht-footer .tp-widget{justify-self:end;width:150px;min-height:25px}
+.kht-footer .legal{border-top:1px solid rgba(255,255,255,.18);padding:26px 0;font-size:16px;font-weight:300;color:#fff;line-height:24px}
+.kht-footer .legal a{text-decoration:underline;color:#fff}
+.kht-footer .legal p{margin-bottom:14px}
+.kht-footer .copyright{text-align:center;padding:22px 0;font-size:14px;font-weight:400;color:#fff;border-top:1px solid rgba(255,255,255,.12)}
+@media(max-width:900px){.kht-footer .top{grid-template-columns:1fr 1fr;gap:26px}.kht-nav-bar ul{display:none}}
+
+/* Responsive nav: exact live-site CTA spec holds at >=1101px; below that the fixed
+   182x48 / 150x50 boxes cannot fit, so they shrink and the bar wraps.
+   Selectors match .price/.join specificity or the fixed widths win. */
+@media(max-width:1100px){
+  .kht-nav-bar .in{flex-wrap:wrap;justify-content:center;row-gap:12px;gap:14px}
+  .kht-nav-bar ul{flex-wrap:wrap;justify-content:center}
+  .kht-nav-bar .actions .price,.kht-nav-bar .actions .join{width:auto;min-width:0;height:44px;padding:10px 18px;font-size:16px}
+}
+@media(max-width:700px){
+  /* release the H1 nowrap pair, it cannot fit on a phone */
+  .kht .nb{white-space:normal}
+}
+@media(max-width:560px){
+  .kht-nav-bar .actions .price,.kht-nav-bar .actions .join{height:40px;padding:9px 14px;font-size:15px}
+  .kht-topbar{font-size:14px}
+  .kht-topbar .ph{font-size:18px}
+}
+</style>
+</head>
+<body>
+<div class="kht">
+  <div class="kht-topbar"><div class="in"><span>Questions? <b>Call our Care Team Today</b></span><a class="ph" href="tel:855-542-0050"><svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.57.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.57 1 1 0 01-.25 1.02z"/></svg>(855) 542-0050</a></div></div>
+  <div class="kht-nav-bar"><div class="in">
+    <a class="logo" href="https://www.knewhealth.com/"><img src="https://irp.cdn-website.com/b474ec60/dms3rep/multi/ac43c328-knew-health.svg" alt="Knew Health"></a>
+    <ul><li><a href="https://www.knewhealth.com/webinar">Learn</a></li><li><a href="https://www.knewhealth.com/services">Services</a></li><li><a href="https://www.knewhealth.com/faq">FAQ</a></li><li><a href="https://www.knewhealth.com/guidelines">Guidelines</a></li><li><a href="https://www.knewhealth.com/team">Team</a></li><li><a href="https://members.knewhealth.com/login">Member Login</a></li></ul>
+    <div class="actions"><a class="price" href="https://www.knewhealth.com/knew-health-cost-calculator">See My Price</a><a class="join" href="https://www.knewhealth.com/sign-up">Join Now</a></div>
+  </div></div>
+
+  <section class="hero">
+    <div class="wrap">
+      <div class="tp-mini">
+        <div class="trustpilot-widget" data-locale="en-US" data-template-id="53aa8807dec7e10d38f59f32" data-businessunit-id="5e165cb2ef69ea0001fb0a8b" data-style-height="120px" data-style-width="100%">
+          <a href="https://www.trustpilot.com/review/knewhealth.com" target="_blank" rel="noopener">Trustpilot</a>
+        </div>
+      </div>
+      <div class="grid">
+        <div>
+          <span class="eyebrow">Frequently asked questions</span>
+          <h1>Your questions about medical cost sharing, <em>answered.</em></h1>
+          <p class="lead">Changing how you pay for healthcare is a big decision, and you want to know what happens when something actually goes wrong before you commit. Start anywhere. If your question is not answered here, our Care Team picks up the phone.</p>
+          <div class="cta-row"><a href="#pricing" class="btn btn-primary">See My Price</a><a href="tel:855-542-0050" class="btn btn-ghost">(855) 542-0050</a></div>
+        </div>
+        <div class="side">
+          <h4>Jump to a section</h4>
+          <a class="line" href="#cost-sharing"><span>Cost Sharing</span><b>4</b></a>
+          <a class="line" href="#getting-started"><span>Getting Started</span><b>3</b></a>
+          <a class="line" href="#memberships"><span>Memberships</span><b>7</b></a>
+          <a class="line" href="#medical-needs"><span>Medical Needs</span><b>7</b></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="carousel-section">
+    <div class="wrap">
+      <div class="trustpilot-widget" data-locale="en-US" data-template-id="53aa8912dec7e10d38f59f36" data-businessunit-id="5e165cb2ef69ea0001fb0a8b" data-style-height="140px" data-style-width="100%" data-tags="review" data-stars="1,2,3,4,5" data-review-languages="en">
+        <a href="https://www.trustpilot.com/review/knewhealth.com" target="_blank" rel="noopener">Trustpilot</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="wrap">
+      <div class="faq-wrap">
+      <div class="faq-cat" id="cost-sharing"><div class="cat-head"><span class="cat-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-10-9.5C.5 7 3 3.5 7 3.5c2.2 0 3.8 1.2 5 3 1.2-1.8 2.8-3 5-3 4 0 6.5 3.5 5 8-2.5 4.9-10 9.5-10 9.5z"/></svg></span><h2>Cost Sharing</h2></div><div class="faq"><details class="qa" id="q-what-is-knew-health" open><summary><span class="qtext">What is Knew Health?</span><svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary><div class="ans"><p>Knew Health is an affordable membership-based alternative healthcare solution also known as medical cost sharing. Becoming a member of the Knew Health Community means joining like-minded individuals who are proactive about their wellness and looking for a better way to manage healthcare costs. Our Membership acts like a hub, connecting you with trusted services that help you save on all aspects of healthcare, especially general health and wellness costs. Knew Health Memberships are also designed to reduce the individual financial impact of medical expenses that result from illnesses, injuries, and pregnancies for its members.</p></div></details><details class="qa" id="q-what-is-medical-health-sharing"><summary><span class="qtext">What is medical health sharing?</span><svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary><div class="ans"><p>Medical Health Sharing is an arrangement whereby members agree to share medical expenses through voluntary giving. It is made up of like-minded individuals who all agree on the standards outlined in the Membership Guidelines. Health sharing is NOT insurance or registered by any insurance. It does not assess applicants’ health risks because the Community is not assuming financial risk or liability.</p></div></details><details class="qa" id="q-is-medical-health-sharing-a-new-approach"><summary><span class="qtext">Is medical health sharing a new approach?</span><svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary><div class="ans"><p>No, Medical Health Sharing traces its origins back many years to the Amish and Mennonite communities. It began expanding in the 1980s with the advent of large, Christian-based health care sharing ministries.</p><p>The concept has since evolved since then, but the purpose remains the same: for the Community to help relieve the burden on the individual in their time of need.</p></div></details><details class="qa" id="q-why-do-knew-health-members-have-peace-of-mind"><summary><span class="qtext">Why do Knew Health Members have peace of mind?</span><svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary><div class="ans"><p>There are many reasons that Knew Health provides peace of mind in Members’ healthcare journeys. Spending less on healthcare is at the top of the list. The simplicity that comes with the Initial Unshareable Amount (IUA) model helps make healthcare costs more transparent. Having the freedom to see any provider they choose, especially when the unexpected in life happens, is something that is found nowhere else in healthcare.</p></div></details></div></div>
+      <div class="faq-cat" id="getting-started"><div class="cat-head"><span class="cat-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 7h7l-5.5 4.5L18.5 21 12 16.5 5.5 21l2-7.5L2 9h7z"/></svg></span><h2>Getting Started</h2></div><div class="faq"><details class="qa" id="q-why-do-members-join-knew-health"><summary><span class="qtext">Why do Members join Knew Health?</span><svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary><div class="ans"><p>A Knew Health membership means healthcare freedom, savings, and peace of mind. Members join for different reasons and points in their healthcare journey. We recommend scheduling a call with our Care Team to understand what we offer and how it can work for you and your family.</p></div></details><details class="qa" id="q-how-much-does-knew-health-cost"><summary><span class="qtext">How much does Knew Health cost?</span><svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary><div class="ans"><p>The cost of Membership is based on the oldest member’s age, household size, selected Initial Unshareable Amount (IUA), and tobacco use status.</p><p>Members pay their monthly contribution one month before their Membership becomes active. For example, if a Membership begins in August, the Member would pay in July for their August monthly contribution.</p><p>Most of our Members will reduce their healthcare costs by about 50% compared to other healthcare options.</p><p><a href="https://www.knewhealth.com/knew-health-cost-calculator">Request Pricing</a></p></div></details><details class="qa" id="q-how-can-i-sign-up"><summary><span class="qtext">How can I sign up?</span><svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary><div class="ans"><p>Our online sign-up is a quick and simple process. To become a Member, complete the online forms. Membership is month-to-month and will start on the 1st day of the month following sign up. If you would like to request a later start date, email <a href="mailto:hello@knewhealth.com">hello@knewhealth.com</a>.</p></div></details></div></div>
+      <div class="faq-cat" id="memberships"><div class="cat-head"><span class="cat-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 21V7l8-4 8 4v14M4 21h16M9 21v-5h6v5"/></svg></span><h2>Memberships</h2></div><div class="faq"><details class="qa" id="q-how-does-a-knew-health-membership-help-save-money-on-healthcare"><summary><span class="qtext">How does a Knew Health membership help save money on healthcare?</span><svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary><div class="ans"><p>Knew Health is a different way of approaching healthcare that starts with our monthly contribution, which can be 20-50% less than traditional options. Our Initial Unshareable Amount (IUA) model is designed to keep out-of-pocket costs lower than the typical methods, resulting in more savings when we need it most. Lastly, our Members can access many no-cost general wellness services to stay on top of their health. Many of these services are simply not supported by the standard healthcare system.</p></div></details><details class="qa" id="q-will-my-rates-increase-every-year"><summary><span class="qtext">Will my rates increase every year?</span><svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary><div class="ans"><p>The Knew Health Community has a responsibility to one another to share in medical expenses equitably and fairly, as well as to ensure that we are obtaining reasonable rates for care. Our Team’s expertise and our Members’ dedication to obtaining fair rates for care is the reason that the Knew Health Community has not needed to increase monthly contributions in eight years. We prioritize maintaining monthly contribution rates for as long as we can to ensure Members have consistency and continuity.</p></div></details><details class="qa" id="q-what-is-healthcare-freedom-as-a-knew-health-member"><summary><span class="qtext">What is healthcare freedom as a Knew Health Member?</span><svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary><div class="ans"><p>It means being able to make your own healthcare choices without network restrictions and having more flexibility with the types of healthcare expenses that can be shared.</p></div></details><details class="qa" id="q-how-does-the-knew-health-community-manage-large-medical-expenses"><summary><span class="qtext">How does the Knew Health Community manage large medical expenses?</span><svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary><div class="ans"><p>Knew Health is a community of thousands of individuals and families who benefit from the power of sharing in one another’s medical burdens. Our Care Team works with Members to negotiate and attain fair pricing for medical services. As direct and self-pay patients, our members experience bill reduction of 50%+ on average.</p><p>Our community is there to support fellow Members when they need it the most, and that is why there are no sharing caps or limits on how much is available to share for larger medical expenses.</p></div></details><details class="qa" id="q-how-does-knew-health-negotiate-medical-bills"><summary><span class="qtext">How does Knew Health negotiate medical bills?</span><svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary><div class="ans"><p>We will use several methods to help our members attain fair costs for healthcare services.</p><ul><li><b>Request self-pay:</b> Our members always present as self-pay and request any discounts that are available</li><li><b>Prompt pay:</b> We ask our members to facilitate payment directly to the provider as quickly as possible to ensure any prompt payment discounts are applied.</li><li><b>Negotiation:</b> Our thorough negotiation process can often lower bills that are not paid in advance and are at least $1,000.</li><li><b>Packaged discounts:</b> For services like recovery care, maternity, or surgical needs offering to pay for services in advance as a package to reduce bills significantly. We encourage and help members to ask the right questions to see if this option is available.</li></ul></div></details><details class="qa" id="q-am-i-legally-required-to-have-health-insurance"><summary><span class="qtext">Am I legally required to have health insurance?</span><svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary><div class="ans"><p>While there are requirements for health insurance, the tax penalty for not having health insurance is no longer enforced on the federal level. It is important to note that some states have their own requirements for health insurance. A Knew Health membership does not satisfy any federal or state requirement for health insurance and members may face a tax penalty in select states.</p></div></details><details class="qa" id="q-what-is-an-iua"><summary><span class="qtext">What is an IUA?</span><svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary><div class="ans"><p>The initial unshareable amount, or IUA, is the amount a member will pay before the Knew Health Community shares in eligible medical expenses related to a unique Need. The IUA is also known as your personal responsibility that you will pay before sharing can begin for a Need.</p><p>Knew Health has three primary levels of personal responsibility: $1,000, $2,500, and $5,000. The lower your personal responsibility (or IUA), the higher your monthly contribution will be.</p><p>All qualifying medical expenses submitted after the IUA is met for a Need are shareable with the Knew Health Community. There is no annual or lifetime limit. You will not need to pay the IUA for a single Need again until you are symptom-free for 12 months. Additionally, you will not be responsible for more than three IUAs in a Membership Year.</p><p>General wellness services do not require members to meet an IUA first and are immediately shareable without waiting periods.</p></div></details></div></div>
+      <div class="faq-cat" id="medical-needs"><div class="cat-head"><span class="cat-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></span><h2>Medical Needs</h2></div><div class="faq"><details class="qa" id="q-what-is-a-need"><summary><span class="qtext">What is a Need?</span><svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary><div class="ans"><p>When Members incur medical expenses, there is a medical Need. The Need is a medical event (like an injury or illness or pregnancy) and the related expenses, whether one or multiple bills. Members send proof of their medical expenses through our online Member Portal. The related expenses are evaluated according to the Membership Guidelines for eligibility.</p></div></details><details class="qa" id="q-what-expenses-are-eligible-for-sharing-with-the-community"><summary><span class="qtext">What expenses are eligible for sharing with the Community?</span><svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary><div class="ans"><p>Generally, medical events exceeding a member’s Initial Unshareable Amount (IUA) (<a href="#q-what-is-an-iua">what is an IUA?</a>) related to a new injury, illness, or pregnancy are eligible for sharing. Sharing is not immediately available for conditions that existed before a Knew Health Membership is active. Knew Health also provides sharing and allowances for general wellness services without Members needing to meet their IUA.</p></div></details><details class="qa" id="q-are-there-any-caps-or-maximums-to-how-much-the-community-will-share-for-medical-expenses"><summary><span class="qtext">Are there any caps or maximums to how much the Community will share for medical expenses?</span><svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary><div class="ans"><p>There are no sharing limits per Membership or per lifetime of Membership, but, to safeguard the Community while still supporting one another, no single Need may consume more than 10% of available contributions a calendar year.</p><p>You can see all of our Guides for sharing here: <a href="https://www.knewhealth.com/guidelines">Member Guidelines (effective 9/1/2025)</a>, <a href="https://www.knewhealth.com/guidelines">Surgery Guide</a>, <a href="https://www.knewhealth.com/guidelines">General Wellness Guide</a>, <a href="https://www.knewhealth.com/guidelines">Maternity Guidelines</a></p></div></details><details class="qa" id="q-are-pre-existing-conditions-eligible-for-sharing"><summary><span class="qtext">Are pre-existing conditions eligible for sharing?</span><svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary><div class="ans"><p>Conditions that exist prior to a Knew Health Membership being active are subject to limitations in the first year of Membership and then follow a phase-in period after that. See the <a href="https://www.knewhealth.com/guidelines">Member Guidelines</a> “Pre-existing condition phase-in period” for details.</p><p>* If you would like to discuss your personal pre-existing condition sharing options, please <a href="https://www.knewhealth.com/contact-us">contact our Member Care Team</a></p></div></details><details class="qa" id="q-are-maternity-costs-eligible-for-sharing"><summary><span class="qtext">Are maternity costs eligible for sharing?</span><svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary><div class="ans"><p>Pregnancies that begin prior to your Membership effective date or within the first 90 days of Membership, with an estimated delivery date that falls within your first year of Membership, are not shareable and are considered a pre-existing condition. For example, if your Membership is effective October 1, your estimated delivery date must fall after October 1 of the following year to be eligible for sharing.</p><p>Maternity Needs with an estimated delivery date that falls after one year of Membership are eligible for sharing, including prenatal care, delivery, postnatal care, and complications.</p><p>Pregnancies that begin on or after January 1, 2026 are subject to a $5,000 Initial Unshareable Amount before any costs may be shared.</p></div></details><details class="qa" id="q-what-about-costs-that-occur-abroad"><summary><span class="qtext">What about costs that occur abroad?</span><svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary><div class="ans"><p>As long as the medical Need meets the Member Guidelines for sharing, these costs can be shared, no matter where they happen. Please note that non-emergent medical care that occurs abroad is not shareable.</p></div></details><details class="qa" id="q-what-is-considered-tobacco-usage-for-surcharge-purposes"><summary><span class="qtext">What is considered tobacco usage for surcharge purposes?</span><svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary><div class="ans"><p>Any Members that have used cigarettes, e-cigarettes, cigars, chewing tobacco, snuff, vape products, smoke cannabis, and pipe tobacco one or more times a month within the past year will be considered tobacco users.</p></div></details></div></div>
+      <div class="faq-note"><b>A note on terminology.</b> Knew Health is a medical cost sharing community, not an insurance company, and a membership is not insurance. Sharing is voluntary among members and is governed by the Membership Guidelines, which take precedence over any summary on this page. Answers here are for general information and may change as the Guidelines are updated.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="gp-section" id="pricing">
+    <h2 class="gp-h2">Get Pricing</h2>
+    <p class="gp-sub">Your number depends on your age, your household, the Initial Unshareable Amount you choose and tobacco use. Two minutes and you will know what you would pay.</p>
+    <div class="gp-card">
+      <div style="width:100%;height:500px;" data-fillout-id="ktS92CAm3Bus" data-fillout-embed-type="standard" data-fillout-inherit-parameters data-fillout-dynamic-resize></div>
+    </div>
+  </section>
+
+  <section class="q-section">
+    <div class="q-inner">
+      <div class="q-text">
+        <h2 class="q-h2">Questions?</h2>
+        <p class="q-sub">Call our Care Team Today at 855-542-0050</p>
+        <a class="q-btn" href="tel:855-542-0050">855-542-0050</a>
+      </div>
+      <div class="q-photo">
+        <img src="https://lirp.cdn-website.com/b474ec60/dms3rep/multi/opt/director-hillary-zalabak-1920w.png" alt="Woman with blonde hair, looking slightly off-camera, smiling; soft lighting, in a close-up shot." />
+      </div>
+    </div>
+  </section>
+
+  <footer class="kht-footer">
+    <div class="in">
+      <div class="top">
+        <a class="mark" href="https://www.knewhealth.com/"><img src="https://irp.cdn-website.com/b474ec60/dms3rep/multi/Logo+Icon.webp" alt="Knew Health"></a>
+        <div class="col"><a href="https://www.knewhealth.com/services">Services</a><a href="https://www.knewhealth.com/about-us">About Us</a><a href="https://www.knewhealth.com/blog">Blog</a></div>
+        <div class="col"><a href="https://www.knewhealth.com/contact-us">Contact Us</a><a href="https://www.knewhealth.com/affiliate-signup">Affiliates</a><a href="https://www.knewhealth.com/member-referral">Member Referrals</a><a href="https://www.knewhealth.com/faq">FAQ</a><a href="https://www.knewhealth.com/privacy">Privacy</a></div>
+        <div class="join-social">
+          <a class="join" href="https://www.knewhealth.com/sign-up">Join Now</a>
+          <div class="social">
+            <a href="https://www.facebook.com/knewhealth" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 10-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.1 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0022 12z"/></svg></a>
+            <a href="https://www.instagram.com/knew_health" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.58 0 4.85.07 3.25.15 4.77 1.69 4.92 4.92.06 1.27.07 1.65.07 4.85s0 3.58-.07 4.85c-.15 3.23-1.66 4.77-4.92 4.92-1.27.06-1.64.07-4.85.07s-3.58 0-4.85-.07c-3.26-.15-4.77-1.7-4.92-4.92-.06-1.27-.07-1.65-.07-4.85s0-3.58.07-4.85C2.38 3.99 3.9 2.45 7.15 2.3 8.42 2.24 8.8 2.2 12 2.2zM12 0C8.74 0 8.33 0 7.05.07c-4.35.2-6.78 2.62-6.98 6.98C0 8.33 0 8.74 0 12s0 3.67.07 4.95c.2 4.36 2.62 6.78 6.98 6.98C8.33 24 8.74 24 12 24s3.67 0 4.95-.07c4.35-.2 6.78-2.62 6.98-6.98.07-1.28.07-1.69.07-4.95s0-3.67-.07-4.95c-.2-4.35-2.62-6.78-6.98-6.98C15.67 0 15.26 0 12 0zm0 5.84A6.16 6.16 0 1018.16 12 6.16 6.16 0 0012 5.84zm0 10.16A4 4 0 1116 12a4 4 0 01-4 4zm6.4-10.4a1.44 1.44 0 11-1.44-1.44 1.44 1.44 0 011.44 1.44z"/></svg></a>
+            <a href="https://www.linkedin.com/company/knew-health" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45zM5.34 7.43a2.07 2.07 0 110-4.13 2.07 2.07 0 010 4.13zM7.12 20.45H3.56V9h3.56z"/></svg></a>
+          </div>
+        </div>
+        <div class="tp-widget">
+          <div class="trustpilot-widget" data-locale="en-US" data-template-id="5419b757fa0340045cd0c938" data-businessunit-id="5e165cb2ef69ea0001fb0a8b" data-style-height="25px" data-style-width="100%" data-theme="dark">
+            <a href="https://www.trustpilot.com/review/knewhealth.com" target="_blank" rel="noopener">Trustpilot</a>
+          </div>
+        </div>
+      </div>
+      <div class="legal">
+        <p>While Knew Health operates in most states, there are a few exceptions. Learn more about our <a href="https://www.knewhealth.com/state-availability">state availability</a>.</p>
+        <p><b>NOTICE:</b> Knew Health is not an insurance company nor is the membership offered through an insurance company. Knew Health Membership does not satisfy state or federal requirements for healthcare coverage or minimum essential coverage. This is not a legally binding agreement to reimburse or indemnify you for medical expenses you incur. There is no guarantee of payment of medical expenses you incur. Whether anyone chooses to assist you with your medical bills is entirely voluntary, because no other member is compelled by law to contribute toward your medical bills. As such, membership should never be considered to be insurance. Regardless of whether you receive any payments for medical expenses, and regardless of whether Knew Health continues to operate, you are always personally responsible for the payment of your own medical bills.</p>
+        <p>Answers on this page are summarised from the Knew Health Membership Guidelines for general information. The <a href="https://www.knewhealth.com/guidelines">Membership Guidelines</a> govern eligibility for sharing in all cases.</p>
+      </div>
+      <div class="copyright">&copy; 2026 All Rights Reserved | Knew Health</div>
+    </div>
+  </footer>
+
+</div>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is Knew Health?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Knew Health is an affordable membership-based alternative healthcare solution also known as medical cost sharing. Becoming a member of the Knew Health Community means joining like-minded individuals who are proactive about their wellness and looking for a better way to manage healthcare costs. Our Membership acts like a hub, connecting you with trusted services that help you save on all aspects of healthcare, especially general health and wellness costs. Knew Health Memberships are also designed to reduce the individual financial impact of medical expenses that result from illnesses, injuries, and pregnancies for its members."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is medical health sharing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Medical Health Sharing is an arrangement whereby members agree to share medical expenses through voluntary giving. It is made up of like-minded individuals who all agree on the standards outlined in the Membership Guidelines. Health sharing is NOT insurance or registered by any insurance. It does not assess applicants’ health risks because the Community is not assuming financial risk or liability."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is medical health sharing a new approach?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No, Medical Health Sharing traces its origins back many years to the Amish and Mennonite communities. It began expanding in the 1980s with the advent of large, Christian-based health care sharing ministries. The concept has since evolved since then, but the purpose remains the same: for the Community to help relieve the burden on the individual in their time of need."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why do Knew Health Members have peace of mind?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "There are many reasons that Knew Health provides peace of mind in Members’ healthcare journeys. Spending less on healthcare is at the top of the list. The simplicity that comes with the Initial Unshareable Amount (IUA) model helps make healthcare costs more transparent. Having the freedom to see any provider they choose, especially when the unexpected in life happens, is something that is found nowhere else in healthcare."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why do Members join Knew Health?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A Knew Health membership means healthcare freedom, savings, and peace of mind. Members join for different reasons and points in their healthcare journey. We recommend scheduling a call with our Care Team to understand what we offer and how it can work for you and your family."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does Knew Health cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The cost of Membership is based on the oldest member’s age, household size, selected Initial Unshareable Amount (IUA), and tobacco use status. Members pay their monthly contribution one month before their Membership becomes active. For example, if a Membership begins in August, the Member would pay in July for their August monthly contribution. Most of our Members will reduce their healthcare costs by about 50% compared to other healthcare options. Request Pricing"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How can I sign up?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Our online sign-up is a quick and simple process. To become a Member, complete the online forms. Membership is month-to-month and will start on the 1st day of the month following sign up. If you would like to request a later start date, email hello@knewhealth.com."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does a Knew Health membership help save money on healthcare?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Knew Health is a different way of approaching healthcare that starts with our monthly contribution, which can be 20-50% less than traditional options. Our Initial Unshareable Amount (IUA) model is designed to keep out-of-pocket costs lower than the typical methods, resulting in more savings when we need it most. Lastly, our Members can access many no-cost general wellness services to stay on top of their health. Many of these services are simply not supported by the standard healthcare system."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will my rates increase every year?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Knew Health Community has a responsibility to one another to share in medical expenses equitably and fairly, as well as to ensure that we are obtaining reasonable rates for care. Our Team’s expertise and our Members’ dedication to obtaining fair rates for care is the reason that the Knew Health Community has not needed to increase monthly contributions in eight years. We prioritize maintaining monthly contribution rates for as long as we can to ensure Members have consistency and continuity."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is healthcare freedom as a Knew Health Member?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It means being able to make your own healthcare choices without network restrictions and having more flexibility with the types of healthcare expenses that can be shared."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does the Knew Health Community manage large medical expenses?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Knew Health is a community of thousands of individuals and families who benefit from the power of sharing in one another’s medical burdens. Our Care Team works with Members to negotiate and attain fair pricing for medical services. As direct and self-pay patients, our members experience bill reduction of 50%+ on average. Our community is there to support fellow Members when they need it the most, and that is why there are no sharing caps or limits on how much is available to share for larger medical expenses."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does Knew Health negotiate medical bills?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We will use several methods to help our members attain fair costs for healthcare services. Request self-pay: Our members always present as self-pay and request any discounts that are available Prompt pay: We ask our members to facilitate payment directly to the provider as quickly as possible to ensure any prompt payment discounts are applied. Negotiation: Our thorough negotiation process can often lower bills that are not paid in advance and are at least $1,000. Packaged discounts: For services like recovery care, maternity, or surgical needs offering to pay for services in advance as a package to reduce bills significantly. We encourage and help members to ask the right questions to see if this option is available."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Am I legally required to have health insurance?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "While there are requirements for health insurance, the tax penalty for not having health insurance is no longer enforced on the federal level. It is important to note that some states have their own requirements for health insurance. A Knew Health membership does not satisfy any federal or state requirement for health insurance and members may face a tax penalty in select states."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is an IUA?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The initial unshareable amount, or IUA, is the amount a member will pay before the Knew Health Community shares in eligible medical expenses related to a unique Need. The IUA is also known as your personal responsibility that you will pay before sharing can begin for a Need. Knew Health has three primary levels of personal responsibility: $1,000, $2,500, and $5,000. The lower your personal responsibility (or IUA), the higher your monthly contribution will be. All qualifying medical expenses submitted after the IUA is met for a Need are shareable with the Knew Health Community. There is no annual or lifetime limit. You will not need to pay the IUA for a single Need again until you are symptom-free for 12 months. Additionally, you will not be responsible for more than three IUAs in a Membership Year. General wellness services do not require members to meet an IUA first and are immediately shareable without waiting periods."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a Need?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "When Members incur medical expenses, there is a medical Need. The Need is a medical event (like an injury or illness or pregnancy) and the related expenses, whether one or multiple bills. Members send proof of their medical expenses through our online Member Portal. The related expenses are evaluated according to the Membership Guidelines for eligibility."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What expenses are eligible for sharing with the Community?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Generally, medical events exceeding a member’s Initial Unshareable Amount (IUA) (what is an IUA?) related to a new injury, illness, or pregnancy are eligible for sharing. Sharing is not immediately available for conditions that existed before a Knew Health Membership is active. Knew Health also provides sharing and allowances for general wellness services without Members needing to meet their IUA."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are there any caps or maximums to how much the Community will share for medical expenses?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "There are no sharing limits per Membership or per lifetime of Membership, but, to safeguard the Community while still supporting one another, no single Need may consume more than 10% of available contributions a calendar year. You can see all of our Guides for sharing here: Member Guidelines (effective 9/1/2025), Surgery Guide, General Wellness Guide, Maternity Guidelines"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are pre-existing conditions eligible for sharing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Conditions that exist prior to a Knew Health Membership being active are subject to limitations in the first year of Membership and then follow a phase-in period after that. See the Member Guidelines “Pre-existing condition phase-in period” for details. * If you would like to discuss your personal pre-existing condition sharing options, please contact our Member Care Team"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are maternity costs eligible for sharing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pregnancies that begin prior to your Membership effective date or within the first 90 days of Membership, with an estimated delivery date that falls within your first year of Membership, are not shareable and are considered a pre-existing condition. For example, if your Membership is effective October 1, your estimated delivery date must fall after October 1 of the following year to be eligible for sharing. Maternity Needs with an estimated delivery date that falls after one year of Membership are eligible for sharing, including prenatal care, delivery, postnatal care, and complications. Pregnancies that begin on or after January 1, 2026 are subject to a $5,000 Initial Unshareable Amount before any costs may be shared."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What about costs that occur abroad?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "As long as the medical Need meets the Member Guidelines for sharing, these costs can be shared, no matter where they happen. Please note that non-emergent medical care that occurs abroad is not shareable."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is considered tobacco usage for surcharge purposes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Any Members that have used cigarettes, e-cigarettes, cigars, chewing tobacco, snuff, vape products, smoke cannabis, and pipe tobacco one or more times a month within the past year will be considered tobacco users."
+      }
+    }
+  ]
+}
+</script>
+<script src="https://widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
+<script src="https://server.fillout.com/embed/v1/" async></script>
+<script>
+/* Open the accordion matching the URL hash, and when a jump link targets a question. */
+(function () {
+  "use strict";
+  function openTarget() {
+    try {
+      var hash = window.location.hash;
+      if (!hash || hash.length < 2) { return; }
+      var el = document.getElementById(hash.slice(1));
+      if (!el) { return; }
+      if (el.tagName && el.tagName.toLowerCase() === "details") {
+        el.open = true;
+      }
+      el.scrollIntoView({ block: "start" });
+    } catch (err) {
+      /* non-fatal: accordions still work without this */
+    }
+  }
+  try {
+    window.addEventListener("hashchange", openTarget);
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", openTarget);
+    } else {
+      openTarget();
+    }
+  } catch (err) {
+    /* no-op */
+  }
+})();
+</script>
+</body>
+</html>

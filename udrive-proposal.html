@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Udrive SEO/AEO Proposal</title>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YV8FCLN403"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-YV8FCLN403');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reveal.min.css">
+<style>
+  :root{
+    --accent:#5632C9;
+    --accent-bg:#EEEBFA;
+    --accent-bd:#D0C6F0;
+    --accent-dark:#4629A5;
+    --accent2:#0075FF;
+    --accent2-bg:#EFF7FF;
+    --accent2-bd:#BAD9FF;
+    --accent2-dark:#0060D0;
+    --ink:#0a2540;
+    --ink2:#1e3a5f;
+    --ink3:#617899;
+    --ink4:#9EB3CC;
+    --paper:#fff;
+    --paper2:#F7FAFD;
+    --paper3:#EEF4FA;
+    --rule:#D9E7F5;
+    --ok:#16a34a; --ok-bg:#f0fdf4; --ok-bd:#bbf7d0;
+    --warn:#ea580c; --warn-bg:#fff7ed; --warn-bd:#fed7aa;
+    --red:#dc2626; --red-bg:#fef2f2; --red-bd:#fecaca;
+  }
+  *{box-sizing:border-box;font-family:"Inter",sans-serif}
+  html,body{margin:0;padding:0;width:100%;height:100%;overflow:hidden;background:#fff}
+  .reveal-viewport,.reveal{width:100%!important;height:100%!important;background:#fff!important}
+  .reveal .slides section{width:100vw!important;height:100vh!important;padding:0!important;background:#fff!important;display:flex!important;flex-direction:column!important;text-align:left!important}
+  .s{width:100vw;height:100vh;padding:3vh 4.5vw 2.5vh;display:flex;flex-direction:column;position:relative;overflow:hidden}
+  .stripe{position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--accent-dark)}
+  .hdr{display:flex;justify-content:space-between;align-items:center;flex-shrink:0;margin-bottom:.6vh}
+  .hdr-right{display:flex;flex-direction:column;align-items:flex-end}
+  .snum{font-family:"DM Mono",monospace;font-size:clamp(10px,1.2vh,12px);color:var(--accent-dark);background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:3px;padding:2px 8px;letter-spacing:.06em}
+  .tag{font-size:clamp(10px,1.2vh,12px);font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink4)}
+  .powered{display:flex;align-items:center;gap:5px;text-decoration:none;margin-top:3px}
+  .powered span{font-size:clamp(8px,1vh,10px);color:var(--ink4)}
+  .powered img{height:clamp(10px,1.4vh,14px);width:auto;opacity:.7}
+  .divider{height:1px;background:var(--rule);flex-shrink:0;margin-bottom:clamp(10px,1.5vh,18px)}
+  h2{font-size:clamp(22px,3.8vh,42px);font-weight:700;color:var(--ink);margin:0 0 clamp(14px,2vh,22px);line-height:1.15;flex-shrink:0;text-wrap:balance}
+  p{text-wrap:pretty}
+  .rg2{display:grid;grid-template-columns:1fr 1fr}
+  .rg3{display:grid;grid-template-columns:1fr 1fr 1fr}
+  .rf3{display:flex}
+  .hdr-favicon{border-radius:10px;width:clamp(26px,3.5vh,40px);height:clamp(26px,3.5vh,40px);object-fit:contain}
+  .card{background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(13px,1.7vh,19px) clamp(14px,1.7vw,19px);display:flex;align-items:flex-start;gap:14px;flex-shrink:0}
+  .badge{font-size:clamp(9px,1.05vh,11px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-dark);background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:3px;padding:1px 6px;white-space:nowrap;flex-shrink:0}
+  .ok-badge{font-size:clamp(11px,1.3vh,13px);font-weight:700;color:var(--ok);background:var(--ok-bg);border:1px solid var(--ok-bd);border-radius:3px;padding:1px 5px;text-align:center;margin:auto}
+  .bullet-row{font-size:clamp(13px,1.8vh,17px);color:var(--ink3);display:flex;gap:7px}
+  .favicon-sm{width:12px;height:12px;border-radius:2px;opacity:0.6}
+  .data-src{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--rule);border-radius:5px;padding:3px 9px;background:var(--paper2);flex-shrink:0}
+  .data-src span{font-size:clamp(10px,1.25vh,12px);color:var(--ink3);font-weight:500}
+  .data-src img{height:clamp(13px,1.6vh,16px);width:auto;border-radius:2px;opacity:.85}
+  table.dt{width:100%;border-collapse:collapse;table-layout:fixed}
+  table.dt th{text-align:left;font-size:clamp(10px,1.3vh,13px);font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ink4);padding:clamp(6px,0.9vh,10px) clamp(6px,0.7vw,11px);border-bottom:1px solid var(--rule);white-space:nowrap}
+  table.dt td{font-size:clamp(12px,1.65vh,17px);color:var(--ink2);padding:clamp(6px,0.9vh,10px) clamp(6px,0.7vw,11px);border-bottom:1px solid var(--rule);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  table.dt tr:last-child td{border-bottom:none}
+  table.dt td.num{font-family:"DM Mono",monospace;text-align:right}
+  .tw{border:1px solid var(--rule);border-radius:10px;overflow:hidden;flex-shrink:0}
+  .cliprow td{background:var(--accent-bg)}
+  .cliprow td.num{color:var(--red);font-weight:700}
+  .cliprow td:first-child{font-weight:700;color:var(--ink)}
+  .sev{display:flex;align-items:flex-start;gap:clamp(9px,1.1vw,14px);background:var(--paper2);border:1px solid var(--rule);border-radius:8px;padding:clamp(7px,1vh,12px) clamp(10px,1.2vw,15px);flex-shrink:0}
+  .sev-n{font-family:"DM Mono",monospace;font-size:clamp(11px,1.4vh,14px);font-weight:700;color:var(--red);background:var(--red-bg);border:1px solid var(--red-bd);border-radius:4px;padding:2px 8px;flex-shrink:0;margin-top:2px}
+  .sev-t{font-size:clamp(13px,1.8vh,18px);font-weight:700;color:var(--ink);margin-bottom:3px}
+  .sev-b{font-size:clamp(11px,1.55vh,15px);color:var(--ink3);line-height:1.5}
+  code{font-family:"DM Mono",monospace;font-size:.88em;background:var(--paper3);border:1px solid var(--rule);border-radius:3px;padding:1px 4px;color:var(--ink2)}
+  @media(max-width:1024px){.s{height:100svh!important;overflow-y:auto!important;-webkit-overflow-scrolling:touch!important}}
+  @media(max-width:900px){.rg3{grid-template-columns:1fr 1fr!important}.rf3{flex-wrap:wrap!important}}
+  @media(max-width:640px){.rg2,.rg3{grid-template-columns:1fr!important}.rf3{flex-direction:column!important}.card{flex-direction:column}}
+</style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- SLIDE 01: Cover -->
+<section><div class="s" style="justify-content:center;gap:clamp(16px,2.5vh,32px)">
+<div class="stripe"></div>
+<div style="display:flex;align-items:center;gap:12px">
+  <img src="https://www.google.com/s2/favicons?domain=udrive.ae&sz=128" style="border-radius:12px;width:clamp(36px,5vh,54px);height:clamp(36px,5vh,54px);object-fit:contain">
+  <span class="tag">SEO / AEO Proposal</span>
+</div>
+<div>
+  <h2 style="font-size:clamp(28px,5.5vh,62px);margin-bottom:clamp(20px,3vh,36px);font-weight:700">How Udrive Can Own Car Rental AI Search in the UAE Before OneClickDrive Does.</h2>
+  <p style="font-size:clamp(17px,2.5vh,26px);color:var(--ink2);line-height:1.6;margin:0;font-weight:400">When someone asks an AI which car to rent in Dubai, you win the question only if they already know your name.<br>On the 31 questions that decide a first rental, you are not in the answer at all.</p>
+</div>
+<div style="display:flex;align-items:center;gap:clamp(16px,2vw,28px);margin-top:clamp(8px,1.5vh,20px)">
+  <a href="https://www.aipeekaboo.com" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:8px;text-decoration:none">
+    <span style="font-size:clamp(10px,1.2vh,12px);color:var(--ink4)">Powered by</span>
+    <img src="https://www.aipeekaboo.com/images/peekaboo-logo-black.png" style="height:clamp(12px,1.8vh,20px);width:auto;opacity:.6">
+  </a>
+  <span style="color:var(--rule)">|</span>
+  <span style="font-size:clamp(10px,1.2vh,12px);color:var(--ink4)">Prepared for Udrive &middot; August 2026</span>
+</div>
+</div></section>
+
+<!-- SLIDE 02: The Hook -->
+<section><div class="s">
+<div class="shdr" data-n="02"></div>
+<div style="flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;min-height:0">
+  <div style="display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:clamp(40px,6vh,68px)">
+    <img src="https://www.google.com/s2/favicons?domain=google.com&sz=64" style="width:clamp(28px,3.8vh,40px);height:clamp(28px,3.8vh,40px);border-radius:4px;flex-shrink:0">
+    <img src="https://www.google.com/s2/favicons?domain=chatgpt.com&sz=64" style="width:clamp(28px,3.8vh,40px);height:clamp(28px,3.8vh,40px);border-radius:4px;flex-shrink:0">
+    <p style="font-size:clamp(26px,4vh,42px);font-weight:700;letter-spacing:.04em;color:var(--ink);margin:0">Go on Google or ChatGPT and ask&hellip;</p>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:clamp(10px,1.5vh,17px);margin-bottom:clamp(44px,6.5vh,72px);width:100%;max-width:80ch">
+    <div style="display:flex;align-items:center;gap:14px;background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(13px,1.9vh,22px) clamp(20px,2.5vw,30px);text-align:left">
+      <svg style="width:18px;height:18px;flex-shrink:0;color:var(--ink4)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <span style="font-size:clamp(16px,2.3vh,24px);color:var(--ink);font-weight:500">Best budget car rental in Dubai</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:14px;background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(13px,1.9vh,22px) clamp(20px,2.5vw,30px);text-align:left">
+      <svg style="width:18px;height:18px;flex-shrink:0;color:var(--ink4)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <span style="font-size:clamp(16px,2.3vh,24px);color:var(--ink);font-weight:500">How much does it cost to rent a car in Dubai per month?</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:14px;background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(13px,1.9vh,22px) clamp(20px,2.5vw,30px);text-align:left">
+      <svg style="width:18px;height:18px;flex-shrink:0;color:var(--ink4)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <span style="font-size:clamp(16px,2.3vh,24px);color:var(--ink);font-weight:500">Car rental in Dubai Marina</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:14px;background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(13px,1.9vh,22px) clamp(20px,2.5vw,30px);text-align:left">
+      <svg style="width:18px;height:18px;flex-shrink:0;color:var(--ink4)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <span style="font-size:clamp(16px,2.3vh,24px);color:var(--ink);font-weight:500">Car rental for new residents moving to Dubai</span>
+    </div>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:clamp(8px,1.2vh,14px);align-items:center">
+    <div style="display:flex;align-items:center;gap:12px">
+      <img src="https://www.google.com/s2/favicons?domain=udrive.ae&sz=64" style="width:clamp(22px,3vh,32px);height:clamp(22px,3vh,32px);border-radius:4px;flex-shrink:0">
+      <p style="font-size:clamp(22px,3.5vh,38px);font-weight:700;color:var(--ink);margin:0">Is Udrive in the answer?</p>
+    </div>
+    <p style="font-size:clamp(26px,4.2vh,46px);font-weight:700;color:var(--red);margin:0">No.</p>
+    <p style="font-size:clamp(16px,2.3vh,24px);color:var(--ink3);margin:0;font-weight:400">Zero visibility on all four, measured across five AI models. Let&rsquo;s look at why.</p>
+  </div>
+</div>
+</div></section>
+
+<!-- SLIDE 03: Root Problems Overview -->
+<section><div class="s">
+<div class="shdr" data-n="03"></div>
+<h2 style="margin:0 0 clamp(14px,2vh,22px)">Three Root Problems <span style="color:var(--red)">Holding Udrive Back</span></h2>
+<div style="font-size:clamp(15px,2.1vh,21px);color:var(--ink2);font-weight:500;margin-bottom:clamp(14px,2vh,24px);flex-shrink:0">Every rental that goes to a competitor instead of your app traces back to one of these three.</div>
+<div style="display:flex;gap:clamp(14px,2vw,24px);flex-shrink:0;align-items:flex-start">
+
+  <div style="flex:1;min-width:0;min-height:0;display:flex;flex-direction:column;background:var(--paper2);border:1.5px solid var(--rule);border-radius:12px;padding:clamp(12px,1.6vh,22px) clamp(16px,1.8vw,24px);overflow:hidden">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:clamp(7px,0.9vh,12px);flex-shrink:0">
+      <span style="font-family:'DM Mono',monospace;font-size:clamp(11px,1.4vh,14px);font-weight:700;color:var(--red);background:var(--red-bg);border:1px solid var(--red-bd);border-radius:4px;padding:2px 8px">01</span>
+      <span style="font-size:clamp(10px,1.25vh,13px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4)">Technical</span>
+    </div>
+    <div style="font-size:clamp(18px,2.6vh,28px);font-weight:700;color:var(--ink);line-height:1.2;margin-bottom:clamp(12px,1.6vh,20px);flex-shrink:0"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-right:8px;vertical-align:middle"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>Your Pages Undo Themselves</div>
+    <div style="font-size:clamp(14px,1.95vh,20px);color:var(--ink2);line-height:1.5;flex-shrink:0;display:flex;flex-direction:column;gap:7px">
+      <div style="display:flex;gap:8px;align-items:flex-start"><span style="color:var(--red);flex-shrink:0">&#9679;</span><span>Every Arabic page tells Google to drop it from the index</span></div>
+      <div style="display:flex;gap:8px;align-items:flex-start"><span style="color:var(--red);flex-shrink:0">&#9679;</span><span>All 6 vehicle pages canonicalise to a URL that does not exist</span></div>
+      <div style="display:flex;gap:8px;align-items:flex-start"><span style="color:var(--red);flex-shrink:0">&#9679;</span><span>Your pricing page is blocked from every crawler</span></div>
+    </div>
+    <div style="flex:1;min-height:clamp(14px,1.8vh,22px)"></div>
+    <div style="padding-top:clamp(6px,0.8vh,10px);border-top:1px solid var(--rule);flex-shrink:0">
+      <span style="font-family:'DM Mono',monospace;font-size:clamp(22px,3.2vh,36px);font-weight:700;color:var(--red)">1,134</span>
+      <span style="font-size:clamp(11px,1.4vh,14px);color:var(--ink3);font-weight:500;margin-left:6px">monthly visits at risk<br><span style="font-size:clamp(10px,1.2vh,12px)">Arabic traffic sitting on a self-destruct tag</span></span>
+    </div>
+  </div>
+
+  <div style="flex:1;min-width:0;min-height:0;display:flex;flex-direction:column;background:var(--paper2);border:1.5px solid var(--rule);border-radius:12px;padding:clamp(12px,1.6vh,22px) clamp(16px,1.8vw,24px);overflow:hidden">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:clamp(7px,0.9vh,12px);flex-shrink:0">
+      <span style="font-family:'DM Mono',monospace;font-size:clamp(11px,1.4vh,14px);font-weight:700;color:var(--red);background:var(--red-bg);border:1px solid var(--red-bd);border-radius:4px;padding:2px 8px">02</span>
+      <span style="font-size:clamp(10px,1.25vh,13px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4)">Content</span>
+    </div>
+    <div style="font-size:clamp(18px,2.6vh,28px);font-weight:700;color:var(--ink);line-height:1.2;margin-bottom:clamp(12px,1.6vh,20px);flex-shrink:0"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-right:8px;vertical-align:middle"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>Nothing Worth Citing</div>
+    <div style="font-size:clamp(14px,1.95vh,20px);color:var(--ink2);line-height:1.5;flex-shrink:0;display:flex;flex-direction:column;gap:7px">
+      <div style="display:flex;gap:8px;align-items:flex-start"><span style="color:var(--red);flex-shrink:0">&#9679;</span><span>The 9 newest posts run 31 to 39 words each, with no headings</span></div>
+      <div style="display:flex;gap:8px;align-items:flex-start"><span style="color:var(--red);flex-shrink:0">&#9679;</span><span>Your real articles sit on a second path AI is never pointed at</span></div>
+      <div style="display:flex;gap:8px;align-items:flex-start"><span style="color:var(--red);flex-shrink:0">&#9679;</span><span>No city, airport, or long-stay landing pages at all</span></div>
+    </div>
+    <div style="flex:1;min-height:clamp(14px,1.8vh,22px)"></div>
+    <div style="padding-top:clamp(6px,0.8vh,10px);border-top:1px solid var(--rule);flex-shrink:0">
+      <span style="font-family:'DM Mono',monospace;font-size:clamp(22px,3.2vh,36px);font-weight:700;color:var(--red)">668</span>
+      <span style="font-size:clamp(11px,1.4vh,14px);color:var(--ink3);font-weight:500;margin-left:6px">organic keywords<br><span style="font-size:clamp(10px,1.2vh,12px)">vs 8,911 OneClickDrive and 5,062 invygo</span></span>
+    </div>
+  </div>
+
+  <div style="flex:1;min-width:0;min-height:0;display:flex;flex-direction:column;background:var(--paper2);border:1.5px solid var(--rule);border-radius:12px;padding:clamp(12px,1.6vh,22px) clamp(16px,1.8vw,24px);overflow:hidden">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:clamp(7px,0.9vh,12px);flex-shrink:0">
+      <span style="font-family:'DM Mono',monospace;font-size:clamp(11px,1.4vh,14px);font-weight:700;color:var(--red);background:var(--red-bg);border:1px solid var(--red-bd);border-radius:4px;padding:2px 8px">03</span>
+      <span style="font-size:clamp(10px,1.25vh,13px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4)">Authority</span>
+    </div>
+    <div style="font-size:clamp(18px,2.6vh,28px);font-weight:700;color:var(--ink);line-height:1.2;margin-bottom:clamp(12px,1.6vh,20px);flex-shrink:0"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-right:8px;vertical-align:middle"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>Known Brand, Invisible Category</div>
+    <div style="font-size:clamp(14px,1.95vh,20px);color:var(--ink2);line-height:1.5;flex-shrink:0;display:flex;flex-direction:column;gap:7px">
+      <div style="display:flex;gap:8px;align-items:flex-start"><span style="color:var(--red);flex-shrink:0">&#9679;</span><span>Named on 11 of 70 prompts, absent from 31 of them</span></div>
+      <div style="display:flex;gap:8px;align-items:flex-start"><span style="color:var(--red);flex-shrink:0">&#9679;</span><span>Reddit is the top cited source and you post in none of it</span></div>
+      <div style="display:flex;gap:8px;align-items:flex-start"><span style="color:var(--red);flex-shrink:0">&#9679;</span><span>A 2.1 Trustpilot score is the review AI reads first</span></div>
+    </div>
+    <div style="flex:1;min-height:clamp(14px,1.8vh,22px)"></div>
+    <div style="padding-top:clamp(6px,0.8vh,10px);border-top:1px solid var(--rule);flex-shrink:0">
+      <span style="font-family:'DM Mono',monospace;font-size:clamp(22px,3.2vh,36px);font-weight:700;color:var(--red)">DR 44</span>
+      <span style="font-size:clamp(11px,1.4vh,14px);color:var(--ink3);font-weight:500;margin-left:6px">domain rating<br><span style="font-size:clamp(10px,1.2vh,12px)">vs 64 Renty and 62 OneClickDrive</span></span>
+    </div>
+  </div>
+
+</div>
+</div></section>
+
+<!-- SLIDE 04: Problem 01 deep dive -->
+<section><div class="s">
+<div class="shdr" data-n="04"></div>
+<div style="display:flex;align-items:center;gap:10px;margin-bottom:clamp(10px,1.5vh,18px);flex-shrink:0">
+  <span style="font-family:'DM Mono',monospace;font-size:clamp(10px,1.2vh,12px);font-weight:700;color:var(--red);background:var(--red-bg);border:1px solid var(--red-bd);border-radius:4px;padding:2px 8px">01 / 03</span>
+  <h2 style="margin:0">Your Pages Undo Themselves</h2>
+</div>
+<div style="font-size:clamp(15px,2.1vh,21px);color:var(--ink2);font-weight:500;margin-bottom:clamp(16px,2.4vh,30px);flex-shrink:0">Crawlers reach every page they need. What they find there tells them to leave.</div>
+
+<div style="flex:1;min-height:0;display:flex;gap:clamp(12px,1.6vw,20px);overflow:hidden">
+
+  <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:clamp(6px,0.8vh,10px);overflow:hidden">
+    <div style="font-size:clamp(12px,1.5vh,15px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4);flex-shrink:0">The Arabic Half of Your Market</div>
+    <div style="display:flex;flex-direction:column;gap:clamp(8px,1.1vh,13px)">
+      <div class="sev"><span style="color:var(--red);font-size:13px;flex-shrink:0;margin-top:4px">&#9679;</span><span style="font-size:clamp(13px,1.85vh,19px);color:var(--ink2);line-height:1.45"><code>/ar/rent</code>, <code>/ar/faq</code> and <code>/ar/about-us</code> all canonicalise to their English twin</span></div>
+      <div class="sev"><span style="color:var(--red);font-size:13px;flex-shrink:0;margin-top:4px">&#9679;</span><span style="font-size:clamp(13px,1.85vh,19px);color:var(--ink2);line-height:1.45">That tag is a formal instruction to Google: delete the Arabic version</span></div>
+      <div class="sev"><span style="color:var(--red);font-size:13px;flex-shrink:0;margin-top:4px">&#9679;</span><span style="font-size:clamp(13px,1.85vh,19px);color:var(--ink2);line-height:1.45">Ahrefs still attributes 1,134 monthly organic visits to <code>/ar</code> URLs</span></div>
+      <div class="sev" style="background:var(--red-bg);border-color:var(--red-bd)"><span style="color:var(--red);font-size:13px;flex-shrink:0;margin-top:4px">&#9679;</span><span style="font-size:clamp(13px,1.85vh,19px);color:var(--red);line-height:1.45;font-weight:600">602 of those land on <code style="background:#fff">/ar</code> alone, and it is instructing its own removal</span></div>
+    </div>
+    <div style="font-size:clamp(12px,1.5vh,15px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4);flex-shrink:0;margin-top:clamp(8px,1.2vh,16px)">Your Vehicle Inventory</div>
+    <div style="display:flex;flex-direction:column;gap:clamp(8px,1.1vh,13px)">
+      <div class="sev"><span style="color:var(--red);font-size:13px;flex-shrink:0;margin-top:4px">&#9679;</span><span style="font-size:clamp(13px,1.85vh,19px);color:var(--ink2);line-height:1.45">Every listing points at <code>/fleet-details/undefined</code>, a page that does not exist</span></div>
+      <div class="sev"><span style="color:var(--red);font-size:13px;flex-shrink:0;margin-top:4px">&#9679;</span><span style="font-size:clamp(13px,1.85vh,19px);color:var(--ink2);line-height:1.45">All seven fleet URLs share one identical title and carry zero H1s</span></div>
+    </div>
+  </div>
+
+  <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:clamp(6px,0.8vh,10px);overflow:hidden">
+    <div style="font-size:clamp(12px,1.5vh,15px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4);flex-shrink:0">What an AI Crawler Actually Reads</div>
+    <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(11px,1.5vh,18px) clamp(13px,1.5vw,19px);flex-shrink:0">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(10px,1.3vw,16px)">
+        <div style="text-align:center;background:#fff;border:1px solid var(--red-bd);border-radius:8px;padding:clamp(9px,1.2vh,15px)">
+          <div style="font-family:'DM Mono',monospace;font-size:clamp(24px,3.4vh,38px);font-weight:700;color:var(--red);line-height:1">34</div>
+          <div style="font-size:clamp(11px,1.5vh,15px);color:var(--ink3);margin-top:4px;font-weight:500">words in raw HTML</div>
+        </div>
+        <div style="text-align:center;background:#fff;border:1px solid var(--rule);border-radius:8px;padding:clamp(9px,1.2vh,15px)">
+          <div style="font-family:'DM Mono',monospace;font-size:clamp(24px,3.4vh,38px);font-weight:700;color:var(--ink3);line-height:1">94</div>
+          <div style="font-size:clamp(11px,1.5vh,15px);color:var(--ink3);margin-top:4px;font-weight:500">words after JavaScript</div>
+        </div>
+      </div>
+      <p style="font-size:clamp(12px,1.7vh,17px);color:var(--ink2);margin:clamp(10px,1.3vh,15px) 0 0;line-height:1.5">GPTBot, ClaudeBot, PerplexityBot and CCBot all receive the 34-word version. From it they cannot discover <code>/rent</code>, <code>/subscription</code>, <code>/fleet</code>, <code>/limo</code> or <code>/business-form</code>.</p>
+    </div>
+    <div style="font-size:clamp(12px,1.5vh,15px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4);flex-shrink:0;margin-top:clamp(6px,0.9vh,12px)">The Question You Cannot Answer</div>
+    <div class="sev" style="background:var(--red-bg);border-color:var(--red-bd);flex-direction:column;align-items:stretch;gap:6px">
+      <div style="font-size:clamp(13px,1.85vh,19px);font-weight:700;color:var(--red)"><code style="background:#fff">Disallow: /pricing</code> in robots.txt</div>
+      <div style="font-size:clamp(12px,1.7vh,17px);color:var(--ink2);line-height:1.5">For a business billing by the minute, cost is the single most asked question. That page is blocked, so Udrive is guaranteed to be missing from every AI price comparison in the UAE.</div>
+    </div>
+    <div class="sev" style="align-items:center">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--ok)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><polyline points="20 6 9 17 4 12"/></svg>
+      <span style="font-size:clamp(12px,1.7vh,17px);color:var(--ink2);line-height:1.5">Good news: bot access is clean. No bot-specific blocks, and GPTBot, ClaudeBot, PerplexityBot and CCBot all get 200 responses. Every one of these is a fixable configuration issue, not a rebuild.</span>
+    </div>
+  </div>
+
+</div>
+</div></section>
+
+<!-- SLIDE 05: Problem 02 deep dive -->
+<section><div class="s">
+<div class="shdr" data-n="05"></div>
+<div style="display:flex;align-items:center;gap:10px;margin-bottom:clamp(10px,1.5vh,18px);flex-shrink:0">
+  <span style="font-family:'DM Mono',monospace;font-size:clamp(10px,1.2vh,12px);font-weight:700;color:var(--red);background:var(--red-bg);border:1px solid var(--red-bd);border-radius:4px;padding:2px 8px">02 / 03</span>
+  <h2 style="margin:0">Nothing Worth Citing</h2>
+</div>
+<div style="font-size:clamp(15px,2.1vh,21px);color:var(--ink2);font-weight:500;margin-bottom:clamp(16px,2.4vh,30px);flex-shrink:0">The pages you point AI models at are empty. The pages with real writing are the ones you hide.</div>
+
+<div style="flex:1;min-height:0;display:flex;gap:clamp(12px,1.6vw,20px);overflow:hidden">
+
+  <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:clamp(6px,0.8vh,10px)">
+    <div style="font-size:clamp(12px,1.5vh,15px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4);flex-shrink:0">Two Blogs, Pointing the Wrong Way</div>
+    <div class="tw">
+      <table class="dt">
+        <colgroup><col style="width:34%"><col style="width:22%"><col style="width:22%"><col style="width:22%"></colgroup>
+        <thead><tr><th>Path</th><th class="num">Posts</th><th class="num">Words each</th><th class="num">In llms.txt</th></tr></thead>
+        <tbody>
+          <tr><td><code>/blogs/</code> older</td><td class="num">5</td><td class="num" style="color:var(--ok);font-weight:600">555 to 1,384</td><td class="num">1 of 5</td></tr>
+          <tr class="cliprow"><td><code>/blog/</code> newest</td><td class="num">9</td><td class="num">31 to 39</td><td class="num">9 of 9</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="sev" style="margin-top:clamp(4px,0.6vh,8px)"><span style="color:var(--red);font-size:13px;flex-shrink:0;margin-top:4px">&#9679;</span><span style="font-size:clamp(13px,1.85vh,19px);color:var(--ink2);line-height:1.45">The 9 posts you tell ChatGPT, Claude and Perplexity to read have 0 H1s, 0 H2s and no article body</span></div>
+    <div class="sev"><span style="color:var(--red);font-size:13px;flex-shrink:0;margin-top:4px">&#9679;</span><span style="font-size:clamp(13px,1.85vh,19px);color:var(--ink2);line-height:1.45">The 5 posts that would earn a citation are almost entirely left out of that list</span></div>
+    <div class="sev"><span style="color:var(--red);font-size:13px;flex-shrink:0;margin-top:4px">&#9679;</span><span style="font-size:clamp(13px,1.85vh,19px);color:var(--ink2);line-height:1.45">The sitemap covers 12 of roughly 30 real pages, and 2 of those 12 return HTTP 500</span></div>
+  </div>
+
+  <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:clamp(6px,0.8vh,10px)">
+    <div style="font-size:clamp(12px,1.5vh,15px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4);flex-shrink:0">Keyword Coverage vs the Market</div>
+    <div class="tw">
+      <table class="dt">
+        <colgroup><col style="width:52%"><col style="width:24%"><col style="width:24%"></colgroup>
+        <thead><tr><th>Domain</th><th class="num">Keywords</th><th class="num">Top 3</th></tr></thead>
+        <tbody>
+          <tr><td><img src="https://www.google.com/s2/favicons?domain=oneclickdrive.com&sz=32" style="width:14px;height:14px;border-radius:2px;vertical-align:-2px;margin-right:6px">OneClickDrive</td><td class="num">8,911</td><td class="num">3,462</td></tr>
+          <tr><td><img src="https://www.google.com/s2/favicons?domain=invygo.com&sz=32" style="width:14px;height:14px;border-radius:2px;vertical-align:-2px;margin-right:6px">invygo</td><td class="num">5,062</td><td class="num">1,919</td></tr>
+          <tr><td><img src="https://www.google.com/s2/favicons?domain=renty.ae&sz=32" style="width:14px;height:14px;border-radius:2px;vertical-align:-2px;margin-right:6px">Renty</td><td class="num">4,919</td><td class="num">3,201</td></tr>
+          <tr><td><img src="https://www.google.com/s2/favicons?domain=ezhire.ae&sz=32" style="width:14px;height:14px;border-radius:2px;vertical-align:-2px;margin-right:6px">eZhire</td><td class="num">2,888</td><td class="num">1,155</td></tr>
+          <tr class="cliprow"><td><img src="https://www.google.com/s2/favicons?domain=udrive.ae&sz=32" style="width:14px;height:14px;border-radius:2px;vertical-align:-2px;margin-right:6px">Udrive</td><td class="num">668</td><td class="num">191</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="sev" style="background:var(--accent-bg);border-color:var(--accent-bd);flex-direction:column;align-items:stretch;gap:5px;margin-top:clamp(4px,0.6vh,8px)">
+      <div style="font-size:clamp(13px,1.85vh,19px);font-weight:700;color:var(--accent-dark)">The gap is not brand, it is surface area</div>
+      <div style="font-size:clamp(12px,1.7vh,17px);color:var(--ink2);line-height:1.5">OneClickDrive ranks for 13 times more queries than Udrive because it publishes a page for every car, every city and every rental length. Udrive has the fleet and the pricing model to out-answer all of them, it just has no pages carrying that answer.</div>
+    </div>
+  </div>
+
+</div>
+</div></section>
+
+<!-- SLIDE 06: Problem 03 deep dive -->
+<section><div class="s">
+<div class="shdr" data-n="06"></div>
+<div style="display:flex;align-items:center;gap:10px;margin-bottom:clamp(10px,1.5vh,18px);flex-shrink:0">
+  <span style="font-family:'DM Mono',monospace;font-size:clamp(10px,1.2vh,12px);font-weight:700;color:var(--red);background:var(--red-bg);border:1px solid var(--red-bd);border-radius:4px;padding:2px 8px">03 / 03</span>
+  <h2 style="margin:0">Known Brand, Invisible Category</h2>
+</div>
+<div style="font-size:clamp(15px,2.1vh,21px);color:var(--ink2);font-weight:500;margin-bottom:clamp(16px,2.4vh,30px);flex-shrink:0">Ask an AI about Udrive and it answers well. Ask it about renting a car in Dubai and Udrive is not in the room.</div>
+
+<div style="flex:1;min-height:0;display:flex;gap:clamp(12px,1.6vw,20px);overflow:hidden">
+
+  <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:clamp(8px,1.1vh,13px)">
+    <div style="font-size:clamp(12px,1.5vh,15px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4);flex-shrink:0">Where You Already Win</div>
+    <div class="tw">
+      <table class="dt">
+        <colgroup><col style="width:76%"><col style="width:24%"></colgroup>
+        <tbody>
+          <tr><td>Best hourly car rental app in Dubai</td><td class="num" style="color:var(--ok);font-weight:700">100</td></tr>
+          <tr><td>Ekar alternative in Dubai</td><td class="num" style="color:var(--ok);font-weight:700">100</td></tr>
+          <tr><td>What is the best car sharing app in the UAE?</td><td class="num" style="color:var(--ok);font-weight:700">100</td></tr>
+          <tr><td>Car sharing by the hour in Dubai</td><td class="num" style="color:var(--ok);font-weight:700">100</td></tr>
+          <tr><td>Car rental app comparison for Dubai</td><td class="num" style="color:var(--ok);font-weight:700">91</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div style="font-size:clamp(12px,1.7vh,17px);color:var(--ink3);line-height:1.5;flex-shrink:0">Eleven prompts score a perfect 100. Every one of them contains the words Udrive, car sharing or hourly. You own the category you named, and nothing beyond it.</div>
+  </div>
+
+  <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:clamp(8px,1.1vh,13px)">
+    <div style="font-size:clamp(12px,1.5vh,15px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4);flex-shrink:0">Where Buyers Actually Start</div>
+    <div class="tw">
+      <table class="dt">
+        <colgroup><col style="width:76%"><col style="width:24%"></colgroup>
+        <tbody>
+          <tr><td>Car rental at DXB airport</td><td class="num" style="color:var(--red);font-weight:700">0</td></tr>
+          <tr><td>Car rental in Dubai Marina</td><td class="num" style="color:var(--red);font-weight:700">0</td></tr>
+          <tr><td>Rent a car in Abu Dhabi</td><td class="num" style="color:var(--red);font-weight:700">0</td></tr>
+          <tr><td>Car rental for Uber and Careem drivers</td><td class="num" style="color:var(--red);font-weight:700">0</td></tr>
+          <tr><td>How much to rent a car in Dubai per month?</td><td class="num" style="color:var(--red);font-weight:700">0</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div style="font-size:clamp(12px,1.7vh,17px);color:var(--ink3);line-height:1.5;flex-shrink:0">Thirty-one of 70 tracked prompts return Udrive nowhere across all five models. These are location, price and practical questions, the ones a first-time renter asks.</div>
+  </div>
+
+  <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:clamp(8px,1.1vh,13px)">
+    <div style="font-size:clamp(12px,1.5vh,15px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4);flex-shrink:0">Who Gets Cited Instead</div>
+    <div class="tw">
+      <table class="dt">
+        <colgroup><col style="width:62%"><col style="width:38%"></colgroup>
+        <thead><tr><th>Source</th><th class="num">Citations 30d</th></tr></thead>
+        <tbody>
+          <tr><td><img src="https://www.google.com/s2/favicons?domain=reddit.com&sz=32" style="width:14px;height:14px;border-radius:2px;vertical-align:-2px;margin-right:6px">Reddit</td><td class="num" style="font-weight:700">172</td></tr>
+          <tr><td><img src="https://www.google.com/s2/favicons?domain=apple.com&sz=32" style="width:14px;height:14px;border-radius:2px;vertical-align:-2px;margin-right:6px">App Store</td><td class="num">144</td></tr>
+          <tr><td><img src="https://www.google.com/s2/favicons?domain=oneclickdrive.com&sz=32" style="width:14px;height:14px;border-radius:2px;vertical-align:-2px;margin-right:6px">OneClickDrive</td><td class="num">119</td></tr>
+          <tr><td><img src="https://www.google.com/s2/favicons?domain=selfdrive.ae&sz=32" style="width:14px;height:14px;border-radius:2px;vertical-align:-2px;margin-right:6px">SelfDrive</td><td class="num">117</td></tr>
+          <tr class="cliprow"><td><img src="https://www.google.com/s2/favicons?domain=udrive.ae&sz=32" style="width:14px;height:14px;border-radius:2px;vertical-align:-2px;margin-right:6px">udrive.ae</td><td class="num">133</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div style="font-size:clamp(12px,1.7vh,17px);color:var(--ink3);line-height:1.5;flex-shrink:0">Reddit outranks your own site as a source AI models trust on UAE car rental, and Udrive posts in none of those communities.</div>
+  </div>
+
+</div>
+</div></section>
+
+<!-- SLIDE 07: AI Visibility (Peekaboo) -->
+<section><div class="s">
+<div class="shdr" data-n="07" data-source="peekaboo"></div>
+<h2 style="margin:0 0 clamp(10px,1.5vh,18px)">AI Visibility Today: <span style="color:var(--accent)">32 out of 100</span></h2>
+<div style="font-size:clamp(14px,2vh,20px);color:var(--ink2);font-weight:500;margin-bottom:clamp(12px,1.8vh,22px);flex-shrink:0">70 UAE rental prompts, 349 measured runs across five AI models, last 30 days.</div>
+
+<div style="display:flex;gap:clamp(10px,1.4vw,18px);flex-shrink:0;margin-bottom:clamp(12px,1.8vh,22px)">
+  <div style="flex:1;background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:10px;padding:clamp(10px,1.4vh,17px);text-align:center">
+    <div style="font-family:'DM Mono',monospace;font-size:clamp(24px,3.6vh,42px);font-weight:700;color:var(--accent);line-height:1">32<span style="font-size:.45em;color:var(--accent-dark)">/100</span></div>
+    <div style="font-size:clamp(11px,1.45vh,14px);color:var(--accent-dark);margin-top:4px;font-weight:600">Overall visibility score</div>
+  </div>
+  <div style="flex:1;background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(10px,1.4vh,17px);text-align:center">
+    <div style="font-family:'DM Mono',monospace;font-size:clamp(24px,3.6vh,42px);font-weight:700;color:var(--ok);line-height:1">11</div>
+    <div style="font-size:clamp(11px,1.45vh,14px);color:var(--ink3);margin-top:4px;font-weight:600">Prompts scoring a perfect 100</div>
+  </div>
+  <div style="flex:1;background:var(--paper2);border:1px solid var(--red-bd);border-radius:10px;padding:clamp(10px,1.4vh,17px);text-align:center">
+    <div style="font-family:'DM Mono',monospace;font-size:clamp(24px,3.6vh,42px);font-weight:700;color:var(--red);line-height:1">31</div>
+    <div style="font-size:clamp(11px,1.45vh,14px);color:var(--ink3);margin-top:4px;font-weight:600">Prompts with zero visibility</div>
+  </div>
+  <div style="flex:1;background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(10px,1.4vh,17px);text-align:center">
+    <div style="font-family:'DM Mono',monospace;font-size:clamp(24px,3.6vh,42px);font-weight:700;color:var(--ink);line-height:1">563</div>
+    <div style="font-size:clamp(11px,1.45vh,14px);color:var(--ink3);margin-top:4px;font-weight:600">Distinct domains cited in answers</div>
+  </div>
+</div>
+
+<div style="flex:1;min-height:0;display:flex;gap:clamp(12px,1.6vw,20px);overflow:hidden">
+  <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:clamp(6px,0.9vh,11px)">
+    <div style="font-size:clamp(12px,1.5vh,15px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4);flex-shrink:0">Score by AI model</div>
+    <div style="display:flex;flex-direction:column;gap:clamp(7px,1vh,12px)">
+      <div style="display:flex;align-items:center;gap:10px"><img src="https://www.google.com/s2/favicons?domain=gemini.google.com&sz=32" style="width:17px;height:17px;border-radius:3px;flex-shrink:0"><span style="font-size:clamp(12px,1.7vh,17px);color:var(--ink2);width:12ch;flex-shrink:0">Gemini</span><div style="flex:1;height:clamp(11px,1.5vh,15px);background:var(--paper3);border-radius:3px;overflow:hidden"><div style="width:35%;height:100%;background:var(--accent)"></div></div><span style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.7vh,17px);font-weight:700;color:var(--accent);width:3ch;text-align:right;flex-shrink:0">35</span></div>
+      <div style="display:flex;align-items:center;gap:10px"><img src="https://www.google.com/s2/favicons?domain=google.com&sz=32" style="width:17px;height:17px;border-radius:3px;flex-shrink:0"><span style="font-size:clamp(12px,1.7vh,17px);color:var(--ink2);width:12ch;flex-shrink:0">AI Overview</span><div style="flex:1;height:clamp(11px,1.5vh,15px);background:var(--paper3);border-radius:3px;overflow:hidden"><div style="width:35%;height:100%;background:var(--accent)"></div></div><span style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.7vh,17px);font-weight:700;color:var(--accent);width:3ch;text-align:right;flex-shrink:0">35</span></div>
+      <div style="display:flex;align-items:center;gap:10px"><img src="https://www.google.com/s2/favicons?domain=google.com&sz=32" style="width:17px;height:17px;border-radius:3px;flex-shrink:0"><span style="font-size:clamp(12px,1.7vh,17px);color:var(--ink2);width:12ch;flex-shrink:0">AI Mode</span><div style="flex:1;height:clamp(11px,1.5vh,15px);background:var(--paper3);border-radius:3px;overflow:hidden"><div style="width:33%;height:100%;background:var(--accent)"></div></div><span style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.7vh,17px);font-weight:700;color:var(--accent);width:3ch;text-align:right;flex-shrink:0">33</span></div>
+      <div style="display:flex;align-items:center;gap:10px"><img src="https://www.google.com/s2/favicons?domain=chatgpt.com&sz=32" style="width:17px;height:17px;border-radius:3px;flex-shrink:0"><span style="font-size:clamp(12px,1.7vh,17px);color:var(--ink2);width:12ch;flex-shrink:0">ChatGPT</span><div style="flex:1;height:clamp(11px,1.5vh,15px);background:var(--paper3);border-radius:3px;overflow:hidden"><div style="width:32%;height:100%;background:var(--accent)"></div></div><span style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.7vh,17px);font-weight:700;color:var(--accent);width:3ch;text-align:right;flex-shrink:0">32</span></div>
+      <div style="display:flex;align-items:center;gap:10px"><img src="https://www.google.com/s2/favicons?domain=perplexity.ai&sz=32" style="width:17px;height:17px;border-radius:3px;flex-shrink:0"><span style="font-size:clamp(12px,1.7vh,17px);color:var(--ink2);width:12ch;flex-shrink:0">Perplexity</span><div style="flex:1;height:clamp(11px,1.5vh,15px);background:var(--paper3);border-radius:3px;overflow:hidden"><div style="width:24%;height:100%;background:var(--red)"></div></div><span style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.7vh,17px);font-weight:700;color:var(--red);width:3ch;text-align:right;flex-shrink:0">24</span></div>
+    </div>
+    <div style="font-size:clamp(12px,1.65vh,16px);color:var(--ink3);line-height:1.5;margin-top:clamp(6px,0.9vh,11px)">The spread is narrow, so this is not a single-platform problem. When Udrive does appear, average position is 1.5 to 2.2, near the top of the answer. The issue is how rarely that happens.</div>
+  </div>
+
+  <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:clamp(6px,0.9vh,11px)">
+    <div style="font-size:clamp(12px,1.5vh,15px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4);flex-shrink:0">Top cited domains in UAE rental answers</div>
+    <div class="tw">
+      <table class="dt">
+        <colgroup><col style="width:46%"><col style="width:27%"><col style="width:27%"></colgroup>
+        <thead><tr><th>Domain</th><th class="num">Citations</th><th class="num">Influence</th></tr></thead>
+        <tbody>
+          <tr><td><img src="https://www.google.com/s2/favicons?domain=reddit.com&sz=32" style="width:14px;height:14px;border-radius:2px;vertical-align:-2px;margin-right:6px">reddit.com</td><td class="num">172</td><td class="num">85</td></tr>
+          <tr><td><img src="https://www.google.com/s2/favicons?domain=apple.com&sz=32" style="width:14px;height:14px;border-radius:2px;vertical-align:-2px;margin-right:6px">apps.apple.com</td><td class="num">144</td><td class="num">65</td></tr>
+          <tr><td><img src="https://www.google.com/s2/favicons?domain=oneclickdrive.com&sz=32" style="width:14px;height:14px;border-radius:2px;vertical-align:-2px;margin-right:6px">oneclickdrive.com</td><td class="num">119</td><td class="num">63</td></tr>
+          <tr><td><img src="https://www.google.com/s2/favicons?domain=selfdrive.ae&sz=32" style="width:14px;height:14px;border-radius:2px;vertical-align:-2px;margin-right:6px">selfdrive.ae</td><td class="num">117</td><td class="num">59</td></tr>
+          <tr><td><img src="https://www.google.com/s2/favicons?domain=octane.rent&sz=32" style="width:14px;height:14px;border-radius:2px;vertical-align:-2px;margin-right:6px">octane.rent</td><td class="num">94</td><td class="num">54</td></tr>
+          <tr><td><img src="https://www.google.com/s2/favicons?domain=renty.ae&sz=32" style="width:14px;height:14px;border-radius:2px;vertical-align:-2px;margin-right:6px">renty.ae</td><td class="num">83</td><td class="num">57</td></tr>
+          <tr class="cliprow"><td><img src="https://www.google.com/s2/favicons?domain=udrive.ae&sz=32" style="width:14px;height:14px;border-radius:2px;vertical-align:-2px;margin-right:6px">udrive.ae</td><td class="num">133</td><td class="num">63</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div style="font-size:clamp(12px,1.65vh,16px);color:var(--ink3);line-height:1.5;margin-top:clamp(4px,0.6vh,8px)">Reddit and the App Store both outrank udrive.ae as sources. Winning here means earning citations on Reddit and on comparison pages, not only on your own domain.</div>
+  </div>
+</div>
+</div></section>
+
+<!-- SLIDE 08: Competitive Gap (Ahrefs) -->
+<section><div class="s">
+<div class="shdr" data-n="08" data-source="ahrefs"></div>
+<h2 style="margin:0 0 clamp(10px,1.5vh,18px)">The Competitive Gap in <span style="color:var(--red)">Plain Numbers</span></h2>
+<div style="font-size:clamp(14px,2vh,20px);color:var(--ink2);font-weight:500;margin-bottom:clamp(14px,2.2vh,26px);flex-shrink:0">Five UAE rental brands competing for the same searches, measured on the same day.</div>
+
+<div class="tw">
+  <table class="dt">
+    <colgroup><col style="width:28%"><col style="width:14%"><col style="width:19%"><col style="width:21%"><col style="width:18%"></colgroup>
+    <thead><tr><th>Company</th><th class="num">Domain Rating</th><th class="num">Organic Keywords</th><th class="num">Monthly Organic Traffic</th><th class="num">Top 3 Rankings</th></tr></thead>
+    <tbody>
+      <tr><td><img src="https://www.google.com/s2/favicons?domain=oneclickdrive.com&sz=32" style="width:15px;height:15px;border-radius:2px;vertical-align:-3px;margin-right:8px">OneClickDrive</td><td class="num">62</td><td class="num">8,911</td><td class="num">133,586</td><td class="num">3,462</td></tr>
+      <tr><td><img src="https://www.google.com/s2/favicons?domain=renty.ae&sz=32" style="width:15px;height:15px;border-radius:2px;vertical-align:-3px;margin-right:8px">Renty</td><td class="num">64</td><td class="num">4,919</td><td class="num">52,514</td><td class="num">3,201</td></tr>
+      <tr><td><img src="https://www.google.com/s2/favicons?domain=invygo.com&sz=32" style="width:15px;height:15px;border-radius:2px;vertical-align:-3px;margin-right:8px">invygo</td><td class="num">39</td><td class="num">5,062</td><td class="num">43,477</td><td class="num">1,919</td></tr>
+      <tr><td><img src="https://www.google.com/s2/favicons?domain=ezhire.ae&sz=32" style="width:15px;height:15px;border-radius:2px;vertical-align:-3px;margin-right:8px">eZhire</td><td class="num">42</td><td class="num">2,888</td><td class="num">29,039</td><td class="num">1,155</td></tr>
+      <tr><td><img src="https://www.google.com/s2/favicons?domain=selfdrive.ae&sz=32" style="width:15px;height:15px;border-radius:2px;vertical-align:-3px;margin-right:8px">SelfDrive</td><td class="num">44</td><td class="num">702</td><td class="num">8,477</td><td class="num">174</td></tr>
+      <tr class="cliprow"><td><img src="https://www.google.com/s2/favicons?domain=udrive.ae&sz=32" style="width:15px;height:15px;border-radius:2px;vertical-align:-3px;margin-right:8px">Udrive</td><td class="num">44</td><td class="num">668</td><td class="num">16,980</td><td class="num">191</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div style="display:flex;gap:clamp(10px,1.4vw,18px);flex-shrink:0;margin-top:clamp(14px,2.2vh,26px);align-items:flex-start">
+  <div style="flex:1;background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(11px,1.5vh,18px) clamp(13px,1.5vw,19px)">
+    <div style="font-family:'DM Mono',monospace;font-size:clamp(20px,3vh,34px);font-weight:700;color:var(--accent);line-height:1;margin-bottom:5px">25 visits</div>
+    <div style="font-size:clamp(12px,1.7vh,17px);color:var(--ink2);line-height:1.5">Udrive earns 25 organic visits per keyword it ranks for, the highest ratio in the set. The demand converts, there is simply too little of it reaching you.</div>
+  </div>
+  <div style="flex:1;background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(11px,1.5vh,18px) clamp(13px,1.5vw,19px)">
+    <div style="font-family:'DM Mono',monospace;font-size:clamp(20px,3vh,34px);font-weight:700;color:var(--red);line-height:1;margin-bottom:5px">13x</div>
+    <div style="font-size:clamp(12px,1.7vh,17px);color:var(--ink2);line-height:1.5">OneClickDrive covers 13 times more keywords on a directory model, without owning a single car. The advantage is page count, and page count is buildable.</div>
+  </div>
+  <div style="flex:1;background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(11px,1.5vh,18px) clamp(13px,1.5vw,19px)">
+    <div style="font-family:'DM Mono',monospace;font-size:clamp(20px,3vh,34px);font-weight:700;color:var(--warn);line-height:1;margin-bottom:5px">DR 44</div>
+    <div style="font-size:clamp(12px,1.7vh,17px);color:var(--ink2);line-height:1.5">Your authority already matches SelfDrive and beats invygo, which pulls 43,477 visits. Link equity is not the blocker, the content to point it at is.</div>
+  </div>
+</div>
+</div></section>
+
+<!-- SLIDE 09: Technical SEO Audit -->
+<section><div class="s">
+<div class="shdr" data-n="09" data-source="ahrefs"></div>
+<h2 style="margin:0 0 clamp(10px,1.5vh,18px)">Five Technical Issues, <span style="color:var(--red)">Ranked by Damage</span></h2>
+<div style="font-size:clamp(14px,2vh,20px);color:var(--ink2);font-weight:500;margin-bottom:clamp(12px,1.9vh,24px);flex-shrink:0">Findings from a full crawl of udrive.ae, cross-checked against Ahrefs traffic data and live bot responses.</div>
+
+<div style="flex:1;min-height:0;display:flex;flex-direction:column;gap:clamp(7px,1vh,13px);overflow:hidden">
+
+  <div class="sev">
+    <span class="sev-n">01</span>
+    <div style="flex:1;min-width:0">
+      <div class="sev-t">Every Arabic page carries a canonical tag pointing at its English URL</div>
+      <div class="sev-b"><code>/ar/rent</code>, <code>/ar/faq</code> and <code>/ar/about-us</code> instruct Google to drop the Arabic version. Ahrefs attributes 1,134 monthly organic visits to <code>/ar</code> URLs, 602 of them to <code>/ar</code> alone. Impact: the Arabic-speaking half of the UAE market is being removed from the index by your own markup.</div>
+    </div>
+  </div>
+
+  <div class="sev">
+    <span class="sev-n">02</span>
+    <div style="flex:1;min-width:0">
+      <div class="sev-t">Every vehicle listing canonicalises to <code>/fleet-details/undefined</code></div>
+      <div class="sev-b"><code>/fleet-details/16</code>, <code>/48</code>, <code>/50</code>, <code>/52</code>, <code>/55</code> and <code>/56</code> all declare themselves duplicates of a page that does not exist, and all seven share one identical title with zero H1s. Impact: your entire bookable inventory is excluded from search and from AI answers about specific cars.</div>
+    </div>
+  </div>
+
+  <div class="sev">
+    <span class="sev-n">03</span>
+    <div style="flex:1;min-width:0">
+      <div class="sev-t">The 9 posts listed in llms.txt are functionally empty</div>
+      <div class="sev-b">31 to 39 raw words each, 0 H1, 0 H2, no article body. The 5 older posts on <code>/blogs/</code> carry 555 to 1,384 real words, and only 1 of those 5 is listed. Impact: the content you explicitly hand to ChatGPT, Claude and Perplexity is the content least able to earn a citation.</div>
+    </div>
+  </div>
+
+  <div class="sev">
+    <span class="sev-n">04</span>
+    <div style="flex:1;min-width:0">
+      <div class="sev-t">Nothing is readable without JavaScript</div>
+      <div class="sev-b">The homepage serves 34 words and 1 internal link in raw HTML, rising to 94 words and 8 links only after rendering. GPTBot, ClaudeBot, PerplexityBot and CCBot receive the 34-word version. Impact: <code>/rent</code>, <code>/subscription</code>, <code>/fleet</code>, <code>/limo</code> and <code>/business-form</code> are undiscoverable to AI crawlers.</div>
+    </div>
+  </div>
+
+  <div class="sev">
+    <span class="sev-n">05</span>
+    <div style="flex:1;min-width:0">
+      <div class="sev-t"><code>Disallow: /pricing</code> blocks your most commercial page</div>
+      <div class="sev-b">For a pay-per-minute rental business, cost is the most common transactional query in the market. The sitemap compounds it: 12 of roughly 30 real pages are listed, and 2 of those 12 return HTTP 500. No FAQPage schema exists despite 17 published Q&amp;As, and no Product, Offer, Vehicle or LocalBusiness schema anywhere. Impact: Udrive is absent from every AI price comparison in the UAE.</div>
+    </div>
+  </div>
+
+  <div style="display:flex;align-items:center;gap:10px;padding:clamp(7px,1vh,12px) clamp(11px,1.3vw,17px);background:var(--ok-bg);border:1px solid var(--ok-bd);border-radius:8px;flex-shrink:0">
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--ok)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><polyline points="20 6 9 17 4 12"/></svg>
+    <span style="font-size:clamp(12px,1.7vh,17px);color:var(--ink2);line-height:1.5"><strong style="color:var(--ink)">Bot access itself is clean.</strong> No bot-specific blocks in robots.txt, and GPTBot, ClaudeBot, PerplexityBot and CCBot all return 200. All five issues are configuration and content fixes, and all five can be closed inside month one.</span>
+  </div>
+
+</div>
+</div></section>
+
+<!-- SLIDE 10: Reddit Opportunity -->
+<section><div class="s">
+<div class="shdr" data-n="10" data-source="reddit"></div>
+<h2 style="margin:0 0 clamp(10px,1.5vh,18px)">Reddit Is the <span style="color:var(--accent)">Most Cited Source</span> in Your Market</h2>
+<div style="font-size:clamp(14px,2vh,20px);color:var(--ink2);font-weight:500;margin-bottom:clamp(12px,1.9vh,24px);flex-shrink:0">24 active UAE communities, mapped by weekly audience and weekly activity.</div>
+
+<div style="flex:1;min-height:0;display:flex;gap:clamp(14px,1.8vw,24px);overflow:hidden">
+
+  <div style="flex:0.95;min-width:0;display:flex;flex-direction:column;gap:clamp(9px,1.3vh,16px)">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(9px,1.2vw,15px)">
+      <div style="background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:10px;padding:clamp(10px,1.4vh,17px);text-align:center">
+        <div style="font-family:'DM Mono',monospace;font-size:clamp(21px,3.1vh,36px);font-weight:700;color:var(--accent);line-height:1">771,940</div>
+        <div style="font-size:clamp(11px,1.45vh,14px);color:var(--accent-dark);margin-top:4px;font-weight:600">Weekly visitors across all 24</div>
+      </div>
+      <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(10px,1.4vh,17px);text-align:center">
+        <div style="font-family:'DM Mono',monospace;font-size:clamp(21px,3.1vh,36px);font-weight:700;color:var(--ink);line-height:1">29,423</div>
+        <div style="font-size:clamp(11px,1.45vh,14px);color:var(--ink3);margin-top:4px;font-weight:600">Weekly contributions</div>
+      </div>
+      <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(10px,1.4vh,17px);text-align:center">
+        <div style="font-family:'DM Mono',monospace;font-size:clamp(21px,3.1vh,36px);font-weight:700;color:var(--ink);line-height:1">62%</div>
+        <div style="font-size:clamp(11px,1.45vh,14px);color:var(--ink3);margin-top:4px;font-weight:600">Sits in r/dubai and r/UAE alone</div>
+      </div>
+      <div style="background:var(--paper2);border:1px solid var(--red-bd);border-radius:10px;padding:clamp(10px,1.4vh,17px);text-align:center">
+        <div style="font-family:'DM Mono',monospace;font-size:clamp(21px,3.1vh,36px);font-weight:700;color:var(--red);line-height:1">172</div>
+        <div style="font-size:clamp(11px,1.45vh,14px);color:var(--ink3);margin-top:4px;font-weight:600">Reddit citations you do not shape</div>
+      </div>
+    </div>
+    <div style="background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:10px;padding:clamp(11px,1.5vh,18px) clamp(13px,1.5vw,19px);flex-shrink:0">
+      <div style="display:flex;align-items:center;gap:9px;margin-bottom:6px">
+        <img src="https://www.google.com/s2/favicons?domain=reddit.com&sz=32" style="width:17px;height:17px;border-radius:3px;flex-shrink:0">
+        <span style="font-size:clamp(13px,1.85vh,19px);font-weight:700;color:var(--accent-dark)">r/UaeCarEnthusiasts is the highest-fit community</span>
+      </div>
+      <p style="font-size:clamp(12px,1.65vh,16px);color:var(--ink2);margin:0;line-height:1.5">6,000 weekly visitors and 223 weekly contributions make it small, but it is the only subreddit in the set where every member already cares about cars in the UAE. It is where a rental recommendation carries the most weight per comment.</p>
+    </div>
+    <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(11px,1.5vh,18px) clamp(13px,1.5vw,19px);flex-shrink:0">
+      <p style="font-size:clamp(12px,1.65vh,16px);color:var(--ink2);margin:0;line-height:1.5">Reddit is cited 172 times in AI answers about UAE car rental, more than any other source including udrive.ae. Those threads are being written right now by people comparing rental apps, and Udrive is not in the conversation.</p>
+    </div>
+  </div>
+
+  <div style="flex:1.05;min-width:0;display:flex;flex-direction:column;gap:clamp(6px,0.9vh,11px);min-height:0">
+    <div style="font-size:clamp(12px,1.5vh,15px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4);flex-shrink:0">Priority communities by weekly audience</div>
+    <div class="tw">
+      <table class="dt">
+        <colgroup><col style="width:44%"><col style="width:28%"><col style="width:28%"></colgroup>
+        <thead><tr><th>Community</th><th class="num">Weekly visitors</th><th class="num">Weekly posts</th></tr></thead>
+        <tbody>
+          <tr><td style="font-weight:600;color:var(--ink)">r/dubai</td><td class="num">263,000</td><td class="num">4,700</td></tr>
+          <tr><td style="font-weight:600;color:var(--ink)">r/UAE</td><td class="num">218,000</td><td class="num">10,000</td></tr>
+          <tr><td>r/abudhabi</td><td class="num">54,000</td><td class="num">1,900</td></tr>
+          <tr><td>r/UAEjobseekers</td><td class="num">49,000</td><td class="num">3,000</td></tr>
+          <tr><td>r/UAETeenagers</td><td class="num">39,000</td><td class="num">1,600</td></tr>
+          <tr><td>r/dubairealestate</td><td class="num">33,000</td><td class="num">2,500</td></tr>
+          <tr><td>r/uaelaw</td><td class="num">30,000</td><td class="num">599</td></tr>
+          <tr><td>r/askdubai</td><td class="num">18,000</td><td class="num">647</td></tr>
+          <tr><td>r/ourUAE</td><td class="num">14,000</td><td class="num">528</td></tr>
+          <tr><td>r/FiloCommunityinUAE</td><td class="num">12,000</td><td class="num">926</td></tr>
+          <tr><td>r/SmallBusinessUAE</td><td class="num">11,000</td><td class="num">767</td></tr>
+          <tr style="background:var(--accent-bg)"><td style="font-weight:700;color:var(--accent-dark)">r/UaeCarEnthusiasts</td><td class="num" style="color:var(--accent-dark);font-weight:700">6,000</td><td class="num" style="color:var(--accent-dark);font-weight:700">223</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div style="font-size:clamp(11px,1.5vh,15px);color:var(--ink4);line-height:1.5;flex-shrink:0">Showing 12 of 24 mapped UAE communities. The remaining 12 add a further 32,940 weekly visitors across niche jobseeker, university and classifieds subreddits.</div>
+  </div>
+
+</div>
+</div></section>
+
+<!-- SLIDE 11: Trustpilot Reputation -->
+<section><div class="s">
+<div class="shdr" data-n="11" data-source="trustpilot"></div>
+<h2 style="margin:0 0 clamp(10px,1.5vh,18px)">The Review Score <span style="color:var(--red)">AI Reads First</span></h2>
+<div style="font-size:clamp(14px,2vh,20px);color:var(--ink2);font-weight:500;margin-bottom:clamp(12px,1.9vh,24px);flex-shrink:0">18 Trustpilot reviews spanning April 2024 to May 2026, all 15 English-language reviews read in full.</div>
+
+<div style="flex:1;min-height:0;display:flex;gap:clamp(14px,1.8vw,24px);overflow:hidden">
+
+  <div style="flex:0.9;min-width:0;display:flex;flex-direction:column;gap:clamp(9px,1.3vh,16px)">
+    <div style="display:flex;gap:clamp(9px,1.2vw,15px)">
+      <div style="flex:1;background:var(--red-bg);border:1px solid var(--red-bd);border-radius:10px;padding:clamp(10px,1.4vh,17px);text-align:center">
+        <div style="font-family:'DM Mono',monospace;font-size:clamp(24px,3.5vh,40px);font-weight:700;color:var(--red);line-height:1">2.1<span style="font-size:.45em">/5</span></div>
+        <div style="font-size:clamp(11px,1.45vh,14px);color:var(--ink3);margin-top:4px;font-weight:600">TrustScore</div>
+      </div>
+      <div style="flex:1;background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(10px,1.4vh,17px);text-align:center">
+        <div style="font-family:'DM Mono',monospace;font-size:clamp(24px,3.5vh,40px);font-weight:700;color:var(--ink);line-height:1">18</div>
+        <div style="font-size:clamp(11px,1.45vh,14px);color:var(--ink3);margin-top:4px;font-weight:600">Total reviews</div>
+      </div>
+      <div style="flex:1;background:var(--paper2);border:1px solid var(--red-bd);border-radius:10px;padding:clamp(10px,1.4vh,17px);text-align:center">
+        <div style="font-family:'DM Mono',monospace;font-size:clamp(24px,3.5vh,40px);font-weight:700;color:var(--red);line-height:1">0</div>
+        <div style="font-size:clamp(11px,1.45vh,14px);color:var(--ink3);margin-top:4px;font-weight:600">Five-star reviews, ever</div>
+      </div>
+    </div>
+
+    <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(11px,1.5vh,18px) clamp(13px,1.5vw,19px);flex-shrink:0">
+      <div style="font-size:clamp(11px,1.45vh,14px);font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ink4);margin-bottom:clamp(8px,1.1vh,13px)">Rating distribution</div>
+      <div style="display:flex;flex-direction:column;gap:clamp(6px,0.85vh,10px)">
+        <div style="display:flex;align-items:center;gap:10px"><span style="font-size:clamp(12px,1.6vh,16px);color:var(--ink2);width:4ch;flex-shrink:0">1 &#9733;</span><div style="flex:1;height:clamp(12px,1.6vh,16px);background:var(--paper3);border-radius:3px;overflow:hidden"><div style="width:88.9%;height:100%;background:var(--red)"></div></div><span style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.6vh,16px);font-weight:700;color:var(--red);width:9ch;text-align:right;flex-shrink:0">16 &middot; 88.9%</span></div>
+        <div style="display:flex;align-items:center;gap:10px"><span style="font-size:clamp(12px,1.6vh,16px);color:var(--ink2);width:4ch;flex-shrink:0">2 &#9733;</span><div style="flex:1;height:clamp(12px,1.6vh,16px);background:var(--paper3);border-radius:3px;overflow:hidden"><div style="width:5.6%;height:100%;background:var(--warn)"></div></div><span style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.6vh,16px);font-weight:700;color:var(--ink3);width:9ch;text-align:right;flex-shrink:0">1 &middot; 5.6%</span></div>
+        <div style="display:flex;align-items:center;gap:10px"><span style="font-size:clamp(12px,1.6vh,16px);color:var(--ink2);width:4ch;flex-shrink:0">3 &#9733;</span><div style="flex:1;height:clamp(12px,1.6vh,16px);background:var(--paper3);border-radius:3px;overflow:hidden"><div style="width:0%;height:100%;background:var(--ink4)"></div></div><span style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.6vh,16px);font-weight:700;color:var(--ink4);width:9ch;text-align:right;flex-shrink:0">0 &middot; 0%</span></div>
+        <div style="display:flex;align-items:center;gap:10px"><span style="font-size:clamp(12px,1.6vh,16px);color:var(--ink2);width:4ch;flex-shrink:0">4 &#9733;</span><div style="flex:1;height:clamp(12px,1.6vh,16px);background:var(--paper3);border-radius:3px;overflow:hidden"><div style="width:5.6%;height:100%;background:var(--ok)"></div></div><span style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.6vh,16px);font-weight:700;color:var(--ink3);width:9ch;text-align:right;flex-shrink:0">1 &middot; 5.6%</span></div>
+        <div style="display:flex;align-items:center;gap:10px"><span style="font-size:clamp(12px,1.6vh,16px);color:var(--ink2);width:4ch;flex-shrink:0">5 &#9733;</span><div style="flex:1;height:clamp(12px,1.6vh,16px);background:var(--paper3);border-radius:3px;overflow:hidden"><div style="width:0%;height:100%;background:var(--ink4)"></div></div><span style="font-family:'DM Mono',monospace;font-size:clamp(12px,1.6vh,16px);font-weight:700;color:var(--ink4);width:9ch;text-align:right;flex-shrink:0">0 &middot; 0%</span></div>
+      </div>
+    </div>
+
+    <div style="background:var(--ok-bg);border:1px solid var(--ok-bd);border-radius:10px;padding:clamp(11px,1.5vh,18px) clamp(13px,1.5vw,19px);flex-shrink:0">
+      <div style="display:flex;align-items:center;gap:9px;margin-bottom:6px">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--ok)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><polyline points="20 6 9 17 4 12"/></svg>
+        <span style="font-size:clamp(13px,1.85vh,19px);font-weight:700;color:var(--ink)">Proof the fix works</span>
+      </div>
+      <p style="font-size:clamp(12px,1.65vh,16px);color:var(--ink2);margin:0;line-height:1.5">One 2-star review was updated to 4 stars after a named agent, Rupesh, personally resolved a mileage dispute. Named, personal resolution already turns reviews around at Udrive. It is just not consistent, and it is not the default reply.</p>
+    </div>
+  </div>
+
+  <div style="flex:1.1;min-width:0;display:flex;flex-direction:column;gap:clamp(8px,1.1vh,13px);min-height:0">
+    <div style="font-size:clamp(12px,1.5vh,15px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4);flex-shrink:0">What customers actually complain about</div>
+
+    <div class="sev" style="flex-direction:column;align-items:stretch;gap:5px">
+      <div style="display:flex;align-items:center;gap:9px"><span style="font-family:'DM Mono',monospace;font-size:clamp(10px,1.25vh,13px);font-weight:700;color:var(--red);background:var(--red-bg);border:1px solid var(--red-bd);border-radius:4px;padding:1px 7px">Critical</span><span class="sev-t" style="margin:0">Surprise charges customers cannot verify</span></div>
+      <div class="sev-b">Fuel penalties, parking fines, mileage overage and accident charges billed after the fact with no way to contest. Reviewers cite an AED 1,500 windshield charge and AED 2,600 and AED 437 insurance charges. This sits directly against the <em>No Paperwork Or Hidden Fees</em> claim on the site.</div>
+    </div>
+
+    <div class="sev" style="flex-direction:column;align-items:stretch;gap:5px">
+      <div style="display:flex;align-items:center;gap:9px"><span style="font-family:'DM Mono',monospace;font-size:clamp(10px,1.25vh,13px);font-weight:700;color:var(--red);background:var(--red-bg);border:1px solid var(--red-bd);border-radius:4px;padding:1px 7px">Critical</span><span class="sev-t" style="margin:0">Support that escalates instead of resolving</span></div>
+      <div class="sev-b">Agents disconnecting calls mid-dispute, and one account of an agent mocking a customer&rsquo;s profession. The same templated reply, <em>we&rsquo;ve just set up our profile on this platform</em>, appears word for word from April 2024 to June 2025, across 14 months and every complaint category, always deflecting to phone or email.</div>
+    </div>
+
+    <div class="sev" style="flex-direction:column;align-items:stretch;gap:5px">
+      <div style="display:flex;align-items:center;gap:9px"><span style="font-family:'DM Mono',monospace;font-size:clamp(10px,1.25vh,13px);font-weight:700;color:var(--warn);background:var(--warn-bg);border:1px solid var(--warn-bd);border-radius:4px;padding:1px 7px">High</span><span class="sev-t" style="margin:0">Cars are not where the app says they are</span></div>
+      <div class="sev-b">The 15-minute reservation hold strands people repeatedly. One reviewer made 6 reservations across 2 hours and spent AED 300 on Uber trying to reach a car. Cleanliness and card-on-file handling draw the same intensity of complaint.</div>
+    </div>
+
+    <div style="background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:10px;padding:clamp(10px,1.4vh,17px) clamp(13px,1.5vw,19px);flex-shrink:0">
+      <div style="display:flex;align-items:center;gap:9px;margin-bottom:5px">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><path d="M12 9v4"/><path d="M12 17h.01"/><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/></svg>
+        <span style="font-size:clamp(13px,1.85vh,19px);font-weight:700;color:var(--accent-dark)">One item worth a compliance review</span>
+      </div>
+      <p style="font-size:clamp(12px,1.65vh,16px);color:var(--ink2);margin:0;line-height:1.5"><code style="background:#fff">/about-us</code> displays an unattributed <em>5 Stars</em> rating badge with no source platform, while the verifiable public score is 2.1 from 18 reviews. Worth having legal look at it early. Fixing the underlying reviews is the durable version of that badge, and it is work we would start in month one.</p>
+    </div>
+  </div>
+
+</div>
+</div></section>
+
+<!-- SLIDE 12: Transition -->
+<section><div class="s">
+<div class="shdr" data-n="12"></div>
+<div style="flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;min-height:0;gap:clamp(18px,2.8vh,36px)">
+  <img src="https://www.google.com/s2/favicons?domain=udrive.ae&sz=64" style="width:clamp(22px,3vh,32px);height:clamp(22px,3vh,32px);border-radius:6px">
+  <h2 style="font-size:clamp(26px,4.6vh,52px);margin:0;max-width:26ch">Every problem so far is a page that does not exist yet.</h2>
+  <p style="font-size:clamp(16px,2.4vh,25px);color:var(--ink2);line-height:1.6;margin:0;max-width:64ch">You have 2,000 cars, four emirates, per-minute pricing and a brand AI already recognises. What you do not have is a page for each city, each car, each rental length and each objection. That is the whole gap, and it is buildable.</p>
+  <p style="font-size:clamp(15px,2.2vh,23px);color:var(--accent);font-weight:600;margin:0">So let&rsquo;s go build them.</p>
+</div>
+</div></section>
+
+<!-- SLIDE 13: Content Strategy -->
+<section><div class="s">
+<div class="shdr" data-n="13"></div>
+<h2 style="margin:0 0 clamp(10px,1.5vh,18px)">The Content That <span style="color:var(--accent)">Closes the Gap</span></h2>
+<div style="font-size:clamp(14px,2vh,20px);color:var(--ink2);font-weight:500;margin-bottom:clamp(14px,2.2vh,28px);flex-shrink:0">Three clusters, each aimed at a specific set of prompts where Udrive currently scores zero.</div>
+
+<div class="rf3" style="display:flex;gap:clamp(6px,1vw,12px);flex-shrink:0;align-items:stretch">
+
+  <div style="flex:1;min-width:0;background:var(--paper2);border:1px solid var(--rule);border-radius:8px;padding:clamp(10px,1.4vh,18px) clamp(12px,1.4vw,18px);display:flex;flex-direction:column;gap:clamp(8px,1.3vh,14px)">
+    <div style="font-size:clamp(14px,2vh,18px);font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--accent-dark)">Comparison Cluster</div>
+    <div style="font-size:clamp(12px,1.6vh,16px);color:var(--ink3);line-height:1.5">Pages that answer the head-to-head question directly, so AI has something to quote instead of a directory.</div>
+    <div style="display:flex;flex-direction:column;gap:clamp(8px,1.3vh,14px)">
+      <div style="font-size:clamp(15px,2.1vh,19px);font-weight:600;color:var(--ink2)">Udrive vs Ekar</div>
+      <div style="font-size:clamp(15px,2.1vh,19px);font-weight:600;color:var(--ink2)">Udrive vs invygo</div>
+      <div style="font-size:clamp(15px,2.1vh,19px);font-weight:600;color:var(--ink2)">Udrive vs eZhire</div>
+      <div style="font-size:clamp(15px,2.1vh,19px);font-weight:600;color:var(--ink2)">Car sharing vs car rental in Dubai</div>
+      <div style="font-size:clamp(15px,2.1vh,19px);font-weight:600;color:var(--ink2)">Renting vs owning a car in the UAE</div>
+    </div>
+  </div>
+
+  <div style="width:clamp(28px,3.5vw,44px);display:flex;align-items:center;justify-content:center;font-size:clamp(22px,3.5vh,36px);color:var(--ink4);flex-shrink:0">+</div>
+
+  <div style="flex:1;min-width:0;background:var(--paper2);border:1px solid var(--rule);border-radius:8px;padding:clamp(10px,1.4vh,18px) clamp(12px,1.4vw,18px);display:flex;flex-direction:column;gap:clamp(8px,1.3vh,14px)">
+    <div style="font-size:clamp(14px,2vh,18px);font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--accent-dark)">Location &amp; Use Case</div>
+    <div style="font-size:clamp(12px,1.6vh,16px);color:var(--ink3);line-height:1.5">One page per place and per reason to rent, matching the 31 prompts that return Udrive nowhere.</div>
+    <div style="display:flex;flex-direction:column;gap:clamp(8px,1.3vh,14px)">
+      <div style="font-size:clamp(15px,2.1vh,19px);font-weight:600;color:var(--ink2)">Car rental at DXB airport</div>
+      <div style="font-size:clamp(15px,2.1vh,19px);font-weight:600;color:var(--ink2)">Dubai Marina, JBR, Downtown, Abu Dhabi</div>
+      <div style="font-size:clamp(15px,2.1vh,19px);font-weight:600;color:var(--ink2)">Cars for Uber and Careem drivers</div>
+      <div style="font-size:clamp(15px,2.1vh,19px);font-weight:600;color:var(--ink2)">Monthly and weekly rental pricing</div>
+      <div style="font-size:clamp(15px,2.1vh,19px);font-weight:600;color:var(--ink2)">First car for new Dubai residents</div>
+    </div>
+  </div>
+
+  <div style="width:clamp(28px,3.5vw,44px);display:flex;align-items:center;justify-content:center;font-size:clamp(22px,3.5vh,36px);color:var(--ink4);flex-shrink:0">=</div>
+
+  <div style="flex:1;min-width:0;background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:8px;padding:clamp(10px,1.4vh,18px) clamp(12px,1.4vw,18px);display:flex;flex-direction:column;gap:clamp(8px,1.3vh,14px)">
+    <div style="font-size:clamp(14px,2vh,18px);font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--accent-dark)">AEO &amp; Community</div>
+    <div style="font-size:clamp(12px,1.6vh,16px);color:var(--ink3);line-height:1.5">The layer that turns those pages into citations, on your site and in the threads AI already reads.</div>
+    <div style="display:flex;flex-direction:column;gap:clamp(8px,1.3vh,14px)">
+      <div style="font-size:clamp(15px,2.1vh,19px);font-weight:600;color:var(--ink2)">FAQPage, Vehicle and Offer schema</div>
+      <div style="font-size:clamp(15px,2.1vh,19px);font-weight:600;color:var(--ink2)">Arabic canonicals and hreflang repaired</div>
+      <div style="font-size:clamp(15px,2.1vh,19px);font-weight:600;color:var(--ink2)">Server-rendered pricing, unblocked</div>
+      <div style="font-size:clamp(15px,2.1vh,19px);font-weight:600;color:var(--ink2)">20 Reddit comments per month</div>
+      <div style="font-size:clamp(15px,2.1vh,19px);font-weight:600;color:var(--ink2)">Editorial links from UAE publications</div>
+    </div>
+  </div>
+
+</div>
+</div></section>
+
+<!-- SLIDE 14: Three-Part Fix -->
+<section><div class="s">
+<div class="shdr" data-n="14"></div>
+<h2 style="margin:0 0 clamp(10px,1.5vh,18px)">The Fix, in <span style="color:var(--accent)">Three Parts</span></h2>
+<div style="font-size:clamp(14px,2vh,20px);color:var(--ink2);font-weight:500;margin-bottom:clamp(14px,2.2vh,28px);flex-shrink:0">Each part maps to one of the three root problems, with the same numbers we commit to in the deliverables.</div>
+
+<div style="display:flex;gap:clamp(14px,2vw,24px);flex-shrink:0;align-items:flex-start">
+
+  <div style="flex:1;min-width:0;display:flex;flex-direction:column;background:var(--paper2);border:1.5px solid var(--rule);border-radius:12px;padding:clamp(12px,1.6vh,22px) clamp(16px,1.8vw,24px)">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:clamp(9px,1.2vh,15px)">
+      <span style="font-family:'DM Mono',monospace;font-size:clamp(11px,1.4vh,14px);font-weight:700;color:var(--accent-dark);background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:4px;padding:2px 8px">01</span>
+      <span style="font-size:clamp(10px,1.25vh,13px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4)">Technical</span>
+    </div>
+    <div style="font-size:clamp(17px,2.5vh,26px);font-weight:700;color:var(--ink);line-height:1.2;margin-bottom:clamp(10px,1.4vh,17px)">Stop the Self-Sabotage</div>
+    <div style="font-size:clamp(13px,1.85vh,19px);color:var(--ink2);line-height:1.5;display:flex;flex-direction:column;gap:7px">
+      <div style="display:flex;gap:8px;align-items:flex-start"><span style="color:var(--accent);flex-shrink:0">&#9679;</span><span>Arabic canonicals corrected and hreflang added across <code>/ar</code></span></div>
+      <div style="display:flex;gap:8px;align-items:flex-start"><span style="color:var(--accent);flex-shrink:0">&#9679;</span><span>Fleet pages given self-referencing canonicals, unique titles and H1s</span></div>
+      <div style="display:flex;gap:8px;align-items:flex-start"><span style="color:var(--accent);flex-shrink:0">&#9679;</span><span>Pricing unblocked and server-rendered for AI crawlers</span></div>
+      <div style="display:flex;gap:8px;align-items:flex-start"><span style="color:var(--accent);flex-shrink:0">&#9679;</span><span>Sitemap rebuilt to cover all live pages, HTTP 500s resolved</span></div>
+    </div>
+  </div>
+
+  <div style="flex:1;min-width:0;display:flex;flex-direction:column;background:var(--paper2);border:1.5px solid var(--rule);border-radius:12px;padding:clamp(12px,1.6vh,22px) clamp(16px,1.8vw,24px)">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:clamp(9px,1.2vh,15px)">
+      <span style="font-family:'DM Mono',monospace;font-size:clamp(11px,1.4vh,14px);font-weight:700;color:var(--accent-dark);background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:4px;padding:2px 8px">02</span>
+      <span style="font-size:clamp(10px,1.25vh,13px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4)">Content</span>
+    </div>
+    <div style="font-size:clamp(17px,2.5vh,26px);font-weight:700;color:var(--ink);line-height:1.2;margin-bottom:clamp(10px,1.4vh,17px)">Build the Missing Pages</div>
+    <div style="font-size:clamp(13px,1.85vh,19px);color:var(--ink2);line-height:1.5;display:flex;flex-direction:column;gap:7px">
+      <div style="display:flex;gap:8px;align-items:flex-start"><span style="color:var(--accent);flex-shrink:0">&#9679;</span><span>12 content pieces per month, aimed at zero-visibility prompts first</span></div>
+      <div style="display:flex;gap:8px;align-items:flex-start"><span style="color:var(--accent);flex-shrink:0">&#9679;</span><span>The 9 thin posts rewritten to full articles and re-listed in llms.txt</span></div>
+      <div style="display:flex;gap:8px;align-items:flex-start"><span style="color:var(--accent);flex-shrink:0">&#9679;</span><span>City, airport and rental-length landing pages, English and Arabic</span></div>
+      <div style="display:flex;gap:8px;align-items:flex-start"><span style="color:var(--accent);flex-shrink:0">&#9679;</span><span>FAQPage, Vehicle, Offer and LocalBusiness schema site-wide</span></div>
+    </div>
+  </div>
+
+  <div style="flex:1;min-width:0;display:flex;flex-direction:column;background:var(--paper2);border:1.5px solid var(--rule);border-radius:12px;padding:clamp(12px,1.6vh,22px) clamp(16px,1.8vw,24px)">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:clamp(9px,1.2vh,15px)">
+      <span style="font-family:'DM Mono',monospace;font-size:clamp(11px,1.4vh,14px);font-weight:700;color:var(--accent-dark);background:var(--accent-bg);border:1px solid var(--accent-bd);border-radius:4px;padding:2px 8px">03</span>
+      <span style="font-size:clamp(10px,1.25vh,13px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4)">Authority</span>
+    </div>
+    <div style="font-size:clamp(17px,2.5vh,26px);font-weight:700;color:var(--ink);line-height:1.2;margin-bottom:clamp(10px,1.4vh,17px)">Earn the Citations</div>
+    <div style="font-size:clamp(13px,1.85vh,19px);color:var(--ink2);line-height:1.5;display:flex;flex-direction:column;gap:7px">
+      <div style="display:flex;gap:8px;align-items:flex-start"><span style="color:var(--accent);flex-shrink:0">&#9679;</span><span>20 Reddit comments per month across r/dubai, r/UAE and r/UaeCarEnthusiasts</span></div>
+      <div style="display:flex;gap:8px;align-items:flex-start"><span style="color:var(--accent);flex-shrink:0">&#9679;</span><span>Editorial link outreach to UAE lifestyle and motoring publications</span></div>
+      <div style="display:flex;gap:8px;align-items:flex-start"><span style="color:var(--accent);flex-shrink:0">&#9679;</span><span>Review response programme modelled on the Rupesh resolution</span></div>
+      <div style="display:flex;gap:8px;align-items:flex-start"><span style="color:var(--accent);flex-shrink:0">&#9679;</span><span>AI visibility improvement month over month, tracked in AI Peekaboo</span></div>
+    </div>
+  </div>
+
+</div>
+</div></section>
+
+<!-- SLIDE 15: Deliverables -->
+<section><div class="s">
+<div class="shdr" data-n="15"></div>
+<h2 style="margin:0 0 clamp(8px,1.2vh,14px)">What We <span style="color:var(--accent)">Deliver Every Month</span></h2>
+<p style="font-size:clamp(14px,2vh,20px);color:var(--ink2);line-height:1.5;margin:0 0 clamp(14px,2.2vh,26px);font-weight:500;flex-shrink:0">A full managed service covering everything Udrive needs to grow in Google and in AI answers, executed every month.</p>
+<div class="rg2" style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(10px,1.4vw,16px);flex:1;min-height:0;align-content:start">
+
+  <div class="card">
+    <svg style="width:17px;height:17px;flex-shrink:0;margin-top:3px" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+    <div style="flex:1;min-width:0">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px"><div style="font-size:clamp(15px,2.1vh,21px);font-weight:700;color:var(--ink)">12 High-Quality Content Pieces</div><span class="badge">Per month</span></div>
+      <div style="font-size:clamp(13px,1.8vh,17px);color:var(--ink3);line-height:1.5">City, airport and rental-length pages written to answer exactly what a UAE renter types before choosing an app.</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <svg style="width:17px;height:17px;flex-shrink:0;margin-top:3px" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 4v6h-6"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+    <div style="flex:1;min-width:0">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px"><div style="font-size:clamp(15px,2.1vh,21px);font-weight:700;color:var(--ink)">Content Refresh Programme</div><span class="badge">Ongoing</span></div>
+      <div style="font-size:clamp(13px,1.8vh,17px);color:var(--ink3);line-height:1.5">The 9 thin posts rebuilt into real articles, and the 5 strong ones surfaced properly in llms.txt and the sitemap.</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <svg style="width:17px;height:17px;flex-shrink:0;margin-top:3px" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+    <div style="flex:1;min-width:0">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px"><div style="font-size:clamp(15px,2.1vh,21px);font-weight:700;color:var(--ink)">Schema Markup Implementation</div><span class="badge">Site-wide</span></div>
+      <div style="font-size:clamp(13px,1.8vh,17px);color:var(--ink3);line-height:1.5">FAQPage on your 17 published Q&amp;As, plus Vehicle, Offer and LocalBusiness so models can cite you with confidence.</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <svg style="width:17px;height:17px;flex-shrink:0;margin-top:3px" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+    <div style="flex:1;min-width:0">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px"><div style="font-size:clamp(15px,2.1vh,21px);font-weight:700;color:var(--ink)">On-Page SEO Optimisation</div><span class="badge">Ongoing</span></div>
+      <div style="font-size:clamp(13px,1.8vh,17px);color:var(--ink3);line-height:1.5">Canonicals, hreflang, titles, H1s and internal links repaired across the Arabic site and every fleet detail page.</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <svg style="width:17px;height:17px;flex-shrink:0;margin-top:3px" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+    <div style="flex:1;min-width:0">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px"><div style="font-size:clamp(15px,2.1vh,21px);font-weight:700;color:var(--ink)">Link Building</div><span class="badge">Ongoing</span></div>
+      <div style="font-size:clamp(13px,1.8vh,17px);color:var(--ink3);line-height:1.5">Editorial links from UAE motoring, expat and lifestyle publications to close the gap on Renty at DR 64.</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://www.google.com/s2/favicons?domain=reddit.com&sz=64" style="width:17px;height:17px;border-radius:3px;flex-shrink:0;margin-top:3px">
+    <div style="flex:1;min-width:0">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px"><div style="font-size:clamp(15px,2.1vh,21px);font-weight:700;color:var(--ink)">Reddit Presence</div><span class="badge">20 comments/month</span></div>
+      <div style="font-size:clamp(13px,1.8vh,17px);color:var(--ink3);line-height:1.5">Value-first replies in r/dubai, r/UAE, r/askdubai and r/UaeCarEnthusiasts, the most cited source in your market.</div>
+    </div>
+  </div>
+
+  <div class="card" style="grid-column:1 / -1">
+    <svg style="width:17px;height:17px;flex-shrink:0;margin-top:3px" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+    <div style="flex:1;min-width:0">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px"><div style="font-size:clamp(15px,2.1vh,21px);font-weight:700;color:var(--ink)">Monthly Reporting</div><span class="badge">Monthly</span></div>
+      <div style="font-size:clamp(13px,1.8vh,17px);color:var(--ink3);line-height:1.5">Rankings, traffic and AI citation movement delivered every month, including prompt-level movement on the 31 queries where Udrive currently scores zero. You always know what moved and what comes next.</div>
+    </div>
+  </div>
+
+</div>
+</div></section>
+
+<!-- SLIDE 16: How We Measure Progress -->
+<section><div class="s">
+<div class="shdr" data-n="16"></div>
+<h2 style="margin:0 0 clamp(8px,1.2vh,14px)">How We <span style="color:var(--accent)">Measure Progress</span></h2>
+<p style="font-size:clamp(14px,2vh,20px);color:var(--ink2);line-height:1.5;margin:0 0 clamp(14px,2.2vh,26px);font-weight:500;flex-shrink:0">Three tools, reported together every month, so you always know where Udrive is gaining ground.</p>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:clamp(10px,1.5vw,18px);align-content:start;flex-shrink:0">
+
+  <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(12px,1.6vh,19px) clamp(13px,1.5vw,19px);display:flex;flex-direction:column">
+    <img src="https://www.google.com/s2/favicons?domain=search.google.com&sz=128" style="width:clamp(32px,4.5vh,46px);height:clamp(32px,4.5vh,46px);border-radius:8px;margin-bottom:clamp(10px,1.4vh,16px);display:block;object-fit:contain">
+    <div style="font-size:clamp(15px,2.1vh,22px);font-weight:700;color:var(--ink);margin-bottom:clamp(6px,0.9vh,10px)">Google Search Console</div>
+    <p style="font-size:clamp(12px,1.65vh,16px);color:var(--ink3);margin:0 0 clamp(10px,1.4vh,16px);line-height:1.55">Clicks and impressions for every query Udrive appears on, split by English and Arabic so the <code>/ar</code> recovery is visible from month one.</p>
+    <div style="display:flex;flex-direction:column;gap:clamp(5px,0.75vh,8px)">
+      <div style="font-size:clamp(12px,1.65vh,16px);padding:clamp(6px,0.9vh,10px) clamp(10px,1.2vw,14px);border-radius:6px;background:var(--paper3);border:1px solid var(--rule);color:var(--ink2);line-height:1.4">Clicks and impressions month over month</div>
+      <div style="font-size:clamp(12px,1.65vh,16px);padding:clamp(6px,0.9vh,10px) clamp(10px,1.2vw,14px);border-radius:6px;background:var(--paper3);border:1px solid var(--rule);color:var(--ink2);line-height:1.4">Indexation of fleet and city pages</div>
+      <div style="font-size:clamp(12px,1.65vh,16px);padding:clamp(6px,0.9vh,10px) clamp(10px,1.2vw,14px);border-radius:6px;background:var(--paper3);border:1px solid var(--rule);color:var(--ink2);line-height:1.4">Domain rating progress via Ahrefs</div>
+    </div>
+  </div>
+
+  <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(12px,1.6vh,19px) clamp(13px,1.5vw,19px);display:flex;flex-direction:column">
+    <img src="https://www.google.com/s2/favicons?domain=analytics.google.com&sz=128" style="width:clamp(32px,4.5vh,46px);height:clamp(32px,4.5vh,46px);border-radius:8px;margin-bottom:clamp(10px,1.4vh,16px);display:block;object-fit:contain">
+    <div style="font-size:clamp(15px,2.1vh,22px);font-weight:700;color:var(--ink);margin-bottom:clamp(6px,0.9vh,10px)">Google Analytics 4</div>
+    <p style="font-size:clamp(12px,1.65vh,16px);color:var(--ink3);margin:0 0 clamp(10px,1.4vh,16px);line-height:1.55">Traffic by source, so organic growth, referrals arriving straight from LLMs and Reddit momentum each show up as their own line.</p>
+    <div style="display:flex;flex-direction:column;gap:clamp(5px,0.75vh,8px)">
+      <div style="font-size:clamp(12px,1.65vh,16px);padding:clamp(6px,0.9vh,10px) clamp(10px,1.2vw,14px);border-radius:6px;background:var(--paper3);border:1px solid var(--rule);color:var(--ink2);line-height:1.4">Organic, paid and direct traffic split</div>
+      <div style="font-size:clamp(12px,1.65vh,16px);padding:clamp(6px,0.9vh,10px) clamp(10px,1.2vw,14px);border-radius:6px;background:var(--paper3);border:1px solid var(--rule);color:var(--ink2);display:flex;align-items:center;gap:8px;line-height:1.4"><img src="https://www.google.com/s2/favicons?domain=chatgpt.com&sz=32" style="width:13px;height:13px;border-radius:2px;flex-shrink:0">Referral traffic from LLMs</div>
+      <div style="font-size:clamp(12px,1.65vh,16px);padding:clamp(6px,0.9vh,10px) clamp(10px,1.2vw,14px);border-radius:6px;background:var(--paper3);border:1px solid var(--rule);color:var(--ink2);display:flex;align-items:center;gap:8px;line-height:1.4"><img src="https://www.google.com/s2/favicons?domain=reddit.com&sz=32" style="width:13px;height:13px;border-radius:2px;flex-shrink:0">Reddit as a direct traffic source</div>
+    </div>
+  </div>
+
+  <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:10px;padding:clamp(12px,1.6vh,19px) clamp(13px,1.5vw,19px);display:flex;flex-direction:column">
+    <img src="https://www.aipeekaboo.com/icon.jpg" style="width:clamp(32px,4.5vh,46px);height:clamp(32px,4.5vh,46px);border-radius:8px;margin-bottom:clamp(10px,1.4vh,16px);display:block;object-fit:cover">
+    <div style="font-size:clamp(15px,2.1vh,22px);font-weight:700;color:var(--ink);margin-bottom:clamp(6px,0.9vh,10px)">AI Peekaboo</div>
+    <p style="font-size:clamp(12px,1.65vh,16px);color:var(--ink3);margin:0 0 clamp(10px,1.4vh,16px);line-height:1.55">Your 70 UAE prompts stay tracked across all five models, so every zero-visibility query that starts returning Udrive is measurable.</p>
+    <div style="display:flex;flex-direction:column;gap:clamp(5px,0.75vh,8px)">
+      <div style="font-size:clamp(12px,1.65vh,16px);padding:clamp(6px,0.9vh,10px) clamp(10px,1.2vw,14px);border-radius:6px;background:var(--paper3);border:1px solid var(--rule);color:var(--ink2);display:flex;align-items:center;gap:8px"><img src="https://www.google.com/s2/favicons?domain=chatgpt.com&sz=32" style="width:13px;height:13px;border-radius:2px;flex-shrink:0">ChatGPT</div>
+      <div style="font-size:clamp(12px,1.65vh,16px);padding:clamp(6px,0.9vh,10px) clamp(10px,1.2vw,14px);border-radius:6px;background:var(--paper3);border:1px solid var(--rule);color:var(--ink2);display:flex;align-items:center;gap:8px"><img src="https://www.google.com/s2/favicons?domain=gemini.google.com&sz=32" style="width:13px;height:13px;border-radius:2px;flex-shrink:0">Gemini</div>
+      <div style="font-size:clamp(12px,1.65vh,16px);padding:clamp(6px,0.9vh,10px) clamp(10px,1.2vw,14px);border-radius:6px;background:var(--paper3);border:1px solid var(--rule);color:var(--ink2);display:flex;align-items:center;gap:8px"><img src="https://www.google.com/s2/favicons?domain=perplexity.ai&sz=32" style="width:13px;height:13px;border-radius:2px;flex-shrink:0">Perplexity</div>
+      <div style="font-size:clamp(12px,1.65vh,16px);padding:clamp(6px,0.9vh,10px) clamp(10px,1.2vw,14px);border-radius:6px;background:var(--paper3);border:1px solid var(--rule);color:var(--ink2);display:flex;align-items:center;gap:8px"><img src="https://www.google.com/s2/favicons?domain=google.com&sz=32" style="width:13px;height:13px;border-radius:2px;flex-shrink:0">Google AI Overview and AI Mode</div>
+    </div>
+  </div>
+
+</div>
+<div style="flex-shrink:0;margin-top:clamp(10px,1.5vh,18px);padding:clamp(9px,1.2vh,14px) clamp(14px,1.8vw,20px);background:var(--paper2);border:1px solid var(--rule);border-radius:8px">
+  <p style="font-size:clamp(12px,1.7vh,17px);color:var(--ink3);margin:0;line-height:1.5"><strong style="color:var(--ink)">Monthly report:</strong> clicks and impressions from Search Console, traffic by source from GA4, AI citation counts from AI Peekaboo, and domain rating progress from Ahrefs, all delivered together.</p>
+</div>
+</div></section>
+
+<!-- SLIDE 17: Your Investment -->
+<section><div class="s">
+<div class="shdr" data-n="17"></div>
+<h2 style="margin:0 0 clamp(12px,1.7vh,20px)">Your Investment. What We Deliver and When.</h2>
+<div style="flex:1;min-height:0;overflow:hidden;display:grid;grid-template-columns:1.1fr 0.9fr;gap:clamp(16px,2vw,28px);align-items:start">
+
+  <div style="display:flex;flex-direction:column;gap:0">
+
+    <div style="display:flex;gap:clamp(12px,1.5vw,18px)">
+      <div style="display:flex;flex-direction:column;align-items:center;flex-shrink:0;width:clamp(28px,3.5vw,38px)">
+        <div style="width:clamp(11px,1.4vh,14px);height:clamp(11px,1.4vh,14px);border-radius:50%;background:var(--accent);flex-shrink:0;margin-top:3px"></div>
+        <div style="width:2px;flex:1;background:var(--rule);min-height:clamp(10px,1.5vh,18px)"></div>
+      </div>
+      <div style="flex:1;padding-bottom:clamp(14px,2vh,24px)">
+        <div style="display:inline-block;background:var(--accent);color:#fff;font-size:clamp(11px,1.4vh,15px);font-weight:600;letter-spacing:0.04em;border-radius:4px;padding:2px 8px;margin-bottom:4px">Month 1 &middot; Foundation</div>
+        <div style="font-size:clamp(14px,1.9vh,20px);font-weight:700;color:var(--ink);margin-bottom:clamp(6px,0.9vh,10px)">Audit, Technical Fixes, First 12 Articles</div>
+        <div style="font-size:clamp(12px,1.5vh,16px);color:var(--ink3);line-height:1.5;display:flex;flex-direction:column;gap:3px">
+          <div>Full SEO and AEO audit plus competitive benchmark against OneClickDrive, Renty, invygo and eZhire</div>
+          <div>Arabic canonicals corrected, fleet-page canonicals fixed, pricing unblocked and sitemap rebuilt</div>
+          <div>12 articles drafted, published and indexed, starting with the highest-volume zero-visibility prompts</div>
+          <div>Schema implementation begins on the 17 published Q&amp;As and the fleet pages</div>
+          <div>Reddit strategy agreed, first comments drafted for r/dubai, r/UAE and r/UaeCarEnthusiasts</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:flex;gap:clamp(12px,1.5vw,18px)">
+      <div style="display:flex;flex-direction:column;align-items:center;flex-shrink:0;width:clamp(28px,3.5vw,38px)">
+        <div style="width:clamp(11px,1.4vh,14px);height:clamp(11px,1.4vh,14px);border-radius:50%;background:var(--accent);flex-shrink:0;margin-top:3px"></div>
+        <div style="width:2px;flex:1;background:var(--rule);min-height:clamp(10px,1.5vh,18px)"></div>
+      </div>
+      <div style="flex:1;padding-bottom:clamp(14px,2vh,24px)">
+        <div style="display:inline-block;background:var(--accent);color:#fff;font-size:clamp(11px,1.4vh,15px);font-weight:600;letter-spacing:0.04em;border-radius:4px;padding:2px 8px;margin-bottom:4px">Month 2 &middot; Build</div>
+        <div style="font-size:clamp(14px,1.9vh,20px);font-weight:700;color:var(--ink);margin-bottom:clamp(6px,0.9vh,10px)">12 More Articles, 20 Reddit Comments, First Outreach</div>
+        <div style="font-size:clamp(12px,1.5vh,16px);color:var(--ink3);line-height:1.5;display:flex;flex-direction:column;gap:3px">
+          <div>12 more articles live, covering DXB airport, Dubai Marina, JBR, Downtown and Abu Dhabi</div>
+          <div>20 Reddit comments per month begins across the mapped UAE communities</div>
+          <div>The 9 thin blog posts rewritten to full articles and re-listed in llms.txt</div>
+          <div>Editorial outreach opens with UAE motoring and expat publications</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:flex;gap:clamp(12px,1.5vw,18px)">
+      <div style="display:flex;flex-direction:column;align-items:center;flex-shrink:0;width:clamp(28px,3.5vw,38px)">
+        <div style="width:clamp(11px,1.4vh,14px);height:clamp(11px,1.4vh,14px);border-radius:50%;background:var(--accent);flex-shrink:0;margin-top:3px"></div>
+        <div style="width:2px;flex:1;background:var(--rule);min-height:clamp(10px,1.5vh,18px)"></div>
+      </div>
+      <div style="flex:1;padding-bottom:clamp(14px,2vh,24px)">
+        <div style="display:inline-block;background:var(--accent);color:#fff;font-size:clamp(11px,1.4vh,15px);font-weight:600;letter-spacing:0.04em;border-radius:4px;padding:2px 8px;margin-bottom:4px">Month 3 &middot; Compound</div>
+        <div style="font-size:clamp(14px,1.9vh,20px);font-weight:700;color:var(--ink);margin-bottom:clamp(6px,0.9vh,10px)">Comparison Pages, 12 Articles, 20 Reddit Comments</div>
+        <div style="font-size:clamp(12px,1.5vh,16px);color:var(--ink3);line-height:1.5;display:flex;flex-direction:column;gap:3px">
+          <div>Udrive vs Ekar, vs invygo and vs eZhire comparison pages live and internally linked</div>
+          <div>12 more articles plus 20 Reddit comments, now with Arabic versions of the top performers</div>
+          <div>Link building generating first prospects from UAE publications</div>
+          <div>AI visibility review across all 70 tracked prompts, with the zero-visibility list re-measured</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:flex;gap:clamp(12px,1.5vw,18px)">
+      <div style="display:flex;flex-direction:column;align-items:center;flex-shrink:0;width:clamp(28px,3.5vw,38px)">
+        <div style="width:clamp(11px,1.4vh,14px);height:clamp(11px,1.4vh,14px);border-radius:50%;background:var(--ink4);flex-shrink:0;margin-top:3px"></div>
+      </div>
+      <div style="flex:1">
+        <div style="display:inline-block;background:var(--accent-bg);color:var(--accent-dark);border:1px solid var(--accent-bd);font-size:clamp(11px,1.4vh,15px);font-weight:600;letter-spacing:0.04em;border-radius:4px;padding:2px 8px;margin-bottom:4px">Month 4+ &middot; Ongoing</div>
+        <div style="font-size:clamp(14px,1.9vh,20px);font-weight:700;color:var(--ink);margin-bottom:clamp(6px,0.9vh,10px)">Continued Growth</div>
+        <div style="font-size:clamp(12px,1.5vh,16px);color:var(--ink3);line-height:1.5">12 articles and 20 Reddit comments every month, plus a quarterly strategy review. Content compounds, AI citations grow, domain rating climbs.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div style="display:flex;flex-direction:column;gap:clamp(10px,1.4vh,18px)">
+    <div style="background:var(--accent-bg);border:1.5px solid var(--accent-bd);border-radius:12px;padding:clamp(14px,2vh,24px)">
+      <span style="background:var(--accent);color:#fff;font-size:clamp(10px,1.25vh,13px);font-weight:600;border-radius:20px;padding:2px 10px">Complete Solution</span>
+      <div style="font-size:clamp(16px,2.2vh,24px);font-weight:700;color:var(--ink);margin:clamp(8px,1.1vh,14px) 0 2px">Full AI Search Optimization</div>
+      <div style="font-size:clamp(11px,1.4vh,14px);color:var(--ink3);margin-bottom:clamp(8px,1.1vh,14px)">SEO + AEO + Reddit + Outreach</div>
+      <div style="font-size:clamp(22px,3.2vh,40px);font-weight:800;color:var(--accent);margin-bottom:clamp(8px,1.1vh,14px)">$4,500<span style="font-size:clamp(13px,1.7vh,17px);font-weight:500;color:var(--ink3)">/month</span></div>
+      <div style="height:1px;background:var(--accent-bd);margin-bottom:clamp(10px,1.4vh,16px)"></div>
+      <div style="display:flex;flex-direction:column;gap:clamp(7px,1vh,12px);margin-bottom:clamp(10px,1.4vh,14px)">
+        <div style="display:flex;align-items:flex-start;gap:10px"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="flex-shrink:0;margin-top:2px"><circle cx="8" cy="8" r="8" fill="#f0fdf4"/><path d="M4.5 8.5l2.5 2.5 4.5-5" stroke="#16a34a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-size:clamp(12px,1.6vh,17px);color:var(--ink2);line-height:1.5">12 AI-optimised content pieces per month targeting UAE rental queries</span></div>
+        <div style="display:flex;align-items:flex-start;gap:10px"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="flex-shrink:0;margin-top:2px"><circle cx="8" cy="8" r="8" fill="#f0fdf4"/><path d="M4.5 8.5l2.5 2.5 4.5-5" stroke="#16a34a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-size:clamp(12px,1.6vh,17px);color:var(--ink2);line-height:1.5">20 Reddit comments per month in r/dubai, r/UAE and r/UaeCarEnthusiasts</span></div>
+        <div style="display:flex;align-items:flex-start;gap:10px"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="flex-shrink:0;margin-top:2px"><circle cx="8" cy="8" r="8" fill="#f0fdf4"/><path d="M4.5 8.5l2.5 2.5 4.5-5" stroke="#16a34a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-size:clamp(12px,1.6vh,17px);color:var(--ink2);line-height:1.5">Technical repairs, schema and backlink outreach to UAE publications</span></div>
+      </div>
+      <div style="font-size:clamp(11px,1.35vh,14px);color:var(--ink4);font-style:italic;border-top:1px solid var(--accent-bd);padding-top:8px">Includes AI Peekaboo subscription for visibility tracking. 3-month minimum.</div>
+    </div>
+    <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:12px;padding:clamp(14px,2vh,24px)">
+      <span style="background:var(--paper3);color:var(--ink4);font-size:clamp(10px,1.25vh,13px);font-weight:600;border-radius:20px;padding:2px 10px;border:1px solid var(--rule)">Entry Point</span>
+      <div style="font-size:clamp(16px,2.2vh,24px);font-weight:700;color:var(--ink);margin:clamp(8px,1.1vh,14px) 0 2px">Reddit Only</div>
+      <div style="font-size:clamp(11px,1.4vh,14px);color:var(--ink3);margin-bottom:clamp(8px,1.1vh,14px)">Presence where UAE renters compare apps</div>
+      <div style="font-size:clamp(22px,3.2vh,40px);font-weight:800;color:var(--ink);margin-bottom:clamp(8px,1.1vh,14px)">$1,600<span style="font-size:clamp(13px,1.7vh,17px);font-weight:500;color:var(--ink3)">/month</span></div>
+      <div style="height:1px;background:var(--rule);margin-bottom:clamp(10px,1.4vh,16px)"></div>
+      <div style="display:flex;flex-direction:column;gap:clamp(7px,1vh,12px);margin-bottom:clamp(10px,1.4vh,14px)">
+        <div style="display:flex;align-items:flex-start;gap:10px"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="flex-shrink:0;margin-top:2px"><circle cx="8" cy="8" r="8" fill="#f0fdf4"/><path d="M4.5 8.5l2.5 2.5 4.5-5" stroke="#16a34a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-size:clamp(12px,1.6vh,17px);color:var(--ink2);line-height:1.5">20 targeted Reddit comments per month across 24 mapped UAE communities</span></div>
+        <div style="display:flex;align-items:flex-start;gap:10px"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="flex-shrink:0;margin-top:2px"><circle cx="8" cy="8" r="8" fill="#f0fdf4"/><path d="M4.5 8.5l2.5 2.5 4.5-5" stroke="#16a34a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-size:clamp(12px,1.6vh,17px);color:var(--ink2);line-height:1.5">Thread monitoring in r/dubai, r/UAE, r/askdubai and r/UaeCarEnthusiasts</span></div>
+        <div style="display:flex;align-items:flex-start;gap:10px"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="flex-shrink:0;margin-top:2px"><circle cx="8" cy="8" r="8" fill="#f0fdf4"/><path d="M4.5 8.5l2.5 2.5 4.5-5" stroke="#16a34a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-size:clamp(12px,1.6vh,17px);color:var(--ink2);line-height:1.5">Monthly report on mention share versus Ekar, invygo and eZhire</span></div>
+      </div>
+      <div style="font-size:clamp(11px,1.35vh,14px);color:var(--ink4);font-style:italic;border-top:1px solid var(--rule);padding-top:8px">Scale up to Full AI Search Optimization anytime. 3-month minimum.</div>
+    </div>
+    <p style="font-size:clamp(12px,1.5vh,15px);color:var(--ink4);text-align:center;margin:0">3-month minimum commitment. After month 3, renews month-to-month with 30 days cancellation notice.</p>
+  </div>
+
+</div>
+</div></section>
+
+<!-- SLIDE 18: CTA / Team -->
+<section><div class="s">
+<div class="shdr" data-n="18"></div>
+<h2 style="margin:0 0 clamp(10px,1.5vh,18px);text-align:center">Ready to Own UAE Car Rental AI Search Before Your Competitors Do?</h2>
+<a href="https://calendly.com/filipe-aipeekaboo/30min" target="_blank" rel="noopener" style="display:block;width:100%;background:var(--accent-bg);border:2px solid var(--accent-bd);border-radius:8px;padding:clamp(14px,2vh,22px);text-align:center;text-decoration:none;margin:clamp(12px,1.8vh,20px) 0 clamp(20px,2.2vh,24px);flex-shrink:0">
+  <span style="font-size:clamp(14px,1.9vh,22px);font-weight:700;color:var(--accent-dark);letter-spacing:0.01em">Book a 30-Minute Strategy Call</span>
+</a>
+<p style="text-align:center;font-size:clamp(13px,1.7vh,17px);color:var(--ink3);margin:0 auto clamp(12px,1.8vh,22px);flex-shrink:0;max-width:110ch">Limited to 3 new SEO / AEO clients per quarter. Every week without city and pricing pages is another week that OneClickDrive and invygo answer the questions your customers are asking. Reach Filipe directly at <a href="mailto:filipe@aipeekaboo.com" style="color:#2563eb;text-decoration:underline">filipe@aipeekaboo.com</a> or <a href="https://calendly.com/filipe-aipeekaboo/30min" target="_blank" rel="noopener" style="color:#2563eb;text-decoration:underline">book a 30-min call</a>.</p>
+<div style="text-align:center;margin-bottom:clamp(8px,1.1vh,14px);flex-shrink:0">
+  <span style="font-size:clamp(11px,1.4vh,14px);font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--ink4)">The Team</span>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:clamp(12px,1.6vw,20px);align-items:start;flex-shrink:0">
+
+  <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:12px;padding:clamp(14px,1.9vh,22px);display:flex;flex-direction:column;gap:clamp(10px,1.3vh,16px);flex-shrink:0">
+    <div style="display:flex;align-items:center;gap:clamp(12px,1.6vh,17px)">
+      <img src="filipe.jpeg" alt="Filipe Lins Duarte" style="width:50px;height:50px;border-radius:50%;object-fit:cover;border:2px solid var(--rule);flex-shrink:0">
+      <div>
+        <div style="font-size:clamp(14px,1.8vh,20px);font-weight:700;color:var(--ink)">Filipe Lins Duarte</div>
+        <div style="font-size:clamp(12px,1.5vh,16px);color:var(--accent);font-weight:500">Co-Founder &amp; CEO</div>
+        <a href="https://www.linkedin.com/in/filipelinsduarte" target="_blank" rel="noopener" style="font-size:clamp(11px,1.4vh,15px);color:var(--ink4);text-decoration:none">linkedin.com/in/filipelinsduarte</a>
+      </div>
+    </div>
+    <div style="font-size:clamp(12px,1.5vh,16px);color:var(--ink3);line-height:1.5">Sales leader turned founder. Built revenue teams across SaaS in Europe and the US. Leads strategy and client relationships.</div>
+    <div style="display:flex;flex-direction:column;gap:clamp(5px,0.7vh,8px)">
+      <div style="display:flex;align-items:center;gap:8px"><img src="https://www.google.com/s2/favicons?domain=aipeekaboo.com&sz=32" style="width:16px;height:16px;border-radius:3px;flex-shrink:0"><span style="font-size:clamp(11px,1.4vh,15px);font-weight:600;color:var(--ink2)">AI Peekaboo</span><span style="font-size:clamp(10px,1.2vh,13px);color:var(--ink3)">Co-Founder &amp; CEO</span><span style="font-size:clamp(10px,1.2vh,13px);color:var(--ink4);margin-left:auto">Aug 2025</span></div>
+      <div style="display:flex;align-items:center;gap:8px"><img src="https://www.google.com/s2/favicons?domain=uber.com&sz=32" style="width:16px;height:16px;border-radius:3px;flex-shrink:0"><span style="font-size:clamp(11px,1.4vh,15px);font-weight:600;color:var(--ink2)">Uber for Business</span><span style="font-size:clamp(10px,1.2vh,13px);color:var(--ink3)">Mid-Market AE</span><span style="font-size:clamp(10px,1.2vh,13px);color:var(--ink4);margin-left:auto">Sep 2024</span></div>
+      <div style="display:flex;align-items:center;gap:8px"><img src="https://www.google.com/s2/favicons?domain=meistertask.com&sz=32" style="width:16px;height:16px;border-radius:3px;flex-shrink:0"><span style="font-size:clamp(11px,1.4vh,15px);font-weight:600;color:var(--ink2)">Meister</span><span style="font-size:clamp(10px,1.2vh,13px);color:var(--ink3)">#1 AE 2023</span><span style="font-size:clamp(10px,1.2vh,13px);color:var(--ink4);margin-left:auto">Aug 2022</span></div>
+    </div>
+  </div>
+
+  <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:12px;padding:clamp(14px,1.9vh,22px);display:flex;flex-direction:column;gap:clamp(10px,1.3vh,16px);flex-shrink:0">
+    <div style="display:flex;align-items:center;gap:clamp(12px,1.6vh,17px)">
+      <img src="john.jpeg" alt="John Rice" style="width:50px;height:50px;border-radius:50%;object-fit:cover;border:2px solid var(--rule);flex-shrink:0">
+      <div>
+        <div style="font-size:clamp(14px,1.8vh,20px);font-weight:700;color:var(--ink)">John Rice</div>
+        <div style="font-size:clamp(12px,1.5vh,16px);color:var(--accent);font-weight:500">Co-Founder &amp; CTO</div>
+        <a href="https://www.linkedin.com/in/johnwilliamrice/" target="_blank" rel="noopener" style="font-size:clamp(11px,1.4vh,15px);color:var(--ink4);text-decoration:none">linkedin.com/in/johnwilliamrice</a>
+      </div>
+    </div>
+    <div style="font-size:clamp(12px,1.5vh,16px);color:var(--ink3);line-height:1.5">Full-stack engineer and serial builder. Designed the AI Peekaboo platform from scratch. Leads product and engineering.</div>
+    <div style="display:flex;flex-direction:column;gap:clamp(5px,0.7vh,8px)">
+      <div style="display:flex;align-items:center;gap:8px"><img src="https://www.google.com/s2/favicons?domain=aipeekaboo.com&sz=32" style="width:16px;height:16px;border-radius:3px;flex-shrink:0"><span style="font-size:clamp(11px,1.4vh,15px);font-weight:600;color:var(--ink2)">AI Peekaboo</span><span style="font-size:clamp(10px,1.2vh,13px);color:var(--ink3)">Co-Founder &amp; CTO</span><span style="font-size:clamp(10px,1.2vh,13px);color:var(--ink4);margin-left:auto">Apr 2025</span></div>
+      <div style="display:flex;align-items:center;gap:8px"><img src="https://www.google.com/s2/favicons?domain=subredditsignals.com&sz=32" style="width:16px;height:16px;border-radius:3px;flex-shrink:0"><span style="font-size:clamp(11px,1.4vh,15px);font-weight:600;color:var(--ink2)">Subreddit Signals</span><span style="font-size:clamp(10px,1.2vh,13px);color:var(--ink3)">Founder</span><span style="font-size:clamp(10px,1.2vh,13px);color:var(--ink4);margin-left:auto">Nov 2024</span></div>
+      <div style="display:flex;align-items:center;gap:8px"><img src="https://www.google.com/s2/favicons?domain=magiclinks.com&sz=32" style="width:16px;height:16px;border-radius:3px;flex-shrink:0"><span style="font-size:clamp(11px,1.4vh,15px);font-weight:600;color:var(--ink2)">MagicLinks</span><span style="font-size:clamp(10px,1.2vh,13px);color:var(--ink3)">Senior Software Engineer</span><span style="font-size:clamp(10px,1.2vh,13px);color:var(--ink4);margin-left:auto">Jul 2021</span></div>
+    </div>
+  </div>
+
+  <div style="background:var(--paper2);border:1px solid var(--rule);border-radius:12px;padding:clamp(14px,1.9vh,22px);display:flex;flex-direction:column;gap:clamp(10px,1.3vh,16px);flex-shrink:0">
+    <div style="display:flex;align-items:center;gap:clamp(12px,1.6vh,17px)">
+      <img src="danny-kirk.jpeg" alt="Danny Kirk" style="width:50px;height:50px;border-radius:50%;object-fit:cover;border:2px solid var(--rule);flex-shrink:0">
+      <div>
+        <div style="font-size:clamp(14px,1.8vh,20px);font-weight:700;color:var(--ink)">Danny Kirk</div>
+        <div style="font-size:clamp(12px,1.5vh,16px);color:var(--accent);font-weight:500">COO &amp; Advisory</div>
+        <a href="https://www.linkedin.com/in/danielpkirk/" target="_blank" rel="noopener" style="font-size:clamp(11px,1.4vh,15px);color:var(--ink4);text-decoration:none">linkedin.com/in/danielpkirk</a>
+      </div>
+    </div>
+    <div style="font-size:clamp(12px,1.5vh,16px);color:var(--ink3);line-height:1.5">Reddit community expert and operator. Founded ReddiReach in 2017. Brings platform-native knowledge and operator experience.</div>
+    <div style="display:flex;flex-direction:column;gap:clamp(5px,0.7vh,8px)">
+      <div style="display:flex;align-items:center;gap:8px"><img src="https://www.google.com/s2/favicons?domain=reddit.com&sz=32" style="width:16px;height:16px;border-radius:3px;flex-shrink:0"><span style="font-size:clamp(11px,1.4vh,15px);font-weight:600;color:var(--ink2)">ReddiReach</span><span style="font-size:clamp(10px,1.2vh,13px);color:var(--ink3)">Founder</span><span style="font-size:clamp(10px,1.2vh,13px);color:var(--ink4);margin-left:auto">Dec 2017</span></div>
+      <div style="display:flex;align-items:center;gap:8px"><img src="https://www.google.com/s2/favicons?domain=goaheadventures.com&sz=32" style="width:16px;height:16px;border-radius:3px;flex-shrink:0"><span style="font-size:clamp(11px,1.4vh,15px);font-weight:600;color:var(--ink2)">GoAhead Ventures</span><span style="font-size:clamp(10px,1.2vh,13px);color:var(--ink3)">Venture Scout</span><span style="font-size:clamp(10px,1.2vh,13px);color:var(--ink4);margin-left:auto">Oct 2024</span></div>
+      <div style="display:flex;align-items:center;gap:8px"><img src="https://www.google.com/s2/favicons?domain=energentmedia.com&sz=32" style="width:16px;height:16px;border-radius:3px;flex-shrink:0"><span style="font-size:clamp(11px,1.4vh,15px);font-weight:600;color:var(--ink2)">Energent Media</span><span style="font-size:clamp(10px,1.2vh,13px);color:var(--ink3)">COO</span><span style="font-size:clamp(10px,1.2vh,13px);color:var(--ink4);margin-left:auto">Jun 2018</span></div>
+    </div>
+  </div>
+
+</div>
+</div></section>
+
+</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reveal.min.js"></script>
+<script>
+var T=18,D='udrive.ae',P='SEO / AEO Proposal';
+Reveal.initialize({hash:true,transition:'none',disableLayout:true,width:1920,height:1080,margin:0,minScale:0.1,maxScale:3});
+document.querySelectorAll('.shdr').forEach(function(el){
+  var n=el.getAttribute('data-n');
+  var src=el.getAttribute('data-source');
+  var srcHtml='';
+  if(src){
+    var srcMap={
+      'ahrefs':['https://www.google.com/s2/favicons?domain=ahrefs.com&sz=32','Data: Ahrefs'],
+      'peekaboo':['https://www.aipeekaboo.com/icon.jpg','Data: AI Peekaboo'],
+      'reddit':['https://www.google.com/s2/favicons?domain=reddit.com&sz=32','Data: Reddit'],
+      'trustpilot':['https://www.google.com/s2/favicons?domain=trustpilot.com&sz=32','Data: Trustpilot']
+    };
+    if(srcMap[src]) srcHtml='<div style="display:flex;justify-content:flex-end;margin-bottom:clamp(5px,0.7vh,9px)"><div class="data-src"><img src="'+srcMap[src][0]+'"><span>'+srcMap[src][1]+'</span></div></div>';
+  }
+  var LEAD='<img src="https://www.google.com/s2/favicons?domain=udrive.ae&sz=64" class="hdr-favicon">';
+  el.innerHTML='<div class="stripe"></div><div class="hdr"><div style="display:flex;align-items:center;gap:10px">'+LEAD+'<span class="tag">'+P+'</span></div><div class="hdr-right"><span class="snum">'+n+' / '+T+'</span><a class="powered" href="https://www.aipeekaboo.com" target="_blank" rel="noopener"><span>Powered by</span><img src="https://www.aipeekaboo.com/images/peekaboo-logo-black.png"></a></div></div><div class="divider"></div>'+srcHtml;
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EZE Credit Services: SEO Performance Report August 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reveal.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/theme/white.min.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<!-- GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YV8FCLN403"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-YV8FCLN403');</script>
+<style>
+
+:root {
+  --brand:#ca2017;--brand-bg:#fff0ee;--brand-bd:#f5b3ae;--brand-dark:#a31910;
+  --gold:#f6bb06;--gold-bg:#fffbe6;--gold-bd:#fce97a;--gold-dark:#a67e00;
+  --ok:#16a34a;--ok-bg:#f0fdf4;--ok-bd:#bbf7d0;--ok-dark:#14532d;
+  --warn:#ea580c;--warn-bg:#fff7ed;--warn-bd:#fed7aa;
+  --ink:#171C33;--ink2:#3D4461;--ink3:#717185;--ink4:#A1A1B5;
+  --paper:#fff;--paper2:#F9FAFB;--paper3:#F3F4F6;--rule:#E5E7EB;
+}
+.reveal,.reveal .slides{font-family:'DM Sans',sans-serif;}
+.reveal .slides section{text-align:left;}
+.reveal h1,.reveal h2,.reveal h3{font-family:'DM Sans',sans-serif;font-weight:700;color:var(--ink);text-transform:none;letter-spacing:-.02em;}
+.s{width:100vw;height:100vh;padding:2.2vh 4vw 1.8vh;display:flex;flex-direction:column;overflow:hidden;box-sizing:border-box;background:var(--paper);position:relative;}
+.stripe{position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--brand-dark);}
+.hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:.7vh;flex-shrink:0;}
+.hdr-left{display:flex;align-items:center;gap:10px;}
+.snum{font-family:'DM Mono',monospace;font-size:clamp(12px,1.4vh,15px);color:var(--ok-dark);background:var(--ok-bg);border:1px solid var(--ok-bd);border-radius:3px;padding:2px 10px;}
+.tag{font-size:clamp(12px,1.4vh,14px);font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink4);}
+.divider{height:1px;background:var(--rule);margin-bottom:1vh;flex-shrink:0;}
+.body{flex:1;display:flex;flex-direction:column;overflow:hidden;min-height:0;}
+.reveal h2{font-size:clamp(22px,3.6vh,40px);margin:0 0 .5vh;color:var(--ink);}
+.reveal p{font-size:clamp(14px,1.8vh,20px);color:var(--ink2);margin:0;}
+.mono{font-family:'DM Mono',monospace;}
+.col-head{font-size:clamp(10px,1.2vh,13px);font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink4);margin-bottom:.3vh;}
+.rg2{display:grid;grid-template-columns:1fr 1fr;gap:clamp(8px,1vw,14px);}
+.rg3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:clamp(8px,1vw,14px);}
+.rg4{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:clamp(6px,.8vw,12px);}
+.obox{background:var(--paper2);border:1px solid var(--rule);border-radius:8px;padding:clamp(9px,1.1vh,14px) clamp(11px,1.2vw,16px);}
+.kpi-num{font-family:'DM Mono',monospace;font-size:clamp(26px,4.2vh,48px);font-weight:500;line-height:1;letter-spacing:-.03em;}
+.kpi-label{font-size:clamp(12px,1.4vh,15px);color:var(--ink3);margin-top:3px;line-height:1.4;}
+.kpi-sub{font-size:clamp(10px,1.15vh,13px);color:var(--ink4);margin-top:2px;font-style:italic;}
+.src{font-size:clamp(10px,1.1vh,12px);color:var(--ink4);font-style:italic;margin-top:auto;padding-top:.4vh;flex-shrink:0;}
+.badge{display:inline-block;font-family:'DM Mono',monospace;font-size:clamp(10px,1.1vh,12px);border-radius:3px;padding:1px 7px;font-weight:500;}
+.badge-ok{background:var(--ok-bg);color:var(--ok);border:1px solid var(--ok-bd);}
+.badge-warn{background:var(--warn-bg);color:var(--warn);border:1px solid var(--warn-bd);}
+.badge-brand{background:var(--brand-bg);color:var(--brand-dark);border:1px solid var(--brand-bd);}
+.badge-gold{background:var(--gold-bg);color:var(--gold-dark);border:1px solid var(--gold-bd);}
+.badge-new{background:#eff6ff;color:#1d4ed8;border:1px solid #bfdbfe;}
+.badge-flat{background:var(--paper3);color:var(--ink3);border:1px solid var(--rule);}
+.tbl{width:100%;border-collapse:collapse;font-size:clamp(12px,1.5vh,16px);}
+.tbl th{font-size:clamp(10px,1.2vh,13px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4);padding:clamp(3px,.5vh,7px) clamp(6px,.8vw,10px);border-bottom:2px solid var(--rule);text-align:left;}
+.tbl td{padding:clamp(4px,.6vh,8px) clamp(6px,.8vw,10px);border-bottom:1px solid var(--rule);color:var(--ink2);vertical-align:middle;}
+.tbl tr:last-child td{border-bottom:none;}
+.tbl .hl-ok{background:var(--ok-bg);}
+.tbl .hl-warn{background:var(--warn-bg);}
+.tbl .hl-new{background:#eff6ff;}
+.infobox{padding:clamp(7px,.9vh,11px) clamp(9px,1.1vw,14px);border-radius:6px;font-size:clamp(13px,1.5vh,16px);flex-shrink:0;margin-top:.7vh;}
+.chart-wrap{position:relative;flex:1;min-height:0;}
+.period-pill{display:inline-block;font-size:clamp(10px,1.15vh,12px);background:var(--paper3);border:1px solid var(--rule);border-radius:20px;padding:3px 11px;color:var(--ink3);font-weight:600;}
+.kpi-dash .kpi-num{font-size:clamp(40px,7vh,80px);}
+.kpi-dash .kpi-label{font-size:clamp(13px,2vh,22px);margin-top:5px;}
+.kpi-dash .kpi-sub{font-size:clamp(11px,1.6vh,17px);margin-top:3px;}
+.kpi-dash .col-head{font-size:clamp(11px,1.4vh,14px);}
+.kpi-dash .obox{display:flex;flex-direction:column;gap:3px;padding:clamp(12px,1.8vh,20px) clamp(14px,1.5vw,22px);}
+.win{background:var(--ok-bg);border:1px solid var(--ok-bd);border-radius:8px;padding:clamp(7px,.9vh,11px) clamp(9px,.9vw,13px);}
+.win-t{font-size:clamp(12px,1.5vh,16px);font-weight:700;color:var(--ok-dark);line-height:1.25;}
+.win-s{font-size:clamp(11px,1.3vh,14px);color:var(--ink3);line-height:1.35;margin-top:2px;}
+.num{white-space:nowrap;}
+.fillcol .win{flex:1;display:flex;flex-direction:column;justify-content:center;}
+.fillcol > div{min-height:0;}
+</style>
+</head>
+<body>
+<div class="reveal"><div class="slides">
+<!-- ===== TITLE ===== -->
+<section>
+<div class="s" style="justify-content:center;align-items:center;">
+<div class="stripe"></div>
+<div style="display:flex;flex-direction:column;align-items:center;text-align:center;max-width:960px;gap:clamp(18px,3.5vh,40px);">
+  <div style="display:flex;align-items:center;gap:14px;justify-content:center;">
+    <img src="https://www.google.com/s2/favicons?domain=ezecreditservices.com&sz=64" style="border-radius:12px;width:clamp(44px,7vh,60px);height:clamp(44px,7vh,60px);">
+    <div style="text-align:left;">
+      <div style="font-size:clamp(13px,1.6vh,17px);color:var(--ink4);font-weight:700;letter-spacing:.12em;text-transform:uppercase;line-height:1;">EZE Credit Services</div>
+      <div style="font-size:clamp(11px,1.2vh,13px);color:var(--ink4);margin-top:2px;">ezecreditservices.com</div>
+    </div>
+  </div>
+  <div>
+    <div style="font-size:clamp(52px,9.5vh,108px);font-weight:700;color:var(--ink);letter-spacing:-.03em;line-height:.95;">SEO Performance</div>
+    <div style="font-size:clamp(52px,9.5vh,108px);font-weight:700;color:var(--brand);letter-spacing:-.03em;line-height:.95;">Report</div>
+  </div>
+  <div style="height:4px;width:80px;background:var(--brand);border-radius:2px;"></div>
+  <div style="display:flex;flex-direction:column;gap:6px;">
+    <div style="font-size:clamp(17px,2.4vh,28px);color:var(--ink2);font-weight:500;">August 2026 &nbsp;&middot;&nbsp; Aug 1&ndash;26 vs Jul 1&ndash;26</div>
+    <div style="font-size:clamp(13px,1.6vh,18px);color:var(--ink4);">Prepared by <strong style="color:var(--ink3);">AI Peekaboo</strong> &nbsp;&middot;&nbsp; August 28, 2026</div>
+  </div>
+</div>
+</div>
+</section>
+
+<!-- ===== 1: KPI DASHBOARD ===== -->
+<section>
+<div class="s">
+<div class="stripe"></div>
+<div style="display:flex;align-items:center;justify-content:space-between;flex-shrink:0;margin-bottom:1.5vh;">
+  <div style="display:flex;align-items:center;gap:12px;">
+    <img src="https://www.google.com/s2/favicons?domain=ezecreditservices.com&sz=40" style="border-radius:6px;width:34px;height:34px;">
+    <div>
+      <div style="font-size:clamp(12px,1.4vh,15px);color:var(--ink4);font-weight:700;letter-spacing:.1em;text-transform:uppercase;line-height:1;">EZE Credit Services</div>
+      <div style="font-size:clamp(20px,3.4vh,38px);font-weight:700;color:var(--ink);letter-spacing:-.02em;line-height:1.1;">SEO Performance <span style="color:var(--brand);">Report</span></div>
+    </div>
+  </div>
+  <div style="text-align:right;">
+    <div style="font-size:clamp(12px,1.4vh,15px);color:var(--ink4);line-height:1.5;">Current period: <strong style="color:var(--ink2);">Aug 1 &ndash; Aug 26, 2026</strong> (26 days)</div>
+    <div style="font-size:clamp(12px,1.4vh,15px);color:var(--ink4);line-height:1.5;">Previous period: <strong style="color:var(--ink2);">Jul 1 &ndash; Jul 26, 2026</strong> (26 days)</div>
+    <div style="font-size:clamp(10px,1.1vh,12px);color:var(--ink4);margin-top:2px;">Like for like. GSC data lags 2 days.</div>
+  </div>
+</div>
+<div class="divider"></div>
+<div style="flex-shrink:0;display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:auto auto;gap:clamp(8px,1vh,14px);">
+  <div class="obox">
+    <div class="col-head" style="margin:0;">Google Clicks &middot; Aug vs Jul</div>
+    <div class="kpi-num" style="color:var(--warn);">&minus;18.3%</div>
+    <div class="kpi-label"><span class="num">1,201</span> &rarr; <strong><span class="num">981</span></strong> clicks</div>
+    <div class="kpi-sub">One page accounts for the entire drop</div>
+  </div>
+  <div class="obox">
+    <div class="col-head" style="margin:0;">Search Impressions</div>
+    <div class="kpi-num" style="color:var(--warn);">&minus;11.6%</div>
+    <div class="kpi-label"><span class="num">34,834</span> &rarr; <strong><span class="num">30,789</span></strong></div>
+    <div class="kpi-sub">Average position slipped <span class="num">11.9</span> to <span class="num">13.6</span></div>
+  </div>
+  <div class="obox">
+    <div class="col-head" style="margin:0;">Brand Searches</div>
+    <div class="kpi-num" style="color:var(--ok);">+65%</div>
+    <div class="kpi-label"><span class="num">43</span> &rarr; <strong><span class="num">71</span></strong> clicks</div>
+    <div class="kpi-sub">&ldquo;eze credit services&rdquo;, plus reviews queries appearing</div>
+  </div>
+  <div class="obox">
+    <div class="col-head" style="margin:0;">Sessions &middot; GA4</div>
+    <div class="kpi-num" style="color:var(--ink2);">&minus;2.3%</div>
+    <div class="kpi-label"><span class="num">2,723</span> &rarr; <strong><span class="num">2,661</span></strong></div>
+    <div class="kpi-sub">Traffic held despite the search dip</div>
+  </div>
+  <div class="obox">
+    <div class="col-head" style="margin:0;">Revenue Closed &middot; August</div>
+    <div class="kpi-num" style="color:var(--ok);"><span class="num">$12,439</span></div>
+    <div class="kpi-label"><strong><span class="num">20</span></strong> of <span class="num">41</span> orders completed</div>
+    <div class="kpi-sub"><span class="num">45%</span> of pipeline value converted</div>
+  </div>
+  <div class="obox">
+    <div class="col-head" style="margin:0;">Technical Fixes Shipped</div>
+    <div class="kpi-num" style="color:var(--ok);"><span class="num">14</span></div>
+    <div class="kpi-label">Full audit plus <strong>6 of 9</strong> findings closed</div>
+    <div class="kpi-sub">Missing meta descriptions taken from <span class="num">44</span> to <span class="num">0</span></div>
+  </div>
+</div>
+</div>
+</section>
+<!-- ===== 2: TREND ===== -->
+<section>
+<div class="s">
+<div class="stripe"></div>
+<div class="hdr"><div class="hdr-left"><span class="snum">02</span><span class="tag">Search trend</span></div></div>
+<div class="divider"></div>
+<div class="body">
+<h2>August gave back part of July&rsquo;s record, but the cause is narrow</h2>
+<p style="margin-bottom:1vh;">July was an all-time high at <strong class="num">1,409</strong> clicks. August is tracking at <strong class="num">981</strong> through the 26th. The decline sits almost entirely in one page and one head term, while brand demand and comparison content both grew.</p>
+<div class="chart-wrap" style="flex:1;min-height:0;"><canvas id="clicksChart"></canvas></div>
+<div class="rg3" style="margin-top:1vh;flex-shrink:0;">
+  <div class="infobox"><div class="col-head">Still well ahead year on year</div><p style="font-size:clamp(12px,1.5vh,15px);"><span class="num">981</span> clicks in 26 days versus <span class="num">395</span> for all of Nov 2025. The trajectory is intact.</p></div>
+  <div class="infobox"><div class="col-head">Impressions fell further than clicks</div><p style="font-size:clamp(12px,1.5vh,15px);">Down <span class="num">11.6%</span> with position slipping to <span class="num">13.6</span>, so this is ranking loss, not demand loss.</p></div>
+  <div class="infobox"><div class="col-head">Brand is compounding</div><p style="font-size:clamp(12px,1.5vh,15px);">Branded clicks up <span class="num">65%</span>, and &ldquo;eze credit services reviews&rdquo; entered the data at <span class="num">5</span> clicks.</p></div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ===== 5: PIPELINE AND SALES ===== -->
+<section>
+<div class="s">
+<div class="stripe"></div>
+<div class="hdr"><div class="hdr-left"><span class="snum">03</span><span class="tag">Pipeline and sales</span></div></div>
+<div class="divider"></div>
+<div class="body">
+<h2><span class="num">$27,797</span> of pipeline generated, <span class="num">$12,439</span> closed</h2>
+<p style="margin-bottom:1.2vh;"><span class="num">41</span> orders placed in August, <span class="num">20</span> completed. Every order carries a WooCommerce attribution source, so pipeline and revenue can be split by channel.</p>
+<div class="rg2" style="flex-shrink:0;">
+  <div style="display:flex;flex-direction:column;min-height:0;">
+    <div class="col-head">Pipeline generated &middot; all 41 orders</div>
+    <div style="overflow:auto;min-height:0;"><table class="tbl">
+    <thead><tr><th>Source</th><th style="text-align:right;">Orders</th><th style="text-align:right;">Value</th><th style="text-align:right;">Share</th></tr></thead>
+    <tbody>
+      <tr><td>Direct</td><td style="text-align:right;" class="num">23</td><td style="text-align:right;" class="num">$16,989</td><td style="text-align:right;" class="num">61.1%</td></tr>
+      <tr><td><strong>Organic: Google</strong></td><td style="text-align:right;" class="num">11</td><td style="text-align:right;font-weight:700;" class="num">$6,149</td><td style="text-align:right;" class="num">22.1%</td></tr>
+      <tr><td>Source: Google</td><td style="text-align:right;" class="num">5</td><td style="text-align:right;" class="num">$2,260</td><td style="text-align:right;" class="num">8.1%</td></tr>
+      <tr><td><strong>Chatgpt.com</strong></td><td style="text-align:right;" class="num">1</td><td style="text-align:right;font-weight:700;" class="num">$1,949</td><td style="text-align:right;" class="num">7.0%</td></tr>
+      <tr><td>Web admin</td><td style="text-align:right;" class="num">1</td><td style="text-align:right;" class="num">$450</td><td style="text-align:right;" class="num">1.6%</td></tr>
+    </tbody></table></div>
+  </div>
+  <div style="display:flex;flex-direction:column;min-height:0;">
+    <div class="col-head">Revenue closed &middot; 20 completed orders</div>
+    <div style="overflow:auto;min-height:0;"><table class="tbl">
+    <thead><tr><th>Source</th><th style="text-align:right;">Orders</th><th style="text-align:right;">Revenue</th><th style="text-align:right;">Share</th></tr></thead>
+    <tbody>
+      <tr><td>Direct</td><td style="text-align:right;" class="num">11</td><td style="text-align:right;" class="num">$7,101</td><td style="text-align:right;" class="num">57.1%</td></tr>
+      <tr><td><strong>Organic: Google</strong></td><td style="text-align:right;" class="num">6</td><td style="text-align:right;font-weight:700;color:var(--ok-dark);" class="num">$4,219</td><td style="text-align:right;" class="num">33.9%</td></tr>
+      <tr><td>Source: Google</td><td style="text-align:right;" class="num">2</td><td style="text-align:right;" class="num">$670</td><td style="text-align:right;" class="num">5.4%</td></tr>
+      <tr><td>Web admin</td><td style="text-align:right;" class="num">1</td><td style="text-align:right;" class="num">$450</td><td style="text-align:right;" class="num">3.6%</td></tr>
+      <tr><td>Chatgpt.com</td><td style="text-align:right;" class="num">0</td><td style="text-align:right;color:var(--ink4);" class="num">$0</td><td style="text-align:right;color:var(--ink4);" class="num">0%</td></tr>
+    </tbody></table></div>
+  </div>
+</div>
+<div style="flex:1;min-height:0;display:flex;flex-direction:column;margin-top:1.4vh;">
+  <div class="col-head">Pipeline versus closed revenue, by source</div>
+  <div class="chart-wrap" style="flex:1;min-height:0;"><canvas id="srcChart"></canvas></div>
+</div>
+<div class="rg3" style="margin-top:1.2vh;flex-shrink:0;">
+  <div class="win"><div class="win-t">Organic closes at <span class="num">69%</span></div><div class="win-s">Against Direct at <span class="num">42%</span>. An organic dollar is worth roughly <span class="num">1.6x</span> a direct one.</div></div>
+  <div class="infobox"><div class="col-head">Attribution caveat</div><p style="font-size:clamp(11px,1.4vh,14px);">Direct is <span class="num">61%</span> of pipeline. On a site with this much organic visibility, some of that is very likely unattributed organic.</p></div>
+  <div class="infobox"><div class="col-head">Data hygiene</div><p style="font-size:clamp(11px,1.4vh,14px);">One <span class="num">$1,799</span> test order in the client&rsquo;s own name is excluded from the analysis. True close rate is <span class="num">48%</span>.</p></div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ===== 6: ORGANIC AND CHATGPT ===== -->
+<section>
+<div class="s">
+<div class="stripe"></div>
+<div class="hdr"><div class="hdr-left"><span class="snum">04</span><span class="tag">Organic and AI revenue</span></div></div>
+<div class="divider"></div>
+<div class="body">
+<h2>Google organic is the best converting channel on the site</h2>
+<div class="rg3" style="margin-top:1vh;flex-shrink:0;">
+  <div class="obox">
+    <div class="col-head" style="margin:0;">Google organic</div>
+    <div class="kpi-num" style="color:var(--ok);"><span class="num">69%</span></div>
+    <div class="kpi-label"><span class="num">$6,149</span> pipeline &rarr; <strong><span class="num">$4,219</span></strong></div>
+    <div class="kpi-sub"><span class="num">22%</span> of pipeline, <span class="num">34%</span> of revenue</div>
+  </div>
+  <div class="obox">
+    <div class="col-head" style="margin:0;">All Google combined</div>
+    <div class="kpi-num" style="color:var(--ink2);"><span class="num">58%</span></div>
+    <div class="kpi-label"><span class="num">$8,409</span> pipeline &rarr; <strong><span class="num">$4,889</span></strong></div>
+    <div class="kpi-sub">Organic plus Google referral, <span class="num">16</span> orders</div>
+  </div>
+  <div class="obox">
+    <div class="col-head" style="margin:0;">ChatGPT</div>
+    <div class="kpi-num" style="color:var(--warn);"><span class="num">0%</span></div>
+    <div class="kpi-label"><span class="num">$1,949</span> pipeline &rarr; <strong><span class="num">$0</span></strong></div>
+    <div class="kpi-sub">One order, cancelled before payment</div>
+  </div>
+</div>
+<div class="rg2" style="flex-shrink:0;align-items:start;margin-top:1.2vh;">
+  <div class="infobox" style="border-color:var(--ok-bd);background:var(--ok-bg);">
+    <div class="col-head" style="color:var(--ok-dark);">Why organic matters more than its share suggests</div>
+    <p style="font-size:clamp(12px,1.6vh,16px);">Organic produced <span class="num">22%</span> of pipeline but <span class="num">34%</span> of closed revenue, because those buyers convert far more reliably. Its average completed order is <span class="num">$703</span> against <span class="num">$645</span> for Direct. Growing organic pipeline is therefore worth more per dollar than growing any other channel, which is what makes the Buy Tradelines ranking recovery the priority for September.</p>
+  </div>
+  <div class="infobox" style="border-color:var(--gold-bd);background:var(--gold-bg);">
+    <div class="col-head" style="color:var(--gold-dark);">The ChatGPT order is worth understanding</div>
+    <p style="font-size:clamp(12px,1.6vh,16px);">A single order at <span class="num">$1,949</span>, cancelled before payment. One data point proves nothing about the channel, but it was the largest attributed order of the month at <span class="num">5.6x</span> the median order value. AI assistants also show separately in GA4 at <span class="num">19</span> sessions. Worth finding out why it did not complete.</p>
+  </div>
+</div>
+</div>
+</div>
+</section>
+<!-- ===== 7: TECHNICAL SEO SHIPPED ===== -->
+<section>
+<div class="s">
+<div class="stripe"></div>
+<div class="hdr"><div class="hdr-left"><span class="snum">05</span><span class="tag">Technical SEO</span></div></div>
+<div class="divider"></div>
+<div class="body">
+<h2>Full technical and mobile audit, then <span class="num">18</span> fixes shipped and verified live</h2>
+<p style="margin-bottom:1vh;">Screaming Frog crawl of <span class="num">678</span> URLs plus rendered mobile testing. Six of nine priority findings are now closed, and every fix below was verified on the live site.</p>
+<div class="rg3 fillcol" style="flex:1;min-height:0;">
+  <div style="display:flex;flex-direction:column;gap:clamp(5px,.7vh,9px);min-height:0;">
+    <div class="col-head">Crawl and indexing</div>
+    <div class="win"><div class="win-t">Missing meta descriptions: <span class="num">44</span> to <span class="num">0</span></div><div class="win-s">Eight bank category pages written, the rest noindexed as low value</div></div>
+    <div class="win"><div class="win-t"><span class="num">10</span> duplicate bank URLs consolidated</div><div class="win-s">Woo category pages were competing with the richer landing pages</div></div>
+    <div class="win"><div class="win-t"><span class="num">34</span> thin archives noindexed</div><div class="win-s">Product tags, blog tags, author archives and the cart page</div></div>
+    <div class="win"><div class="win-t">Product-table page noindexed</div><div class="win-s">Indexable with no H1, now out of the XML sitemap</div></div>
+    <div class="win"><div class="win-t">Duplicate article merged</div><div class="win-s">Two near identical posts, weaker one 301 redirected</div></div>
+    <div class="win"><div class="win-t">Uncategorized archive retired</div><div class="win-s">Redirected to the blog hub, removing a duplicate title</div></div>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:clamp(5px,.7vh,9px);min-height:0;">
+    <div class="col-head">Site health and performance</div>
+    <div class="win"><div class="win-t">WP Rocket CSS <span class="num">403</span> errors fixed</div><div class="win-s">Customizer CSS was failing to load, taking brand styling with it</div></div>
+    <div class="win"><div class="win-t">JavaScript order error resolved</div><div class="win-s">wp is not defined, cleared on all <span class="num">23</span> posts</div></div>
+    <div class="win"><div class="win-t">Mobile verified across <span class="num">69</span> layouts</div><div class="win-s">One H1, safe spacing, no overflow at three widths</div></div>
+    <div class="win"><div class="win-t">First-tap mobile menu fixed</div><div class="win-s">Confirmed across every published post</div></div>
+    <div class="win"><div class="win-t"><span class="num">24</span> internal redirect links repointed</div><div class="win-s">Plus two dead external links removed or corrected</div></div>
+    <div class="win"><div class="win-t"><span class="num">20</span> images given alt text</div><div class="win-s">Three of them appear on roughly <span class="num">330</span> pages each</div></div>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:clamp(5px,.7vh,9px);min-height:0;">
+    <div class="col-head">Authority and structure</div>
+    <div class="win"><div class="win-t">E-E-A-T bylines on all <span class="num">22</span> posts</div><div class="win-s">Named author with publish and last updated dates</div></div>
+    <div class="win"><div class="win-t">Author attribution corrected</div><div class="win-s">Machine usernames were exposed to Google as the article author</div></div>
+    <div class="win"><div class="win-t"><span class="num">5</span> blog categories created</div><div class="win-s">Buried articles moved from crawl depth <span class="num">5</span> to depth <span class="num">2</span></div></div>
+    <div class="win"><div class="win-t"><span class="num">92</span> internal links now in place</div><div class="win-s">Minimum <span class="num">2</span> inbound links per post, no orphans left</div></div>
+    <div class="win"><div class="win-t">Duplicate H1s resolved</div><div class="win-s">Homepage, Broker Program and Buy Tradelines each carry one H1</div></div>
+    <div class="win"><div class="win-t">Video schema and poster added</div><div class="win-s">VideoObject markup on the authorized user tradelines guide</div></div>
+  </div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ===== 8: INDEXATION ===== -->
+<section>
+<div class="s">
+<div class="stripe"></div>
+<div class="hdr"><div class="hdr-left"><span class="snum">06</span><span class="tag">Indexation health</span></div></div>
+<div class="divider"></div>
+<div class="body">
+<h2>Google indexes <span class="num">141</span> of <span class="num">309</span> eligible pages, and the gap was widening</h2>
+<div class="rg3" style="margin-top:1vh;flex-shrink:0;">
+  <div class="obox"><div class="col-head" style="margin:0;">Not indexed &middot; Jun to Aug</div><div class="kpi-num" style="color:var(--warn);">+35%</div><div class="kpi-label"><span class="num">98</span> &rarr; <strong><span class="num">132</span></strong> pages</div><div class="kpi-sub">Indexed count flat at <span class="num">141</span></div></div>
+  <div class="obox"><div class="col-head" style="margin:0;">Discovered, not crawled</div><div class="kpi-num" style="color:var(--ink2);"><span class="num">80</span></div><div class="kpi-label"><strong><span class="num">58</span></strong> are product pages</div><div class="kpi-sub">Google found them and declined to crawl</div></div>
+  <div class="obox"><div class="col-head" style="margin:0;">Crawled, not indexed</div><div class="kpi-num" style="color:var(--ink2);"><span class="num">46</span></div><div class="kpi-label">Judged not worth indexing</div><div class="kpi-sub"><span class="num">95%</span> of exclusions are quality signals, not errors</div></div>
+</div>
+<div class="rg2" style="flex-shrink:0;align-items:start;margin-top:1.2vh;">
+  <div class="infobox" style="border-color:var(--brand-bd);background:var(--brand-bg);">
+    <div class="col-head" style="color:var(--brand-dark);">What is consuming the crawl budget</div>
+    <p style="font-size:clamp(12px,1.6vh,16px);"><span class="num">204</span> of <span class="num">309</span> indexable pages are individual product listings with titles such as 2018 Dec and No Age, the latter repeated <span class="num">16</span> times. Google has already refused to index <span class="num">58</span> of them. Noindexing the set would formalise a decision Google has made on its own and return that crawl budget to the pages that can rank.</p>
+  </div>
+  <div class="infobox" style="border-color:var(--ok-bd);background:var(--ok-bg);">
+    <div class="col-head" style="color:var(--ok-dark);">Already addressed this month</div>
+    <p style="font-size:clamp(12px,1.6vh,16px);">Three articles in the not indexed list were buried at crawl depth <span class="num">4</span> and <span class="num">5</span>. The new category structure and internal linking moved every one of them to depth <span class="num">2</span>. That change needs two to four weeks of recrawl before it shows in Search Console.</p>
+  </div>
+</div>
+</div>
+</div>
+</section>
+<!-- ===== 9: COLD EMAIL ===== -->
+<section>
+<div class="s">
+<div class="stripe"></div>
+<div class="hdr"><div class="hdr-left"><span class="snum">07</span><span class="tag">Broker outreach</span></div></div>
+<div class="divider"></div>
+<div class="body">
+<h2>Cold email to brokers signed its first referral partner</h2>
+<p style="margin-bottom:1vh;">Aimed at professionals whose clients often need to work on a credit profile before an application.</p>
+<div class="rg3" style="flex-shrink:0;">
+  <div class="obox"><div class="col-head" style="margin:0;">Verified contacts sourced</div><div class="kpi-num" style="color:var(--ink2);"><span class="num">400</span></div><div class="kpi-label">Agents and brokers</div><div class="kpi-sub">Name, title, company, domain, location</div></div>
+  <div class="obox"><div class="col-head" style="margin:0;">Sequences built</div><div class="kpi-num" style="color:var(--ink2);"><span class="num">2</span></div><div class="kpi-label">Three emails each</div><div class="kpi-sub">Real Estate Agent and Car Dealership F&amp;I</div></div>
+  <div class="obox" style="background:var(--ok-bg);border-color:var(--ok-bd);"><div class="col-head" style="margin:0;color:var(--ok-dark);">Brokers signed up</div><div class="kpi-num" style="color:var(--ok);"><span class="num">1</span></div><div class="kpi-label">First partner onboarded</div><div class="kpi-sub">From the mortgage broker segment</div></div>
+</div>
+<div class="rg2" style="flex-shrink:0;margin-top:1.2vh;align-items:start;">
+  <div style="display:flex;flex-direction:column;gap:.5vh;">
+    <div class="col-head" style="margin:0;">New broker partner</div>
+    <div class="win" style="flex-shrink:0;">
+      <div style="display:flex;align-items:center;gap:12px;">
+        <img src="https://www.google.com/s2/favicons?domain=x2mortgage.com&sz=64" style="width:38px;height:38px;border-radius:8px;flex-shrink:0;">
+        <div>
+          <div style="font-size:clamp(15px,2vh,21px);font-weight:700;color:var(--ink);line-height:1.2;">Clayton Holman</div>
+          <div style="font-size:clamp(12px,1.5vh,15px);color:var(--ink3);">X2 Mortgage</div>
+          <div class="mono" style="font-size:clamp(11px,1.4vh,14px);color:var(--ink3);margin-top:2px;">Contact details shared privately</div>
+        </div>
+      </div>
+    </div>
+    <div class="infobox" style="margin:0;">
+      <div class="col-head">Why brokers are the right persona</div>
+      <p style="font-size:clamp(12px,1.5vh,15px);">A buyer can be pre-qualified on income and down payment and still stall at underwriting because the file is thin or utilization is high against limits. An authorized user tradeline puts an aged account and its credit limit on the report, which changes the file age and utilization mix underwriters read.</p>
+      <p style="font-size:clamp(12px,1.5vh,15px);margin-top:.6vh;">Mortgage brokers and F&amp;I managers both see the credit pull before the deal is structured, so they are the two roles positioned to raise the option early enough to matter. Tradelines take days to post, which makes that timing the whole point.</p>
+      <p style="font-size:clamp(12px,1.5vh,15px);margin-top:.6vh;">One broker is a proof of concept rather than a revenue line. A single referring partner can send repeat clients, so the measure to watch is orders attributed to the programme, not sign ups.</p>
+    </div>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:.5vh;">
+    <div class="col-head" style="margin:0;">Sequence cadence &middot; Real Estate Agent</div>
+    <div style="flex-shrink:0;"><table class="tbl">
+    <tbody>
+      <tr><td class="mono" style="width:16%;">Day 0</td><td>a resource for buyers who get stuck at underwriting</td></tr>
+      <tr><td class="mono">Day 3</td><td>quick chat on the tradeline option</td></tr>
+      <tr><td class="mono">Day 8</td><td>leaving it here</td></tr>
+    </tbody></table></div>
+    <div class="col-head" style="margin:.5vh 0 0;">Sequence cadence &middot; Car Dealership F&amp;I</div>
+    <div style="flex-shrink:0;"><table class="tbl">
+    <tbody>
+      <tr><td class="mono" style="width:16%;">Day 0</td><td>an option for thin-file buyers before you structure the deal</td></tr>
+      <tr><td class="mono">Day 3</td><td>quick chat on the tradeline option</td></tr>
+      <tr><td class="mono">Day 8</td><td>leaving it here</td></tr>
+    </tbody></table></div>
+    <div class="infobox" style="border-color:var(--ok-bd);background:var(--ok-bg);margin:.4vh 0 0;">
+      <div class="col-head" style="color:var(--ok-dark);">Compliance built in, and what happens next</div>
+      <p style="font-size:clamp(12px,1.5vh,15px);">Every email describes what a tradeline adds to the report, account history, available credit and utilization ratio, and never claims a score improvement or a point estimate.</p>
+      <p style="font-size:clamp(12px,1.5vh,15px);margin-top:.6vh;">The <span class="num">400</span> contact list is largely unworked, so both sequences have room to run again at volume. Referral tracking is the next build, so that broker orders can be separated from Direct in WooCommerce and this channel can be measured on revenue rather than sign ups.</p>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ===== 10: NEXT ===== -->
+<section>
+<div class="s">
+<div class="stripe"></div>
+<div class="hdr"><div class="hdr-left"><span class="snum">08</span><span class="tag">September priorities</span></div></div>
+<div class="divider"></div>
+<div class="body">
+<h2>Four moves, ordered by revenue impact</h2>
+<div style="flex:1;display:flex;flex-direction:column;gap:clamp(8px,1.1vh,14px);min-height:0;margin-top:1vh;">
+  <div class="infobox" style="border-color:var(--brand-bd);background:var(--brand-bg);">
+    <div style="display:flex;align-items:baseline;gap:10px;"><span class="mono" style="font-size:clamp(15px,2vh,20px);font-weight:700;color:var(--brand-dark);">01</span><div><div style="font-size:clamp(14px,1.9vh,19px);font-weight:700;color:var(--ink);">Recover Buy Tradelines on its head terms</div><p style="font-size:clamp(12px,1.5vh,15px);">The page lost <span class="num">386</span> clicks while holding <span class="num">13,115</span> impressions at position <span class="num">13.6</span>. It is the largest single revenue lever on the site and the duplicate that was splitting its signal is now removed.</p></div></div>
+  </div>
+  <div class="infobox">
+    <div style="display:flex;align-items:baseline;gap:10px;"><span class="mono" style="font-size:clamp(15px,2vh,20px);font-weight:700;color:var(--ink3);">02</span><div><div style="font-size:clamp(14px,1.9vh,19px);font-weight:700;color:var(--ink);">Decide the product page indexing question</div><p style="font-size:clamp(12px,1.5vh,15px);"><span class="num">208</span> inventory pages, <span class="num">58</span> of which Google already refuses to index. A client decision, then a one hour change that returns crawl budget to pages that rank.</p></div></div>
+  </div>
+  <div class="infobox">
+    <div style="display:flex;align-items:baseline;gap:10px;"><span class="mono" style="font-size:clamp(15px,2vh,20px);font-weight:700;color:var(--ink3);">03</span><div><div style="font-size:clamp(14px,1.9vh,19px);font-weight:700;color:var(--ink);">Close the attribution gap</div><p style="font-size:clamp(12px,1.5vh,15px);">Direct is <span class="num">61%</span> of pipeline while organic converts at <span class="num">69%</span>. A GA4 and WooCommerce attribution review would show how much of Direct is really organic, and make the broker referrals measurable.</p></div></div>
+  </div>
+  <div class="infobox">
+    <div style="display:flex;align-items:baseline;gap:10px;"><span class="mono" style="font-size:clamp(15px,2vh,20px);font-weight:700;color:var(--ink3);">04</span><div><div style="font-size:clamp(14px,1.9vh,19px);font-weight:700;color:var(--ink);">Lift the homepage off position 30</div><p style="font-size:clamp(12px,1.5vh,15px);">It already earns <span class="num">167</span> clicks from <span class="num">3,280</span> impressions at position <span class="num">30.5</span>. Reaching page one is the clearest untapped upside in the current data.</p></div></div>
+  </div>
+</div>
+<div class="divider" style="margin-top:1.2vh;"></div>
+<p style="font-size:clamp(11px,1.4vh,14px);color:var(--ink4);flex-shrink:0;">Sources: Google Search Console (Aug 1&ndash;26 vs Jul 1&ndash;26), GA4 property 375175367, WooCommerce order attribution, Screaming Frog 23.3 crawl of 678 URLs. Prepared by AI Peekaboo.</p>
+</div>
+</div>
+</section>
+</div></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reveal.min.js"></script>
+<script>
+Reveal.initialize({
+  hash:true, disableLayout:true, width:'100%', height:'100%',
+  transition:'none', backgroundTransition:'none',
+  slideNumber:'c/t', showSlideNumber:'all',
+  controls:false, progress:true
+});
+const clicksCtx = document.getElementById('clicksChart');
+const srcCtx = document.getElementById('srcChart');
+if (srcCtx) {
+  new Chart(srcCtx, {
+    type:'bar',
+    data:{
+      labels:['Direct','Organic: Google','Source: Google','Chatgpt.com','Web admin'],
+      datasets:[
+        {label:'Pipeline generated', data:[16989,6149,2260,1949,450], backgroundColor:'#d1d5db', borderRadius:4},
+        {label:'Revenue closed',     data:[7101,4219,670,0,450],      backgroundColor:'#16a34a', borderRadius:4}
+      ]
+    },
+    options:{
+      responsive:true, maintainAspectRatio:false, indexAxis:'y',
+      plugins:{legend:{position:'bottom', labels:{font:{family:'DM Sans',size:12}, boxWidth:12}},
+        tooltip:{callbacks:{label:(c)=> c.dataset.label+': $'+c.parsed.x.toLocaleString()}}},
+      scales:{
+        x:{beginAtZero:true, grid:{color:'#E5E7EB'}, ticks:{font:{family:'DM Mono',size:11}, callback:(v)=>'$'+(v/1000)+'k'}},
+        y:{grid:{display:false}, ticks:{font:{family:'DM Sans',size:12}}}
+      }
+    }
+  });
+}
+if (clicksCtx) {
+  new Chart(clicksCtx, {
+    type:'bar',
+    data:{
+      labels:['Nov 2025','Dec 2025','Jan 2026','Feb 2026','Mar 2026','Apr 2026','May 2026','Jun 2026','Jul 2026','Aug 2026'],
+      datasets:[{
+        label:'Google clicks',
+        data:[395,444,612,687,948,1334,1151,1045,1409,981],
+        backgroundColor:['#d1d5db','#d1d5db','#d1d5db','#d1d5db','#d1d5db','#d1d5db','#d1d5db','#d1d5db','#16a34a','#ea580c'],
+        borderRadius:4
+      }]
+    },
+    options:{
+      responsive:true, maintainAspectRatio:false,
+      plugins:{
+        legend:{display:false},
+        tooltip:{callbacks:{afterLabel:(c)=> c.dataIndex===9 ? 'Partial month, to Aug 26' : ''}}
+      },
+      scales:{
+        y:{beginAtZero:true, grid:{color:'#E5E7EB'}, ticks:{font:{family:'DM Mono'}}},
+        x:{grid:{display:false}, ticks:{font:{family:'DM Sans'}}}
+      }
+    }
+  });
+}
+</script>
+</body>
+</html>

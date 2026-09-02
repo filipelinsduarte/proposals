@@ -1,0 +1,485 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Technical SEO audit presentation for Goat Academy">
+  <title>Goat Academy | Technical SEO Audit</title>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YV8FCLN403"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-YV8FCLN403');
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&amp;family=DM+Sans:wght@400;500;600;700&amp;family=Sen:wght@400;600;700;800&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reveal.min.css">
+
+  <style>
+    :root {
+      --accent: #226CE0;
+      --accent-dark: #1E3C6F;
+      --accent-bg: rgba(34, 108, 224, 0.06);
+      --accent-bd: rgba(34, 108, 224, 0.22);
+      --ink: #204147;
+      --ink2: #3B3B3B;
+      --ink3: #6A6B6C;
+      --ink4: #9C9895;
+      --paper: #FFFFFF;
+      --paper2: #F7FAFD;
+      --paper3: #EEF4FA;
+      --rule: #DCE5F0;
+      --data: #58B99F;
+      --accent2: #F15A23;
+      --red: #DC2626;
+      --red-bg: #FEF2F2;
+      --red-bd: #FECACA;
+      --shadow: 0 18px 50px rgba(32, 65, 71, 0.08);
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; width: 100%; height: 100%; background: var(--paper); }
+    body { font-family: "DM Sans", sans-serif; color: var(--ink); }
+    .reveal { font-family: "DM Sans", sans-serif; color: var(--ink); }
+    .reveal .slides { text-align: left; }
+    .reveal .slides section { padding: 0; }
+    .reveal a { color: inherit; }
+
+    .s {
+      width: 100vw;
+      height: 100vh;
+      padding: 3vh 4.5vw 2.5vh;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+      background: var(--paper);
+    }
+
+    .stripe { position: absolute; inset: 0 auto 0 0; width: 5px; background: var(--accent); }
+    .hdr { display: flex; justify-content: space-between; align-items: center; flex-shrink: 0; margin-bottom: 0.6vh; }
+    .hdr-brand { display: flex; align-items: center; gap: 10px; }
+    .hdr-right { display: flex; flex-direction: column; align-items: flex-end; }
+    .hdr-favicon { width: clamp(26px, 3.5vh, 40px); height: clamp(26px, 3.5vh, 40px); object-fit: contain; border-radius: 8px; }
+    .tag { font-family: "Sen", sans-serif; font-size: clamp(10px, 1.2vh, 12px); font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink4); }
+    .snum { font-family: "DM Mono", monospace; font-size: clamp(10px, 1.2vh, 12px); color: var(--accent-dark); background: var(--accent-bg); border: 1px solid var(--accent-bd); border-radius: 4px; padding: 2px 8px; letter-spacing: 0.06em; }
+    .powered { display: flex; align-items: center; gap: 5px; text-decoration: none; margin-top: 3px; }
+    .powered span { font-size: clamp(8px, 1vh, 10px); color: var(--ink4); }
+    .powered img { height: clamp(10px, 1.4vh, 14px); width: auto; opacity: 0.7; }
+    .divider { height: 1px; background: var(--rule); flex-shrink: 0; margin-bottom: clamp(10px, 1.5vh, 18px); }
+
+    h1, h2, h3 { font-family: "Sen", sans-serif; }
+    h1 { font-size: clamp(38px, 6vh, 68px); font-weight: 700; line-height: 1.08; letter-spacing: -0.035em; margin: 0; }
+    h2 { font-size: clamp(28px, 3.8vh, 42px); font-weight: 700; line-height: 1.15; letter-spacing: -0.025em; margin: 0 0 clamp(12px, 1.8vh, 20px); flex-shrink: 0; }
+    h3 { margin: 0; }
+    p { margin: 0; }
+
+    .eyebrow { font-family: "Sen", sans-serif; font-size: clamp(10px, 1.25vh, 13px); font-weight: 700; letter-spacing: 0.11em; text-transform: uppercase; color: var(--accent); }
+    .lead { font-size: clamp(17px, 2.35vh, 25px); color: var(--ink2); line-height: 1.55; }
+    .mono { font-family: "DM Mono", monospace; }
+    .accent { color: var(--accent); }
+
+    .source { margin-top: auto; padding-top: clamp(8px, 1.1vh, 12px); border-top: 1px solid var(--rule); font-size: clamp(10px, 1.25vh, 12px); color: var(--ink4); flex-shrink: 0; }
+
+    .light-stage { flex: 1; min-height: 0; display: grid; grid-template-rows: minmax(0, 1fr) auto; gap: clamp(14px, 1.8vh, 20px); padding: clamp(20px, 2.4vh, 28px); border: 1px solid var(--rule); border-radius: 16px; background: var(--paper); box-shadow: var(--shadow); }
+    .issue-main { min-height: 0; display: grid; grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.22fr); gap: clamp(18px, 2.2vw, 32px); }
+    .issue-narrative { min-width: 0; display: flex; flex-direction: column; padding: clamp(22px, 2.7vh, 32px); border: 1px solid var(--rule); border-radius: 12px; background: var(--paper2); }
+    .issue-topline { display: flex; align-items: center; gap: 13px; }
+    .issue-icon { width: clamp(46px, 5.8vh, 62px); height: clamp(46px, 5.8vh, 62px); display: grid; place-items: center; flex-shrink: 0; border: 1px solid var(--accent-bd); border-radius: 12px; background: var(--accent-bg); }
+    .issue-icon svg { width: 55%; height: 55%; fill: none; stroke: var(--accent); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+    .issue-code { display: block; font: 500 clamp(12px, 1.5vh, 15px)/1 "DM Mono", monospace; letter-spacing: 0.08em; color: var(--accent); }
+    .priority { display: block; margin-top: 7px; font: 700 clamp(10px, 1.2vh, 12px)/1.2 "Sen", sans-serif; color: var(--ink4); }
+    .issue-narrative h3 { margin-top: clamp(22px, 2.8vh, 34px); font-size: clamp(21px, 2.75vh, 30px); font-weight: 700; line-height: 1.22; color: var(--ink); }
+    .problem-copy { margin-top: clamp(10px, 1.35vh, 15px); font-size: clamp(13px, 1.7vh, 17px); line-height: 1.5; color: var(--ink3); }
+    .impact-block { margin-top: auto; padding-top: clamp(18px, 2.2vh, 25px); border-top: 1px solid var(--rule); }
+    .mini-label { font: 700 clamp(10px, 1.2vh, 12px)/1.2 "Sen", sans-serif; letter-spacing: 0.09em; text-transform: uppercase; color: var(--accent); }
+    .impact-block p { margin-top: 8px; font-size: clamp(13px, 1.65vh, 16px); line-height: 1.48; color: var(--ink2); }
+
+    .evidence-visual { min-width: 0; display: flex; flex-direction: column; padding: clamp(18px, 2.2vh, 26px) clamp(20px, 2.2vw, 30px); border-left: 1px solid var(--rule); }
+    .evidence-heading { display: flex; justify-content: space-between; align-items: flex-start; gap: 22px; }
+    .evidence-heading h3 { margin-top: 7px; max-width: 30ch; font-size: clamp(18px, 2.35vh, 25px); line-height: 1.25; color: var(--ink); }
+    .big-stat { text-align: right; flex-shrink: 0; }
+    .big-stat strong { display: block; font: 500 clamp(34px, 4.9vh, 54px)/0.95 "DM Mono", monospace; letter-spacing: -0.055em; color: var(--accent); }
+    .big-stat span { display: block; margin-top: 7px; max-width: 24ch; font-size: clamp(10px, 1.25vh, 12px); line-height: 1.35; color: var(--ink4); }
+
+    .stacked-chart { margin-top: clamp(23px, 3vh, 34px); }
+    .stacked-bar { display: flex; width: 100%; height: clamp(28px, 3.8vh, 40px); overflow: hidden; border-radius: 8px; background: var(--paper3); }
+    .stacked-bar span { display: grid; place-items: center; min-width: 34px; font: 500 clamp(9px, 1.15vh, 11px)/1 "DM Mono", monospace; color: var(--paper); }
+    .bar-good { background: var(--accent); }
+    .bar-risk { background: var(--accent2); }
+    .bar-neutral { background: #A7B8D0; }
+    .chart-legend { display: flex; justify-content: space-between; gap: 18px; margin-top: 12px; }
+    .legend-item { min-width: 0; display: flex; gap: 9px; align-items: flex-start; font-size: clamp(10px, 1.3vh, 13px); line-height: 1.35; color: var(--ink3); }
+    .legend-dot { width: 10px; height: 10px; margin-top: 3px; border-radius: 3px; flex-shrink: 0; }
+    .legend-item strong { display: block; font-family: "DM Mono", monospace; font-weight: 500; color: var(--ink2); }
+
+    .path-flow { display: grid; grid-template-columns: auto 1fr auto 1fr auto; gap: clamp(9px, 1.1vw, 15px); align-items: center; margin-top: auto; padding: clamp(16px, 2vh, 22px); border: 1px solid var(--rule); border-radius: 11px; background: var(--paper2); }
+    .path-node { padding: 10px 13px; border: 1px solid var(--accent-bd); border-radius: 8px; background: var(--paper); font: 600 clamp(10px, 1.3vh, 13px)/1.25 "Sen", sans-serif; color: var(--ink); text-align: center; white-space: nowrap; }
+    .path-line { position: relative; height: 2px; background: var(--accent); }
+    .path-line::after { content: ""; position: absolute; right: -1px; top: -4px; width: 8px; height: 8px; border-top: 2px solid var(--accent); border-right: 2px solid var(--accent); transform: rotate(45deg); }
+    .path-line.broken { height: 0; border-top: 2px dashed var(--accent2); background: none; }
+    .path-line.broken::after { border-color: var(--accent2); }
+    .path-line.broken::before { content: "×"; position: absolute; left: 50%; top: -17px; transform: translateX(-50%); padding: 0 5px; background: var(--paper2); font: 700 20px/1 "DM Mono", monospace; color: var(--accent2); }
+
+    .metric-row { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(10px, 1.1vw, 15px); margin-top: auto; }
+    .metric-item { padding: clamp(13px, 1.7vh, 18px); border-top: 3px solid var(--accent); background: var(--paper2); }
+    .metric-item.risk { border-top-color: var(--accent2); }
+    .metric-item strong { display: block; font: 500 clamp(22px, 3vh, 32px)/1 "DM Mono", monospace; color: var(--ink); }
+    .metric-item span { display: block; margin-top: 7px; font-size: clamp(10px, 1.25vh, 12px); line-height: 1.35; color: var(--ink3); }
+
+    .flow-row { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr); gap: clamp(10px, 1.3vw, 18px); align-items: center; margin: auto 0; }
+    .flow-node { padding: clamp(18px, 2.4vh, 26px); border: 1px solid var(--rule); border-radius: 11px; background: var(--paper2); text-align: center; }
+    .flow-node strong { display: block; font: 500 clamp(28px, 4vh, 44px)/1 "DM Mono", monospace; color: var(--accent); }
+    .flow-node span { display: block; margin-top: 8px; font-size: clamp(10px, 1.3vh, 13px); line-height: 1.35; color: var(--ink3); }
+    .flow-arrow { font-size: clamp(20px, 2.8vh, 30px); color: var(--ink4); }
+    .type-list { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; padding-top: clamp(14px, 1.8vh, 20px); border-top: 1px solid var(--rule); }
+    .type-item { padding: 0 clamp(10px, 1.2vw, 16px); border-right: 1px solid var(--rule); text-align: center; }
+    .type-item:first-child { padding-left: 0; }
+    .type-item:last-child { padding-right: 0; border-right: 0; }
+    .type-symbol { display: block; font: 500 clamp(18px, 2.4vh, 26px)/1 "DM Mono", monospace; color: var(--accent2); }
+    .type-item span:last-child { display: block; margin-top: 7px; font-size: clamp(9px, 1.15vh, 11px); color: var(--ink3); }
+
+    .dual-bars { display: flex; flex-direction: column; gap: clamp(16px, 2vh, 22px); margin-top: clamp(20px, 2.6vh, 30px); }
+    .dual-bar-row { display: grid; grid-template-columns: clamp(130px, 10vw, 185px) 1fr clamp(56px, 4.8vw, 82px); gap: 13px; align-items: center; }
+    .dual-bar-label { font-size: clamp(11px, 1.4vh, 14px); font-weight: 600; color: var(--ink2); }
+    .dual-track { height: 12px; overflow: hidden; border-radius: 99px; background: var(--paper3); }
+    .dual-fill { display: block; height: 100%; border-radius: inherit; background: var(--accent); }
+    .dual-value { font: 500 clamp(12px, 1.55vh, 15px)/1 "DM Mono", monospace; color: var(--ink3); text-align: right; }
+
+    .serp-grid { flex: 1; display: grid; grid-template-columns: minmax(0, 1fr) minmax(190px, 0.38fr); gap: clamp(16px, 1.8vw, 24px); margin-top: clamp(18px, 2.4vh, 27px); min-height: 0; }
+    .serp-list { display: flex; flex-direction: column; justify-content: center; gap: clamp(14px, 1.8vh, 20px); }
+    .serp-result { padding: clamp(11px, 1.4vh, 15px) clamp(13px, 1.3vw, 18px); border-left: 3px solid var(--accent2); background: var(--paper2); }
+    .serp-url { font-size: clamp(9px, 1.1vh, 11px); color: var(--ink3); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .serp-title { margin-top: 4px; font: 600 clamp(12px, 1.55vh, 15px)/1.3 "Sen", sans-serif; color: #1A0DAB; }
+    .serp-side { display: flex; flex-direction: column; justify-content: center; gap: 10px; }
+    .serp-stat { padding: clamp(14px, 1.8vh, 20px); border: 1px solid var(--rule); border-radius: 10px; background: var(--paper); }
+    .serp-stat strong { display: block; font: 500 clamp(27px, 3.8vh, 42px)/1 "DM Mono", monospace; color: var(--accent); }
+    .serp-stat span { display: block; margin-top: 7px; font-size: clamp(10px, 1.25vh, 12px); line-height: 1.35; color: var(--ink3); }
+
+    .action-rail { display: grid; grid-template-columns: minmax(0, 0.72fr) minmax(0, 1.28fr); overflow: hidden; border: 1px solid var(--rule); border-radius: 11px; background: var(--paper2); }
+    .action-block { display: grid; grid-template-columns: clamp(108px, 7.5vw, 140px) 1fr; gap: clamp(14px, 1.6vw, 24px); align-items: center; padding: clamp(15px, 1.8vh, 21px) clamp(18px, 1.8vw, 26px); }
+    .action-block + .action-block { border-left: 1px solid var(--rule); background: var(--accent-bg); }
+    .action-label { font: 700 clamp(10px, 1.2vh, 12px)/1.2 "Sen", sans-serif; letter-spacing: 0.09em; text-transform: uppercase; color: var(--accent); }
+    .action-copy { font-size: clamp(12px, 1.5vh, 15px); line-height: 1.45; color: var(--ink2); }
+    .action-copy strong { color: var(--ink); }
+
+    @media (max-width: 1024px) {
+      .s { height: 100svh !important; overflow-y: auto !important; -webkit-overflow-scrolling: touch !important; }
+      .issue-main, .action-rail { grid-template-columns: 1fr; }
+      .evidence-visual { border-left: 0; border-top: 1px solid var(--rule); }
+      .action-block + .action-block { border-left: 0; border-top: 1px solid var(--rule); }
+    }
+
+    @media (max-width: 620px) {
+      .metric-row, .type-list { grid-template-columns: 1fr 1fr; }
+      .path-flow, .flow-row { grid-template-columns: 1fr; }
+      .path-line { width: 2px; height: 24px; margin: 0 auto; }
+      .path-line.broken { width: 0; height: 24px; border-top: 0; border-left: 2px dashed var(--accent2); }
+      .flow-arrow { transform: rotate(90deg); text-align: center; }
+      .serp-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <!-- Slide 01: Cover -->
+      <section>
+        <div class="s" style="justify-content:center;gap:clamp(17px,2.7vh,34px)">
+          <div class="stripe"></div>
+          <div style="display:flex;align-items:center;gap:12px;flex-shrink:0">
+            <img src="https://www.google.com/s2/favicons?domain=goatacademy.org&amp;sz=128" alt="Goat Academy" style="width:clamp(40px,5.5vh,59px);height:clamp(40px,5.5vh,59px);border-radius:10px;object-fit:contain">
+            <span class="eyebrow">Technical SEO Audit</span>
+          </div>
+          <div style="max-width:1600px">
+            <h1>Five technical problems are making Goat Academy <span class="accent">harder to crawl, understand, and trust.</span></h1>
+            <p class="lead" style="max-width:72ch;margin-top:clamp(20px,3vh,34px)">A clear view of the most urgent issues, what they mean for search performance, and what needs to be fixed first.</p>
+          </div>
+          <div style="display:flex;align-items:center;gap:clamp(14px,1.8vw,24px);flex-shrink:0">
+            <a href="https://www.aipeekaboo.com" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;gap:8px;text-decoration:none">
+              <span style="font-size:clamp(10px,1.2vh,12px);color:var(--ink4)">Powered by</span>
+              <img src="https://www.aipeekaboo.com/images/peekaboo-logo-black.png" alt="AI Peekaboo" style="height:clamp(13px,1.8vh,20px);width:auto;opacity:0.65">
+            </a>
+            <span style="color:var(--rule)">|</span>
+            <span class="mono" style="font-size:clamp(10px,1.2vh,12px);color:var(--ink4)">Prepared for Goat Academy &middot; September 2026</span>
+          </div>
+        </div>
+        <aside class="notes">[Sources]\n- Goat Academy Technical SEO Audit, 1 September 2026\n[/Sources]</aside>
+      </section>
+
+      <!-- Slide 02: GA-01 -->
+      <section>
+        <div class="s">
+          <div class="shdr" data-n="02"></div>
+          <h2>Older articles are not properly connected through <span class="accent">site navigation.</span></h2>
+          <div class="light-stage">
+            <div class="issue-main">
+              <div class="issue-narrative">
+                <div class="issue-topline">
+                  <div class="issue-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="5" cy="6" r="2"></circle><circle cx="19" cy="6" r="2"></circle><circle cx="12" cy="18" r="2"></circle><path d="M7 6h10M6.5 7.5l4.2 8M17.5 7.5l-4.2 8"></path></svg></div>
+                  <div><span class="issue-code">GA-01</span><span class="priority">P0 &middot; Fix first</span></div>
+                </div>
+                <h3>The category page controls do not create working links to later archive pages.</h3>
+                <p class="problem-copy">The archive exists, but Goat Academy's own navigation does not provide a reliable path through the older content.</p>
+                <div class="impact-block"><span class="mini-label">Impact</span><p>Older articles are harder for users and crawlers to move through, and Google has a less reliable route when it returns to recrawl the site.</p></div>
+              </div>
+              <div class="evidence-visual">
+                <div class="evidence-heading">
+                  <div><span class="mini-label">What the audit found</span><h3>Most sitemap pages were not reached through Goat Academy's internal links.</h3></div>
+                  <div class="big-stat"><strong>550</strong><span>This does not mean Google has not indexed those pages. It means the site's own links did not lead the audit crawler to them.</span></div>
+                </div>
+                <div class="stacked-chart">
+                  <div class="stacked-bar" aria-label="342 reached and 550 not reached out of 892"><span class="bar-good" style="width:38.3%">342</span><span class="bar-risk" style="width:61.7%">550</span></div>
+                  <div class="chart-legend">
+                    <div class="legend-item"><span class="legend-dot" style="background:var(--accent)"></span><div><strong>342 reached</strong>through the homepage-led crawl</div></div>
+                    <div class="legend-item"><span class="legend-dot" style="background:var(--accent2)"></span><div><strong>550 not reached</strong>through the tested internal-link path</div></div>
+                  </div>
+                </div>
+                <div class="path-flow" aria-label="The internal path breaks after the first category page">
+                  <div class="path-node">Homepage</div><div class="path-line"></div><div class="path-node">Category page 1</div><div class="path-line broken"></div><div class="path-node">Later archive pages</div>
+                </div>
+              </div>
+            </div>
+            <div class="action-rail">
+              <div class="action-block"><span class="action-label">Why it matters</span><div class="action-copy">Internal links explain how pages relate and which content matters. <strong>A sitemap should not replace working navigation.</strong></div></div>
+              <div class="action-block"><span class="action-label">What to fix</span><div class="action-copy">Add normal Previous and Next links to every archive page, remove the unresolved placeholder text, and keep article links in the page HTML.</div></div>
+            </div>
+          </div>
+          <div class="source">Source: Goat Academy Technical SEO Audit, 1 September 2026. Homepage-led crawl and archive inspection.</div>
+        </div>
+        <aside class="notes">[Sources]\n- Goat Academy Technical SEO Audit, GA-01\n- Screaming Frog homepage-led crawl\n[/Sources]</aside>
+      </section>
+
+      <!-- Slide 03: GA-02 -->
+      <section>
+        <div class="s">
+          <div class="shdr" data-n="03"></div>
+          <h2>The sitemap sends search engines a <span class="accent">mixed and noisy page list.</span></h2>
+          <div class="light-stage">
+            <div class="issue-main">
+              <div class="issue-narrative">
+                <div class="issue-topline">
+                  <div class="issue-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 3h8l4 4v12a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"></path><path d="M15 3v5h5M8 12h8M8 16h6"></path></svg></div>
+                  <div><span class="issue-code">GA-02</span><span class="priority">P0 &middot; High impact</span></div>
+                </div>
+                <h3>The sitemap mixes healthy pages with duplicates, broken URLs, redirects, and a noindex page.</h3>
+                <p class="problem-copy">It is not acting as a clean source of truth for the pages Goat Academy wants search engines to keep.</p>
+                <div class="impact-block"><span class="mini-label">Impact</span><p>Search engines spend attention checking URLs that should not be submitted, while useful pages become harder to monitor through the sitemap.</p></div>
+              </div>
+              <div class="evidence-visual">
+                <div class="evidence-heading">
+                  <div><span class="mini-label">What the audit found</span><h3>The sitemap contains duplicate and invalid entries, while useful pages are missing.</h3></div>
+                  <div class="big-stat"><strong>49</strong><span>exact URLs appear in both of the first two post sitemaps</span></div>
+                </div>
+                <div class="stacked-chart">
+                  <div class="stacked-bar" aria-label="923 unique URLs and 49 duplicate rows"><span class="bar-good" style="width:95%">923 unique</span><span class="bar-risk" style="width:5%">49</span></div>
+                  <div class="chart-legend">
+                    <div class="legend-item"><span class="legend-dot" style="background:var(--accent)"></span><div><strong>923 unique URLs</strong>after the sitemap rows are combined</div></div>
+                    <div class="legend-item"><span class="legend-dot" style="background:var(--accent2)"></span><div><strong>49 duplicate rows</strong>inside the 972 submitted rows</div></div>
+                  </div>
+                </div>
+                <div class="metric-row">
+                  <div class="metric-item risk"><strong>14</strong><span>broken URLs submitted</span></div>
+                  <div class="metric-item risk"><strong>16</strong><span>redirecting URLs submitted</span></div>
+                  <div class="metric-item risk"><strong>1</strong><span>noindex page submitted</span></div>
+                  <div class="metric-item"><strong>39</strong><span>healthy pages missing</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="action-rail">
+              <div class="action-block"><span class="action-label">Why it matters</span><div class="action-copy">The sitemap should be a simple list of the live pages Goat Academy wants indexed. <strong>Mixed signals make that purpose less clear.</strong></div></div>
+              <div class="action-block"><span class="action-label">What to fix</span><div class="action-copy">Use one sitemap system. Keep only live, indexable, canonical pages, remove duplicates and invalid URLs, then add missing pages only when they have a clear search purpose.</div></div>
+            </div>
+          </div>
+          <div class="source">Source: Goat Academy Technical SEO Audit, 1 September 2026. Seven live child sitemaps and URL validation.</div>
+        </div>
+        <aside class="notes">[Sources]\n- Goat Academy Technical SEO Audit, GA-02\n- XML sitemap inventory and list-mode validation\n[/Sources]</aside>
+      </section>
+
+      <!-- Slide 04: GA-03 -->
+      <section>
+        <div class="s">
+          <div class="shdr" data-n="04"></div>
+          <h2>Broken and unfinished links create <span class="accent">dead ends for visitors and crawlers.</span></h2>
+          <div class="light-stage">
+            <div class="issue-main">
+              <div class="issue-narrative">
+                <div class="issue-topline">
+                  <div class="issue-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9.5 14.5l5-5M7.2 16.8l-1.4 1.4a3.5 3.5 0 0 1-5-5l3-3a3.5 3.5 0 0 1 4.9 0M16.8 7.2l1.4-1.4a3.5 3.5 0 0 1 5 5l-3 3a3.5 3.5 0 0 1-4.9 0M4 4l16 16"></path></svg></div>
+                  <div><span class="issue-code">GA-03</span><span class="priority">P0 &middot; High impact</span></div>
+                </div>
+                <h3>Live pages still link to deleted pages, placeholders, admin screens, and malformed destinations.</h3>
+                <p class="problem-copy">Some sit inside valuable guides and programme pages where the next click should build trust or move a visitor forward.</p>
+                <div class="impact-block"><span class="mini-label">Impact</span><p>Visitors can hit dead ends or unfinished calls to action, reducing trust and stopping a course, resource, or consultation journey before it converts.</p></div>
+              </div>
+              <div class="evidence-visual">
+                <div class="evidence-heading">
+                  <div><span class="mini-label">What the audit found</span><h3>A small group of live pages creates dozens of broken paths.</h3></div>
+                  <div class="big-stat"><strong>28</strong><span>distinct internal error destinations</span></div>
+                </div>
+                <div class="flow-row" aria-label="Six source pages contain 33 bad links pointing to 28 error destinations">
+                  <div class="flow-node"><strong>6</strong><span>affected source pages</span></div><div class="flow-arrow">→</div><div class="flow-node"><strong>33</strong><span>bad link occurrences</span></div><div class="flow-arrow">→</div><div class="flow-node"><strong>28</strong><span>error destinations</span></div>
+                </div>
+                <div class="type-list" aria-label="Types of broken or unfinished links">
+                  <div class="type-item"><span class="type-symbol">404</span><span>deleted pages</span></div>
+                  <div class="type-item"><span class="type-symbol">7</span><span>example.com links</span></div>
+                  <div class="type-item"><span class="type-symbol">WP</span><span>public admin links</span></div>
+                  <div class="type-item"><span class="type-symbol">//</span><span>malformed paths</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="action-rail">
+              <div class="action-block"><span class="action-label">Why it matters</span><div class="action-copy">Every click should lead somewhere useful and intentional. <strong>Broken paths waste visitor attention and crawl attention.</strong></div></div>
+              <div class="action-block"><span class="action-label">What to fix</span><div class="action-copy">Review every affected page. Replace each link with an exact approved destination, restore the missing page, or remove the link. Clear all placeholders, admin links, and editorial instructions.</div></div>
+            </div>
+          </div>
+          <div class="source">Source: Goat Academy Technical SEO Audit, 1 September 2026. Internal link occurrence exports and manual review.</div>
+        </div>
+        <aside class="notes">[Sources]\n- Goat Academy Technical SEO Audit, GA-03\n- Internal client-error link occurrence export\n[/Sources]</aside>
+      </section>
+
+      <!-- Slide 05: GA-04 -->
+      <section>
+        <div class="s">
+          <div class="shdr" data-n="05"></div>
+          <h2>Too many pages are indexable without a <span class="accent">clear search purpose.</span></h2>
+          <div class="light-stage">
+            <div class="issue-main">
+              <div class="issue-narrative">
+                <div class="issue-topline">
+                  <div class="issue-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l9 5-9 5-9-5 9-5z"></path><path d="M3 12l9 5 9-5M3 16l9 5 9-5"></path></svg></div>
+                  <div><span class="issue-code">GA-04</span><span class="priority">P1 &middot; Review carefully</span></div>
+                </div>
+                <h3>Useful guides sit beside thin utilities, quizzes, checkout routes, legacy downloads, and copy-like URLs.</h3>
+                <p class="problem-copy">These pages do not all deserve the same treatment in search, but the current setup largely treats them as if they do.</p>
+                <div class="impact-block"><span class="mini-label">Impact</span><p>Internal links and optimisation effort are spread across pages that may never satisfy a useful search need, weakening focus on the content that matters.</p></div>
+              </div>
+              <div class="evidence-visual">
+                <div class="evidence-heading">
+                  <div><span class="mini-label">What the audit found</span><h3>Nearly one third of indexable pages need a clear keep, improve, noindex, or consolidate decision.</h3></div>
+                  <div class="big-stat"><strong>30.6%</strong><span>273 of 892 pages have fewer than 200 crawlable words</span></div>
+                </div>
+                <div class="stacked-chart">
+                  <div class="stacked-bar" aria-label="273 pages below 200 words and 619 other indexable pages"><span class="bar-risk" style="width:30.6%">273 review</span><span class="bar-good" style="width:69.4%">619 other</span></div>
+                  <div class="chart-legend">
+                    <div class="legend-item"><span class="legend-dot" style="background:var(--accent2)"></span><div><strong>273 flagged for review</strong>word count is a warning sign, not a verdict</div></div>
+                    <div class="legend-item"><span class="legend-dot" style="background:var(--accent)"></span><div><strong>619 other pages</strong>still require a clear search purpose</div></div>
+                  </div>
+                </div>
+                <div class="metric-row">
+                  <div class="metric-item risk"><strong>10</strong><span>utility pages</span></div>
+                  <div class="metric-item risk"><strong>11</strong><span>quiz or assessment pages</span></div>
+                  <div class="metric-item risk"><strong>49</strong><span>copy-like URL suffixes</span></div>
+                  <div class="metric-item risk"><strong>54</strong><span>lead-magnet patterns</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="action-rail">
+              <div class="action-block"><span class="action-label">Why it matters</span><div class="action-copy">Every indexable page needs a clear audience, search intent, or business role. <strong>Without that decision, the site sends an unclear quality hierarchy.</strong></div></div>
+              <div class="action-block"><span class="action-label">What to fix</span><div class="action-copy">Review pages in batches using Search Console and business data. Keep valuable guides, noindex utilities, consolidate true same-intent copies, and never make bulk decisions from word count alone.</div></div>
+            </div>
+          </div>
+          <div class="source">Source: Goat Academy Technical SEO Audit, 1 September 2026. Submitted indexable page inventory.</div>
+        </div>
+        <aside class="notes">[Sources]\n- Goat Academy Technical SEO Audit, GA-04\n- Indexable sitemap page inventory\n[/Sources]</aside>
+      </section>
+
+      <!-- Slide 06: GA-05 -->
+      <section>
+        <div class="s">
+          <div class="shdr" data-n="06"></div>
+          <h2>Many pages show the <span class="accent">wrong title and description in search.</span></h2>
+          <div class="light-stage">
+            <div class="issue-main">
+              <div class="issue-narrative">
+                <div class="issue-topline">
+                  <div class="issue-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"></circle><path d="M15.5 15.5L21 21M7.5 8.5h6M7.5 11.5h4"></path></svg></div>
+                  <div><span class="issue-code">GA-05</span><span class="priority">P1 &middot; Medium to high impact</span></div>
+                </div>
+                <h3>Landing-page templates reuse the same title and description across unrelated pages.</h3>
+                <p class="problem-copy">A workbook, broker comparison, budget tracker, and research report can all appear under a title describing a completely different offer.</p>
+                <div class="impact-block"><span class="mini-label">Impact</span><p>Search results can look identical or misleading. Users may skip them because they cannot tell what each page offers, reducing click-through rate.</p></div>
+              </div>
+              <div class="evidence-visual">
+                <div class="evidence-heading">
+                  <div><span class="mini-label">What the audit found</span><h3>Different pages can appear in search under exactly the same incorrect title.</h3></div>
+                  <div class="big-stat"><strong>36</strong><span>unrelated pages share one incorrect title</span></div>
+                </div>
+                <div class="serp-grid">
+                  <div class="serp-list" aria-label="Three unrelated pages showing the same incorrect search title">
+                    <div class="serp-result"><div class="serp-url">goatacademy.org/download-my-broker-comparison-for-free/</div><div class="serp-title">4 Stocks benchmark - GOAT Academy by Felix Prehn</div></div>
+                    <div class="serp-result"><div class="serp-url">goatacademy.org/get-my-budget-tracker-for-free/</div><div class="serp-title">4 Stocks benchmark - GOAT Academy by Felix Prehn</div></div>
+                    <div class="serp-result"><div class="serp-url">goatacademy.org/the-complete-retirement-reality-check-workbook/</div><div class="serp-title">4 Stocks benchmark - GOAT Academy by Felix Prehn</div></div>
+                  </div>
+                  <div class="serp-side">
+                    <div class="serp-stat"><strong>64</strong><span>memberships in duplicate title groups</span></div>
+                    <div class="serp-stat"><strong>59</strong><span>memberships in duplicate description groups</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="action-rail">
+              <div class="action-block"><span class="action-label">Why it matters</span><div class="action-copy">The title and description are the page's first promise in search. <strong>They must describe that exact page, not its template.</strong></div></div>
+              <div class="action-block"><span class="action-label">What to fix</span><div class="action-copy">Remove hard-coded metadata, give each indexable page a specific title and description, use a safe page-name fallback, and fix pages receiving search impressions first.</div></div>
+            </div>
+          </div>
+          <div class="source">Source: Goat Academy Technical SEO Audit, 1 September 2026. Metadata extraction across 892 submitted indexable pages.</div>
+        </div>
+        <aside class="notes">[Sources]\n- Goat Academy Technical SEO Audit, GA-05\n- Title and meta description crawl exports\n[/Sources]</aside>
+      </section>
+
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reveal.min.js"></script>
+  <script>
+    (function bootDeck() {
+      const steps = [
+        function injectHeaders() {
+          const placeholders = document.querySelectorAll('.shdr');
+          placeholders.forEach(function renderHeader(element) {
+            if (!element) return;
+            const number = element.getAttribute('data-n') || '00';
+            element.outerHTML = '<div class="stripe"></div>'
+              + '<div class="hdr"><div class="hdr-brand">'
+              + '<img src="https://www.google.com/s2/favicons?domain=goatacademy.org&sz=64" class="hdr-favicon" alt="Goat Academy">'
+              + '<span class="tag">Technical SEO Audit</span></div>'
+              + '<div class="hdr-right"><span class="snum">' + number + ' / 06</span>'
+              + '<a class="powered" href="https://www.aipeekaboo.com" target="_blank" rel="noopener noreferrer"><span>Powered by</span><img src="https://www.aipeekaboo.com/images/peekaboo-logo-black.png" alt="AI Peekaboo"></a>'
+              + '</div></div><div class="divider"></div>';
+          });
+        },
+        function initializeReveal() {
+          if (!window.Reveal || typeof window.Reveal.initialize !== 'function') {
+            throw new Error('Reveal.js failed to load');
+          }
+          window.Reveal.initialize({
+            hash: true,
+            transition: 'none',
+            disableLayout: true,
+            width: 1920,
+            height: 1080,
+            margin: 0,
+            minScale: 0.1,
+            maxScale: 3
+          });
+        }
+      ];
+
+      steps.forEach(function runStep(step) {
+        try {
+          step();
+        } catch (error) {
+          console.error('Deck boot step failed:', error);
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

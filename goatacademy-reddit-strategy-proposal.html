@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="GOAT Academy Reddit marketing strategy proposal">
+<meta name="robots" content="noindex,nofollow">
+<title>GOAT Academy | Reddit Marketing Strategy Proposal</title>
+<link rel="icon" href="https://goatacademy.org/wp-content/uploads/2021/06/Goat-Academy-Favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reveal.min.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YV8FCLN403"></script>
+<script>
+window.dataLayer=window.dataLayer||[];
+function gtag(){window.dataLayer.push(arguments);}
+gtag('js',new Date());
+gtag('config','G-YV8FCLN403');
+</script>
+<style>
+:root{
+  --ink:#1c1917;--ink-2:#30343b;--muted:#667085;--faint:#9ca3af;
+  --border:#e7e7e9;--border-strong:#d6d6da;--paper:#fff;--paper-2:#fafafa;
+  --wash:#f6f6f7;--dark:#1c1917;--accent:#30343b;--client:#226ce0;
+  --client-soft:#f2f6fd;--reddit:#ff4500;--rail:rgba(28,25,23,.12);
+  --shadow:0 1px 2px rgba(0,0,0,.05),0 10px 28px rgba(0,0,0,.04)
+}
+*{box-sizing:border-box;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+html,body{width:100%;height:100%;margin:0;overflow:hidden;background:var(--paper);color:var(--ink)}
+.reveal-viewport,.reveal{width:100%!important;height:100%!important;background:var(--paper)!important}
+.reveal .slides>section{width:100vw!important;height:100vh!important;padding:0!important;text-align:left!important;background:var(--paper)!important}
+.reveal a{color:inherit}
+.s{width:100vw;height:100vh;min-height:640px;padding:3vh 5vw 3.2vh;position:relative;overflow:hidden;display:flex;flex-direction:column;background:var(--paper)}
+.s::before,.s::after{content:"";position:absolute;top:0;bottom:0;width:1px;background:var(--rail);z-index:0;pointer-events:none}
+.s::before{left:5vw}.s::after{right:5vw}
+.shdr{position:relative;z-index:2}.hdr{display:flex;align-items:flex-start;justify-content:space-between;gap:24px;padding:0 20px 12px}
+.hdr-title{display:flex;align-items:center;gap:10px;min-width:0}.hdr-title img{width:22px;height:22px;object-fit:contain;border-radius:5px}.hdr-title img+img{margin-left:-5px}
+.hdr-title span{font-size:12px;line-height:1.2;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
+.snum{font-family:"DM Mono",monospace;font-size:12px;color:var(--ink-2);background:var(--paper-2);border:1px solid var(--border-strong);border-radius:4px;padding:3px 8px;letter-spacing:.07em;white-space:nowrap}
+.xline{position:relative;height:1px;background:var(--rail);margin:0 0 18px;z-index:2}.cross{position:absolute;top:-8px;width:17px;height:17px;color:rgba(28,25,23,.34)}
+.cross.left{left:0;transform:translateX(-8px)}.cross.right{right:0;transform:translateX(8px)}
+.cross::before,.cross::after{content:"";position:absolute;background:currentColor}.cross::before{left:8px;top:0;width:1px;height:17px}.cross::after{left:0;top:8px;width:17px;height:1px}
+.content{position:relative;z-index:1;padding:20px 44px 0;flex:1;min-height:0;display:flex;flex-direction:column}
+h1,h2,h3,p{margin-top:0}h1,h2,h3{text-wrap:balance}p{text-wrap:pretty}
+h1{max-width:1300px;margin:0 0 24px;font-size:clamp(48px,5.4vw,78px);line-height:1.02;letter-spacing:-.045em;font-weight:700}
+h2{max-width:1320px;margin:0 0 18px;font-size:clamp(34px,3.6vw,58px);line-height:1.07;letter-spacing:-.035em;font-weight:700}
+h3{margin:0 0 10px;font-size:clamp(20px,1.8vw,28px);line-height:1.16;letter-spacing:-.02em;font-weight:650}
+.kicker{margin:0 0 14px;font-size:12px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--accent)}
+.lead{max-width:1120px;margin:0;font-size:clamp(20px,1.8vw,29px);line-height:1.5;color:var(--ink-2);font-weight:350}
+.sub{max-width:1020px;margin:0;font-size:clamp(16px,1.35vw,22px);line-height:1.5;color:var(--muted)}
+.inline-brand{display:inline-flex;align-items:center;gap:6px;white-space:nowrap}.inline-brand img{width:.9em;height:.9em;min-width:16px;min-height:16px;max-width:24px;max-height:24px;object-fit:contain;border-radius:4px}
+.source{width:calc(100% - 92px);margin-top:auto;padding-top:10px;border-top:1px solid var(--border);font-size:10px;color:var(--faint)}
+.source a{color:var(--muted);text-decoration:underline;text-underline-offset:2px}
+.cover-content{position:relative;z-index:1;margin:auto 44px;max-width:1440px;display:flex;flex-direction:column;align-items:flex-start}
+.cover-top{display:flex;align-items:center;gap:12px;margin-bottom:54px}.cover-top>img{width:42px;height:42px;object-fit:contain;border-radius:9px}.cover-top>img+img{margin-left:-6px}
+.cover-top span{font-size:12px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--muted)}
+.cover-content .lead{max-width:1040px}.cover-foot{display:flex;align-items:center;gap:14px;margin-top:42px;font-family:"DM Mono",monospace;font-size:13px;color:var(--muted)}
+.cover-foot img{width:18px;height:18px;object-fit:contain;border-radius:4px}.cover-rule{width:48px;height:1px;background:var(--border-strong)}
+.cover-strip{position:absolute;left:5vw;right:5vw;bottom:3.2vh;display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--rail);z-index:2}
+.cover-strip span{display:flex;align-items:center;gap:9px;padding:14px 18px;border-right:1px solid var(--rail);font-size:12px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
+.cover-strip span:last-child{border-right:0}.cover-strip b{font-family:"DM Mono",monospace;font-size:11px;color:var(--client)}
+.decision-layout{display:grid;grid-template-columns:1.08fr .92fr;gap:52px;align-items:stretch;margin-top:26px}.line-list{display:flex;flex-direction:column;border-top:1px solid var(--border)}
+.line-item{display:grid;grid-template-columns:34px 1fr;gap:14px;padding:17px 0;border-bottom:1px solid var(--border);font-size:18px;line-height:1.4;color:var(--ink-2)}
+.line-item b{padding-top:3px;font-family:"DM Mono",monospace;color:var(--client);font-size:13px}.line-item strong{display:block;margin-bottom:3px;font-weight:650;color:var(--ink)}
+.line-item span{font-size:14px;color:var(--muted)}.owned-signal{display:flex;flex-direction:column;justify-content:center;padding:38px;border:1px solid var(--border);border-radius:12px;background:var(--paper-2)}
+.thread-list{display:flex;flex-direction:column;border-top:1px solid var(--ink)}.thread-link{display:grid;grid-template-columns:24px minmax(0,1fr) auto;gap:12px;align-items:center;padding:16px 0;border-bottom:1px solid var(--border);text-decoration:none}.thread-link>img{width:24px;height:24px;object-fit:contain;border-radius:5px}.thread-copy strong{display:block;margin-bottom:4px;font-size:16px;line-height:1.3;color:var(--ink)}.thread-copy span{display:block;font-family:"DM Mono",monospace;font-size:10px;letter-spacing:.04em;color:var(--muted)}.thread-link>span{font-family:"DM Mono",monospace;font-size:11px;color:var(--client);white-space:nowrap}.thread-note{display:flex;align-items:center;gap:9px;margin-top:16px;font-size:13px;line-height:1.4;color:var(--muted)}.thread-note b{font-family:"DM Mono",monospace;font-size:11px;color:var(--client)}
+.owned-signal img{width:54px;height:54px;object-fit:contain;margin-bottom:28px;border-radius:10px}.owned-signal>b{display:block;margin-bottom:8px;font-size:clamp(54px,5.4vw,76px);line-height:.95;letter-spacing:-.055em;color:var(--ink)}
+.owned-signal h3{margin-bottom:8px}.owned-signal p{font-size:16px;line-height:1.5;color:var(--muted)}
+.owned-mini{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:24px;border-top:1px solid var(--border)}.owned-mini div{padding-top:17px}.owned-mini div+div{padding-left:18px;border-left:1px solid var(--border)}
+.owned-mini strong{display:block;font-family:"DM Mono",monospace;font-size:24px;color:var(--client)}.owned-mini span{display:block;margin-top:4px;font-size:11px;line-height:1.35;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.proof-strip{display:grid;grid-template-columns:repeat(4,1fr);width:100%;margin-top:30px;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink)}
+.proof-stat{padding:19px 24px;border-right:1px solid var(--border)}.proof-stat:last-child{border-right:0}.proof-stat b{display:block;margin-bottom:7px;font-size:clamp(28px,2.8vw,44px);line-height:1;letter-spacing:-.035em;color:var(--ink)}
+.proof-stat span{font-size:11px;line-height:1.35;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.evidence-layout{display:grid;grid-template-columns:1.25fr .75fr;gap:46px;align-items:stretch;margin-top:28px}.community-table{border-top:1px solid var(--border)}
+.community-row{display:grid;grid-template-columns:1.25fr .7fr .75fr .8fr;gap:16px;align-items:center;padding:15px 0;border-bottom:1px solid var(--border)}
+.community-row.head{padding:10px 0;font-size:10px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--faint)}.community-row:not(.head){font-size:14px;color:var(--ink-2)}
+.community-name{display:flex;align-items:center;gap:9px;font-weight:650;color:var(--ink)}.community-name img{width:20px;height:20px;border-radius:4px}
+.focus-stat{display:flex;flex-direction:column;justify-content:center;padding:30px;background:var(--client-soft);border:1px solid #dbe7f8;border-radius:12px}
+.focus-stat b{display:block;margin-bottom:12px;font-size:clamp(48px,4.6vw,68px);line-height:.95;letter-spacing:-.055em;color:var(--client)}.focus-stat h3{font-size:25px}.focus-stat p{font-size:15px;line-height:1.5;color:var(--muted)}
+.signal-layout{display:grid;grid-template-columns:.62fr 1.38fr;gap:42px;align-items:stretch;margin-top:26px}.organic-block{display:flex;flex-direction:column;justify-content:center;padding:32px;background:var(--paper-2);border:1px solid var(--border);border-radius:12px}
+.organic-block b{display:block;font-size:clamp(58px,5.5vw,82px);line-height:.95;letter-spacing:-.06em;color:var(--ink)}.organic-block h3{margin-top:20px}.organic-block p{margin:0;font-size:15px;line-height:1.5;color:var(--muted)}
+.comparison{padding:26px 28px;border:1px solid var(--border);border-radius:12px}.comparison h3{font-size:23px}.bar-list{display:flex;flex-direction:column;gap:11px;margin-top:20px}
+.bar-row{display:grid;grid-template-columns:178px 1fr 34px;gap:12px;align-items:center}.bar-label{display:flex;align-items:center;gap:9px;font-size:13px;font-weight:600;color:var(--ink-2)}.bar-label img{width:19px;height:19px;object-fit:contain;border-radius:4px;background:#fff}.bar-row.client .bar-label{color:var(--client);font-weight:700}
+.bar-track{display:block;height:8px;overflow:hidden;border-radius:999px;background:#f0f1f2}.bar-fill{display:block;height:100%;border-radius:inherit;background:#9ca3af}.client .bar-fill{background:var(--client)}
+.bar-value{font-family:"DM Mono",monospace;font-size:12px;text-align:right;color:var(--muted)}.mood-strip{display:grid;grid-template-columns:.88fr 1.12fr;gap:32px;align-items:center;margin-top:18px;padding:17px 22px;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink)}
+.mood-numbers{display:grid;grid-template-columns:repeat(3,1fr)}.mood-numbers div{padding-right:18px;border-right:1px solid var(--border)}.mood-numbers div+div{padding-left:18px}.mood-numbers div:last-child{border-right:0}
+.mood-numbers b{display:block;font-family:"DM Mono",monospace;font-size:24px}.mood-numbers span{display:block;margin-top:3px;font-size:10px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted)}.mood-strip p{margin:0;font-size:15px;line-height:1.45;color:var(--ink-2)}
+.strategy-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:28px;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.strategy-step{min-height:260px;padding:28px 26px;border-right:1px solid var(--border)}.strategy-step:last-child{border-right:0}.strategy-step>b{font-family:"DM Mono",monospace;font-size:13px;color:var(--client)}
+.strategy-step h3{margin-top:24px}.strategy-step p{margin:0;font-size:15px;line-height:1.48;color:var(--muted)}.strategy-step strong{display:block;margin-top:18px;padding-top:14px;border-top:1px solid var(--border);font-size:13px;line-height:1.4;color:var(--ink-2)}
+.timeline{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:26px}.phase{padding:0 24px;border-left:1px solid var(--ink)}.phase small{font-family:"DM Mono",monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.phase h3{margin:10px 0 5px;font-size:19px}.phase p{margin:0;font-size:13px;line-height:1.45;color:var(--muted)}
+.offer-layout{display:grid;grid-template-columns:.52fr 1.48fr;gap:28px;margin-top:20px}.price-card{min-height:390px;display:flex;flex-direction:column;justify-content:center;padding:38px;color:#fff;background:var(--dark);border-radius:14px}
+.price-card small{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.58)}.price{margin-top:28px;font-family:"DM Mono",monospace;font-size:clamp(50px,4.8vw,70px);line-height:.95;letter-spacing:-.065em}
+.price-period{margin-top:12px;font-size:14px;color:rgba(255,255,255,.64)}.term{margin-top:32px;padding-top:22px;border-top:1px solid rgba(255,255,255,.16);font-size:14px;line-height:1.5;color:rgba(255,255,255,.72)}
+.deliverables{display:grid;grid-template-columns:1fr 1fr;gap:13px}.deliverable{display:grid;grid-template-columns:30px 1fr;gap:12px;align-items:start;min-height:118px;padding:17px 18px;border:1px solid var(--border);background:var(--paper-2);border-radius:9px}
+.deliverable>b{padding-top:3px;font-family:"DM Mono",monospace;font-size:12px;color:var(--client)}.deliverable h3{margin:0 0 6px;font-size:19px}.deliverable p{margin:0;font-size:14px;line-height:1.4;color:var(--muted)}
+.next-steps-label{margin-top:15px;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink)}
+.onboarding{display:grid;grid-template-columns:repeat(4,1fr);margin-top:7px;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink)}.onboarding div{min-height:68px;padding:12px 15px;border-right:1px solid var(--border)}.onboarding div:last-child{border-right:0}
+.onboarding b{font-family:"DM Mono",monospace;font-size:11px;color:var(--client)}.onboarding span{display:block;margin-top:5px;font-size:13px;line-height:1.35;color:var(--ink-2)}
+.team{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;width:100%;margin-top:24px;text-align:left}.person{min-height:365px;display:flex;flex-direction:column;padding:22px;border:1px solid var(--border);border-radius:12px;background:var(--paper-2)}
+.person>img{width:80px;height:80px;object-fit:cover;margin-bottom:18px;border:3px solid #fff;border-radius:50%;box-shadow:0 0 0 1px var(--border-strong)}
+.person h3{display:flex;align-items:baseline;flex-wrap:wrap;gap:5px 8px;margin-bottom:4px;font-size:23px}.person h3 small{font-size:11px;font-weight:600;line-height:1.2;letter-spacing:0;color:var(--muted);white-space:nowrap}
+.role{margin-bottom:14px;font-size:12px;color:var(--ink-2);font-weight:700;text-transform:uppercase;letter-spacing:.08em}.person>p{margin:0;font-size:14px;line-height:1.5;color:var(--muted)}
+.person-achievement{margin-top:auto;padding-top:14px;border-top:1px solid var(--border)}.person-achievement>span{display:block;margin-bottom:7px;font-size:9px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--faint)}
+.brand-fact{display:grid;grid-template-columns:22px minmax(0,1fr);gap:8px;align-items:start}.brand-fact+.brand-fact{margin-top:8px;padding-top:8px;border-top:1px solid var(--border)}
+.brand-fact img{width:22px;height:22px;object-fit:contain;border:0;border-radius:5px;margin:0;box-shadow:none;background:#fff}.brand-fact strong{display:block;font-size:12px;line-height:1.35;font-weight:650;color:var(--ink-2)}
+.cta-card{display:grid;grid-template-columns:1fr auto;gap:30px;align-items:center;margin-top:16px;padding:18px 24px;color:#fff;background:var(--dark);border-radius:11px}.cta-card strong{display:block;font-size:18px}
+.cta-card span{display:block;margin-top:4px;font-size:12px;color:rgba(255,255,255,.62)}.cta-card strong .inline-brand{display:inline-flex;margin-top:0;font-size:inherit;color:inherit;gap:6px;vertical-align:middle}.cta-links{display:flex;align-items:center;gap:10px}.cta-links a{padding:10px 13px;border-radius:7px;text-decoration:none;font-size:11px;font-weight:700;white-space:nowrap}
+.cta-links a:first-child{color:var(--ink);background:#fff}.cta-links a:last-child{border:1px solid rgba(255,255,255,.25);color:#fff}
+@media(max-width:1024px){.s{width:100%!important;height:100svh!important;overflow-y:auto!important}.content{padding-left:28px;padding-right:28px}.decision-layout,.evidence-layout,.signal-layout,.offer-layout{grid-template-columns:1fr}.proof-strip,.strategy-steps,.timeline,.team{grid-template-columns:1fr 1fr}.source{width:100%}}
+@media(max-width:680px){.hdr-title span{white-space:normal}.cover-strip,.proof-strip,.strategy-steps,.timeline,.team,.deliverables,.onboarding{grid-template-columns:1fr}.cover-strip{position:relative;left:auto;right:auto;bottom:auto;margin-top:30px}.community-row{grid-template-columns:1fr 1fr}.community-row.head{display:none}.mood-strip,.cta-card{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="reveal"><div class="slides">
+
+<section>
+  <div class="s cover">
+    <div class="cover-content">
+      <div class="cover-top"><img src="https://goatacademy.org/wp-content/uploads/2021/06/Goat-Academy-Favicon.png" alt="GOAT Academy"><img src="https://www.google.com/s2/favicons?domain=reddit.com&amp;sz=64" alt="Reddit"><span>GOAT Academy | Reddit Marketing Strategy Proposal</span></div>
+      <h1>Build the Reddit presence buyers expect to find before they trust a trading education brand.</h1>
+      <p class="lead">A reputation-first program for GOAT Academy and Felix Prehn, built around useful participation, consistent answers, and an active owned community.</p>
+      <div class="cover-foot"><span>September 2026</span></div>
+    </div>
+    <div class="cover-strip"><span><b>01</b>Owned subreddit</span><span><b>02</b>Public conversations</span><span><b>03</b>Branded search + AI</span></div>
+  </div>
+  <aside class="notes">[Sources]<br>GOAT Academy discovery call, 2 September 2026. Client strategy document: https://docs.google.com/document/d/1DxLULT25PCsA4EPJnxNvCDESBwW3LRZX/edit. GOAT Academy favicon and brand source: https://goatacademy.org.</aside>
+</section>
+
+<section><div class="s"><div class="shdr" data-n="02"></div><div class="content">
+  <p class="kicker">The decision</p>
+  <h2><span class="inline-brand"><img src="https://www.google.com/s2/favicons?domain=reddit.com&amp;sz=64" alt="">Reddit</span> is where buyers pressure-test the brand.</h2>
+  <p class="sub">Real threads are already asking whether Felix Prehn and the program are credible, useful, and worth the investment.</p>
+  <div class="decision-layout">
+    <div>
+      <div class="thread-list">
+        <a class="thread-link" href="https://www.reddit.com/r/GoatAcademy/comments/1g6eyg6/felix_prehns_goat_academy_scam_or_legitimate_an" target="_blank" rel="noopener noreferrer"><img src="https://www.google.com/s2/favicons?domain=reddit.com&amp;sz=64" alt="Reddit"><span class="thread-copy"><strong>Felix Prehn's GOAT Academy: Scam or Legitimate?</strong><span>r/GoatAcademy</span></span><span>94 comments</span></a>
+        <a class="thread-link" href="https://www.reddit.com/r/GoatAcademy/comments/1l2u5g8/my_take_on_felix_prehn_reviews_from_trustpilot" target="_blank" rel="noopener noreferrer"><img src="https://www.google.com/s2/favicons?domain=reddit.com&amp;sz=64" alt="Reddit"><span class="thread-copy"><strong>My take on Felix Prehn reviews: the good and the bad</strong><span>r/GoatAcademy</span></span><span>25 comments</span></a>
+        <a class="thread-link" href="https://www.reddit.com/r/Trading/comments/1jwfj7j/is_anyone_in_or_has_taken_felix_prehns_goad" target="_blank" rel="noopener noreferrer"><img src="https://www.google.com/s2/favicons?domain=reddit.com&amp;sz=64" alt="Reddit"><span class="thread-copy"><strong>Has anyone taken Felix Prehn's GOAT Academy program?</strong><span>r/Trading</span></span><span>20 comments</span></a>
+      </div>
+      <div class="thread-note"><b>Signal</b><span>Legitimacy, reviews, price, and realistic outcomes are already part of the buying conversation.</span></div>
+    </div>
+    <div class="owned-signal"><img src="https://goatacademy.org/wp-content/uploads/2021/06/Goat-Academy-Favicon.png" alt="GOAT Academy"><b>317</b><h3>members already in r/GoatAcademy</h3><p>The shortest path to a credible <span class="inline-brand"><img src="https://www.google.com/s2/favicons?domain=reddit.com&amp;sz=64" alt="">Reddit</span> presence is to reactivate the community GOAT Academy already owns.</p><div class="owned-mini"><div><strong>~4</strong><span>posts in roughly the prior year</span></div><div><strong>0</strong><span>recent observed posts per week</span></div></div></div>
+  </div>
+  <div class="source">Sources: GOAT Academy discovery call, 2 September 2026; community API snapshot in the GOAT Academy audit.</div>
+</div></div>
+<aside class="notes">[Sources]<br>Audience and decision context: GOAT Academy and AI Peekaboo meeting, 2 September 2026. Community and thread data: posts.json, subreddit_about.json, and subreddit_activity.json from the GOAT Academy Reddit audit. Threads: https://www.reddit.com/r/GoatAcademy/comments/1g6eyg6/felix_prehns_goat_academy_scam_or_legitimate_an, https://www.reddit.com/r/GoatAcademy/comments/1l2u5g8/my_take_on_felix_prehn_reviews_from_trustpilot, and https://www.reddit.com/r/Trading/comments/1jwfj7j/is_anyone_in_or_has_taken_felix_prehns_goad.</aside>
+</section>
+
+<section><div class="s"><div class="shdr" data-n="03"></div><div class="content">
+  <p class="kicker">The evidence</p>
+  <h2>The audit makes the starting point clear.</h2>
+  <p class="sub">Commercially relevant discussion is concentrated enough to prioritize, but broad enough to support a sustained reputation program.</p>
+  <div class="proof-strip"><div class="proof-stat"><b>102</b><span>unique threads analyzed</span></div><div class="proof-stat"><b>8,476</b><span>comments read in context</span></div><div class="proof-stat"><b>30</b><span>communities represented</span></div><div class="proof-stat"><b>57</b><span>high-fit threads</span></div></div>
+  <div class="evidence-layout">
+    <div class="community-table">
+      <div class="community-row head"><span>Priority community</span><span>Members</span><span>Posts / week</span><span>High-fit threads</span></div>
+      <div class="community-row"><span class="community-name"><img src="https://www.google.com/s2/favicons?domain=reddit.com&amp;sz=64" alt="Reddit">r/Daytrading</span><span>5.18M</span><span>491</span><span>20 of 32</span></div>
+      <div class="community-row"><span class="community-name"><img src="https://www.google.com/s2/favicons?domain=reddit.com&amp;sz=64" alt="Reddit">r/Trading</span><span>445K</span><span>188</span><span>14 of 16</span></div>
+      <div class="community-row"><span class="community-name"><img src="https://www.google.com/s2/favicons?domain=reddit.com&amp;sz=64" alt="Reddit">r/swingtrading</span><span>178K</span><span>71</span><span>3 of 5</span></div>
+    </div>
+    <div class="focus-stat"><b>34 of 57</b><h3>high-fit threads sit in two communities.</h3><p>r/Daytrading and r/Trading account for 60% of the qualified opportunity set, giving the first 90 days a clear external focus.</p></div>
+  </div>
+  <div class="source">Source: <a href="https://filipelinsduarte.github.io/proposals/reddit-audit-goat-academy.html" target="_blank" rel="noopener noreferrer">GOAT Academy Reddit audit</a>, 2 September 2026.</div>
+</div></div>
+<aside class="notes">[Sources]<br>GOAT Academy audit files: posts.json, comments_full.json, subreddit_about.json, and subreddit_activity.json. Published audit: https://filipelinsduarte.github.io/proposals/reddit-audit-goat-academy.html. Subscriber and activity counts are point-in-time observations.</aside>
+</section>
+
+<section><div class="s"><div class="shdr" data-n="04"></div><div class="content">
+  <p class="kicker">The reputation gap</p>
+  <h2>GOAT Academy enters the comparison set, but independent context is thin.</h2>
+  <p class="sub">The objective is not more brand-controlled volume. It is more useful participation and stronger third-party context around the questions that shape trust.</p>
+  <div class="signal-layout">
+    <div class="organic-block"><b>3 / 12</b><h3>mention threads were independent.</h3><p>Only 25% of verified GOAT Academy mention threads in the audited set were independent or organic.</p></div>
+    <div class="comparison"><h3>Verified mentions in the audited 102-thread set</h3><div class="bar-list">
+      <div class="bar-row"><span class="bar-label"><img src="https://www.warriortrading.com/favicon.ico?favicon.0y842u5ij3poa.ico" alt="">Warrior Trading</span><span class="bar-track"><span class="bar-fill" style="width:100%"></span></span><span class="bar-value">14</span></div>
+      <div class="bar-row client"><span class="bar-label"><img src="https://goatacademy.org/wp-content/uploads/2021/06/Goat-Academy-Favicon.png" alt="">GOAT Academy</span><span class="bar-track"><span class="bar-fill" style="width:85.7%"></span></span><span class="bar-value">12</span></div>
+      <div class="bar-row"><span class="bar-label"><img src="https://smbtraining.com/sites/default/files/favicon%20%281%29.png" alt="">SMB Capital</span><span class="bar-track"><span class="bar-fill" style="width:64.3%"></span></span><span class="bar-value">9</span></div>
+      <div class="bar-row"><span class="bar-label"><img src="https://www.fool.com/favicon.ico" alt="">Motley Fool</span><span class="bar-track"><span class="bar-fill" style="width:42.9%"></span></span><span class="bar-value">6</span></div>
+      <div class="bar-row"><span class="bar-label"><img src="https://bearbulltraders.com/images/favicon-32x32.png" alt="">Bear Bull Traders</span><span class="bar-track"><span class="bar-fill" style="width:35.7%"></span></span><span class="bar-value">5</span></div>
+      <div class="bar-row"><span class="bar-label"><img src="https://www.humbledtrader.com/wp-content/uploads/2024/09/cropped-humbledtrader-fav-32x32-optimized.png" alt="">Humbled Trader</span><span class="bar-track"><span class="bar-fill" style="width:28.6%"></span></span><span class="bar-value">4</span></div>
+    </div></div>
+  </div>
+  <div class="mood-strip"><div class="mood-numbers"><div><b>8</b><span>Mixed</span></div><div><b>3</b><span>Neutral</span></div><div><b>1</b><span>Negative</span></div></div><p>Most observed discussion was mixed, creating room to improve understanding through accurate facts, useful education, and credible support.</p></div>
+  <div class="source">Source: verified mention classification and whole-thread mood analysis in the GOAT Academy community audit.</div>
+</div></div>
+<aside class="notes">[Sources]<br>GOAT Academy audit files: verified_mentions.json and dashboard_built.html. Mention counts are limited to the audited opportunity set and are not platform-wide market-share estimates. Verified competitor sites and favicons: https://www.warriortrading.com/, https://smbtraining.com/, https://www.fool.com/, https://bearbulltraders.com/, and https://www.humbledtrader.com/.</aside>
+</section>
+
+<section><div class="s"><div class="shdr" data-n="05"></div><div class="content">
+  <p class="kicker">The strategy</p>
+  <h2>One program connects the owned community, public participation, and the facts.</h2>
+  <div class="strategy-steps">
+    <article class="strategy-step"><b>01</b><h3>Own the home</h3><p>Reactivate <span class="inline-brand"><img src="https://www.google.com/s2/favicons?domain=reddit.com&amp;sz=64" alt="">r/GoatAcademy</span> with clear rules, a pinned fact base, useful article-format posts, and daily moderation.</p><strong>8 informative posts per month</strong></article>
+    <article class="strategy-step"><b>02</b><h3>Participate with judgment</h3><p>Answer relevant public threads through clearly branded support accounts while leaving Felix Prehn's personal account untouched.</p><strong>20 targeted comments per month</strong></article>
+    <article class="strategy-step"><b>03</b><h3>Align the facts</h3><p>Keep pricing, legitimacy, criticism, and expectations consistent across <span class="inline-brand"><img src="https://www.google.com/s2/favicons?domain=reddit.com&amp;sz=64" alt="">Reddit</span>, the website, <span class="inline-brand"><img src="https://www.google.com/s2/favicons?domain=youtube.com&amp;sz=64" alt="">YouTube</span>, and Trustpilot.</p><strong>Branded search and AI visibility measurement</strong></article>
+  </div>
+  <div class="timeline"><div class="phase"><small>Month 1</small><h3>Foundation</h3><p>Moderator access, account setup, rules, flair, pinned FAQ, fact base, and editorial plan.</p></div><div class="phase"><small>Month 2</small><h3>Participation</h3><p>Weekly publishing, targeted external responses, support moderation, and cross-channel updates.</p></div><div class="phase"><small>Month 3</small><h3>Optimization</h3><p>Review engagement, search, referrals, and thread-level AI visibility, then set the ongoing roadmap.</p></div></div>
+  <div class="source">Sources: GOAT Academy strategy document and discovery call, 2 September 2026. AI evidence is measured at the thread level.</div>
+</div></div>
+<aside class="notes">[Sources]<br>Client strategy document: https://docs.google.com/document/d/1DxLULT25PCsA4EPJnxNvCDESBwW3LRZX/edit. GOAT Academy and AI Peekaboo meeting, 2 September 2026. AI citation methodology: AI Peekaboo Reddit ROI pilot, 29 August 2026, which found 0 comment-level URLs among 17,153 observed Reddit citations.</aside>
+</section>
+
+<section><div class="s"><div class="shdr" data-n="06"></div><div class="content">
+  <p class="kicker">The proposal</p>
+  <h2>The deliverables.</h2>
+  <div class="offer-layout">
+    <div class="price-card"><small><span class="inline-brand"><img src="https://www.google.com/s2/favicons?domain=reddit.com&amp;sz=64" alt="">Managed Reddit strategy</span></small><div class="price">$5,000</div><div class="price-period">per month</div><div class="term"><strong>3-month minimum</strong><br>Then month-to-month.</div></div>
+    <div class="deliverables">
+      <article class="deliverable"><b>01</b><div><h3>Subreddit management</h3><p>Direct moderation, rules, flair, pinned resources, support responses, and issue escalation.</p></div></article>
+      <article class="deliverable"><b>02</b><div><h3><span class="inline-brand"><img src="https://www.google.com/s2/favicons?domain=reddit.com&amp;sz=64" alt="">8 informative posts per month</span></h3><p>Article-format posts adapted from GOAT Academy's educational materials.</p></div></article>
+      <article class="deliverable"><b>03</b><div><h3>20 targeted comments per month</h3><p>Qualified participation in public threads with clear, useful answers.</p></div></article>
+      <article class="deliverable"><b>04</b><div><h3>150+ account engagement network</h3><p>Topic-fit accounts used to increase activity through rules-compliant participation.</p></div></article>
+      <article class="deliverable"><b>05</b><div><h3>Keyword-led reputation coverage</h3><p>GOAT Academy, Felix Prehn, pricing, reviews, legitimacy, and program value.</p></div></article>
+      <article class="deliverable"><b>06</b><div><h3>How we measure success</h3><p>Subreddit activity, branded search rankings, and <span class="inline-brand"><img src="https://www.google.com/s2/favicons?domain=reddit.com&amp;sz=64" alt="">Reddit</span> referral traffic.</p></div></article>
+    </div>
+  </div>
+  <div class="next-steps-label">Next steps</div>
+  <div class="onboarding"><div><b>01</b><span>Approve scope and timing</span></div><div><b>02</b><span>Complete the onboarding questionnaire</span></div><div><b>03</b><span>Share brand and reference materials</span></div><div><b>04</b><span>Invite Filipe as subreddit moderator</span></div></div>
+  <div class="source">Sources: current pricing confirmed by management, 3 September 2026; scope, term, next steps, and measurement framework from the discovery call, 2 September 2026.</div>
+</div></div>
+<aside class="notes">[Sources]<br>Current price and scope confirmed by management, 3 September 2026. Term and onboarding steps: GOAT Academy and AI Peekaboo meeting, 2 September 2026. The Fireflies meeting record defines success as subreddit activity, branded rankings, referrals, and AI-search visibility. Deliverable pattern: https://docs.google.com/document/d/1DxLULT25PCsA4EPJnxNvCDESBwW3LRZX/edit.</aside>
+</section>
+
+<section><div class="s"><div class="shdr" data-n="07"></div><div class="content">
+  <p class="kicker">The team</p>
+  <h2>The people shaping the strategy stay close to the work.</h2>
+  <p class="sub">GOAT Academy works directly with the leaders responsible for strategy, technology, <span class="inline-brand"><img src="https://www.google.com/s2/favicons?domain=reddit.com&amp;sz=64" alt="">Reddit</span> operations, and client relationships.</p>
+  <div class="team">
+    <article class="person"><img src="https://filipelinsduarte.github.io/proposals/think-outside-the-box-ventures/assets/filipe.jpeg" alt="Filipe Lins Duarte"><h3>Filipe Lins Duarte <small>Lisbon, Portugal</small></h3><div class="role">Co-Founder and CEO</div><p>Founder and growth operator leading commercial strategy and client relationships.</p><div class="person-achievement"><span>Selected background</span><div class="brand-fact"><img src="https://www.aipeekaboo.com/icon.jpg" alt="AI Peekaboo"><strong>Grew the company from $0 to $700K ARR in 12 months, with $0 in ad spend or external funding.</strong></div><div class="brand-fact"><img src="https://www.uber.com/_static/de0e97ed977ad313.png" alt="Uber"><strong>Led the enterprise team at Uber for Business in Portugal.</strong></div></div></article>
+    <article class="person"><img src="https://filipelinsduarte.github.io/proposals/think-outside-the-box-ventures/assets/john.jpeg" alt="John Rice"><h3>John Rice <small>Minneapolis, USA</small></h3><div class="role">Co-Founder and CTO</div><p>Engineering leader and hands-on builder leading product and technical strategy.</p><div class="person-achievement"><span>Selected background</span><div class="brand-fact"><img src="https://cdn.prod.website-files.com/67ab4dc09be28ce9c3b04688/67b744988e76032550f1d12e_favicon%20magiclinks.png" alt="MagicLinks"><strong>Led the engineering team at MagicLinks.</strong></div><div class="brand-fact"><img src="https://www.aipeekaboo.com/icon.jpg" alt="AI Peekaboo"><strong>Built the entire AI Peekaboo platform as a solo developer and CTO.</strong></div></div></article>
+    <article class="person"><img src="https://filipelinsduarte.github.io/proposals/think-outside-the-box-ventures/assets/danny-kirk.jpeg" alt="Danny Kirk"><h3>Danny Kirk <small>Tucson, USA</small></h3><div class="role">Advisor &amp; Business Development</div><p><span class="inline-brand"><img src="https://www.google.com/s2/favicons?domain=reddit.com&amp;sz=64" alt="">Reddit</span> community expert and operator with deep platform-native experience.</p><div class="person-achievement"><span>Selected background</span><div class="brand-fact"><img src="https://www.reddireach.com/icon.png" alt="ReddiReach"><strong>Founded ReddiReach in 2017 and brings more than eight years of operating experience.</strong></div></div></article>
+  </div>
+  <div class="cta-card"><div><strong>Ready to reactivate GOAT Academy's <span class="inline-brand"><img src="https://www.google.com/s2/favicons?domain=reddit.com&amp;sz=64" alt="">Reddit presence?</span></strong><span>Begin with the onboarding questionnaire and moderator invitation.</span></div><div class="cta-links"><a href="https://calendly.com/filipe-aipeekaboo/30min" target="_blank" rel="noopener noreferrer">Book a 30-minute call</a><a href="mailto:filipe@aipeekaboo.com">filipe@aipeekaboo.com</a></div></div>
+</div></div>
+<aside class="notes">[Sources]<br>Founder biographies and achievements: management-provided founder profiles, September 2026. Team photos: https://filipelinsduarte.github.io/proposals/think-outside-the-box-ventures/. MagicLinks favicon: https://cdn.prod.website-files.com/67ab4dc09be28ce9c3b04688/67b744988e76032550f1d12e_favicon%20magiclinks.png. Uber favicon: https://www.uber.com/_static/de0e97ed977ad313.png. AI Peekaboo favicon: https://www.aipeekaboo.com/icon.jpg. ReddiReach favicon: https://www.reddireach.com/icon.png. CTA: https://calendly.com/filipe-aipeekaboo/30min and filipe@aipeekaboo.com.</aside>
+</section>
+
+</div></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reveal.min.js"></script>
+<script>
+(function(){
+  var total=7;
+  var name='GOAT Academy | Reddit Marketing Strategy';
+  document.querySelectorAll('.shdr').forEach(function(element){
+    try{
+      if(!element){return;}
+      var number=String(element.getAttribute('data-n')||'').padStart(2,'0');
+      element.outerHTML='<div class="hdr"><div class="hdr-title"><img src="https://goatacademy.org/wp-content/uploads/2021/06/Goat-Academy-Favicon.png" alt=""><img src="https://www.google.com/s2/favicons?domain=reddit.com&amp;sz=64" alt=""><span>'+name+'</span></div><span class="snum">'+number+' / '+total+'</span></div><div class="xline"><span class="cross left"></span><span class="cross right"></span></div>';
+    }catch(error){console.error('Header initialization failed',error);}
+  });
+}());
+try{Reveal.initialize({hash:true,controls:true,progress:true,slideNumber:false,transition:'none',disableLayout:true,width:1920,height:1080,margin:0,minScale:.1,maxScale:3});}
+catch(error){console.error('Reveal initialization failed',error);}
+</script>
+</body>
+</html>

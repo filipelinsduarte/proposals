@@ -1,0 +1,811 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Knew Health | Scope of Work</title>
+<link rel="icon" href="assets/knewhealth-icon.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reveal.min.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YV8FCLN403"></script>
+<script>
+window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());
+gtag('config','G-YV8FCLN403');
+</script>
+<style>
+:root{
+  --garnet:#b21e3b;
+  --garnet-dark:#91172f;
+  --garnet-soft:#fae9ed;
+  --olive:#3c806f;
+  --olive-mid:#5dac98;
+  --olive-dark:#225347;
+  --olive-deep:#0c2720;
+  --mint:#e9f1ef;
+  --mint-light:#f3f7f6;
+  --lapis:#3a6278;
+  --lapis-soft:#e9f0f4;
+  --linen:#faf9f7;
+  --linen-2:#f5f3f0;
+  --linen-3:#e8e5e1;
+  --paper:#fff;
+  --ink:#302b28;
+  --ink-2:#4e4844;
+  --muted:#77716c;
+  --faint:#9a938d;
+  --border:#e8e5e1;
+  --border-strong:#ddd7d0;
+  --success:#2f765f;
+  --success-soft:#eaf4f0;
+  --warning:#9a6422;
+  --warning-soft:#fbf2e3;
+  --rail:rgba(34,83,71,.17);
+  --shadow:0 0.0625rem 0.125rem rgba(12,39,32,.05),0 0.625rem 1.75rem rgba(12,39,32,.045);
+}
+*{box-sizing:border-box;font-family:"DM Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+html{font-size:calc(100vw / 112)}
+html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#fff;color:var(--ink)}
+.reveal-viewport,.reveal{width:100%!important;height:100%!important;background:#fff!important}
+.reveal .slides>section{width:100vw!important;height:100vh!important;padding:0!important;text-align:left!important;background:#fff!important}
+.s{width:100vw;height:100vh;padding:3vh 5vw 3.2vh;position:relative;overflow:hidden;display:flex;flex-direction:column;background:#fff}
+.s::before,.s::after{content:"";position:absolute;top:0;bottom:0;width:0.0625rem;background:var(--rail);z-index:0;pointer-events:none}
+.s::before{left:5vw}.s::after{right:5vw}
+.s.linen{background:var(--linen)}
+.s.deep{background:var(--olive-deep);color:#fff}
+.s.deep::before,.s.deep::after{background:rgba(255,255,255,.15)}
+.s.deep .hdr-title img{filter:brightness(0) invert(1);opacity:.92}
+.s.deep .xline{background:rgba(255,255,255,.2)}
+.s.deep .cross{color:rgba(255,255,255,.4)}
+.shdr{position:relative;z-index:2}
+.hdr{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;padding:0 1.25rem 0.75rem}
+.hdr-title{display:flex;align-items:center;gap:0.6875rem;min-width:0}
+.hdr-title img{height:1.5rem;width:auto;display:block}
+.hdr-right{display:flex;align-items:center}
+.snum{font-family:"DM Mono",monospace;font-size:0.75rem;color:var(--olive-dark);background:var(--mint-light);border:1px solid var(--border-strong);border-radius:0.25rem;padding:0.1875rem 0.5rem;letter-spacing:.07em;white-space:nowrap}
+.xline{position:relative;height:0.0625rem;background:var(--rail);margin:0 0 1.125rem;z-index:2}
+.cross{position:absolute;top:-0.5rem;width:1.0625rem;height:1.0625rem;color:rgba(34,83,71,.4)}
+.cross.left{left:0;transform:translateX(-0.5rem)}.cross.right{right:0;transform:translateX(0.5rem)}
+.cross::before,.cross::after{content:"";position:absolute;background:currentColor}
+.cross::before{left:0.5rem;top:0;width:0.0625rem;height:1.0625rem}.cross::after{left:0;top:0.5rem;width:1.0625rem;height:0.0625rem}
+.content{position:relative;z-index:1;padding:0.875rem 2.75rem 0;flex-grow:1;min-height:0;display:flex;flex-direction:column}
+.kicker{font-size:0.75rem;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--garnet);margin:0 0 0.875rem}
+h1,h2,h3,h4,p{margin-top:0}h1,h2,h3,h4{text-wrap:balance;color:var(--olive-dark)}p{text-wrap:pretty}
+h1{font-size:6.25rem;line-height:1.02;letter-spacing:-.045em;max-width:70rem;margin:0 0 1.5rem;font-weight:700}
+h2{font-size:3.125rem;line-height:1.08;letter-spacing:-.035em;margin:0 0 1rem;font-weight:700;max-width:82.5rem}
+h3{font-size:1.75rem;line-height:1.16;letter-spacing:-.02em;margin:0 0 0.625rem;font-weight:600}
+.lead{font-size:1.625rem;line-height:1.48;color:var(--ink-2);font-weight:400;max-width:70rem}
+.sub{font-size:1.25rem;line-height:1.5;color:var(--muted);max-width:none}
+.center{text-align:center;align-items:center}.center h2,.center .lead,.center .sub{margin-left:auto;margin-right:auto}
+.section-head{width:100%;margin:0 0 1.375rem}.section-head .kicker{margin-bottom:0.625rem}.section-head h2{max-width:81.25rem;margin-bottom:0.625rem}.section-head .sub{margin-bottom:0}
+.accent{color:var(--garnet)}.muted{color:var(--muted)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:1.875rem;align-items:stretch}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;align-items:stretch}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:1.125rem;align-items:stretch}
+.card{background:var(--linen);border:1px solid var(--border);border-radius:0.875rem;padding:2.875rem 2.25rem;display:flex;flex-direction:column;justify-content:center;box-shadow:0 1px 2px rgba(12,39,32,.03)}
+.card.white{background:#fff}
+.num{font-family:"DM Mono",monospace;font-size:0.8125rem;font-weight:500;color:var(--garnet);margin-bottom:0.875rem;letter-spacing:.08em}
+.ws-head{display:flex;align-items:baseline;gap:0.875rem;margin-bottom:0.875rem}
+.ws-head b{font-family:"DM Mono",monospace;font-size:1.125rem;font-weight:500;color:var(--garnet);letter-spacing:.06em;flex:0 0 auto}
+.ws-head h3{margin-bottom:0}
+.card p{font-size:1.25rem;line-height:1.55;color:var(--muted);margin:0}
+.card h3{font-size:2rem;margin-bottom:0.875rem}
+.card-body{display:flex;flex-direction:column}
+.card .num{font-size:1.125rem;margin:0 0 1rem}
+.mono{font-family:"DM Mono",monospace}
+.nowrap{white-space:nowrap}
+
+/* cover */
+.cover-content{position:relative;z-index:1;margin:auto 2.75rem;max-width:87.5rem;display:flex;flex-direction:column;align-items:flex-start}
+.cover-top{display:flex;align-items:center;gap:1rem;margin-bottom:2.75rem}
+.cover-top img{height:2.125rem;width:auto;display:block}
+.cover-top span{font-size:0.75rem;text-transform:uppercase;letter-spacing:.12em;font-weight:700;color:var(--muted);padding-left:1rem;border-left:1px solid var(--border-strong)}
+.cover-content .lead{max-width:65.625rem}
+.cover-foot{display:flex;align-items:center;gap:0.875rem;margin-top:2.75rem;font-family:"DM Mono",monospace;font-size:0.8125rem;color:var(--muted)}
+.cover-foot img{height:1.125rem;width:auto}
+.cover-strip{position:absolute;left:5vw;right:5vw;bottom:3.2vh;display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--rail);z-index:2}
+.cover-strip span{padding:1rem 1.25rem;font-size:0.75rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);border-right:1px solid var(--rail);display:flex;align-items:center;gap:0.625rem}
+.cover-strip span:last-child{border-right:0}
+.cover-strip i{width:0.4375rem;height:0.4375rem;border-radius:50%;background:var(--garnet);flex:0 0 0.4375rem}
+
+/* divider */
+.divider-copy{margin:auto;width:100%;max-width:77.5rem;text-align:center}
+.divider-copy .kicker{color:var(--olive-mid)}
+.divider-copy h2{font-size:4.75rem;color:#fff;margin:0 auto 1.125rem}
+.divider-copy p{font-size:1.375rem;color:rgba(255,255,255,.72);max-width:72rem;margin:0 auto}
+
+/* channel chart */
+.chan{width:100%;margin:0;flex-grow:1;display:flex;flex-direction:column}
+.chan-top{flex-grow:1;flex-shrink:1;flex-basis:0;display:grid;grid-template-columns:auto minmax(0,1fr);gap:4rem;align-items:center}
+.chan-pie{display:block;height:100%;max-height:30rem;width:auto;aspect-ratio:1}
+.chan-pie path{stroke:#fff;stroke-width:1.5}
+.chan-pie .pie-hi{stroke:var(--olive-dark);stroke-width:3}
+.chan-legend{display:grid;gap:0;align-content:center}
+.chan-item{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:1.5rem;padding:1rem 1.25rem;border-bottom:1px solid var(--border);border-radius:0.5rem}
+.chan-item:last-child{border-bottom:0}
+.chan-item.hi{background:var(--mint)}
+.chan-item em{display:flex;align-items:center;gap:0.75rem;font-style:normal;font-size:1.125rem;color:var(--ink-2);font-weight:600}
+.chan-item.hi em{color:var(--olive-dark)}
+.chan-item em s{width:0.875rem;height:0.875rem;border-radius:0.25rem;flex:0 0 0.875rem;text-decoration:none}
+.chan-item b{font-family:"DM Mono",monospace;font-size:2rem;letter-spacing:-.02em;color:var(--olive-dark);font-weight:500}
+.chan-calls{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:1.75rem;flex-grow:1.25;flex-shrink:1;flex-basis:0}
+.chan-call{display:grid;grid-template-columns:auto 1fr;gap:1.5rem;align-items:center;padding:2.25rem 2.25rem;border:1px solid var(--border);border-radius:0.75rem;background:var(--linen)}
+.chan-call.hi{background:var(--mint);border-color:#cfe0da}
+.chan-call b{font-family:"DM Mono",monospace;font-size:3.75rem;line-height:1;letter-spacing:-.03em;color:var(--garnet);white-space:nowrap}
+.chan-call.hi b{color:var(--olive-dark)}
+.chan-call span{font-size:1.1875rem;line-height:1.45;color:var(--ink-2)}
+
+/* numbered lane list */
+.lanes{display:flex;flex-direction:column;border-top:1px solid var(--border);width:100%;flex-grow:1}
+.lane{display:grid;grid-template-columns:2.875rem minmax(0,1fr) 15.625rem;gap:1.25rem;align-items:center;padding:1.125rem 0.375rem;flex-grow:1;border-bottom:1px solid var(--border)}
+.lane>b{font-family:"DM Mono",monospace;font-size:0.875rem;color:var(--garnet);letter-spacing:.06em}
+.lane h3{font-size:1.375rem;margin:0 0 0.25rem}
+.lane p{font-size:1rem;line-height:1.4;color:var(--muted);margin:0}
+.lane-meta{display:flex;flex-direction:column;gap:0.3125rem;text-align:right}
+.lane-meta b{font-family:"DM Mono",monospace;font-size:0.8125rem;color:var(--olive-dark)}
+.lane-meta span{font-size:0.8125rem;color:var(--muted)}
+
+/* workstream cards */
+.ws{display:flex;flex-direction:column;justify-content:center;gap:1.75rem;background:#fff;border:1px solid var(--border);border-radius:0.875rem;padding:2.375rem 1.625rem;box-shadow:0 1px 2px rgba(12,39,32,.03)}
+.ws h3{margin-bottom:0.5rem}
+.ws .ws-body>p{font-size:1rem;line-height:1.45;color:var(--muted);margin:0 0 0.25rem}
+.ws-body{display:flex;flex-direction:column}
+.ws ul{list-style:none;padding:0;margin:1.5rem 0 0}
+.ws li{display:grid;grid-template-columns:1.25rem 1fr;gap:0.6875rem;align-items:start;padding:1.125rem 0;border-top:1px solid var(--border);font-size:1rem;line-height:1.4;color:var(--ink-2)}
+.ws li svg{width:1rem;height:1rem;margin-top:0.1875rem;fill:none;stroke:var(--olive);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.ws-foot{margin-top:0;padding-top:0;display:flex;align-items:center;gap:0.625rem;flex-wrap:wrap}
+.chip{display:inline-flex;align-items:center;gap:0.4375rem;padding:0.625rem 0.9375rem;border-radius:62.4375rem;border:1px solid var(--border-strong);background:var(--linen);font-size:0.8125rem;font-weight:600;color:var(--ink-2);white-space:nowrap}
+.chip img{width:0.9375rem;height:0.9375rem;object-fit:contain}
+.chip svg{width:0.875rem;height:0.875rem}
+
+/* inline brand */
+.inline-brand{display:inline-flex;align-items:center;gap:0.375rem;white-space:nowrap}
+.inline-brand img{width:1rem;height:1rem;object-fit:contain;vertical-align:-0.1875rem}
+.inline-brand svg{width:1rem;height:1rem}
+
+/* scope columns */
+.scope{display:grid;grid-template-columns:1fr 1fr;gap:1.625rem;width:100%;flex-grow:1}
+.scope-col{border:1px solid var(--border);border-radius:0.875rem;padding:1.375rem 1.5rem 0.5rem;display:flex;flex-direction:column}
+.scope-col.inc{background:var(--mint);border-color:#cfe0da}
+.scope-col.out{background:var(--linen-2)}
+.scope-head{display:flex;align-items:center;gap:0.75rem;padding-bottom:0.875rem;border-bottom:1px solid rgba(34,83,71,.16)}
+.scope-head svg{width:1.625rem;height:1.625rem;flex:0 0 1.625rem;fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.scope-col.inc .scope-head svg{stroke:var(--olive-dark)}
+.scope-col.out .scope-head svg{stroke:var(--muted)}
+.scope-head h3{margin:0;font-size:1.3125rem}
+.scope-col.out .scope-head h3{color:var(--ink-2)}
+.scope-head span{margin-left:auto;font-family:"DM Mono",monospace;font-size:0.75rem;color:var(--muted);letter-spacing:.06em}
+.scope-row{display:grid;grid-template-columns:1.25rem 1fr;gap:0.75rem;align-items:center;padding:0.75rem 0;flex-grow:1;border-bottom:1px solid rgba(34,83,71,.12)}
+.scope-col.out .scope-row{border-bottom-color:rgba(48,43,40,.09)}
+.scope-row:last-child{border-bottom:0}
+.scope-row svg{width:1.125rem;height:1.125rem;margin-top:0.1875rem;fill:none;stroke-width:2.1;stroke-linecap:round;stroke-linejoin:round}
+.scope-col.inc .scope-row svg{stroke:var(--olive)}
+.scope-col.out .scope-row svg{stroke:var(--faint)}
+.scope-row p{margin:0;font-size:0.96875rem;line-height:1.42;color:var(--ink-2)}
+.scope-col.out .scope-row p{color:var(--muted)}
+.scope-row p b{color:var(--olive-dark);font-weight:700}
+.scope-col.out .scope-row p b{color:var(--ink-2)}
+.words{display:grid;grid-template-columns:1fr 1fr;gap:1.625rem;margin-top:1.25rem}
+.words div{padding:1rem 1.25rem;border:1px solid var(--border);border-radius:0.75rem;background:#fff}
+.words small{display:block;font-family:"DM Mono",monospace;font-size:0.6875rem;letter-spacing:.1em;text-transform:uppercase;color:var(--garnet);margin-bottom:0.4375rem}
+.words p{margin:0;font-size:0.9375rem;line-height:1.42;color:var(--ink-2)}
+
+/* metrics */
+.metric{background:#fff;border:1px solid var(--border);border-radius:0.875rem;padding:2rem 1.375rem;display:flex;flex-direction:column;justify-content:space-between;gap:1.5rem}
+.metric b{font-family:"DM Mono",monospace;font-size:5rem;line-height:1;letter-spacing:-.045em;color:var(--olive-dark);display:block;margin:0;white-space:nowrap}
+.metric p{font-size:1.0625rem;line-height:1.45;color:var(--ink-2);margin:0}
+.metric small{margin:0;font-family:"DM Mono",monospace;font-size:0.75rem;letter-spacing:.09em;text-transform:uppercase;color:var(--faint)}
+.position{display:flex;flex-direction:column;width:100%;border:1px solid var(--border);border-radius:0.875rem;background:#fff;overflow:hidden}
+.pos-metrics{display:grid;grid-template-columns:repeat(5,1fr);flex-grow:1}
+.position .metric{border:0;border-right:1px solid var(--border);border-radius:0}
+.position .metric:last-child{border-right:0}
+.pos-context{border-top:1px solid var(--border);background:var(--linen)}
+.context-label{display:flex;align-items:center;gap:0.625rem;padding:1.5rem 1.75rem 0;font-family:"DM Mono",monospace;font-size:0.75rem;letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
+.context-label img{width:1.125rem;height:1.125rem;object-fit:contain}
+.context{display:grid;grid-template-columns:repeat(3,1fr);margin:0;padding:0 1.75rem 0.5rem}
+.context.four{grid-template-columns:repeat(4,1fr)}
+.pos-context+.pos-context{border-top:1px solid var(--border)}
+.context div{padding:1rem 1.5rem 1.5rem 0;border-right:1px solid var(--border)}
+.context div:not(:first-child){padding-left:1.5rem}
+.context div:last-child{border-right:0}
+.context b{display:block;font-family:"DM Mono",monospace;font-size:1.875rem;line-height:1;letter-spacing:-.03em;color:var(--olive-dark);margin-bottom:0.5rem;white-space:nowrap}
+.context span{font-size:0.875rem;color:var(--muted)}
+.context em{font-style:normal;color:var(--garnet);font-weight:700}
+
+/* status cards */
+.state{background:#fff;border:1px solid var(--border);border-radius:0.875rem;padding:2.375rem 1.75rem;display:flex;flex-direction:column}
+.state .tag{display:inline-flex;align-items:center;gap:0.5rem;align-self:flex-start;padding:0.375rem 0.75rem;border-radius:62.4375rem;font-family:"DM Mono",monospace;font-size:0.75rem;letter-spacing:.08em;text-transform:uppercase;font-weight:500;margin-bottom:1.75rem}
+.tag.ok{background:var(--success-soft);color:var(--success)}
+.tag.go{background:var(--mint);color:var(--olive-dark)}
+.tag.no{background:var(--garnet-soft);color:var(--garnet-dark)}
+.state h3{font-size:1.4375rem}
+.state p{font-size:1.0625rem;line-height:1.5;color:var(--muted);margin:0}
+.state-body{display:flex;flex-direction:column;padding-bottom:1.5rem;border-bottom:1px solid var(--border)}
+.state-list{margin-top:auto;padding-top:0;display:flex;flex-wrap:wrap;gap:0.5rem}
+.state-list span{padding:0.3125rem 0.625rem;border:1px solid var(--border-strong);border-radius:0.4375rem;background:var(--linen);font-size:0.8125rem;color:var(--ink-2)}
+
+/* honest read */
+.read{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:3.5rem;align-items:center;margin:auto 0}
+.read p:not(.kicker){font-size:1.1875rem;line-height:1.55;color:var(--muted)}
+.decline{display:flex;flex-direction:column;gap:1.125rem}
+.decline-row{border:1px solid var(--border);border-radius:0.75rem;background:#fff;padding:1.25rem 1.375rem}
+.decline-row header{display:flex;align-items:baseline;justify-content:space-between;gap:1rem;margin-bottom:0.75rem}
+.decline-row header span{font-size:0.9375rem;color:var(--muted);font-weight:600}
+.decline-row header b{font-family:"DM Mono",monospace;font-size:1.5rem;color:var(--garnet);letter-spacing:-.02em;white-space:nowrap}
+.decline-track{height:0.75rem;border-radius:0.375rem;background:var(--linen-2);overflow:hidden}
+.decline-track i{display:block;height:100%;background:var(--garnet);border-radius:0.375rem}
+.decline-row small{display:block;margin-top:0.625rem;font-family:"DM Mono",monospace;font-size:0.75rem;color:var(--muted)}
+
+/* status table */
+.tbl{width:100%;border-collapse:collapse;table-layout:fixed}
+.tbl th{text-align:left;font-family:"DM Mono",monospace;font-size:0.6875rem;letter-spacing:.11em;text-transform:uppercase;color:var(--muted);font-weight:500;padding:0 1rem 0.75rem 0;border-bottom:1px solid var(--olive-dark)}
+.tbl td{padding:1rem 1rem 1rem 0;border-bottom:1px solid var(--border);font-size:1.03125rem;line-height:1.35;color:var(--ink-2);vertical-align:middle}
+.tbl tr:last-child td{border-bottom:0}
+.tbl .c-owner{width:13.125rem}
+.tbl .c-status{width:11.875rem;padding-right:0;text-align:right}
+.tbl td.c-owner{font-weight:700;color:var(--olive-dark)}
+.pill{display:inline-flex;align-items:center;gap:0.4375rem;padding:0.3125rem 0.75rem;border-radius:62.4375rem;font-size:0.8125rem;font-weight:600;white-space:nowrap}
+.pill i{width:0.4375rem;height:0.4375rem;border-radius:50%;flex:0 0 0.4375rem}
+.pill.run{background:var(--success-soft);color:var(--success)}.pill.run i{background:var(--success)}
+.pill.rev{background:var(--warning-soft);color:var(--warning)}.pill.rev i{background:var(--warning)}
+.pill.cnf{background:var(--lapis-soft);color:var(--lapis)}.pill.cnf i{background:var(--lapis)}
+.pill.non{background:var(--linen-2);color:var(--muted)}.pill.non i{background:var(--faint)}
+
+/* roadmap */
+.road{width:100%;margin:0;flex-grow:1;display:flex;flex-direction:column;border-top:1px solid var(--olive-dark)}
+.road-row{display:grid;grid-template-columns:20rem minmax(0,1fr) 16rem;gap:2.5rem;align-items:center;padding:1.5rem 0.375rem;border-bottom:1px solid var(--border);flex-grow:1}
+.road-when{display:flex;align-items:center;gap:1rem}
+.road-when i{width:0.75rem;height:0.75rem;border-radius:50%;background:var(--olive);flex:0 0 0.75rem;box-shadow:0 0 0 0.25rem var(--mint)}
+.road-when small{display:block;font-family:"DM Mono",monospace;font-size:0.75rem;letter-spacing:.11em;text-transform:uppercase;color:var(--garnet);margin-bottom:0.375rem}
+.road-when b{display:block;font-size:1.5rem;font-weight:700;color:var(--olive-dark);line-height:1.15}
+.road-row h3{font-size:1.625rem;margin-bottom:0.5rem}
+.road-row p{font-size:1.0625rem;line-height:1.5;color:var(--muted);margin:0}
+.road-row .out{justify-self:end;display:inline-flex;align-items:center;gap:0.625rem;padding:0.625rem 1.125rem;border:1px solid var(--border-strong);border-radius:999px;background:var(--mint-light);font-size:0.9375rem;font-weight:700;color:var(--olive-dark);white-space:nowrap}
+.road-row .out svg{width:0.9375rem;height:0.9375rem;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+
+/* measurement rows */
+.measure{display:flex;flex-direction:column;width:100%;flex-grow:1;border:1px solid var(--border);border-radius:0.875rem;background:#fff;overflow:hidden;padding:0 2rem}
+.measure-row{display:grid;grid-template-columns:19rem minmax(0,1fr) 23.5rem;gap:2rem;align-items:center;padding:1.5rem 0;border-bottom:1px solid var(--border);flex-grow:1}
+.measure-row:last-child{border-bottom:0}
+.measure-name{display:flex;align-items:center;gap:0.75rem;min-width:0}
+.measure-name img{width:3.25rem;height:3.25rem;object-fit:contain;flex:0 0 3.25rem}
+.measure-name svg{width:3.25rem;height:3.25rem;flex:0 0 3.25rem}
+.measure-name b{font-size:1.3125rem;font-weight:700;color:var(--olive-dark);line-height:1.2}
+.measure-row p{margin:0;font-size:1.0625rem;line-height:1.5;color:var(--muted)}
+.measure-now{text-align:right;font-family:"DM Mono",monospace;font-size:0.9375rem;color:var(--olive-dark);line-height:1.45}
+.measure-now s{display:block;text-decoration:none;font-size:0.6875rem;letter-spacing:.09em;text-transform:uppercase;color:var(--faint);margin-bottom:0.3125rem}
+
+/* closing */
+.close-grid{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:3rem;width:100%}
+.rhythm{display:flex;flex-direction:column;border-top:1px solid var(--border);flex-grow:1}
+.rhythm-item{padding:1rem 0;border-bottom:1px solid var(--border);flex-grow:1;display:flex;flex-direction:column;justify-content:center}
+.rhythm-item small{display:flex;align-items:center;gap:0.5rem;font-family:"DM Mono",monospace;font-size:0.6875rem;letter-spacing:.1em;text-transform:uppercase;color:var(--garnet);margin-bottom:0.4375rem}
+.rhythm-item small img{width:0.875rem;height:0.875rem;object-fit:contain}
+.rhythm-item p{margin:0;font-size:1rem;line-height:1.45;color:var(--ink-2)}
+.needs{display:grid;grid-template-columns:1fr 1fr;gap:1rem;align-content:center}
+.need{border:1px solid var(--border);border-radius:0.75rem;background:#fff;padding:1.25rem 1.5rem;display:flex;flex-direction:column;justify-content:center}
+.need b{font-family:"DM Mono",monospace;font-size:0.8125rem;color:var(--garnet);display:block;margin-bottom:0.75rem}
+.need h3{font-size:1.1875rem;margin-bottom:0.4375rem}
+.need p{margin:0;font-size:0.9375rem;line-height:1.42;color:var(--muted)}
+.cta{margin-top:1.375rem;background:var(--olive-deep);border-radius:1rem;padding:1.625rem 2.125rem;display:grid;grid-template-columns:1fr auto;gap:1.875rem;align-items:center}
+.cta h3{color:#fff;font-size:1.625rem;margin:0 0 0.375rem}
+.cta p{margin:0;font-size:1rem;color:rgba(255,255,255,.7)}
+.cta-links{display:flex;align-items:center;gap:0.75rem}
+.cta-links a{display:inline-flex;align-items:center;gap:0.5rem;padding:0.8125rem 1.25rem;border-radius:0.625rem;background:#fff;color:var(--olive-deep);font-size:0.9375rem;font-weight:700;text-decoration:none;white-space:nowrap}
+.cta-links a.ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.32)}
+.reveal .s h1,.reveal .s h2,.reveal .s h3,.reveal .s h4,.reveal .s p,.reveal .s ul,.reveal .s li,.reveal .s table{margin-left:0;margin-right:0}
+.reveal .s .center h2,.reveal .s .center .lead,.reveal .s .center .sub,.reveal .s .divider-copy h2,.reveal .s .divider-copy p{margin-left:auto;margin-right:auto}
+.grow{flex-grow:1}
+.fill{flex-grow:1}
+.grid3.grow{flex-grow:0;margin-top:auto;margin-bottom:auto}
+.grid3 .ws h3{font-size:1.5rem}
+.grid3 .ws li{font-size:0.9375rem}
+/* earned placements */
+.place{display:flex;flex-direction:column;width:100%;flex-grow:1;border:1px solid var(--border);border-radius:0.875rem;background:#fff;overflow:hidden;padding:0 2rem}
+.place-row{display:grid;grid-template-columns:21rem minmax(0,1fr) 25rem;gap:2rem;align-items:center;padding:1.375rem 0;border-bottom:1px solid var(--border);flex-grow:1}
+.place-row:last-child{border-bottom:0}
+.place-name{display:flex;align-items:center;gap:0.875rem;min-width:0}
+.place-name img{width:2.625rem;height:2.625rem;object-fit:contain;flex:0 0 2.625rem;border:1px solid var(--border);border-radius:0.5rem;background:#fff;padding:0.25rem}
+.place-name b{font-size:1.25rem;font-weight:700;color:var(--olive-dark);line-height:1.2}
+.place-row p{margin:0;font-size:1.0625rem;line-height:1.5;color:var(--muted)}
+.place-row p b{color:var(--ink-2);font-weight:700}
+.place-meta{display:flex;align-items:center;justify-content:flex-end;gap:0.625rem}
+.place-meta .chip{padding:0.5rem 0.8125rem;font-size:0.8125rem}
+
+/* reddit footprint */
+.pos-metrics.four{grid-template-columns:repeat(4,1fr)}
+.pos-metrics.four .metric{justify-content:center;gap:1.5rem}
+.subs{display:flex;flex-wrap:wrap;gap:0.625rem;padding:1rem 1.75rem 1.5rem}
+.subs span{padding:0.4375rem 0.75rem;border:1px solid var(--border-strong);border-radius:0.4375rem;background:#fff;font-family:"DM Mono",monospace;font-size:0.9375rem;color:var(--ink-2);white-space:nowrap}
+.moments{display:grid;grid-template-columns:repeat(4,1fr);padding:1rem 1.75rem 1.5rem}
+.moments article{padding-right:1.5rem;border-right:1px solid var(--border)}
+.moments article:not(:first-child){padding-left:1.5rem}
+.moments article:last-child{border-right:0;padding-right:0}
+.moments b{display:block;font-size:1.0625rem;color:var(--olive-dark);margin-bottom:0.375rem}
+.moments p{margin:0;font-size:0.875rem;line-height:1.45;color:var(--muted)}
+.notes{display:none}
+</style>
+</head>
+<body>
+<div class="reveal"><div class="slides">
+
+<!-- 01 cover -->
+<section><div class="s linen">
+  <div class="cover-content">
+    <div class="cover-top"><img src="assets/knewhealth-logo.png" alt="Knew Health"><span>Prepared with AI Peekaboo</span></div>
+    <h1>Scope of work</h1>
+    <p class="lead">What we own, what you own, and the order it happens in.</p>
+    <div class="cover-foot"><img src="assets/aipeekaboo-icon.jpg" alt="AI Peekaboo">Prepared for Knew Health, September 3, 2026</div>
+  </div>
+  <div class="cover-strip">
+    <span><i></i>Agreement signed July 8, 2026</span>
+    <span><i></i>Status through September 3, 2026</span>
+    <span><i></i>Next check-in September 15</span>
+  </div>
+</div></section>
+
+<!-- 02 why we are here -->
+<section><div class="s"><div class="shdr" data-n="02"></div><div class="content">
+  <div class="section-head">
+    <p class="kicker">The engagement</p>
+    <h2>Organic search has to become a real acquisition channel.</h2>
+    <p class="sub">Nearly half of site sessions come from paid channels. Organic search supplies <span class="nowrap">15.0%</span>.</p>
+  </div>
+  <div class="chan">
+    <div class="chan-top">
+      <svg class="chan-pie" viewBox="0 0 220 220" role="img" aria-label="Session share by channel, June 2 to August 30, 2026. Paid Search 28.1 percent, Direct 18.6 percent, Paid Social 17.9 percent, Organic Search 15.0 percent, AI Assistant 0.2 percent, Other 20.2 percent.">
+        <path d="M 110 110 L 110 6 A 104 104 0 0 1 212.033414 130.129145 Z" fill="#b21e3b"></path>
+        <path d="M 110 110 L 212.033414 130.129145 A 104 104 0 0 1 131.409711 211.772414 Z" fill="#3a6278"></path>
+        <path d="M 110 110 L 131.409711 211.772414 A 104 104 0 0 1 27.424999 173.224751 Z" fill="#9a6422"></path>
+        <path d="M 110 110 L 27.424999 173.224751 A 104 104 0 0 1 10.313734 80.357997 Z" fill="#3c806f" class="pie-hi"></path>
+        <path d="M 110 110 L 10.313734 80.357997 A 104 104 0 0 1 10.694087 79.107676 Z" fill="#5dac98"></path>
+        <path d="M 110 110 L 10.694087 79.107676 A 104 104 0 0 1 110 6 Z" fill="#e8e5e1"></path>
+      </svg>
+      <div class="chan-legend">
+        <div class="chan-item"><em><s style="background:#b21e3b"></s>Paid Search</em><b>28.1%</b></div>
+        <div class="chan-item"><em><s style="background:#3a6278"></s>Direct</em><b>18.6%</b></div>
+        <div class="chan-item"><em><s style="background:#9a6422"></s>Paid Social</em><b>17.9%</b></div>
+        <div class="chan-item hi"><em><s style="background:#3c806f"></s>Organic Search</em><b>15.0%</b></div>
+        <div class="chan-item"><em><s style="background:#5dac98"></s>AI Assistant</em><b>0.2%</b></div>
+        <div class="chan-item"><em><s style="background:#e8e5e1"></s>Other</em><b>20.2%</b></div>
+      </div>
+    </div>
+    <div class="chan-calls">
+      <div class="chan-call"><b>49.2%</b><span>Paid Search and Paid Social combined, so most visits carry a cost.</span></div>
+      <div class="chan-call hi"><b>15.0%</b><span>Organic Search today, the share this engagement is built to grow.</span></div>
+    </div>
+  </div>
+  <aside class="notes">[Sources]<br>Channel session share: Google Analytics, property 326445146, June 2 to August 30, 2026.</aside>
+</div></div></section>
+
+<!-- 03 four problems -->
+<section><div class="s"><div class="shdr" data-n="03"></div><div class="content">
+  <div class="section-head">
+    <p class="kicker">The engagement</p>
+    <h2>Four problems we were brought in to fix.</h2>
+    <p class="sub">Paid search carries most of the acquisition load today, and organic ranks fourth in the channel mix.</p>
+  </div>
+  <div class="grid2 fill" style="grid-template-rows:1fr 1fr">
+    <article class="card"><div class="num">01</div><div class="card-body"><h3>Reduce the dependence on paid acquisition</h3><p>Organic supplies <span class="nowrap">15.0%</span> of sessions while paid channels supply <span class="nowrap">49.2%</span>, so every enrollment carries a media cost behind it.</p></div></article>
+    <article class="card"><div class="num">02</div><div class="card-body"><h3>Win the searches where buyers decide</h3><p>Only <span class="nowrap">10.8%</span> of organic clicks land on commercial pages, so most of the traffic that arrives is nowhere near a decision.</p></div></article>
+    <article class="card"><div class="num">03</div><div class="card-body"><h3>Get named in AI answers, not just in search</h3><p>Buyers now ask models which health share membership to pick, and the sources those models quote are winnable by us.</p></div></article>
+    <article class="card"><div class="num">04</div><div class="card-body"><h3>Be ready before the buying season opens</h3><p>October through January is when most of the category shops, so the pages need to be live and indexed well before then.</p></div></article>
+  </div>
+  <aside class="notes">[Sources]<br>Channel shares: Google Analytics, June 2 to August 30, 2026. Commercial click share: Google Search Console, 90 days ending August 30, 2026.</aside>
+</div></div></section>
+
+<!-- 04 divider -->
+<section><div class="s deep"><div class="shdr" data-n="04"></div><div class="content center">
+  <div class="divider-copy">
+    <p class="kicker">Part one</p>
+    <h2>What is in scope</h2>
+    <p>Five workstreams, what each one produces, and where the line around the agreement sits.</p>
+  </div>
+</div></div></section>
+
+<!-- 05 five workstreams -->
+<section><div class="s"><div class="shdr" data-n="05"></div><div class="content">
+  <div class="section-head">
+    <p class="kicker">Scope</p>
+    <h2>Five workstreams run in parallel.</h2>
+    <p class="sub">Each lane produces something reusable, and each has a clear handover point to your team.</p>
+  </div>
+  <div class="lanes">
+    <article class="lane"><b>01</b><div><h3>Technical SEO and site health</h3><p>Remove the crawl, speed, and structure problems that cap every other lane.</p></div><div class="lane-meta"><b>Ongoing</b><span>We specify, David implements</span></div></article>
+    <article class="lane"><b>02</b><div><h3>Commercial pages and content</h3><p>Build the service, comparison, and audience pages that carry a visitor from question to enrollment.</p></div><div class="lane-meta"><b>12 pieces monthly</b><span>Marketing reviews first</span></div></article>
+    <article class="lane"><b>03</b><div><h3>AI answer visibility</h3><p>Get Knew Health named when someone asks a model which health share membership to choose.</p></div><div class="lane-meta"><b>Tracked continuously</b><span>AI Peekaboo platform</span></div></article>
+    <article class="lane"><b>04</b><div><h3>Community and editorial authority</h3><p>Place Knew Health inside the conversations and comparison guides buyers already trust.</p></div><div class="lane-meta"><b>20 comments monthly</b><span>Connor leads partnerships</span></div></article>
+    <article class="lane"><b>05</b><div><h3>Measurement and reporting</h3><p>Show what each lane changed, in numbers the team can act on.</p></div><div class="lane-meta"><b>Biweekly</b><span>Next call September 15</span></div></article>
+  </div>
+  <aside class="notes">[Sources]<br>Workstream definitions, cadences, and owners: Knew Health scope of work and delivery plan, September 3, 2026.</aside>
+</div></div></section>
+
+<!-- 06 lanes 01 and 02 -->
+<section><div class="s"><div class="shdr" data-n="06"></div><div class="content">
+  <div class="section-head">
+    <p class="kicker">Workstream detail</p>
+    <h2>The foundation and the pages that sell.</h2>
+    <p class="sub">Lane 01 clears the ground, lane 02 builds the pages a buyer reads before enrolling.</p>
+  </div>
+  <div class="grid2 grow">
+    <article class="ws">
+      <div class="ws-body"><div class="ws-head"><b>01</b><h3>Technical SEO and site health</h3></div>
+      <p>Remove the crawl, speed, and structure problems that cap every other lane.</p>
+      <ul>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg>Full technical and mobile audit, refreshed as the site changes</li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg>Prioritized developer and editor briefs, with impact stated</li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg>Quality checks on each batch before it counts as done</li>
+      </ul></div>
+      <div class="ws-foot"><span class="chip">Ongoing</span><span class="chip"><img src="assets/duda.png" alt="Duda">David implements in Duda</span></div>
+    </article>
+    <article class="ws">
+      <div class="ws-body"><div class="ws-head"><b>02</b><h3>Commercial pages and content</h3></div>
+      <p>Build the pages that carry a visitor from question to enrollment.</p>
+      <ul>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg>Page concepts, copy drafts, and design in your system</li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg>Comparisons against Zion, CrowdHealth, and Samaritan</li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg>Briefs weighted to decision-stage pages, not volume</li>
+      </ul></div>
+      <div class="ws-foot"><span class="chip">12 pieces monthly</span><span class="chip">Marketing reviews first</span></div>
+    </article>
+  </div>
+  <aside class="notes">[Sources]<br>Deliverables and cadences: Knew Health scope of work and delivery plan, September 3, 2026.</aside>
+</div></div></section>
+
+<!-- 07 lanes 03 04 05 -->
+<section><div class="s"><div class="shdr" data-n="07"></div><div class="content">
+  <div class="section-head">
+    <p class="kicker">Workstream detail</p>
+    <h2>Visibility, authority, and the numbers behind both.</h2>
+    <p class="sub">Lanes 03 to 05 build outside authority and keep the whole engagement measurable.</p>
+  </div>
+  <div class="grid3 fill">
+    <article class="ws">
+      <div class="ws-body"><div class="ws-head"><b>03</b><h3>AI answer visibility</h3></div>
+      <p>Get Knew Health named when a buyer asks a model which health share membership to choose.</p>
+      <ul>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg>Prompts tracked on ChatGPT, Claude, and Perplexity</li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg>Schema, author bios, and expert review signals</li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg>Watching which sources models cite, closing gaps</li>
+      </ul></div>
+      <div class="ws-foot"><span class="chip"><img src="assets/openai.png" alt="ChatGPT">ChatGPT</span><span class="chip"><img src="assets/claude-logo.png" alt="Claude">Claude</span><span class="chip"><img src="assets/perplexity.png" alt="Perplexity">Perplexity</span></div>
+    </article>
+    <article class="ws">
+      <div class="ws-body"><div class="ws-head"><b>04</b><h3>Community and editorial authority</h3></div>
+      <p>Place Knew Health inside the conversations and comparison guides buyers already trust.</p>
+      <ul>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg>Reddit participation in self-employment threads</li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg>Editorial outreach to cited comparison pages</li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg>Partnership development, led by HSA for America</li>
+      </ul></div>
+      <div class="ws-foot"><span class="chip"><img src="assets/reddit.svg" alt="Reddit">20 comments monthly</span><span class="chip">Connor leads partnerships</span></div>
+    </article>
+    <article class="ws">
+      <div class="ws-body"><div class="ws-head"><b>05</b><h3>Measurement and reporting</h3></div>
+      <p>Show what each lane changed, in numbers your team can act on rather than a dashboard.</p>
+      <ul>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg>Search Console, Analytics, and Ahrefs in one view</li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg>Keyword coverage map kept current on live ranks</li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg>Written recap of every decision, owner, next step</li>
+      </ul></div>
+      <div class="ws-foot"><span class="chip">Biweekly</span><span class="chip">Next call September 15</span></div>
+    </article>
+  </div>
+  <aside class="notes">[Sources]<br>Deliverables, tracked models, and cadences: Knew Health scope of work and delivery plan, September 3, 2026.</aside>
+</div></div></section>
+
+<!-- 08 inside and outside -->
+<section><div class="s"><div class="shdr" data-n="08"></div><div class="content">
+  <div class="section-head">
+    <p class="kicker">Boundaries</p>
+    <h2>What sits inside and outside the agreement.</h2>
+    <p class="sub">Some of what you have seen from us was exploratory rather than contracted.</p>
+  </div>
+  <div class="scope">
+    <div class="scope-col inc">
+      <div class="scope-head"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></svg><h3>Included in the engagement</h3><span>06 areas</span></div>
+      <div class="scope-row"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg><p><b>Strategy and research.</b> Technical audits, keyword and competitor mapping, positioning.</p></div>
+      <div class="scope-row"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg><p><b>Page design and copy drafts.</b> Built in your design system, ready for review.</p></div>
+      <div class="scope-row"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg><p><b>Content production.</b> Decision-stage pages, including two comparison pages a month.</p></div>
+      <div class="scope-row"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg><p><b>Reddit and editorial outreach.</b> Community work, placements, partnership development.</p></div>
+      <div class="scope-row"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg><p><b>AI visibility tracking.</b> Prompt monitoring, citation analysis, and the schema behind it.</p></div>
+      <div class="scope-row"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg><p><b>Reporting and coordination.</b> Biweekly check-ins and task briefs for your developer.</p></div>
+    </div>
+    <div class="scope-col out">
+      <div class="scope-head"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8.5 12h7"/></svg><h3>Outside the engagement</h3><span>06 areas</span></div>
+      <div class="scope-row"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 12h12"/></svg><p><b>The platform rebuild.</b> A headless site is on hold, currently expected in Q1 2027.</p></div>
+      <div class="scope-row"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 12h12"/></svg><p><b>Brand identity work.</b> A rebrand was proposed separately and has not been commissioned.</p></div>
+      <div class="scope-row"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 12h12"/></svg><p><b>Development in Duda.</b> Your team implements, we specify, brief, and check the result.</p></div>
+      <div class="scope-row"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 12h12"/></svg><p><b>Paid media management.</b> Google, Bing, and Meta stay with Brenton and the paid team.</p></div>
+      <div class="scope-row"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 12h12"/></svg><p><b>Video production.</b> The member story and explainer videos shared in August were concepts.</p></div>
+      <div class="scope-row"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 12h12"/></svg><p><b>Portal, CRM, and review platforms.</b> The enrollment flow and Trustpilot remain yours.</p></div>
+    </div>
+  </div>
+  <div class="words">
+    <div><small>Preferred wording</small><p>Health share Membership, medical cost sharing, and share in eligible Medical Needs.</p></div>
+    <div><small>Use only with care</small><p>Plan, cover or coverage, deductible, and any wording that implies insurance.</p></div>
+  </div>
+  <aside class="notes">[Sources]<br>Scope boundaries and language guardrails: Knew Health scope of work and delivery plan, September 3, 2026.</aside>
+</div></div></section>
+
+<!-- 09 divider -->
+<section><div class="s deep"><div class="shdr" data-n="09"></div><div class="content center">
+  <div class="divider-copy">
+    <p class="kicker">Part two</p>
+    <h2>Where we stand</h2>
+    <p>The research and build phases are largely done. Approval and implementation are now the constraint.</p>
+  </div>
+</div></div></section>
+
+<!-- 10 current position -->
+<section><div class="s"><div class="shdr" data-n="10"></div><div class="content">
+  <div class="section-head">
+    <p class="kicker">Position</p>
+    <h2>Current position by the numbers.</h2>
+    <p class="sub">Every figure carries the date it was measured, and together they set the baseline the next phase is measured against.</p>
+  </div>
+  <div class="position fill">
+    <div class="pos-metrics">
+      <article class="metric"><small>Site audit, August 27, 2026</small><b>116</b><p>Sitemap pages returning a healthy response in August</p></article>
+      <article class="metric"><small>Coverage, August 20, 2026</small><b>137</b><p>Of 408 mapped commercial queries rank at all</p></article>
+      <article class="metric"><small>Visibility, August 31, 2026</small><b>19.9%</b><p>Of measured commercial AI answers name the brand</p></article>
+      <article class="metric"><small>Community, August 29, 2026</small><b>11</b><p>Reddit placements live now, from 24 attempts</p></article>
+      <article class="metric"><small>Authority, September 4, 2026</small><b>4</b><p>Editorial mentions, three confirmed live on the page</p></article>
+    </div>
+    <div class="pos-context">
+      <div class="context-label"><img src="assets/search-console.png" alt="Google Search Console">Google Search Console, 90 days ending August 30, 2026</div>
+      <div class="context">
+        <div><b>5,353</b><span>Organic clicks across the measured window</span></div>
+        <div><b>423,914</b><span>Impressions across the measured window</span></div>
+        <div><b>11.7</b><span>Average position across all ranking queries</span></div>
+      </div>
+    </div>
+    <div class="pos-context">
+      <div class="context-label">Technical audit, August 27, 2026, the fix list David is working through</div>
+      <div class="context four">
+        <div><b>8</b><span>Broken internal destinations to fix or remove</span></div>
+        <div><b>79</b><span>Indexable pages deeper than crawl level three</span></div>
+        <div><b>10</b><span>Pages reachable only through the sitemap</span></div>
+        <div><b>7</b><span>Pages that scroll sideways on a 390px screen</span></div>
+      </div>
+    </div>
+  </div>
+  <aside class="notes">[Sources]<br>Technical audit August 27, 2026, including the broken-link, crawl-depth, orphan-page and mobile-overflow counts. Editorial placements verified September 2, 2026. Keyword coverage August 20, 2026. AI visibility August 31, 2026. Reddit tracker August 29, 2026. Clicks, impressions, and average position: Google Search Console, 90 days ending August 30, 2026.</aside>
+</div></div></section>
+
+<!-- 11 built running blocked -->
+<section><div class="s"><div class="shdr" data-n="11"></div><div class="content">
+  <div class="section-head">
+    <p class="kicker">Position</p>
+    <h2>Built, running, blocked.</h2>
+    <p class="sub">Three states, and the one that is holding everything else up.</p>
+  </div>
+  <div class="grid3 grow">
+    <article class="state">
+      <span class="tag ok">Built</span>
+      <div class="state-body"><h3>Six pages built and verified locally</h3><p>Each one is built in your design system and waiting on marketing review before it can go into the CMS.</p></div>
+      <div class="state-list"><span>Compare Providers</span><span>How It Works</span><span>FAQs</span><span>About Us</span><span>What Members Get</span><span>For Teams</span></div>
+    </article>
+    <article class="state">
+      <span class="tag go">Running</span>
+      <div class="state-body"><h3>Authority work is producing real results</h3><p>Knew Health ranks first in two 2026 health share comparisons that were checked live on September 2.</p></div>
+      <div class="state-list"><span>LatestHealthTricks, verified</span><span>Medigy, verified</span><span>Wellbeing Magazine, verified</span></div>
+    </article>
+    <article class="state">
+      <span class="tag no">Blocked</span>
+      <div class="state-body"><h3>Nothing new is live on the site yet</h3><p>Copy approval, current product facts, and CMS implementation stand between this work and traffic.</p></div>
+      <div class="state-list"><span>Copy approval</span><span>Product facts</span><span>CMS implementation</span></div>
+    </article>
+  </div>
+  <aside class="notes">[Sources]<br>Page build status: local page verification, September 2026. Listicle rankings: LatestHealthTricks and Medigy checked live September 2, 2026. FindATopDoc and Wellbeing Magazine are recheck items, not confirmed.</aside>
+</div></div></section>
+
+<!-- 12 earned placements -->
+<section><div class="s"><div class="shdr" data-n="12"></div><div class="content">
+  <div class="section-head">
+    <p class="kicker">Authority</p>
+    <h2>Four comparison pages now name Knew Health.</h2>
+    <p class="sub">Each page was opened in a browser on September 4, and the link type was read off the live markup rather than assumed.</p>
+  </div>
+  <div class="place fill">
+    <article class="place-row">
+      <div class="place-name"><img src="assets/publications/latest-health-tricks.png" alt="LatestHealthTricks"><b>LatestHealthTricks</b></div>
+      <p><b>Best Health Share Plans in 2026.</b> Knew Health leads the ranking ahead of Medi-Share, Sedera, and Liberty HealthShare.</p>
+      <div class="place-meta"><span class="pill run"><i></i>Verified live</span><span class="chip">Dofollow link</span><span class="chip">First of five</span></div>
+    </article>
+    <article class="place-row">
+      <div class="place-name"><img src="assets/publications/medigy.png" alt="Medigy"><b>Medigy</b></div>
+      <p><b>Best Health Share Plans in 2026.</b> The same ranking on a healthcare technology publisher, link inside the entry.</p>
+      <div class="place-meta"><span class="pill run"><i></i>Verified live</span><span class="chip">Dofollow link</span><span class="chip">First of five</span></div>
+    </article>
+    <article class="place-row">
+      <div class="place-name"><img src="assets/publications/wellbeing-magazine.png" alt="Wellbeing Magazine"><b>Wellbeing Magazine</b></div>
+      <p><b>Wellness and health solutions.</b> A dedicated section framing the brand as a community-driven alternative to insurance.</p>
+      <div class="place-meta"><span class="pill run"><i></i>Verified live</span><span class="chip">Dofollow link</span><span class="chip">Named section</span></div>
+    </article>
+    <article class="place-row">
+      <div class="place-name"><img src="assets/publications/find-a-top-doc.png" alt="FindATopDoc"><b>FindATopDoc</b></div>
+      <p><b>Best Health Share Plans in 2026.</b> Recorded in August, and the site returns a block to every automated check.</p>
+      <div class="place-meta"><span class="pill cnf"><i></i>Unverified</span><span class="chip">Page blocked</span><span class="chip">Open manually</span></div>
+    </article>
+  </div>
+  <div class="words">
+    <div><small>What the placements are worth</small><p>Three confirmed links pass authority straight to knewhealth.com, and two of the pages rank Knew Health first in a 2026 comparison.</p></div>
+    <div><small>Correction requested</small><p>Two ranked articles still quote the older starting contribution, so both publishers have a correction and terminology request queued.</p></div>
+  </div>
+  <aside class="notes">[Sources]<br>All four placement URLs loaded in a real browser on September 4, 2026, with the link type read from the live markup. LatestHealthTricks, Medigy, and Wellbeing Magazine returned the page and a followed link to knewhealth.com. FindATopDoc returned a 403 to the automated check on September 2 and again on September 4. The current starting contribution was confirmed by Amber Cram on August 20, 2026.</aside>
+</div></div></section>
+
+<!-- 13 reddit footprint -->
+<section><div class="s"><div class="shdr" data-n="13"></div><div class="content">
+  <div class="section-head">
+    <p class="kicker">Community</p>
+    <h2>Knew Health sits inside the threads where people weigh alternatives.</h2>
+    <p class="sub">Placements are tracked as attempted, live, and removed, so the footprint stays an operating view rather than a claim. Status as of August 29, 2026.</p>
+  </div>
+  <div class="position fill">
+    <div class="pos-metrics four">
+      <article class="metric"><b>24</b><p>Tracked comment placements since the community work began in June</p></article>
+      <article class="metric"><b>11</b><p>Placements still live on the thread when the tracker last ran</p></article>
+      <article class="metric"><b>13</b><p>Placements later removed, mostly by the moderators of a subreddit</p></article>
+      <article class="metric"><b>9</b><p>Separate communities carrying at least one live comment today</p></article>
+    </div>
+    <div class="pos-context">
+      <div class="context-label"><img src="assets/reddit.svg" alt="Reddit">Communities carrying a live comment</div>
+      <div class="subs"><span>r/HealthInsurance</span><span>r/AskReddit</span><span>r/Fire</span><span>r/DaveRamsey</span><span>r/BostonU</span><span>r/Crunchymom</span><span>r/CFP</span><span>r/Insurance</span><span>r/healthcare</span></div>
+    </div>
+    <div class="pos-context">
+      <div class="context-label">The buyer moments those comments answer</div>
+      <div class="moments">
+        <article><b>Self-employed coverage</b><p>Freelancers and families comparing cost, predictability, and risk</p></article>
+        <article><b>ACA and COBRA gaps</b><p>Threads where eligibility, timing, and monthly cost drive the choice</p></article>
+        <article><b>Early retirement</b><p>FIRE readers bridging the years between employer cover and Medicare</p></article>
+        <article><b>Secular health sharing</b><p>People wanting a non-faith membership with everyday wellness value</p></article>
+      </div>
+    </div>
+  </div>
+  <aside class="notes">[Sources]<br>Reddit placement snapshot measured June 1 to August 29, 2026: 24 tracked assets, 11 live and 13 removed, across r/AskReddit, r/BostonU, r/CFP, r/Crunchymom, r/DaveRamsey, r/Fire, r/HealthInsurance, r/Insurance, and r/healthcare. Models cite Reddit threads rather than individual comments, so this is thread-level exposure, not a citation claim.</aside>
+</div></div></section>
+
+<!-- 14 open items -->
+<section><div class="s"><div class="shdr" data-n="14"></div><div class="content">
+  <div class="section-head">
+    <p class="kicker">Accountability</p>
+    <h2>Open items and who owns them.</h2>
+  </div>
+  <table class="tbl grow">
+    <thead><tr><th class="c-owner">Owner</th><th>Open commitment</th><th class="c-status">Status</th></tr></thead>
+    <tbody>
+      <tr><td class="c-owner">David Lee</td><td>Work through the technical SEO task list in Duda, targeting September 11.</td><td class="c-status"><span class="pill run"><i></i>Running</span></td></tr>
+      <tr><td class="c-owner">Marketing</td><td>Review the built page copy and designs, then choose the first batch.</td><td class="c-status"><span class="pill rev"><i></i>Needs review</span></td></tr>
+      <tr><td class="c-owner">Amber Cram</td><td>Approve terminology, current pricing, product facts, and disclaimers.</td><td class="c-status"><span class="pill rev"><i></i>Needs review</span></td></tr>
+      <tr><td class="c-owner">Alisha Obaid</td><td>Supply the doctor and expert reviewer list for authority pages.</td><td class="c-status"><span class="pill rev"><i></i>Needs review</span></td></tr>
+      <tr><td class="c-owner">AI Peekaboo</td><td>Redesign priority pages, send drafts, coordinate expert authority pages.</td><td class="c-status"><span class="pill run"><i></i>Running</span></td></tr>
+      <tr><td class="c-owner">AI Peekaboo</td><td>Investigate traffic attribution and build the analytics view.</td><td class="c-status"><span class="pill run"><i></i>Running</span></td></tr>
+      <tr><td class="c-owner">AI Peekaboo</td><td>Correct the two verified listicles and recheck two uncertain mentions.</td><td class="c-status"><span class="pill run"><i></i>Running</span></td></tr>
+      <tr><td class="c-owner">Connor</td><td>Turn the HSA for America conversation into a confirmed meeting.</td><td class="c-status"><span class="pill cnf"><i></i>Confirm date</span></td></tr>
+      <tr><td class="c-owner">Development</td><td>Add Reddit and AI engines to the signup source options.</td><td class="c-status"><span class="pill cnf"><i></i>Confirm status</span></td></tr>
+      <tr><td class="c-owner">Marketing</td><td>Add reviewer and author information to published content.</td><td class="c-status"><span class="pill non"><i></i>Not started</span></td></tr>
+    </tbody>
+  </table>
+  <aside class="notes">[Sources]<br>Open commitments, owners, and statuses: Knew Health scope of work and delivery plan, September 3, 2026.</aside>
+</div></div></section>
+
+<!-- 15 divider -->
+<section><div class="s deep"><div class="shdr" data-n="15"></div><div class="content center">
+  <div class="divider-copy">
+    <p class="kicker">Part three</p>
+    <h2>Where we are headed</h2>
+    <p>The sequence, the measurements, and the four things we need from your team.</p>
+  </div>
+</div></div></section>
+
+<!-- 16 roadmap -->
+<section><div class="s"><div class="shdr" data-n="16"></div><div class="content">
+  <div class="section-head">
+    <p class="kicker">Sequence</p>
+    <h2>September to November, one outcome a month.</h2>
+    <p class="sub">Most of the category shops from October, so the technical base, the new pages, and the content cleanup run in that order.</p>
+  </div>
+  <div class="road fill">
+    <article class="road-row">
+      <div class="road-when"><i aria-hidden="true"></i><div><small>Now</small><b>September</b></div></div>
+      <div><h3>Clear the technical batch and approve the first pages</h3><p>David works through the technical task list in Duda, marketing picks the first page batch, and compliance confirms the product facts and terminology.</p></div>
+      <span class="out"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg>Clean base</span>
+    </article>
+    <article class="road-row">
+      <div class="road-when"><i aria-hidden="true"></i><div><small>Next</small><b>October</b></div></div>
+      <div><h3>Launch the new pages while buyers start shopping</h3><p>The approved batch goes live in Duda with internal links, metadata, and schema, then gets checked on mobile and desktop.</p></div>
+      <span class="out"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg>Pages live</span>
+    </article>
+    <article class="road-row">
+      <div class="road-when"><i aria-hidden="true"></i><div><small>Then</small><b>November</b></div></div>
+      <div><h3>Clean up the older content sitting behind the new pages</h3><p>Broken destinations, orphan pages, and pages buried deeper than crawl level three get fixed, merged, or retired around the new set.</p></div>
+      <span class="out"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg>Content cleaned</span>
+    </article>
+  </div>
+  <aside class="notes">[Sources]<br>Sequence and phase outcomes: Knew Health scope of work and delivery plan, September 3, 2026. Cleanup targets come from the technical audit of August 27, 2026: 8 broken internal destinations, 10 sitemap-only pages, and 79 indexable pages deeper than crawl level three. David Lee's technical task list targets September 11, 2026.</aside>
+</div></div></section>
+
+<!-- 17 how we measure -->
+<section><div class="s"><div class="shdr" data-n="17"></div><div class="content">
+  <div class="section-head">
+    <p class="kicker">Measurement</p>
+    <h2>How we measure progress.</h2>
+    <p class="sub">Four sources, each answering one question, each with the reading it shows today.</p>
+  </div>
+  <div class="measure">
+    <article class="measure-row">
+      <div class="measure-name"><img src="assets/search-console.png" alt="Google Search Console"><b>Google Search Console</b></div>
+      <p>Whether the pages we build earn clicks on the queries that signal a buying decision.</p>
+      <div class="measure-now"><s>Now</s>5,353 clicks, average position 11.7</div>
+    </article>
+    <article class="measure-row">
+      <div class="measure-name"><img src="assets/google-analytics.png" alt="Google Analytics"><b>Google Analytics</b></div>
+      <p>Whether organic search and AI traffic grow as a share of total sessions on the site.</p>
+      <div class="measure-now"><s>Now</s>Organic 15.0%, AI assistants 0.2%</div>
+    </article>
+    <article class="measure-row">
+      <div class="measure-name"><img src="assets/aipeekaboo-icon.jpg" alt="AI Peekaboo"><b>AI Peekaboo</b></div>
+      <p>How often models name Knew Health on commercial prompts, and the sources quoted.</p>
+      <div class="measure-now"><s>Now</s>Named in 19.9% of commercial answers</div>
+    </article>
+    <article class="measure-row">
+      <div class="measure-name"><img src="assets/ahrefs.png" alt="Ahrefs"><b>Ahrefs</b></div>
+      <p>Whether the editorial placements hold rankings and where the next link targets sit.</p>
+      <div class="measure-now"><s>Now</s>4 editorial mentions, 3 confirmed live</div>
+    </article>
+  </div>
+  <aside class="notes">[Sources]<br>Search Console readings: 90 days ending August 30, 2026. Analytics shares: June 2 to August 30, 2026. AI visibility: August 31, 2026. Editorial mentions: LatestHealthTricks and Medigy verified live September 2, 2026, two further mentions still to recheck.</aside>
+</div></div></section>
+
+<!-- 18 working together -->
+<section><div class="s"><div class="shdr" data-n="18"></div><div class="content">
+  <div class="section-head">
+    <p class="kicker">Rhythm and approvals</p>
+    <h2>Working together, and what we need.</h2>
+  </div>
+  <div class="close-grid grow">
+    <div class="rhythm">
+      <div class="rhythm-item"><small>Rhythm</small><p>A biweekly call of 30 to 45 minutes, next on September 15 at 9:00 AM Pacific, with a written recap of decisions and owners after it.</p></div>
+      <div class="rhythm-item"><small>Approval</small><p>We draft, marketing reviews, Amber signs off on compliance, and David implements the approved batch in Duda once it is ready.</p></div>
+      <div class="rhythm-item"><small><img src="assets/slack.png" alt="Slack">Day to day</small><p>The shared Slack channel carries the task briefs, page links, and placement updates in the days between our calls.</p></div>
+    </div>
+    <div class="needs">
+      <article class="need"><b>01</b><h3>A first page batch, approved</h3><p>Five to seven pages chosen, with facts and pricing confirmed by compliance.</p></article>
+      <article class="need"><b>02</b><h3>Implementation dates</h3><p>Dates from development for the technical batch and for the approved pages.</p></article>
+      <article class="need"><b>03</b><h3>Reviewers and permissions</h3><p>The clinician list for the authority pages, plus approvals to use the member videos.</p></article>
+      <article class="need"><b>04</b><h3>A signup source field</h3><p>Reddit and AI engines added as options at signup, so attribution finally works.</p></article>
+    </div>
+  </div>
+  <div class="cta">
+    <div><h3>Send the first page batch and we start the week it lands.</h3><p>Questions on any line in the scope go straight to the shared channel or by email.</p></div>
+    <div class="cta-links"><a href="mailto:filipe@aipeekaboo.com">filipe@aipeekaboo.com</a><a class="ghost" href="https://calendly.com/filipe-aipeekaboo/30min">Book 30 minutes</a></div>
+  </div>
+  <aside class="notes">[Sources]<br>Cadence, approval chain, and requested inputs: Knew Health scope of work and delivery plan, September 3, 2026.</aside>
+</div></div></section>
+
+</div></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reveal.min.js"></script>
+<script>
+(function(){
+  try{
+    var total=18;
+    document.querySelectorAll('.shdr').forEach(function(el){
+      try{
+        var n=String(el.getAttribute('data-n')||'').padStart(2,'0');
+        el.outerHTML='<div class="hdr"><div class="hdr-title"><img src="assets/knewhealth-logo.png" alt="Knew Health"></div><div class="hdr-right"><span class="snum">'+n+' / '+total+'</span></div></div><div class="xline"><span class="cross left"></span><span class="cross right"></span></div>';
+      }catch(rowError){console.error('Header row initialization failed',rowError);}
+    });
+  }catch(error){console.error('Header initialization failed',error);}
+}());
+try{
+  Reveal.initialize({hash:true,controls:true,progress:true,slideNumber:false,transition:'none',disableLayout:true,width:1920,height:1080,margin:0,minScale:.1,maxScale:3});
+}catch(error){console.error('Reveal initialization failed',error);}
+</script>
+</body>
+</html>

@@ -1,0 +1,1160 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Knew Health scope of work: what AI Peekaboo owns, what Knew Health owns, and the order it happens in.">
+  <title>Knew Health | Scope of Work</title>
+  <link rel="icon" href="assets/knewhealth-icon.webp">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YV8FCLN403"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-YV8FCLN403');
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&amp;family=DM+Sans:wght@400;500;600;700;800&amp;family=Nothing+You+Could+Do&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reveal.min.css">
+
+  <style>
+    :root {
+      --garnet: #b21e3b;
+      --garnet-dark: #91172f;
+      --garnet-tint: #fbeaed;
+      --olive: #3c806f;
+      --olive-mid: #5dac98;
+      --olive-dark: #225347;
+      --olive-deep: #0c2720;
+      --mint: #e9f1ef;
+      --mint-light: #f3f7f6;
+      --lapis: #3a6278;
+      --lapis-tint: #edf3f6;
+      --linen: #faf9f7;
+      --linen-2: #f5f3f0;
+      --linen-3: #e8e5e1;
+      --ink: #302b28;
+      --ink-2: #46403d;
+      --muted: #77716c;
+      --paper: #ffffff;
+      --shadow: 9px 10px 0 #3c806f;
+      --shadow-dark: 9px 10px 0 #225347;
+      --shadow-soft: 7px 8px 0 rgba(60,128,111,0.18);
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; width: 100%; height: 100%; background: var(--linen); }
+    body { font-family: "DM Sans", sans-serif; color: var(--ink); }
+    button, a { font: inherit; }
+    .reveal { font-family: "DM Sans", sans-serif; color: var(--ink); }
+    .reveal .slides { text-align: left; }
+    .reveal .slides section { padding: 0; }
+    .reveal a { color: inherit; }
+
+    .s {
+      width: 100vw;
+      height: 100vh;
+      padding: 3.6vh 4.6vw 3vh;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+      background: var(--linen);
+    }
+    .s.paper { background: var(--paper); }
+    .s.mint { background: var(--mint); }
+    .s.dark { background: var(--olive-deep); color: var(--paper); }
+
+    h1, h2, h3, p { margin: 0; }
+    h1, h2, h3 { color: var(--olive-dark); letter-spacing: -0.045em; text-wrap: balance; }
+    .dark h1, .dark h2, .dark h3 { color: var(--paper); }
+    h1 { font-size: clamp(46px, 7.3vh, 82px); font-weight: 700; line-height: 1.02; max-width: 16ch; }
+    h2 { font-size: clamp(32px, 5.1vh, 58px); font-weight: 700; line-height: 1.08; max-width: 22ch; }
+    h3 { font-size: clamp(18px, 2.5vh, 28px); font-weight: 700; line-height: 1.2; }
+    .lead { font-size: clamp(18px, 2.45vh, 27px); line-height: 1.5; color: var(--ink-2); max-width: 59ch; text-wrap: pretty; }
+    .dark .lead { color: rgba(255,255,255,0.78); }
+    .body { font-size: clamp(14px, 1.75vh, 19px); line-height: 1.5; color: var(--muted); text-wrap: pretty; }
+    .dark .body { color: rgba(255,255,255,0.72); }
+    .mono { font-family: "DM Mono", monospace; }
+    .accent { color: var(--garnet); }
+
+    .script {
+      display: inline-block;
+      position: relative;
+      font-family: "Nothing You Could Do", cursive;
+      font-size: clamp(22px, 3.1vh, 35px);
+      color: var(--garnet);
+      letter-spacing: 0;
+      line-height: 1.1;
+      transform: rotate(-1deg);
+    }
+    .script::after {
+      content: "";
+      position: absolute;
+      left: 2%;
+      right: -5%;
+      bottom: -8px;
+      height: 6px;
+      border-radius: 50%;
+      box-shadow: inset 0 2px 0 0 var(--garnet);
+      transform: rotate(0.6deg);
+    }
+    .dark .script { color: #ff9aaa; }
+    .dark .script::after { box-shadow: inset 0 2px 0 0 #ff9aaa; }
+
+    .hdr {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      min-height: clamp(38px, 5vh, 54px);
+      flex-shrink: 0;
+      margin-bottom: clamp(18px, 2.3vh, 27px);
+      padding-bottom: clamp(12px, 1.5vh, 17px);
+      border-bottom: 1px solid var(--linen-3);
+    }
+    .hdr-brand { display: flex; align-items: center; gap: clamp(24px, 2vw, 34px); min-width: 0; }
+    .hdr-logo { width: clamp(190px, 16vw, 295px); height: auto; display: block; }
+    .dark .hdr-logo { filter: brightness(0) invert(1); opacity: 0.94; }
+    .hdr-label { padding-left: clamp(14px, 1.3vw, 20px); border-left: 1px solid var(--linen-3); font: 500 clamp(10px, 1.25vh, 13px)/1.2 "DM Mono", monospace; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); white-space: nowrap; }
+    .dark .hdr { border-color: rgba(255,255,255,0.18); }
+    .dark .hdr-label { color: rgba(255,255,255,0.6); border-color: rgba(255,255,255,0.22); }
+    .hdr-right { display: flex; align-items: center; gap: 14px; }
+    .powered, .prepared-by { display: inline-flex; align-items: center; gap: 8px; font: 500 clamp(10px, 1.25vh, 13px)/1 "DM Mono", monospace; color: var(--muted); letter-spacing: 0.04em; white-space: nowrap; text-decoration: none; }
+    .powered img, .prepared-by img { display: block; width: auto; height: clamp(14px, 1.8vh, 20px); opacity: 0.72; }
+    .dark .powered { color: rgba(255,255,255,0.68); }
+    .dark .powered img { filter: brightness(0) invert(1); opacity: 0.92; }
+    .snum { min-width: 78px; text-align: center; padding: 8px 10px; border: 1px solid var(--linen-3); border-radius: 999px; font: 500 clamp(10px, 1.25vh, 13px)/1 "DM Mono", monospace; color: var(--olive-dark); background: rgba(255,255,255,0.58); }
+    .dark .snum { color: var(--paper); border-color: rgba(255,255,255,0.24); background: rgba(255,255,255,0.08); }
+
+    .footer-line { margin-top: clamp(16px, 1.8vh, 20px); padding-top: clamp(10px, 1.3vh, 14px); border-top: 1px solid var(--linen-3); display: flex; align-items: center; justify-content: space-between; gap: 20px; font-size: clamp(10px, 1.2vh, 12px); color: var(--muted); flex-shrink: 0; }
+    .dark .footer-line { border-color: rgba(255,255,255,0.18); color: rgba(255,255,255,0.58); }
+    .footer-line a { text-decoration: none; }
+
+    /* Cover */
+    .cover-grid { flex: 1; min-height: 0; display: grid; grid-template-columns: 1fr; align-items: center; max-width: 1540px; }
+    .cover-copy { display: flex; flex-direction: column; align-items: flex-start; gap: clamp(18px, 2.6vh, 32px); }
+    .cover-copy h1 { max-width: 18ch; }
+    .cover-copy .lead { max-width: 56ch; }
+    .cover-chips { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+    .date-chip { display: inline-flex; align-items: center; gap: 9px; padding: 9px 14px; border-radius: 999px; border: 1px solid rgba(60,128,111,0.25); background: var(--mint-light); font: 500 clamp(11px, 1.35vh, 14px)/1 "DM Mono", monospace; color: var(--olive-dark); white-space: nowrap; }
+    .date-chip::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--garnet); flex: 0 0 auto; }
+
+    /* Section dividers */
+    .section-stage { flex: 1; display: grid; grid-template-columns: 0.7fr 1.3fr; align-items: center; gap: clamp(38px, 5vw, 80px); }
+    .section-number { font: 500 clamp(80px, 17vh, 190px)/0.86 "DM Mono", monospace; color: rgba(255,255,255,0.2); letter-spacing: -0.08em; }
+    .section-copy { display: flex; flex-direction: column; align-items: flex-start; gap: clamp(18px, 2.5vh, 30px); }
+    .section-copy h2 { max-width: 16ch; }
+    .section-copy .lead { max-width: 45ch; }
+    .section-kicker { font: 700 clamp(20px, 2.8vh, 31px)/1.1 "DM Sans", sans-serif; color: var(--paper); letter-spacing: -0.02em; }
+
+    /* Titles */
+    .title-row { display: flex; align-items: flex-end; justify-content: space-between; gap: 40px; margin-bottom: clamp(22px, 3vh, 34px); flex-shrink: 0; }
+    .title-row h2 { max-width: 34ch; }
+    .title-note { width: min(32vw, 470px); font-size: clamp(13px, 1.65vh, 18px); line-height: 1.5; color: var(--muted); text-wrap: pretty; }
+
+    /* Brand marks */
+    .brand-inline { white-space: nowrap; }
+    .brand-inline img { display: inline-block; width: 1.05em; height: 1.05em; margin-right: 0.3em; vertical-align: -0.2em; object-fit: contain; }
+    .brand-heading { display: flex; align-items: flex-start; gap: 12px; }
+    .brand-heading > img { width: clamp(30px, 3.7vh, 43px); height: clamp(30px, 3.7vh, 43px); object-fit: contain; flex: 0 0 auto; }
+    .source-label { display: inline-flex; align-items: center; gap: 10px; font: 500 clamp(11px, 1.35vh, 14px)/1.35 "DM Mono", monospace; color: var(--olive-dark); }
+    .source-mark { width: 34px; height: 34px; display: inline-flex; align-items: center; justify-content: center; flex: 0 0 auto; border-radius: 10px; background: var(--paper); border: 1px solid var(--linen-3); }
+    .source-mark img { width: 20px; height: 20px; object-fit: contain; }
+
+    /* 02: channel split */
+    .traffic-stage { flex: 1; min-height: 0; display: grid; grid-template-columns: 1.06fr 0.94fr; gap: clamp(34px, 4.5vw, 70px); align-items: stretch; }
+    .traffic-visual { align-self: stretch; display: grid; grid-template-columns: 0.92fr 1.08fr; align-items: center; gap: clamp(22px, 2.8vw, 42px); padding: clamp(28px, 3.4vh, 42px); background: var(--paper); border: 1px solid var(--linen-3); border-radius: 24px; box-shadow: var(--shadow-dark); }
+    .donut-wrap { position: relative; width: min(31vh, 315px); aspect-ratio: 1; margin: 0 auto; }
+    .donut-wrap svg { width: 100%; height: 100%; display: block; }
+    .donut-center { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+    .donut-center strong { font: 500 clamp(36px, 5.2vh, 56px)/0.95 "DM Mono", monospace; color: var(--olive-dark); letter-spacing: -0.07em; }
+    .donut-center span { width: 12ch; margin-top: 8px; font-size: clamp(12px, 1.45vh, 15px); line-height: 1.3; color: var(--muted); }
+    .channel-legend { display: flex; flex-direction: column; gap: clamp(9px, 1.15vh, 13px); }
+    .channel-row { display: grid; grid-template-columns: 12px 1fr auto; gap: 11px; align-items: center; padding: 7px 10px; border-radius: 10px; }
+    .channel-dot { width: 10px; height: 10px; border-radius: 50%; }
+    .channel-row span { font-size: clamp(13px, 1.6vh, 17px); color: var(--ink-2); }
+    .channel-row strong { font: 500 clamp(12px, 1.55vh, 16px)/1 "DM Mono", monospace; color: var(--olive-dark); }
+    .channel-row.called-out { background: var(--mint); }
+    .channel-row.called-out span, .channel-row.called-out strong { color: var(--olive-dark); font-weight: 700; }
+    .traffic-copy { display: flex; flex-direction: column; justify-content: center; gap: clamp(22px, 2.8vh, 32px); }
+    .traffic-copy h3 { font-size: clamp(27px, 3.7vh, 42px); max-width: 17ch; }
+    .metric-quartet { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--linen-3); border: 1px solid var(--linen-3); border-radius: 18px; overflow: hidden; }
+    .perf-metric { min-height: clamp(128px, 15vh, 168px); padding: clamp(19px, 2.3vh, 26px); background: var(--paper); }
+    .perf-metric span { display: block; font: 500 clamp(10px, 1.2vh, 12px)/1.2 "DM Mono", monospace; text-transform: uppercase; letter-spacing: 0.07em; color: var(--muted); }
+    .perf-metric strong { display: block; margin-top: 13px; font: 500 clamp(30px, 4.4vh, 50px)/1 "DM Mono", monospace; letter-spacing: -0.06em; color: var(--olive-dark); white-space: nowrap; }
+    .perf-metric small { display: block; margin-top: 9px; font-size: clamp(11px, 1.35vh, 14px); line-height: 1.4; color: var(--muted); }
+    .perf-metric small.down { color: var(--garnet); }
+
+    /* 03: four problems */
+    .priority-stage { flex: 1; min-height: 0; display: grid; grid-template-columns: repeat(2, 1fr); align-content: stretch; gap: clamp(16px, 1.8vw, 26px); }
+    .priority { min-height: 0; justify-content: center; padding: clamp(21px, 2.45vh, 30px); border-radius: 20px; background: var(--paper); border: 1px solid var(--linen-3); display: flex; flex-direction: column; }
+    .priority.lead-card { box-shadow: var(--shadow-soft); }
+    .priority::before { content: attr(data-priority); display: block; font: 500 clamp(12px, 1.45vh, 15px)/1 "DM Mono", monospace; color: var(--garnet); letter-spacing: 0.07em; margin-bottom: clamp(14px, 1.7vh, 20px); }
+    .priority h3 { max-width: 26ch; }
+    .priority p { margin-top: 13px; font-size: clamp(13px, 1.55vh, 17px); color: var(--muted); line-height: 1.48; text-wrap: pretty; }
+
+    /* 05: workstream rail */
+    .work-stage { flex: 1; min-height: 0; display: grid; grid-template-columns: 0.72fr 1.28fr; gap: clamp(34px, 4.5vw, 70px); align-items: center; }
+    .work-copy { display: flex; flex-direction: column; gap: clamp(17px, 2.1vh, 25px); align-items: flex-start; }
+    .work-copy h2 { max-width: 14ch; }
+    .work-rail { position: relative; display: flex; flex-direction: column; gap: clamp(6px, 0.8vh, 10px); }
+    .work-rail::before { content: ""; position: absolute; top: 7%; bottom: 7%; left: 28px; width: 2px; background: rgba(60,128,111,0.22); }
+    .work-row { position: relative; display: grid; grid-template-columns: 58px 1fr 215px; gap: 18px; align-items: center; min-height: clamp(96px, 12.4vh, 134px); padding: clamp(13px, 1.6vh, 19px) clamp(18px, 1.9vw, 28px) clamp(13px, 1.6vh, 19px) 0; border-bottom: 1px solid var(--linen-3); }
+    .work-row:last-child { border-bottom: 0; }
+    .work-dot { z-index: 1; width: 58px; height: 58px; border-radius: 50%; display: grid; place-items: center; background: var(--paper); border: 2px solid var(--olive); font: 500 15px/1 "DM Mono", monospace; color: var(--olive-dark); }
+    .work-row h3 { font-size: clamp(17px, 2.2vh, 25px); }
+    .work-row p { margin-top: 5px; font-size: clamp(12px, 1.45vh, 16px); line-height: 1.4; color: var(--muted); }
+    .work-tag { font: 500 clamp(10px, 1.2vh, 12px)/1.35 "DM Mono", monospace; text-transform: uppercase; letter-spacing: 0.07em; color: var(--garnet); text-align: right; }
+
+    /* 06 and 07: workstream lanes */
+    .lane-grid { flex: 1; min-height: 0; display: grid; gap: clamp(16px, 1.8vw, 26px); align-content: stretch; }
+    .lane-grid.two { grid-template-columns: repeat(2, 1fr); align-content: center; }
+    .lane-grid.two .lane { min-height: clamp(340px, 44vh, 500px); }
+    .lane-grid.three { grid-template-columns: repeat(3, 1fr); }
+    .lane { padding: clamp(24px, 2.9vh, 34px); border: 1px solid var(--linen-3); border-radius: 22px; background: var(--paper); display: flex; flex-direction: column; align-items: flex-start; }
+    .lane.lead-card { box-shadow: var(--shadow-soft); }
+    .lane-num { width: 54px; height: 54px; display: grid; place-items: center; border-radius: 50%; background: var(--olive-dark); color: var(--paper); font: 500 15px/1 "DM Mono", monospace; flex: 0 0 auto; }
+    .lane:nth-child(2) .lane-num { background: var(--garnet); }
+    .lane:nth-child(3) .lane-num { background: var(--lapis); }
+    .lane h3 { margin-top: clamp(20px, 2.5vh, 30px); font-size: clamp(20px, 2.7vh, 30px); }
+    .lane > p { margin-top: 12px; font-size: clamp(13px, 1.6vh, 17px); line-height: 1.5; color: var(--muted); text-wrap: pretty; }
+    .lane-points { flex: 1; list-style: none; margin: clamp(18px, 2.2vh, 26px) 0 0; padding: 0; width: 100%; display: flex; flex-direction: column; gap: clamp(10px, 1.25vh, 15px); }
+    .lane-points li { flex: 1; display: grid; grid-template-columns: 20px 1fr; gap: 12px; align-items: center; padding-top: clamp(10px, 1.25vh, 15px); border-top: 1px solid var(--linen-3); font-size: clamp(11px, 1.35vh, 15px); line-height: 1.4; color: var(--ink-2); }
+    .lane-points .brand-inline img { width: 0.95em; height: 0.95em; }
+    .lane-points svg { width: 20px; height: 20px; margin-top: 1px; flex: 0 0 auto; }
+    .lane-grid.two .lane-points { flex: 0 0 auto; margin-top: auto; margin-bottom: auto; }
+    .lane-grid.two .lane-points li { flex: 0 0 auto; }
+    .lane-scope { margin-top: auto; padding-top: clamp(20px, 2.5vh, 30px); font: 500 clamp(10px, 1.25vh, 13px)/1.5 "DM Mono", monospace; text-transform: uppercase; letter-spacing: 0.06em; color: var(--olive-dark); }
+
+    /* 08: inside and outside */
+    .scope-stage { flex: 1; min-height: 0; display: grid; grid-template-columns: 1fr 1fr; gap: clamp(24px, 2.8vw, 44px); }
+    .scope-panel { display: flex; flex-direction: column; padding: clamp(22px, 2.6vh, 32px) clamp(24px, 2.4vw, 36px) clamp(20px, 2.4vh, 28px); border-radius: 24px; border: 1px solid var(--linen-3); }
+    .scope-panel.included { background: var(--mint); border-color: rgba(60,128,111,0.24); box-shadow: var(--shadow-dark); }
+    .scope-panel.outside { background: var(--paper); }
+    .scope-head { display: flex; align-items: center; gap: 14px; padding-bottom: clamp(14px, 1.8vh, 20px); border-bottom: 1px solid rgba(34,83,71,0.18); }
+    .scope-panel.outside .scope-head { border-color: var(--linen-3); }
+    .scope-head-icon { width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; flex: 0 0 auto; }
+    .included .scope-head-icon { background: var(--olive-dark); }
+    .outside .scope-head-icon { background: var(--linen-2); border: 1px solid var(--linen-3); }
+    .scope-head h3 { font-size: clamp(20px, 2.6vh, 29px); }
+    .scope-head small { display: block; margin-top: 4px; font: 500 clamp(10px, 1.2vh, 12px)/1 "DM Mono", monospace; text-transform: uppercase; letter-spacing: 0.07em; color: var(--muted); }
+    .scope-items { flex: 1; margin-top: clamp(10px, 1.3vh, 16px); display: flex; flex-direction: column; }
+    .scope-item { flex: 1; display: grid; grid-template-columns: 26px 1fr; gap: 14px; align-items: center; padding: clamp(11px, 1.4vh, 17px) 0; border-top: 1px solid rgba(34,83,71,0.12); }
+    .scope-panel.outside .scope-item { border-color: var(--linen-3); }
+    .scope-item:first-child { border-top: 0; }
+    .scope-item svg { width: 22px; height: 22px; margin-top: 2px; flex: 0 0 auto; }
+    .scope-item strong { display: block; font-size: clamp(14px, 1.75vh, 19px); color: var(--olive-dark); line-height: 1.3; }
+    .scope-item > div > span { display: block; margin-top: 4px; font-size: clamp(12px, 1.5vh, 16px); line-height: 1.4; color: var(--muted); }
+    .scope-panel.outside .scope-item strong { color: var(--ink-2); }
+
+    /* 10: position by the numbers */
+    .figure-stage { flex: 1; min-height: 0; display: grid; grid-template-rows: 1.5fr 1fr 1fr; gap: clamp(18px, 2.2vh, 28px); }
+    .figure-row { display: grid; grid-template-columns: repeat(5, 1fr); gap: clamp(14px, 1.6vw, 24px); }
+    .figure-card { padding: clamp(20px, 2.5vh, 30px); border: 1px solid var(--linen-3); border-radius: 20px; background: var(--paper); display: flex; flex-direction: column; justify-content: center; }
+    .figure-card.lead-card { box-shadow: var(--shadow-soft); }
+    .figure-card strong { font: 500 clamp(38px, 5.6vh, 62px)/0.9 "DM Mono", monospace; color: var(--olive-dark); letter-spacing: -0.07em; white-space: nowrap; }
+    .figure-card p { margin-top: clamp(12px, 1.6vh, 18px); font-size: clamp(13px, 1.6vh, 17px); line-height: 1.4; color: var(--ink-2); text-wrap: pretty; }
+    .figure-card .stamp { margin-top: clamp(16px, 2.2vh, 26px); padding-top: clamp(12px, 1.6vh, 18px); border-top: 1px solid var(--linen-3); font: 500 clamp(10px, 1.2vh, 12px)/1.4 "DM Mono", monospace; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); }
+    .context-panel { padding: clamp(16px, 2vh, 24px) clamp(24px, 2.4vw, 36px); border-radius: 22px; background: var(--mint); display: grid; grid-template-columns: minmax(210px, 0.85fr) repeat(3, 1fr); gap: clamp(18px, 2vw, 34px); align-items: center; }
+    .context-panel.audit { background: var(--linen-2); grid-template-columns: minmax(210px, 0.85fr) repeat(4, 1fr); }
+    .context-panel > .context-intro h3 { font-size: clamp(18px, 2.3vh, 26px); }
+    .context-panel > .context-intro p { margin-top: 7px; font-size: clamp(11px, 1.35vh, 14px); line-height: 1.4; color: var(--muted); }
+    .context-metric span { display: block; font: 500 clamp(10px, 1.2vh, 12px)/1.2 "DM Mono", monospace; text-transform: uppercase; letter-spacing: 0.07em; color: var(--muted); }
+    .context-metric strong { display: block; margin-top: 10px; font: 500 clamp(26px, 3.7vh, 42px)/1 "DM Mono", monospace; color: var(--olive-dark); letter-spacing: -0.06em; white-space: nowrap; }
+    .context-metric small { display: block; margin-top: 7px; font-size: clamp(11px, 1.35vh, 14px); color: var(--garnet); }
+    .context-metric small.flat { color: var(--muted); }
+
+    /* 11: built, running, blocked */
+    .state-stage { flex: 1; min-height: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(16px, 1.8vw, 26px); align-content: stretch; }
+    .state-card { padding: clamp(24px, 2.9vh, 36px); border-radius: 22px; border: 1px solid var(--linen-3); background: var(--paper); display: flex; flex-direction: column; }
+    .state-card.lead-card { box-shadow: var(--shadow-soft); }
+    .state-chip { align-self: flex-start; padding: 8px 12px; border-radius: 999px; font: 500 clamp(10px, 1.2vh, 12px)/1 "DM Mono", monospace; letter-spacing: 0.08em; text-transform: uppercase; }
+    .state-chip.built { color: var(--olive-dark); background: var(--mint); }
+    .state-chip.running { color: var(--lapis); background: var(--lapis-tint); }
+    .state-chip.blocked { color: var(--garnet-dark); background: var(--garnet-tint); }
+    .state-card h3 { margin-top: clamp(20px, 2.5vh, 30px); font-size: clamp(20px, 2.7vh, 30px); }
+    .state-card p { margin-top: 13px; font-size: clamp(13px, 1.6vh, 17px); line-height: 1.5; color: var(--muted); text-wrap: pretty; }
+    .state-card .stamp { margin-top: auto; padding-top: clamp(18px, 2.2vh, 28px); font: 500 clamp(10px, 1.2vh, 12px)/1.4 "DM Mono", monospace; text-transform: uppercase; letter-spacing: 0.06em; color: var(--olive-dark); }
+
+    /* 12: the honest read */
+    .read-stage { flex: 1; min-height: 0; display: grid; grid-template-columns: 0.86fr 1.14fr; gap: clamp(34px, 4.5vw, 70px); align-items: stretch; }
+    .read-copy { justify-content: center; }
+    .read-copy { display: flex; flex-direction: column; align-items: flex-start; gap: clamp(17px, 2.2vh, 26px); }
+    .read-copy h2 { max-width: 17ch; }
+    .trend-panel { display: flex; flex-direction: column; justify-content: center; padding: clamp(24px, 2.9vh, 36px); border-radius: 24px; background: var(--mint); box-shadow: var(--shadow-dark); }
+    .trend-panel h3 { font-size: clamp(21px, 2.8vh, 31px); }
+    .trend-panel > p { margin-top: 9px; font-size: clamp(12px, 1.5vh, 16px); line-height: 1.45; color: var(--muted); }
+    .weekly-chart { margin-top: clamp(17px, 2.1vh, 23px); }
+    .weekly-chart + .weekly-chart { padding-top: clamp(14px, 1.7vh, 19px); border-top: 1px solid rgba(34,83,71,0.15); }
+    .weekly-chart-head { display: flex; align-items: end; justify-content: space-between; gap: 18px; }
+    .weekly-chart-head span { font: 500 clamp(10px, 1.2vh, 12px)/1 "DM Mono", monospace; text-transform: uppercase; letter-spacing: 0.08em; color: var(--olive-dark); }
+    .weekly-chart-head strong { font: 500 clamp(17px, 2.25vh, 25px)/1 "DM Mono", monospace; color: var(--olive-dark); white-space: nowrap; }
+    .weekly-bars { height: clamp(84px, 10.5vh, 118px); margin-top: 13px; display: grid; grid-template-columns: repeat(13, 1fr); gap: clamp(6px, 0.65vw, 11px); align-items: end; border-bottom: 1px solid rgba(34,83,71,0.2); }
+    .weekly-bars i { display: block; min-height: 4px; height: var(--v); border-radius: 6px 6px 0 0; background: var(--olive); }
+    .weekly-bars.impressions i { background: var(--lapis); opacity: 0.84; }
+    .chart-axis { margin-top: 8px; display: flex; align-items: center; justify-content: space-between; font: 500 clamp(9px, 1.1vh, 11px)/1 "DM Mono", monospace; color: var(--muted); }
+
+    /* 13: open items table */
+    .table-stage { flex: 1; min-height: 0; display: flex; align-items: flex-start; }
+    .status-table { width: 100%; border: 1px solid var(--linen-3); border-radius: 22px; background: var(--paper); overflow: hidden; box-shadow: var(--shadow-dark); }
+    .status-head, .status-row { display: grid; grid-template-columns: minmax(230px, 0.42fr) minmax(0, 1fr) 190px; gap: clamp(18px, 2vw, 32px); align-items: center; padding: 0 clamp(22px, 2.4vw, 38px); }
+    .status-head { min-height: 44px; background: var(--linen-2); border-bottom: 1px solid var(--linen-3); font: 500 clamp(9px, 1.12vh, 11px)/1 "DM Mono", monospace; text-transform: uppercase; letter-spacing: 0.07em; color: var(--muted); }
+    .status-row { min-height: clamp(48px, 6.15vh, 68px); border-bottom: 1px solid var(--linen-3); }
+    .status-row:last-child { border-bottom: 0; }
+    .status-owner { display: inline-flex; align-items: center; gap: 10px; font-size: clamp(13px, 1.6vh, 17px); font-weight: 700; color: var(--olive-dark); min-width: 0; }
+    .status-owner img { width: 24px; height: 24px; border-radius: 6px; object-fit: contain; flex: 0 0 auto; }
+    .status-task { font-size: clamp(12px, 1.5vh, 16px); line-height: 1.35; color: var(--ink-2); }
+    .pill { justify-self: start; padding: 7px 11px; border-radius: 999px; font: 500 clamp(9px, 1.1vh, 11px)/1 "DM Mono", monospace; letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap; }
+    .pill.running { color: var(--olive-dark); background: var(--mint); }
+    .pill.review { color: var(--garnet-dark); background: var(--garnet-tint); }
+    .pill.confirm { color: var(--lapis); background: var(--lapis-tint); }
+    .pill.notstarted { color: var(--ink-2); background: var(--linen-2); }
+
+    /* 15: timeline */
+    .phase-stage { flex: 1; min-height: 0; display: flex; flex-direction: column; justify-content: center; gap: clamp(20px, 2.5vh, 32px); }
+    .phase-track { flex: 0 0 auto; position: relative; display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(16px, 1.8vw, 26px); }
+    .phase-track::before { content: ""; position: absolute; top: 21px; left: 4%; right: 4%; height: 2px; background: rgba(60,128,111,0.25); }
+    .phase { display: flex; flex-direction: column; }
+    .phase-node { position: relative; z-index: 1; width: 42px; height: 42px; border-radius: 50%; display: grid; place-items: center; background: var(--paper); border: 2px solid var(--olive); font: 500 13px/1 "DM Mono", monospace; color: var(--olive-dark); }
+    .phase:first-child .phase-node { background: var(--garnet); border-color: var(--garnet); color: var(--paper); }
+    .phase-card { margin-top: clamp(16px, 2vh, 24px); flex: 1; min-height: clamp(240px, 30.5vh, 340px); padding: clamp(20px, 2.5vh, 30px); border-radius: 20px; border: 1px solid var(--linen-3); background: var(--paper); display: flex; flex-direction: column; }
+    .phase:first-child .phase-card { box-shadow: var(--shadow-soft); }
+    .phase-period { font: 500 clamp(11px, 1.35vh, 14px)/1 "DM Mono", monospace; text-transform: uppercase; letter-spacing: 0.08em; color: var(--garnet); }
+    .phase-card h3 { margin-top: clamp(12px, 1.6vh, 18px); font-size: clamp(17px, 2.25vh, 25px); }
+    .phase-card p { margin-top: 11px; font-size: clamp(12px, 1.5vh, 16px); line-height: 1.45; color: var(--muted); text-wrap: pretty; }
+    .phase-out { margin-top: auto; padding-top: clamp(14px, 1.8vh, 22px); font: 500 clamp(10px, 1.2vh, 13px)/1.4 "DM Mono", monospace; text-transform: uppercase; letter-spacing: 0.06em; color: var(--olive-dark); }
+    .season-band { padding: clamp(16px, 2vh, 24px) clamp(20px, 2vw, 30px); border-radius: 18px; background: var(--paper); border: 1px solid var(--linen-3); }
+    .season-note { display: flex; align-items: center; gap: 14px; font-size: clamp(13px, 1.6vh, 17px); color: var(--ink-2); }
+    .season-note svg { width: 24px; height: 24px; flex: 0 0 auto; }
+    .month-strip { margin-top: clamp(12px, 1.6vh, 20px); display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; }
+    .month { padding: clamp(9px, 1.15vh, 14px) 0; border-radius: 10px; text-align: center; background: var(--linen-2); font: 500 clamp(10px, 1.25vh, 13px)/1 "DM Mono", monospace; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+    .month.peak { background: var(--garnet); color: var(--paper); }
+    .month.now { background: var(--mint); color: var(--olive-dark); }
+
+    /* 16: measurement sources */
+    .measure-stage { flex: 1; min-height: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(16px, 1.8vw, 26px); align-content: stretch; }
+    .measure-card { padding: clamp(22px, 2.7vh, 33px); border-radius: 22px; border: 1px solid var(--linen-3); background: var(--paper); display: flex; flex-direction: column; }
+    .measure-card.lead-card { box-shadow: var(--shadow-soft); }
+    .measure-head { display: flex; align-items: center; gap: 13px; }
+    .measure-mark { width: 48px; height: 48px; border-radius: 13px; display: grid; place-items: center; flex: 0 0 auto; background: var(--linen-2); border: 1px solid var(--linen-3); }
+    .measure-mark img, .measure-mark svg { width: 28px; height: 28px; object-fit: contain; display: block; }
+    .measure-head h3 { font-size: clamp(16px, 2vh, 22px); }
+    .measure-card > p { margin-top: clamp(18px, 2.2vh, 26px); font-size: clamp(13px, 1.55vh, 17px); line-height: 1.5; color: var(--muted); text-wrap: pretty; }
+    .measure-now { margin-top: auto; padding-top: clamp(18px, 2.2vh, 26px); }
+    .measure-now span { display: block; font: 500 clamp(9px, 1.1vh, 11px)/1 "DM Mono", monospace; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); }
+    .measure-now strong { display: block; margin-top: 8px; font: 500 clamp(14px, 1.75vh, 19px)/1.35 "DM Mono", monospace; color: var(--olive-dark); }
+
+    /* 12: earned placements */
+    .place-stage { flex: 1; min-height: 0; display: flex; align-items: stretch; }
+    .place-table { width: 100%; border: 1px solid var(--linen-3); border-radius: 22px; background: var(--paper); overflow: hidden; box-shadow: var(--shadow-dark); display: flex; flex-direction: column; }
+    .place-head-row, .place-row { display: grid; grid-template-columns: minmax(250px, 0.5fr) minmax(0, 1fr) 160px 150px 160px; gap: clamp(18px, 2vw, 32px); align-items: center; padding: 0 clamp(22px, 2.4vw, 38px); }
+    .place-head-row { min-height: 46px; background: var(--linen-2); border-bottom: 1px solid var(--linen-3); font: 500 clamp(9px, 1.12vh, 11px)/1 "DM Mono", monospace; text-transform: uppercase; letter-spacing: 0.07em; color: var(--muted); }
+    .place-row { flex-grow: 1; flex-shrink: 0; border-bottom: 1px solid var(--linen-3); }
+    .place-row:last-child { border-bottom: 0; }
+    .place-pub { display: inline-flex; align-items: center; gap: 13px; font-size: clamp(13px, 1.6vh, 17px); font-weight: 700; color: var(--olive-dark); min-width: 0; }
+    .place-pub img { width: 34px; height: 34px; padding: 4px; border-radius: 9px; border: 1px solid var(--linen-3); background: var(--paper); object-fit: contain; flex: 0 0 auto; }
+    .place-what { font-size: clamp(12px, 1.5vh, 16px); line-height: 1.35; color: var(--ink-2); }
+    .place-tag { justify-self: start; padding: 7px 11px; border-radius: 999px; background: var(--linen-2); color: var(--ink-2); font: 500 clamp(9px, 1.1vh, 11px)/1 "DM Mono", monospace; letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap; }
+    .note-band { margin-top: clamp(16px, 2vh, 24px); display: grid; grid-template-columns: 1fr 1fr; gap: clamp(20px, 2vw, 34px); padding: clamp(16px, 2vh, 24px) clamp(20px, 2vw, 30px); border-radius: 18px; background: var(--paper); border: 1px solid var(--linen-3); flex-shrink: 0; }
+    .note-band b { display: block; font: 500 clamp(9px, 1.1vh, 11px)/1 "DM Mono", monospace; text-transform: uppercase; letter-spacing: 0.08em; color: var(--garnet); margin-bottom: 9px; }
+    .note-band p { font-size: clamp(12px, 1.5vh, 16px); line-height: 1.45; color: var(--ink-2); }
+
+    /* 13: reddit footprint */
+    .figure-row.four { grid-template-columns: repeat(4, 1fr); }
+    .reddit-stage { flex: 1; min-height: 0; display: flex; flex-direction: column; gap: clamp(16px, 2vh, 26px); }
+    .reddit-stage > * { flex-grow: 1; flex-shrink: 0; }
+    .reddit-stage > .sub-band { flex-grow: 0; }
+    .reddit-stage .figure-card, .reddit-stage .moment { display: flex; flex-direction: column; justify-content: center; }
+    .sub-band { padding: clamp(16px, 2vh, 24px) clamp(20px, 2vw, 30px); border-radius: 18px; background: var(--paper); border: 1px solid var(--linen-3); }
+    .sub-band-head { display: flex; align-items: center; gap: 10px; font: 500 clamp(10px, 1.2vh, 13px)/1 "DM Mono", monospace; text-transform: uppercase; letter-spacing: 0.07em; color: var(--muted); }
+    .sub-band-head img { width: 20px; height: 20px; object-fit: contain; }
+    .sub-list { margin-top: clamp(12px, 1.5vh, 18px); display: flex; flex-wrap: wrap; gap: 9px; }
+    .sub-list span { padding: 8px 12px; border-radius: 999px; background: var(--linen-2); font: 500 clamp(11px, 1.35vh, 14px)/1 "DM Mono", monospace; color: var(--ink-2); white-space: nowrap; }
+    .moment-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(16px, 1.8vw, 26px); }
+    .moment { padding: clamp(16px, 2vh, 24px) clamp(18px, 1.9vw, 26px); border-radius: 18px; border: 1px solid var(--linen-3); background: var(--paper); }
+    .moment b { display: block; font-size: clamp(14px, 1.8vh, 19px); font-weight: 700; color: var(--olive-dark); margin-bottom: 7px; }
+    .moment p { font-size: clamp(12px, 1.45vh, 16px); line-height: 1.45; color: var(--muted); text-wrap: pretty; }
+    .phase-track.three { grid-template-columns: repeat(3, 1fr); flex-grow: 1; flex-basis: auto; }
+    .phase-track.three .phase-card { min-height: 0; }
+
+    /* 17: working together */
+    .close-stage { flex: 1; min-height: 0; display: grid; grid-template-columns: 1.02fr 0.98fr; gap: clamp(30px, 3.6vw, 58px); align-items: stretch; }
+    .need-list { display: flex; flex-direction: column; gap: clamp(11px, 1.4vh, 17px); }
+    .need { flex: 1; display: grid; grid-template-columns: 48px 1fr; gap: 18px; align-items: center; padding: clamp(15px, 1.85vh, 22px) clamp(18px, 1.9vw, 26px); border-radius: 18px; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.16); }
+    .need-num { width: 48px; height: 48px; border-radius: 50%; display: grid; place-items: center; background: var(--garnet); color: var(--paper); font: 500 14px/1 "DM Mono", monospace; }
+    .need h3 { font-size: clamp(16px, 2vh, 22px); }
+    .need p { margin-top: 5px; font-size: clamp(12px, 1.45vh, 16px); line-height: 1.4; color: rgba(255,255,255,0.72); }
+    .close-side { display: flex; flex-direction: column; justify-content: space-between; gap: clamp(13px, 1.6vh, 20px); }
+    .close-card { padding: clamp(18px, 2.2vh, 26px) clamp(20px, 2vw, 28px); border-radius: 20px; background: var(--paper); color: var(--ink); }
+    .close-card.shelf { box-shadow: var(--shadow); }
+    .close-card h3 { font-size: clamp(17px, 2.1vh, 23px); color: var(--olive-dark); }
+    .rhythm-list { margin-top: clamp(12px, 1.5vh, 18px); display: flex; flex-direction: column; }
+    .rhythm-row { display: grid; grid-template-columns: 118px 1fr; gap: 16px; align-items: baseline; padding: clamp(10px, 1.25vh, 15px) 0; border-top: 1px solid var(--linen-3); }
+    .rhythm-row:first-child { border-top: 0; padding-top: 0; }
+    .rhythm-row b { font: 500 clamp(10px, 1.2vh, 12px)/1.4 "DM Mono", monospace; text-transform: uppercase; letter-spacing: 0.07em; color: var(--garnet); }
+    .rhythm-row p { font-size: clamp(12px, 1.5vh, 16px); line-height: 1.4; color: var(--ink-2); }
+    .words-grid { margin-top: clamp(12px, 1.5vh, 18px); display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .words-col span { display: block; font: 500 clamp(9px, 1.1vh, 11px)/1 "DM Mono", monospace; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 9px; }
+    .words-col.good span { color: var(--olive); }
+    .words-col.care span { color: var(--garnet); }
+    .words-col ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
+    .words-col li { padding: 6px 9px; border-radius: 999px; font-size: clamp(11px, 1.3vh, 14px); line-height: 1.1; }
+    .words-col.good li { background: var(--mint); color: var(--olive-dark); }
+    .words-col.care li { background: var(--linen-2); color: var(--ink-2); }
+    .contact-card { display: flex; align-items: center; justify-content: space-between; gap: 18px; flex-wrap: wrap; padding: clamp(16px, 2vh, 24px) clamp(20px, 2vw, 28px); border-radius: 20px; background: var(--garnet); color: var(--paper); }
+    .contact-card strong { font-size: clamp(15px, 1.9vh, 21px); }
+    .contact-card a { font: 500 clamp(11px, 1.4vh, 15px)/1.3 "DM Mono", monospace; color: var(--paper); text-decoration: none; opacity: 0.92; }
+
+    .fallback .reveal, .fallback .slides { width: 100%; height: 100%; }
+    .fallback .slides > section { display: none; width: 100%; height: 100%; }
+    .fallback .slides > section.fallback-active { display: block; }
+    aside.notes { display: none !important; }
+
+    @media print {
+      .reveal .slides section { page-break-after: always; }
+    }
+  </style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <!-- 01. Cover -->
+      <section>
+        <div class="s mint">
+          <div class="shdr" data-n="01"></div>
+          <div class="cover-grid">
+            <div class="cover-copy">
+              <span class="script">Scope of work</span>
+              <h1>What we own, what you own, and the order it happens in.</h1>
+              <p class="lead">Five workstreams run in parallel toward one goal: get the decision pages live and earning organic search before the October to January buying season opens.</p>
+              <div class="cover-chips">
+                <span class="date-chip">Prepared for Knew Health, September 3, 2026</span>
+                <span class="date-chip">Agreement signed July 8, 2026</span>
+              </div>
+            </div>
+          </div>
+          <div class="footer-line"><span>Prepared for Jennifer Butler &middot; Knew Health marketing</span><a class="prepared-by" href="https://www.aipeekaboo.com/?utm_source=proposal&utm_medium=deck&utm_campaign=knewhealth-scope-of-work-canva" target="_blank" rel="noopener noreferrer"><span>Prepared by</span><img src="assets/peekaboo-logo-black.png" alt="AI Peekaboo"></a></div>
+        </div>
+        <aside class="notes">[Sources]\nService agreement signed July 8, 2026, kickoff call July 9, 2026 with Amber Cram and Brenton Wilson.\nApproved long-form source: knewhealth-scope-of-work.html, prepared September 3, 2026.</aside>
+      </section>
+
+      <!-- 02. Why the engagement exists -->
+      <section>
+        <div class="s mint">
+          <div class="shdr" data-n="02"></div>
+          <div class="title-row">
+            <h2>The engagement exists to make organic search a real acquisition channel.</h2>
+            <p class="title-note"><span class="source-label"><span class="source-mark"><img src="assets/brands/google-analytics.svg" alt="Google Analytics"></span><span>Google Analytics<br>June 2 to August 30, 2026</span></span></p>
+          </div>
+          <div class="traffic-stage">
+            <div class="traffic-visual">
+              <div class="donut-wrap">
+                <svg viewBox="0 0 42 42" role="img" aria-label="Session mix by channel: Paid Search 28.1 percent, Direct 18.6 percent, Paid Social 17.9 percent, Organic Search 15.0 percent, AI Assistant 0.2 percent, Other 20.2 percent">
+                  <circle cx="21" cy="21" r="15.9155" fill="none" stroke="#e8e5e1" stroke-width="6"></circle>
+                  <circle cx="21" cy="21" r="15.9155" fill="none" stroke="#b21e3b" stroke-width="6" pathLength="100" stroke-dasharray="28.1 71.9" stroke-dashoffset="0" transform="rotate(-90 21 21)"></circle>
+                  <circle cx="21" cy="21" r="15.9155" fill="none" stroke="#3a6278" stroke-width="6" pathLength="100" stroke-dasharray="18.6 81.4" stroke-dashoffset="-28.1" transform="rotate(-90 21 21)"></circle>
+                  <circle cx="21" cy="21" r="15.9155" fill="none" stroke="#5dac98" stroke-width="6" pathLength="100" stroke-dasharray="17.9 82.1" stroke-dashoffset="-46.7" transform="rotate(-90 21 21)"></circle>
+                  <circle cx="21" cy="21" r="15.9155" fill="none" stroke="#225347" stroke-width="8" pathLength="100" stroke-dasharray="15 85" stroke-dashoffset="-64.6" transform="rotate(-90 21 21)"></circle>
+                  <circle cx="21" cy="21" r="15.9155" fill="none" stroke="#7b3f98" stroke-width="6" pathLength="100" stroke-dasharray="0.2 99.8" stroke-dashoffset="-79.6" transform="rotate(-90 21 21)"></circle>
+                  <circle cx="21" cy="21" r="15.9155" fill="none" stroke="#d9d6d2" stroke-width="6" pathLength="100" stroke-dasharray="20.2 79.8" stroke-dashoffset="-79.8" transform="rotate(-90 21 21)"></circle>
+                </svg>
+                <div class="donut-center"><strong>15.0%</strong><span>Organic Search share</span></div>
+              </div>
+              <div class="channel-legend">
+                <div class="channel-row"><i class="channel-dot" style="background:#b21e3b"></i><span>Paid Search</span><strong>28.1%</strong></div>
+                <div class="channel-row"><i class="channel-dot" style="background:#3a6278"></i><span>Direct</span><strong>18.6%</strong></div>
+                <div class="channel-row"><i class="channel-dot" style="background:#5dac98"></i><span>Paid Social</span><strong>17.9%</strong></div>
+                <div class="channel-row called-out"><i class="channel-dot" style="background:#225347"></i><span>Organic Search</span><strong>15.0%</strong></div>
+                <div class="channel-row"><i class="channel-dot" style="background:#7b3f98"></i><span>AI Assistant</span><strong>0.2%</strong></div>
+                <div class="channel-row"><i class="channel-dot" style="background:#d9d6d2"></i><span>Other</span><strong>20.2%</strong></div>
+              </div>
+            </div>
+            <div class="traffic-copy">
+              <div>
+                <h3>Every enrollment carries a media cost behind it.</h3>
+                <p class="body" style="margin-top:13px">Paid channels supply 49.2% of sessions and organic search supplies 15.0%, so acquisition stops the moment the spend stops.</p>
+              </div>
+              <div class="metric-quartet">
+                <div class="perf-metric"><span>Paid channels combined</span><strong>49.2%</strong><small>Paid Search, Paid Social, and paid other</small></div>
+                <div class="perf-metric"><span>Organic Search</span><strong>15.0%</strong><small>Fourth in the channel mix today</small></div>
+              </div>
+            </div>
+          </div>
+          <div class="footer-line"><span>Session mix by default channel group</span><span>Google Analytics, June 2 to August 30, 2026</span></div>
+        </div>
+        <aside class="notes">[Sources]\nGoogle Analytics Data API, property 326445146. Window: June 2 to August 30, 2026.\nChannel shares use sessionDefaultChannelGroup. Paid-channel share of 49.2% combines Paid Search, Paid Social, Cross-network, and Paid Other.</aside>
+      </section>
+
+      <!-- 03. The four problems -->
+      <section>
+        <div class="s paper">
+          <div class="shdr" data-n="03"></div>
+          <div class="title-row">
+            <h2>Four problems set the shape of the whole engagement.</h2>
+            <p class="title-note">Each of the five workstreams pushes against one or more of them, and every deliverable traces back to one.</p>
+          </div>
+          <div class="priority-stage">
+            <div class="priority lead-card" data-priority="PROBLEM 01">
+              <h3>Reduce the dependence on paid acquisition</h3>
+              <p>Organic supplies 15.0% of sessions while paid channels supply 49.2%, so every enrollment carries a media cost behind it.</p>
+            </div>
+            <div class="priority" data-priority="PROBLEM 02">
+              <h3>Win the searches where people choose a provider</h3>
+              <p>Only 10.8% of organic clicks land on commercial pages, so most of the traffic that arrives is nowhere near a decision.</p>
+            </div>
+            <div class="priority" data-priority="PROBLEM 03">
+              <h3>Get named in AI answers, not just in search</h3>
+              <p>Buyers now ask models which health share membership to pick, and the sources those models quote can be won.</p>
+            </div>
+            <div class="priority" data-priority="PROBLEM 04">
+              <h3>Be ready before the buying season opens</h3>
+              <p>October through January is when most of the category shops, so the pages have to be live and indexed before it opens.</p>
+            </div>
+          </div>
+          <div class="footer-line"><span>What we were brought in to fix</span><span>Analytics June 2 to August 30, 2026 &middot; Search Console intent mix</span></div>
+        </div>
+        <aside class="notes">[Sources]\nGoogle Analytics Data API, property 326445146, June 2 to August 30, 2026: organic 15.0%, paid channels combined 49.2%.\nGoogle Search Console landing-page intent classification: 10.8% of organic clicks reach commercial or transactional pages.\nBuying-season window is the category's October to January open-enrollment shopping period.</aside>
+      </section>
+
+      <!-- 04. Divider: what is in scope -->
+      <section>
+        <div class="s dark">
+          <div class="shdr" data-n="04"></div>
+          <div class="section-stage">
+            <div class="section-number">01</div>
+            <div class="section-copy">
+              <span class="section-kicker">What is in scope</span>
+              <h2>Five workstreams, one clear line around each of them.</h2>
+              <p class="lead">Each lane produces something reusable rather than a one-off report, and each has a named handover point to your team.</p>
+            </div>
+          </div>
+          <div class="footer-line"><span>Section 01</span><span>Workstreams, deliverables, and boundaries</span></div>
+        </div>
+        <aside class="notes">[Sources]\nSigned proposal, July 8, 2026, and the scope confirmation agreed with the team on September 2, 2026.</aside>
+      </section>
+
+      <!-- 05. Five workstreams overview -->
+      <section>
+        <div class="s mint">
+          <div class="shdr" data-n="05"></div>
+          <div class="work-stage">
+            <div class="work-copy">
+              <span class="script">In scope</span>
+              <h2>Five workstreams run in parallel.</h2>
+              <p class="lead">One lane cannot carry the result on its own, so they move together with a clear owner at each handover.</p>
+            </div>
+            <div class="work-rail">
+              <div class="work-row"><span class="work-dot">01</span><div><h3>Technical SEO and site health</h3><p>Remove the crawl, speed, and structure problems that put a ceiling on what every other lane in the plan can achieve.</p></div><span class="work-tag">Ongoing<br>David implements</span></div>
+              <div class="work-row"><span class="work-dot">02</span><div><h3>Commercial pages and content</h3><p>Build the service, comparison, and audience pages that carry a visitor from a first question all the way through to enrollment.</p></div><span class="work-tag">12 pieces monthly<br>Marketing reviews</span></div>
+              <div class="work-row"><span class="work-dot">03</span><div><h3>AI answer visibility</h3><p>Get Knew Health named when someone asks one of the models which health share membership they should choose today.</p></div><span class="work-tag">Tracked continuously<br>AI Peekaboo</span></div>
+              <div class="work-row"><span class="work-dot">04</span><div><h3>Community and editorial authority</h3><p>Place Knew Health inside the conversations and comparison guides that buyers already trust long before they decide.</p></div><span class="work-tag">20 comments monthly<br>Connor leads</span></div>
+              <div class="work-row"><span class="work-dot">05</span><div><h3>Measurement and reporting</h3><p>Show what each lane changed, in numbers the team can act on rather than a dashboard that nobody on the team ever opens.</p></div><span class="work-tag">Biweekly<br>Next call Sep 15</span></div>
+            </div>
+          </div>
+          <div class="footer-line"><span>Workstreams under contract</span><span>Monthly volumes reflect the signed proposal</span></div>
+        </div>
+        <aside class="notes">[Sources]\nSigned proposal, July 8, 2026. Monthly volumes are the contracted capacity: 12 content pieces and 20 community comments per month.\nSeptember 2, 2026 team agreement: output is weighted toward conversion-focused service and comparison pages within the same monthly capacity.</aside>
+      </section>
+
+      <!-- 06. Workstream detail, lanes 01 and 02 -->
+      <section>
+        <div class="s paper">
+          <div class="shdr" data-n="06"></div>
+          <div class="title-row">
+            <h2>Technical health and commercial pages carry the first result.</h2>
+            <p class="title-note">Lane 01 removes the ceiling on everything else. Lane 02 builds the pages a buyer actually lands on when comparing providers.</p>
+          </div>
+          <div class="lane-grid two">
+            <div class="lane lead-card">
+              <span class="lane-num">01</span>
+              <h3>Technical SEO and site health</h3>
+              <p>Remove the crawl, speed, and structure problems that cap what every other lane can achieve.</p>
+              <ul class="lane-points">
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="#3c806f" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Full technical and mobile audit, refreshed as the site changes</span></li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="#3c806f" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Prioritized developer and editor briefs, with impact stated</span></li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="#3c806f" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Quality checks on each batch before it counts as done</span></li>
+              </ul>
+              <span class="lane-scope">Ongoing &middot; we specify, David implements in <span class="brand-inline"><img src="assets/brands/duda.png" alt="">Duda</span></span>
+            </div>
+            <div class="lane">
+              <span class="lane-num">02</span>
+              <h3>Commercial pages and content</h3>
+              <p>Build the service, comparison, and audience pages that take a visitor to enrollment.</p>
+              <ul class="lane-points">
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="#b21e3b" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Page concepts, copy drafts, and design in your system</span></li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="#b21e3b" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Comparisons against Zion, CrowdHealth, and Samaritan</span></li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="#b21e3b" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Briefs weighted to decision-stage pages, not volume</span></li>
+              </ul>
+              <span class="lane-scope">12 pieces monthly &middot; marketing reviews before build</span>
+            </div>
+          </div>
+          <div class="footer-line"><span>Workstream detail, lanes 01 and 02</span><span>Deliverables and cadence from the signed proposal</span></div>
+        </div>
+        <aside class="notes">[Sources]\nSigned proposal, July 8, 2026.\nTechnical and mobile audit delivered August 27, 2026, with developer and editor task briefs issued August 31, 2026.\nComparison targets Zion, CrowdHealth, and Samaritan are the competitor set agreed for the comparison pages.</aside>
+      </section>
+
+      <!-- 07. Workstream detail, lanes 03, 04 and 05 -->
+      <section>
+        <div class="s paper">
+          <div class="shdr" data-n="07"></div>
+          <div class="title-row">
+            <h2>Visibility, authority, and measurement run behind the pages.</h2>
+            <p class="title-note">These three lanes decide whether the pages get found, get trusted, and get proven, so they run continuously rather than in batches.</p>
+          </div>
+          <div class="lane-grid three">
+            <div class="lane lead-card">
+              <span class="lane-num">03</span>
+              <h3>AI answer visibility</h3>
+              <p>Get Knew Health named when someone asks a model which health share membership to choose.</p>
+              <ul class="lane-points">
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="#3c806f" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Tracked prompts in <span class="brand-inline"><img src="assets/brands/openai.svg" alt="">ChatGPT</span>, <span class="brand-inline"><img src="assets/brands/claude.svg" alt="">Claude</span>, and <span class="brand-inline"><img src="assets/brands/perplexity.svg" alt="">Perplexity</span></span></li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="#3c806f" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Schema, author bios, and expert review signals models read</span></li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="#3c806f" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Monitoring which sources models cite, then closing the gap</span></li>
+              </ul>
+              <span class="lane-scope">Tracked continuously &middot; AI Peekaboo platform</span>
+            </div>
+            <div class="lane">
+              <span class="lane-num">04</span>
+              <h3>Community and editorial authority</h3>
+              <p>Place Knew Health inside the conversations and comparison guides buyers already trust.</p>
+              <ul class="lane-points">
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="#b21e3b" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><span class="brand-inline"><img src="assets/reddit.svg" alt="">Reddit</span> participation in self-employment and gap threads</span></li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="#b21e3b" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Editorial outreach to comparison pages that get cited</span></li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="#b21e3b" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Partnership development, currently led by HSA for America</span></li>
+              </ul>
+              <span class="lane-scope">20 comments monthly &middot; Connor leads partnerships</span>
+            </div>
+            <div class="lane">
+              <span class="lane-num">05</span>
+              <h3>Measurement and reporting</h3>
+              <p>Show what each lane changed, in numbers the team can act on rather than a dashboard nobody opens.</p>
+              <ul class="lane-points">
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="#3a6278" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Search Console, Analytics, AI visibility, and <span class="brand-inline"><img src="assets/brands/ahrefs.png" alt="">Ahrefs</span></span></li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="#3a6278" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Keyword coverage map kept current against live ranks</span></li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="#3a6278" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Written recap of every decision, owner, and next step</span></li>
+              </ul>
+              <span class="lane-scope">Biweekly &middot; next call September 15</span>
+            </div>
+          </div>
+          <div class="footer-line"><span>Workstream detail, lanes 03, 04 and 05</span><span>Deliverables and cadence from the signed proposal</span></div>
+        </div>
+        <aside class="notes">[Sources]\nSigned proposal, July 8, 2026.\nAI visibility measurement runs on the AI Peekaboo platform across ChatGPT, Claude, and Perplexity, measured August 29 to 31, 2026.\nHSA for America is a potential partnership in development, not a landed placement.</aside>
+      </section>
+
+      <!-- 08. Inside and outside the agreement -->
+      <section>
+        <div class="s mint">
+          <div class="shdr" data-n="08"></div>
+          <div class="title-row">
+            <h2>Some of what you have seen from us was exploratory, not contracted.</h2>
+            <p class="title-note">Everything we can quote separately is real work. It is simply not covered by the current agreement.</p>
+          </div>
+          <div class="scope-stage">
+            <div class="scope-panel included">
+              <div class="scope-head">
+                <span class="scope-head-icon"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+                <div><h3>Included in the engagement</h3><small>Delivered by AI Peekaboo</small></div>
+              </div>
+              <div class="scope-items">
+                <div class="scope-item"><svg viewBox="0 0 24 24" fill="none" stroke="#3c806f" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><div><strong>Strategy and research</strong><span>Technical audits, keyword and competitor mapping, positioning.</span></div></div>
+                <div class="scope-item"><svg viewBox="0 0 24 24" fill="none" stroke="#3c806f" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><div><strong>Page design and copy drafts</strong><span>Built in your design system, ready for review.</span></div></div>
+                <div class="scope-item"><svg viewBox="0 0 24 24" fill="none" stroke="#3c806f" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><div><strong>Content production</strong><span>Decision-stage pages, including two comparison pages a month.</span></div></div>
+                <div class="scope-item"><svg viewBox="0 0 24 24" fill="none" stroke="#3c806f" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><div><strong>Reddit and editorial outreach</strong><span>Community work, placements, partnership development.</span></div></div>
+                <div class="scope-item"><svg viewBox="0 0 24 24" fill="none" stroke="#3c806f" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><div><strong>AI visibility tracking</strong><span>Prompt monitoring, citation analysis, and the schema behind it.</span></div></div>
+                <div class="scope-item"><svg viewBox="0 0 24 24" fill="none" stroke="#3c806f" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><div><strong>Reporting and coordination</strong><span>Biweekly check-ins and task briefs for your developer.</span></div></div>
+              </div>
+            </div>
+            <div class="scope-panel outside">
+              <div class="scope-head">
+                <span class="scope-head-icon"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#77716c" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12h8"/></svg></span>
+                <div><h3>Outside the engagement</h3><small>Quotable separately</small></div>
+              </div>
+              <div class="scope-items">
+                <div class="scope-item"><svg viewBox="0 0 24 24" fill="none" stroke="#a9a29c" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12h8"/></svg><div><strong>The platform rebuild</strong><span>A headless site is on hold, currently expected in Q1 2027.</span></div></div>
+                <div class="scope-item"><svg viewBox="0 0 24 24" fill="none" stroke="#a9a29c" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12h8"/></svg><div><strong>Brand identity work</strong><span>A rebrand was proposed separately and has not been commissioned.</span></div></div>
+                <div class="scope-item"><svg viewBox="0 0 24 24" fill="none" stroke="#a9a29c" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12h8"/></svg><div><strong>Development in <span class="brand-inline"><img src="assets/brands/duda.png" alt="">Duda</span></strong><span>Your team implements, we specify, brief, and check the result.</span></div></div>
+                <div class="scope-item"><svg viewBox="0 0 24 24" fill="none" stroke="#a9a29c" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12h8"/></svg><div><strong>Paid media management</strong><span>Google, Bing, and Meta stay with Brenton and the paid team.</span></div></div>
+                <div class="scope-item"><svg viewBox="0 0 24 24" fill="none" stroke="#a9a29c" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12h8"/></svg><div><strong>Video production</strong><span>The member story and explainer videos shared in August were concepts.</span></div></div>
+                <div class="scope-item"><svg viewBox="0 0 24 24" fill="none" stroke="#a9a29c" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12h8"/></svg><div><strong>Portal, CRM, and review platforms</strong><span>The enrollment flow and Trustpilot remain yours.</span></div></div>
+              </div>
+            </div>
+          </div>
+          <div class="footer-line"><span>Scope boundary as of September 3, 2026</span><span>Anything outside the line can be quoted separately</span></div>
+        </div>
+        <aside class="notes">[Sources]\nSigned proposal, July 8, 2026, and #peekaboo-knewhealth Slack history July 24 to September 2, 2026.\nAugust 25, 2026: Jennifer asked whether the shared videos were part of the agreement or project scope. They were concepts, not deliverables.\nThe headless platform rebuild is on hold and currently expected in the first quarter of 2027.</aside>
+      </section>
+
+      <!-- 09. Divider: where we stand -->
+      <section>
+        <div class="s dark">
+          <div class="shdr" data-n="09"></div>
+          <div class="section-stage">
+            <div class="section-number">02</div>
+            <div class="section-copy">
+              <span class="section-kicker">Where we stand</span>
+              <h2>Research and build are largely done. Approval is the constraint.</h2>
+              <p class="lead">Six pages are designed and waiting, the technical list is with your developer, and nothing new has reached the live site yet.</p>
+            </div>
+          </div>
+          <div class="footer-line"><span>Section 02</span><span>Position, status, and the honest read</span></div>
+        </div>
+        <aside class="notes">[Sources]\nStatus through September 3, 2026. Page build status verified locally; technical task briefs issued August 31, 2026.</aside>
+      </section>
+
+      <!-- 10. Current position by the numbers -->
+      <section>
+        <div class="s paper">
+          <div class="shdr" data-n="10"></div>
+          <div class="title-row">
+            <h2>These numbers are the baseline the next phase gets measured against.</h2>
+            <p class="title-note"><span class="source-label"><span class="source-mark"><img src="assets/brands/google-g.svg" alt="Google"></span><span>Search Console, Analytics,<br>audit and coverage evidence</span></span></p>
+          </div>
+          <div class="figure-stage">
+            <div class="figure-row">
+              <div class="figure-card lead-card">
+                <strong>116</strong>
+                <p>Sitemap pages returning a healthy response in August</p>
+                <span class="stamp">Site audit &middot; August 27, 2026</span>
+              </div>
+              <div class="figure-card">
+                <strong>137</strong>
+                <p>Of 408 mapped commercial queries that rank at all today</p>
+                <span class="stamp">Coverage map &middot; August 20, 2026</span>
+              </div>
+              <div class="figure-card">
+                <strong>19.9%</strong>
+                <p>Of measured commercial AI answers that named Knew Health</p>
+                <span class="stamp">Visibility &middot; August 31, 2026</span>
+              </div>
+              <div class="figure-card">
+                <strong>11</strong>
+                <p>Reddit placements live now, out of 24 tracked attempts</p>
+                <span class="stamp">Community &middot; August 29, 2026</span>
+              </div>
+              <div class="figure-card">
+                <strong>4</strong>
+                <p>Editorial mentions, three of them confirmed live on the page</p>
+                <span class="stamp">Authority &middot; September 4, 2026</span>
+              </div>
+            </div>
+            <div class="context-panel">
+              <div class="context-intro">
+                <h3>Search baseline</h3>
+                <p>Google Search Console, across the 90 days ending August 30, 2026.</p>
+              </div>
+              <div class="context-metric"><span>Organic clicks</span><strong>5,353</strong><small class="flat">Across the measured window</small></div>
+              <div class="context-metric"><span>Impressions</span><strong>423,914</strong><small class="flat">Across the measured window</small></div>
+              <div class="context-metric"><span>Average position</span><strong>11.7</strong><small class="flat">Across all ranking queries</small></div>
+            </div>
+            <div class="context-panel audit">
+              <div class="context-intro">
+                <h3>Technical fix list</h3>
+                <p>From the August 27, 2026 audit, now on David's task list.</p>
+              </div>
+              <div class="context-metric"><span>Broken internal links</span><strong>8</strong><small class="flat">To fix or remove</small></div>
+              <div class="context-metric"><span>Below crawl level three</span><strong>79</strong><small class="flat">Indexable pages</small></div>
+              <div class="context-metric"><span>Sitemap only</span><strong>10</strong><small class="flat">Pages with no path in</small></div>
+              <div class="context-metric"><span>Scroll sideways on mobile</span><strong>7</strong><small class="flat">Pages at 390px</small></div>
+            </div>
+          </div>
+          <div class="footer-line"><span>Current position, with the measurement date on every figure</span><span>Status through September 3, 2026</span></div>
+        </div>
+        <aside class="notes">[Sources]\nKnew Health technical SEO and mobile audit, August 27, 2026: 116 sitemap pages returning a healthy response.\nKeyword coverage map, Search Console evidence through August 20, 2026: 137 of 408 mapped commercial queries rank in positions 1 to 100.\nAI visibility measurement, August 29 to 31, 2026: Knew Health named in 19.9% of measured commercial answers.\nReddit placement status August 29, 2026: 24 tracked attempts, 11 live, 13 removed.\nGoogle Search Console API, property https://www.knewhealth.com/, 90 days ending August 30, 2026 vs the preceding 90 days.</aside>
+      </section>
+
+      <!-- 11. Built, running, blocked -->
+      <section>
+        <div class="s mint">
+          <div class="shdr" data-n="11"></div>
+          <div class="title-row">
+            <h2>The work is built and running, and it is blocked at the same point.</h2>
+            <p class="title-note">Everything waiting sits on one handover: copy approval, confirmed product facts, and CMS implementation.</p>
+          </div>
+          <div class="state-stage">
+            <div class="state-card lead-card">
+              <span class="state-chip built">Built</span>
+              <h3>Six pages are designed and verified locally</h3>
+              <p>Compare Providers, How It Works, FAQs, About Us, What Members Get, and For Teams, all ready for your review.</p>
+              <span class="stamp">Page build status &middot; September 3, 2026</span>
+            </div>
+            <div class="state-card">
+              <span class="state-chip running">Running</span>
+              <h3>Authority work is producing real results</h3>
+              <p>Knew Health ranks first in two 2026 health share comparisons, both checked live on September 2, 2026.</p>
+              <span class="stamp">Editorial check &middot; September 2, 2026</span>
+            </div>
+            <div class="state-card">
+              <span class="state-chip blocked">Blocked</span>
+              <h3>Nothing from this work is live on the site yet</h3>
+              <p>Copy approval, current product facts, and CMS implementation stand between this work and organic traffic.</p>
+              <span class="stamp">Implementation status &middot; September 3, 2026</span>
+            </div>
+          </div>
+          <div class="footer-line"><span>Built, running, blocked</span><span>Status through September 3, 2026</span></div>
+        </div>
+        <aside class="notes">[Sources]\nSix pages designed and verified locally: Compare Providers, How It Works, FAQs, About Us, What Members Get, For Teams.\nLatestHealthTricks and Medigy verified live on September 2, 2026, both ranking Knew Health first in 2026 health share comparisons. FindATopDoc and Wellbeing Magazine remain recheck items and are not counted here.\nNo new page has been published to the live site as of September 3, 2026.</aside>
+      </section>
+
+      <!-- 12. The honest read -->
+      
+
+      <!-- 12. Editorial placements earned -->
+      <section>
+        <div class="s paper">
+          <div class="shdr" data-n="12"></div>
+          <div class="title-row">
+            <h2>Four comparison pages now name Knew Health.</h2>
+            <p class="title-note">Every page was opened in a browser on September 4, 2026, and the link type was read off the live markup rather than assumed.</p>
+          </div>
+          <div class="place-stage">
+            <div class="place-table">
+              <div class="place-head-row"><span>Publisher</span><span>What the page says</span><span>Status</span><span>Link</span><span>Position</span></div>
+              <div class="place-row"><span class="place-pub"><img src="assets/publications/latest-health-tricks.png" alt="LatestHealthTricks">LatestHealthTricks</span><span class="place-what">Best Health Share Plans in 2026, with Knew Health ranked ahead of Medi-Share, Sedera, and Christian Healthcare Ministries.</span><span class="pill running">Verified live</span><span class="place-tag">Dofollow link</span><span class="place-tag">First of five</span></div>
+              <div class="place-row"><span class="place-pub"><img src="assets/publications/medigy.png" alt="Medigy">Medigy</span><span class="place-what">The same 2026 ranking on a healthcare technology publisher, with the link sitting inside the Knew Health entry.</span><span class="pill running">Verified live</span><span class="place-tag">Dofollow link</span><span class="place-tag">First of five</span></div>
+              <div class="place-row"><span class="place-pub"><img src="assets/publications/wellbeing-magazine.png" alt="Wellbeing Magazine">Wellbeing Magazine</span><span class="place-what">A dedicated section in a wellness roundup, framing the brand as a community-driven alternative to insurance.</span><span class="pill running">Verified live</span><span class="place-tag">Dofollow link</span><span class="place-tag">Named section</span></div>
+              <div class="place-row"><span class="place-pub"><img src="assets/publications/find-a-top-doc.png" alt="FindATopDoc">FindATopDoc</span><span class="place-what">Recorded in August, and the site returns a block to every automated check, so it needs a manual look in a browser.</span><span class="pill confirm">Unverified</span><span class="place-tag">Page blocked</span><span class="place-tag">Open manually</span></div>
+            </div>
+          </div>
+          <div class="note-band">
+            <div><b>What the placements are worth</b><p>Three confirmed links pass authority straight to knewhealth.com, and two of the pages rank Knew Health first in a 2026 comparison.</p></div>
+            <div><b>Correction requested</b><p>Two ranked articles still quote the older starting contribution, so both publishers have a correction and terminology request queued.</p></div>
+          </div>
+          <div class="footer-line"><span>Editorial placements earned since the engagement began</span><span>All four checked September 4, 2026</span></div>
+        </div>
+        <aside class="notes">[Sources]\nAll four placement URLs loaded in a real browser on September 4, 2026, with the link type read from the live markup. LatestHealthTricks, Medigy, and Wellbeing Magazine returned the page and a followed link to knewhealth.com. FindATopDoc returned a 403 to the automated check on September 2 and again on September 4, so it stays unconfirmed rather than lost. The current starting contribution was confirmed by Amber Cram on August 20, 2026, and both ranked articles still quote the older figure.</aside>
+      </section>
+
+      <!-- 13. Reddit footprint -->
+      <section>
+        <div class="s mint">
+          <div class="shdr" data-n="13"></div>
+          <div class="title-row">
+            <h2>Knew Health sits inside the threads where people weigh alternatives.</h2>
+            <p class="title-note">Placements are tracked as attempted, live, and removed, so the footprint stays an operating view rather than a claim. Status as of August 29, 2026.</p>
+          </div>
+          <div class="reddit-stage">
+            <div class="figure-row four">
+              <div class="figure-card lead-card">
+                <strong>24</strong>
+                <p>Tracked comment placements since the community work began in June</p>
+              </div>
+              <div class="figure-card">
+                <strong>11</strong>
+                <p>Placements still live on the thread when the tracker last ran</p>
+              </div>
+              <div class="figure-card">
+                <strong>13</strong>
+                <p>Placements later removed, mostly by the moderators of a subreddit</p>
+              </div>
+              <div class="figure-card">
+                <strong>9</strong>
+                <p>Separate communities carrying at least one live comment today</p>
+              </div>
+            </div>
+            <div class="sub-band">
+              <div class="sub-band-head"><img src="assets/reddit.svg" alt="Reddit">Communities carrying a live comment</div>
+              <div class="sub-list"><span>r/HealthInsurance</span><span>r/AskReddit</span><span>r/Fire</span><span>r/DaveRamsey</span><span>r/BostonU</span><span>r/Crunchymom</span><span>r/CFP</span><span>r/Insurance</span><span>r/healthcare</span></div>
+            </div>
+            <div class="moment-row">
+              <div class="moment"><b>Self-employed coverage</b><p>Freelancers and families comparing cost, predictability, and risk</p></div>
+              <div class="moment"><b>ACA and COBRA gaps</b><p>Threads where eligibility, timing, and monthly cost drive the choice</p></div>
+              <div class="moment"><b>Early retirement</b><p>FIRE readers bridging the years between employer cover and Medicare</p></div>
+              <div class="moment"><b>Secular health sharing</b><p>People wanting a non-faith membership with everyday wellness value</p></div>
+            </div>
+          </div>
+          <div class="footer-line"><span>Reddit footprint, tracked as attempted, live, and removed</span><span>Snapshot measured June 1 to August 29, 2026</span></div>
+        </div>
+        <aside class="notes">[Sources]\nReddit placement snapshot measured June 1 to August 29, 2026: 24 tracked assets, 11 live and 13 removed, across r/AskReddit, r/BostonU, r/CFP, r/Crunchymom, r/DaveRamsey, r/Fire, r/HealthInsurance, r/Insurance, and r/healthcare.\nModels cite Reddit threads rather than individual comments, so this is thread-level exposure and not a citation claim.</aside>
+      </section>
+
+      <!-- 14. Open items and owners -->
+      <section>
+        <div class="s paper">
+          <div class="shdr" data-n="14"></div>
+          <div class="title-row">
+            <h2>Ten open items, each with one accountable owner.</h2>
+            <p class="title-note">One owner per item moves the work faster than a long approval chain does.</p>
+          </div>
+          <div class="table-stage">
+            <div class="status-table">
+              <div class="status-head"><span>Owner</span><span>Open commitment</span><span>Status</span></div>
+              <div class="status-row"><span class="status-owner">David Lee</span><span class="status-task">Work through the technical SEO task list in <span class="brand-inline"><img src="assets/brands/duda.png" alt="">Duda</span>, targeting September 11.</span><span class="pill running">Running</span></div>
+              <div class="status-row"><span class="status-owner">Marketing</span><span class="status-task">Review the built page copy and designs, then choose the first batch.</span><span class="pill review">Needs review</span></div>
+              <div class="status-row"><span class="status-owner">Amber Cram</span><span class="status-task">Approve terminology, current pricing, product facts, and disclaimers.</span><span class="pill review">Needs review</span></div>
+              <div class="status-row"><span class="status-owner">Alisha Obaid</span><span class="status-task">Supply the doctor and expert reviewer list for authority pages.</span><span class="pill review">Needs review</span></div>
+              <div class="status-row"><span class="status-owner"><img src="assets/aipeekaboo-icon.jpg" alt="">AI Peekaboo</span><span class="status-task">Redesign priority pages, send drafts, coordinate expert authority pages.</span><span class="pill running">Running</span></div>
+              <div class="status-row"><span class="status-owner"><img src="assets/aipeekaboo-icon.jpg" alt="">AI Peekaboo</span><span class="status-task">Investigate traffic attribution and build the analytics view.</span><span class="pill running">Running</span></div>
+              <div class="status-row"><span class="status-owner"><img src="assets/aipeekaboo-icon.jpg" alt="">AI Peekaboo</span><span class="status-task">Correct the two verified listicles and recheck two uncertain mentions.</span><span class="pill running">Running</span></div>
+              <div class="status-row"><span class="status-owner">Connor</span><span class="status-task">Turn the HSA for America conversation into a confirmed meeting.</span><span class="pill confirm">Confirm date</span></div>
+              <div class="status-row"><span class="status-owner">Development</span><span class="status-task">Add <span class="brand-inline"><img src="assets/reddit.svg" alt="">Reddit</span> and AI engines to the signup source options.</span><span class="pill confirm">Confirm status</span></div>
+              <div class="status-row"><span class="status-owner">Marketing</span><span class="status-task">Add reviewer and author information to published content.</span><span class="pill notstarted">Not started</span></div>
+            </div>
+          </div>
+          <div class="footer-line"><span>Open items and owners</span><span>Status through September 3, 2026</span></div>
+        </div>
+        <aside class="notes">[Sources]\n#peekaboo-knewhealth Slack, July 24 to September 2, 2026, and the meeting recap posted September 3, 2026.\nDavid Lee's technical task list target date of September 11 was confirmed in the channel.\nHSA for America remains a potential partnership, not a landed placement.\nOwner roles: Jennifer Butler, page copy and design review, branding, and key event tracking. Amber Cram, compliance sign-off, product facts, pricing, and partnership context. Alisha Obaid, page copy and design review plus the expert reviewer list. David Lee, technical implementation in Duda, page build, and site performance. Filipe Duarte, strategy, audits, page drafts, Reddit, outreach, and reporting.</aside>
+      </section>
+
+      <!-- 15. Divider: where we are headed -->
+      <section>
+        <div class="s dark">
+          <div class="shdr" data-n="15"></div>
+          <div class="section-stage">
+            <div class="section-number">03</div>
+            <div class="section-copy">
+              <span class="section-kicker">Where we are headed</span>
+              <h2>The plan is built backwards from the buying season.</h2>
+              <p class="lead">Most of the category shops between October and January, so every September date exists to get pages live and indexed before it opens.</p>
+            </div>
+          </div>
+          <div class="footer-line"><span>Section 03</span><span>Sequence, measurement, and what we need</span></div>
+        </div>
+        <aside class="notes">[Sources]\nCategory buying season runs October through January, which sets the sequence for the technical batch and the page publication dates.</aside>
+      </section>
+
+      <!-- 16. September to November -->
+      <section>
+        <div class="s mint">
+          <div class="shdr" data-n="16"></div>
+          <div class="title-row">
+            <h2>September to November, one outcome a month.</h2>
+            <p class="title-note">Each month has one outcome. If a month slips, the next one starts short, so the September dates carry the most weight.</p>
+          </div>
+          <div class="phase-stage">
+            <div class="phase-track three">
+              <div class="phase">
+                <span class="phase-node">01</span>
+                <div class="phase-card">
+                  <span class="phase-period">Now &middot; September</span>
+                  <h3>Clear the technical batch and approve the first pages</h3>
+                  <p>David works through the technical task list in <span class="brand-inline"><img src="assets/brands/duda.png" alt="">Duda</span>, marketing picks the first page batch, and compliance confirms the facts.</p>
+                  <span class="phase-out">Outcome: clean base</span>
+                </div>
+              </div>
+              <div class="phase">
+                <span class="phase-node">02</span>
+                <div class="phase-card">
+                  <span class="phase-period">Next &middot; October</span>
+                  <h3>Launch the new pages while buyers start shopping</h3>
+                  <p>The approved batch goes live in <span class="brand-inline"><img src="assets/brands/duda.png" alt="">Duda</span> with internal links, metadata, and schema, then gets checked on mobile and desktop.</p>
+                  <span class="phase-out">Outcome: pages live</span>
+                </div>
+              </div>
+              <div class="phase">
+                <span class="phase-node">03</span>
+                <div class="phase-card">
+                  <span class="phase-period">Then &middot; November</span>
+                  <h3>Clean up the older content behind the new pages</h3>
+                  <p>Broken destinations, orphan pages, and pages buried deeper than crawl level three get fixed, merged, or retired around the new set.</p>
+                  <span class="phase-out">Outcome: content cleaned</span>
+                </div>
+              </div>
+            </div>
+            <div class="season-band">
+              <div class="season-note">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#b21e3b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="16" rx="3"/><path d="M3 9.5h18M8 2.5v4M16 2.5v4"/></svg>
+                <span>Most of the category shops between October and January, so the sequence is built backwards from that window.</span>
+              </div>
+              <div class="month-strip" role="img" aria-label="Buying season runs October through January">
+                <span class="month now">Sep</span>
+                <span class="month peak">Oct</span>
+                <span class="month peak">Nov</span>
+                <span class="month peak">Dec</span>
+                <span class="month peak">Jan</span>
+                <span class="month">Feb</span>
+                <span class="month">Mar</span>
+              </div>
+            </div>
+          </div>
+          <div class="footer-line"><span>September to November, one outcome a month</span><span>Sequenced against the October to January shopping window</span></div>
+        </div>
+        <aside class="notes">[Sources]\nSequence agreed against the category's October to January buying season.\nDavid Lee's technical task list targets September 11, 2026.\nNovember cleanup targets come from the technical audit of August 27, 2026: 8 broken internal destinations, 10 sitemap-only pages, and 79 indexable pages deeper than crawl level three.</aside>
+      </section>
+
+      <!-- 17. How we measure progress -->
+      <section>
+        <div class="s paper">
+          <div class="shdr" data-n="17"></div>
+          <div class="title-row">
+            <h2>Four sources answer four different questions about progress.</h2>
+            <p class="title-note">Each reading is stated now, with its date, so movement is visible at the next review rather than argued about.</p>
+          </div>
+          <div class="measure-stage">
+            <div class="measure-card lead-card">
+              <div class="measure-head">
+                <span class="measure-mark"><img src="assets/brands/google-g.svg" alt="Google Search Console"></span>
+                <h3>Google Search Console</h3>
+              </div>
+              <p>Whether the pages we build earn clicks on the queries that signal a buying decision.</p>
+              <div class="measure-now"><span>Now</span><strong>5,353 clicks<br>Average position 11.7</strong></div>
+            </div>
+            <div class="measure-card">
+              <div class="measure-head">
+                <span class="measure-mark"><img src="assets/brands/google-analytics.svg" alt="Google Analytics"></span>
+                <h3>Google Analytics</h3>
+              </div>
+              <p>Whether organic and AI referral traffic grow as a share of total site sessions.</p>
+              <div class="measure-now"><span>Now</span><strong>Organic 15.0%<br>AI assistants 0.2%</strong></div>
+            </div>
+            <div class="measure-card">
+              <div class="measure-head">
+                <span class="measure-mark"><img src="assets/aipeekaboo-icon.jpg" alt="AI Peekaboo"></span>
+                <h3>AI Peekaboo</h3>
+              </div>
+              <p>How often models name Knew Health, and which sources they quote instead.</p>
+              <div class="measure-now"><span>Now</span><strong>19.9% of measured<br>commercial answers</strong></div>
+            </div>
+            <div class="measure-card">
+              <div class="measure-head">
+                <span class="measure-mark"><img src="assets/brands/ahrefs.png" alt="Ahrefs"></span>
+                <h3>Ahrefs</h3>
+              </div>
+              <p>Whether the editorial placements hold, and where the next link targets should sit.</p>
+              <div class="measure-now"><span>Now</span><strong>Four editorial mentions<br>Three confirmed live</strong></div>
+            </div>
+          </div>
+          <div class="footer-line"><span>How we measure progress</span><span>Readings dated August 20 to September 2, 2026</span></div>
+        </div>
+        <aside class="notes">[Sources]\nGoogle Search Console API, 90 days ending August 30, 2026: 5,353 organic clicks, average position 11.7.\nGoogle Analytics Data API, property 326445146, June 2 to August 30, 2026: organic 15.0%, AI assistants 0.2%.\nAI Peekaboo measurement August 29 to 31, 2026: Knew Health named in 19.9% of measured commercial answers.\nAhrefs and direct browser checks September 4, 2026: four editorial mentions tracked, LatestHealthTricks, Medigy, and Wellbeing Magazine confirmed live with followed links. FindATopDoc blocks automated checks and stays unconfirmed.</aside>
+      </section>
+
+      <!-- 18. Working together, and what we need -->
+      <section>
+        <div class="s dark">
+          <div class="shdr" data-n="18"></div>
+          <div class="title-row">
+            <h2>Four inputs decide how much of the plan lands before October.</h2>
+            <p class="title-note" style="color:rgba(255,255,255,0.7)">Nothing reaches the live site without marketing approval, so the approval path matters as much as the work itself.</p>
+          </div>
+          <div class="close-stage">
+            <div class="need-list">
+              <div class="need"><span class="need-num">01</span><div><h3>A first page batch, chosen and approved</h3><p>Five to seven pages from the built set, with facts, pricing, and terminology confirmed.</p></div></div>
+              <div class="need"><span class="need-num">02</span><div><h3>Implementation dates from development</h3><p>Confirmed dates for the technical batch and for building the approved pages.</p></div></div>
+              <div class="need"><span class="need-num">03</span><div><h3>Expert reviewers and media permissions</h3><p>The clinician list for reviewed content, plus approval on which member videos can be used.</p></div></div>
+              <div class="need"><span class="need-num">04</span><div><h3>A signup source field for attribution</h3><p>Reddit and AI engines as options at signup, so this work stops hiding inside direct traffic.</p></div></div>
+            </div>
+            <div class="close-side">
+              <div class="close-card shelf">
+                <h3>How we work together</h3>
+                <div class="rhythm-list">
+                  <div class="rhythm-row"><b>Rhythm</b><p>A biweekly call of 30 to 45 minutes. Next on September 15 at 9:00 AM Pacific, with a written recap of decisions and owners after.</p></div>
+                  <div class="rhythm-row"><b>Approval</b><p>We draft the page, marketing reviews it, Amber signs off on compliance and terminology, and David then implements it in Duda.</p></div>
+                  <div class="rhythm-row"><b>Day to day</b><p>The shared <span class="brand-inline"><img src="assets/brands/slack.svg" alt="">Slack</span> channel carries task briefs, page links, and placement updates in the days between our calls.</p></div>
+                </div>
+              </div>
+              <div class="close-card">
+                <h3>Language on every page</h3>
+                <div class="words-grid">
+                  <div class="words-col good">
+                    <span>Preferred</span>
+                    <ul><li>health share Membership</li><li>medical cost sharing</li><li>health share community</li><li>share in eligible Medical Needs</li></ul>
+                  </div>
+                  <div class="words-col care">
+                    <span>Use only with care</span>
+                    <ul><li>plan</li><li>cover or coverage</li><li>deductible</li><li>wording that implies insurance</li></ul>
+                  </div>
+                </div>
+              </div>
+              <div class="contact-card">
+                <strong>Next call, September 15</strong>
+                <a href="mailto:filipe@aipeekaboo.com">filipe@aipeekaboo.com</a>
+                <a href="https://calendly.com/filipe-aipeekaboo/30min" target="_blank" rel="noopener noreferrer">calendly.com/filipe-aipeekaboo/30min</a>
+              </div>
+            </div>
+          </div>
+          <div class="footer-line"><span>Working together, and what we need from Knew Health</span><span>Prepared September 3, 2026</span></div>
+        </div>
+        <aside class="notes">[Sources]\nCadence, approval path, and dependencies confirmed in #peekaboo-knewhealth Slack through September 2, 2026, and the recap posted September 3, 2026.\nNext biweekly call: September 15, 2026, 9:00 AM Pacific.\nTerminology guidance is the current approved Knew Health language list. Knew Health is a medical cost sharing membership, not insurance.</aside>
+      </section>
+
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reveal.min.js"></script>
+  <script>
+    (function bootDeck() {
+      var totalSlides = 18;
+      var logoPath = 'assets/knewhealth-logo.png';
+
+      function injectHeaders() {
+        var placeholders = document.querySelectorAll('.slides > section:not([data-visibility="hidden"]) .shdr');
+        placeholders.forEach(function renderHeader(element) {
+          if (!element) return;
+          var number = element.getAttribute('data-n') || '00';
+          element.outerHTML = '<div class="hdr">'
+            + '<div class="hdr-brand">'
+            + '<img src="' + logoPath + '" class="hdr-logo" alt="KnewHealth">'
+            + '<span class="hdr-label">Scope of work</span>'
+            + '</div>'
+            + '<div class="hdr-right"><span class="snum">' + number + ' / ' + totalSlides + '</span>'
+            + '<a class="powered" href="https://www.aipeekaboo.com/?utm_source=proposal&utm_medium=deck&utm_campaign=knewhealth-scope-of-work-canva" target="_blank" rel="noopener noreferrer"><span>Powered by</span><img src="assets/peekaboo-logo-black.png" alt="AI Peekaboo"></a></div>'
+            + '</div>';
+        });
+      }
+
+      function initializeReveal() {
+        if (!window.Reveal || typeof window.Reveal.initialize !== 'function') {
+          throw new Error('Reveal.js failed to load');
+        }
+        window.Reveal.initialize({
+          hash: true,
+          transition: 'none',
+          backgroundTransition: 'none',
+          disableLayout: true,
+          width: 1920,
+          height: 1080,
+          margin: 0,
+          minScale: 0.1,
+          maxScale: 3,
+          controlsTutorial: false
+        });
+      }
+
+      function initializeFallback() {
+        var sections = Array.prototype.slice.call(document.querySelectorAll('.slides > section:not([data-visibility="hidden"])'));
+        if (!sections.length) return;
+        document.body.classList.add('fallback');
+        var index = Math.max(0, Math.min(sections.length - 1, Number(window.location.hash.replace('#/', '')) || 0));
+
+        function showSlide(nextIndex) {
+          index = Math.max(0, Math.min(sections.length - 1, nextIndex));
+          sections.forEach(function toggleSection(section, sectionIndex) {
+            section.classList.toggle('fallback-active', sectionIndex === index);
+          });
+          window.location.hash = '#/' + index;
+        }
+
+        document.addEventListener('keydown', function handleKey(event) {
+          if (event.key === 'ArrowRight' || event.key === 'PageDown' || event.key === ' ') showSlide(index + 1);
+          if (event.key === 'ArrowLeft' || event.key === 'PageUp') showSlide(index - 1);
+          if (event.key === 'Home') showSlide(0);
+          if (event.key === 'End') showSlide(sections.length - 1);
+        });
+        showSlide(index);
+      }
+
+      try {
+        injectHeaders();
+      } catch (error) {
+        console.error('Deck header step failed:', error);
+      }
+
+      try {
+        initializeReveal();
+      } catch (error) {
+        console.error('Deck framework step failed:', error);
+        try {
+          initializeFallback();
+        } catch (fallbackError) {
+          console.error('Deck fallback step failed:', fallbackError);
+        }
+      }
+    })();
+  </script>
+</body>
+</html>

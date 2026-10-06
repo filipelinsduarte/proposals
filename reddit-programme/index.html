@@ -4,6 +4,18 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
+<script>
+// Phones and portrait tablets read the deck as one scrolling page (html.doc, styled in
+// deck-extra.css); wider screens get the slides. Both modes keep #/n on the slide being
+// read, so crossing the line (e.g. rotating a tablet) reloads at the same slide.
+window.DOC_MODE=window.matchMedia('(max-width:900px),(max-height:500px)');
+document.documentElement.classList.toggle('doc',DOC_MODE.matches);
+if('scrollRestoration' in history)history.scrollRestoration='manual';
+DOC_MODE.addEventListener('change',function(){
+  if(window.Reveal&&Reveal.isReady())history.replaceState(null,'','#/'+Reveal.getIndices().h);
+  location.reload();
+});
+</script>
 <title>AI Peekaboo | Reddit Activation & Reputation Programme</title>
 <link rel="icon" type="image/jpeg" href="assets/favicon.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -345,6 +357,121 @@ h3{font-size:clamp(21px,2vw,30px);line-height:1.16;letter-spacing:-.02em;margin:
 .client-grid img[alt="Knew Health"]{height:clamp(18px,1.6vw,30px)}
 .client-grid img[alt="Flexzo"]{height:clamp(20px,1.8vw,34px)}
 .client-grid>div{gap:1.1vw}
+
+/* Scrolling page for phones and portrait tablets (html.doc is set in the head).
+   Reveal is not started: slides stack in order, each as tall as its content,
+   every multi-column set becomes one column, and the rails sit at the gutter. */
+html.doc,html.doc body{height:auto;overflow-x:hidden;overflow-y:visible}
+html.doc .reveal,html.doc .reveal .slides{position:static;width:auto;height:auto!important;overflow:visible;touch-action:auto;pointer-events:auto;perspective:none;text-align:left}
+html.doc .reveal .slides>section{display:block!important;position:relative!important;width:100%!important;height:auto!important;transform:none!important}
+html.doc .s{width:100%!important;height:auto!important;overflow:visible!important;padding:20px 12px 36px}
+html.doc .s::before{left:12px}
+html.doc .s::after{right:12px}
+html.doc .hdr{padding:0 12px 10px}
+html.doc :is(.content,.cover-content,.divider-content){max-width:720px;width:100%;margin:0 auto;padding:12px 16px 0;box-sizing:border-box}
+html.doc .cover{min-height:calc(100svh - 60px)}
+html.doc .cover-content{margin:auto}
+html.doc .divider{padding-bottom:64px}
+html.doc .divider-content{margin-top:48px}
+html.doc h1,html.doc .cover-content h1{font-size:clamp(38px,10vw,64px);line-height:1.04}
+html.doc h2,html.doc .closing-proposal h2{font-size:clamp(30px,7.6vw,46px);line-height:1.1}
+html.doc .divider-content h2{font-size:clamp(38px,10.4vw,72px)}
+html.doc :is(h1,h2,.lead) br{display:none}
+html.doc .lead{font-size:clamp(18px,4.6vw,22px)}
+html.doc .section-head{text-align:left;margin-bottom:24px}
+html.doc .section-head h2{margin-left:0}
+html.doc .section-head .brand-label{justify-content:flex-start}
+html.doc :is(p,li,.line-item span,.account-bottom span){text-wrap:pretty}
+html.doc p.lead{text-wrap:balance}
+html.doc :is(.overline,.model-label,.account-top small,.cover-foot,.snum,.kicker,.step b,.measure-ledger b){font-size:12px}
+html.doc :is(.editorial-three,.editorial-two,.split,.visual-split,.qualification,.account-branches,.client-grid,.steps){grid-template-columns:1fr!important}
+html.doc :is(.editorial-three,.editorial-two) article,html.doc .approach .step{padding:24px 0;border-right:0;border-bottom:1px solid var(--border);min-height:0}
+html.doc :is(.editorial-three,.editorial-two) article:last-child,html.doc .approach .step:last-child{border-bottom:0}
+html.doc .overline{margin-bottom:14px}
+html.doc .approach .step h3{margin-top:14px}
+html.doc .glance h3{white-space:normal}
+html.doc .split{gap:32px}
+html.doc .account-branches>div:first-child{border-right:0;border-bottom:1px solid var(--border)}
+html.doc .account-branches>div,html.doc .account-top,html.doc .account-bottom{padding:18px 20px}
+html.doc .measure-ledger article{grid-template-columns:32px 1fr;gap:4px 12px;align-items:start;padding:16px 0}
+html.doc .measure-ledger p{grid-column:2}
+html.doc .qualification{gap:8px}
+html.doc .play-split{gap:28px}
+html.doc .play-figure img{max-height:70svh}
+html.doc .model-row{flex-wrap:wrap;gap:12px 16px}
+html.doc .model{font-size:14px}
+html.doc .model-label{width:100%}
+html.doc .client-grid>div{height:auto;padding:20px 0;border-right:0;gap:16px}
+html.doc .client-grid img{flex-shrink:0}
+html.doc .client-label{white-space:normal}
+html.doc .client-grid img[alt="AUTODOC"]{height:44px}
+html.doc .client-grid img[alt="Knew Health"]{height:24px}
+html.doc .client-grid img[alt="Flexzo"]{height:26px}
+html.doc .trusted-line{text-align:left;margin-top:28px;font-size:24px}
+html.doc .next-list{flex-direction:column;gap:10px}
+html.doc .contact-row{flex-direction:column;align-items:stretch;gap:8px}
+html.doc .contact-row a{min-height:48px;display:flex;align-items:center;justify-content:center}
+@media(min-width:600px){html.doc .contact-row{flex-direction:row;align-items:center;gap:28px}}
+html.doc .closing-proposal{padding-bottom:24px}
+
+/* Landscape tablets (901-1279px wide) keep the slides. Below 1280 the clamp() floors
+   stop the copy shrinking while the columns keep narrowing, so card rows wrap unevenly.
+   Here the set copy scales with the viewport, as it does from 1280 up. */
+@media(min-width:901px) and (max-width:1279px){
+  .editorial-three h3,.editorial-two h3{font-size:2vw}
+  .editorial-three p,.editorial-two p,.copy-block p{font-size:1.45vw}
+  .approach .step p{font-size:1.35vw}
+  .account-branches p,.account-bottom span{font-size:1.25vw}
+  .fine,.copy-block .fine{font-size:max(12px,1.03vw)}
+  .qualification{grid-template-columns:.45fr 1.85fr}
+  .qualification p{font-size:max(13px,1.2vw)}
+  .model-row{gap:6px}
+  .model{padding:4px 7px;gap:5px}
+  .client-grid>div{gap:.8vw;padding:0 1.2vw}
+  .client-grid img[alt="Knew Health"]{height:1.5vw}
+}
+/* At 1024 the reference folds the four steps into 2x2: both rows start flush left,
+   and only the left column carries the divider. */
+@media(min-width:901px) and (max-width:1024px){
+  .approach .step:nth-child(odd){padding-left:0;border-right:1px solid var(--border)}
+  .approach .step:nth-child(even){border-right:0}
+  .approach .step:nth-child(-n+2){border-bottom:1px solid var(--border)}
+}
+
+/* Merged slides (6 October 2026): two sets share one slide, so each set runs tighter.
+   .merged is the one modifier; it only resizes existing components. */
+.merged .section-head{margin-bottom:3vh}
+.merged .editorial-three article{padding-top:2.4vh}
+.merged .editorial-three .overline{margin-bottom:1.4vh}
+.merged .editorial-three h3{margin-bottom:1.2vh}
+.merged .editorial-three p{font-size:max(12px,1.05vw);margin-bottom:1vh}
+.merged .roadmap .decision{margin-top:1.4vh;padding-top:1.4vh}
+.merged .months-note{margin:2vh 0 0}
+.merged .team-label{margin:3.2vh 0 0}
+.merged .steps{margin-top:1.2vh;border-bottom:0}
+.merged .approach .step{min-height:0;padding:2.2vh 1.6vw 0}
+.merged .approach .step:first-child{padding-left:0}
+.merged .approach .step:last-child{padding-right:0}
+.merged .approach .step h3{margin:0;font-size:max(16px,1.4vw)}
+.merged .approach .step p{font-size:max(12px,1.05vw);margin-top:1.2vh;text-wrap:pretty}
+.merged .model-row{margin-top:2.4vh;padding-top:2vh}
+.merged .clients-head{display:flex;align-items:baseline;justify-content:space-between;gap:2vw;margin-top:3.2vh}
+.merged .clients-head .overline{margin:0}
+.merged .clients-head .trusted-line{margin:0;text-align:right;font-size:clamp(18px,1.5vw,26px)}
+.merged .client-grid{margin-top:1.4vh}
+.merged .client-grid>div{height:12vh}
+.glance-split{grid-template-columns:1fr 1fr;align-items:start;gap:4vw}
+.glance-col>.overline{margin-bottom:1.2vh}
+.glance-rows{border-top:1px solid var(--border-strong)}
+.glance-rows article{display:grid;grid-template-columns:4vw 1fr;gap:1vw;align-items:start;padding:2.2vh 0;border-bottom:1px solid var(--border)}
+.glance-rows h3{font-size:max(17px,1.55vw);margin:0 0 .8vh}
+.glance-rows p{font-size:max(12px,1.1vw);line-height:1.45;color:var(--muted);margin:0;text-wrap:pretty}
+.glance-rows .figure-num{font-size:3.1vw;margin:0}
+.glance-rows .icon-tile{margin-top:2px}
+html.doc .merged .clients-head{flex-direction:column;align-items:flex-start;gap:8px}
+html.doc .merged .clients-head .trusted-line{text-align:left}
+html.doc .merged .client-grid>div{height:auto}
+html.doc .merged .approach .step{padding:18px 0}
 </style>
 </head>
 <body>
@@ -363,7 +490,7 @@ h3{font-size:clamp(21px,2vw,30px);line-height:1.16;letter-spacing:-.02em;margin:
 </div></div></section>
 
 <section><div class="s"><div class="shdr" data-n="03"></div><div class="content">
-<div class="section-head"><p class="kicker">Why Reddit, and why now</p><h2>Your buyers trust Reddit.<br>So do Google and AI assistants.</h2></div>
+<div class="section-head"><p class="kicker">Why Reddit, and why now</p><h2>Your buyers trust Reddit. <br>So do Google and AI assistants.</h2></div>
 <div class="editorial-three">
 <article><span class="overline">Before they buy</span><h3>Opinions first.</h3><p>Before buying a camera, a jacket or a skincare set, people read what real users say.</p></article>
 <article><span class="overline logo-inline"><img src="assets/google.svg" alt="Google">Google search</span><h3>Top of Google.</h3><p>Reddit threads sit on page one of Google for product, review and comparison searches.</p></article>
@@ -377,37 +504,27 @@ h3{font-size:clamp(21px,2vw,30px);line-height:1.16;letter-spacing:-.02em;margin:
 <p class="lead">Three months, clear deliverables and a clear decision at the end.</p>
 </div></div></section>
 
-<section><div class="s"><div class="shdr" data-n="05"></div><div class="content">
+<section><div class="s"><div class="shdr" data-n="05"></div><div class="content merged">
 <div class="section-head"><p class="kicker">The programme at a glance</p><h2>Start with three months,<br>then decide how far to go.</h2></div>
-<div class="editorial-three glance" data-months="3" data-monthly="2000" data-total="6000">
-<article><span class="overline logo-inline"><span class="icon-tile t-orange" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>Commitment</span><h3>3-month minimum</h3><p>A review at the end of every month, so progress is visible long before the three months end.</p></article>
-<article><span class="overline logo-inline"><span class="icon-tile t-magenta" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"/><path d="M3 5v14a2 2 0 0 0 2 2h16v-5"/><path d="M18 12a2 2 0 0 0 0 4h4v-4Z"/></svg></span>Investment</span><h3>$2,000 / month</h3><p>$6,000 across the three-month minimum, invoiced monthly rather than paid up front.</p></article>
-<article><span class="overline logo-inline"><span class="icon-tile t-blue" aria-hidden="true"><svg viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></span>Every month</span><h3>30 contributions</h3><p>2 strategic discussions, 8 community comments and 20 comments from your brand profile.</p></article>
+<div class="split glance-split">
+<div class="glance-col"><span class="overline">The terms</span>
+<div class="glance-rows" data-months="3" data-monthly="2000" data-total="6000">
+<article><span class="icon-tile lg t-orange" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span><div><h3>3-month minimum</h3><p>A review at the end of every month, so progress is visible long before the three months end.</p></div></article>
+<article><span class="icon-tile lg t-magenta" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"/><path d="M3 5v14a2 2 0 0 0 2 2h16v-5"/><path d="M18 12a2 2 0 0 0 0 4h4v-4Z"/></svg></span><div><h3>$2,000 / month</h3><p>$6,000 across the three-month minimum, invoiced monthly rather than paid up front.</p></div></article>
+
+<article><span class="icon-tile lg t-blue" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></span><div><h3>Best for</h3><p>Brands that want to validate Reddit as a channel before a larger, longer-term programme.</p></div></article>
+</div></div>
+<div class="glance-col"><span class="overline">30 contributions a month, each logged with its live link</span>
+<div class="glance-rows" data-discussions="2" data-comments="8" data-brand="20">
+<article><div class="figure-num h-orange">2</div><div><h3>Strategic discussions</h3><p>New threads built around real buying questions, from reviews to “is it any good?” posts.</p></div></article>
+<article><div class="figure-num h-magenta">8</div><div><h3>Community comments</h3><p>Helpful replies from non-branded accounts in threads where buyers compare options.</p></div></article>
+<article><div class="figure-num h-blue">20</div><div><h3>Brand-profile comments</h3><p>Customer support, product advice and honest answers from the brand profile we create and manage.</p></div></article>
+</div></div>
 </div>
-<div class="qualification"><strong>Best for</strong><p>Brands that want to validate Reddit as a channel before committing to a larger, longer-term programme.</p></div>
 </div></div></section>
 
 <section><div class="s"><div class="shdr" data-n="06"></div><div class="content">
-<div class="section-head"><p class="kicker">What you get each month</p><h2>30 contributions a month, inside<br>the threads your buyers read.</h2></div>
-<div class="editorial-three figures" data-discussions="2" data-comments="8" data-brand="20">
-<article><span class="overline">Original threads</span><div class="figure-num h-orange">2</div><h3>Strategic discussions</h3><p>New threads built around real buying questions, from reviews to “is it any good?” posts.</p></article>
-<article><span class="overline">Community replies</span><div class="figure-num h-magenta">8</div><h3>Community comments</h3><p>Helpful replies from non-branded accounts in threads where buyers compare options.</p></article>
-<article><span class="overline">Official brand profile</span><div class="figure-num h-blue">20</div><h3>Brand-profile comments</h3><p>Customer support, product advice and honest answers from a profile tied to your brand.</p></article>
-</div>
-<p class="bottom-line">We create and manage the official brand profile, and every contribution is logged with its live link.</p>
-</div></div></section>
-
-<section><div class="s"><div class="shdr" data-n="07"></div><div class="content">
-<div class="section-head"><p class="kicker">Behind the work</p><h2>Research decides where we show up.<br>Reporting shows what happened.</h2></div>
-<div class="editorial-three">
-<article><span class="overline logo-inline"><span class="icon-tile t-orange" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 8.5a6.5 6.5 0 1 1 13 0c0 6-6 6-6 10a3.5 3.5 0 1 1-7 0"/><path d="M15 8.5a2.5 2.5 0 0 0-5 0v1a2 2 0 1 1 0 4"/></svg></span>Social listening</span><h3>Trends in your niche</h3><p>A monthly read of the pains, questions, topics and competitors people mention most on Reddit.</p></article>
-<article><span class="overline logo-inline"><img src="assets/google.svg" alt="Google">Search analysis</span><h3>Threads that rank</h3><p>We find which Google searches in your category pull Reddit onto page one, and start there.</p></article>
-<article><span class="overline logo-inline"><span class="icon-tile t-blue" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg></span>Reporting and insights</span><h3>Every contribution tracked</h3><p>Live links and status for every post and comment, plus impressions, upvotes and replies on your profile.</p></article>
-</div>
-</div></div></section>
-
-<section><div class="s"><div class="shdr" data-n="08"></div><div class="content">
-<div class="section-head"><p class="kicker">Customer intelligence</p><h2>Hear what your customers want,<br>in their own words.</h2></div>
+<div class="section-head"><p class="kicker">Customer intelligence</p><h2>Hear what your customers want, <br>in their own words.</h2></div>
 <div class="split intel-split">
 <div class="copy-block"><h3>What we listen for in your niche.</h3><div class="line-list">
 <div class="line-item"><span class="icon-tile t-orange" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg></span><span><strong>What people ask.</strong> The questions and searches buyers bring to Reddit.</span></div>
@@ -425,33 +542,30 @@ h3{font-size:clamp(21px,2vw,30px);line-height:1.16;letter-spacing:-.02em;margin:
 <p class="fine intel-foot">Built from public Reddit conversations in your category and refreshed every month, so the insight is useful beyond Reddit too.</p>
 </div></div></section>
 
-<section><div class="s"><div class="shdr" data-n="09"></div><div class="content">
-<div class="section-head"><p class="kicker">How the 3 months run</p><h2>Set up, build consistency,<br>then decide what to scale.</h2></div>
+<section><div class="s"><div class="shdr" data-n="07"></div><div class="content merged">
+<div class="section-head"><p class="kicker">How the 3 months run</p><h2>Set up, build consistency, <br>then decide what to scale.</h2></div>
 <div class="editorial-three roadmap">
 <article><span class="overline">Month 1</span><h3>Set up and learn</h3><p>Map audience and subreddits, set up the brand profile, agree approvals, record a baseline.</p><strong class="decision">Approved activity begins</strong></article>
-<article><span class="overline">Month 2</span><h3>Build consistency</h3><p>Refine content based on how people respond, develop themes that work and grow the profile.</p><strong class="decision">Review: what resonates?</strong></article>
+<article><span class="overline">Month 2</span><h3>Build consistency</h3><p>Refine content on how people respond, develop themes that work, grow the profile.</p><strong class="decision">Review: what resonates?</strong></article>
 <article><span class="overline">Month 3</span><h3>Decide what to scale</h3><p>Review delivery, engagement and visibility against the baseline, then recommend next steps.</p><strong class="decision">Continue, adapt or expand?</strong></article>
 </div>
-<p class="bottom-line">Reddit rewards consistency and search engines take time to pick up threads, so 90 days is the shortest fair read. It is a planning horizon, not a promised time to results.</p>
-</div></div></section>
-
-<section><div class="s"><div class="shdr" data-n="10"></div><div class="content">
-<div class="section-head"><p class="kicker">Working with your team</p><h2>Your team approves the voice.<br>We do the day-to-day work.</h2></div>
+<p class="fine months-note">Reddit rewards consistency and search engines take time to pick up threads, so 90 days is the shortest fair read: a planning horizon, not a promised time to results.</p>
+<span class="overline team-label">Working with your team: Your team approves the voice, we do the day-to-day work</span>
 <div class="steps approach">
-<article class="step"><b class="step-label"><span class="icon-tile t-orange" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></span>01 / Approval</b><h3>Your approval</h3><p>A reviewer you nominate approves initial content and any product claims.</p></article>
-<article class="step"><b class="step-label"><span class="icon-tile t-magenta" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>02 / Contact</b><h3>One contact</h3><p>A named account lead runs delivery and keeps your team up to date.</p></article>
-<article class="step"><b class="step-label"><span class="icon-tile t-blue" aria-hidden="true"><svg viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg></span>03 / Updates</b><h3>Weekly updates</h3><p>What was planned, what was published and what changed, with live links.</p></article>
-<article class="step"><b class="step-label"><span class="icon-tile t-orange" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>04 / Standards</b><h3>Community first</h3><p>Every post follows community rules. No bots, no invented stories.</p></article>
+<article class="step"><div class="titled"><span class="icon-tile t-orange" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></span><h3>Your approval</h3></div><p>A reviewer you nominate approves initial content and any product claims.</p></article>
+<article class="step"><div class="titled"><span class="icon-tile t-magenta" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span><h3>One contact</h3></div><p>A named account lead runs delivery and keeps you up to date.</p></article>
+<article class="step"><div class="titled"><span class="icon-tile t-blue" aria-hidden="true"><svg viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg></span><h3>Weekly updates</h3></div><p>What was planned, published and changed, with live links.</p></article>
+<article class="step"><div class="titled"><span class="icon-tile t-orange" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span><h3>Community first</h3></div><p>Every post follows community rules. No bots, no invented stories.</p></article>
 </div>
 </div></div></section>
 
-<section><div class="s divider"><div class="shdr" data-n="11"></div><div class="divider-content">
+<section><div class="s divider"><div class="shdr" data-n="08"></div><div class="divider-content">
 <p class="kicker">03</p><h2>Measurement and trust</h2>
 <p class="lead">What we report, what you own and what we can promise.</p>
 </div></div></section>
 
-<section><div class="s"><div class="shdr" data-n="12"></div><div class="content">
-<div class="section-head"><p class="kicker">How we measure success</p><h2>See what was delivered,<br>and what it changed.</h2></div>
+<section><div class="s"><div class="shdr" data-n="09"></div><div class="content">
+<div class="section-head"><p class="kicker">How we measure success</p><h2>See what was delivered, <br>and what it changed.</h2></div>
 <div class="measure-ledger">
 <article><b>01</b><h3>Work completed</h3><p>Every post and comment, with its live link and current status.</p></article>
 <article><b>02</b><h3>Audience response</h3><p>Views, upvotes, replies and profile followers, wherever Reddit makes them available.</p></article>
@@ -462,8 +576,8 @@ h3{font-size:clamp(21px,2vw,30px);line-height:1.16;letter-spacing:-.02em;margin:
 <p class="fine">AI assistants cite whole Reddit threads rather than individual comments, so we report AI visibility at thread level and show the evidence behind every result.</p>
 </div></div></section>
 
-<section><div class="s"><div class="shdr" data-n="13"></div><div class="content">
-<div class="section-head"><p class="kicker">Your account stays yours</p><h2>The brand profile is yours,<br>whether or not we work together.</h2></div>
+<section><div class="s"><div class="shdr" data-n="10"></div><div class="content">
+<div class="section-head"><p class="kicker">Your account stays yours</p><h2>The brand profile is yours, <br>whether or not we work together.</h2></div>
 <div class="split account-split">
 <div class="account-map">
 <div class="account-top"><small>Your property</small><h3>Official brand profile</h3></div>
@@ -474,8 +588,8 @@ h3{font-size:clamp(21px,2vw,30px);line-height:1.16;letter-spacing:-.02em;margin:
 </div>
 </div></div></section>
 
-<section><div class="s"><div class="shdr" data-n="14"></div><div class="content">
-<div class="section-head"><p class="kicker">What we can and cannot guarantee</p><h2>We guarantee the work.<br>Reddit decides what stays live.</h2></div>
+<section><div class="s"><div class="shdr" data-n="11"></div><div class="content">
+<div class="section-head"><p class="kicker">What we can and cannot guarantee</p><h2>We guarantee the work. <br>Reddit decides what stays live.</h2></div>
 <div class="editorial-two">
 <article><span class="overline logo-inline"><span class="icon-tile t-blue" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></span>Our commitment</span><h3>Delivered every month</h3><ul class="rule-list"><li>The agreed work, delivered every month</li><li>Open reporting on every post and comment</li><li>Every removal logged, so you know what is live</li></ul></article>
 <article><span class="overline logo-inline"><span class="icon-tile t-orange" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg></span>Outside our control</span><h3>Decided by Reddit</h3><ul class="rule-list"><li>Moderators can remove posts or comments at their discretion</li><li>Reddit can remove content or restrict accounts</li><li>A subreddit can be closed, made private or banned</li></ul></article>
@@ -483,13 +597,13 @@ h3{font-size:clamp(21px,2vw,30px);line-height:1.16;letter-spacing:-.02em;margin:
 <div class="qualification"><strong>Branded vs non-branded</strong><p>Removal risk is highest for non-branded accounts. As a Reddit agency partner, we manage your brand profile and have a direct line to Reddit’s team to raise issues. That improves the odds, while Reddit keeps the final say.</p></div>
 </div></div></section>
 
-<section><div class="s divider"><div class="shdr" data-n="15"></div><div class="divider-content">
+<section><div class="s divider"><div class="shdr" data-n="12"></div><div class="divider-content">
 <p class="kicker">04</p><h2>Reddit Ads</h2>
 <p class="lead">Paid reach that builds on the organic work.</p>
 </div></div></section>
 
-<section><div class="s"><div class="shdr" data-n="16"></div><div class="content">
-<div class="section-head"><p class="kicker brand-label"><img src="assets/reddit.png" alt="Reddit">Optional: Reddit Ads</p><h2>Add reach from day one, in the<br>communities your buyers browse.</h2></div>
+<section><div class="s"><div class="shdr" data-n="13"></div><div class="content">
+<div class="section-head"><p class="kicker brand-label"><img src="assets/reddit.png" alt="Reddit">Optional: Reddit Ads</p><h2>Add reach from day one, in the <br>communities your buyers browse.</h2></div>
 <div class="editorial-two">
 <article><span class="overline logo-inline"><span class="icon-tile t-orange" aria-hidden="true"><svg viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg></span>Formats</span><h3>Where your ads appear</h3><ul class="rule-list"><li><strong>Feed ads.</strong> Image, video and carousel, in feeds and subreddits</li><li><strong>Conversation ads.</strong> Inside the comments of relevant threads</li><li><strong>Free-form ads.</strong> Native-style posts with text, images and video</li><li><strong>Product ads.</strong> Your catalogue, shown to people researching</li><li><strong>Takeovers.</strong> Premium launch placements, quoted separately</li></ul></article>
 <article><span class="overline logo-inline"><span class="icon-tile t-magenta" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></span>Targeting</span><h3>Who sees them</h3><ul class="rule-list"><li><strong>Communities.</strong> Members of specific subreddits</li><li><strong>Interests and keywords.</strong> Topics people engage with and search</li><li><strong>Conversations.</strong> Alongside threads about specific topics</li><li><strong>Location and device.</strong> The markets and platforms that matter</li><li><strong>Custom audiences.</strong> Site visitors, customer lists and lookalikes</li></ul></article>
@@ -497,8 +611,8 @@ h3{font-size:clamp(21px,2vw,30px);line-height:1.16;letter-spacing:-.02em;margin:
 <p class="fine ads-foot">Reddit Ads are scoped and budgeted separately from the programme.</p>
 </div></div></section>
 
-<section><div class="s"><div class="shdr" data-n="17"></div><div class="content">
-<div class="section-head"><p class="kicker brand-label"><img src="assets/reddit.png" alt="Reddit">Reddit Ads budget and tracking</p><h2>Start from $1,500 a month,<br>with conversions tracked on your site.</h2></div>
+<section><div class="s"><div class="shdr" data-n="14"></div><div class="content">
+<div class="section-head"><p class="kicker brand-label"><img src="assets/reddit.png" alt="Reddit">Reddit Ads budget and tracking</p><h2>Start from $1,500 a month, <br>with conversions tracked on your site.</h2></div>
 <div class="editorial-three">
 <article><span class="overline logo-inline"><span class="icon-tile t-orange" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="8" cy="8" r="6"/><path d="M18.09 10.37A6 6 0 1 1 10.34 18"/><path d="M7 6h1v4"/><path d="m16.71 13.88.7.71-2.82 2.82"/></svg></span>Pricing</span><h3>Auction pricing</h3><p>Bid per 1,000 impressions (CPM), per click (CPC) or per video view (CPV), depending on the goal.</p></article>
 <article><span class="overline logo-inline"><span class="icon-tile t-magenta" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"/><path d="M3 5v14a2 2 0 0 0 2 2h16v-5"/><path d="M18 12a2 2 0 0 0 0 4h4v-4Z"/></svg></span>Budget</span><h3>From $1,500 / month</h3><p>Run a fixed monthly budget or pay per click, starting from a minimum of $1,500 each month.</p></article>
@@ -507,52 +621,48 @@ h3{font-size:clamp(21px,2vw,30px);line-height:1.16;letter-spacing:-.02em;margin:
 <p class="bottom-line">Reporting covers impressions, clicks, spend, conversions and cost per result, from Reddit Ads Manager.</p>
 </div></div></section>
 
-<section><div class="s"><div class="shdr" data-n="18"></div><div class="content">
-<div class="section-head"><p class="kicker brand-label"><img src="assets/reddit.png" alt="Reddit">Promote organic posts</p><h2>Turn your best organic posts<br>into ads.</h2></div>
+<section><div class="s"><div class="shdr" data-n="15"></div><div class="content">
+<div class="section-head"><p class="kicker brand-label"><img src="assets/reddit.png" alt="Reddit">Promote organic posts</p><h2>Turn your best organic posts <br>into ads.</h2></div>
 <div class="split play-split"><div class="copy-block"><p>Promote any of your own organic posts across relevant communities, directly inside an ad unit.</p><h3>How it works</h3><div class="line-list"><div class="line-item"><b>01</b><span>Find your top performers in the Reddit Pro performance tab.</span></div><div class="line-item"><b>02</b><span>Start a new campaign in Reddit Ads Manager.</span></div><div class="line-item"><b>03</b><span>Choose the organic post from your Asset Library to promote it.</span></div></div></div>
 <figure class="play-figure"><img src="assets/reddit-play-promote.png" alt="Reddit example: an organic AMA post promoted as an ad in the home feed"><figcaption>Example from Reddit’s playbook: a promoted AMA post in the home feed.</figcaption></figure></div>
 </div></div></section>
 
-<section><div class="s"><div class="shdr" data-n="19"></div><div class="content">
-<div class="section-head"><p class="kicker brand-label"><img src="assets/reddit.png" alt="Reddit">Run an AMA</p><h2>Run an Ask Me Anything,<br>then amplify it with ads.</h2></div>
+<section><div class="s"><div class="shdr" data-n="16"></div><div class="content">
+<div class="section-head"><p class="kicker brand-label"><img src="assets/reddit.png" alt="Reddit">Run an AMA</p><h2>Run an Ask Me Anything, <br>then amplify it with ads.</h2></div>
 <div class="split play-split"><div class="copy-block"><p>Reddit’s signature format builds awareness, advocacy and intent around a real expert from your team.</p><h3>How it works</h3><div class="line-list"><div class="line-item"><b>01</b><span>Host a profile AMA with a company expert to spark credible engagement.</span></div><div class="line-item"><b>02</b><span>Use AMA ads to drive traffic before, during and after the session.</span></div><div class="line-item"><b>03</b><span>Turn on full moderation, so no comment goes live until your team approves.</span></div></div></div>
 <figure class="play-figure"><img src="assets/reddit-play-ama.png" alt="Reddit example: a promoted AMA post from EQ Bank"><figcaption>Example from Reddit’s playbook: an AMA from EQ Bank, promoted with AMA ads.</figcaption></figure></div>
 </div></div></section>
 
-<section><div class="s"><div class="shdr" data-n="20"></div><div class="content">
-<div class="section-head"><p class="kicker brand-label"><img src="assets/reddit.png" alt="Reddit">Organic insights, paid results</p><h2>Let organic insights shape<br>your paid creative and targeting.</h2></div>
+<section><div class="s"><div class="shdr" data-n="17"></div><div class="content">
+<div class="section-head"><p class="kicker brand-label"><img src="assets/reddit.png" alt="Reddit">Organic insights, paid results</p><h2>Let organic insights shape <br>your paid creative and targeting.</h2></div>
 <div class="split play-split"><div class="copy-block"><p>Tailor your creative to what your audience likes, and your targeting to where they are.</p><h3>How it works</h3><div class="line-list"><div class="line-item"><b>01</b><span>Use Reddit Pro to find what customers love discussing, then build a free-form ad on that topic.</span></div><div class="line-item"><b>02</b><span>Find the communities talking about your competitors, and test a prospecting audience there.</span></div></div></div>
 <figure class="play-figure"><img src="assets/reddit-play-insights.png" alt="Reddit example: a Carl’s Jr. free-form ad built around a Super Bowl conversation"><figcaption>Example from Reddit’s playbook: a Carl’s Jr. free-form ad built on a trending conversation.</figcaption></figure></div>
 </div></div></section>
 
-<section><div class="s divider"><div class="shdr" data-n="21"></div><div class="divider-content">
+<section><div class="s divider"><div class="shdr" data-n="18"></div><div class="divider-content">
 <p class="kicker">05</p><h2>About us</h2>
 <p class="lead">The team and the brands behind the programme.</p>
 </div></div></section>
 
-<section><div class="s"><div class="shdr" data-n="22"></div><div class="content">
-<div class="section-head"><p class="kicker">Why us</p><h2>Reddit expertise and AI visibility,<br>under one roof.</h2></div>
+<section><div class="s"><div class="shdr" data-n="19"></div><div class="content merged">
+<div class="section-head"><p class="kicker">Why us</p><h2>Reddit expertise and AI visibility, <br>under one roof.</h2></div>
 <div class="editorial-three">
-<article><span class="overline logo-inline"><img src="assets/reddit.png" alt="Reddit">Official Reddit partner agency</span><h3>A direct line to Reddit</h3><p>We work directly with Reddit’s agency team on account setup, campaign planning and support.</p></article>
-<article><span class="overline logo-inline"><img class="wordmark" src="assets/aipeekaboo-logo.png" alt="AI Peekaboo">AI visibility</span><h3>Our own platform</h3><p>AI Peekaboo tracks how brands appear in the answers of the AI assistants buyers use most.</p></article>
-<article><span class="overline">Research before activity</span><h3>No guesswork</h3><p>Every campaign starts from real Reddit conversations, search data and each community’s rules.</p></article>
+<article><span class="overline logo-inline"><img src="assets/reddit.png" alt="Reddit">Official Reddit partner agency</span><h3>A direct line to Reddit</h3><p>We work with Reddit’s agency team on account setup, campaigns and support.</p></article>
+<article><span class="overline logo-inline"><img class="wordmark" src="assets/aipeekaboo-logo.png" alt="AI Peekaboo">AI visibility</span><h3>Our own platform</h3><p>AI Peekaboo tracks how brands show up in the AI assistants buyers use most.</p></article>
+<article><span class="overline">Research before activity</span><h3>No guesswork</h3><p>Every campaign starts from Reddit threads, search data and community rules.</p></article>
 </div>
 <div class="model-row"><span class="model-label">AI Peekaboo tracks</span><span class="model"><img src="assets/openai.svg" alt="">ChatGPT</span><span class="model"><img src="assets/perplexity.svg" alt="">Perplexity</span><span class="model"><img src="assets/google.svg" alt="">Google AI Overviews</span><span class="model"><img src="assets/google.svg" alt="">Google AI Mode</span><span class="model"><img src="assets/gemini.svg" alt="">Gemini</span><span class="model"><img src="assets/copilot.svg" alt="">Microsoft Copilot</span></div>
-</div></div></section>
-
-<section><div class="s"><div class="shdr" data-n="23"></div><div class="content">
-<div class="section-head"><p class="kicker">Selected clients</p><h2>Brands we work with,<br>across specialist categories.</h2></div>
+<div class="clients-head"><span class="overline">Brands we work with, across specialist categories</span><p class="trusted-line">Trusted by <span class="nowrap">50+</span> other brands.</p></div>
 <div class="client-grid">
 <div><img src="assets/autodoc.png" alt="AUTODOC"><span class="client-label"><strong>AUTODOC</strong><em>Automotive commerce</em></span></div>
 <div><img src="assets/knew-health.png" alt="Knew Health"><span class="client-label"><strong>Knew Health</strong><em>Medical cost sharing</em></span></div>
 <div><img src="assets/flexzo.svg" alt="Flexzo"><span class="client-label"><strong>Flexzo</strong><em>Healthcare recruitment</em></span></div>
 </div>
-<p class="trusted-line">Trusted by <span class="nowrap">50+</span> other brands.</p>
 </div></div></section>
 
-<section><div class="s"><div class="shdr" data-n="24"></div><div class="content closing-proposal">
-<p class="kicker">Next steps</p><h2>Let’s plan your<br>first month on Reddit.</h2>
-<p class="lead">Share the brands you would like to start with.<br>We audit each one before month 1 begins.</p>
+<section><div class="s"><div class="shdr" data-n="20"></div><div class="content closing-proposal">
+<p class="kicker">Next steps</p><h2>Let’s plan your <br>first month on Reddit.</h2>
+<p class="lead">Share the brands you would like to start with. <br>We audit each one before month 1 begins.</p>
 <div class="next-list"><span>01 / Share your brands</span><span>02 / Reddit audit per brand</span><span>03 / Agree reviewer and tone</span><span>04 / Month 1 begins</span></div>
 <div class="contact-row"><a href="https://calendly.com/filipe-aipeekaboo/30min" class="cta-button">Book a call ↗</a><a href="mailto:filipe@aipeekaboo.com">filipe@aipeekaboo.com</a></div>
 </div></div></section>
@@ -561,7 +671,7 @@ h3{font-size:clamp(21px,2vw,30px);line-height:1.16;letter-spacing:-.02em;margin:
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reveal.min.js"></script>
 <script>
 (function(){
-  var total=24;
+  var total=20;
   document.querySelectorAll('.shdr').forEach(function(el){
     try{
       var n=String(el.getAttribute('data-n')||'').padStart(2,'0');
@@ -572,6 +682,38 @@ h3{font-size:clamp(21px,2vw,30px);line-height:1.16;letter-spacing:-.02em;margin:
   });
 }());
 window.addEventListener('load',function(){
+  if(DOC_MODE.matches){
+    // Scrolling page: no Reveal. A slide link (#/4) scrolls to that slide, and the
+    // hash follows the slide in view (updated only on change: Safari rate-limits it).
+    var sections=document.querySelectorAll('.reveal .slides>section');
+    var shown=parseInt(location.hash.slice(2),10)||0;
+    if(shown&&sections[shown])sections[shown].scrollIntoView();
+    var size=window.innerWidth+'x'+window.innerHeight;
+    var width=window.innerWidth;
+    var position=sections[shown]?sections[shown].getBoundingClientRect().top:0;
+    window.addEventListener('resize',function(){
+      // Phone rotations can stay in document mode. Restore the current slide when
+      // the width changes. Height-only changes preserve the reading position even
+      // in Safari, which does not anchor the scroll when earlier content reflows.
+      if(!sections[shown])return;
+      if(window.innerWidth!==width)sections[shown].scrollIntoView();
+      else window.scrollBy(0,sections[shown].getBoundingClientRect().top-position);
+      width=window.innerWidth;
+      size=window.innerWidth+'x'+window.innerHeight;
+      position=sections[shown].getBoundingClientRect().top;
+    });
+    window.addEventListener('scroll',function(){
+      // A scroll caused by a resize (e.g. a rotation, just before the reload) is not the
+      // reader moving, and the re-laid page would point the hash at the wrong slide.
+      var now=window.innerWidth+'x'+window.innerHeight;
+      if(now!==size){size=now;return;}
+      var i=0;
+      while(i<sections.length-1&&sections[i].getBoundingClientRect().bottom<=window.innerHeight/2)i++;
+      if(i!==shown){shown=i;history.replaceState(null,'','#/'+i);}
+      position=sections[shown].getBoundingClientRect().top;
+    },{passive:true});
+    return;
+  }
   try{
     Reveal.initialize({hash:true,controls:true,progress:true,slideNumber:false,transition:'none',disableLayout:true,width:1920,height:1080,margin:0,minScale:.1,maxScale:3});
   }catch(error){console.error('Reveal initialization failed',error);}
